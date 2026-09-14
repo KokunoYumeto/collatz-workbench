@@ -1,0 +1,287 @@
+# Residual-source descent, unbounded exponent tails, and period-driven cycle exclusion
+
+**14 September 2026 — continuation in `KokunoYumeto/collatz-workbench`.**
+
+Source checkpoint: `32b8f3b9cc6dcfc4387ff783c4f4a6f6a365f717`, PR #2. The original stopped-affine, cycle-relative, and integration files remain unchanged. This note and `integral_blocks.md` supply the new arguments. The verification records finite execution, not independent external mathematical review or a global Collatz proof.
+
+## 1. Actual source and first-descent cells
+
+Use the original map
+\[
+ T(n)=(3n+1)/2^{\nu_2(3n+1)},\qquad n\in X=\{1,3,5,\ldots\}.
+\]
+For a nonempty exponent word \(p=(a_1,\ldots,a_m)\), keep
+\[
+ A_j=\sum_{i\le j}a_i,\quad L_j=3^j,\quad U_j=2^{A_j},\quad
+ C_j=\sum_{i=1}^j3^{j-i}2^{A_{i-1}},\quad D_j=U_j-L_j.
+\]
+Write \((A,L,U,C,D)\) for the final data. The predecessor's original legal cylinder is
+\[
+ n=r+2Ut,\quad t\ge0,\qquad
+ r\equiv(U-C)L^{-1}\pmod{2U},\quad 1\le r<2U,
+\]
+with the exact image
+\[
+ T^m(n)=u+2Lt,\qquad Uu=Lr+C. \tag{1}
+\]
+The comparison with the repository's September 13 notation is the identity on the labelled word, \(S_j=A_j\), and \(B_w=C_m\); the index substitution is \(i=j+1\). The original coefficients, residue representative, and affine map are identical under this comparison.
+
+### Proposition 1. Complete first-descent fiber
+
+The set of original positive sources whose **first** strict odd-return descent is at the end of exactly \(p\) is empty for \(D\le0\). For \(D>0\) it is
+\[
+ \{r+2Ut:t\in\mathbb Z,\ \ell\le t\le h\}, \tag{2}
+\]
+where
+\[
+ \ell=\max\!\left(0,\left\lfloor\frac{C-Dr}{2UD}\right\rfloor+1\right),
+\quad
+ h=\min_{\substack{j<m\\D_j>0}}
+       \left\lfloor\frac{C_j-D_jr}{2UD_j}\right\rfloor. \tag{3}
+\]
+The minimum of the empty set here is \(+\infty\). A label with \(h<\ell\) remains a declared empty first-descent fiber; its legal cylinder and coefficients are retained.
+
+**Proof.** On the original cylinder,
+\[
+ T^j(n)<n\iff D_jn>C_j.
+\]
+For \(D_j\le0\), positivity of \(n,C_j\) rules out strict descent. For positive \(D_j\), substituting \(n=r+2Ut\) and using integer floors gives (3): strict descent at the last step and non-descent at every earlier step. These are all the conditions. The inverse source parameter is \((n-r)/(2U)\), and the inverse target parameter is \((y-u)/(2L)\). Both are applied only on their specified images. ∎
+
+Distinct first-descent words have disjoint occupied fibers: the deterministic actual orbit has one first-descent index and one exponent list at that index. In particular, the mask for \((2,2)\) is empty, whereas the mask for \((2)\) has \(r=1,\ell=1\); the fixed point 1 has not been treated as a strict descent.
+
+For every supported source in (2), retain the original edge chain
+\[
+ b_p(n)=\sum_{j=0}^{m-1}e_{T^j(n)},\qquad
+ \partial b_p(n)=v_n-v_{T^m(n)}. \tag{4}
+\]
+The relative convention is exactly the predecessor's: only \(v_1,e_1\) are sent to zero.
+
+## 2. Whole exponent tails, without an overflow class
+
+Let \(q\) be an original word all of whose nonempty prefixes have \(D_j\le0\). The empty word is included, with \(L=U=1,C=0,r=u=1\). Every positive source in its cylinder has no earlier descent. Retain its chart
+\[
+ n=r+2Ut,\quad x=T^{|q|}(n)=u+2Lt,\quad t\ge0.
+\]
+Define \(B\ge1\) to be the least integer satisfying the **two original coefficient inequalities**
+\[
+ 2^B r>3u+1,\qquad 2^BU\ge3L. \tag{5}
+\]
+This integer exists. In this setting the second inequality is strict as well: \(2^BU\) is a power of 2 and \(3L\) a positive power of 3.
+
+### Theorem 2. Unbounded last-exponent descent family
+
+All sources in the prefix cylinder with actual next exponent \(a\ge B\) have their first strict descent at that next return. Their full source set is the single original progression
+\[
+ n=R+2U\,2^{B-1}v,\quad v\ge0, \tag{6}
+\]
+where
+\[
+ t_0\equiv-\frac{3u+1}{2}(3L)^{-1}\pmod{2^{B-1}},
+ \quad0\le t_0<2^{B-1},\quad R=r+2Ut_0. \tag{7}
+\]
+No upper bound on \(a\) is imposed.
+
+The full exponent label is recovered by
+\[
+ t=t_0+2^{B-1}v,\qquad a=\nu_2(3u+1+6Lt). \tag{8}
+\]
+Its exact \(a\)-stratum, for each \(a\ge B\), is
+\[
+ t\equiv\left(2^{a-1}-\frac{3u+1}{2}\right)(3L)^{-1}\pmod{2^a}. \tag{9}
+\]
+Equation (9) gives exactly the predecessor's complete cylinder for \(q\) followed by \(a\), with source step \(2^{A+a+1}\), target step \(2\cdot3^{|q|+1}\), and the original affine numerator. Its first-descent interval is the entire positive cylinder.
+
+**Proof.** Divisibility of \(3x+1=3u+1+6Lt\) by \(2^B\) is equivalent to (7), because \(3L\) is odd. This proves (6), with the inverse parameter \(v=(n-R)/(2U2^{B-1})\). Specifying valuation exactly \(a\) means congruence to \(2^a\) modulo \(2^{a+1}\); division of that congruence by 2 gives (9). It also proves (8) and the disjoint, complete stratification by actual exponents.
+
+For all these sources,
+\[
+ \frac{3u+1+6Lt}{2^a}
+ \le\frac{3u+1+6Lt}{2^B}<r+2Ut, \tag{10}
+\]
+where the final strict inequality uses both inequalities in (5), including the strict constant term. Every previous \(D_j\le0\) precludes an earlier descent. Each exact stratum has the original word chart (1), so its intermediate values and edge chain are retained. ∎
+
+### A full symbolic family at the old residual frontier
+
+For \(q=(1,2)\), its unchanged chart is
+\[
+ 11+16t\longmapsto13+18t.
+\]
+Equations (5)–(7) give \(B=2,t_0=0\). Thus every \(v\ge0\) has the actual path
+\[
+ 11+32v\ \longmapsto\ 17+48v\ \longmapsto\ 13+36v
+ \ \longmapsto\ \frac{10+27v}{2^{\nu_2(10+27v)}}. \tag{11}
+\]
+The full word is
+\[
+ (1,2,2+\nu_2(10+27v)).
+\]
+The terminal value is at most \(10+27v<11+32v\); the first two displayed values are larger than the source. The original three-edge chain has boundary source minus the exact final value in (11). The residue class \(11\bmod16\) is now split exactly: \(11\bmod32\) has this descent, while \(27\bmod32\) follows the noncontracting child \((1,2,1)\). No unspecified probability or changed target interval is used.
+
+For the empty prefix, the tail is \(n=5+8v\), with \(a\ge3\). Together with the \((2)\) cell it supplies every one-step descent source \(n>1,n\equiv1\pmod4\). In particular,
+\[
+ n_j=(4^j-1)/3\longmapsto1,\qquad j\ge2,
+\]
+has actual exponent \(2j\). For \(j\ge33\), these sources are unresolved by the original exponent cutoff 64 but are discharged by this one actual edge, without increasing that cutoff. The verifier executes \(j=33,64,128,512\); the displayed identity proves the whole family.
+
+### Finite complete next-step decomposition
+
+For any prefix \(q\) above, enumerate the finite list \(1\le a<B\). A child with \(D_{qa}\le0\) remains an original prefix frontier. A child with \(D_{qa}>0\) has its exact first-descent interval (2) and its finite complementary non-descent box from Section 5. All \(a\ge B\) belong to the proved tail (6). These disjoint actual-exponent cases exhaust the full prefix cylinder. `tail_descent.py` implements this decomposition; it never adds an exponent-overflow atom.
+
+## 3. Attaching new paths at actual retained roots
+
+Let \((h,Q,F)\) be the predecessor's actual path retraction, with
+\[
+ \partial h=I-Q,\quad hQ=0,\quad Q^2=Q,\quad F=I-h\partial.
+\]
+Its root \(r(n)\) is at most \(n\); \(h(v_n)\) is the original finite path to that root. These properties hold for every whole-source cutoff retraction in the imported code, without declaring its roots to be convergent.
+
+A new descent rule is applied **only at an old root** \(r\). A cell from Section 1 or tail from Section 2 supplies an actual block \(b:r\to d<r\). Attach the old path \(h(v_d)\), giving
+\[
+ \widetilde b_r=b+h(v_d),\qquad
+ \partial\widetilde b_r=v_r-Q(v_d). \tag{12}
+\]
+Its endpoint is an old root no greater than \(d<r\). Iterate these root-to-root blocks. The recursion terminates by strict decrease of positive integers. Let \(\gamma_r\) be the resulting original edge chain and \(R(r)\) its endpoint. An unlisted root remains itself, with zero added path.
+
+Put
+\[
+ K(v_n)=\gamma_{r(n)},\quad h'=h+K,\quad Q'(v_n)=v_{R(r(n))},\quad
+ F'=I-h'\partial. \tag{13}
+\]
+The implementation gives an already compiled first-descent cell priority over the identical word certified by a tail. The original rules remain recorded. Distinct occupied first-descent words cannot compete at a source. Tail words also end at the first coefficient crossing, so distinct noncontracting prefixes have disjoint tail supports.
+
+### Theorem 3. Exact root-level extension
+
+These are maps on all original finite-support relative chain modules. They satisfy
+\[
+ \partial K=Q-Q',\quad KQ=K,\quad KQ'=0,\quad hQ'=0,
+\]
+\[
+ \partial h'=I-Q',\quad h'Q'=0,\quad Q'Q=QQ'=Q',
+\]
+\[
+ F'^2=F',\quad \partial F'=Q'\partial,\quad F'F=FF'=F',\quad FK=K. \tag{14}
+\]
+Every closed chain is fixed literally: \(F'c=c\) for \(\partial c=0\). The new image complex is a chain-homotopy retract of the old image complex; its homotopy is \(K\) on the old vertex image. Original homology and its algebraic-dual cohomology are retained by these specific maps.
+
+**Proof.** Telescoping (12) proves \(\partial\gamma_r=v_r-v_{R(r)}\). Final roots have no new applicable block and were old roots, so both homotopies vanish there. This gives the first two lines. In particular, \(h\partial K=h(Q-Q')=0\), hence \(FK=K\): the correction really lies in the old projected edge module. Also \(h'\partial h'=h'(I-Q')=h'\), proving idempotence of \(F'\). The chain equation follows from \(\partial h'=I-Q'\). Direct multiplication using \(h'Q=K\) and \(hQ'=0\) gives both compositions with \(F\). The difference of the old and new projections on the old image is \((K\partial,\partial K)\), the stated chain homotopy. Substitution of \(\partial c=0\) proves literal cycle preservation. Applying the algebraic dual to these identities supplies the actual cochain maps and homotopy. ∎
+
+A nonperiodic component is not erased by an absence of cycle periods: its degree-zero component obstruction is retained by the same homotopy equivalence. No finite cutoff root has been promoted to such a component.
+
+### The 27 cylinder
+
+The full 37-letter word is recorded in `verification.json`. Its exact data are
+\[
+ A=59,\quad L=450283905890997363,\quad
+ C=1100931843921811423,\quad D=126176846412426125.
+\]
+They give the entire family
+\[
+ 27+2^{60}t\longmapsto23+900567811781994726t,\qquad t\ge0. \tag{15}
+\]
+Every proper prefix has \(D_j\le0\), and \(27D-C>0\), so (15) is a first descent on its whole cylinder. In contrast, its original formal reference value is
+\[
+ F_p(3)=306472945199350439/72057594037927936>3.
+\]
+Thus this exact source family supplies an extension that the reference-3 stop does not supply at this word. At cutoff 64 the old root of 27 is 27. The new block ends at 23, whose old root is 1; (12) adds that already checked path. The resulting 41-edge path has boundary \(v_{27}\).
+
+## 4. Multiplicative period morphism and finite arithmetic exclusion
+
+For an actual orbit define the positive rational edge label
+\[
+ g(n)=\frac{3n+1}{4n}=2^{a(n)-2}\frac{T(n)}n. \tag{16}
+\]
+The factor \(T(n)/n\) is the displayed multiplicative coboundary of the actual vertex coordinate. On a finite path it telescopes to terminal/source. On a closed cycle its product is 1. All factors are retained; the following inequalities are bounds on this same map, not a replacement of the affine equations.
+
+For a positive cycle with \(m\) odd returns, exponent sum \(A\), and every vertex at least \(s\),
+\[
+ 3^m<2^A=\prod_{i=1}^m\left(3+\frac1{x_i}\right)
+       \le\frac{(3s+1)^m}{s^m}. \tag{17}
+\]
+Let \(k=\#\{i:a_i=1\}\). Since
+\[
+ A=2m-k+E,\qquad E=\sum_{a_i\ge3}(a_i-2)\ge0,
+\]
+(17) implies the exact integer inequality
+\[
+ (4s)^m\le2^k(3s+1)^m. \tag{18}
+\]
+The projection to \((m,A,k,s)\) retains its fiber: all original labelled words with these counts whose unique primitive \(x_i=C(p_i)/D\) is integral, satisfies \(x_i\ge s\), and satisfies the declared minimum bound. The matrix forcing and word order in this fiber are not declared solvable merely because a window (17) is allowed. `integral_blocks.md` gives the integral comparison maps for this remaining fiber.
+
+### Period-driven feedback actually executed
+
+The atlas initially verifies an actual first descent for every odd source \(3\le n\le4095\). Strong induction on the source, beginning at 1, proves that all these sources reach 1. Consequently every nontrivial cycle has minimum at least 4097.
+
+For each current lower bound \(s\), select the least period for which (17) has any integer exponent \(A\). The least possible exponent is the bit length of \(3^m\). For that pair, compute the largest integer \(u\) satisfying
+\[
+ 2^Au^m\le(3u+1)^m. \tag{19}
+\]
+The ratio \((3+1/u)^m\) strictly decreases with positive \(u\), so a successful comparison at \(u\) and failed comparison at \(u+1\) prove the exact ceiling. The original minimum of this entire period window lies in a finite interval. The executed continuation proves first descent throughout that interval, then recomputes the next window.
+
+| Current minimum lower bound | First window \((m,A)\) | Exact minimum ceiling | New verified odd-source bound |
+|---:|---:|---:|---:|
+| 4097 | (147,233) | 6724 | 6723 |
+| 6725 | (200,317) | 12824 | 12823 |
+| 12825 | (253,401) | 27113 | 27113 |
+| 27115 | (306,485) | 99780 | 99779 |
+
+Every new seed is iterated only to its actual first lower odd value. Independent repeated-division replay verifies the entire final interval, and strong induction supplies its boundary paths to 1. These seeds produce **5,175 occupied infinite first-descent cells**; their symbolic lift statements follow from Proposition 1, not from sampling. The construction additionally compiles **4,011 unbounded last-exponent tails** from the admitted prefix words.
+
+### Theorem 4. Certificate excluding all cycles with at most 402 exponent-1 steps
+
+There is no nontrivial positive integer Collatz cycle whose primitive odd-return word contains at most 402 occurrences of exponent 1.
+
+**Proof.** The actual seed certificates above establish \(s=99781\). The following finite integer comparisons are executed, with an independent least-power-of-two loop in the verifier:
+\[
+ 2^{\operatorname{bitlength}(3^m)}s^m>(3s+1)^m
+ \quad(1\le m\le970). \tag{20}
+\]
+They exclude every integer exponent in (17) at those lengths. Separately,
+\[
+ (4s)^{969}>2^{402}(3s+1)^{969}. \tag{21}
+\]
+Since \(4s>3s+1>0\), the same strict comparison holds at every larger length with any \(k\le402\). Thus (18) forces \(m\le968\), whereas (20) excludes all those periods. The finite premises are part of the executable certificate; neither a sampled frequency nor an unproved analytic estimate occurs. ∎
+
+This is a self-contained improvement of the present workbench's previous zero-or-one-exponent-1 exclusion, **not a claimed advance over published cycle bounds**. The executed feedback used a seed budget of 100,000; that budget restricts the computation, not the all-length scope of Theorem 4.
+
+The first unexcluded window at the new minimum is
+\[
+ (m,A,k_{\min})=(971,1539,403),\qquad
+ 99781\le\min x_i\le330749. \tag{22}
+\]
+For \(k=403\), (18) forces \(m\le971\), and (20) forces \(m=971\). The only exponent in (17) at this length is 1539, as the next power of 2 fails the upper bound. Then \(E=0\): the original word consists of 403 ones and 568 twos. This window is retained as an unresolved arithmetic fiber, not as a found cycle. Its integral compression is in `integral_blocks.md`.
+
+The precise clock comparison with conventional shortened-map local-minimum counts is also explicit. An odd-return exponent \(a\) expands to one odd shortened step followed by \(a-1\) even shortened steps. Expansion sends total shortened length to \(A\) and odd-step count to \(m\); grouping between successive odd states is its inverse. Each \(a\ge2\) contributes exactly one even-run termination and hence one local minimum in a nontrivial shortened cycle. Thus that count is \(\mu=m-k\). The original ordered word remains available. This supplies the map between these counts rather than interchanging them with the \(m\)-cycle terminology in [R2].
+
+## 5. First-crossing exception boxes and the retained infinite source
+
+At a first **completed odd-return coefficient crossing**, \(D>0\) and every proper prefix has \(D_j\le0\). Its exact positive sources with no descent even at the terminal step are
+\[
+ n=r+2Ut,\qquad
+ \max\!\left(0,\left\lceil\frac{s-r}{2U}\right\rceil\right)
+ \le t\le\left\lfloor\frac{C-Dr}{2UD}\right\rfloor. \tag{23}
+\]
+This is the complement of the descent interval within that original cylinder above \(s\). It is a finite **source** box, not an absent label. The original affine offset is essential to its upper endpoint.
+
+There is a general bound on its occupancy:
+\[
+ 3C\le mL,\qquad \#\text{box}\le\left\lceil\frac{m}{6D}\right\rceil. \tag{24}
+\]
+Indeed each summand of \(C\) is at most \(3^{m-1}\), using \(2^{A_{i-1}}\le3^{i-1}\). The possible sources lie in \((0,C/D]\), are spaced by \(2U\), and \(C/(2UD)\le mL/(6UD)<m/(6D)\). This proves (24). It does not assert the box to be empty.
+
+Every first-crossing word with total exponent sum at most 18 was checked: 4,082 words, 4,081 empty boxes at minimum 1, and one occupied box containing the actual fixed source 1. This is a bounded scan. The decomposition in Section 2 applies at arbitrary finite prefixes, without asserting that their infinite-depth residual source is empty.
+
+An actual non-base component minimum has no strict descent. It must avoid every certified cell and tail. A finite coefficient crossing places it in exactly (23); absence of any coefficient crossing retains all the original noncontracting prefix cylinders. In both cases ordinary positive-integer support still requires the predecessor's canonical residue tower to stabilize at that same integer. No reference-measure zero is used to remove a vertex. The root splicing in Section 3 preserves the original component obstruction in either case.
+
+The distinction between coefficient contraction and actual descent is connected to the explicit remainder in [R1] by the clock expansion above: at a completed return, its coefficient is \(L/U\) and its remainder is \(C/U\). Their expression \((L/U)n+C/U\) is exactly (1). No coefficient-stopping-time conjecture is assumed here.
+
+## 6. Reproduction and inspection scope
+
+`verify.py` regenerates the atlas and feedback, checks source lifts by independent integer repeated division, checks the exact root-level homotopies, exercises the unbounded tail strata, checks integral block comparisons, and verifies the finite all-length exclusion certificate. It also retains zero masks and rejects malformed data. `replay.py` checks source hashes, replays the entire unchanged import, and requires the new ordinary/optimized outputs to be byte-identical to `verification.json`.
+
+The current-source reads include the workbench method chapter, issue #3, PR #2 and its discussion, and the cycle note at the pinned commit. The uploaded publication archive supplied executable local bytes; its note Git blob was compared with the authenticated source, and the unchanged 21-file manifest and six replay outputs passed before continuation. No unpushed local Codex state was accessed.
+
+**[P]** `../cycle_relative_cohomology_20260914/note.md`, Sections 1–7, especially the actual relative graph and cutoff retractions; `../stopped_affine_transport_20260914/` is retained through that original dependency.
+
+**[R1]** O. Rozier and C. Terracol, *Paradoxical behavior in Collatz sequences*, arXiv:2502.00948v2 (13 February 2025), Introduction, Definitions 1.1–1.2 and their displayed affine expression. Readable primary text: `https://arxiv.org/html/2502.00948v2`. Cited for the existing coefficient/remainder question, not as a proof premise or an adoption of a conjecture.
+
+**[R2]** C. Hercher, *There are no Collatz m-Cycles with m <= 91*, Journal of Integer Sequences 26 (2023), Article 23.3.5. Publisher page: `https://cs.uwaterloo.ca/journals/JIS/VOL26/Hercher/hercher5.html`, which also links a corrigendum dated 14 June 2026. The page and terminology were inspected; no detailed numerical theorem or external verification bound from it is a premise. Its TeX retrieval was not readable through the web tool. No priority or cycle-record claim is made.
