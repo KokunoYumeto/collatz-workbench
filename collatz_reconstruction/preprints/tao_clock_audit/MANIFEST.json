@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2607,
+      "sha256": "8540c818fc7aae5c401926374b954ddbcd7c2dded7f31e45591854012adf3d2f"
+    },
+    {
+      "path": "bibliography.tex",
+      "bytes": 1180,
+      "sha256": "08f6272e840a336ba3428b9e7c9c95769236fcf123a5d02de377919c5014d224"
+    },
+    {
+      "path": "certificates/check_finite.py",
+      "bytes": 14234,
+      "sha256": "a0124b3de952e2ff77f2b2dc842370b0ec333c94c1fbd526ad5d5ca976562295"
+    },
+    {
+      "path": "main.tex",
+      "bytes": 6567,
+      "sha256": "c4423fcf4d9be9db296d6db0ee4d922a4be04667cafeb30c7a81d167d90284a5"
+    },
+    {
+      "path": "proof_registry.json",
+      "bytes": 3730,
+      "sha256": "288e87d56c4f17092d726c0d640d20f6e0c4cf3a709ea5b207a40ba517598c82"
+    },
+    {
+      "path": "sections/clocks.tex",
+      "bytes": 6142,
+      "sha256": "8ea1cbbdc0706946d4cda0c8f9724ca49acdd1a77ce6e041f7212a49ffe06357"
+    },
+    {
+      "path": "sections/consequences.tex",
+      "bytes": 12361,
+      "sha256": "853f19899655f2fd1605a12d7dc819513410c09e812d5dc70210c5b60e2d7ea5"
+    },
+    {
+      "path": "sections/repairs.tex",
+      "bytes": 9525,
+      "sha256": "d562ab491da485526ee71dde391a8c2ffbd66a14d862b9294b5080c972d8c5f7"
+    },
+    {
+      "path": "sections/transport.tex",
+      "bytes": 5794,
+      "sha256": "b3233b2b79614e1279a9d880eb7e82c21d5822873085bdaadf49332c2cd88678"
+    },
+    {
+      "path": "sections/versions.tex",
+      "bytes": 5802,
+      "sha256": "9d72c924273f49dd4bc97c17b740967b4b69acdf0a434cf732427baa20ab6ef5"
+    },
+    {
+      "path": "source_manifest.json",
+      "bytes": 3723,
+      "sha256": "5cf1abe5efeb4d2489d72cafc92aca2f09ef3033967657924db1c2b408e83d9a"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 2879,
+      "sha256": "b02738f76a85d8aef0f35eb4883ef6a110ef5230d342284bf55e34f1d8fe79d8"
+    }
+  ],
+  "scope": "Portable authored source only; no private audit files or source literature included"
+}

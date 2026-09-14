@@ -1,0 +1,367 @@
+{
+  "schema_version": 1,
+  "audit_id": "ACT45-TAO-FRESH-CONTEXT-RECOVERY",
+  "recorded_utc": "2026-09-04T15:02:53Z",
+  "status": "PASS_bounded_checkpoint_recovery",
+  "scope": "Read-only reconstruction of the ACT-COL-000045 V7 first-entry-family checkpoint from its raw directive, files, receipts, TeX, primary source loci and current local state. This is not full-corpus recovery or a new proof/build/remote verification.",
+  "starting_evidence": [
+    {
+      "path": "qa/ACT45-TAO-V7-FAMILY-CHECKPOINT.json",
+      "bytes": 4782,
+      "sha256": "8508bc7695f0952057b718bca34522331475ee1e69ca39610d4e96fbe1cfad99"
+    },
+    {
+      "path": "raw/USR-0017-tao-v7-baseline.txt",
+      "read_in_full": true,
+      "role": "Direct quoted user request supplies V7-baseline emphasis; the file separately labels its working interpretation."
+    }
+  ],
+  "method": {
+    "read_order": "Checkpoint first, then its raw directive, then referenced current files/receipts and project/Tao/Overleaf states; claim/morphism IDs resolved to their actual JSONL records; actual TeX and V7 source loci read directly.",
+    "hash_method": "PowerShell Get-FileHash -Algorithm SHA256 plus Get-Item.Length; compared to pinned bytes and SHA-256.",
+    "assistant_summaries_used_as_evidence": false,
+    "browser_or_network_used": false,
+    "builds_or_certificates_executed": false,
+    "Lean_launched": false,
+    "git_used": false,
+    "agents_dispatched": false,
+    "AGENTS_files_edited": false,
+    "source_or_manuscript_changes": false,
+    "only_saved_output": "qa/ACT45-TAO-FRESH-CONTEXT-RECOVERY.json"
+  },
+  "checkpoint_file_checks": {
+    "checked": 14,
+    "passed": 14,
+    "mismatches": [],
+    "files": [
+      {
+        "path": "raw/USR-0017-tao-v7-baseline.txt",
+        "exists": true,
+        "actual_bytes": 954,
+        "actual_sha256": "2a929548c8e9e58e0c025fc1a1beaca2a833e7e9ebf81b5218e1cf3aa0b8548f",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "preprints/tao_clock_audit/main.tex",
+        "exists": true,
+        "actual_bytes": 6567,
+        "actual_sha256": "c4423fcf4d9be9db296d6db0ee4d922a4be04667cafeb30c7a81d167d90284a5",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "preprints/tao_clock_audit/sections/consequences.tex",
+        "exists": true,
+        "actual_bytes": 12361,
+        "actual_sha256": "853f19899655f2fd1605a12d7dc819513410c09e812d5dc70210c5b60e2d7ea5",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "preprints/tao_clock_audit/sections/transport.tex",
+        "exists": true,
+        "actual_bytes": 5794,
+        "actual_sha256": "b3233b2b79614e1279a9d880eb7e82c21d5822873085bdaadf49332c2cd88678",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "preprints/tao_clock_audit/sections/versions.tex",
+        "exists": true,
+        "actual_bytes": 5802,
+        "actual_sha256": "9d72c924273f49dd4bc97c17b740967b4b69acdf0a434cf732427baa20ab6ef5",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "preprints/tao_clock_audit/certificates/check_finite.py",
+        "exists": true,
+        "actual_bytes": 14234,
+        "actual_sha256": "a0124b3de952e2ff77f2b2dc842370b0ec333c94c1fbd526ad5d5ca976562295",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "preprints/tao_clock_audit/proof_registry.json",
+        "exists": true,
+        "actual_bytes": 3730,
+        "actual_sha256": "288e87d56c4f17092d726c0d640d20f6e0c4cf3a709ea5b207a40ba517598c82",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "preprints/tao_clock_audit/source_manifest.json",
+        "exists": true,
+        "actual_bytes": 3723,
+        "actual_sha256": "5cf1abe5efeb4d2489d72cafc92aca2f09ef3033967657924db1c2b408e83d9a",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "preprints/tao_clock_audit/MANIFEST.json",
+        "exists": true,
+        "actual_bytes": 2045,
+        "actual_sha256": "1eb36dfa584dc49797c511b011c461828443ca2594dc5f063fd2b07d4e33f664",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "preprints/tao_clock_audit/output/pdf/tao_clock_audit.pdf",
+        "exists": true,
+        "actual_bytes": 462716,
+        "actual_sha256": "cfb0c07de2952f4c9e4ce44cf5828398601dd6c6ae09d77a60a332771052f919",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "preprints/tao_clock_audit/audit/v7_family_20260904/visual_review.json",
+        "exists": true,
+        "actual_bytes": 5611,
+        "actual_sha256": "1e5c27b4914e38c106fbc2a5dc832b11b32be1fa10b396a63f55ee0ad0f3b140",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "preprints/tao_clock_audit/audit/v7_family_20260904/local_receipt.json",
+        "exists": true,
+        "actual_bytes": 5650,
+        "actual_sha256": "1fe7418bd451a55bfb06d14186804f5a637ce5df3425b4cc464b1f2e571a64cf",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "overleaf/sync_20260904/tao_v7_family_remote_receipt.json",
+        "exists": true,
+        "actual_bytes": 3538,
+        "actual_sha256": "f971c1eee06e4ccb86d3e78d8ab4405a1869df41f923eccc4879ba03046f91d9",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      },
+      {
+        "path": "state/tao_v7_topic_route.json",
+        "exists": true,
+        "actual_bytes": 3585,
+        "actual_sha256": "8f1736f32a2fef4bed3533ccecb6bc2999e50144c8434d796e6a3695bf16af15",
+        "expected_bytes_match": true,
+        "expected_sha256_match": true
+      }
+    ]
+  },
+  "additional_identity_checks": {
+    "portable_manifest": {
+      "path": "preprints/tao_clock_audit/MANIFEST.json",
+      "root": "preprints/tao_clock_audit",
+      "files_checked": 12,
+      "all_bytes_and_sha256_match": true
+    },
+    "local_receipt_outputs": {
+      "receipt": "preprints/tao_clock_audit/audit/v7_family_20260904/local_receipt.json",
+      "all_bytes_and_sha256_match": true,
+      "files": [
+        {
+          "path": "preprints/tao_clock_audit/audit/v7_family_20260904/portable_verify.txt",
+          "bytes": 2074,
+          "sha256": "1812cc9fbd781c0edadf5b8d3f16e396aeefcdcd62daf145f84103818c0757d7"
+        },
+        {
+          "path": "preprints/tao_clock_audit/audit/v7_family_20260904/pdflatex_1.txt",
+          "bytes": 9648,
+          "sha256": "d5b2d055f9f32e3e03359482dea7581bd1b613e212ab2d1099aa7bc91f0d9fda"
+        },
+        {
+          "path": "preprints/tao_clock_audit/audit/v7_family_20260904/pdflatex_2.txt",
+          "bytes": 9212,
+          "sha256": "6f3edb92c021179d93e9dacefac36cf5510358faaa40bc02e92f03b400fcd2c8"
+        },
+        {
+          "path": "preprints/tao_clock_audit/audit/v7_family_20260904/pdflatex_3.txt",
+          "bytes": 9212,
+          "sha256": "6f3edb92c021179d93e9dacefac36cf5510358faaa40bc02e92f03b400fcd2c8"
+        }
+      ],
+      "observed_saved_results": "portable_verify.txt parses as PASS, 12 source files, 50 TeX labels, 15 proof records and finite certificate PASS; final saved TeX transcript states 16 pages and 462716 bytes. These are preserved execution evidence, not executions by this recovery task."
+    },
+    "local_upload_inputs": {
+      "receipt": "overleaf/sync_20260904/tao_v7_family_remote_receipt.json",
+      "local_root": "overleaf/sync_20260904/canonical_project",
+      "files_checked": 10,
+      "all_bytes_and_sha256_match": true,
+      "tao_entry_sha256": "6394c3a9ae16ebb24e48f04698af73acad63698984d55ceb654b02280d27f581",
+      "boundary": "Local staged input identity only; no remote file hashes retrieved."
+    }
+  },
+  "primary_source": {
+    "source_id": "SRC-COL-000005",
+    "path": "C:/Users/LOCAL_USER/Documents/arxiv_latex/library/collatz_reconstruction/latex/1909.03562v7/collatz.tex",
+    "actual_bytes": 164932,
+    "actual_sha256": "bfbc39432d4084a276416cb019a592003c868fa32f18e2f90028ac325ae5c19d",
+    "checkpoint_hash_match": true,
+    "source_manifest_hash_match": true,
+    "directly_read_lines": [
+      "310-339",
+      "535-593"
+    ],
+    "actual_labels": {
+      "first_passage_proposition": "transport",
+      "first_passage_failure": "fail",
+      "first_passage_tv": "tv",
+      "fixed_threshold_theorem": "main-alt"
+    },
+    "observations": "Source lines 326-335 state first-passage stabilization at alpha=1.001, failure O(x^-c) and unhalved-TV O((log x)^-c). Lines 539-546 give the already existing quantitative orbit-minimum theorem. These are the cited inputs/boundary, not newly proved here.",
+    "source_registry_record_independently_reaudited": false
+  },
+  "claim_and_morphism_checks": [
+    {
+      "id": "CLM-COL-000187",
+      "record_path": "state/claims.jsonl",
+      "record_line": 188,
+      "matching_records": 1,
+      "proof_path": "preprints/tao_clock_audit/sections/consequences.tex",
+      "tex_label": "cor:limit",
+      "actual_label_line": 70,
+      "label_occurrences": 1,
+      "proof_lines": "90-124",
+      "proof_registry_id": "PC-08",
+      "statement_and_proof_locator_consistent": true
+    },
+    {
+      "id": "CLM-COL-000188",
+      "record_path": "state/claims.jsonl",
+      "record_line": 189,
+      "matching_records": 1,
+      "proof_path": "preprints/tao_clock_audit/sections/consequences.tex",
+      "tex_label": "cor:joint-entry",
+      "actual_label_line": 134,
+      "label_occurrences": 1,
+      "proof_lines": "151-170",
+      "proof_registry_id": "PC-15",
+      "statement_and_proof_locator_consistent": true
+    },
+    {
+      "id": "MOR-COL-000067",
+      "record_path": "state/morphisms.jsonl",
+      "record_line": 68,
+      "matching_records": 1,
+      "proof_path": "preprints/tao_clock_audit/sections/consequences.tex",
+      "tex_label": "cor:joint-entry",
+      "actual_label_line": 134,
+      "label_occurrences": 1,
+      "definition_lines": "154-155",
+      "inverse_and_isometry_lines": "157-163",
+      "claim_ref": "CLM-COL-000188",
+      "statement_and_proof_locator_consistent": true
+    }
+  ],
+  "recovered_mathematical_scope": {
+    "baseline": "Tao V7 Proposition 1.11; V5 comparison is audit history, not the main contribution.",
+    "common_base": "Fix b>=s_* and alpha=1001/1000; t_j=b^(alpha^j); use the same inputs mu_(t_(j+1)) for every real x>=1.",
+    "first_entry_family": "K_x mu_(t_(j+1)) converges on E_x=(positive odds<=x) union {dagger}. The unhalved l1 error is at most L_c(log t_j)^(-c), uniformly for 1<=x<=t_j, where L_c=B'/(1-alpha^(-c)).",
+    "compatibility": "K_x lambda_y^infinity=lambda_x^infinity for every 1<=x<=y; thresholds need not belong to the scale sequence.",
+    "failure_tail": "For x>=b, lambda_x^infinity(dagger)<=B*x^(-c/alpha)+L_c*alpha^c*(log x)^(-c).",
+    "finite_joint_laws": "For any finite ordered thresholds x_1<=...<=x_r, r>=1, J(z)=(p_x1(z),...,p_xr(z)) is a bijection from E_xr to compatible tuples, with last-coordinate inverse and singleton fibres. Its pushforward is an l1 isometry; joint convergence has the same bound as the largest-threshold law, with no factor in r.",
+    "phase_boundary": "Changing b to b^(alpha^k) for k>=0 removes a finite prefix and preserves the family. Equality for arbitrary different bases is not established.",
+    "nonclaims": [
+      "No stronger quantitative orbit-minimum theorem; that result remains Tao's Theorem 3.1.",
+      "No independent reproof or formalization of the full Fourier-renewal chain.",
+      "No finite certificate proves analytic convergence; saved finite checks test exact finite algebra.",
+      "No arbitrary-base independence, dynamical invariant law, Collatz convergence, or literature-priority claim."
+    ],
+    "reading_boundary": "Directly checked the corollary statements and proofs, nested-passage/pushforward definitions and supporting source loci for recovery. This receipt does not replace a complete independent mathematical proof audit."
+  },
+  "current_state_snapshot": [
+    {
+      "path": "state/project_state.json",
+      "bytes": 22134,
+      "sha256": "4e4b7508238a80a22b4e9b470adf54c931c96599777a37b50550dd6df52b062c"
+    },
+    {
+      "path": "state/tao_preprint_current.json",
+      "bytes": 3427,
+      "sha256": "0114285fafd5b7b9e7007cad99c1a25965538007345246066aeac25bcf2fe3d0"
+    },
+    {
+      "path": "state/overleaf_current.json",
+      "bytes": 2921,
+      "sha256": "4e7b0288e47f8f65ada37e37e87db35767d68a6c123902348ddb8c869d292c5d"
+    },
+    {
+      "path": "state/claims.jsonl",
+      "bytes": 239716,
+      "sha256": "61548ebb832c04402c2838a88c69cb079af743e5b14ced063c79da83275b5614"
+    },
+    {
+      "path": "state/morphisms.jsonl",
+      "bytes": 115161,
+      "sha256": "33a0556ff5b1a43ed52178cf3a8185046777add8fee3b47d94efd49a6dce0e13"
+    }
+  ],
+  "remote_receipt_consistency": {
+    "receipt": "overleaf/sync_20260904/tao_v7_family_remote_receipt.json",
+    "status": "PASS_local_state_matches_saved_remote_receipt",
+    "canonical_project_id": "6a91f06e408dd545780c660f",
+    "entrypoint": "tao_preprint.tex",
+    "build_id": "1a06ce652c4-7d0760e256afa889",
+    "pages": 16,
+    "errors": 0,
+    "warnings": 0,
+    "checked_equalities": [
+      "project canonical URL",
+      "project latest receipt pointer",
+      "Tao canonical project ID",
+      "Overleaf project ID",
+      "Tao active entrypoint",
+      "Overleaf active document and Tao entrypoint",
+      "Tao build ID",
+      "Overleaf id and build_id",
+      "page counts",
+      "error counts",
+      "warning counts",
+      "local PDF hash",
+      "project delivered entry hash"
+    ],
+    "current_active_local_tex": "preprints/tao_clock_audit/main.tex",
+    "current_active_local_tex_hash_matches": true,
+    "remote_UI_independently_verified_by_this_task": false,
+    "remote_hashes_or_pdf_byte_identity_verified": false,
+    "boundary": "This task only checks agreement with the saved remote receipt. Remote UI re-verification belongs to the root agent; the receipt itself limits its evidence to UI-observed compile, diagnostics, page count and displayed PDF text."
+  },
+  "recovered_next_action": {
+    "exact_checkpoint_and_project_next_action": "Return to source-version and raw-coverage reconciliation for the affine-packet corpus, then the independently certified CRT synchronization findings. Do not infer pending corrections have reached either workbench manuscript.",
+    "route": "state/affine_packet_current.json",
+    "initial_scope": "Reconcile affine raw-export coverage and antecedent PDF versions against direct content. Preserve the current V7-based Tao preprint and canonical single Overleaf project.",
+    "pending_upload_for_this_checkpoint": false,
+    "action_executed_by_this_task": false
+  },
+  "mismatches_and_caveats": [
+    {
+      "type": "stale_downstream_route_note_detected_and_corrected",
+      "path": "state/affine_packet_current.json",
+      "detail": "The initially read 14:16 checkpoint listed two absent Conway manifestations. Direct existence checks found the named PDF present and only the historical zbMATH JSON absent. The root agent corrected the live state during this recovery task. A direct reread confirms the missing-source list now contains only the JSON and the next action records the restored PDF. This recovery task itself did not edit state.",
+      "corrected_live_state_sha256": "89e44fb8b844dd3a8c2ded231742eaff08ba505d3b81ff6f3358abc1bd12001f",
+      "corrected_live_next_action": "Reconcile affine raw-export coverage and antecedent PDF versions against direct content; recover the remaining historical Conway zbMATH JSON snapshot through evidenced source routes. The exact registered Conway PDF has been restored. The global corpus goal remains active.",
+      "linked_source_recovery_receipt": "qa/CONWAY-SRC-COL-000024-RECOVERY-20260904.json",
+      "correction_directly_rechecked_utc": "2026-09-04T15:02:53Z",
+      "pdf_path": "tmp/source_inspection_conway_1972_20260826/conway_1972_unpredictable_iterations_ams2010_reprint_inspection.pdf",
+      "pdf_exists": true,
+      "pdf_bytes": 172046,
+      "pdf_sha256": "b8cb28578dd2b125235c827e9b4e37e0a1ef0252c83da62d40551f6885ca9bf2"
+    },
+    {
+      "type": "chronological_receipt_boundary",
+      "path": "preprints/tao_clock_audit/audit/v7_family_20260904/local_receipt.json",
+      "detail": "The earlier local-build receipt retains visual_status=pending and remote_status=pending. Later hash-pinned visual and remote receipts record completion of those phases. These earlier pending fields are not the current upload state."
+    }
+  ],
+  "global_limitation": {
+    "full_corpus_validator_rerun": false,
+    "known_validation_failure": "Missing historical Conway zbMATH JSON body.",
+    "directly_checked_absent_path": "tmp/source_inspection_conway_1972_20260826/zbmath_document_3526785.json",
+    "exists": false,
+    "bounded_checkpoint_recovery_established": true,
+    "fresh_context_full_corpus_recovery_pass_claimed": false,
+    "whole_corpus_complete": false,
+    "global_goal_complete": false,
+    "meaning": "Recoverability of the bounded Tao checkpoint does not certify complete raw/source coverage, all historical source bodies, either workbench manuscript's pending corrections, or full-corpus release."
+  }
+}

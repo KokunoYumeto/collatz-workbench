@@ -1,0 +1,1330 @@
+\subsection{The fine-scale Fourier and renewal branch}
+
+This subsection reconstructs the branch left open after
+Proposition~\ref{prop:Tao-v7-Prop52-cn-repair}.  The controlling text is the
+version-pinned arXiv v7 source, lines~926--1860
+\cite{Tao2026v7}.  ArXiv v5 and the published paper are comparison
+manifestations, not silent replacements for v7.  Exact source hashes,
+line-level defects, and the proof calculations abbreviated here are recorded
+in the F024 Fourier--renewal audit and the F028 whole-version audit in the
+external QA register.
+
+\begin{sourceissue}[version boundary in the many-triangles estimate]
+\label{sourceissue:Tao-v5-v7-many-triangles}
+ArXiv v5, source lines~1654--1659, and the journal's Lemma~7.9 state the
+unconditional estimate
+\begin{equation}
+\label{eq:Tao-v5-rip}
+ \mathbb E\exp\left(
+ -\sum_{p=1}^{t_{\min(r,R)}}1_W(X_p)
+ +\varepsilon\min(r,R)\right)\le e^\varepsilon.
+\end{equation}
+ArXiv v7, source lines~1660--1665, states only
+\begin{equation}
+\label{eq:Tao-v7-rip}
+ \mathbb E1_{\{r\ge R\}}
+ \exp\left(-\sum_{p=1}^{t_R}1_W(X_p)+\varepsilon R\right)
+ \le e^\varepsilon.
+\end{equation}
+On \(r\ge R\) the integrands agree, but the v7 formula deletes every path
+with \(r<R\); the two statements are not identical.  Moreover, the displayed
+v5/journal induction crosses the first triangle's top after \(t_1\).  On the
+event \(r=1<R\), the left side of \eqref{eq:Tao-v5-rip} stops at \(t_1\), so
+the additional factors used by that induction are absent.  We therefore
+record the stronger statement as printed but do not use it.  The weaker v7
+statement is proved below.
+\end{sourceissue}
+
+\begin{sourceissue}[Section 6 reserve is a substantive version repair]
+\label{sourceissue:Tao-v5-v7-section-six-reserve}
+Write \(a=\log(4/3)\), \(b=\log2\), and
+\[
+ q=\frac{b^2}{4a}=0.4175208154\ldots.
+\]
+The optimized square-root fluctuation cost in Corollary~6.3 is
+\(qC_A^2\log N\).  ArXiv v5 and journal equations~(6.7)--(6.8)
+retain only \(\frac12bC_A^2\log N=0.3465735903\ldots C_A^2\log N\);
+the v5 calculation also drops the factor \(b\) when converting \(2^l\)
+to an exponential.  Its printed size estimate therefore has the wrong
+leading sign.  An explicit family satisfying the broad v5 concentration
+conditions makes one of its natural-number summands exceed \(3^N\); the
+construction and its exact scope are recorded in F028.
+
+V7 uses \(0.99bC_A^2\log N=0.6862157088\ldots C_A^2\log N\), and the
+stopping event supplies precisely that tightened window after enlarging
+\(C_A\).  More generally, a retained coefficient \(\rho\) closes this
+calculation exactly when
+\[
+ \rho>\frac{\log2}{4\log(4/3)}
+ =0.6023552099\ldots.
+\]
+The v5 failure is a defect in the printed proof.  It neither produces two
+colliding coordinate tuples nor proves the separation corollary false by a
+different argument.
+\end{sourceissue}
+
+\begin{proposition}[exact Section 6 reserve boundary]
+\label{prop:Tao-Section6-reserve-repair}
+Put
+\[
+ a=\log(4/3),\qquad b=\log2,\qquad
+ \rho_*=\frac{b}{4a}.
+\]
+Let \(n\ge2\), \(L=\log n\), \(C_A>0\), and let
+\(a_1,\ldots,a_K\) be positive integers satisfying
+\begin{equation}
+\label{eq:Tao-Section6-prefix-lower}
+ a_{[1,j]}\ge2j-C_A(\sqrt{jL}+L)
+ \qquad(1\le j\le K).
+\end{equation}
+If
+\[
+ l=a_{[1,K]}
+ \le\frac{n\log3}{b}-\rho C_A^2L
+\]
+for a fixed \(\rho>\rho_*\), then, after first choosing \(C_A\)
+sufficiently large in terms of \(\rho-\rho_*\) and then \(n\) sufficiently
+large in terms of \(C_A,\rho\),
+\begin{equation}
+\label{eq:Tao-Section6-Archimedean-separation}
+ \sum_{j=1}^{K}3^{j-1}2^{\,l-a_{[1,j]}}<3^n.
+\end{equation}
+Here
+\[
+ \rho_*=0.6023552099\ldots,\qquad 0.99>\rho_*.
+\]
+
+For the v5 value \(\rho=\frac12\), the universal conclusion
+\eqref{eq:Tao-Section6-Archimedean-separation} is false even on sequences
+satisfying the source's all-interval concentration inequalities.  By
+contrast, on the v7 stopping event \(E_k\cap B_k\), \(C_A\ge600\) gives
+\[
+ a_{[1,k+1]}
+ \le\frac{n\log3}{\log2}-0.99C_A^2\log n.
+\]
+\end{proposition}
+
+\begin{proof}
+From \eqref{eq:Tao-Section6-prefix-lower},
+\[
+\begin{split}
+ S
+ :=\sum_{j=1}^{K}3^{j-1}2^{\,l-a_{[1,j]}}
+ &\ll
+ 3^n e^{-\rho bC_A^2L+bC_AL}
+ \sum_{j\ge1}e^{-aj+bC_A\sqrt{jL}}.
+\end{split}
+\]
+The exact completion of the square is
+\[
+ -aj+bC_A\sqrt{jL}
+ =-a\left(\sqrt j-\frac{bC_A\sqrt L}{2a}\right)^2
+ +\frac{b^2}{4a}C_A^2L.
+\]
+Splitting the sum into unit intervals around its maximum, or comparing it
+with the corresponding Gaussian integral after \(u=\sqrt j\), gives
+\[
+ \sum_{j\ge1}e^{-aj+bC_A\sqrt{jL}}
+ \ll(1+C_A^2L)e^{b^2C_A^2L/(4a)}.
+\]
+The coefficient of \(C_A^2L\) in the resulting exponent is
+\[
+ -\rho b+\frac{b^2}{4a}=-b(\rho-\rho_*).
+\]
+It is strictly negative under the stated hypothesis.  It absorbs first the
+linear \(bC_AL\) term after \(C_A\) is chosen, and then the polynomial factor
+after \(n\) is chosen.  This proves \(S<3^n\).
+
+For the v5 counterexample, set
+\[
+ \lambda=\frac{2a}{b},\qquad \gamma=\lambda^{-2},\qquad
+ J=\lfloor\gamma C_A^2L\rfloor,
+\]
+and, for \(1\le i\le J\), put
+\[
+ d_i=\lfloor\lambda i\rfloor-\lfloor\lambda(i-1)\rfloor,\qquad
+ a_i=2-d_i;
+\]
+put \(d_i=0\) and \(a_i=2\) afterwards.  Thus \(a_i\in\{1,2\}\), and the
+deficit on every interval of length \(r\) is at most \(\lambda r+1\).
+For \(r\le J\), \(\lambda r\le C_A\sqrt{rL}\); for \(r>J\), the entire
+deficit is at most \(C_A\sqrt{rL}+O(1)\).  Hence the source's additional
+\(C_AL\) tolerance makes every printed interval inequality valid.
+
+Let \(D=\lfloor\lambda J\rfloor\).  Choose \(l\), with \(l+D\) even, within
+two of
+\[
+ \frac{n\log3}{b}-\frac12C_A^2L,
+\]
+and put \(K=(l+D)/2\).  For sufficiently large \(n\), \(K\ge J\) and
+\(a_{[1,K]}=2K-D=l\).  The \(j=J\) summand satisfies
+\[
+ \log\frac{3^{J-1}2^{\,l-a_{[1,J]}}}{3^n}
+ =
+ \left(\frac{b^2}{4a}-\frac12b\right)C_A^2L+O(1).
+\]
+The coefficient is
+\[
+ 0.4175208154\ldots-0.3465735903\ldots
+ =0.0709472252\ldots>0,
+\]
+so that single summand eventually exceeds \(3^n\).
+
+Finally put \(T=n\log3/b-C_A^2L\).  On \(B_k\),
+\(a_{[1,k]}\le T<a_{[1,k+1]}\).  The \(i=k,j=k+1\) inequality on \(E_k\)
+and \(a_k\ge1\) yield
+\[
+ a_{[1,k+1]}\le T+1+C_A(\sqrt L+L).
+\]
+For \(n\ge2\), the last overshoot is at most \(6C_AL\), and for
+\(C_A\ge600\) this is at most \(0.01C_A^2L\).  This gives the v7
+\(0.99\)-window.
+\end{proof}
+
+\begin{nonclaim}
+Proposition~\ref{prop:Tao-Section6-reserve-repair} refutes the universal
+Archimedean size assertion in the printed v5 proof, not the separation
+corollary by every possible proof.  The construction supplies no pair of
+colliding tuples.  The coefficient \(0.99\) is convenient rather than
+canonical, and the threshold \(\rho_*\) belongs to this exact
+optimization-and-absorption argument.  No Fourier-decay theorem, main
+theorem, or Collatz endpoint follows from this finite margin calculation.
+\end{nonclaim}
+
+\begin{definition}[uniform lifting and fibre averaging]
+\label{def:Tao-uniform-lift}
+For \(0\le r\le N\), let
+\[
+ L_{r\to N}:\mathbb R^{\mathbb Z/3^r\mathbb Z}
+ \longrightarrow\mathbb R^{\mathbb Z/3^N\mathbb Z},
+ \qquad
+ (L_{r\to N}\mu)(y)=3^{r-N}\mu(y\bmod3^r).
+\]
+For the reduction map
+\(\pi_{N,r}:\mathbb Z/3^N\mathbb Z\to\mathbb Z/3^r\mathbb Z\), its fibre
+above \(x\) is \(x+3^r\mathbb Z/3^N\mathbb Z\).  On signed measures on the
+larger group define the fibre-constant projection
+\[
+ P_{r,N}:\mathbb R^{\mathbb Z/3^N\mathbb Z}
+ \longrightarrow\mathbb R^{\mathbb Z/3^N\mathbb Z},\qquad
+ (P_{r,N}\nu)(y)=3^{r-N}
+ \sum_{\substack{z\bmod3^N\\z\equiv y\ (3^r)}}\nu(z).
+\]
+\end{definition}
+
+Both maps preserve total mass, \(P_{r,N}\) is an \(\ell^1\)-contraction,
+and \(L_{r\to N}\) is an \(\ell^1\)-isometry.  If \(\mu_N\) is the law of
+Tao's \(N\)-Syracuse random variable, projective consistency says
+\((\pi_{N,r})_*\mu_N=\mu_r\).  Substitution in the two displayed maps gives
+the typed identity
+\begin{equation}
+\label{eq:Tao-lift-projective}
+ P_{r,N}\mu_N=L_{r\to N}\mu_r.
+\end{equation}
+
+\begin{proposition}[exact reduction from characteristic decay to fine-scale mixing]
+\label{prop:Tao-v7-Fourier-to-mixing}
+For every \(q\in\Npos\), let \(\mu_q\) be the law on
+\(\mathbb Z/3^q\mathbb Z\) just defined.  Assume the v7
+characteristic-function estimate, uniformly for
+\(\xi\in\mathbb Z/3^q\mathbb Z\) with \(3\nmid\xi\),
+\begin{equation}
+\label{eq:Tao-v7-characteristic-input}
+ \left|\mathbb E
+ e^{-2\pi i\xi\operatorname{Syrac}(\mathbb Z/3^q\mathbb Z)/3^q}
+ \right|\ll_Bq^{-B}
+\end{equation}
+for every fixed \(B>0\), with an implied constant depending only on \(B\).
+After correcting source line~1051 from \(3^q\)
+to \(3^{q-1}\), and line~1093 from \(m\) to \(k+1\), the source argument
+proves
+\[
+ \|\mu_N-L_{r\to N}\mu_r\|_1\ll_A r^{-A}
+ \qquad(N,r\in\Npos,\ 1\le r\le N).
+\]
+This is exactly Proposition~1.14, including its domain and uniformity.
+\end{proposition}
+
+\begin{proof}
+First suppose \(0.9N\le r\le N\).  Let \(E\) be the source's all-interval
+concentration event.  For a fixed \(k\), let \(E_k\supseteq E\) retain only
+the concentration inequalities involving \(a_1,\ldots,a_{k+1}\).  The source's
+concentration estimate gives
+\(\mathbb P(E_k\setminus E)=O_{A,C_A}(N^{-A-1})\), so the triangle
+inequality permits \(E\) to be replaced by \(E_k\) at the stated error
+scale.  On \(E_k\), stop at the unique \(k\) satisfying
+\[
+ a_{[1,k]}\le \frac{N\log3}{\log2}-C_A^2\log N
+ <a_{[1,k+1]},
+\]
+and condition also on \(a_{[1,k+1]}=l\).  Write \(B_k\) for this stopping
+event and \(C_{k,l}=\{a_{[1,k+1]}=l\}\).  Put
+\[
+ T_N=\frac{N\log3}{\log2}-C_A^2\log N.
+\]
+The \(i=k,j=k+1\) inequality in \(E_k\), together with \(a_k\ge1\), gives
+\[
+ a_{k+1}\le1+C_A(\sqrt{\log N}+\log N),
+\]
+and hence
+\begin{equation}
+\label{eq:Tao-v7-point99-window}
+ l=a_{[1,k+1]}
+ \le T_N+1+C_A(\sqrt{\log N}+\log N)
+ \le\frac{N\log3}{\log2}-0.99C_A^2\log N
+\end{equation}
+after choosing \(C_A\ge600\) and then \(N\ge2\).  The last displayed
+sufficient choice follows from
+\(\sqrt{\log N}\le2\log N\), \(2\le3\log N\), and
+\(6C_A\le0.01C_A^2\).  The prefix and suffix offset maps then have the
+exact typed decomposition
+\[
+ X_N=F_{k+1}(a_{k+1},\ldots,a_1)
+ +3^{k+1}2^{-l}F_{N-k-1}(a_N,\ldots,a_{k+2})
+ \pmod{3^N}.
+\]
+The events \(E_k,B_k,C_{k,l}\) and the prefix offset depend only on
+\(a_1,\ldots,a_{k+1}\), and hence are independent of the suffix variables.
+Let
+\(\eta\in\mathbb Z/3^N\mathbb Z\) be a frequency surviving fibre averaging,
+ so \(\eta\notin3^{N-r}\mathbb Z/3^N\mathbb Z\).  There are unique
+\[
+ 0\le v<N-r,
+ \qquad \bar\eta'\in(\mathbb Z/3^{N-v}\mathbb Z)^\times,
+\]
+where \(v=\nu_3(\eta)\) and
+\[
+ \eta/3^v=2^l\bar\eta'\pmod{3^{N-v}}.
+\]
+Thus the quotient is asserted unique only in the correct quotient ring, not
+as a residue modulo \(3^N\).  Put
+\[
+ q=N-k-v-1.
+\]
+The concentration range for \(k\), together with \(v<N-r\le0.1N\), gives
+\[
+ q\ge0.9N-\frac{N\log3}{2\log2}
+       -O(C_A\sqrt{N\log N})-1\gg N
+\]
+for sufficiently large \(N\).  Let
+\(\eta'_q\in(\mathbb Z/3^q\mathbb Z)^\times\) be the reduction of
+\(\bar\eta'\).  Cancelling the exact powers of three and two in the suffix
+character gives the typed frequency morphism
+\begin{align*}
+ &\mathbb E\exp\left(
+ -\frac{2\pi i\eta\,3^{k+1}2^{-l}
+ F_{N-k-1}(a_N,\ldots,a_{k+2})}{3^N}\right)\\
+ &\qquad=
+ \mathbb E\exp\left(-\frac{2\pi i\eta'_q
+ F_{N-k-1}(a_N,\ldots,a_{k+2})}{3^q}\right)\\
+ &\qquad=
+ \mathbb E\exp\left(-\frac{2\pi i\eta'_q
+ \operatorname{Syrac}(\mathbb Z/3^q\mathbb Z)}{3^q}\right).
+\end{align*}
+The final equality is projective consistency of the offset law from
+\(N-k-1\) to \(q\), and
+\eqref{eq:Tao-v7-characteristic-input} bounds this factor by
+\(O_B(N^{-B})\), uniformly in every surviving frequency and admissible
+\((k,l)\).
+
+Write \(\mathcal E_{r,N;k,l}^2\) for the squared oscillation at this fixed
+pair \((k,l)\).  Fourier inversion, removal of the frequencies divisible by
+\(3^{N-r}\), the preceding suffix bound, and Plancherel give
+\begin{equation}
+\label{eq:Tao-prefix-collision}
+ \mathcal E_{r,N;k,l}^2\ll_B N^{-2B}3^N\sum_y p_y^2,
+\end{equation}
+where, with the source events \(E_k,B_k,C_{k,l}\),
+\[
+ p_y=\mathbb P\bigl(
+ F_{k+1}(a_{k+1},\ldots,a_1)\equiv y\pmod{3^N},
+ E_k\cap B_k\cap C_{k,l}\bigr).
+\]
+Thus \((p_y)_y\) is the unnormalised restricted joint mass, not a
+conditional probability distribution.
+
+For positive coordinates,
+\[
+ F_q(a_1,\ldots,a_q)
+ =\sum_{u=1}^q3^{q-u}2^{-a_{[u,q]}}.
+\]
+The unique term of least 2-adic valuation is
+\(3^{q-1}2^{-a_{[1,q]}}\).  Hence equality of two rational offsets forces
+equality of their total valuation sums.  Subtraction gives equality of the
+two \((q-1)\)-coordinate tails, and induction proves that \(F_q\) has
+singleton fibres on \(\Npos^q\).
+
+Under the fixed-total and concentration conditions, multiplying a congruence
+of two prefix offsets by \(2^l\) gives a congruence modulo \(3^N\) between
+two positive integers.  Their prefix inequalities and
+\eqref{eq:Tao-v7-point99-window} meet the hypotheses of
+Proposition~\ref{prop:Tao-Section6-reserve-repair} with \(\rho=0.99\).
+Hence both positive integers are strictly below \(3^N\).  They are therefore
+equal as integers.  Dividing by \(2^l\) and applying rational injectivity
+proves residue-level separation.
+Thus
+\[
+ 0\le p_y\le2^{-l},\qquad \sum_y p_y\le1,
+\]
+and consequently
+\[
+ 3^N\sum_yp_y^2\le3^N(\max_yp_y)\sum_yp_y
+ \le3^N2^{-l}=N^{O(C_A^2)}.
+\]
+Taking \(B\) sufficiently large in
+\eqref{eq:Tao-v7-characteristic-input} absorbs this precise polynomial and
+closes \eqref{eq:Tao-prefix-collision} with an arbitrary prescribed
+\(N^{-2A-4}\) reserve.  There are \(O_A(N)\) admissible stopping indices
+\(k\), and, from the displayed fixed-total window, \(O_A(\log N)\)
+admissible totals \(l\).  Cauchy--Schwarz converts the squared bound back to
+the fixed-pair \(\ell^1\)-oscillation, and the union bound over these
+\((k,l)\) uses less than the two reserved powers of \(N\).  The complement
+of the all-interval concentration event is \(O_A(N^{-A-1})\) after enlarging
+\(C_A\).  Adding these disjoint fixed-pair contributions proves the
+restricted \(\ell^1\) estimate, rather than silently identifying a
+conditioned estimate with the unconditional one.
+
+For general \(10\le r\le N\), construct
+\(N=n_0>n_1>\cdots>n_t=r\) by setting
+\(n_{i+1}=\max(r,\lceil0.9n_i\rceil)\).  Because every \(n_i\ge10\)
+before termination, this sequence decreases strictly, and every adjacent
+pair is in the proved range.  By \eqref{eq:Tao-lift-projective}, functoriality of the
+lifts, and preservation of the \(\ell^1\)-norm,
+\[
+\begin{aligned}
+ \|\mu_N-L_{r\to N}\mu_r\|_1
+ &\le\sum_{i=0}^{t-1}
+ \|L_{n_i\to N}\mu_{n_i}
+       -L_{n_{i+1}\to N}\mu_{n_{i+1}}\|_1\\
+ &=\sum_{i=0}^{t-1}
+ \|\mu_{n_i}-L_{n_{i+1}\to n_i}\mu_{n_{i+1}}\|_1.
+\end{aligned}
+\]
+Applying the restricted estimate with exponent \(A+1\), and summing the
+geometrically separated levels, gives \(O_A(r^{-A})\).  This supplies the
+lifting sequence implicit in source lines~932--936.  When \(1\le r<10\),
+the triangle inequality gives a bound of two, which is
+\(O_A(r^{-A})\) after enlarging the constant by at most \(2\,9^A\).
+The finitely many \(N\) excluded while proving the restricted large-\(N\)
+estimate are absorbed in the same \(A\)-dependent constant.  These two
+finite-scale clauses are separate from the strictly decreasing chain.
+\end{proof}
+
+For \(d\in\Npos\), \(t\in\mathbb R_{\ge0}\), and \(y\in\mathbb R^d\),
+we use Tao's Gaussian--exponential kernel
+\begin{equation}
+\label{eq:Tao-G-kernel}
+ G_t(y)=
+ \begin{cases}
+  \exp(-\|y\|^2/t)+\exp(-\|y\|),&t>0,\\
+  \exp(-\|y\|),&t=0.
+ \end{cases}
+\end{equation}
+
+\begin{lemma}[the corrected two-dimensional local factor]
+\label{lem:Tao-v7-local-factor}
+In the proof of Tao's Lemma~2.2, the source-line-516 factor is
+\(n^{-d/2}\), not \(n^{-1/2}\).  In particular, let
+\(\mathbf H_1,\mathbf H_2,\ldots\) be iid copies of the holding vector
+\(\mathbf H\in\mathbb Z^2\) of
+Proposition~\ref{prop:Tao-v7-pairing-holding}, put
+\(\mathbf H_{[1,q]}=\sum_{i=1}^q\mathbf H_i\) with the empty sum at
+\(q=0\), and recall \(\mathbb E\mathbf H=(4,16)\).  There exist constants
+\(c,C>0\), depending only on the law of \(\mathbf H\), such that for every
+\(q\in\Nzero\) and \((x,t)\in\mathbb Z^2\),
+\[
+ \mathbb P(\mathbf H_{[1,q]}=(x,t))
+ \le C(q+1)^{-1}G_q(c((x,t)-q(4,16))).
+\]
+\end{lemma}
+
+\begin{proof}
+After the source's contour shift, the Fourier integral contains
+\(e^{-cn|u|^2}\) on a bounded subset of \(\mathbb R^d\).  The change of
+variables \(v=\sqrt n\,u\) gives
+\[
+ \int e^{-cn|u|^2}\,du
+ \le n^{-d/2}\int_{\mathbb R^d}e^{-c|v|^2}\,dv.
+\]
+All remaining source steps preserve this dimension.  Setting \(d=2\)
+gives the displayed factor.
+\end{proof}
+
+\begin{proposition}[pairing, phase, and exact holding vector]
+\label{prop:Tao-v7-pairing-holding}
+Let \(n\in\Npos\), let
+\(\xi\in\mathbb Z/3^n\mathbb Z\) satisfy \(3\nmid\xi\), and define
+\[
+ \chi:\mathbb Z[1/2]\longrightarrow\mathbb C,\qquad
+ \chi(x)=\exp\left(-\frac{2\pi i\xi(x\bmod3^n)}{3^n}\right).
+\]
+Fix \(0<\varepsilon\le e^{-10}\).  For
+\((r,l)\in\Npos\times\mathbb Z\), define the
+signed fractional phase
+\[
+ \theta(r,l)=\left\{
+ \frac{\xi3^{2r-2}(2^{-l+1}\bmod3^n)}{3^n}
+ \right\}\in(-1/2,1/2],
+\]
+and define the typed partition of the strip
+\[
+ B=\{(r,l):1\le r\le\lfloor n/2\rfloor,
+                  |\theta(r,l)|\le\varepsilon\},\qquad
+ W=\bigl(\{1,\ldots,\lfloor n/2\rfloor\}\times\mathbb Z\bigr)\setminus B.
+\]
+Let \((a_i)_{i\ge1}\) be iid with
+\(\mathbb P(a_i=u)=2^{-u}\) for \(u\in\Npos\), and put
+\[
+ S_\chi(m)=\mathbb E\chi\left(
+ \sum_{v=1}^{m}3^{v-1}2^{-\sum_{w=1}^{v}a_w}
+ \right)\qquad(m\in\Nzero),
+\]
+with the empty-sum convention \(S_\chi(0)=1\).
+For independent copies \(a_1,a_2\) of this geometric variable, define
+\[
+ \begin{aligned}
+ f&:\mathbb Z[1/2]\times\{2,3,\ldots\}\longrightarrow\mathbb C,\\
+ f(x,b)&=\mathbb E\!\left[
+ \chi\bigl(x(2^{a_2}+3)\bigr)\mid a_1+a_2=b\right],\\
+ g&:\mathbb Z[1/2]\longrightarrow\mathbb C,\\
+ g(x)&=\mathbb E\chi\bigl(x2^{-a_1}\bigr).
+ \end{aligned}
+\]
+Let \(q=\lfloor n/2\rfloor\),
+\(b_r=a_{2r-1}+a_{2r}\), and
+\(B_r=\sum_{u=1}^rb_u\), with \(B_0=0\).  Then the \(b_r\) are iid with
+\(\mathbb P(b_r=b)=(b-1)2^{-b}\) for \(b\ge2\).  Expectation in the next
+two displays is over this joint Pascal law, and conditioning on the
+\(b_r\) gives the exact formulas
+\[
+ S_\chi(2q)=\mathbb E
+ \prod_{r=1}^qf(3^{2r-2}2^{-B_r},b_r)
+\]
+and
+\[
+ S_\chi(2q+1)=\mathbb E\left[
+ \prod_{r=1}^qf(3^{2r-2}2^{-B_r},b_r)\,
+ g(3^{2q}2^{-B_q})\right].
+\]
+At every white point \((r,l)\),
+\[
+ |f(3^{2r-2}2^{-l},3)|\le e^{-\varepsilon^3}.
+\]
+The occurrences \(b_r=3\) form a renewal process with iid holding vector
+\[
+ \mathbf H=(1,3)+\sum_{i=1}^{R}(1,Q_i),
+ \qquad
+ \mathbb P(R=s)=\frac14\left(\frac34\right)^s
+ \qquad(s\in\Nzero),
+\]
+where \(R\) is independent of the iid \(Q_i\), and the \(Q_i\) have the
+Pascal law conditioned on \(Q_i\ne3\).  This vector
+has exponential tail, full lattice span, and mean \((4,16)\).
+\end{proposition}
+
+\begin{proof}
+The pairing identities follow by conditioning while retaining the random
+odd-\(n\) terminal factor inside the expectation.  Conditional on \(b=3\),
+the fibres \((a_1,a_2)=(1,2),(2,1)\) have equal mass.  Therefore
+\[
+ f(x,3)=\frac{\chi(5x)+\chi(7x)}2
+ =\frac{\chi(5x)}2(1+\chi(2x)).
+\]
+For \(x=3^{2r-2}2^{-l}\), the corrected character identity is
+\(\chi(2x)=e^{-2\pi i\theta(r,l)}\).  Since
+\(\theta(r,l)\in(-1/2,1/2]\),
+\[
+ |f(x,3)|=\cos(\pi\theta(r,l)).
+\]
+The elementary bound
+\(\cos(\pi u)\le e^{-2u^2}\) for \(|u|\le1/2\) gives, at a white point,
+\[
+ |f(x,3)|\le e^{-2\varepsilon^2}\le e^{-\varepsilon^3},
+\]
+where the last inequality uses \(0<\varepsilon\le e^{-10}<2\).
+
+The success probability is \(\mathbb P(b=3)=1/4\), giving the displayed
+failure-before-success representation.  For
+\(k=(k_1,k_2)\in\mathbb R^2\), put
+\(M_Q(k)=\mathbb E e^{k_1+k_2Q}\).  On the open neighbourhood of zero on
+which \(M_Q(k)<\infty\) and \(3M_Q(k)<4\), the normalized moment generating
+function is
+\begin{equation}
+\label{eq:Tao-hold-mgf-corrected}
+ \mathbb E e^{\mathbf H\cdot k}
+ =\sum_{s=0}^\infty\frac14\left(\frac34\right)^s
+ e^{(1,3)\cdot k}M_Q(k)^s
+ =\frac{e^{(1,3)\cdot k}}{4-3M_Q(k)}.
+\end{equation}
+It equals one at \(k=0\) and is finite near zero.  This corrects the
+off-by-one series at source line~1408 and proves the exponential tail.
+The support contains \((1,3),(2,5),(2,7),(2,8)\); its differences generate
+\((0,1)\) and \((1,0)\), so it is contained in no coset of a proper subgroup
+of \(\mathbb Z^2\).  Finally,
+\(\mathbb E Q=13/3\), \(\mathbb ER=3\), and direct substitution gives
+\(\mathbb E\mathbf H=(4,16)\).
+\end{proof}
+
+\begin{proposition}[corrected black-triangle decomposition]
+\label{prop:Tao-v7-black-triangles}
+Retain \(n,\xi,\varepsilon,\theta,B,W\) from
+Proposition~\ref{prop:Tao-v7-pairing-holding}.
+After the forced corrections at v7 lines~1272, 1285--1287, and
+1311--1313, \(B\) is a disjoint union of lattice triangles
+\[
+ \Delta=\{(j,l):j\ge j_\Delta,\ l\le l_\Delta,\
+ (j-j_\Delta)\log9+(l_\Delta-l)\log2\le s_\Delta\}.
+\]
+Here \(j_\Delta\in\Npos\), \(l_\Delta\in\mathbb Z\),
+\(s_\Delta\in\mathbb R_{\ge0}\), and the displayed set is intersected with
+the lattice \(\Npos\times\mathbb Z\).
+With \(\delta=\frac1{10}\log(1/\varepsilon)\), every triangle satisfies
+\[
+ \Delta\subseteq
+ \{(j,l)\in\Npos\times\mathbb Z:j\le n/2-\delta\},
+\]
+and
+distinct triangles have Euclidean distance at least \(\delta\).
+\end{proposition}
+
+\begin{proof}
+The exact recurrences are
+\[
+ \theta(j+1,l)\equiv9\theta(j,l),\qquad
+ \theta(j,l-1)\equiv2\theta(j,l)\pmod{\mathbb Z}.
+\]
+Call a point weakly black when \(|\theta|\le1/100\).  The recurrences give
+three exact propagation rules.  First, if \((j,l)\) is weakly black and
+\((j+1,l)\) is black, then \(|9\theta(j,l)|\le9/100<1/2\), so there is no
+wrap and \(|\theta(j,l)|=|\theta(j+1,l)|/9\le\varepsilon\).  The same
+argument with \(|2\theta(j,l)|\le2/100<1/2\) applies when \((j,l-1)\) is
+black.  Second, if \((j+1,l)\) and \((j,l-1)\) are weakly black, then
+\[
+ |\theta(j,l)|\le |\theta(j+1,l)|+4|\theta(j,l-1)|\le5/100;
+\]
+now \(|2\theta(j,l)|\le1/10<1/2\), so the doubling recurrence has no wrap
+and \(|\theta(j,l)|=|\theta(j,l-1)|/2\le1/200\).  Third, if
+\((j-1,l)\) and \((j,l-1)\) are weakly black, the factor-nine recurrence
+first gives \(|\theta(j,l)|\le9/100\); hence
+\(|2\theta(j,l)|\le18/100<1/2\), and doubling again gives
+\(|\theta(j,l)|\le1/200\).
+
+If \((j,l)\) is black, multiplying its phase to the primitive residue at
+level \(3^n\) gives
+\[
+ 3^{n+1-2j}\varepsilon\ge\frac13.
+\]
+Taking logarithms gives
+\[
+ j\le \frac n2+1-\frac{\log(1/\varepsilon)}{2\log3}
+ \le \frac n2-\frac1{10}\log(1/\varepsilon)
+\]
+for \(\varepsilon\le e^{-10}\).  There is no infinite upward black run:
+if \((j,l')\) were black for every \(l'\ge l\), repeated nonwrapping
+doubling would give
+\(|\theta(j,l')|\le2^{l-l'}\varepsilon\), contradicting the same primitive
+residue lower bound as \(l'\to\infty\).
+
+Starting from a black \((j,l)\), let \(l_*\ge l\) be the unique top of its
+consecutive black vertical run, and let \(j_*\le j\) be the unique left end
+of the consecutive black run on row \(l_*\).  Existence and uniqueness follow
+from the preceding no-infinite-run statement and the lower boundary
+\(j=1\).  Because \(2j_*-2<n\), while neither \(\xi\) nor \(2\) is
+divisible by three, the defining rational phase is not integral; hence
+\(\theta(j_*,l_*)\ne0\).  Write
+\(|\theta(j_*,l_*)|=\varepsilon e^{-s_*}\).  On the corrected domain
+\(j'\ge j_*\), \(l'\le l_*\), multiplication by
+\(9^{j'-j_*}2^{l_*-l'}\) gives
+\[
+ |\theta(j',l')|\le
+ \varepsilon e^{-s_*+(j'-j_*)\log9+(l_*-l')\log2},
+\]
+with equality before the right side reaches \(1/2\).  Thus all points of the
+anchored triangle are black.  If an exterior Case~1 point is within
+\(\delta\), and
+\(X=-s_*+(j'-j_*)\log9+(l_*-l')\log2\), then
+\[
+ \varepsilon<\varepsilon e^X
+ \le\varepsilon^{1-(\log9+\log2)/10}<\tfrac12,
+\]
+so \(|\theta(j',l')|=\varepsilon e^X>\varepsilon\).  The corrected Case~2
+argument is as follows.  If \(l'>l_*\) and a nearby exterior point
+\((j',l')\) were black, Euclidean distance at most \(\delta\) gives
+\[
+ 0<(l'-l_*)\log2\le\delta\log2,
+ \qquad
+ (j'-j_*)\log9\le s_*+\delta\log9.
+\]
+Exact downward phase transport then gives
+\[
+ |\theta(j',l_*+1)|
+ \le\varepsilon^{1-\log2/10}<1/100.
+\]
+When \(j'>j\), the anchored phase bound also gives
+\[
+ |\theta(j'-1,l_*)|
+ \le\varepsilon^{1-\log9/10}<1/100.
+\]
+The second propagation rule iterates left from \(j'-1\) to \(j\).  If
+\(j'=j\), \((j,l_*+1)\) is already the weakly black point supplied by the
+first display.  Thus in either case \((j,l_*+1)\) is weakly black, and
+blackness of \((j,l_*)\) makes it black by the first rule, contradicting the
+definition of \(l_*\).  When \(j'<j\), the black row from \(j_*\) through
+\(j\) and the third rule instead propagate weak blackness right from
+\((j',l_*+1)\) to \((j,l_*+1)\), giving the same contradiction.
+
+In Case~3, \(j'<j_*\).  The same distance condition gives
+\[
+ |l'-l_*|\log2\le s_*+\delta\log2,
+ \qquad 0<(j_*-j')\log9\le\delta\log9.
+\]
+Assuming \((j',l')\) black, exact horizontal phase transport gives
+\[
+ |\theta(j_*-1,l')|
+ \le\varepsilon^{1-\log9/10}<1/100.
+\]
+If \(l'\ge l_*\), vertical transport gives the explicit bound
+\[
+ |\theta(j_*-1,l_*)|
+ \le\varepsilon^{1-(\log9+\log2)/10}<1/100.
+\]
+If \(l'<l_*\), the anchored bound gives
+\(|\theta(j_*,l'+1)|\le\varepsilon^{1-\log2/10}<1/100\), and the second
+rule propagates upward until \((j_*-1,l_*)\) is weakly black.  In either
+subcase, the first propagation rule and blackness of \((j_*,l_*)\) make
+\((j_*-1,l_*)\) black, contradicting the defining minimality of \(j_*\).
+
+Hence every exterior point within \(\delta\) is white.  Since
+\(\delta\ge1\), the black horizontal and vertical paths defining the anchor
+cannot cross the boundary: the first black path point outside the triangle
+would be an exterior black point within distance one.  Thus every original
+black point lies in its anchored triangle.
+
+Conversely, every point of this triangle reconstructs the same anchor.
+For each column occurring in the triangle, the entire vertical segment up to
+row \(l_*\) is black and the point at height \(l_*+1\) is an exterior collar
+point, hence white.  On row \(l_*\), the entire horizontal segment back to
+\(j_*\) is black and, unless \(j_*=1\), the point at \(j_*-1\) is an
+exterior collar point, hence white.  Therefore its reconstructed pair is
+exactly \((j_*,l_*)\).  The anchored triangles partition \(B\), and the
+white collar makes distinct members \(\delta\)-separated.
+
+Confinement of the entire abstract triangle follows directly from the
+anchor denominator, without presupposing confinement of its lattice points.
+The nonzero signed phase satisfies
+\[
+ |\theta(j_*,l_*)|\ge3^{2j_*-2-n}.
+\]
+Since its other expression is \(\varepsilon e^{-s_*}\),
+\[
+ s_*\le(n-2j_*+2)\log3-\log(1/\varepsilon).
+\]
+Consequently its real right tip satisfies
+\[
+ j_*+\frac{s_*}{\log9}
+ \le\frac n2+1-\frac{\log(1/\varepsilon)}{2\log3}
+ \le\frac n2-\delta.
+\]
+Every point of the triangle lies weakly to the left of that tip, proving the
+asserted confinement and, in particular, the real-tip bound needed later.
+\end{proof}
+
+\begin{lemma}[first-passage Green kernel]
+\label{lem:Tao-v7-first-passage-repaired}
+Let \((\mathbf H_i)_{i\ge1}\) be iid copies of \(\mathbf H\), let
+\(\mathbf V_q=\sum_{i=1}^q\mathbf H_i\), and set
+\(\mathbf V_0=(0,0)\).  For \(s\in\Nzero\), put
+\(\kappa_s=\inf\{q\in\Npos:(\mathbf V_q)_2>s\}\).  For every
+\(j,l\in\mathbb Z\) with \(l>s\),
+\[
+ \mathbb P(\mathbf V_{\kappa_s}=(j,l))
+ \ll\frac{e^{-c(l-s)}}{\sqrt{1+s}}
+ G_{1+s}(c(j-s/4)).
+\]
+Moreover, there is an absolute \(C\ge1\) such that the following typed
+post-passage estimate holds.  Let \(m\in\Npos\) be sufficiently large,
+let \(s,p\in\Nzero\), let \(r_0\in[1,\infty)\), and let \(h>0\).  Suppose
+\[
+ s>\frac{m}{\log^2m},\qquad 0\le p\le m^{0.1},\qquad
+ 4r_0\le h\le m^{0.4},
+\]
+and let \(\Sigma\subset\mathbb Z\) have pairwise spacing at least \(h\).
+Then, for all sufficiently large \(m\),
+\[
+ \mathbb P\!\left(
+ \operatorname{dist}((\mathbf V_{\kappa_s+p})_1,\Sigma)\le r_0
+ \right)\le C\frac {r_0}h.
+\]
+\end{lemma}
+
+\begin{proof}
+Set
+\(U(x,t)=\sum_{q\ge0}\mathbb P(\mathbf V_q=(x,t))\) for
+\((x,t)\in\mathbb Z\times\Nzero\).  By
+Lemma~\ref{lem:Tao-v7-local-factor},
+\[
+ \mathbb P(\mathbf V_q=(x,t))
+ \ll(q+1)^{-1}G_q(c((x,t)-q(4,16))).
+\]
+Writing \(z=x-t/4\), the invertible coordinate identity
+\[
+ (x-4q,t-16q)=\left(z+\frac{t-16q}{4},t-16q\right)
+\]
+preserves norms up to two absolute constants.  Put
+\(\langle t\rangle=1+t\), and, after harmlessly weakening the denominator
+\(q\) in the Gaussian to \(q+1\), set
+\[
+ A_q(z,t)=\frac1{q+1}
+ \exp\left(-c\frac{z^2+(t-16q)^2}{q+1}\right).
+\]
+In the central range the complete Gaussian calculation is
+\[
+ \sum_{t/2\le16q\le2t}A_q(z,t)
+ \ll \langle t\rangle^{-1/2}
+ e^{-c'z^2/\langle t\rangle}.
+\]
+Indeed \(q+1\asymp\langle t\rangle\) there and the discrete Gaussian in
+\(t-16q\) has mass \(O(\sqrt{\langle t\rangle})\).  In the lower range,
+\(|t-16q|\gg t\) and \(q+1\ll\langle t\rangle\); in the upper range use
+\[
+ (q+1)+\frac{z^2}{q+1}
+ \gg \langle t\rangle+\min\left(
+ \frac{z^2}{\langle t\rangle},|z|\right).
+\]
+Geometric summation therefore gives, respectively,
+\[
+ \sum_{16q<t/2}A_q(z,t)
+ \ll\langle t\rangle^{-1/2}e^{-c'z^2/\langle t\rangle},
+ \qquad
+ \sum_{16q>2t}A_q(z,t)
+ \ll\langle t\rangle^{-1/2}
+ \left(e^{-c'z^2/\langle t\rangle}+e^{-c'|z|}\right).
+\]
+The exponential half of \(G_q\) is even smaller, since
+\[
+ \sum_{q\ge0}\frac{e^{-c(|z|+|t-16q|)}}{q+1}
+ \ll\langle t\rangle^{-1/2}e^{-c'|z|}.
+\]
+The cases \(t=0,1\) are absorbed by changing the absolute constants.  Thus
+\[
+ U(x,t)\ll(1+t)^{-1/2}G_{1+t}(c'(x-t/4)).
+\]
+
+At first passage the final vertical increment is at least \(l-s\).  Using
+its exponential tail and independence from the earlier increments gives
+\[
+ \mathbb P(\mathbf V_{\kappa_s}=(j,l))
+ \ll e^{-c(l-s)}\sum_{r=0}^s\sum_{u\ge1}
+ e^{-c(r+u)}U(j-u,s-r).
+\]
+For
+\[
+ K_t(y)=(1+t)^{-1/2}
+ \left(e^{-c y^2/(1+t)}+e^{-c|y|}\right),
+\]
+the two needed convolution inequalities, with absolute
+\(a,c_1,c_2>0\), are
+\begin{align}
+ \sum_{r=0}^{s}e^{-ar}K_{s-r}(x+r/4)
+ &\ll K_s(c_1x),\label{eq:Tao-vertical-convolution}\\
+ \sum_{u\ge1}e^{-au}K_s(x-u)
+ &\ll K_s(c_2x).\label{eq:Tao-horizontal-convolution}
+\end{align}
+For \eqref{eq:Tao-vertical-convolution}, split at \(r=s/2\).  In the first
+part the two variances are comparable and
+\[
+ ar+c\frac{(x+r/4)^2}{1+s-r}
+ \ge c'\frac{x^2}{1+s}+c'r;
+\]
+in the second part the factor \(e^{-ar}\), together with the retained
+\(x+r/4\) decay, obeys the explicit bound
+\[
+ ar+c\frac{(x+r/4)^2}{1+s-r}
+ \ge c'\left(s+\min\left(\frac{x^2}{1+s},|x|\right)\right)
+ \qquad(r>s/2).
+\]
+Since
+\(\sum_{r>s/2}(1+s-r)^{-1/2}e^{-c's}\ll
+(1+s)^{-1/2}\), this absorbs the lost square-root prefactor.  For the
+exponential-kernel half, the corresponding inequalities are
+\[
+ ar+c|x+r/4|\ge c'(|x|+r)\quad(r\le s/2),
+ \qquad
+ ar+c|x+r/4|\ge c'(|x|+s)\quad(r>s/2).
+\]
+For \eqref{eq:Tao-horizontal-convolution}, split at \(u=|x|/2\).  In the
+first range \(|x-u|\ge|x|/2\) whenever \(x\ge0\), while for \(x<0\) it
+holds for every \(u\ge1\).  In the complementary range the geometric sum
+of \(e^{-au}\) is \(O(e^{-a|x|/2})\).  These statements apply separately
+to the Gaussian and exponential halves of \(K_s\) and prove the second
+displayed inequality.  In the actual summand \(U(j-u,s-r)\), the kernel
+coordinate is \(j-s/4-u+r/4\).  Thus first substitute
+\(x=j-s/4-u\) in \eqref{eq:Tao-vertical-convolution}; after that summation,
+substitute \(x=j-s/4\) in
+\eqref{eq:Tao-horizontal-convolution}.  This proves the first-passage display and
+fills the unexpanded calculation at source lines~1457--1463.
+
+For the post-passage assertion, first sum the displayed first-passage bound
+over its vertical coordinate.  The horizontal mass function is bounded by
+\(C K_s(x-s/4)\), where
+\[
+ K_s(y)=(1+s)^{-1/2}
+ \left(e^{-c y^2/(1+s)}+e^{-c|y|}\right).
+\]
+If \(\Sigma'\) is \(h\)-separated and \(r_0\le h/4\), the intervals of
+radius \(r_0\) about its points are disjoint.  Since \(r_0\ge1\), direct
+summation of the Gaussian and exponential pieces gives
+\[
+ \sum_{\operatorname{dist}(x,\Sigma')\le r_0}K_s(x-s/4)
+ \le C\left(\frac {r_0}{\sqrt{1+s}}+\frac {r_0}h\right).
+\]
+Here \(h\le m^{0.4}=o(\sqrt{s})\), because
+\(s>m/\log^2m\), so the right side is at most \(Cr_0/h\).  Conditional on the
+sum of the \(p\) later horizontal increments, the target set is merely a
+translate of \(\Sigma\) and has the same spacing.  Averaging the uniform
+bound proves the assertion.  The condition \(h\le m^{0.4}\) is essential;
+without it a singleton at the kernel peak would contradict a bare
+\(O(r_0/h)\) claim.
+\end{proof}
+
+\begin{proposition}[repaired renewal monotonicity]
+\label{prop:Tao-v7-renewal-monotonicity}
+Retain \(n,\xi\) and the black--white partition from
+Proposition~\ref{prop:Tao-v7-black-triangles}.  There is an absolute
+\(\varepsilon_0>0\), fixed in the exit-rectangle calculation below, and we
+assume \(0<\varepsilon\le\varepsilon_0\).  Extend \(1_W\) by zero off
+\([n/2]\times\mathbb Z\).  For \(x\in\mathbb Z^2\), let
+\[
+ Q(x)=\mathbb E_x\prod_{q\ge0}e^{-\varepsilon^31_W(X_q)},
+ \qquad X_q=x+\mathbf V_q,
+\]
+and define
+\[
+ Q_m=\sup_{\substack{j\in\Npos,\ j\ge\lfloor n/2\rfloor-m\\l\in\mathbb Z}}
+ \max(\lfloor n/2\rfloor-j,1)^A Q(j,l).
+\]
+For every fixed sufficiently large \(A\), there is an explicit finite
+threshold \(C_{A,\varepsilon}\) such that
+\[
+ Q_m\le Q_{m-1}\qquad
+ (m\in\Npos,\ C_{A,\varepsilon}\le m\le\lfloor n/2\rfloor).
+\]
+The proof uses the weaker v7 Lemma~7.9 and does not assume
+\eqref{eq:Tao-v5-rip}.
+\end{proposition}
+
+\begin{proof}
+If \(m=\lfloor n/2\rfloor\), the restrictions defining \(Q_m\) and
+\(Q_{m-1}\) both reduce to \(j\in\Npos\), so the asserted inequality is an
+equality.  Hence suppose \(m\le\lfloor n/2\rfloor-1\).  It then suffices to
+treat the genuine boundary row
+\(j=\lfloor n/2\rfloor-m\in\Npos\).
+If \((j,l)\) is white, the recursion
+\[
+ Q(j,l)=e^{-\varepsilon^3}\mathbb E Q((j,l)+\mathbf H)
+\]
+and
+\[
+ \max(m-r,1)^{-1}\le m^{-1}
+ \exp\left(Cr\frac{\log m}{m}\right)
+\]
+show that the immediate white factor absorbs the horizontal exponential
+moment for sufficiently large \(m\).  This is source Case~1.
+
+Suppose next that \((j,l)\) lies at depth
+\(0\le s\le m/\log^2m\) in a black triangle.  Stop at \(\kappa_s\) and
+apply the recursion once more than the source does:
+\[
+ Q(j,l)=\mathbb E\left[
+ e^{-\varepsilon^3\sum_{q=0}^{\kappa_s}1_W(X_q)}
+ Q(X_{\kappa_s+1})\right].
+\]
+The definition of \(Q_{m-1}\) now applies at the terminal point.  With
+\(\lambda=CA\log m/m\),
+\[
+ Q(j,l)\le m^{-A}Q_{m-1}
+ \mathbb E\left[e^{-\varepsilon^31_W(X_{\kappa_s})}
+ e^{\lambda(\mathbf V_{\kappa_s+1})_1}\right].
+\]
+Lemma~\ref{lem:Tao-v7-first-passage-repaired} gives
+\(\mathbb E e^{\lambda(\mathbf V_{\kappa_s})_1}
+=1+O_A(1/\log m)\).  We now prove, rather than assume, the uniform exit
+probability.  Summing that lemma first over
+\(l-s>M_v\), and then over
+\(|j-s/4|>M_h\sqrt{1+s}\), gives
+\[
+ \mathbb P\left(
+  1\le(\mathbf V_{\kappa_s})_2-s\le M_v,
+  \ |(\mathbf V_{\kappa_s})_1-s/4|
+       \le M_h\sqrt{1+s}
+ \right)\ge\frac12
+\]
+once the two absolute integers \(M_v,M_h\) are chosen sufficiently large.
+Write \(J=(\mathbf V_{\kappa_s})_1\) and
+\(L=(\mathbf V_{\kappa_s})_2\).  In this rectangle
+\(1\le L-s\le M_v\), so the exit point is above the top row by at most
+\(M_v\).  Horizontally,
+\[
+ j+J-j_\Delta\ge \frac s4-M_h\sqrt{1+s}\ge-C_-(M_h),
+\]
+while the triangle inequality and \(J\le s/4+M_h\sqrt{1+s}\) give
+\begin{align*}
+ (j+J-j_\Delta)\log9
+ &\le s_\Delta-s\log2+\frac{s\log9}{4}
+       +M_h\log9\sqrt{1+s}\\
+ &\le s_\Delta+C_+(M_h).
+\end{align*}
+The last constants are finite because
+\(\log2-\frac14\log9>0\), so a negative linear term absorbs the square-root
+term.  Thus the horizontal coordinate lies within an absolute distance of
+the top-row segment
+\([j_\Delta,j_\Delta+s_\Delta/\log9]\).  Combining the horizontal and
+vertical bounds gives a Euclidean distance
+\(C_{\rm exit}=C(M_v,M_h)\) from the triangle.  Choose the global
+\(\varepsilon_0\le e^{-10}\) so that
+\[
+ \frac1{10}\log(1/\varepsilon_0)>C_{\rm exit}+1.
+\]
+The white collar then gives
+\(\mathbb P(X_{\kappa_s}\in W)\ge c_*\) with \(c_*=1/2\), uniformly in
+the triangle, its depth, \(n\), and \(\xi\).
+
+Strong Markov factors the final holding increment.  Its exponential moment
+is \(1+O_A(\log m/m)\).  Since the exponential weight accumulated before
+that increment is at least one, the remaining expectation is at most
+\[
+ 1+O_A(1/\log m)-c_*(1-e^{-\varepsilon^3}),
+\]
+before multiplication by the final \(1+o(1)\) factor, and is at most one for
+\(m\ge C_{A,\varepsilon}\).  This repairs the unsupported source line~1556.
+
+It remains to treat a starting point at depth
+\(s>m/\log^2m\).  We first prove the two exact auxiliary bounds used in this
+case.  Membership in the initial triangle and the real right-tip bound give
+the exact upper range
+\begin{equation}
+\label{eq:Tao-deep-depth-upper}
+ \frac m{\log^2m}<s\le\frac{\log9}{\log2}\,m.
+\end{equation}
+Put \(x=(j,l)\), retain the first-passage time \(\kappa_s\), and reset the
+post-exit process by
+\[
+ \widetilde X_p=X_{\kappa_s+p}=x+\mathbf V_{\kappa_s+p},\qquad
+ \widetilde{\mathbf V}_p
+   =\mathbf V_{\kappa_s+p}-\mathbf V_{\kappa_s}
+ \quad(p\in\Nzero).
+\]
+Conditionally on \(\mathcal F_{\kappa_s}\), the increments of
+\(\widetilde{\mathbf V}\) are iid copies of \(\mathbf H\) and are
+independent of \(\widetilde X_0\).
+
+We first prove the v7 many-triangles estimate uniformly for a renewal process
+\(Z_p=z+\mathbf V_p\) started at an arbitrary \(z\in\mathbb Z^2\).  Define
+\(t_1\) as its first black time, allowing \(t_1=0\).  After entry into the
+\(i\)-th triangle \(\Delta_i\), let \(\sigma_i>t_i\) be the first time whose
+vertical coordinate exceeds \(l_{\Delta_i}\), and let \(t_{i+1}\ge\sigma_i\)
+be the first subsequent black time.  Let \(r\in\Nzero\cup\{\infty\}\) be
+the number of entries.  The exit-rectangle argument gives, on \(r\ge i\),
+\[
+ \mathbb P_z(Z_{\sigma_i}\in W\mid\mathcal F_{t_i})\ge c_*.
+\]
+Set \(\rho=1-(1-e^{-1})c_*\in(0,1)\), and decrease the fixed
+\(\varepsilon_0\) once more so that \(e^{\varepsilon_0}\rho\le1\).  For
+\(q\in\Nzero\), define the uniformly typed contraction
+\[
+ H_q(z)=\mathbb E_z\left[
+  1_{\{r\ge q+1\}}\prod_{i=1}^{q}e^{-1_W(Z_{\sigma_i})}
+ \right].
+\]
+Since \(H_0(z)\le1\), strong Markov at the first exit gives inductively
+\begin{align*}
+ H_q(z)
+ &=\mathbb E_z\left[
+  1_{\{r\ge1\}}e^{-1_W(Z_{\sigma_1})}
+  H_{q-1}(Z_{\sigma_1})\right]\\
+ &\le\rho^{q-1}\mathbb E_z\left[
+  1_{\{r\ge1\}}e^{-1_W(Z_{\sigma_1})}\right]
+ \le\rho^q.
+\end{align*}
+On \(r\ge R\), the distinct exits
+\(\sigma_1,\ldots,\sigma_{R-1}\) occur no later than \(t_R\); hence the
+complete white count dominates their indicators and
+\begin{equation}
+\label{eq:Tao-v7-many-triangles-proved}
+ \mathbb E_z1_{\{r\ge R\}}
+ e^{-\sum_{p=1}^{t_R}1_W(Z_p)+\varepsilon R}
+ \le e^{\varepsilon R}\rho^{R-1}\le e^\varepsilon.
+\end{equation}
+This proves the weaker v7 Lemma~7.9 with a defined time-zero atom and the
+required uniform induction.
+
+We next reconstruct the parameterised large-triangle estimate.  For
+\(p\in\Nzero\) and \(s'>0\), define the event
+\[
+ E_{p,s'}=\{\widetilde X_p\in\Delta'
+   \text{ for some }\Delta'\in\mathcal T
+   \text{ with }s_{\Delta'}\ge s'\}.
+\]
+Let \(D\ge D_0\), where \(D_0\) is a sufficiently large absolute constant.
+The first-passage overshoot bound and the exponential tail of the next
+\(p\) increments give
+\[
+ \mathbb P\bigl((\widetilde X_p)_2
+     \ge l_\Delta+2D(1+p)\bigr)
+ \le C e^{-cD(1+p)}.
+\]
+The horizontal first-passage kernel and the same increment tail, using
+\(p\le m^{0.1}\), \(s>m/\log^2m\), and \(s'\le m^{0.4}\), give
+\[
+ \mathbb P\left(
+ \left|(\mathbf V_{\kappa_s+p})_1-\frac s4\right|>2s^{0.6}
+ \right)
+ \le C\frac{D(1+p)}{s'}.
+\]
+Outside these two exceptional events, membership of \(\widetilde X_p\) in
+an eligible \(\Delta'\) forces its lower tip to satisfy
+\begin{equation}
+\label{eq:Tao-lower-tip-localisation}
+ l_\Delta-10<l_{\Delta'}-\frac{s_{\Delta'}}{\log2}
+ \le l_\Delta+2D(1+p).
+\end{equation}
+For if the left inequality failed, moving horizontally by
+\(O(D(1+p))\) on the row \(l_\Delta\) would produce a lattice point of
+\(\Delta'\); the horizontal bound and
+\(\frac14\log9<\log2\) put the same point in the initial \(\Delta\),
+contradicting disjointness.  The right inequality follows directly from
+the triangle inequality for \(\widetilde X_p\in\Delta'\).  Substituting
+\eqref{eq:Tao-lower-tip-localisation} back into that triangle inequality
+gives
+\[
+ |(\widetilde X_p)_1-j_{\Delta'}|\le C D(1+p).
+\]
+If \(\Delta',\Delta''\) are two eligible triangles, intersecting each with
+the row \(l_\Delta+\lfloor s'/2\rfloor\) produces disjoint horizontal
+integer intervals of length at least
+\(c s'-CD(1+p)\).  Thus, provided
+\(s'\ge C_1D(1+p)\), their top-left coordinates are at least \(c_1s'\)
+apart.  Decrease the separation constant once, if necessary, so that
+\(0<c_1\le1\).  Apply the post-passage part of
+Lemma~\ref{lem:Tao-v7-first-passage-repaired} with neighbourhood radius
+\(r_0=CD(1+p)\) and spacing \(h=c_1s'\).  Enlarging \(C_1\) enforces
+\(4r_0\le h\), and \(s'\le m^{0.4}\) enforces the smoothing-scale bound.
+Consequently there are absolute \(C_0,c_0,C_1>0\) such that
+\begin{equation}
+\label{eq:Tao-large-triangle-parametric}
+ \mathbb P(E_{p,s'})\le C_0\left(
+ \frac{D(1+p)}{s'}+e^{-c_0D(1+p)}\right)
+\end{equation}
+whenever
+\[
+ 0\le p\le m^{0.1},\qquad
+ C_1D(1+p)\le s'\le m^{0.4}.
+\]
+This exposes the lower-tip and separated-top steps preceding the
+post-\(p\) convolution at source lines~1805--1812.
+
+Now put \(\delta_A=10^{-A-2}\), and choose
+\[
+ D_A\ge\max\left(D_0,
+ \frac1{c_0}\log\frac{6C_0}{\delta_A(1-e^{-c_0})}\right),
+ \qquad
+ K_A\ge\max\left(C_1D_A,
+ \frac{6C_0D_A\zeta(2)}{\delta_A}\right).
+\]
+Set \(H=10A/\varepsilon^3\) and
+\[
+ R=\left\lceil
+ \frac{H+\log3+(A+2)\log10+\varepsilon+1}{\varepsilon}
+ \right\rceil.
+\]
+Let \(h=\lceil H\rceil\), put \(u_1=h\), and define, for
+\(1\le i<R\),
+\[
+ u_{i+1}=u_i+\left\lceil10K_A(1+u_i)^3\right\rceil+h+1,
+ \qquad P=u_R+2.
+\]
+All of \(D_A,K_A,H,R,h,u_i,P\) depend only on \(A,\varepsilon\).  Enlarge
+\(C_{A,\varepsilon}\) so that
+\begin{equation}
+\label{eq:Tao-case3-applicability}
+ P\le m^{0.1},\qquad K_A(1+P)^3\le m^{0.4}.
+\end{equation}
+
+Only now define the finite exceptional event
+\[
+ E_*^{(P)}=\bigcup_{p=0}^{P-1}E_{p,K_A(1+p)^3}.
+\]
+Every term lies in the domain of
+\eqref{eq:Tao-large-triangle-parametric}, and the union bound gives
+\begin{align}
+ \mathbb P(E_*^{(P)})
+ &\le \frac{C_0D_A}{K_A}
+       \sum_{p=0}^{P-1}\frac1{(1+p)^2}
+   +C_0\sum_{p=0}^{P-1}e^{-c_0D_A(1+p)}\notag\\
+ &\le\delta_A/6+\delta_A/6=\delta_A/3.
+ \label{eq:Tao-E-star-budget}
+\end{align}
+This replaces the source's insufficient
+\(O(A^2 4^{-A})\): its ratio to \(10^{-A-2}\) is
+\(100A^2(10/4)^A\), which is unbounded.
+
+Condition on \(\widetilde X_0\) and let \(r,t_i,\sigma_i\) be the preceding
+triangle statistics for the shifted process \((\widetilde X_p)_{p\ge0}\).
+Put
+\[
+ S_R=\sum_{p=1}^{t_R}1_W(\widetilde X_p),\qquad
+ F_*=\left\{r\ge R,
+ e^{-S_R+\varepsilon R}>3\delta_A^{-1}e^\varepsilon\right\}.
+\]
+The uniform estimate \eqref{eq:Tao-v7-many-triangles-proved}, integrated in
+\(\widetilde X_0\), and Markov's inequality give
+\(\mathbb P(F_*)\le\delta_A/3\).  Outside \(F_*\), the event \(r\ge R\)
+forces
+\[
+ S_R\ge\varepsilon R-\log3-\log(\delta_A^{-1})-\varepsilon>H.
+\]
+
+Define the high-horizontal event
+\[
+ G=\{(\mathbf V_{\kappa_s+P})_1\ge0.9m\}.
+\]
+By \eqref{eq:Tao-deep-depth-upper} and the first-passage kernel,
+\[
+ \mathbb P((\mathbf V_{\kappa_s})_1\ge0.8m)\le Ce^{-cm},
+\]
+because \(0.8>\frac14\frac{\log9}{\log2}\).  Strong Markov and the
+exponential tail of the fixed sum
+\((\widetilde{\mathbf V}_P)_1\) give
+\[
+ \mathbb P(G)\le C_Pe^{-cm}.
+\]
+Enlarge \(C_{A,\varepsilon}\) again so that
+\begin{equation}
+\label{eq:Tao-G-budget}
+ \mathbb P(G)\le\delta_A/3,
+ \qquad m^A\mathbb P(G)\le\frac12.
+\end{equation}
+Outside \(G\), positivity of the horizontal increments and
+\(j=\lfloor n/2\rfloor-m\) keep every
+\(\widetilde X_p\), \(0\le p<P\), inside the strip where
+\(B\uplus W\) is the full partition.
+
+Define the shifted white count
+\[
+ N_W=\sum_{p=0}^{P-1}1_W(\widetilde X_p).
+\]
+Suppose \(N_W\le H\) and none of \(E_*^{(P)},F_*,G\) occurs.  Among the
+\(h+1\) indices \(0,\ldots,h\) at least one is black.  Therefore the actual
+first entry time defined above satisfies \(t_1\le h=u_1\).  Induct on the
+recursively defined entry times, not on an arbitrary selection of black
+points.  If \(t_i\le u_i\), then, outside \(E_*^{(P)}\), its triangle
+\(\Delta_i\) satisfies
+\[
+ s_{\Delta_i}<K_A(1+t_i)^3\le K_A(1+u_i)^3.
+\]
+Every holding increment has vertical component at least three, so by time
+\[
+ b_i=t_i+\left\lceil10K_A(1+u_i)^3\right\rceil+1
+\]
+the process is strictly above \(l_{\Delta_i}\), and in particular
+\(b_i\ge\sigma_i\).  The block \(b_i,\ldots,b_i+h\) lies in
+\(\{0,\ldots,P-1\}\) and contains a black point; otherwise that block alone
+would contribute \(h+1>H\) white points.  By the defining minimality of the
+next entry time,
+\[
+ t_{i+1}\le b_i+h
+ \le u_i+\left\lceil10K_A(1+u_i)^3\right\rceil+h+1
+ =u_{i+1}.
+\]
+Thus \(t_{i+1}\) exists and is the entry into the next distinct triangle.
+Iteration gives \(R\) entries and \(t_R\le u_R\le P-2\).  Hence
+\(S_R\le N_W\le H\), contradicting the preceding consequence outside
+\(F_*\).  Therefore
+\begin{equation}
+\label{eq:Tao-low-white-budget}
+ \mathbb P(N_W\le H)
+ \le\mathbb P(E_*^{(P)})+\mathbb P(F_*)+\mathbb P(G)
+ \le\delta_A.
+\end{equation}
+
+It remains to connect this probability estimate to the recursion.  Dropping
+the factors before \(\kappa_s\) and then iterating exactly \(P\) times gives
+\begin{align*}
+ Q(j,l)
+ &\le\mathbb E\left[e^{-\varepsilon^3N_W}Q(\widetilde X_P)\right]\\
+ &\le m^{-A}Q_{m-1}\,
+ \mathbb E\left[e^{-\varepsilon^3N_W}
+ \max\left(1-\frac{(\mathbf V_{\kappa_s+P})_1}{m},
+                 \frac1m\right)^{-A}\right].
+\end{align*}
+The second line uses the fact that the terminal horizontal coordinate has
+advanced by at least one, so the defining range of \(Q_{m-1}\) applies.
+On \(G\) the weight is at most \(m^A\); on \(G^c\) it is at most \(10^A\).
+Moreover,
+\[
+ \mathbb E e^{-\varepsilon^3N_W}
+ \le\mathbb P(N_W\le H)+e^{-\varepsilon^3H}
+ \le\delta_A+e^{-10A}\le10^{-A-1}
+\]
+for sufficiently large \(A\).  By \eqref{eq:Tao-G-budget}, the complete
+weighted expectation is at most
+\[
+ m^A\mathbb P(G)+10^A(\delta_A+e^{-10A})\le1
+\]
+after the stated enlargement of \(C_{A,\varepsilon}\).  This proves
+\(Q_m\le Q_{m-1}\) in the final case.
+\end{proof}
+
+\begin{corollary}[closure of the v7 fine-scale branch]
+\label{cor:Tao-v7-fine-scale-branch}
+With the repairs proved above,
+\[
+ Q(j,l)\ll_A\max(\lfloor n/2\rfloor-j,1)^{-A}
+ \quad(j\in\Npos,\ l\in\mathbb Z),
+ \qquad \mathbb E Q(\mathbf H)\ll_A n^{-A}.
+\]
+Consequently the v7 implications
+\[
+ \text{Proposition 7.8}\Rightarrow
+ \text{Proposition 7.3}\Rightarrow
+ \text{Proposition 7.1}\Rightarrow
+ \text{Proposition 1.17}\Rightarrow
+ \text{Proposition 1.14}
+\]
+hold at their printed uniform scope.  The exact downstream dependency in the
+source is
+\[
+ \text{Proposition 1.14}+\text{Proposition 1.9}
+ \Rightarrow\text{Proposition 1.11}
+ \Rightarrow\text{Theorem 1.6}
+ \Rightarrow\text{Theorem 1.3}.
+\]
+\end{corollary}
+
+\begin{proof}
+Monotonicity and the finite base range bound all \(Q_m\) independently of
+\(m\).  The first coordinate of \(\mathbf H\) has exponential tail, so
+splitting at \(\mathbf H_1=n/4\) gives
+\(\mathbb E Q(\mathbf H)=O_A(n^{-A})\).  This is Proposition~7.3.
+The white-point pairing in
+Proposition~\ref{prop:Tao-v7-pairing-holding} gives Proposition~7.1, whose
+reversed-variable form is Proposition~1.17.  Finally
+Proposition~\ref{prop:Tao-v7-Fourier-to-mixing} gives Proposition~1.14.
+The second display records every consequence edge leaving this branch.
+Proposition~\ref{prop:Tao-v7-Prop19-valuation-law} now supplies the separately
+typed Proposition~1.9 input.  The exact step combining it with
+Proposition~1.14 to prove Proposition~1.11, and the two later theorem edges,
+remain behind their named proof-audit gate.  This is a dependency record, not
+a handwaving theorem claim.
+\end{proof}
+
+\begin{nonclaim}
+Corollary~\ref{cor:Tao-v7-fine-scale-branch} certifies this versioned proof
+branch; it does not replace the durable whole-paper release audit.  By itself
+it does not certify Proposition~1.9, Proposition~1.11, Theorem~1.6, or
+Theorem~1.3; Proposition~\ref{prop:Tao-v7-Prop19-valuation-law} supplies the
+first of those results by an independent argument.  This branch does
+not prove the stronger v5/journal Lemma~7.9, use Baker's theorem, establish
+exponential Fourier decay, prove natural-density mixing of the full affine
+map, give a fixed absolute orbit bound, or prove convergence to one.
+\end{nonclaim}

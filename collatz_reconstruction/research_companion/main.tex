@@ -1,0 +1,125 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  pdftitle={Weighted Odd-Step Paths, Survivor Coding, Arithmetic Groupoids, and Toric Period Morphisms for the Collatz Map},
+  pdfauthor={Kokuno Yumeto},
+  pdfsubject={Collatz dynamics, weighted paths, symbolic coding, arithmetic groupoids, toric characters, and exact period morphisms}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{calculation}[theorem]{Calculation}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{nonclaim}[theorem]{Exact boundary}
+\newtheorem{sourceissue}[theorem]{Source repair}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Ztwo}{\mathbb{Z}_{2}}
+\newcommand{\Npos}{\mathbb{N}_{>0}}
+\newcommand{\Opos}{\mathbb{N}_{>0}^{\mathrm{odd}}}
+\newcommand{\Nzero}{\mathbb{N}_{0}}
+\newcommand{\vtwo}{\nu_{2}}
+
+\title{Weighted Odd-Step Paths, Survivor Coding,\\
+Arithmetic Groupoids, and Toric Period Morphisms\\
+\large A Research Companion for the Collatz Map}
+\author{Kokuno Yumeto\\
+\small proof reconstruction and literature crosswalk}
+\date{Working research edition -- 4 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We retain the positive-odd first-return coordinates of the Collatz map and
+construct their legal block category, coefficientwise path completion,
+predecessor transfer operator, injective decorated prefix embedding, and
+finite residue transformation semigroups.  Exact comparison maps separate
+two $\mathbb F_2^2$ gradings, the prefix coordinate from the forward affine
+intercept, and forward actions from contravariant pullback.  The finite
+semigroups receive constructive normal forms, cardinalities, ranks, minimum
+ideals, reduction fibres, and a coefficient-level $3$-adic inverse limit.
+
+The same prefix pieces define a Gaussian relation lattice for rational
+arctangent angles.  We construct its exact signed-valuation morphism, prove an
+all-word non-torsion theorem for the unweighted sum, determine the exceptional
+two-letter lattice, and give a coefficient-unbounded exact certificate for
+every prefix of length at most fifteen and cumulative exponent at most sixty.
+The resulting all-length rigidity statement is isolated as a conjecture and
+crosswalked against the published Gaussian and Machin literature.
+
+The finite prefix classes then give a homeomorphism from the full countable
+label shift to the odd $2$-adic survivor space obtained by deleting the
+backward orbit of $-1/3$.  We locate the positive-integer image, prove its
+canonical-representative stabilization criterion, and compute the exact
+full-shift pressure.  Finally, object-idempotent and formal-scheme arguments
+give precise boundaries for proposed tropical and prismatic interfaces.
+
+The same path coordinates define a discrete arithmetic orbit groupoid with
+two exact cocycles and a faithful path-algebra embedding.  Exact
+homeomorphisms of $\mathbb Z_3$ generate a compact-unit germ groupoid, and a
+proved affine-germ functor carries each arithmetic orbit arrow into it while
+retaining its bidegree and real weight.  A unimodular torus map then turns the
+bidegree into the arithmetic character, yielding commutative $1$-motive
+squares, Kummer periods, a Cayley isomorphism of algebraic pairs, and the
+contravariant Nori edges induced by actual pair maps.
+
+Finally, positive exponent compositions are identified exactly with pointed
+shortened-map parity words.  The resulting groupoid isomorphism carries packet
+rotation to rotation by the corresponding exponent prefix, and the classical
+rational-cycle numerator becomes the odd-step affine numerator without a
+change of convention.  The primitive packet of length $d$ and exponent sum
+$B$ has exact periods $d$, $B$, and $B+d$ under the odd-return, shortened,
+and full maps, respectively.  A finite-state residue recursion and two independent
+integer-only scans certify all strip-selected packets through odd-step period
+sixteen, including the complete $99$-class period-eight table.
+The Chinese remainder coordinate map intertwines the residue transitions
+letter by letter.  Its synchronized product retains the common exponent
+word, whereas marginalization has an explicit rectangle-basis kernel.
+The complete length-ten, sum-sixteen residue table separates primitive
+words from repeated words and records their different divisor exclusions.
+
+The packet affine offsets also admit a closed two-state generating family.
+The corresponding fixed-point series is uniquely characterized
+coefficientwise by a dyadic dilation equation.  We determine its exact
+Taylor domains, construct a normally convergent meromorphic continuation,
+and compute every finite pole, its order, and its leading coefficient.
+
+Every nonconjectural Collatz-specific assertion is proved in the paper;
+portable finite certificates independently check the bounded algebra,
+residue, symbolic, pressure, Gaussian-relation, groupoid, affine-germ,
+torus-character, and pair-map calculations.  The results do not assert
+termination of all positive Collatz orbits.
+\end{abstract}
+
+\tableofcontents
+
+\input{chapters/01_weighted_path_and_finite_residue_actions}
+\input{chapters/02_two_adic_survivor_coding_and_exact_interface_boundaries}
+\input{chapters/03_arithmetic_groupoids_and_toric_period_morphisms}
+\input{chapters/04_affine_packets_parity_necklaces_and_residue_automata}
+\input{chapters/05_packet_fixed_point_series}
+\input{bibliography}
+
+\end{document}

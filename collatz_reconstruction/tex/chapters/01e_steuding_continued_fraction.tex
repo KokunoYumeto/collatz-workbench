@@ -1,0 +1,266 @@
+\subsection{Steuding's orbit continued fraction: an exact endpoint recoding}
+\label{subsec:Steuding-522}
+
+Steuding's starred Exercise~5.22 uses the unshortened positive-integer
+recursion \eqref{eq:unshortened-U}, asks for an equivalence-class
+reformulation of the Collatz conjecture, and asks for a Markoff constant
+\cite[physical PDF p.~100; printed p.~87, Ex.~5.22]{Steuding2005}.
+It is an exercise prompt, not a theorem accompanied by a proof.  The
+propositions and calculation below supply an edition solution without a
+novelty claim.
+
+The target printed in the exercise is the purely periodic irrational
+\[
+ \beta=[\overline{4,2,1}],
+\]
+with a visible overbar.  Ordinary PDF text extraction loses that bar.  The
+unbarred finite fraction is $[4,2,1]=13/3$ and cannot be substituted:
+Steuding's rational and irrational equivalence classes are disjoint
+\cite[printed p.~79]{Steuding2005}.
+
+\begin{proposition}[whole orbit to continued-fraction morphism]
+\label{prop:Steuding-orbit-CF-morphism}
+For $m\in\Npos$, define
+\begin{equation}
+\label{eq:Steuding-Theta}
+ x_j(m)=U^j(m),
+ \qquad
+ \Theta(m)=[x_0(m),x_1(m),x_2(m),\ldots].
+\end{equation}
+Every $\Theta(m)$ is an irrational real number.  If
+\[
+ \mathcal G(y)=\frac{1}{y-\lfloor y\rfloor}
+\]
+is the Gauss tail map on nonintegral reals, then
+\begin{equation}
+\label{eq:Steuding-Gauss-conjugacy}
+ \lfloor\Theta(m)\rfloor=m,
+ \qquad
+ \mathcal G(\Theta(m))=\Theta(U(m)).
+\end{equation}
+Consequently $\Theta$ is a bijection from $\Npos$ onto its image, its inverse
+there is the floor map, and it conjugates $U$ to $\mathcal G$ restricted to
+that image.
+\end{proposition}
+
+\begin{proof}
+Every $x_j(m)$ is a positive integer.  The finite convergents of
+\eqref{eq:Steuding-Theta} have denominator continuants tending to infinity,
+and consecutive convergents differ by the reciprocal of the product of
+their denominators.  Their alternating nested intervals therefore have a
+unique common limit.  That limit cannot be rational: if it were the reduced
+fraction $p/q$, choose $n$ so large that $q_n>q$ and $q_{n+1}>q$.  Since each
+convergent $p_n/q_n$ is reduced, it is then distinct from $p/q$.  The source
+bound
+\[
+ \left|\frac{p}{q}-\frac{p_n}{q_n}\right|<
+ \frac{1}{q_nq_{n+1}}
+\]
+would make the left-hand side strictly smaller than $1/(q q_n)$.  But two
+distinct reduced rationals with
+denominators $q$ and $q_n$ are separated by at least $1/(q q_n)$.  This is
+the constructive
+content of Steuding's infinite-fraction discussion
+\cite[Sec.~3.4, printed pp.~42--43]{Steuding2005}.
+
+The tail $[x_1(m),x_2(m),\ldots]$ is greater than one, so
+\[
+ \Theta(m)=m+\frac{1}{[x_1(m),x_2(m),\ldots]}
+\]
+has floor $m$.  Applying $\mathcal G$ deletes the first digit, while the
+recursion gives $x_{j+1}(m)=x_j(U(m))$.  This proves both identities in
+\eqref{eq:Steuding-Gauss-conjugacy}.  The floor identity proves injectivity
+and supplies the displayed inverse; surjectivity is only onto the stated
+image.
+\end{proof}
+
+Steuding defines $\alpha\sim\gamma$ by
+\begin{equation}
+\label{eq:Steuding-unimodular-equivalence}
+ \alpha=\frac{a\gamma+b}{c\gamma+d},
+ \qquad
+ a,b,c,d\in\Z,
+ \qquad
+ ad-bc=\pm1.
+\end{equation}
+Serret's Theorem~5.7 says that two irrational simple continued fractions are
+equivalent exactly when finite prefixes can be removed from both to leave the
+same infinite tail \cite[printed pp.~79--80]{Steuding2005}.
+
+\begin{sourceissue}[the matrix step in the printed Serret proof]
+\label{sourceissue:Steuding-Serret-proof}
+Printed p.~78 calls all integer matrices of determinant $\pm1$ the special
+linear group $\mathrm{SL}_2(\Z)$; the group is $\mathrm{GL}_2(\Z)$, since
+$\mathrm{SL}_2(\Z)$ has determinant $+1$.  Lemma~5.6 also suppresses the
+choice of simultaneous matrix sign and leaves its constructive sufficiency
+direction to an induction.
+
+The converse proof on printed p.~80 then (i) invokes $c>d>0$ for the original
+matrix before that reduction has been proved, (ii) duplicates the numerator
+entry $R$ by printing
+$S=ap_{m-1}+bq_{m-1}$ instead of
+$S=cp_{m-1}+dq_{m-1}$, and (iii) writes $\alpha$ where the convergents and
+error terms belong to $\gamma$ (called $\beta$ in the source).  The factors
+$c\alpha+d$ on the same page must likewise be $c\gamma+d$.
+
+Here is the exact repair.  Start with an arbitrary matrix $M$ in
+\eqref{eq:Steuding-unimodular-equivalence} and replace it by $-M$, if
+necessary, so that $D=c\gamma+d>0$.  For convergents $p_m/q_m$ to $\gamma$,
+put $\varepsilon_m=p_m-\gamma q_m$.  The lower row of the composite matrix
+is
+\begin{align*}
+ Q_m&=cp_m+dq_m=Dq_m+c\varepsilon_m,\\
+ S_m&=cp_{m-1}+dq_{m-1}=Dq_{m-1}+c\varepsilon_{m-1}.
+\end{align*}
+Since $\varepsilon_m\to0$ and
+\[
+ q_m-q_{m-1}=(a_m-1)q_{m-1}+q_{m-2}\longrightarrow\infty,
+\]
+one has $Q_m>S_m>0$ for every sufficiently large $m$.  The Euclidean
+algorithm on the coprime pair $(Q_m,S_m)$ constructs its positive
+continued-fraction denominator word.  The two finite presentations obtained
+by splitting the last partial quotient choose the required determinant sign.
+After that choice, any two numerator rows with the same lower row and the
+same determinant differ by an integral multiple of $(Q_m,S_m)$; changing
+the first partial quotient absorbs precisely that multiple.  Thus the
+composite matrix is a finite continued-fraction prefix, and the two numbers
+have a common tail.  This proves the needed Serret direction without the
+printed circular step.  The complete locator audit is in
+\path{qa/STEUDING-2005-F011-exercise-522-audit.md}.
+\end{sourceissue}
+
+\begin{theorem}[edition solution of Steuding's Exercise 5.22]
+\label{thm:Steuding-522-equivalence}
+Let $b_{3r}=4$, $b_{3r+1}=2$, and $b_{3r+2}=1$.  The following statements
+are equivalent:
+\begin{align*}
+ &\text{for every $m\in\Npos$, the $U$-orbit of $m$ eventually enters the
+ cycle $4,2,1$};\\
+ &\text{for every $m\in\Npos$, }\Theta(m)\sim[\overline{4,2,1}].
+\end{align*}
+More precisely, for each fixed $m$,
+\begin{equation}
+\label{eq:Steuding-pointwise-equivalence}
+ \Theta(m)\sim[\overline{4,2,1}]
+ \quad\Longleftrightarrow\quad
+ \exists r,s\in\Nzero\ \forall j\in\Nzero:
+ U^{r+j}(m)=b_{s+j}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+If the orbit eventually enters the cycle, its digit sequence in
+\eqref{eq:Steuding-Theta} is eventually a cyclic shift of
+$(4,2,1,4,2,1,\ldots)$.  Serret's theorem therefore gives the forward
+implication of \eqref{eq:Steuding-pointwise-equivalence}.  Conversely,
+Serret's theorem turns the equivalence of the two irrational continued
+fractions into the displayed equality of tails for some $r,s$.  Hence
+$U^r(m)\in\{4,2,1\}$.  The literal identities
+\[
+ U(4)=2,
+ \qquad U(2)=1,
+ \qquad U(1)=4
+\]
+then force every subsequent value.  Universal quantification over $m$ gives
+the two global statements.  The phase variable $s$ is retained; no preferred
+entry point into the cycle is assumed.
+\end{proof}
+
+\begin{calculation}[the requested Markoff constant]
+\label{calc:Steuding-522-Markoff}
+Let $d=\sqrt{229}$.  The exact period matrix is
+\[
+ \begin{pmatrix}4&1\\1&0\end{pmatrix}
+ \begin{pmatrix}2&1\\1&0\end{pmatrix}
+ \begin{pmatrix}1&1\\1&0\end{pmatrix}
+ =\begin{pmatrix}13&9\\3&2\end{pmatrix}.
+\]
+Therefore
+\begin{equation}
+\label{eq:Steuding-beta-quadratic}
+ 3\beta^2-11\beta-9=0,
+ \qquad
+ \beta=\frac{11+d}{6}.
+\end{equation}
+Index its partial quotients by $a_{3r}=4$, $a_{3r+1}=2$,
+$a_{3r+2}=1$.  Formula~(5.11) of the source is
+\begin{equation}
+\label{eq:Steuding-Markoff-Perron}
+ \lambda(\beta)=\liminf_{n\to\infty}
+ \left(
+  [a_{n+1},a_{n+2},\ldots]
+  +[0,a_n,a_{n-1},\ldots,a_1]
+ \right)^{-1}.
+\end{equation}
+The three phases, with no cyclic normalization, are
+\[
+\begin{array}{c|c|c|c|c}
+n\bmod3 & [a_{n+1},a_{n+2},\ldots]
+ & \displaystyle\lim[0,a_n,\ldots,a_1]
+ & \text{sum} & \text{reciprocal}\\ \hline
+0 & (13+d)/10 & (d-13)/10 & d/5 & 5/d\\
+1 & (7+d)/18  & (d-7)/18  & d/9 & 9/d\\
+2 & (11+d)/6  & (d-11)/6  & d/3 & 3/d
+\end{array}
+\]
+The reversed finite fractions converge on each residue subsequence to the
+displayed reversed periodic tail; equivalently, Steuding's Galois formula
+identifies each with the negative conjugate of the corresponding cyclic
+complete quotient \cite[Thm.~5.3 and Eq.~(5.11)]{Steuding2005}.  Taking the
+liminf in \eqref{eq:Steuding-Markoff-Perron} gives
+\begin{equation}
+\label{eq:Steuding-Markoff-value}
+ \boxed{\lambda([\overline{4,2,1}])
+ =\min\left\{\frac5{\sqrt{229}},\frac9{\sqrt{229}},
+                    \frac3{\sqrt{229}}\right\}
+ =\frac3{\sqrt{229}}.}
+\end{equation}
+The exact quadratic-field identities are reproduced by
+\path{certificates/steuding_522_checks.py}.
+\end{calculation}
+
+\begin{proposition}[exact Crandall clock crosswalk]
+\label{prop:Steuding-Crandall-crosswalk}
+For an odd start $y_0$, put $y_i=C_{\mathrm{Cr}}^i(y_0)$,
+$e_i=\vtwo(3y_i+1)$, and $A_j=\sum_{i<j}e_i$.  Then the Steuding digit
+sequence and the accelerated orbit satisfy
+\begin{equation}
+\label{eq:Steuding-Crandall-clock}
+ y_j=U^{A_j+j}(y_0),
+\end{equation}
+and, for $1\leq r\leq e_j+1$,
+\begin{equation}
+\label{eq:Steuding-inserted-even-states}
+ U^{A_j+j+r}(y_0)=\frac{3y_j+1}{2^{r-1}}.
+\end{equation}
+For an arbitrary $m=2^s y_0$ with $y_0$ odd, the first $s$ Steuding digits
+are the exact halving prefix before this odd-return expansion begins.
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:Steuding-Crandall-clock} is
+\eqref{eq:Crandall-three-clocks}.  Starting from the odd state $y_j$, the
+first $U$ step forms $3y_j+1$ and the next $e_j$ steps divide successively by
+$2$, proving \eqref{eq:Steuding-inserted-even-states}; at $r=e_j+1$ the
+value is $y_{j+1}$.  The even-start statement is the literal iteration
+$U^r(2^s y_0)=2^{s-r}y_0$ for $0\leq r\leq s$.
+\end{proof}
+
+\begin{nonclaim}
+\label{nonclaim:Steuding-Markoff-boundary}
+Theorem~\ref{thm:Steuding-522-equivalence} is a lossless endpoint recoding,
+not a proof of either side: the full orbit is stored as the full digit
+sequence and the initial integer is recovered by the floor map.  Steuding's
+Theorem~5.8 gives only
+\[
+ \Theta(m)\sim\beta
+ \ \Longrightarrow\ 
+ \lambda(\Theta(m))=\frac3{\sqrt{229}}.
+\]
+Equality of Markoff constants is not a converse and cannot certify Collatz
+termination.  The orbit-digit continued fraction $\Theta(m)$ is also not
+Crandall's Section~7 continued fraction for the fixed number $\log_2 3$;
+no map between those two constructions is evidenced here.  Finally,
+\eqref{eq:Steuding-Crandall-clock} is a variable-time expansion, not a
+one-step identification of $U$ and $C_{\mathrm{Cr}}$.
+\end{nonclaim}

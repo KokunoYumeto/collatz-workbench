@@ -1,0 +1,127 @@
+\section{Dyadic affine lifts and exact uniformity criteria}
+
+For an odd positive integer $a$, define
+\[
+ T_a(n)=\begin{cases}(an+1)/2,&n\text{ odd},\\n/2,&n\text{ even}.
+ \end{cases}
+\]
+The Collatz shortened map is $T=T_3$.
+
+\begin{theorem}[dyadic affine-prefix identity]
+\label{thm:dyadic-affine-prefix}
+Fix $k\ge0$, $h\ge0$, and $0\le r<2^k$.  Let
+\[
+ s_j(r)=\#\{0\le m<j:T_a^m(r)\text{ is odd}\}.
+\]
+For every $0\le j\le k$,
+\begin{equation}
+ T_a^j(2^kh+r)=a^{s_j(r)}2^{k-j}h+T_a^j(r).
+ \label{eq:dyadic-affine-prefix}
+\end{equation}
+Consequently the length-$k$ branch word and endpoint are constant in the
+low residue coordinate, and
+\begin{equation}
+ T_a^k(2^kh+r)=a^{s_k(r)}h+T_a^k(r).
+ \label{eq:dyadic-affine-endpoint}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+This is Theorem~\ref{thm:general-branch-cylinder} with $M=2$, but the
+coordinate-level induction is useful.  Before step $k$, the high term is
+even, so the full state and the low state take the same branch.  An even step
+divides the high coefficient by $2$; an odd step multiplies it by $a/2$.
+After $j$ steps the coefficient is therefore
+$a^{s_j(r)}2^{k-j}$, proving \eqref{eq:dyadic-affine-prefix}.
+\end{proof}
+
+\begin{proposition}[necessary and sufficient uniform descent]
+\label{prop:uniform-descent}
+Write $s=s_k(r)$, $d=T_a^k(r)$,
+\[
+ L=a^s-2^k,qquad R=r-d.
+\]
+Then
+\[
+ T_a^k(2^kh+r)<2^kh+r\qquad\text{for every integer }h\ge1
+\]
+if and only if
+\begin{equation}
+ (L<0\text{ and }L<R)\quad\text{or}\quad(L=0\text{ and }R>0).
+ \label{eq:uniform-descent-criterion}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:dyadic-affine-endpoint}, the desired inequality is
+$Lh<R$.  If $L<0$, its largest left side for $h\ge1$ is $L$, giving $L<R$.
+If $L=0$, the condition is $R>0$.  If $L>0$, the inequality fails for all
+sufficiently large $h$.
+\end{proof}
+
+\begin{proposition}[equal-clock endpoint coalescence]
+\label{prop:equal-clock-coalescence}
+Suppose $0\le r'<r<2^k$,
+$s_k(r')=s_k(r)$, and $T_a^k(r')=T_a^k(r)$.  Then for every $h\ge0$,
+\[
+ T_a^k(2^kh+r')=T_a^k(2^kh+r),
+ \qquad2^kh+r'<2^kh+r.
+\]
+The lift preserves the exact endpoint and the exact clock $k$.
+\end{proposition}
+
+\begin{proof}
+Subtract the two instances of
+\eqref{eq:dyadic-affine-endpoint}.  The low endpoints and high coefficients
+are equal; the order statement follows from $r'<r$.
+\end{proof}
+
+\subsection{A variable-length block map and its fibres}
+
+For $x\in\Npos$, put
+\[
+ \alpha=\vtwo(x+1),\quad u=(x+1)/2^\alpha,quad
+ y=3^\alpha u-1,quad\beta=\vtwo(y),
+\]
+and $B(x)=y/2^\beta$.
+
+\begin{proposition}[block map, section, and complete fibres]
+\label{prop:block-map-fibres}
+The state $B(x)$ is positive and odd, and
+\[
+ B(x)=T^{\alpha+\beta}(x).
+\]
+For odd $z>0$,
+\begin{equation}
+ B^{-1}(z)=
+ \left\{
+ 2^\alpha\frac{2^\beta z+1}{3^\alpha}-1:
+ \alpha\ge0,\ \beta\ge1,\ 3^\alpha\mid2^\beta z+1
+ \right\}.
+ \label{eq:block-map-fibre}
+\end{equation}
+Hence $B$ is surjective, every fibre is infinite, the equality kernel is
+$\{(x,x'):B(x)=B(x')\}$, and no left or two-sided inverse exists after the
+block boundary and elapsed clock are discarded.
+\end{proposition}
+
+\begin{proof}
+For $0\le j\le\alpha$,
+\[
+ T^j(x)=3^j\frac{x+1}{2^j}-1.
+\]
+At $j=\alpha$ this is $y$, and the next $\beta$ steps divide by two.
+Solving $y=2^\beta z$ for $x$ gives \eqref{eq:block-map-fibre}; its displayed
+divisibility condition is exactly the integrality condition, and the resulting
+$u$ is odd.  The choice $\alpha=0,\beta=1$ gives the section $z\mapsto2z$.
+For fixed $z$, all $\alpha=0,\beta\ge1$ give distinct preimages $2^\beta z$,
+so each fibre is infinite.  A map with a left inverse is injective, which $B$
+is not.
+\end{proof}
+
+\begin{nonclaim}
+The expectation $\mathbb E(\alpha+\beta)=4$ under normalized Haar measure on
+odd $2$-adic integers is a measure statement.  It is not an assertion that
+every finite interval has raw arithmetic mean four.
+\end{nonclaim}
+

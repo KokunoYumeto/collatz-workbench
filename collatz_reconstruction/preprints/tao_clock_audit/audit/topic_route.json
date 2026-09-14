@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "topic_id": "TAO-CLOCK-PREPRINT-20260904",
+  "topic": "Clock-aware reconstruction of Tao's almost-bounded Collatz theorem and version-specific proof repairs",
+  "workspace": "C:/Users/LOCAL_USER/Documents/Erdos Strauss and related/collatz_reconstruction/preprints/tao_clock_audit",
+  "corpus_entrypoint": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/Zeta-Function-Foundation/config/literature_index_entrypoint.json",
+  "updated_utc": "2026-09-04T11:46:22.712430+00:00",
+  "queries": [
+    {
+      "query": "almost all Collatz",
+      "layer": "all",
+      "index_level": "canonical",
+      "executed_utc": "2026-09-04T11:46:22.189123+00:00",
+      "reason": "Recheck exact Tao source and adjacent first-passage formulations without reindexing",
+      "result_unit_ids": [
+        "PUBUNIT-7B52CC4A159765C800B92B6B",
+        "PUBUNIT-847E4E7212BFCD7A613CA573",
+        "PUBUNIT-808654374124DFA4A51601F4",
+        "PUBUNIT-894AFD34CAC75CB3AF32759E",
+        "PUBUNIT-EFEAF5C63353B8C4613ECF55",
+        "PUBUNIT-8CC121FC2FCD3E21768199D7",
+        "PUBUNIT-97D73189026FA23112EF826A",
+        "PUBUNIT-004F3DB5D12B4A71C77EDE18",
+        "PUBUNIT-CF4FD708E6C6DE523385FD85",
+        "PUBUNIT-C355E88761A7A51829CE1055"
+      ]
+    },
+    {
+      "query": "first passage",
+      "layer": "all",
+      "index_level": "canonical",
+      "executed_utc": "2026-09-04T11:46:22.431369+00:00",
+      "reason": "Recheck exact Tao source and adjacent first-passage formulations without reindexing",
+      "result_unit_ids": [
+        "PUBUNIT-808654374124DFA4A51601F4",
+        "PUBUNIT-7B52CC4A159765C800B92B6B",
+        "PUBUNIT-847E4E7212BFCD7A613CA573",
+        "PUBUNIT-1DDA09FEBE9C6F5C6027A773",
+        "PUBUNIT-B902BEE95AFE993C5925013E",
+        "PUBUNIT-0D6500BE120CA89200F90FEA",
+        "PUBUNIT-B212710288808822A55BC9CC",
+        "PUBUNIT-A8EBB6C1090B62A8707DF603",
+        "PUBUNIT-6F9181FCE65CE8C8B62AAFF1",
+        "PUBUNIT-814C72B8989F577FE03172D0"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_class": "research_literature",
+      "publication_unit_or_source_id": "PUBUNIT-847E4E7212BFCD7A613CA573",
+      "exact_locators": [
+        "C:/Users/LOCAL_USER/Documents/arxiv_latex/library/collatz_reconstruction/latex/1909.03562v7/collatz.tex"
+      ],
+      "relevance_edge": "Tao Proposition 1.11 is the exact analytic input, with Section 3 deduction and selected Section 5-6 proof steps audited",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-04T11:46:22.712430+00:00",
+        "relevant_sections": [
+          "Section 1",
+          "Section 3",
+          "Section 5",
+          "Section 6"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "Sections 1 and 3 definitions and first-passage reduction",
+        "Proposition 5.2 endpoint and Lemma 5.3 coefficient proof",
+        "Section 6 stopping reserve and separation calculation"
+      ],
+      "dependencies": [
+        "TAO-V7 Proposition 1.11, cited analytic input"
+      ],
+      "claim_or_proof_crosswalk_ids": [
+        "PC-01",
+        "PC-07",
+        "PC-08",
+        "PC-09",
+        "PC-10",
+        "PC-12",
+        "PC-13",
+        "PC-14"
+      ],
+      "notes": "The independent full Fourier-renewal proof is outside this draft's claim; source_manifest.json and audit reviews give bounded source-reading scope."
+    },
+    {
+      "source_class": "research_literature",
+      "publication_unit_or_source_id": "PUBUNIT-7B52CC4A159765C800B92B6B",
+      "exact_locators": [
+        "C:/Users/LOCAL_USER/Documents/arxiv_latex/library/collatz_reconstruction/latex/1909.03562v5/collatz.tex"
+      ],
+      "relevance_edge": "Version-specific half-reserve comparison, not a silently current proof manifestation",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-04T11:46:22.712430+00:00",
+        "relevant_sections": [
+          "Section 6"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "976-997 and 1039-1089"
+      ],
+      "dependencies": [],
+      "claim_or_proof_crosswalk_ids": [
+        "PC-14"
+      ]
+    }
+  ],
+  "unresolved_dependencies": [],
+  "refresh_reason": "Explicit current user request for a separate focused preprint draft",
+  "anti_loop_note": "Selected proof content read and crosswalked. Cited analytic input is explicit, not silently independently certified; no priority claim or whole-corpus completeness claim."
+}

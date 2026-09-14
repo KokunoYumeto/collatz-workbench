@@ -1,0 +1,452 @@
+\documentclass[11pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\PP}{\mathcal P}
+\DeclareMathOperator{\supp}{supp}
+\title{Finite Collatz histories through support and Hurwitz zero clusters}
+\author{Kokuno Yumeto}
+\date{13 September 2026. Research-program note.}
+\begin{document}
+\begin{abstract}
+Finite Collatz itineraries admit a polynomial affine lift that retains the
+positions of all odd steps. We give its inverse, its residue realization,
+and explicit fibres of several forgetful maps. We then apply the Split
+Zero programme's compact Hurwitz reconstruction to exact odd-return residue
+coordinates. On a known packet of $K$ words, the full local zero-cluster
+jet through order $K-1$ recovers every probability weight and every joint
+arithmetic predicate on the words. The inverse is explicit, works at a
+nontrivial Riemann zeta zero of any multiplicity, and has a sharp worst-case
+jet order. A three-word calculation recovers integral-cycle candidate mass
+from the first two moments. These are finite information-preserving
+constructions; they do not supply an orbit-descent estimate.
+\end{abstract}
+\maketitle
+
+\section{The question and its source}
+The Split Zero construction distinguishes an absent component from a
+present component whose amplitude is zero. Its Collatz F-series note
+\cite{support} already represents affine branches on support-homogeneous
+coordinates. Its later Hurwitz reconstruction \cite{hurwitz} recovers a
+compact probability measure from a complete local zero cluster. The
+question here is what these constructions retain when their inputs are
+actual finite Collatz histories.
+
+There are two steps. First, history must be attached to faithful
+coordinates: a label beside a collapsed scalar cannot restore an arbitrary
+lost word. Second, the spectral family must be specified. We use a Hurwitz
+deformation with an explicit inverse, rather than the eigenvalues of the
+two-by-two branch product. The latter have a computable loss of information.
+Classical parity coding supplies the dynamical coordinates; neither the
+affine composition identity nor finite parity coding is claimed as new.
+The contribution of this note is their explicit finite transport through
+the cited reconstruction, with synchronized arithmetic tests retained.
+
+\section{A faithful polynomial lift of a finite history}
+Let $q$ be an indeterminate and $R=\Z[1/2][q]$. For $d\in\{0,1\}$ put
+\[
+ T_d^{(q)}(x)=\frac{q^d x+d}{2}.
+\]
+At $q=3$, selecting $d$ to be the parity of the current integer gives
+the shortened Collatz map. A word $w=(d_0,\ldots,d_{N-1})$ is read in
+chronological order; $T_{d_0}$ acts first. Write
+\[
+ m=\sum_{j=0}^{N-1}d_j,\qquad s_j=\sum_{i<j}d_i,\qquad
+ P_w(q)=\sum_{j=0}^{N-1}d_j2^j q^{m-1-s_j},
+\]
+where a summand with $d_j=0$ is omitted, so no negative exponent occurs.
+
+\begin{proposition}[Lift, inverse, and realization]\label{prop:lift}
+For every word $w$,
+\begin{equation}\label{eq:lift}
+ T_{d_{N-1}}^{(q)}\circ\cdots\circ T_{d_0}^{(q)}(x)
+ =\frac{q^m x+P_w(q)}{2^N}.
+\end{equation}
+The map $w\mapsto(N,P_w)$ is injective. Its image consists of $(N,0)$
+and pairs
+\[
+ \left(N,\sum_{k=0}^{m-1}2^{j_k}q^{m-1-k}\right),
+ \qquad 0\le j_0<\cdots<j_{m-1}<N.
+\]
+The inverse places ones precisely at the $j_k$ and zeros elsewhere.
+A positive integer $n$ realizes $w$ as its first $N$ shortened-map
+parities exactly when
+\begin{equation}\label{eq:parity-residue}
+ 3^m n+P_w(3)\equiv0\pmod{2^N}.
+\end{equation}
+Thus each word occurs on one residue class modulo $2^N$.
+\end{proposition}
+\begin{proof}
+Appending $d$ replaces $(m,P)$ by $(m+d,q^dP+d2^N)$, which proves
+\eqref{eq:lift} and the coefficient formula by induction. If the one
+positions are $j_0<\cdots<j_{m-1}$, the coefficient of $q^{m-1-k}$
+is exactly $2^{j_k}$. This proves the image and inverse, including the
+all-zero word. The length is essential: terminal zero bits contribute
+no new coefficient to $P$.
+
+For realization use induction on $N$. An actual orbit satisfies
+\eqref{eq:parity-residue} by \eqref{eq:lift}. Conversely suppose the
+congruence holds. If $d_0=0$, then $P_w(3)$ is even, so $n$ is even;
+write $n=2y$ and $P_w(3)=2P_{w'}(3)$ for the remaining word $w'$.
+Division by two yields its congruence at $y$. If $d_0=1$, then
+$P_w(3)=3^{m-1}+2P_{w'}(3)$ is odd, so $n$ is odd; put
+$y=(3n+1)/2$. The same division gives
+$3^{m-1}y+P_{w'}(3)\equiv0\pmod{2^{N-1}}$.
+Induction proves every requested parity. The coefficient $3^m$ is
+invertible modulo $2^N$, giving the unique residue. Positive representatives
+exist and remain positive along these actual iterates.
+\end{proof}
+
+The source F-series uses the opposite matrix order, with $d_0$ acting
+last on zero:
+\[
+ X_w(q)=T_{d_0}^{(q)}\circ\cdots\circ T_{d_{N-1}}^{(q)}(0)
+ =\sum_{j=0}^{N-1}\frac{d_jq^{s_j}}{2^{j+1}}.
+\]
+If $w^{\mathrm{rev}}$ reverses the word, then
+\[
+ X_{w^{\mathrm{rev}}}(q)=2^{-N}P_w(q).
+\]
+Indeed, reversing a one at $j$ puts it at $N-1-j$, with $m-1-s_j$
+ones before it. This is the exact map between the two composition
+conventions, not an identification of input binary digits with orbit parities.
+
+\subsection{Support, specialization, and what each forgets}
+For the source semiring $G(R)=R\sqcup\{\tau\}$, $\tau$ is the additive
+identity and multiplicative absorber, while $e=0_R$ is a supported zero.
+For $r,s\in R$, their addition and multiplication are those of $R$.
+The reflection $p:G(R)\to R$ fixes $R$ and sends $\tau$ to $0$.
+Its zero fibre is exactly $\{\tau,e\}$; every other fibre is a singleton.
+The Boolean support character has
+\[
+ \chi(\tau)=0,\qquad \chi(r)=1\quad(r\in R),
+\]
+including $\chi(e)=1$. Hence this character detects presence, not
+arithmetic nonvanishing or parity. For a nonzero coefficient ring, the
+source branch matrices are
+\[
+ M_0=\begin{pmatrix}1/2&e\\\tau&1\end{pmatrix},\qquad
+ M_1=\begin{pmatrix}q/2&1/2\\\tau&1\end{pmatrix}.
+\]
+Both have the same Boolean support matrix. Their full polynomial products
+retain more than this support projection.
+
+To make a history mask explicit, set $A_N=R^{\{0,\ldots,N-1\}}$ and
+$\epsilon_w=(d_0,\ldots,d_{N-1})\in A_N$. It is a central idempotent.
+Its $j$th coordinate is the parity bit itself, so $(N,\epsilon_w)$
+recovers the word. This mask is additional retained data; applying $\chi$
+to the two branch matrices does not produce it.
+
+The evaluation homomorphism $R\to\Z[1/2]$, $q\mapsto3$, has kernel
+$(q-3)$ by division by the monic polynomial $q-3$.
+For the source F-series, take the five-bit words with one positions
+$\{0,4\}$ and $\{2,3,4\}$ respectively. Then
+\[
+ X_u(q)=\frac12+\frac q{32},\qquad
+ X_v(q)=\frac18+\frac q{16}+\frac{q^2}{32},
+\]
+and
+\[
+ X_v(q)-X_u(q)=\frac{(q-3)(q+4)}{32},\qquad
+ X_u(3)=X_v(3)=\frac{19}{32}.
+\]
+These are distinct histories in one specialization fibre.
+Under $G(R)\to G(R/(q-3))$ their nonzero difference becomes the
+supported zero $e$, not $\tau$. Keeping that support label records
+that a contribution was present and killed; recovering the contribution
+itself requires its preimage or the retained polynomial coefficients.
+
+The reflected forward product in \eqref{eq:lift} has matrix
+\[
+ \begin{pmatrix}q^m/2^N&P_w(q)/2^N\\0&1\end{pmatrix}.
+\]
+Its eigenvalue multiset is $\{q^m/2^N,1\}$, independent of the order
+of the bits. At $N=2,m=1$, $w=(0,1)$ has translation $1/2$ and
+$w=(1,0)$ has translation $1/4$, with the same eigenvalues. This
+computes the loss for this spectral map; it does not preclude a different,
+faithful spectral construction.
+
+\section{Exact odd-return coordinates}
+Fix integers $m\ge1$ and $A\ge m$, and let
+\[
+ W_{m,A}=\{(a_1,\ldots,a_m)\in\N_{>0}^m:\textstyle\sum a_i=A\},
+ \qquad K=|W_{m,A}|=\binom{A-1}{m-1}.
+\]
+These are labelled words, not rotation classes. Put $S_j=a_1+\cdots+a_j$,
+$S_0=0$, and
+\[
+ B_w=\sum_{j=0}^{m-1}3^{m-1-j}2^{S_j},\qquad D=2^A-3^m.
+\]
+The odd-return branch composition is $(3^m x+B_w)/2^A$.
+Let $r_w$ be the unique representative $1\le r_w<2^{A+1}$ satisfying
+\begin{equation}\label{eq:odd-residue}
+ 3^m r_w+B_w\equiv2^A\pmod{2^{A+1}}.
+\end{equation}
+
+\begin{lemma}\label{lem:odd}
+The positive odd integers with first $m$ exact odd-return exponents $w$
+are precisely $r_w+2^{A+1}\Z$, intersected with the positive integers.
+The residues $r_w$ are pairwise distinct on $W_{m,A}$.
+\end{lemma}
+\begin{proof}
+For one letter, \eqref{eq:odd-residue} is exactly
+$\nu_2(3x+1)=a_1$. For more letters write
+$B_w=3^{m-1}+2^{a_1}B_{w'}$. The congruence first implies
+$2^{a_1}\mid3x+1$. Put $y=(3x+1)/2^{a_1}$ and divide by $2^{a_1}$.
+The resulting congruence is
+\[
+ 3^{m-1}y+B_{w'}\equiv2^{A-a_1}\pmod{2^{A-a_1+1}}.
+\]
+Since $A-a_1\ge1$ and $B_{w'}$ is odd, it forces $y$ odd. The
+valuation was therefore exact, and induction applies to the suffix.
+The converse follows by reversing this calculation. Multiplication by
+$3^m$ is invertible modulo $2^{A+1}$, proving uniqueness and oddness
+of $r_w$. If two words shared a residue, its positive representative
+would have two different exact exponent lists, impossible for a function.
+\end{proof}
+
+The rational periodic candidate is $x_w=B_w/D$. The denominator is
+nonzero, odd, and coprime to three. Rotation $\sigma$ satisfies
+\[
+ 3B_w+D=2^{a_1}B_{\sigma w}.
+\]
+Because all $B$ are odd, this gives exactly the exponent $a_1$ in
+the rationals with odd denominator. The candidates are positive when
+$D>0$ and integral precisely when $D\mid B_w$. In the latter case
+the identity and coprimality propagate integrality around the word.
+These observations justify the predicate used below without mistaking
+all rational candidates for integer cycles.
+
+\section{A zero-cluster inverse for packet distributions}
+Let $\Delta(W)$ be the probability simplex on the known word set $W=W_{m,A}$.
+For $\lambda\in\Delta(W)$ define, in the original integer residue coordinate,
+\begin{equation}\label{eq:family}
+ \mu_\lambda=\sum_{w\in W}\lambda_w\delta_{r_w},\qquad
+ M_j=\sum_w\lambda_w r_w^j,\qquad
+ Z_\lambda(s,t)=\sum_w\lambda_w\zeta(s,1+tr_w).
+\end{equation}
+Here $M_0=1$. Take $L=2^{A+1}-1$ and $|t|L<1$. The parameter $t$
+is a complex deformation parameter, not Collatz time. Hurwitz Taylor
+expansion \cite{dlmf} gives
+\begin{equation}\label{eq:hurwitz}
+ Z_\lambda(s,t)=\sum_{j\ge0}M_j b_j(s)t^j,\qquad
+ b_j(s)=\frac{(-1)^j}{j!}(s)_j\zeta(s+j).
+\end{equation}
+On a compact subset of $0<\Re s<1$, the factor $(s)_j/j!$ is bounded
+by a polynomial in $j$: multiply $1+(s-1)/k$ for $1\le k\le j$ and
+use the harmonic-sum bound on its absolute value. For $j\ge1$ the zeta
+factor is uniformly bounded by its absolutely convergent Dirichlet series.
+Since $|M_j|\le L^j$, the series is normally convergent locally for
+$|t|L<1$. This establishes joint holomorphicity in the neighbourhoods used
+below. At any nontrivial zero $\rho$, every $b_j(\rho)$, $j\ge1$, is
+nonzero: the rising factorial has no zero factor, and $\Re(\rho+j)>1$,
+where the absolutely convergent Euler product makes zeta nonvanishing.
+
+\begin{lemma}[Cluster-to-moment inverse, after the Split Zero reconstruction]
+\label{lem:cluster}
+Fix a nontrivial zero $\rho$ of exact multiplicity $r$. Let $Q_\lambda(s,t)$
+be the monic degree-$r$ polynomial in $s-\rho$ whose roots are the entire
+nearby zero cluster of $Z_\lambda(\cdot,t)$, with multiplicities. Then its
+$t$-jet through order $J$ and $(M_1,\ldots,M_J)$ determine one another.
+\end{lemma}
+\begin{proof}
+Choose a disc wholly inside the critical strip that contains only $\rho$
+among the zeros at $t=0$, with no boundary zero. Uniform convergence and
+Rouche's theorem give precisely $r$ interior zeros for small $t$.
+The contour integrals of
+$(s-\rho)^k\partial_s Z_\lambda/Z_\lambda$, divided by $2\pi i$, give
+the power sums of their displacements, for $1\le k\le r$. Newton's
+identities construct holomorphic elementary symmetric functions and hence
+$Q_\lambda$, without choosing individual branches. Write
+\[
+ Q_\lambda=(s-\rho)^r+\sum_{j\ge1}Q_j(s)t^j,\qquad
+ Z_\lambda=U_\lambda Q_\lambda,\qquad
+ U_\lambda=\sum_{j\ge0}U_j(s)t^j.
+\]
+The quotient is jointly holomorphic: on an enclosing contour it is
+holomorphic in $t$, and its Cauchy integral gives its extension in $s$.
+For each fixed $t$ the two divisors coincide, so all apparent singularities
+are removable. It is a unit, and $U_0=\zeta(s)/(s-\rho)^r$ is known.
+Coefficient comparison yields the successive inverse formulas
+\begin{align}
+ M_j&=\frac{\sum_{k=1}^j U_{j-k}(\rho)Q_k(\rho)}{b_j(\rho)},
+ \label{eq:inverseM}\\
+ U_j(s)&=\frac{M_jb_j(s)-\sum_{k=1}^j U_{j-k}(s)Q_k(s)}{(s-\rho)^r}.
+ \label{eq:inverseU}
+\end{align}
+The second numerator vanishes to order at least $r$, by the actual analytic
+factorization; its value after division at $\rho$ is its $r$th derivative
+divided by $r!$. Starting with $U_0$, these are explicit triangular
+recurrences. They are inverses on cluster jets arising from
+\eqref{eq:family}; arbitrary formal jets are not asserted to be admissible.
+
+Conversely, agreement of moments through $J$ gives agreement of $Z$ to
+order $t^{J+1}$ on the contour, also after $s$-differentiation. The
+denominators there stay nonzero, so the contour power sums, Newton
+coefficients, and monic polynomials agree to the same order. This proves
+the converse. The argument reproduces the portion of \cite{hurwitz},
+H10--H13, needed here, and requires neither RH nor simplicity.
+\end{proof}
+
+\begin{theorem}[Finite spectral reconstruction]\label{thm:main}
+The map from $\Delta(W_{m,A})$ to actual zero-cluster jets of order
+$K-1$ in \eqref{eq:family} is injective, with singleton fibres on its
+image. Its inverse is \eqref{eq:inverseM}--\eqref{eq:inverseU} followed by
+\begin{equation}\label{eq:lagrange}
+ \ell_w(y)=\prod_{v\ne w}\frac{y-r_v}{r_w-r_v}
+ =\sum_{j=0}^{K-1}\ell_{w,j}y^j,\qquad
+ \lambda_w=\sum_{j=0}^{K-1}\ell_{w,j}M_j.
+\end{equation}
+For $K\ge2$, order $K-2$ does not suffice for all probability vectors.
+For $K=1$, the unique weight is already known from $M_0=1$.
+\end{theorem}
+\begin{proof}
+Distinct nodes were proved in Lemma~\ref{lem:odd}. Thus every denominator
+in \eqref{eq:lagrange} is nonzero and $\ell_w(r_v)$ is the Kronecker
+delta. Integrating gives the inverse; the preceding lemma gives its moments.
+
+For sharpness let $h_w=\prod_{v\ne w}(r_w-r_v)^{-1}$. Comparing the
+leading coefficient in Lagrange interpolation of $y^j$ gives
+\[
+ \sum_w h_w r_w^j=0\quad(0\le j\le K-2),\qquad
+ \sum_w h_w r_w^{K-1}=1.
+\]
+The vectors $\lambda_w^\pm=1/K\pm\varepsilon h_w$ are distinct strictly
+positive probabilities whenever
+$0<\varepsilon<1/(K\max_w|h_w|)$. They have equal moments through
+$K-2$, hence identical cluster jets of that order, and distinct next
+moments. This proves the claimed lower bound.
+\end{proof}
+
+This is an exact inverse, not a numerical conditioning bound. In particular,
+the shrinking guaranteed $t$-disc as $A$ grows and the Lagrange coefficients
+remain present in the construction.
+
+\section{Arithmetic predicates and an explicit three-word calculation}
+For any function $f:W\to\R$, define its interpolating polynomial
+\[
+ H_f(y)=\sum_w f(w)\ell_w(y)=\sum_{j=0}^{K-1}h_jy^j.
+\]
+Then the exact expectation is
+\begin{equation}\label{eq:predicate}
+ \sum_w\lambda_w f(w)=\sum_{j=0}^{K-1}h_jM_j.
+\end{equation}
+For odd moduli $q_1,\ldots,q_b$, choose
+$f(w)=\prod_i\mathbf 1_{B_w\equiv c_i\pmod{q_i}}$ to recover the
+joint residue mass. The product is evaluated on a single word, so no
+independence of the marginal tests is introduced. Pairwise coprimality is
+needed only to identify the tuple with one Chinese-remainder residue,
+not to define or recover this joint mass.
+
+For $D>0$, the choice $f(w)=\mathbf 1_{D\mid B_w}$ recovers the mass
+of integral periodic candidates. With uniform weights, multiplying this
+mass by $K$ gives the number of qualifying labelled words, including
+repetitions. It is not a count of primitive cycles. A particular predicate
+can require fewer moments if its interpolating polynomial has lower degree;
+the sharpness theorem concerns the entire probability vector.
+
+For $(m,A)=(2,4)$, $D=7$ and the complete data are
+\[
+\begin{array}{c|r|r|c}
+ w&B_w&r_w&7\mid B_w\\\hline
+ (1,3)&5&19&\text{no}\\
+ (2,2)&7&1&\text{yes}\\
+ (3,1)&11&29&\text{no}
+\end{array}
+\]
+Thus
+\begin{equation}\label{eq:example}
+ \lambda_{(2,2)}=\frac{M_2-48M_1+551}{504}.
+\end{equation}
+Indeed, the relevant interpolant is
+$(y-19)(y-29)/((1-19)(1-29))$. Uniform weights give $M_1=49/3$,
+$M_2=401$, and mass $1/3$. The qualifying word repeats the known odd
+fixed point $1$; the example is an exact transfer calculation.
+
+To write \eqref{eq:example} directly from a simple zero trajectory,
+let $\rho+c_1t+c_2t^2+\cdots$ be that trajectory. Then
+\begin{align*}
+ M_1&=\frac{\zeta'(\rho)c_1}{\rho\zeta(\rho+1)},\\
+ M_2&=-\frac{2}{\rho(\rho+1)\zeta(\rho+2)}
+ \left(\zeta'(\rho)c_2+\frac{\zeta''(\rho)}2c_1^2
+ -M_1\bigl(\zeta(\rho+1)+\rho\zeta'(\rho+1)\bigr)c_1\right).
+\end{align*}
+The general-multiplicity formulas \eqref{eq:inverseM}--\eqref{eq:inverseU}
+give the same mass without a simplicity assumption.
+
+\subsection{Maps of histories and the role of zero weights}
+For a map of finite labelled sets $\pi:W\to V$ (for example, deleting
+the last exponent), the induced probability map is
+\[
+ (\pi_*\lambda)_v=\sum_{w:\pi(w)=v}\lambda_w.
+\]
+Its linear extension has kernel
+$\{h:\sum_{\pi(w)=v}h_w=0\text{ for all }v\}$; on probability
+vectors each nonempty fibre is exactly the set with these prescribed
+fibre sums. This computes the histories lost by taking prefixes.
+The two spectral encodings commute with this map after decoding: recover
+$\lambda$, apply these sums, and construct the target Hurwitz family
+using any specified distinct coordinates on $V$. This defines a map on
+the actual images, not on arbitrary analytic germs.
+
+To transport values without decoding each component separately, interpolate
+$w\mapsto f(\pi(w))$ in \eqref{eq:predicate}. This preserves precisely
+the same expectations. If a set $S\subseteq W$ also records histories
+retained despite zero weight, the input is $(S,\lambda)$ with
+$\supp\lambda\subseteq S$. The spectral family depends only on
+$\lambda$. Its fibre in this enlarged input consists of the possible
+$S\supseteq\supp\lambda$. Retaining $S$ separately is therefore necessary
+to distinguish supported zero weight from absence, exactly as in the
+Split Zero construction. It is not information present in the measure alone.
+
+\section{Mathematical use and verification}
+The construction supplies faithful finite spectral coordinates for the
+same joint arithmetic tests used in the Collatz residue workbench. It
+also gives explicit witnesses when a chosen projection loses history.
+The Hurwitz family is built from the history weights themselves; recovering
+them from its zeros does not discover an unknown distribution of infinite
+positive-integer trajectories. A quantitative use for descent would need
+additional estimates about those trajectories. No such estimate is proved
+here, and no equivalence between RH and Collatz is inferred from using a
+zeta deformation.
+
+The accompanying standard-library certificate checks finite parity-word
+compositions, exact residue realizations, polynomial reconstruction,
+the specialization collision, Lagrange inverses, and the displayed packet
+calculation using integer and rational arithmetic. The general assertions
+are proved above. The analytic zero-cluster argument is not Lean-certified
+or established by sampling numerical zeta zeros. The source records and
+independent review identify which part of the preceding Split Zero
+programme was used.
+
+\begin{thebibliography}{9}
+\bibitem{support} \emph{Support-Idempotent Homogenization for a Split-Zero
+Collatz F-Series Frame}, local technical note, April 2026, Sections 1,
+4, 5, and 7. The exact source file and SHA256 are in the accompanying
+source manifest. The present note uses the displayed finite branch
+matrices and prefix formula; it does not rely on all claims in that note.
+\bibitem{hurwitz} Split Zero research programme,
+\emph{Historical Hurwitz reconstruction and the complete Laurent jet bridge},
+equations H1--H13, especially H10--H13. Public source snapshot,
+13 September 2026:
+\href{https://github.com/KokunoYumeto/zeta-function-research-reader/blob/16fc4dbb817b82023c6126e636f1c6df28d4cecd/workbenches/splitzero-tandem/continuations/20260913-toda/tex/historical_hurwitz_jets.tex}{\texttt{zeta-function-research-reader}, commit \texttt{16fc4dbb817b}}.
+\bibitem{companion} Kokuno Yumeto,
+\emph{Weighted Odd-Step Paths, Survivor Coding, Arithmetic Groupoids, and
+Toric Period Morphisms: A Research Companion for the Collatz Map},
+Sections 2 and 4, working edition, 4 September 2026.
+\href{https://www.overleaf.com/read/vgsnwwgbrnsm\#2eec34}{Collatz workbench}.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions,
+\href{https://dlmf.nist.gov/25.11.E10}{equation 25.11.10}, Hurwitz zeta
+Taylor expansion. Accessed 13 September 2026.
+\end{thebibliography}
+\end{document}

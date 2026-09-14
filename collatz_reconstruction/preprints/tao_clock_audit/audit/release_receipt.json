@@ -1,0 +1,42 @@
+{
+  "updated_utc": "2026-09-04T13:33:12.769035+00:00",
+  "status": "compiled_machine_verified_and_visually_reviewed",
+  "source_verification": {
+    "status": "PASS",
+    "source_files": 12,
+    "tex_labels": 48,
+    "bibliographic_keys_used": 7,
+    "proof_records": 14,
+    "finite_certificate": {
+      "status": "PASS",
+      "clock_segment_checks": 86238,
+      "sampling_cutoffs": 256,
+      "finite_map_nested_passage_checks": 12800,
+      "positive_valuation_words_checked": 1554,
+      "arithmetic": "integers_and_exact_rationals_only",
+      "exclusions": [
+        "No proof of Tao's analytic first-passage or Fourier-renewal estimates",
+        "No finite experiment is used as proof of the limiting entrance law",
+        "No Collatz convergence assertion and no Lean formalization claim"
+      ]
+    }
+  },
+  "pdf": {
+    "path": "output/pdf/tao_clock_audit.pdf",
+    "pages": 15,
+    "bytes": 456718,
+    "sha256": "ad14a2c31c7cb4c11328fa237f6a987de06c016263551eb0ff894e988dcb000f"
+  },
+  "source_archive": {
+    "path": "output/tao_clock_audit_source.zip",
+    "entries": 13,
+    "bytes": 28916,
+    "sha256": "a51c2243deee6a24f63a212045f7fb62b61bd5f24b77f8f2a7157c016ec4d728"
+  },
+  "tex_diagnostics": [],
+  "page_text_guard": "PASS",
+  "visual_review": "PASS: root inspected the current four contact sheets covering all 15 pages; no clipping, overlap, unresolved references, or malformed mathematical layout observed",
+  "render_directory": "tmp/pdfs/ad14a2c31c7cb4c1",
+  "lean_launched": false,
+  "public_upload": false
+}

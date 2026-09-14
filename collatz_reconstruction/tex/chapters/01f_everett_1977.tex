@@ -1,0 +1,382 @@
+\subsection{Everett's finite parity coordinates and density-one descent}
+\label{subsec:Everett-1977}
+
+Everett works on \(\Nzero\) with the map
+\begin{equation}
+\label{eq:Everett-f}
+ f_{\mathrm{Ev}}(m)=
+ \begin{cases}
+  m/2,&m\text{ even},\\
+  (3m+1)/2,&m\text{ odd}.
+ \end{cases}
+\end{equation}
+The subscript is editorial: the source writes \(f\).  Thus
+\(f_{\mathrm{Ev}}=T|_{\Nzero}\), exactly; it is neither the unshortened map
+\(U\) nor Crandall's odd first-return map.  Put
+\begin{equation}
+\label{eq:Everett-parity-coordinates}
+ m_n=f_{\mathrm{Ev}}^n(m),
+ \qquad
+ x_n=m_n\bmod2\in\{0,1\}.
+\end{equation}
+The source word is chronological.  When encoded as an integer below, \(x_0\)
+is the least significant digit \cite[pp.~42--43]{Everett1977}.
+
+\begin{theorem}[Everett, Theorem 1: finite parity fibres]
+\label{thm:Everett-finite-fibres}
+Let \(N\ge1\), let
+\(w=(x_0,\ldots,x_{N-1})\in\{0,1\}^N\), and put
+\[
+ X=X(w)=\sum_{n=0}^{N-1}x_n.
+\]
+There are unique integers \(a(w),b(w)\) satisfying
+\[
+ 0\le a(w)<2^N,
+ \qquad
+ 0\le b(w)<3^X,
+\]
+such that the complete nonnegative fibre of \(w\) and its \(N\)-th iterate
+are
+\begin{equation}
+\label{eq:Everett-affine-fibre}
+ m=a(w)+2^NQ,
+ \qquad
+ m_N=b(w)+3^XQ,
+ \qquad Q\in\Nzero.
+\end{equation}
+Consequently every length-\(N\) binary word occurs at one and only one
+representative \(0\le m<2^N\).
+\end{theorem}
+
+\begin{proof}
+This is the source induction with its implicit quotient domain made explicit.
+For \(N=1\), \(x_0=0\) gives
+\[
+ m=2Q,\qquad m_1=Q,\qquad (a,b,X)=(0,0,0),
+\]
+whereas \(x_0=1\) gives
+\[
+ m=1+2Q,\qquad m_1=2+3Q,\qquad (a,b,X)=(1,2,1).
+\]
+
+Assume \eqref{eq:Everett-affine-fibre} at length \(N\), and abbreviate its
+coordinates to \(a,b,X,Q_N\).  Because \(3^X\) is odd, the parity of
+\(m_N=b+3^XQ_N\) fixes the parity of \(Q_N\) once \(b\) and the next required
+bit \(x_N\) are fixed.  There are exactly four cases.
+
+If \(b\) is even and \(x_N=0\), write \(Q_N=2Q_{N+1}\).  Then
+\[
+ a_N=a,\qquad b_N=b/2,\qquad X_N=X.
+\]
+If \(b\) is even and \(x_N=1\), write \(Q_N=1+2Q_{N+1}\).  Then
+\[
+ a_N=a+2^N,\qquad
+ b_N=\frac{3b+3^{X+1}+1}{2},\qquad X_N=X+1.
+\]
+Since \(b\le3^X-1\),
+\[
+ b_N\le
+ \frac{3(3^X-1)+3^{X+1}+1}{2}
+ =3^{X+1}-1<3^{X+1}.
+\]
+
+If \(b\) is odd and \(x_N=0\), write \(Q_N=1+2Q_{N+1}\).  Then
+\[
+ a_N=a+2^N,\qquad
+ b_N=\frac{b+3^X}{2},\qquad X_N=X,
+\]
+and \(b<3^X\) gives \(b_N<3^X\).  Finally, if \(b\) is odd and
+\(x_N=1\), write \(Q_N=2Q_{N+1}\).  Then
+\[
+ a_N=a,\qquad
+ b_N=\frac{3b+1}{2},\qquad X_N=X+1,
+\]
+and
+\[
+ b_N<\frac{3^{X+1}+1}{2}<3^{X+1}.
+\]
+In each case \(0\le a_N<2^{N+1}\), and the forced parity decomposition of
+\(Q_N\) is unique.  This proves existence, uniqueness, both coefficient
+bounds, and the retained quotient coordinate at stage \(N+1\)
+\cite[pp.~43--44, Eq.~(4) and proof]{Everett1977}.
+\end{proof}
+
+\begin{proposition}[the exact finite parity morphism and inverse residue]
+\label{prop:Everett-finite-parity-morphism}
+For \(N\ge1\), define
+\begin{equation}
+\label{eq:Everett-PN}
+ P_N:\Z/2^N\Z\longrightarrow\{0,1\}^N,
+ \qquad
+ P_N([m])=(T^n(m)\bmod2)_{0\le n<N}.
+\end{equation}
+Then \(P_N\) is a bijection.  If
+\[
+ c(w)=\sum_{j=0}^{N-1}x_j2^j
+       3^{\sum_{i=j+1}^{N-1}x_i},
+\]
+its inverse is the unique residue
+\begin{equation}
+\label{eq:Everett-inverse-residue}
+ P_N^{-1}(w)\equiv-3^{-X(w)}c(w)\pmod{2^N}.
+\end{equation}
+Reduction \(\Z/2^{N+1}\Z\to\Z/2^N\Z\) corresponds to deletion of the last
+word digit.  On \(\Nzero\), the fibre over \(w\) is exactly
+\(a(w)+2^N\Nzero\), and \eqref{eq:Everett-affine-fibre} records the quotient
+that the word forgets.
+\end{proposition}
+
+\begin{proof}
+Theorem~\ref{thm:Everett-finite-fibres} proves well-definedness on residue
+classes, singleton fibres at residue level, surjectivity, and the stated
+nonnegative fibres.  Iterating the two branch equations gives
+\begin{equation}
+\label{eq:Everett-word-affine-composition}
+ 2^NT^N(m)=3^{X(w)}m+c(w)
+\end{equation}
+whenever the first \(N\) parities are \(w\).  This follows by induction: the
+next zero branch multiplies the existing numerator by no new factor of \(3\),
+while the next one branch multiplies it by \(3\) and adds \(2^N\).
+Divisibility of the right side by \(2^N\) gives
+\eqref{eq:Everett-inverse-residue}; \(3^{X(w)}\) is odd and therefore a unit
+modulo \(2^N\).  The same prefix read at levels \(N+1\) and \(N\) proves the
+reduction identity.
+\end{proof}
+
+The source corollary uses the \(2^N\) positive representatives
+\(1,\ldots,2^N\), replacing the zero residue by \(2^N\).  This implicit
+representative change is valid, but it must be stated.  Numerically encoding
+the target word identifies \(P_N\) exactly with the finite chronological
+parity map \(\overline Q_{3,N}\) in
+\eqref{eq:LDW-finite-parity-map}.  Everett proves the bijection and its
+integer affine fibres.  Later sources add permutation-order, lifting,
+inverse-limit, and graph-relation structure.  Everett's quotient \(Q_N\) in
+the proof of Theorem~1 is not the later parity encoder \(Q_3\).
+
+If two nonnegative integers have the same infinite parity sequence, the
+finite theorem makes their difference divisible by \(2^N\) for every \(N\),
+so they are equal.  This is the source's infinite injectivity conclusion.  It
+does not assert that every infinite binary sequence is realized by an
+ordinary nonnegative integer.
+
+\begin{theorem}[Everett, Theorem 2: natural-density-one descent]
+\label{thm:Everett-density-one-descent}
+Let
+\begin{equation}
+\label{eq:Everett-AM}
+ A(M)=\#\{1\le m\le M:\exists k\ge1,\ f_{\mathrm{Ev}}^k(m)<m\}.
+\end{equation}
+Then
+\begin{equation}
+\label{eq:Everett-density-limit}
+ \lim_{M\to\infty}\frac{A(M)}M=1.
+\end{equation}
+Thus the source phrase ``almost every'' means ordinary natural density one
+in the intervals \([1,M]\).
+\end{theorem}
+
+\begin{proof}
+First take \(M=2^N\).  For a length-\(N\) word put
+\begin{equation}
+\label{eq:Everett-L-epsilon}
+ X=\sum_{n=0}^{N-1}x_n,
+ \qquad
+ L=\frac{\log2}{\log(10/3)},
+ \qquad
+ \varepsilon=L-\frac12.
+\end{equation}
+Here \(\varepsilon>0\), since \(L>1/2\) is equivalent to \(4>10/3\).
+Let \(H_N\) be the set of words satisfying
+\begin{equation}
+\label{eq:Everett-HN}
+ \frac12-\varepsilon<\frac XN<\frac12+\varepsilon=L.
+\end{equation}
+Under uniform counting on \(\{0,1\}^N\), each coordinate is Bernoulli with
+mean \(1/2\), and every prescribed pair of coordinate values has
+\(2^{N-2}\) extensions.  Hence
+\[
+ \mathbb E X=N/2,
+ \qquad
+ \operatorname{Var}(X)=N/4.
+\]
+Chebyshev's inequality gives the exact estimate cited, but not proved, in the
+source:
+\begin{equation}
+\label{eq:Everett-Chebyshev}
+ \frac{\#H_N}{2^N}
+ \ge1-\frac1{4\varepsilon^2N}.
+\end{equation}
+This is a finite uniform count transported by
+Proposition~\ref{prop:Everett-finite-parity-morphism}; it does not assume that
+one ordinary orbit has independent random steps.
+
+Let \(D_N\) contain the words with \(X/N<L\).  Then \(H_N\subseteq D_N\).
+If \(x_n=0\), then \(m_{n+1}/m_n=1/2\).  If \(x_n=1\) and \(m_n>1\), write
+\(m_n=2Q+1\), where \(Q\ge1\); then
+\begin{equation}
+\label{eq:Everett-odd-ratio}
+ \frac{m_{n+1}}{m_n}
+ =\frac{3Q+2}{2Q+1}\le\frac53.
+\end{equation}
+Moreover,
+\begin{equation}
+\label{eq:Everett-word-contraction}
+ \frac XN<L
+ \quad\Longleftrightarrow\quad
+ (1/2)^{N-X}(5/3)^X<1.
+\end{equation}
+
+Use the source corollary's representatives \(1\le m\le2^N\).  For a word in
+\(D_N\), either some \(m_n=1<m\) with \(n<N\), or no such value occurs.  In
+the latter case every odd factor satisfies \eqref{eq:Everett-odd-ratio}, so
+\[
+ m_N=m_0\prod_{n=0}^{N-1}\frac{m_{n+1}}{m_n}
+ \le(1/2)^{N-X}(5/3)^Xm_0<m_0.
+\]
+The one excluded starting value is \(m=1\).  Therefore
+\begin{equation}
+\label{eq:Everett-dyadic-count}
+ A(2^N)\ge\#D_N-1\ge\#H_N-1,
+\end{equation}
+and \eqref{eq:Everett-Chebyshev} gives
+\begin{equation}
+\label{eq:Everett-dyadic-density}
+ \frac{A(2^N)}{2^N}
+ \ge1-\frac1{4\varepsilon^2N}-2^{-N}\longrightarrow1.
+\end{equation}
+
+It remains to retain the source's interpolation, rather than claim that a
+dyadic subsequence proves the full limit.  Put \(A_N=A(2^N)\) and
+\begin{equation}
+\label{eq:Everett-nN}
+ n_N
+ =2^N+\bigl((2^{N+1}-2^N)-(A_{N+1}-A_N)\bigr)
+ =A_N+(2^{N+1}-A_{N+1}),
+ \qquad 2^N\le n_N\le2^{N+1}.
+\end{equation}
+The difference \(n_N-2^N\) is exactly the number of failures in the dyadic
+shell \((2^N,2^{N+1}]\).  Its bounds follow because that shell contains
+\(2^N\) integers.
+For \(2^N<M\le n_N\), monotonicity gives
+\[
+ \frac{A(M)}M\ge\frac{A_N}{n_N}.
+\]
+For \(M=n_N+k\), the dyadic interval has exactly
+\(n_N-2^N\) failures in total, so its first
+\(n_N-2^N+k\) members contain at least \(k\) successes.  Consequently
+\[
+ \frac{A(M)}M
+ \ge\frac{A_N+k}{n_N+k}
+ \ge\frac{A_N}{n_N},
+\]
+where the last inequality is equivalent to \(k(n_N-A_N)\ge0\).  Finally,
+\begin{equation}
+\label{eq:Everett-interpolation-limit}
+ \frac{A_N}{n_N}
+ =\frac{A_N/2^N}
+ {A_N/2^N+2(1-A_{N+1}/2^{N+1})}\longrightarrow1
+\end{equation}
+by \eqref{eq:Everett-dyadic-density}.  The two interval estimates and
+\eqref{eq:Everett-interpolation-limit} prove
+\eqref{eq:Everett-density-limit}
+\cite[pp.~44--45, Eqs.~(5)--(12) and Thm.~2]{Everett1977}.
+\end{proof}
+
+\begin{calculation}[an exact rational concentration witness]
+\label{calc:Everett-rational-bound}
+The strict inequality \(L>23/40\) is equivalent to
+\[
+ 2^{40}3^{23}>10^{23},
+\]
+and direct integer subtraction gives
+\[
+ 2^{40}3^{23}-10^{23}=3511519796081828298752>0.
+\]
+Thus \(\varepsilon>3/40\).  Applying the same Chebyshev proof with the
+smaller rational window \(3/40\) gives the completely explicit edition
+bound
+\begin{equation}
+\label{eq:Everett-rational-density-bound}
+ \frac{A(2^N)}{2^N}
+ \ge1-\frac{400}{9N}-2^{-N}.
+\end{equation}
+This is a proof-checking witness for the source limit, not an attribution of
+the displayed constant to Everett.
+\end{calculation}
+
+\begin{proposition}[Everett--Crandall first-descent crosswalk]
+\label{prop:Everett-Crandall-crosswalk}
+Define
+\begin{align*}
+ D_T&=\{m\in\Opos:\exists k\ge1,\ T^k(m)<m\},\\
+ D_C&=\{m\in\Opos:\exists j\ge1,\ C_{\mathrm{Cr}}^j(m)<m\}.
+\end{align*}
+Then \(D_T=D_C\) pointwise.  Moreover,
+\begin{equation}
+\label{eq:Everett-Crandall-relative-density}
+ \lim_{M\to\infty}
+ \frac{\#(D_C\cap[1,M])}{\#(\Opos\cap[1,M])}=1.
+\end{equation}
+This is the exact primary verification of the theorem reported by Crandall.
+\end{proposition}
+
+\begin{proof}
+If \(C_{\mathrm{Cr}}^j(m)<m\), then
+\(C_{\mathrm{Cr}}^j(m)=T^{A_j}(m)\) by
+\eqref{eq:Crandall-three-clocks}, so \(m\in D_T\).  Conversely, suppose
+\(T^k(m)<m\).  If \(T^k(m)\) is odd, it is one of the successive odd-return
+states.  If it is even, put \(r=\vtwo(T^k(m))\ge1\).  The next \(r\)
+shortened steps are divisions by two, and
+\[
+ T^{k+r}(m)=\frac{T^k(m)}{2^r}<m
+\]
+is odd.  It is therefore a later \(C_{\mathrm{Cr}}\)-iterate.  This proves
+the pointwise equality without identifying shortened time \(k\) with
+accelerated time \(j\).
+
+Every positive even \(m\) belongs to the full shortened descent set because
+\(T(m)=m/2<m\).  Put
+\[
+ B(M)=\#(D_C\cap[1,M]),
+ \qquad
+ O(M)=\#(\Opos\cap[1,M])=\lceil M/2\rceil.
+\]
+The exact finite-cutoff identity is therefore
+\begin{equation}
+\label{eq:Everett-Crandall-finite-count}
+ A(M)=\lfloor M/2\rfloor+B(M).
+\end{equation}
+Consequently
+\[
+ 1-\frac{B(M)}{O(M)}
+ =\frac{M}{O(M)}\left(1-\frac{A(M)}M\right).
+\]
+The multiplier tends to \(2\).  Hence Everett's ordinary-density statement
+and Crandall's relative-density statement are equivalent, and
+\eqref{eq:Everett-Crandall-relative-density} follows.
+\end{proof}
+
+\begin{nonclaim}
+Everett proves first descent below the starting value, not convergence to
+\(1\).  The exceptional set may be infinite of density zero.  The proof gives
+no uniform descent-time or total-stopping-time bound and no accelerated-time
+bound.  Its finite parity surjectivity is not ordinary-integer surjectivity
+onto infinite binary sequences.  It proves no statement about \(U\),
+generalized \(qx+r\) maps, nontrivial cycles, or unbounded trajectories.  The
+introductory verification ``up to the millions'' is historical context
+without a supplied computational certificate.
+\end{nonclaim}
+
+\begin{sourceissue}[manifestation and presentation boundaries]
+\label{sourceissue:Everett-manifestation}
+The four raster pages are clear, but their OCR layer corrupts formulas and is
+not used as mathematical evidence.  The publisher identity is fixed by DOI
+and PII; the inspected content witness is a matching VOR facsimile, while a
+publisher-hosted PDF hash remains unavailable.  In the article itself, the
+abstract's phrase ``every integer'' must be read as every positive integer:
+the fixed point \(0\) has no iterate equal to \(1\).  The body correctly uses
+\(m\ge1\) for that conjecture.  The positive-representative swap and
+\(Q_N\in\Nzero\) are implicit, and the probability estimate is cited rather
+than proved.  The preceding reconstruction makes each step explicit.  No
+theorem-level mathematical error was found.
+\end{sourceissue}

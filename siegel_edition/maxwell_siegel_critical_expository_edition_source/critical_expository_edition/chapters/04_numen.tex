@@ -1,0 +1,393 @@
+\section{The numen: finite digits, infinite digits, and place-dependent limits}
+\label{sec:numen}
+
+The numen is the translation cocycle of the affine word representation.  Its
+extension to infinite digits is a second construction, and the topology in
+which that extension converges is part of the data.  Keeping these two facts
+separate removes several ambiguities present when the word ``continuation''
+is used without a codomain place.
+
+\subsection{Finite base-\texorpdfstring{$p$}{p} words}
+
+For $\mathbf j=(j_0,\ldots,j_{m-1})\in\Sigma_p^*$ define
+\begin{equation}
+\label{eq:digsum}
+ \Dig(\mathbf j)=\sum_{a=0}^{m-1}j_ap^a.
+\end{equation}
+The least significant digit occurs first.  The map $\Dig:\Sigma_p^*\to
+\N_0$ is surjective and is not injective: appending zeroes on the right does
+not change its value.  These are the only identifications.
+
+\begin{lemma}[finite-word quotient]
+\label{lem:word-quotient}
+If $\Dig(\mathbf i)=\Dig(\mathbf j)$, then one of $\mathbf i,\mathbf j$ is
+obtained from the other by appending finitely many zeroes, after deleting
+zeroes already appended to both.  Consequently
+$\Sigma_p^*/\!\sim\;\cong\N_0$, where
+$\mathbf i\sim\mathbf j$ means equality of digit sums.
+\end{lemma}
+
+\begin{proof}
+Every nonzero integer has a unique finite base-$p$ expansion with nonzero
+last digit.  The zero integer is represented by the empty word and by words
+consisting only of zeroes.  The claim follows.
+\end{proof}
+
+\begin{proposition}[descent of the word numen]
+\label{prop:numen-descent}
+If $H$ is centered, then $X_H(\mathbf j)$ depends only on
+$\Dig(\mathbf j)$.  Hence there is a well-defined function
+\[
+ X_H:\N_0\longrightarrow K,
+ \qquad X_H(\Dig(\mathbf j))=X_H(\mathbf j).
+\]
+\end{proposition}
+
+\begin{proof}
+Centeredness gives $H_0(0)=0$.  Therefore
+\[
+ X_H(\mathbf j\wedge(0))
+ =H_{\mathbf j}(H_0(0))=H_{\mathbf j}(0)=X_H(\mathbf j).
+\]
+Iterate this identity and use \cref{lem:word-quotient}.
+\end{proof}
+
+The multiplier requires a separate convention: unlike the centered numen, it
+does not descend through the finite-word quotient.
+
+\begin{definition}[canonical integer multiplier]
+\label{def:canonical-integer-multiplier}
+For $n>0$, let
+\[
+ \operatorname{dig}_p(n)=(d_0(n),\ldots,d_{L-1}(n))
+\]
+be the unique shortest base-$p$ word representing $n$, so that
+$d_{L-1}(n)\ne0$, and put $\operatorname{dig}_p(0)=\varnothing$.  Define
+\begin{equation}
+\label{eq:canonical-integer-multiplier}
+ M_H(n):=M_H\bigl(\operatorname{dig}_p(n)\bigr),
+ \qquad M_H(0)=I.
+\end{equation}
+Thus $M_H(n)$ always refers to the canonical word, not to an arbitrary word
+with digit sum $n$.
+\end{definition}
+
+Indeed, the concatenation identity gives
+\[
+ M_H\bigl(\mathbf j\wedge(0)^{\wedge k}\bigr)
+ =M_H(\mathbf j)r_0^k.
+\]
+Consequently equivalent representatives obtained by appending zeroes need
+not have the same multiplier.  The word multiplier descends through all such
+representatives if and only if $r_0=I$.
+
+For a noncentered proper Hydra, the natural digit-recursive function still
+exists, but it is not the translation term $H_{\mathbf j}(0)$ alone.  Its
+terminal value must be the fixed point of the zero branch.
+
+\begin{theorem}[digit-recursive characterization]
+\label{thm:digit-recursive-characterization}
+Let $(r_j,c_j)_{0\leq j<p}$ be affine branches on $K$.  Functions
+$f:\N_0\to K$ satisfying
+\begin{equation}
+\label{eq:numen-FE-N}
+ f(pn+j)=r_jf(n)+c_j
+ \qquad(n\in\N_0,\ 0\leq j<p)
+\end{equation}
+are in bijection with solutions $a\in K$ of
+\begin{equation}
+\label{eq:zero-fixed-equation}
+ (I-r_0)a=c_0.
+\end{equation}
+The bijection sends $f$ to $f(0)=a$.  If $H$ is proper, the solution is
+unique and $a=(I-r_0)^{-1}c_0$.  If $H$ is centered and proper, $a=0$ and
+$f=X_H$.
+\end{theorem}
+
+\begin{proof}
+Putting $n=j=0$ in \cref{eq:numen-FE-N} gives
+\cref{eq:zero-fixed-equation}.  Conversely, choose a solution $a$.  Set
+$f(0)=a$.  Every positive $n$ has a unique decomposition $n=pm+j$ with
+$0\leq j<p$ and $m<n$, so \cref{eq:numen-FE-N} recursively defines one and
+only one value $f(n)$.  The recursion automatically satisfies every
+displayed equation because the decomposition is unique.
+
+If $\mathbf d=\operatorname{dig}_p(n)=(d_0,\ldots,d_{L-1})$, repeated
+substitution gives
+\begin{equation}
+\label{eq:finite-general-solution}
+ f(n)=H_{d_0}\circ\cdots\circ H_{d_{L-1}}(a)
+     =M_H(\mathbf d)a+X_H(\mathbf d).
+\end{equation}
+For centered $H$, appending zeroes leaves the value unchanged and this is
+exactly the descended word numen of \cref{prop:numen-descent}.
+\end{proof}
+
+Combining \cref{eq:X-word} with the canonical digit word gives the explicit
+finite formula
+\begin{equation}
+\label{eq:numen-finite-digit-formula}
+ X_H(n)=\sum_{a=0}^{L-1}
+ \bigl(r_{d_0}\cdots r_{d_{a-1}}\bigr)c_{d_a},
+ \qquad \operatorname{dig}_p(n)=(d_0,\ldots,d_{L-1}),
+\end{equation}
+for a centered Hydra, with the empty sum understood when $n=0$.  This
+formula, not an analogy with an orbit, is the primitive F-series of the later
+papers.
+
+\subsection{The base-\texorpdfstring{$p$}{p} digit compactum}
+
+For any integer $p\geq2$, put
+\begin{equation}
+\label{eq:composite-p-adics}
+ \Z_p^{\mathrm{dig}}=\varprojlim_N\Z/p^N\Z.
+\end{equation}
+Every element has a unique digit expansion
+$\mathfrak z=\sum_{a\geq0}d_a(\mathfrak z)p^a$ with
+$d_a(\mathfrak z)\in\mathcal A_p$.  If $p$ is prime this is the usual ring
+$\Z_p$.  For composite $p$, \cref{eq:composite-p-adics} is still the compact
+base-$p$ digit ring, but it is not a discrete valuation ring and should not
+be treated as a field's ring of integers.
+
+\begin{proposition}[digits, the inverse limit, and Haar probability]
+\label{prop:digit-compactum-haar}
+Give $\mathcal A_p^{\N_0}$ the product topology, with each copy of
+$\mathcal A_p$ discrete.  The map
+\[
+ \Phi_p:\mathcal A_p^{\N_0}\longrightarrow\Z_p^{\mathrm{dig}},
+ \qquad
+ (d_a)_{a\geq0}\longmapsto
+ \left(\sum_{a=0}^{N-1}d_ap^a\bmod p^N\right)_{N\geq1}
+\]
+is a homeomorphism.  Under $\Phi_p$, normalized Haar probability $m_p$ on
+$\Z_p^{\mathrm{dig}}$ is the product of the uniform probability measures on
+$\mathcal A_p$.  Equivalently, for every $N\geq1$ and
+$e_0,\ldots,e_{N-1}\in\mathcal A_p$,
+\begin{equation}
+\label{eq:digit-cylinder-mass}
+ m_p\{\mathfrak z:d_0(\mathfrak z)=e_0,\ldots,
+                   d_{N-1}(\mathfrak z)=e_{N-1}\}=p^{-N}.
+\end{equation}
+Thus the coordinate digits are independent and each is uniform on
+$\mathcal A_p$.
+\end{proposition}
+
+\begin{proof}
+The displayed residues are compatible under reduction, so $\Phi_p$ is
+well-defined.  Conversely, take a compatible sequence
+$(x_N\bmod p^N)_N$.  Its reduction modulo $p$ determines a unique
+$d_0\in\mathcal A_p$.  After $d_0,\ldots,d_{N-1}$ have been determined,
+compatibility makes
+\[
+ x_{N+1}-\sum_{a=0}^{N-1}d_ap^a
+\]
+divisible by $p^N$, and its quotient modulo $p$ determines the unique next
+digit $d_N$.  This constructs the inverse of $\Phi_p$.  Both maps are
+continuous because each output coordinate or digit depends on only finitely
+many input coordinates; alternatively, the continuous bijection is a
+homeomorphism because the product is compact and the inverse limit is
+Hausdorff.
+
+Fixing the first $N$ digits specifies one coset of the open subgroup
+$p^N\Z_p^{\mathrm{dig}}$.  That subgroup has index $p^N$, so translation
+invariance and total mass one give every such cylinder mass $p^{-N}$.
+These are exactly the finite-dimensional cylinder probabilities of the
+uniform product measure, proving the measure identity and independence.
+\end{proof}
+
+Write
+\begin{align}
+ [\mathfrak z]_{p^N}&=\sum_{a=0}^{N-1}d_a(\mathfrak z)p^a,\\
+ \sh(\mathfrak z)&=\frac{\mathfrak z-d_0(\mathfrak z)}p
+                  =\sum_{a\geq0}d_{a+1}(\mathfrak z)p^a.
+\end{align}
+The first is the canonical truncation and the second is the left digit shift.
+The digit and measure assertions used below are therefore consequences of
+\cref{prop:digit-compactum-haar}, including when $p$ is composite.
+
+\subsection{The primitive F-series}
+
+Assume throughout this subsection that $H$ is centered.  Fix a place $\ell$
+of $K$ and view all $r_j$ as continuous operators on the completion
+$K_\ell$.  Let
+\begin{equation}
+\label{eq:partial-F-series}
+ S_N(\mathfrak z)=X_H([\mathfrak z]_{p^N})
+ =\sum_{a=0}^{N-1}
+   \left(\prod_{k=0}^{a-1}r_{d_k(\mathfrak z)}\right)
+   c_{d_a(\mathfrak z)}.
+\end{equation}
+Here and below the empty product is $I$.  When $S_N(\mathfrak z)$ converges
+in $K_\ell$, define
+\begin{equation}
+\label{eq:rising-extension}
+ X_{H,\ell}(\mathfrak z)=\lim_{N\to\infty}S_N(\mathfrak z).
+\end{equation}
+This is a \emph{rising extension}: its values are prescribed by limits along
+the canonical truncation sequence.  It is not a topology-free interpolation.
+
+\begin{proposition}[pointwise convergence criterion]
+\label{prop:numen-pointwise-convergence}
+Let $C=\max_j|c_j|_\ell$.  Suppose that for a given $\mathfrak z$ there are
+$\eta>0$ and $A\in\R$ such that
+\begin{equation}
+\label{eq:negative-lyapunov}
+ \sum_{k=0}^{a-1}\log\|r_{d_k(\mathfrak z)}\|_\ell
+ \leq A-\eta a
+\end{equation}
+for all sufficiently large $a$.  Then the series in
+\cref{eq:partial-F-series} converges absolutely in an archimedean completion
+and converges in a nonarchimedean completion.  The same estimate makes the
+remainder term
+$\bigl(\prod_{k<N}r_{d_k}\bigr)a_0$ tend to zero for every fixed
+$a_0\in K_\ell$.
+\end{proposition}
+
+\begin{proof}
+The norm of the $a$th summand is at most
+$C\exp(A-\eta a)$.  This is summable in the archimedean case and tends to
+zero in the nonarchimedean case; a series in a complete nonarchimedean field
+converges exactly when its terms tend to zero.  The identical product bound
+applies to the remainder.
+\end{proof}
+
+\begin{sourceissue}[the pointwise digit-density criterion]
+For a fixed digit sequence, write
+\[
+ \nu_{j,N}=\frac1N\#\{0\leq k<N:d_k(\mathfrak z)=j\},
+ \qquad \alpha_j=\log\|r_j\|_\ell.
+\]
+The upper Lyapunov exponent is controlled by
+\begin{equation}
+\label{eq:density-lyapunov-upper-bound}
+ \limsup_{N\to\infty}\sum_j\alpha_j\nu_{j,N}
+ \leq
+ \sum_{\alpha_j<0}\alpha_j\liminf_{N\to\infty}\nu_{j,N}
+ +\sum_{\alpha_j>0}\alpha_j\limsup_{N\to\infty}\nu_{j,N}.
+\end{equation}
+For a negative coefficient, an upper bound on $\alpha_j\nu_{j,N}$ requires a
+lower bound on the frequency, hence a liminf; multiplication by
+$\alpha_j<0$ reverses the inequality.  For a positive coefficient, it
+requires an upper bound on the frequency, hence a limsup.  Terms with
+$\alpha_j=0$ are immaterial.  The pointwise criterion in the 2026 source
+reverses these choices, using a limsup for contractive branches and a liminf
+for expansive branches.  Its displayed quantity is therefore a lower, not
+an upper, control and its negativity is not a sufficient convergence
+condition.  We avoid that error here by assuming the direct eventual bound
+\cref{eq:negative-lyapunov}; negativity of the right side of
+\cref{eq:density-lyapunov-upper-bound} is one valid way to obtain that bound.
+\end{sourceissue}
+
+\begin{theorem}[almost-everywhere extension]
+\label{thm:numen-ae-extension}
+Assume $H$ is centered and proper and
+\begin{equation}
+\label{eq:geometric-mean-contraction}
+ \prod_{j=0}^{p-1}\|r_j\|_\ell<1.
+\end{equation}
+Then \cref{eq:rising-extension} converges for Haar-almost every
+$\mathfrak z\in\Z_p^{\mathrm{dig}}$ and defines a measurable
+$K_\ell$-valued function on its conull domain.  On that domain it obeys
+\begin{equation}
+\label{eq:numen-FE-adic}
+ X_{H,\ell}(p\mathfrak z+j)
+ =r_jX_{H,\ell}(\mathfrak z)+c_j.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For Haar-almost every digit sequence, the strong law of large numbers gives
+\[
+ \frac1N\sum_{k=0}^{N-1}\log\|r_{d_k(\mathfrak z)}\|_\ell
+ \longrightarrow \frac1p\sum_{j=0}^{p-1}\log\|r_j\|_\ell<0.
+\]
+Thus \cref{eq:negative-lyapunov} holds eventually, and
+\cref{prop:numen-pointwise-convergence} applies.  Each $S_N$ is locally
+constant and therefore measurable; its pointwise limit is measurable.
+Finally, the digits of $p\mathfrak z+j$ are $j,d_0(\mathfrak z),\ldots$.
+Separate the first summand in \cref{eq:partial-F-series} and pass to the
+limit to obtain \cref{eq:numen-FE-adic}.
+\end{proof}
+
+\begin{theorem}[uniform contraction]
+\label{thm:numen-uniform-contraction}
+Suppose
+\[
+ \rho=\max_{0\leq j<p}\|r_j\|_\ell<1.
+\]
+Then the series in \cref{eq:partial-F-series} converges uniformly on
+$\Z_p^{\mathrm{dig}}$.  Its sum is continuous and satisfies
+\cref{eq:numen-FE-adic}.  More precisely, in the archimedean case,
+\begin{equation}
+\label{eq:uniform-tail-bound}
+ \sup_{\mathfrak z}|X_{H,\ell}(\mathfrak z)-S_N(\mathfrak z)|_\ell
+ \leq \frac{C\rho^N}{1-\rho},
+\end{equation}
+while in the nonarchimedean case the right side may be replaced by
+$C\rho^N$.
+\end{theorem}
+
+\begin{proof}
+The $a$th summand has norm at most $C\rho^a$, uniformly in
+$\mathfrak z$.  The ordinary and ultrametric tail estimates give
+\cref{eq:uniform-tail-bound}.  Uniform limits of the locally constant
+functions $S_N$ are continuous.  The functional equation follows exactly as
+in \cref{thm:numen-ae-extension}.
+\end{proof}
+
+\begin{sourceissue}[centeredness and uniqueness in the extension lemma]
+The 2026 extension lemma assumes properness but not centeredness, while its
+displayed F-series is the translation term $H_{\mathbf j}(0)$ and therefore
+uses terminal value $0$.  For a noncentered proper Hydra, the unique solution
+on $\N_0$ instead has terminal value
+$a=(I-r_0)^{-1}c_0$ and finite values
+$M_H(\mathbf d)a+X_H(\mathbf d)$ as in
+\cref{eq:finite-general-solution}.  The extra product term disappears under
+a contraction hypothesis, but it cannot be omitted formally.  Likewise, a
+functional equation on all infinite digit strings need not determine an
+arbitrary function without a rising-limit, regularity, or boundedness
+condition.  The uniqueness asserted here is uniqueness of the prescribed
+rising extension, and under uniform contraction uniqueness in the natural
+continuous bounded class.
+\end{sourceissue}
+
+\subsection{The shortened \texorpdfstring{$qx+1$}{qx+1} numen}
+
+For the Hydra $T_q$, write $\chi_q=X_{T_q}$.  From
+\cref{eq:Tq-branches,eq:numen-FE-N},
+\begin{align}
+ \chi_q(2n)&=\frac12\chi_q(n),\label{eq:chi-even}\\
+ \chi_q(2n+1)&=\frac{q\chi_q(n)+1}{2},\label{eq:chi-odd}
+\end{align}
+with $\chi_q(0)=0$.  If
+$\operatorname{dig}_2(n)=(d_0,\ldots,d_{L-1})$ and
+$s_a=d_0+\cdots+d_{a-1}$, then
+\begin{align}
+ M_q(n)&=\frac{q^{d_0+\cdots+d_{L-1}}}{2^L},
+ \label{eq:Mq-explicit}\\
+ \chi_q(n)&=\sum_{\substack{0\leq a<L\\d_a=1}}
+               \frac{q^{s_a}}{2^{a+1}}.
+ \label{eq:chi-explicit}
+\end{align}
+Here $L$ is the length of the canonical shortest binary word; in particular,
+$M_q(0)=1$.  Appending zeroes would multiply the word multiplier by extra
+factors of $1/2$, so a padded representative must not be used in
+\cref{eq:Mq-explicit}.
+For an odd prime $q$, the same series converges in $\Q_q$ for every
+$\mathfrak z\in\Z_2$: it is finite when the binary expansion has finitely
+many ones, and otherwise its nonzero terms have $q$-adic norms
+$q^{-s_a}\to0$.  Thus
+\begin{equation}
+\label{eq:chi-q-adic-series}
+ \chi_q(\mathfrak z)=
+ \sum_{\substack{a\geq0\\d_a(\mathfrak z)=1}}
+ \frac{q^{s_a(\mathfrak z)}}{2^{a+1}}
+ \in\Z_q.
+\end{equation}
+It is rising-continuous everywhere.  It is $2$-adic-to-$q$-adic continuous
+at every binary sequence with infinitely many ones, but not at the
+nonnegative integers: if $n\in\N_0$ has $k=\#_1(n)$ ones, a new $1$ placed
+arbitrarily far beyond its last digit contributes a term of the fixed
+nonzero $q$-adic norm $q^{-k}$, independent of that remote position (it is a
+unit only when $n=0$).  This pointwise distinction is the prototype for the
+later theory of variable topologies of convergence.

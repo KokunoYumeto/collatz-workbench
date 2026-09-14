@@ -1,0 +1,136 @@
+\section{Reserve bounds and threshold reductions}\label{sec:versions}
+
+Two further parts of the first-passage argument depend on retaining the
+appropriate finite-scale information: lifting a congruence between offset
+integers requires a size bound, and passing to logarithmic density requires
+the finite dyadic weights and the correct range of a threshold function.
+
+\subsection{A reserve for \texorpdfstring{$3$}{3}-adic separation}
+
+The $3$-adic separation argument in \cite[Section~6]{Tao7} retains a
+reserve of $0.99C^2\log n$. The following estimate gives an explicit
+sufficient margin for this size argument. Put
+\[
+ a=\log(4/3),\qquad b=\log2,\qquad \rho_*=\frac{b}{4a}.
+\]
+For positive integers $a_1,\ldots,a_k$, write $S_j=a_1+\cdots+a_j$
+and $l=S_k$.  Clearing the dyadic denominator of the reversed offset
+produces the positive integer
+\[
+ U=\sum_{j=1}^k3^{j-1}2^{l-S_j}.
+\]
+Bounding $U$ below $3^n$ is what permits an equality modulo $3^n$
+between two such integers to be lifted to an equality of integers.
+
+\begin{proposition}[An explicit reserve bound]\label{prop:reserve}
+Suppose $n\geq2$, $C>0$, and $\rho>\rho_*$ satisfy
+\[
+ S_j\geq2j-2-C(\sqrt{j\log n}+\log n)\quad(1\leq j\leq k),
+ \qquad
+ l\leq n\frac{\log3}{b}-\rho C^2\log n.
+\]
+Put $\gamma=\rho b-b^2/(4a)>0$.  Then
+\begin{equation}\label{eq:reserve}
+ \frac{U}{3^n}\leq\frac83 n^{1-\gamma C^2+bC}.
+\end{equation}
+In particular $U<3^n$ if $\gamma C^2-bC\geq3$.
+\end{proposition}
+\begin{proof}
+For each $j$, the hypotheses give
+\[
+ \frac{3^{j-1}2^{l-S_j}}{3^n}
+ \leq\frac43\exp\left(-\rho b C^2\log n+bC\log n
+                  -aj+bC\sqrt{j\log n}\right).
+\]
+Complete the square:
+\[
+ -aj+bC\sqrt{j\log n}
+ =-a\left(\sqrt j-\frac{bC\sqrt{\log n}}{2a}\right)^2
+  +\frac{b^2C^2\log n}{4a}.
+\]
+Every summand is thus at most $\frac43 n^{-\gamma C^2+bC}$.
+Since $k\leq l<n\log3/\log2<2n$, summation gives
+\eqref{eq:reserve}.  Under the stated last condition its right-hand
+side is at most $8/(3n^2)\leq2/3<1$.
+\end{proof}
+
+Numerically $\rho_*=0.602355\ldots$, so the coefficient $0.99$ used by
+Tao satisfies the strict inequality required here. The displayed bound
+quantifies the sufficient reserve; it does not assert that this threshold
+is necessary for other estimates of the same sum.
+
+Here is the connection with the stopping event used there.  If
+$T=n\log3/\log2-C^2\log n$ and the accumulated valuation first exceeds
+$T$ at index $k+1$, the source concentration condition for the last two
+coordinates gives
+\[
+ S_{k+1}\leq T+1+C(\sqrt{\log n}+\log n)
+ \leq T+6C\log n.
+\]
+For $C\geq600$ this is at most
+$n\log3/\log2-0.99C^2\log n$, exactly the retained reserve.
+In deriving the first inequality, use $S_k\leq T$ and
+$a_k\geq1$ in
+$|a_k+a_{k+1}-2|\leq C(\sqrt{\log n}+\log n)$.
+The source has already restricted the index to
+$k=n\log3/(2\log2)+O(C\sqrt{n\log n})$, so $k\geq1$ for sufficiently
+large $n$ at fixed $C$.  The prefix bound in
+Proposition~\ref{prop:reserve} allows the additive two arising from
+the source's interval indexing: for $j\geq2$, its interval starting
+at index one gives $S_j\geq2(j-1)-C(\sqrt{(j-1)\log n}+\log n)$;
+the case $j=1$ follows from $a_1\geq1$.
+
+The role of the reserve is to ensure that congruent offset integers in
+this size range are equal as integers.  Fourier decay additionally uses
+the analytic estimates in Tao's argument.
+
+\subsection{Dyadic weights and diverging thresholds}
+
+The density factor in v7 Section~1.2 assigns mass $2^{-a}$ to
+$\vnu(n)=a$.  Proposition~\ref{prop:dyadic} shows that the absolute
+logarithmic density is $2^{-a-1}$; already $a=0$ distinguishes the
+formulas.  The source prints the partial sum as $1-2^{-A_0}$;
+the corrected finite partial sum is $1-2^{-A_0-1}$.
+These two expressions tend to one, so this slip does not alter the limiting
+conclusion, but it must be corrected in a finite-weight calculation.
+
+At the end of Section~3, the source sets
+$\widetilde f(X)=\inf_{m\geq X,\ m\text{ odd}}f(m)$ and applies it to a
+sum over $m\leq X$.  This lower envelope does not control the earlier
+values.  For a counterexample to the displayed bound, take $f(1)=0$ and
+$f(m)=e^m$ for odd
+$m\geq3$.  The source's bad harmonic sum is exactly $1$, since
+$\Syr_{\min}(1)=1$ and $\Syr_{\min}(m)\leq m<e^m$ for all other $m$.
+Its proposed bound is $O(\log X/X^c)$ and tends to zero.
+The fixed-threshold argument of Corollary~\ref{cor:tao} supplies the
+complete conclusion, including the strict inequality and arbitrary
+real-valued nonmonotone functions, without that display.
+
+\subsection{Source locations}
+
+The following locators refer to \texttt{collatz.tex} in arXiv v7; the
+source manifest records its SHA-256 identity.  Line numbers refer to that
+TeX source, alongside the section and proposition numbers, rather than
+to the journal pagination.
+
+\begin{center}\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.42\textwidth}@{}}
+\toprule
+Source locus & Estimate & Corresponding result\\
+\midrule
+Section 1.2, line 206 & Dyadic density factor & Exact finite transport,
+Propositions~\ref{prop:dyadic} and \ref{prop:sampling}.\\[4pt]
+Section 3, lines 591--593 & Tail envelope used on the wrong range &
+Counterexample to the display; full replacement in
+Corollary~\ref{cor:tao}.\\[4pt]
+Proposition 5.2 proof, lines 759--762 & Additive input buffer &
+Multiplicative buffer, Proposition~\ref{prop:buffer}.\\[4pt]
+Lemma 5.3 proof, lines 868, 899, 913--914 & Previous-iterate exponent;
+nonuniform final sum & Exact affine coefficient and uniformly summable
+weights, Proposition~\ref{prop:cn}.\\[4pt]
+Section 6, lines 989, 997, 1080--1084 & Retained offset reserve &
+Explicit sufficient size bound,
+Proposition~\ref{prop:reserve}.\\
+\bottomrule
+\end{tabular}
+\end{center}

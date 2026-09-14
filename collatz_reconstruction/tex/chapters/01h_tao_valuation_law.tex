@@ -1,0 +1,332 @@
+\subsection{The valuation-law gate: Tao's Proposition~1.9}
+
+The proposition numbered 1.9 in the controlling v7 text is the distribution
+theorem for the finite Syracuse valuation tuple, not the later first-passage
+stabilisation theorem.  Its statement is at v7 source lines~269--278 and its
+proof occupies lines~597--647 \cite{Tao2026v7}.  Proposition~1.11 is the
+first-passage result.  This numbering matters in the dependency graph:
+Proposition~1.14 and Proposition~1.9 are the two inputs used to obtain
+Proposition~1.11.
+
+The frozen routes identify the v5 and journal manifestations of the same
+work.  Direct comparison uses v5 source lines~269--278 and~591--641, v7
+source lines~269--278 and~597--647, and journal physical pages~6 and~17--18.
+Routing metadata is not used as mathematical evidence.
+
+\begin{sourceissue}[three-manifestation defects in Proposition~1.9]
+\label{sourceissue:Tao-Prop19-three-manifestations}
+All three inspected manifestations print the same substantive residue-fibre
+argument and preserve three operative presentation defects.  In the
+statement, the ambient ring is printed as \(\mathbb Z/2^\ell\mathbb Z\),
+although \(\ell\) is undefined; both the displayed law and every subsequent
+use require \(\mathbb Z/2^{n'}\mathbb Z\).  In the tail proof, one intermediate
+line changes the first-crossing event
+\(A_k<n'\leq A_{k+1}\) into \(A_k\leq n'<A_{k+1}\); the former is the event
+used before and after that line.  Finally, the two central truncations are
+printed as \(|\vec a|<m\), although no \(m\) is defined in that section; the
+proof requires \(|\vec a|<n'\).
+
+The source also invokes the empty prefix sum \(A_0\) without extending its
+earlier nonempty-sum convention, and it does not dispatch \(n=0\).  In the
+v5/v7 TeX proof of the prerequisite valuation-uniqueness lemma, a function is
+once written without its argument and \(\operatorname{Syr}^{N-1}(N)\) is
+printed where the induction requires \(\operatorname{Syr}^{n-1}(N)\).
+The reconstruction below supplies all of these data explicitly.
+\end{sourceissue}
+
+For \(s\geq1\), put
+\[
+ \mathcal O_s=(2\mathbb Z+1)/2^s\mathbb Z.
+\]
+Also set \(\mathcal O_0=\mathbb Z/\mathbb Z\), the singleton residue space,
+so that the \(n=0,n'=0\) endpoint in the source statement is typed.  For
+\(s\geq1\), \(\mathcal O_s\) has \(2^{s-1}\) elements.  For
+\(1\leq t\leq s\), let
+\[
+ \pi_{s,t}:\mathcal O_s\longrightarrow\mathcal O_t,
+ \qquad [u]_{2^s}\longmapsto[u]_{2^t}
+\]
+be reduction.  Every fibre has exactly \(2^{s-t}\) elements, so
+\((\pi_{s,t})_*\operatorname{Unif}(\mathcal O_s)\) is
+\(\operatorname{Unif}(\mathcal O_t)\).  For signed measures \(\mu,\nu\) on
+\(\mathcal O_s\), the source's unhalved total-variation convention gives the
+exact contraction
+\begin{equation}
+\label{eq:Tao-Prop19-TV-contraction}
+\begin{split}
+ \| (\pi_{s,t})_*\mu-(\pi_{s,t})_*\nu\|_1
+ & =\sum_{x\in\mathcal O_t}
+ \left|\sum_{u\in\pi_{s,t}^{-1}(x)}(\mu(u)-\nu(u))\right|\\
+ &\leq\sum_{u\in\mathcal O_s}|\mu(u)-\nu(u)|.
+\end{split}
+\end{equation}
+
+\begin{lemma}[valuation prefix and its exact residue fibre]
+\label{lem:Tao-Prop19-residue-fibre}
+Let \(n\geq1\), let \(N\in2\mathbb N+1\), and let
+\(\vec a=(a_1,\ldots,a_n)\in(\mathbb N+1)^n\).  Define
+\[
+ A_0=0,\qquad A_j=a_1+\cdots+a_j\quad(1\leq j\leq n),
+ \qquad A=A_n,
+\]
+and
+\[
+ C_n(\vec a)=\sum_{i=1}^n3^{n-i}2^{A_{i-1}}.
+\]
+Then
+\begin{equation}
+\label{eq:Tao-Prop19-affine-numerator}
+ \operatorname{Aff}_{\vec a}(N)
+ =\frac{3^nN+C_n(\vec a)}{2^A},
+\end{equation}
+and
+\begin{equation}
+\label{eq:Tao-Prop19-prefix-equivalence}
+ \vec a^{(n)}(N)=\vec a
+ \quad\Longleftrightarrow\quad
+ \operatorname{Aff}_{\vec a}(N)\in2\mathbb N+1.
+\end{equation}
+Consequently the event in \eqref{eq:Tao-Prop19-prefix-equivalence} is the
+single odd residue cylinder
+\begin{equation}
+\label{eq:Tao-Prop19-cylinder}
+ N\equiv b_{\vec a}\pmod{2^{A+1}},
+ \qquad
+ b_{\vec a}\equiv
+ 3^{-n}\bigl(2^A-C_n(\vec a)\bigr)\pmod{2^{A+1}}.
+\end{equation}
+If \(A<n'\), the inverse image of this cylinder in \(\mathcal O_{n'}\) has
+exactly \(2^{n'-A-1}\) elements and hence uniform mass \(2^{-A}\).
+\end{lemma}
+
+\begin{proof}
+Multiplying the source's affine-offset formula by \(2^A\) gives
+\eqref{eq:Tao-Prop19-affine-numerator}.  The forward implication in
+\eqref{eq:Tao-Prop19-prefix-equivalence} is the defining Syracuse iteration.
+For the converse, induct on \(n\).  When \(n=1\), the equality
+\(
+  2^{a_1}\operatorname{Aff}_{a_1}(N)=3N+1
+\)
+and the oddness of \(\operatorname{Aff}_{a_1}(N)\) give
+\(a_1=\nu_2(3N+1)\) directly.  Now let \(n\geq2\) and write
+\[
+ X=\operatorname{Aff}_{a_1,\ldots,a_{n-1}}(N),
+ \qquad
+ Y=\operatorname{Aff}_{\vec a}(N)\in2\mathbb N+1.
+\]
+Both affine maps preserve positivity and \(X\in\mathbb Z[1/2]\).  The last
+step gives
+\[
+ 2^{a_n}Y=3X+1.
+\]
+Thus \(3X\) is an odd integer.  A rational number in
+\(\mathbb Z[1/2]\) whose product by \(3\) is integral is itself integral;
+hence \(X\) is a positive odd integer.  The induction hypothesis identifies
+the first \(n-1\) valuation coordinates.  Since
+\((3X+1)/2^{a_n}=Y\) is odd, \(a_n=\nu_2(3X+1)\), proving the last coordinate.
+
+An integer quotient in \eqref{eq:Tao-Prop19-affine-numerator} is odd exactly
+when its numerator is congruent to \(2^A\) modulo \(2^{A+1}\).  Because
+\(3^n\) is a unit modulo \(2^{A+1}\), this gives the unique residue in
+\eqref{eq:Tao-Prop19-cylinder}.  It is odd: the first term of
+\(C_n(\vec a)\) is \(3^{n-1}\), every other term is even, and \(2^A\) is
+even.  Finally, reduction
+\(\mathcal O_{n'}\to\mathcal O_{A+1}\) has fibres of size
+\(2^{n'-(A+1)}\), proving the last assertion.
+\end{proof}
+
+The exponential estimate used in both tails and in the accumulated cylinder
+error can be written without an unnamed appeal to Stirling's formula.  Let
+\[
+ H(p)=-p\log p-(1-p)\log(1-p),
+ \qquad
+ p_0=\frac1{2+c_0/2}<\frac12,
+ \qquad
+ \eta(c_0)=\log2-H(p_0)>0.
+\]
+If \(M=n'-1\), \(n'\geq(2+c_0)n\), and \(n\geq2/c_0\), then
+\(n/M\leq p_0\).  Set \(z_0=p_0/(1-p_0)\in(0,1)\).  Since
+\(z_0^k\geq z_0^n\) for \(0\leq k\leq n\),
+\begin{equation}
+\label{eq:Tao-Prop19-binomial-bound}
+ 2^{-M}\sum_{k=0}^n\binom Mk
+ \leq z_0^{-n}\left(\frac{1+z_0}{2}\right)^M
+ \leq \exp\bigl(-\eta(c_0)M\bigr).
+\end{equation}
+The finitely many positive \(n<2/c_0\) are absorbed into a constant depending
+on \(c_0\).  This proves a bound \(C_{c_0}2^{-c_1n}\), for example with any
+fixed \(0<c_1<\eta(c_0)/\log2\).
+
+\begin{proposition}[Tao Proposition~1.9, residue-fibre reconstruction]
+\label{prop:Tao-v7-Prop19-valuation-law}
+Let \(n\in\mathbb N\), let \(\mathbf N\) take values in
+\(2\mathbb N+1\), let \(c_0>0\), and let
+\(n'\in\mathbb N\) satisfy \(n'\geq(2+c_0)n\).  Suppose, with the unhalved
+total variation used by the source, that
+\begin{equation}
+\label{eq:Tao-Prop19-hypothesis}
+ d_{\mathrm{TV}}\left(
+ \mathbf N\bmod2^{n'},\operatorname{Unif}(\mathcal O_{n'})
+ \right)\leq K2^{-n'}
+\end{equation}
+for a hypothesis constant \(K=K(c_0)\geq0\), independent of
+\(n,n'\), and the law of \(\mathbf N\).  Then there are
+\(c_1=c_1(c_0)>0\) and \(C=C(c_0)>0\) such that
+\begin{equation}
+\label{eq:Tao-Prop19-conclusion}
+ d_{\mathrm{TV}}\left(
+ \vec a^{(n)}(\mathbf N),\operatorname{Geom}(2)^n
+ \right)\leq C(1+K)2^{-c_1n}.
+\end{equation}
+Thus the source statement follows with exactly the source-permitted
+\(c_0\)-dependence of the implicit constants.
+\end{proposition}
+
+\begin{proof}
+For \(n=0\), both laws are the point mass at the empty tuple, so the distance
+is zero.  Assume \(n\geq1\), and write
+\[
+ \vec a^{(n)}(\mathbf N)=(\mathsf a_1,\ldots,\mathsf a_n),
+ \qquad
+ S_0=0,\qquad S_j=\mathsf a_1+\cdots+\mathsf a_j.
+\]
+Because every \(\mathsf a_j\) is positive, the actual-valuation tail is the
+disjoint first-crossing union
+\begin{equation}
+\label{eq:Tao-Prop19-first-crossing}
+ \{S_n\geq n'\}
+ =\bigsqcup_{k=0}^{n-1}\{S_k<n'\leq S_{k+1}\}.
+\end{equation}
+ Fix \(k\) and a positive prefix \((a_1,\ldots,a_k)\), put
+ \(A_0=0\) and \(A_j=\sum_{r=1}^{j}a_r\) for \(1\leq j\leq k\), and assume
+ \(A_k<n'\).
+On the corresponding crossing event, the exact affine numerator at time
+\(k+1\) is divisible by \(2^{S_{k+1}}\), hence
+\begin{equation}
+\label{eq:Tao-Prop19-crossing-residue}
+ 3^{k+1}\mathbf N+
+ \sum_{i=1}^{k+1}3^{k+1-i}2^{A_{i-1}}
+ \equiv0\pmod{2^{n'}}.
+\end{equation}
+The displayed sum depends only on the fixed \(k\)-prefix, including
+\(A_0=0\).  Its first term is odd and all later terms are even, so
+\eqref{eq:Tao-Prop19-crossing-residue} fixes one odd residue of
+\(\mathbf N\) modulo \(2^{n'}\).  Its probability is at most
+\((2+K)2^{-n'}\): the uniform mass of one element of \(\mathcal O_{n'}\) is
+\(2^{1-n'}\), and \eqref{eq:Tao-Prop19-hypothesis} controls the error.
+
+Positive \(k\)-tuples with \(A_k<n'\) correspond bijectively to the
+\(k\)-element subsets
+\[
+ \{A_1<\cdots<A_k\}\subseteq\{1,\ldots,n'-1\},
+\]
+and therefore number \(\binom{n'-1}{k}\), including the one empty prefix at
+\(k=0\).  Summing \eqref{eq:Tao-Prop19-first-crossing} and applying
+\eqref{eq:Tao-Prop19-binomial-bound} gives
+\begin{equation}
+\label{eq:Tao-Prop19-actual-tail}
+ \mathbb P(S_n\geq n')\ll_{c_0}(1+K)2^{-c_1n}.
+\end{equation}
+
+For the model law, realize independent \(\operatorname{Geom}(2)\)
+coordinates as waiting times between successive successes in fair Bernoulli
+trials.  Their sum is at least \(n'\) exactly when the first \(n'-1\) trials
+contain at most \(n-1\) successes.  Hence
+\begin{equation}
+\label{eq:Tao-Prop19-model-tail}
+ \mathbb P\left(|\operatorname{Geom}(2)^n|\geq n'\right)
+ =2^{-(n'-1)}\sum_{k=0}^{n-1}\binom{n'-1}{k}
+ \ll_{c_0}2^{-c_1n}.
+\end{equation}
+
+It remains to compare the two laws on positive tuples
+\(\vec a=(a_1,\ldots,a_n)\) with \(A=|\vec a|<n'\).  Lemma
+\ref{lem:Tao-Prop19-residue-fibre}, the exact pushforward
+\eqref{eq:Tao-Prop19-TV-contraction}, and
+\eqref{eq:Tao-Prop19-hypothesis} give
+\begin{equation}
+\label{eq:Tao-Prop19-point-mass}
+ \left|
+ \mathbb P(\vec a^{(n)}(\mathbf N)=\vec a)-2^{-A}
+ \right|\leq K2^{-n'}.
+\end{equation}
+The term \(2^{-A}\) is exactly the mass of \(\vec a\) under
+\(\operatorname{Geom}(2)^n\).  Positive \(n\)-tuples with \(A<n'\) are in
+bijection with \(n\)-element subsets of \(\{1,\ldots,n'-1\}\), so their
+number is \(\binom{n'-1}{n}\).  Thus their accumulated error is bounded by
+\[
+ K2^{-n'}\binom{n'-1}{n}\ll_{c_0}K2^{-c_1n}
+\]
+using \eqref{eq:Tao-Prop19-binomial-bound}.  Adding the two tail bounds
+\eqref{eq:Tao-Prop19-actual-tail} and
+\eqref{eq:Tao-Prop19-model-tail} is justified by the exact decomposition
+\[
+\begin{split}
+ d_{\mathrm{TV}}\!\left(
+ \vec a^{(n)}(\mathbf N),\operatorname{Geom}(2)^n\right)
+ &\leq
+ \sum_{\substack{\vec a\in(\mathbb N+1)^n\\|\vec a|<n'}}
+ \left|\mathbb P(\vec a^{(n)}(\mathbf N)=\vec a)-2^{-|\vec a|}\right|\\
+ &\quad+
+ \mathbb P(S_n\geq n')
+ +\mathbb P\!\left(|\operatorname{Geom}(2)^n|\geq n'\right).
+\end{split}
+\]
+This proves \eqref{eq:Tao-Prop19-conclusion}.
+\end{proof}
+
+The proof exposes the exact morphism suppressed in the printed argument.
+Define
+\[
+ \mathcal U_{n,n'}=
+ \left\{u\in\mathcal O_{n'}:
+ \begin{array}{l}
+ \text{some positive odd representative \(N\) of \(u\) satisfies}\\[-2pt]
+ |\vec a^{(n)}(N)|<n'
+ \end{array}\right\}.
+\]
+Lemma~\ref{lem:Tao-Prop19-residue-fibre} shows that the displayed condition
+and the resulting tuple are independent of the chosen positive
+representative: a tuple of total \(A<n'\) is determined already modulo
+\(2^{A+1}\).  Hence
+\[
+ V_{n,n'}:\mathcal U_{n,n'}\longrightarrow\mathcal D_{n,n'},
+ \qquad
+ V_{n,n'}([N]_{2^{n'}})=\vec a^{(n)}(N),
+\]
+is a well-defined map, where
+\[
+ \mathcal D_{n,n'}=
+ \{\vec a\in(\mathbb N+1)^n:|\vec a|<n'\}.
+\]
+It is surjective, and its fibre over \(\vec a\) is precisely the cylinder
+\(b_{\vec a}\pmod{2^{A+1}}\), containing
+\(2^{n'-A-1}\) odd residues modulo \(2^{n'}\).  Its set-theoretic kernel pair
+is
+\[
+ \mathcal U_{n,n'}\mathbin{\times_{\mathcal D_{n,n'}}}\mathcal U_{n,n'}
+ =\{(u,v):V_{n,n'}(u)=V_{n,n'}(v)\},
+\]
+namely equality of the first \(n\) valuation coordinates.  There is an
+explicit section: for each \(\vec a\), take the least positive odd
+representative \(\widetilde b_{\vec a}\) of the cylinder
+\(b_{\vec a}\pmod{2^{A+1}}\) and put
+\[
+ s_{n,n'}(\vec a)=[\widetilde b_{\vec a}]_{2^{n'}},
+ \qquad V_{n,n'}\circ s_{n,n'}=\operatorname{id}_{\mathcal D_{n,n'}}.
+\]
+This section chooses all unrecovered higher binary digits to be zero.  The map
+has no left inverse, and therefore no two-sided inverse: the tuple
+\((1,\ldots,1)\) has \(A=n\) and fibre size
+\(2^{n'-n-1}\geq2\), because
+\(n'\geq(2+c_0)n\) with \(n\geq1\).
+
+\begin{nonclaim}
+Proposition~\ref{prop:Tao-v7-Prop19-valuation-law} certifies only the
+valuation-law theorem numbered Proposition~1.9.  It neither assumes nor
+proves first-passage stabilisation.  The separate edge combining this result
+with Proposition~1.14 to obtain Proposition~1.11 must still be checked before
+Theorem~1.6 or Theorem~1.3 is admitted as proved in this edition.  No
+natural-density statement, convergence-to-one statement, or fixed universal
+orbit bound follows from this proposition.
+\end{nonclaim}

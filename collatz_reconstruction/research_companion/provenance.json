@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "artifact": "Weighted Odd-Step Paths, Survivor Coding, Arithmetic Groupoids, and Toric Period Morphisms for the Collatz Map",
+  "authorship": {
+    "name": "Kokuno Yumeto",
+    "layer": "separately authored research companion",
+    "status": "working research edition"
+  },
+  "motivating_notes": {
+    "description": "chronological private Collatz research notes",
+    "distributed_in_package": false,
+    "theorem_authority": false,
+    "role": "intellectual provenance and problem selection"
+  },
+  "proof_policy": "Every nonconjectural Collatz-specific assertion and interface obstruction admitted to the paper is proved from displayed definitions; bounded computations are independently rerun by seven portable certificates.",
+  "public_sources": [
+    {
+      "id": "Tao2026v7",
+      "role": "finite affine-offset and path-characterization crosswalk",
+      "identity": "Terence Tao, arXiv:1909.03562v7"
+    },
+    {
+      "id": "BohmSontacchi1978",
+      "role": "formal affine composition and fixed-return condition",
+      "identity": "Corrado Böhm and Giovanna Sontacchi, Atti della Accademia Nazionale dei Lincei 64 (1978), 260–264"
+    },
+    {
+      "id": "Crandall1978",
+      "role": "accelerated affine cycle formula and minimum-orbit inequality",
+      "identity": "Richard E. Crandall, Mathematics of Computation 32 (1978), 1281–1292"
+    },
+    {
+      "id": "Lagarias1990",
+      "role": "rational-cycle parity-word coordinates, irreducibility, and primitive-cycle distinction",
+      "identity": "Jeffrey C. Lagarias, Acta Arithmetica 56 (1990), 33–53"
+    },
+    {
+      "id": "Stanley2024",
+      "role": "classical fixed-content primitive-necklace enumeration",
+      "identity": "Richard P. Stanley, Enumerative Combinatorics, volume 2, second edition, Cambridge University Press, 2024"
+    },
+    {
+      "id": "Urata2003",
+      "role": "odd-step exponent numerator, periodic rational points, and integrality question",
+      "identity": "Toshio Urata, Bulletin of Aichi University of Education, Natural Science 52 (2003), 5–11"
+    },
+    {
+      "id": "LaarhovenDeWeger2012",
+      "role": "necklace and Lyndon-word comparison for generalized Collatz cycles",
+      "identity": "Thijs Laarhoven and Benne de Weger, arXiv:1209.3495v1"
+    },
+    {
+      "id": "DrosteKuichVogler2009",
+      "role": "weighted-automata framework vocabulary"
+    },
+    {
+      "id": "KuichSalomaa1986",
+      "role": "semiring and formal-series framework vocabulary"
+    },
+    {
+      "id": "Steinberg2016",
+      "role": "finite transformation-monoid crosswalk"
+    },
+    {
+      "id": "ConnesConsani2015",
+      "role": "arithmetic-site square, convex semiring, quotient, and Frobenius source boundary",
+      "identity": "Alain Connes and Caterina Consani, arXiv:1502.05580"
+    },
+    {
+      "id": "BhattLurie2022",
+      "role": "Cartier--Witt definition, formal-scheme functoriality, and Witt Frobenius source boundary",
+      "identity": "Bhargav Bhatt and Jacob Lurie, arXiv:2201.06124"
+    },
+    {
+      "id": "GrosLeStumQuiros2023v3",
+      "role": "one-variable cyclotomic prismatic equivalences and hypotheses",
+      "identity": "Michel Gros, Bernard Le Stum, and Adolfo Quiros, arXiv:2310.13790v3"
+    },
+    {
+      "id": "Sarig1999",
+      "role": "fixed-base periodic definition of Gurevich pressure and countable-shift hypothesis boundary",
+      "identity": "Omri M. Sarig, Ergodic Theory and Dynamical Systems 19 (1999), 1565--1593"
+    },
+    {
+      "id": "ConwayRadinSadun1999",
+      "role": "Gaussian-prime coordinates and fixed rational-angle independence",
+      "identity": "John H. Conway, Charles Radin, and Lorenzo Sadun, Discrete and Computational Geometry 22 (1999), 321--332; arXiv:math-ph/9812019v1"
+    },
+    {
+      "id": "Calcut2009",
+      "role": "Gaussian-integer and rational-arctangent source boundary",
+      "identity": "Jack S. Calcut, American Mathematical Monthly 116 (2009), 515--530"
+    },
+    {
+      "id": "GasullLucaVarona2023",
+      "role": "two-term Machin-formula classification and exceptional identity crosswalk",
+      "identity": "Armengol Gasull, Florian Luca, and Juan L. Varona, Indagationes Mathematicae 34 (2023), 1373--1396; arXiv:2302.00154v2"
+    },
+    {
+      "id": "Deaconu1995",
+      "role": "triple-groupoid prototype and compact self-covering hypothesis boundary",
+      "identity": "Valentin Deaconu, Transactions of the American Mathematical Society 347 (1995), 1779--1786"
+    },
+    {
+      "id": "HuberWustholz2022",
+      "role": "1-motive morphisms, Kummer logarithms, and 1-period comparison",
+      "identity": "Annette Huber and Gisbert Wustholz, Cambridge Tracts in Mathematics 227 (2022)"
+    },
+    {
+      "id": "HuberMullerStach2025",
+      "role": "effective Nori pairs and exact functoriality and coboundary edge types",
+      "identity": "Annette Huber and Stefan Muller-Stach, Periods and Nori Motives, annotated version of 1 July 2025"
+    },
+    {
+      "id": "BarbieriVialeKahn2016",
+      "role": "derived and Cartier-dual framework for 1-motives",
+      "identity": "Luca Barbieri-Viale and Bruno Kahn, Asterisque 381 (2016); arXiv:1009.1900v2"
+    }
+  ],
+  "explicit_scope_boundary": "The package proves the displayed weighted-path, finite-residue, fixed-word Gaussian-coordinate, unweighted angle non-torsion, exceptional two-letter, 795-column finite-grid, survivor-coding, pressure, arithmetic-groupoid, affine-germ, torus-character, Kummer, Cayley-pair, Nori-map, packet--parity, cyclic-transport, three-clock, signed fixed-content primitive-necklace, synchronized-CRT, formal-dilation, convergence-domain, and meromorphic-continuation theorems. The all-length Collatz--Machin rigidity statement remains a conjecture. The finite cycle scans end at odd-return period sixteen and are stated only at that range. The package does not assert termination of every positive Collatz orbit, construct the excluded tropical or prismatic interfaces, identify an unspecified crossed product with a groupoid completion, classify equilibrium states, construct a motivic Galois action, claim a result outside the certified arctangent grid, claim novelty or priority, or claim completion of the wider corpus project."
+}

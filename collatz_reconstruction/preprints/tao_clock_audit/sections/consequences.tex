@@ -1,0 +1,303 @@
+\section{Application to Tao's theorem}\label{sec:consequences}
+
+Take $D=\Opos$, $F=\Syr$, and $\alpha=1001/1000$.  Let
+\[
+ R_s=\Opos\cap[s,s^\alpha],\qquad
+ h_s=\sum_{n\in R_s}\frac1n,\qquad
+ \mu_s(\{n\})=\frac{1}{h_s n}\quad(n\in R_s),
+\]
+whenever $R_s\ne\varnothing$.  The measure is zero outside $R_s$.
+Choose $s_*$ sufficiently large that all blocks used below are nonempty.
+
+\begin{theorem}[Tao, Proposition 1.11]\label{thm:tao-input}
+There are absolute constants $B,c>0$ such that, for all sufficiently
+large $x$ and $y\in\{x^\alpha,x^{\alpha^2}\}$, an input $\mathbf N_y$
+with law $\mu_y$ satisfies
+\[
+ \Prob(t_x(\mathbf N_y)=\infty)\leq Bx^{-c}.
+\]
+Let $\widehat p_x(n)$ agree with $p_x(n)$ on successful passage and
+equal $1$ on failed passage, as in Tao's convention.  Then
+\begin{equation}\label{eq:tao-tv}
+ \normone{(\widehat p_x)_*\mu_{x^\alpha}
+ -(\widehat p_x)_*\mu_{x^{\alpha^2}}}
+ \leq B(\log x)^{-c}.
+\end{equation}
+\end{theorem}
+
+The norm in \eqref{eq:tao-tv} is the unhalved $\ell^1$ norm used in
+\cite{Tao7}.  Tao proves this proposition using the valuation law and
+fine-scale mixing of Syracuse random variables, obtained through Fourier
+estimates and a two-dimensional renewal argument.  The estimates in
+Section~\ref{sec:repairs} supply the endpoint margin and uniform
+coefficient bound used in his Section~5.
+
+The change to $\dd$ costs only the known failure probability.  Indeed,
+if $q$ merges $\dd$ with $1$ and fixes the other points, then for two
+probability measures $\lambda,\lambda'$ on $\Opos\cup\{\dd\}$,
+\begin{equation}\label{eq:unmerge}
+ \normone{\lambda-\lambda'}
+ \leq\normone{q_*\lambda-q_*\lambda'}
+ +2|\lambda(\dd)-\lambda'(\dd)|.
+\end{equation}
+To check it, only the coordinates $1$ and $\dd$ need attention:
+$|a|+|b|\leq|a+b|+2|b|$ for their respective differences.
+By \eqref{eq:kernel},
+$K_x\nu_{x^\alpha}=K_x\mu_{x^{\alpha^2}}$.
+Thus Theorem~\ref{thm:tao-input} proves, after increasing a constant,
+\begin{equation}\label{eq:input-completed}
+ d(s)\leq Bs^{-c},\qquad e(s)\leq B'(\log s)^{-c}
+ \quad(s\geq s_*).
+\end{equation}
+These measures retain their failure mass and the original denominators $h_s$.
+
+\subsection{An exactly compatible family of first-entry laws}
+
+Fix one base $b\geq s_*$ and put $t_j=b^{\alpha^j}$ for $j\geq0$.
+For every real threshold $x\geq1$, write
+\[
+ E_x=(\Opos\cap[1,x])\cup\{\dd\},\qquad
+ L_c=\frac{B'}{1-\alpha^{-c}},
+\]
+and define the probability measure
+\begin{equation}\label{eq:lattice-law}
+ \lambda_{x,j}^{(b)}=K_x\mu_{t_{j+1}}\quad\hbox{on }E_x.
+\end{equation}
+The input sequence is the same for every threshold. These laws describe
+the first entry into $[1,x]$, including failure, rather than the position
+after a prescribed number of iterations.
+
+\begin{corollary}[Coherent first-entry limits]\label{cor:limit}
+For each $x\geq1$, the measures $\lambda_{x,j}^{(b)}$ converge in total
+variation to a probability measure $\lambda_x^{\infty,(b)}$ on $E_x$.
+For every $j\geq0$ and $1\leq x\leq t_j$,
+\begin{equation}\label{eq:lattice-rate}
+ \normone{\lambda_{x,j}^{(b)}-\lambda_x^{\infty,(b)}}
+ \leq L_c(\log t_j)^{-c}.
+\end{equation}
+The limiting family is exactly compatible at every pair of thresholds:
+\begin{equation}\label{eq:lattice-compatible}
+ K_x\lambda_y^{\infty,(b)}=\lambda_x^{\infty,(b)}
+ \qquad(1\leq x\leq y).
+\end{equation}
+For $x\geq b$, its failure mass obeys
+\begin{equation}\label{eq:all-threshold-failure}
+ \lambda_x^{\infty,(b)}(\dd)
+ \leq Bx^{-c/\alpha}+L_c\alpha^c(\log x)^{-c}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+When $x\leq t_j$, nested passage gives
+\[
+ \lambda_{x,j}^{(b)}=K_x\nu_{t_j},\qquad
+ \lambda_{x,j+1}^{(b)}=K_xK_{t_j}\nu_{t_{j+1}}.
+\]
+Hence contraction and \eqref{eq:input-completed} imply
+\[
+ \normone{\lambda_{x,j+1}^{(b)}-\lambda_{x,j}^{(b)}}
+ \leq e(t_j)\leq B'(\alpha^j\log b)^{-c}.
+\]
+For each fixed $x$, these inequalities apply from some index onward.
+The geometric tail makes the sequence Cauchy in the finite-dimensional
+space $\ell^1(E_x)$. Its limit is nonnegative with total mass one.
+Summing the tail from $j$ proves \eqref{eq:lattice-rate}, uniformly for
+all $x\leq t_j$.
+
+For $x\leq y$, the identity
+$K_x\lambda_{y,j}^{(b)}=\lambda_{x,j}^{(b)}$ holds at every finite $j$.
+Taking limits under the contraction $K_x$ proves
+\eqref{eq:lattice-compatible}. In particular, the thresholds need not
+belong to the sequence $(t_j)$.
+
+For $x\geq b$, choose the unique $k\geq0$ with
+$r=t_k\leq x<t_{k+1}=r^\alpha$. Then $r>x^{1/\alpha}$, and
+$\lambda_{r,k}^{(b)}=\nu_r$. Equations \eqref{eq:input-completed} and
+\eqref{eq:lattice-rate} give
+\[
+ \lambda_r^{\infty,(b)}(\dd)\leq Br^{-c}+L_c(\log r)^{-c}.
+\]
+Since $p_r(\dd)=\dd$, compatibility gives
+$\lambda_x^{\infty,(b)}(\dd)\leq\lambda_r^{\infty,(b)}(\dd)$.
+Substitution of $r>x^{1/\alpha}$ proves
+\eqref{eq:all-threshold-failure}.
+\end{proof}
+
+The base $b$ records the logarithmic scale phase. Replacing it by
+$b^{\alpha^k}$, $k\geq0$, deletes finitely many initial inputs and
+therefore gives exactly the same limiting family. Equality for arbitrary
+different bases is not supplied by this argument. For a threshold
+$x=t_k$, the limit also equals the threshold-based limit obtained from
+inputs $\mu_{x^{\alpha^{j+1}}}$, since that sequence is a tail of the
+common input sequence.
+
+\begin{corollary}[Joint first-entry distributions]\label{cor:joint-entry}
+Fix $1\leq x_1\leq\cdots\leq x_r$, with $r\geq1$, and let
+$\mathbf N_j$ have law $\mu_{t_{j+1}}$. The joint law of
+\[
+ (p_{x_1}(\mathbf N_j),\ldots,p_{x_r}(\mathbf N_j))
+\]
+converges to a probability measure $\Lambda_{x_1,\ldots,x_r}^{(b)}$.
+It is supported on the finite set
+\[
+ \mathcal C=\{(z_1,\ldots,z_r)\in\textstyle\prod_i E_{x_i}:
+                p_{x_i}(z_{i+1})=z_i\ (1\leq i<r)\}.
+\]
+For every $j$ with $t_j\geq x_r$, its unhalved total-variation error
+is at most $L_c(\log t_j)^{-c}$, with no factor depending on $r$.
+The marginal at $x_i$ is $\lambda_{x_i}^{\infty,(b)}$.
+\end{corollary}
+
+\begin{proof}
+Define
+\[
+ J:E_{x_r}\longrightarrow\mathcal C,\qquad
+ J(z)=(p_{x_1}(z),\ldots,p_{x_r}(z)).
+\]
+Nested passage proves that $J$ takes values in $\mathcal C$. Its last
+coordinate is $z$, so it is injective. Conversely, repeated use of the
+defining equations of $\mathcal C$ gives $z_i=p_{x_i}(z_r)$; thus the
+inverse of $J$ is projection to the last coordinate. In particular $J$
+has singleton fibres and loses no information. Its pushforward preserves
+the $\ell^1$ norm of signed measures, because distinct source atoms have
+distinct images.
+
+The finite joint law is exactly $J_*\lambda_{x_r,j}^{(b)}$.
+Set $\Lambda_{x_1,\ldots,x_r}^{(b)}=J_*\lambda_{x_r}^{\infty,(b)}$.
+The isometry and \eqref{eq:lattice-rate} give the stated error bound.
+Projection onto coordinate $i$ and
+\eqref{eq:lattice-compatible} identify the marginal.
+\end{proof}
+
+Tao's Proposition~1.11 compares two successive starting scales. The
+corollaries above turn its summable error into exact compatible
+distributions, including simultaneous first-entry observations. The
+compatibility maps are the first-passage maps $K_x$; no invariance under
+one application of $\Syr$ is required.
+
+\subsection{The quantitative fixed-threshold theorem}
+
+\begin{theorem}[Tao's fixed-threshold theorem]
+\label{thm:fixed}
+There are absolute constants $C,c>0$ such that, for all real $K,X\geq2$,
+\begin{align}
+ \sum_{\substack{m\leq X,\ m\in\Opos\\\Syr_{\min}(m)>K}}\frac1m
+ &\leq C\frac{\log X}{(\log K)^c},\label{eq:odd-fixed}\\
+ \sum_{\substack{n\leq X\\\Col_{\min}(n)>K}}\frac1n
+ &\leq C\frac{\log X}{(\log K)^c}.\label{eq:full-fixed}
+\end{align}
+\end{theorem}
+\begin{proof}
+Equations \eqref{eq:input-completed} and \eqref{eq:power-error}, followed
+by Theorem~\ref{thm:transport}, give
+\[
+ \mu_s(\Syr_{\min}>K)\leq C_1(\log K)^{-c}
+\]
+for all sufficiently large $K$, uniformly over nonempty blocks.  Bounded
+$K\geq2$ is included by increasing $C_1$.
+For $s\geq2$, integral comparison gives $h_s\leq C_\alpha\log s$.
+If $1<s<2$, the block contains no odd integer, since $s^\alpha<2^\alpha<3$.
+Hence every relevant block obeys
+\begin{equation}\label{eq:block-harmonic}
+ \sum_{\substack{m\in R_s\\\Syr_{\min}(m)>K}}\frac1m
+ \leq C_2(\log s)(\log K)^{-c},
+\end{equation}
+with empty blocks contributing zero.
+
+If $X\leq K$, the sum in \eqref{eq:odd-fixed} is zero, since the orbit
+contains its starting value.  Otherwise let $z_i=X^{\alpha^{-i}}$, and
+let $J\geq1$ be minimal with $z_J\leq K$.  The blocks
+$[z_i,z_i^\alpha]$, $1\leq i\leq J$, cover $[z_J,X]$.
+Every bad starting value exceeds $K$, so the remaining prefix contributes
+nothing.  Possible duplicated endpoints only increase an upper bound.
+Since
+\[
+ \sum_{i=1}^J\log z_i
+ =\log X\sum_{i=1}^J\alpha^{-i}
+ \leq\frac{\log X}{\alpha-1},
+\]
+summing \eqref{eq:block-harmonic} proves \eqref{eq:odd-fixed}.
+
+For the full-domain map, Propositions~\ref{prop:clocks} and
+\ref{prop:dyadic} give the finite identity
+\[
+ \sum_{\substack{n\leq X\\\Col_{\min}(n)>K}}\frac1n
+ =\sum_{a\geq0}2^{-a}
+   \sum_{\substack{m\leq X/2^a,\ m\in\Opos\\\Syr_{\min}(m)>K}}\frac1m.
+\]
+Only finitely many terms are nonzero.  If $X/2^a<2$, the inner bad sum is
+zero.  For the others, apply \eqref{eq:odd-fixed} and use
+\[
+ \sum_{a:X/2^a\geq2}2^{-a}\log(X/2^a)
+ \leq\log X\sum_{a\geq0}2^{-a}=2\log X.
+\]
+This proves \eqref{eq:full-fixed}.
+\end{proof}
+
+\subsection{Diverging thresholds and the exact meaning of tightness}
+
+\begin{corollary}[Tao's almost-bounded theorem]\label{cor:tao}
+For every $f:\N_+\to\R$ with $f(n)\to+\infty$,
+\[
+ \lim_{X\to\infty}\frac1{H(X)}
+ \sum_{\substack{n\leq X\\\Col_{\min}(n)\geq f(n)}}\frac1n=0.
+\]
+Thus $\Col_{\min}(n)<f(n)$ on a set of logarithmic density one.
+The analogous statement on $\Opos$, with $H_o(X)$ and $\Syr$, also holds.
+\end{corollary}
+\begin{proof}
+Fix an integer $K\geq2$.  There is $Y_K$ such that $f(n)>K$ for
+$n\geq Y_K$.  Therefore
+\[
+ \{n:\Col_{\min}(n)\geq f(n)\}
+ \subseteq[1,Y_K]\cup\{n:\Col_{\min}(n)>K\}.
+\]
+Theorem~\ref{thm:fixed} bounds its harmonic mass up to $X$ by
+$H(Y_K)+C\log X/(\log K)^c$.  Divide by $H(X)$ and first let
+$X\to\infty$ at fixed $K$.  The resulting limsup is at most
+$C/(\log K)^c$, which tends to zero as $K\to\infty$.
+The odd case is identical, using $H_o(X)\sim\frac12\log X$.
+The argument allows nonmonotone $f$ with arbitrarily slow divergence.
+Its negative values occur only in a finite prefix, and the equality part
+of the bad event is included throughout.
+\end{proof}
+
+The finite-prefix argument gives a general tightness criterion for
+weighted counting measures.
+
+\begin{proposition}[Weighted tightness equivalence]\label{prop:tightness}
+Let $D\subseteq\N_+$ be infinite, let $w(n)>0$, and suppose
+$W(X)=\sum_{n\in D,n\leq X}w(n)\to\infty$.
+Let $g:D\to[0,\infty)$ be finite-valued and let $\rho_X$ be the
+probability proportional to $w$ on the nonempty prefix $D\cap[1,X]$.
+The following assertions are equivalent:
+\begin{enumerate}
+\item For every real-valued $f(n)\to\infty$, $\rho_X(g\geq f)\to0$.
+\item $\displaystyle\lim_{K\to\infty}\limsup_{X\to\infty}\rho_X(g>K)=0$.
+\item $\displaystyle\lim_{K\to\infty}\sup_X\rho_X(g>K)=0$.
+\end{enumerate}
+The supremum is over nonempty prefixes.
+\end{proposition}
+\begin{proof}
+The finite-prefix argument in Corollary~\ref{cor:tao}, with $W$ in place
+of $H$, proves (2)$\Rightarrow$(1).
+If (2) fails, choose $\varepsilon>0$ such that for every integer $j\geq1$
+there are arbitrarily large $X$ with $\rho_X(g>j)\geq\varepsilon$.
+Start with an integer $X_0\geq\min D$.
+Choose integers $X_j>X_{j-1}$ recursively with this property and with
+$W(X_{j-1})/W(X_j)\leq\varepsilon/2$.  Set $f(n)=j$ for
+$X_{j-1}<n\leq X_j$, assigning any finite value on the initial prefix.
+This tends to infinity.  At $X_j$, removal of the earlier prefix leaves
+mass at least $\varepsilon/2$ on which $g>j=f$, contradicting (1).
+
+To prove (2)$\Rightarrow$(3), choose $K_0$ so the limsup in (2) is less
+than $\varepsilon/2$.  For some $X_0$, all $X\geq X_0$ have
+$\rho_X(g>K_0)\leq\varepsilon$.  Increase $K_0$ to exceed every value
+of $g$ on the finite prefix up to $X_0$.  All earlier tails are now empty,
+and the later bound persists.  Finally (3)$\Rightarrow$(2) is immediate.
+\end{proof}
+
+For $w(n)=1/n$ and $g=\Col_{\min}$ or $\Syr_{\min}$, this gives the
+qualitative equivalence stated by Tao.  The quantitative rate in
+Theorem~\ref{thm:fixed} uses his first-passage estimate in addition to
+this equivalence.

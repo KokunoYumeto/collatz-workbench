@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "record_type": "content_reconciliation_audit",
+  "id": "AFFINE-SIGNED-NECKLACE-RECONSTRUCTION-20260905",
+  "recorded_utc": "2026-09-04T23:06:39Z",
+  "status": "proved_and_literature_crosswalked",
+  "scope": "The fixed-content primitive-word, exact-period rational-orbit, rational-point, and denominator-sign counts in raw affine Chatnotes physical lines 1041-1083.",
+  "source_pins": [
+    {
+      "role": "raw_chronological_witness",
+      "source_id": "CHATINT-COL-000002",
+      "path": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/more col thread/ChatGPT-Implications of Affine Formula.md",
+      "physical_lines": "1041-1083",
+      "sha256": "abb1abbb948dc140394de3d35f0efbde9b3facdf718c24b065b8d0adb951366e"
+    },
+    {
+      "role": "local_antecedent_proof_witness",
+      "path": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/automata/V5/odd_step_collatz_orbit_packets_note.tex",
+      "source_lines": [
+        "2537-2628",
+        "2750-2791"
+      ],
+      "sha256": "406ef13e43ae0af68fabdbda4dd16145d313407f7d38ea22311803c7533cfec7"
+    },
+    {
+      "role": "classical_fixed_content_necklace_formula",
+      "source_id": "SRC-COL-000052",
+      "path": "C:/Users/LOCAL_USER/Documents/Papors/OS/Hardy-Littlewood-Pólya theorem/Enumerative Combinatorics Volume 2 Second Edition ( etc.).pdf",
+      "bytes": 20755788,
+      "pdf_pages": 802,
+      "sha256": "5b5d3bfa241c1fd4302cc7817aab1bf73c66795ce2a462ffc14837149cdcf457",
+      "locators": [
+        "physical PDF p.498 / printed p.480: Exercise 7.89(a), equations (7.149)-(7.150)",
+        "physical PDF p.573 / printed p.555: solution identifies the formula with primitive necklaces enumerated by colour occurrences"
+      ]
+    },
+    {
+      "role": "Collatz_rational_cycle_coordinates_and_sign_denominator",
+      "source_id": "SRC-COL-000013",
+      "path": "external_literature/dependency_gate_2026-08-25/lagarias_1990_impan.pdf",
+      "locators": [
+        "printed pp.36-37, Theorem 2.1 and equation (2.1)",
+        "printed p.38, irreducible words and equations (2.4)-(2.6)",
+        "printed p.39, equations (2.7a)-(2.7b)"
+      ]
+    },
+    {
+      "role": "unrestricted_Lyndon_count_crosswalk",
+      "source_id": "SRC-COL-000004",
+      "path": "C:/Users/LOCAL_USER/Documents/arxiv_latex/library/collatz_reconstruction/latex/1209.3495v1/main.tex",
+      "source_lines": "303-321",
+      "sha256": "51b2c072646d33fc7f37fcd23e966f4435dc3e2026cd3fe83b6717829c31e0eb"
+    }
+  ],
+  "mathematical_result": {
+    "parameters": "m>=1, A>=m, g=gcd(m,A)",
+    "primitive_pointed_words": "W(m,A)=sum_{d|g} mu(d) binom(A/d-1,m/d-1)",
+    "exact_period_orbits": "N_orb(m,A)=W(m,A)/m=(1/A) sum_{d|g} mu(d) binom(A/d,m/d)",
+    "signed_orbits": "N_orb^+=1_{2^A>3^m}N_orb and N_orb^-=1_{2^A<3^m}N_orb",
+    "signed_points": "N_pt^+=mN_orb^+ and N_pt^-=mN_orb^-",
+    "equality_case": "2^A=3^m is impossible by unique factorization",
+    "coprime_case": "If gcd(m,A)=1, every packet word is primitive, N_orb=binom(A-1,m-1)/m, and N_pt=binom(A-1,m-1).",
+    "boundary_cases": [
+      "m=1,A=1 gives the negative fixed point -1",
+      "m=1,A>=2 gives one positive rational fixed point",
+      "A=m>1 contains only the imprimitive all-ones word and contributes no exact-period-m orbit"
+    ]
+  },
+  "proof_structure": [
+    "Unique primitive-root decomposition partitions positive compositions by repetition number d dividing gcd(m,A).",
+    "Möbius inversion gives the primitive pointed-word count.",
+    "The cyclic action on a primitive word is free, so division by m gives necklaces.",
+    "MOR-COL-000064 transports necklaces exactly to rational odd-return orbits; MOR-COL-000065 fixes the exact-period interpretation across clocks.",
+    "CLM-COL-000183 gives each rotated point as a positive numerator divided by 2^A-3^m, so one packet has a uniform sign.",
+    "The binomial identity converts the exponent-composition form into Stanley's fixed-content binary-necklace coefficient."
+  ],
+  "source_repairs": [
+    {
+      "locator": "raw physical line 1083",
+      "issue": "primitive pointed words, cyclic orbit classes, and individual orbit points are conflated",
+      "repair": "the theorem defines W, N_orb, and N_pt separately and proves the exact factors between them"
+    },
+    {
+      "locator": "local antecedent source line 2480, already registered as CLM-COL-000193",
+      "issue": "equality of pointed periodic words is incorrectly replaced by cyclic conjugacy of roots",
+      "repair": "only the valid base-point-aligned direction is used; the exact orbit classification survives"
+    },
+    {
+      "locator": "local antecedent count proof lines 2537-2628",
+      "issue": "the common-divisor Möbius convolution and branch admissibility are left implicit",
+      "repair": "both directions of the primitive-root decomposition and the complete inversion are displayed"
+    }
+  ],
+  "literature_disposition": {
+    "fixed_content_count": "classical generalized Witt/Lyndon enumeration, explicitly supported by Stanley 2024",
+    "Collatz_specific_content": "exact transport from positive exponent compositions to fixed-content binary necklaces and the split by the sign of 2^A-3^m",
+    "on_disk_primary_search_result": "No checked primary paper on disk was located that states the combined signed fixed-content Collatz theorem; this is not a priority claim.",
+    "Laarhoven_source_caution": "The displayed numerical sequence at source line 311 conflicts with its own formula and Lagarias's table and is not propagated."
+  },
+  "artifacts": {
+    "general_proof": {
+      "path": "research_companion/chapters/04_affine_packets_parity_necklaces_and_residue_automata.tex",
+      "label": "thm:signed-fixed-content-necklace-count"
+    },
+    "critical_crosswalk": {
+      "path": "tex/chapters/06_affine_packet_source_audit.tex",
+      "subsection": "Signed fixed-content necklace counts"
+    },
+    "finite_certificate": {
+      "path": "research_companion/certificates/affine_signed_necklace_checks.py",
+      "sha256": "8e51437eb64c5c9cee6601d6fe654383302a3ee3d1430c52981ec9b773c29c97"
+    },
+    "certificate_execution": {
+      "path": "research_companion/audit/affine_signed_necklace_checks_20260905.json",
+      "sha256": "2518cb91702a3ea91f8e3e519d9b69d8c31e0bb79c94170a920dbd06cf1e1a94",
+      "status": "PASS"
+    }
+  },
+  "nonclaims": [
+    "No novelty or priority is claimed for the fixed-content necklace enumeration.",
+    "The bounded certificate does not replace the all-parameter proof.",
+    "The rational-orbit count and sign split do not establish integrality or global Collatz termination.",
+    "This block does not establish complete reconciliation of all 3021 raw lines or completion of the wider corpus."
+  ],
+  "Lean_launched": false
+}

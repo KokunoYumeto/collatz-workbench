@@ -1,0 +1,589 @@
+\section{Canonical source register}
+\label{sec:source-register}
+
+This register fixes the bibliographic identity, version policy, and evidential
+role of every source used to define Siegel's canonical research corpus.  A
+``lineage'' below is an arXiv identifier, not a claim that every version under
+that identifier is the same mathematical text.  Likewise, an author-site
+``last modified'' date is provenance metadata, not a rule of mathematical
+precedence.
+
+\subsection{Authority order}
+
+Precedence is decided claim by claim, in the following order.
+
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item An explicit authorial correction or forward convention controls the
+      object it names.  Thus 2601.17030v3 controls the definitions of Hydra
+      maps and numens: it warns that earlier definitions, including the
+      dissertation's, may be inconsistent and declares its definitions the
+      standard going forward.  For frames, F-series, and rising-continuity,
+      2307.00436v1 explicitly takes precedence where it conflicts with the
+      dissertation.
+\item Subject to (1), the latest substantive, non-withdrawn arXiv version
+      controls the theorem stated by that logical work.  A metadata-only
+      withdrawal revision contains no replacement mathematics.
+\item The dissertation supplies the largest continuous exposition and all
+      material not replaced by a later specific source.  Its three public
+      witnesses are collated rather than silently identified.
+\item A journal-layout PDF is a same-work witness.  It is not presumed to be
+      textually identical to the arXiv source, and typography alone does not
+      make it a later mathematical correction.
+\item An author-site post controls its own expository wording and any material
+      unique to that post.  It does not supersede an arXiv theorem merely
+      because the page reports a later modification date.
+\item A materially distinct earlier version remains part of the critical
+      corpus.  A withdrawn work remains part of the historical corpus, but it
+      cannot certify a current theorem.
+\end{enumerate}
+
+This order fixes source selection; it does not certify truth.  A controlling
+witness may still contain a typographical error, an omitted hypothesis, or a
+proof sketch, each of which is recorded without alteration.
+
+\subsection{The ten arXiv lineages}
+
+Submission dates below are UTC dates in the archived arXiv metadata.  The
+similarity figures are derived TeX-line routing metrics, not altered source
+witnesses.  The reproducible procedure is the following.  For the first TeX
+file in each version profile, 
+\path{scripts/profile_version_deltas.py} reads UTF-8 text with replacement of
+decoding errors, splits it into lines, deletes the suffix beginning at an
+unescaped percent sign, replaces each nonempty whitespace run by one space,
+trims the result, and discards empty lines.  If the resulting line sequences
+have lengths $N_1,N_2$ and the matching blocks returned by Python's
+\texttt{difflib.SequenceMatcher} with \texttt{autojunk=False} contain $M$
+lines, the reported value is
+\[
+ \frac{2M}{N_1+N_2}.
+\]
+The inputs are
+\path{public_records/maxwell_siegel_arxiv_2026-08-16.json} and
+\path{dossiers/_structural/LATEX_PROFILE_INDEX.jsonl}; exact compared paths,
+source SHA-256 hashes, line counts, edit counts, and full-precision values are
+in \path{dossiers/_structural/VERSION_DELTAS.jsonl}, whose SHA-256 is
+\nolinkurl{40520bb04b54100bbc3a640f752c9fba0fbba4378545b3ad8b01dbb459d22647}.
+This derived diagnostic only orders collation work.  It neither changes a
+source nor proves semantic equivalence, semantic difference, or permission to
+merge witnesses.
+
+\begingroup\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.12\textwidth}p{0.31\textwidth}p{0.25\textwidth}p{0.25\textwidth}@{}}
+\toprule
+Lineage & Work & Witness history & Canonical treatment\\
+\midrule
+\endfirsthead
+\toprule
+Lineage & Work & Witness history & Canonical treatment\\
+\midrule
+\endhead
+1909.09733 & \emph{Conservation of Singularities in Functional Equations Associated to Collatz-Type Dynamical Systems; or, Dreamcatchers for Hydra Maps}
+& v1, 20 Sep. 2019; v2, 4 Oct. 2019; v3, 19 Oct. 2019.  Similarities: v1--v2, $0.6041$; v2--v3, $0.8736$.
+& Use v3; retain v1 and v2 as substantial same-title witnesses.  This is the earlier unit-disk/profinite dreamcatcher branch, not a chapter-version of the dissertation's central $(p,q)$-adic branch.\\
+
+2002.12762 & \emph{Fourier Analysis of the Parity-Vector Parameterization of the Generalized Collatz $px+1$ maps}
+& v1, 24 Feb. 2020, substantive paper; v2, 14 Dec. 2023, metadata-only withdrawal.
+& Withdrawn as obsolete and under the wrong subject classification.  Preserve v1 only as a parity/Fourier precursor and historical witness.\\
+
+2007.15936 & \emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory: Part I---Arithmetic Dynamical Systems and Non-Archimedean Value Distribution Theory}
+& v1, 19 Jul. 2020, titled \emph{Syracuse Random Variables and the Periodic Points of Collatz-type maps}; v2, 28 Mar. 2023; v3, 24 Apr. 2023.  Similarities: v1--v2, $0.0248$; v2--v3, $0.9790$.
+& Use v3 for the shortened-$qx+1$ numen and Correspondence Principle.  Treat v1 as a materially distinct predecessor, not a minor draft.  Collate the journal-layout PDF and Web installments I--II.\\
+
+2111.07882 & \emph{Functional Equations Associated to Collatz-Type Maps on Integer Rings of Algebraic Number Fields}
+& v1, 10 Nov. 2021, substantive paper; v2, 16 Apr. 2022, metadata-only withdrawal.
+& Withdrawn for an error in Section 3 concerning a quotient of a ring of algebraic integers modulo an ideal.  Historical only; do not use it to certify the number-field extension.\\
+
+2111.07883 & \emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory: Part I.5--How To Write The (Weak) Collatz Conjecture As A Contour Integral}
+& v1, 10 Nov. 2021, titled \emph{A $p$-Adic Characterization of the Periodic Points of a Class of Collatz-Type Maps on the Integers}; v2, 15 Dec. 2023.  Similarity $0.0551$.
+& Use v2 for the Dirichlet/Mellin--Perron branch.  Preserve v1 separately as a substantially different foundational witness to the Correspondence Principle.\\
+
+2208.11082 & \emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory: Part II---$(p,q)$-Adic Fourier Analysis and Wiener's Tauberian Theorem}
+& v1, 18 Aug. 2022, titled \emph{Wiener Tauberian Theorems and the Value Distributions of $(p,q)$-adic Functions}; v2, 20 Jun. 2025.  Similarity $0.2870$.
+& Use v2; preserve v1 as a materially distinct shorter witness.  Collate Web installment III.\\
+
+2307.00436 & \emph{Infinite Series Whose Topology of Convergence Varies From Point to Point}
+& v1, 1 Jul. 2023.
+& Use v1 for frames, F-series, rising-continuity, and variable topology.  It expressly takes precedence over conflicting dissertation terminology.\\
+
+2412.02902 & \emph{$(p,q)$-adic Analysis and the Collatz Conjecture}
+& v1, 3 Dec. 2024; arXiv witness of the 2022 University of Southern California dissertation.
+& Use the TeX as the machine-readable backbone, collated with the August and corrected October 2022 site PDFs.  Later specific sources override it only within their declared scope.\\
+
+2507.13358 & \emph{Algebras of $p$-Adic Distributions Induced by Pointwise Products of F-Series}
+& v1, 1 Jul. 2025.
+& Use v1.  The March 2025 Kansas talk is a precursor and expository witness, not a replacement source.\\
+
+2601.17030 & \emph{The Hydra Map and Numen Formalisms for Collatz-Type Problems}
+& v1, 19 Jan. 2026; v2, 29 Jan. 2026; v3, 12 Feb. 2026.  Similarities: v1--v2, $0.9691$; v2--v3, $0.9935$.
+& Use v3 as the present definition authority and global-field manual.  The v3 metadata states that minor errors in Proposition 7.6 were rectified.\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+The changed titles and direct collation of 2007.15936v1, 2111.07883v1, and
+2208.11082v1 require separate witness records.  The routing values above only
+prioritize that collation: neither a shared arXiv identifier nor a line metric
+is a semantic merge instruction.
+
+\subsection{The Web installments and the paper-series numbering}
+
+The author site's four-part numbering is not the paper-series numbering.  To
+prevent false citations, this edition always prefixes the site objects with
+\emph{Web installment}.
+
+\begingroup\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.12\textwidth}p{0.30\textwidth}p{0.20\textwidth}p{0.31\textwidth}@{}}
+\toprule
+Site label & Exact title & Page dates & Relation and status\\
+\midrule
+\endfirsthead
+\toprule
+Site label & Exact title & Page dates & Relation and status\\
+\midrule
+\endhead
+Web I & \emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory--Part I--The Numen of a Hydra Map}
+& Published 2022-08-09 21:45:22 UTC; page reports modification 2024-07-11 21:24:00 UTC.
+& Expository witness for the construction half of paper Part I, arXiv:2007.15936v3.  It is not an additional arXiv Part I.\\
+
+Web II & \emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory--Part II--The Correspondence Principle}
+& Published 2022-08-10 20:55:28 UTC; page reports modification 2022-10-11 19:55:07 UTC.
+& Expository witness for the Correspondence-Principle half of \emph{paper Part I}.  Its final Dirichlet/Perron aside is a precursor to paper Part I.5, arXiv:2111.07883v2.  It is not paper Part II.\\
+
+Web III & \emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory--Part III--$(p,q)$-adic Fourier Analysis \& Tauberian Spectral Theory}
+& Published 2022-08-12 22:51:30 UTC; archived page reports modification 2025-12-26 22:12:20 UTC.
+& Evolving site exposition overlapping \emph{paper Part II}, arXiv:2208.11082v2.  Unique material may be used after theorem-level collation; its modification date alone confers no authority.\\
+
+Web IV & \emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory--Part IV--A Fourier Analysis of the Numen of the Shortened $qx+1$ map}
+& Published 2022-08-15 19:14:38 UTC; archived page reports modification 2025-12-26 22:13:00 UTC.
+& Site-only numen/Fourier application, chiefly parallel to the dissertation's one-dimensional Fourier material.  There is no corresponding arXiv paper Part IV in this corpus.\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+The archived Web I and Web II objects are current snapshots acquired on
+23 August 2026.  WordPress's public endpoint did not expose their revision
+histories without authentication.  Consequently their published and modified
+timestamps do not identify the contents of every intervening revision.
+
+\subsection{Dissertation and supplemental author-site witnesses}
+
+The dissertation has three distinct public witnesses:
+
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item the August 2022 author-site PDF, 476 pages;
+\item the October 2022 author-site PDF explicitly labelled corrected,
+      478 pages; and
+\item arXiv:2412.02902v1, submitted 3 December 2024, 467 pages, with an
+      extractable TeX source.
+\end{enumerate}
+
+Their normalized texts and pagination differ.  The arXiv TeX is therefore an
+editable base, not evidence that the explicitly corrected October PDF is a
+byte-for-byte or proposition-for-proposition predecessor.  Any difference
+used in the edition must be collated at the relevant passage.
+
+The remaining author-site witnesses have the following roles.
+
+\begin{description}[style=nextline]
+\item[Part I journal-layout PDF.]
+Same-work layout witness for 2007.15936; use for publication pagination and
+typographic variants only after comparison with v3.
+
+\item[Infinite-series journal-layout PDF.]
+Same-work layout witness for 2307.00436; it does not silently replace the
+available TeX.
+
+\item[\emph{Arithmetic Properties of F-series} talk notes.]
+March 2025 Emporia State University talk; supplementary precursor to
+2507.13358.
+
+\item[Episode 1 script.]
+June 2024 companion exposition for the dissertation and the $(p,q)$-adic
+programme; useful orientation, not a primary theorem source.
+
+\item[$p$-adic $L$-functions seminar and Fourier-series notes.]
+Siegel-authored background with high contextual relevance.  These are
+supplementary notes, not parts of the Collatz research lineage.
+\end{description}
+
+\subsection{Corpus boundary}
+
+The core edition includes the ten arXiv lineages, all materially distinct
+versions identified above, the four Web installments, the three dissertation
+witnesses, the two same-work layout witnesses, and the research-specific talk
+and companion script.  The $p$-adic $L$-function seminar and Fourier-series
+notes are Siegel-authored apparatus, not core research works.  Authorship and
+core status are separate questions.  Siegel's generic
+course notes in introductory real analysis, linear algebra, vector calculus,
+complex variables, partial and ordinary differential equations, and
+probability remain Siegel-authored works, but they are outside the Collatz,
+Hydra, numen, dreamcatcher, and F-series research corpus.
+
+External supporting literature is not part of Siegel's corpus, but it is used
+with exact citations to establish prior art, standard theorems, and comparison
+maps.
+
+\subsection{External prior-art comparison ledger}
+
+The following sources are outside Siegel's corpus.  They are present because
+an exact critical edition must distinguish Siegel's added structure from an
+older identical special case, and must distinguish a shared value formula
+from an identity of maps.  Each row records the strongest comparison proved
+in this edition and the boundary beyond which the citation may not be used.
+
+\begingroup\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.19\textwidth}p{0.23\textwidth}p{0.28\textwidth}p{0.23\textwidth}@{}}
+\toprule
+Object & Primary source & Exact proved overlap & Nonidentity boundary\\
+\midrule
+\endfirsthead
+\toprule
+Object & Primary source & Exact proved overlap & Nonidentity boundary\\
+\midrule
+\endhead
+Scalar integer Hydra at displayed modulus $D\in\Z_{\geq2}$ &
+Matthews, Sec.~2 \cite{MatthewsGeneralized} & Admissibility is equivalent to
+unique integers $m_i\ne0$ and $\rho_i\equiv im_i\pmod D$ with
+$H_i(x)=(m_ix-\rho_i)/D$; see
+\cref{prop:scalar-hydra-matthews}.  Exact-integrality is equivalent to
+the displayed-presentation condition
+$\gcd(m_0\cdots m_{D-1},D)=1$. & Matthews attaches relatively prime type to
+the least-modulus presentation.  Thus exact-integrality is equivalent to
+Matthews relatively prime type only together with
+$D=d_{\mathrm{Mat}}(H)$.  A nonminimal refinement may destroy
+exact-integrality.  Neither comparison identifies Siegel's non-scalar or
+global-field structure or adds centeredness or properness.\\
+
+Residue-class-wise affine mapping & Kohl, Defs.~1.1 and~1.4 and Rem.~1.2
+\cite{KohlRCWA} & Every scalar integer Hydra in the preceding row is rcwa,
+and $d_{\mathrm{Mat}}(H)=\operatorname{Mod}(H)\mid D$; under
+exact-integrality both least moduli equal $D$; see
+\cref{prop:scalar-hydra-rcwa}. & The group
+$\operatorname{RCWA}(\Z)$ contains only bijective rcwa maps.  The shortened
+Collatz map is rcwa but is not injective; a Hydra is therefore not
+automatically an rcwa group element.\\
+
+Formal affine word and $q=3$ return candidate & B\"ohm--Sontacchi,
+Prop.~1; printed Props.~4--5; unnumbered paragraph after Prop.~5 on p.~264
+\cite{BohmSontacchi} & Proposition~1 specializes to the valid formal
+composition in \cref{eq:chronological-affine-return}; at $q=3$, its fixed
+point is the rational $R_{3,\boldsymbol\varepsilon}$ printed as the
+Proposition~5 candidate after the explicit renaming $n=L$. & Printed
+Proposition~4's unrestricted identification with $u^L(x)$ is false; it may be
+made only for a matching itinerary.  The unnumbered p.~264 paragraph allows
+exact period properly dividing $L$.  The final strict position inequality is
+reconstructed from the formal run data, not inserted into printed
+Proposition~5.\\
+
+$2$-adic parity conjugacy & Bernstein--Lagarias, Eqs.~(1.3)--(1.6),
+(4.1)--(4.2), and App.~B \cite{BernsteinLagarias} & The chronological parity
+encoder $Q_q$, inverse conjugacy $\Phi_q$, and every odd-$q$ classical
+specialization are exact.  For odd prime $q$, the $\Phi_q$ value is
+$\iota_2(R_{q,\boldsymbol\varepsilon})$ and the reversed $\chi_q$ value is
+$\iota_q(R_{q,\boldsymbol\varepsilon})$ as in
+\cref{thm:BL-numen-periodic-overlap}. & $Q_q$ and
+$\Phi_q$ retain their inverse roles in $\Z_2$; for odd prime $q$, neither is
+the cross-adic map $\chi_q:\Z_2\to\Z_q$.  Composite odd $q$ in the classical conjugacy does not
+enlarge the edition's prime-$q$ numen theorem.\\
+
+De Bruijn graph presentation & Laarhoven--de Weger, Thms.~3.1 and~5.1 and
+Sec.~5.2 \cite{LaarhovenDeWeger} & Their graph isomorphism is the
+chronological parity map denoted $Q_3$ here; their odd-$an+b$ analogue is an
+exact classical bridge. & Their paper's symbol $\Phi$ has the orientation of
+this edition's $Q_3$, not Bernstein--Lagarias's $\Phi_3$; its $p$-ary
+discussion uses appropriately chosen coefficients and is not an arbitrary-
+Hydra theorem.\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subsection{Source-issue ledger}
+
+\begingroup\small
+\begin{longtable}{@{}p{0.10\textwidth}p{0.22\textwidth}p{0.61\textwidth}@{}}
+\toprule
+Code & Source & Canonicalization issue\\
+\midrule
+\endfirsthead
+\toprule
+Code & Source & Canonicalization issue\\
+\midrule
+\endhead
+\textsc{SR-01} & Corpus index & A shared logical-work identifier records bibliographic lineage, not semantic sameness.  The reproducible routing values $0.0248$, $0.0551$, and $0.2870$ do not establish that distinction and do not authorize a merge; the separately archived versioned sources and direct collation control witness status.\\
+
+\textsc{SR-02} & 1909.09733 & A common title is not an identity proof.  Versions v1 and v2 remain separately archived in the apparatus even though v3 is the base; the value $0.6041$ is only a reproducible collation-routing diagnostic.\\
+
+\textsc{SR-03} & 2002.12762 & v2 is a metadata-only withdrawal declaring the paper obsolete and under the wrong subject classification.  It supplies no corrected paper; v1 is historical only.\\
+
+\textsc{SR-04} & 2111.07882 & v2 withdraws the work for an error in Section 3 about a quotient ring.  The archived comment contains the contradictory phrase ``was not incorrectly described''; the withdrawal and existence of an error are clear, but the intended corrected assertion must not be guessed.\\
+
+\textsc{SR-05} & 2601.17030 & The paper expressly replaces potentially inconsistent earlier Hydra definitions.  v3 also reports corrections to minor errors in Proposition 7.6.  Earlier Hydra terminology is historical unless re-derived in the v3 formalism.\\
+
+\textsc{SR-06} & 2307.00436 & The paper expressly takes precedence over the dissertation where their frames/F-series terminology conflicts.  It is more general in some respects and less comprehensive in others; only the conflicting definitions are superseded.\\
+
+\textsc{SR-07} & Dissertation & The August 2022, corrected October 2022, and December 2024 arXiv witnesses are textually distinct.  ``Later upload'' and ``corrected'' are recorded attributes, not a license to discard the other witnesses.\\
+
+\textsc{SR-08} & Web numbering & Web II is part of the web sequence but belongs chiefly to arXiv \emph{paper Part I}; Web III overlaps arXiv \emph{paper Part II}.  Bare labels such as ``Part II'' are therefore prohibited in source-critical references.\\
+
+\textsc{SR-09} & Web I & The current snapshot calls \emph{numen} Greek whereas paper Part I correctly identifies it as Latin; its displayed $q$-adic decay formula omits the subscript $q$ on the norm; and its uniqueness proof says equality on $\Z_q$ where the input domain must be $\Z_2$.  Paper Part I v3 controls these points.  Hash-bound locator: \path{author_site/wordpress_2026-08-23/part_i_numen_hydra_map_2024-07-11.txt}, SHA-256 \nolinkurl{6dfcf3ee7c4056978deae669094e08f41acbfbd7f1410b2cafb3d58293f682ae}, lines 143, 271--275, and 327--329.\\
+
+\textsc{SR-10} & Web II & Claim 5's statement omits the conclusion $\chi_q(z/2)=0$, although its proof supplies it.  The page calls its terminal periodic-point formulation Version 3, while paper Part I v3 canonically labels its corresponding published formulation Version 4.  Its divergent result says ``belongs to a divergent trajectory''; paper Part I v3 states directly that the value is a divergent point.  Hash-bound locator: \path{author_site/wordpress_2026-08-23/part_ii_correspondence_principle_2022-10-11.txt}, SHA-256 \nolinkurl{b5d37b71f4778109fbd853f621b0562c6aeca1487141968d2cde3887c8ba46c6}, lines 283--287, 353--355, and 359--373.\\
+
+\textsc{SR-11} & Web I--IV & Publication and modification timestamps are provenance only.  No page supersedes a formal source solely because its modification date is later, and the public snapshots do not furnish a complete revision history.\\
+
+\textsc{SR-12} & Web III--IV & These are active, evolving expositions.  Statements unique to them require theorem-level checking before incorporation; overlap with paper Part II or the dissertation is not presumed identity.\\
+
+\textsc{SR-13} & Layout PDFs & The Part I and infinite-series layouts are distinct files and must be collated for wording and theorem numbering.  They are not replacement TeX sources merely because they resemble journal typography.\\
+
+\textsc{SR-14} & 2111.07883v2; Web II & In the calculation of $f_q(z^2,x)$ immediately before the printed ordinary generating-function equation, the first term is written as $z/(1-z)$ instead of $z^2/(1-z^2)$.  The resulting Dirichlet functional equation is false for $x\ne0$, and its $q=3$ residue formulas contain spurious $x$-terms.  Part I.5 and the public Web II nevertheless identify the continuation programme.  Chapter 7 recovers it by deriving the corrected equation, proving normal convergence and global strip-by-strip continuation, and recalculating the principal parts.  Denominator zeros remain candidate poles unless noncancellation is proved.\\
+
+\textsc{SR-15} & B\"ohm--Sontacchi (1978) & Printed Proposition~4 is false
+under its stated unrestricted quantifiers.  With $x=0$, $m=1$, and
+$n_0=n_1=1$, it gives the right side $1/4$, while $u^3(0)=0$; the right side
+is instead the formal composition $f\circ g\circ f(0)=1/4$.  The edition
+therefore derives the formal affine identity from Proposition~1, invokes
+$u^L$ only after proving actual-itinerary correctness, and recovers the
+Proposition~5 fixed-return candidate independently.  The possibility of
+exact period properly dividing $L$ is located in the unnumbered paragraph
+after Proposition~5 on p.~264, not attributed generically to
+Propositions~4--6.\\
+
+\bottomrule
+\end{longtable}
+\endgroup
+
+\begingroup
+\small
+\sloppy
+\def\UrlBreaks{\do\/\do-\do\_}
+\Urlmuskip=0mu plus 1mu\relax
+\begin{thebibliography}{99}
+
+\bibitem{SiegelDreamcatchers}
+Maxwell C. Siegel,
+\emph{Conservation of Singularities in Functional Equations Associated to
+Collatz-Type Dynamical Systems; or, Dreamcatchers for Hydra Maps},
+arXiv:1909.09733.  Version history: v1, 20 September 2019; v2,
+4 October 2019; v3, 19 October 2019.  Canonical witness: v3.
+\url{https://arxiv.org/abs/1909.09733v3}.
+
+\bibitem{SiegelParityFourier}
+Maxwell C. Siegel,
+\emph{Fourier Analysis of the Parity-Vector Parameterization of the
+Generalized Collatz $px+1$ maps}, arXiv:2002.12762v1, 24 February 2020;
+withdrawal revision v2, 14 December 2023.
+Substantive v1: \url{https://arxiv.org/abs/2002.12762v1}.
+Withdrawal record v2: \url{https://arxiv.org/abs/2002.12762v2}.
+
+\bibitem{SiegelSyracuseV1}
+Maxwell C. Siegel,
+\emph{Syracuse Random Variables and the Periodic Points of Collatz-type
+maps}, arXiv:2007.15936v1, 19 July 2020.  Materially distinct predecessor
+under the later Part I lineage.
+\url{https://arxiv.org/abs/2007.15936v1}.
+
+\bibitem{SiegelPartI}
+Maxwell C. Siegel,
+\emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory: Part I---
+Arithmetic Dynamical Systems and Non-Archimedean Value Distribution Theory},
+arXiv:2007.15936v3, 24 April 2023; v2 submitted 28 March 2023.
+Publication DOI: \url{https://doi.org/10.1134/S2070046624020055}.
+\url{https://arxiv.org/abs/2007.15936v3}.
+
+\bibitem{SiegelNumberRings}
+M. C. Siegel,
+\emph{Functional Equations Associated to Collatz-Type Maps on Integer Rings
+of Algebraic Number Fields}, arXiv:2111.07882v1, 10 November 2021;
+withdrawal revision v2, 16 April 2022.
+Substantive v1: \url{https://arxiv.org/abs/2111.07882v1}.
+Withdrawal record v2: \url{https://arxiv.org/abs/2111.07882v2}.
+
+\bibitem{SiegelPadicCharacterizationV1}
+Maxwell C. Siegel,
+\emph{A $p$-Adic Characterization of the Periodic Points of a Class of
+Collatz-Type Maps on the Integers}, arXiv:2111.07883v1,
+10 November 2021.  Materially distinct predecessor under the later Part I.5
+lineage.  \url{https://arxiv.org/abs/2111.07883v1}.
+
+\bibitem{SiegelPartIHalf}
+Maxwell C. Siegel,
+\emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory: Part I.5--
+How To Write The (Weak) Collatz Conjecture As A Contour Integral},
+arXiv:2111.07883v2, 15 December 2023.
+\url{https://arxiv.org/abs/2111.07883v2}.
+
+\bibitem{SiegelWienerV1}
+Maxwell C. Siegel,
+\emph{Wiener Tauberian Theorems and the Value Distributions of $(p,q)$-adic
+Functions}, arXiv:2208.11082v1, 18 August 2022.  Materially distinct
+predecessor under the later Part II lineage.
+\url{https://arxiv.org/abs/2208.11082v1}.
+
+\bibitem{SiegelPartII}
+Maxwell C. Siegel,
+\emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory: Part II---
+$(p,q)$-Adic Fourier Analysis and Wiener's Tauberian Theorem},
+\emph{$p$-Adic Numbers, Ultrametric Analysis and Applications}
+\textbf{17}(2) (2025), 187--232,
+\url{https://doi.org/10.1134/S2070046625020062};
+arXiv:2208.11082v2, 20 June 2025.
+\url{https://arxiv.org/abs/2208.11082v2}.
+
+\bibitem{SiegelInfiniteSeries}
+Maxwell C. Siegel,
+\emph{Infinite Series Whose Topology of Convergence Varies From Point to
+Point}, \emph{$p$-Adic Numbers, Ultrametric Analysis and Applications}
+\textbf{15}(2) (2023), 133--167,
+\url{https://doi.org/10.1134/S2070046623020061};
+arXiv:2307.00436v1, 1 July 2023.
+\url{https://arxiv.org/abs/2307.00436v1}.
+
+\bibitem{SiegelDissertationArxiv}
+Maxwell C. Siegel,
+\emph{$(p,q)$-adic Analysis and the Collatz Conjecture}, Ph.D. dissertation,
+University of Southern California, 2022; arXiv:2412.02902v1,
+3 December 2024.  \url{https://arxiv.org/abs/2412.02902v1}.
+
+\bibitem{SiegelFSeriesProducts}
+Maxwell C. Siegel,
+\emph{Algebras of $p$-Adic Distributions Induced by Pointwise Products of
+F-Series}, arXiv:2507.13358v1, 1 July 2025.
+\url{https://arxiv.org/abs/2507.13358v1}.
+
+\bibitem{SiegelHydraManual}
+Maxwell C. Siegel,
+\emph{The Hydra Map and Numen Formalisms for Collatz-Type Problems},
+arXiv:2601.17030.  Version history: v1, 19 January 2026; v2,
+29 January 2026; v3, 12 February 2026.  Canonical witness: v3.
+\url{https://arxiv.org/abs/2601.17030v3}.
+
+\bibitem{SiegelWebI}
+Maxwell C. Siegel,
+\emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory--Part I--
+The Numen of a Hydra Map}, author-site post (Web installment I in this
+edition), published 2022-08-09 21:45:22 UTC; page reports modification
+2024-07-11 21:24:00 UTC; snapshot acquired 23 August 2026.
+\url{https://siegelmaxwellc.wordpress.com/2022/08/09/the-collatz-conjecture-non-archimedean-spectral-theory-part-i-the-numen-of-a-hydra-map/}.
+
+\bibitem{SiegelWebII}
+Maxwell C. Siegel,
+\emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory--Part II--
+The Correspondence Principle}, author-site post (Web installment II in this
+edition), published 2022-08-10 20:55:28 UTC; page reports modification
+2022-10-11 19:55:07 UTC; snapshot acquired 23 August 2026.
+\url{https://siegelmaxwellc.wordpress.com/2022/08/10/the-collatz-conjecture-non-archimedean-spectral-theory-part-ii-the-correspondence-principle/}.
+
+\bibitem{FedjaMO333801}
+fedja (MathOverflow user 1131),
+answer 333801 to \emph{Overconcentration of Poles on the Circle of
+Convergence of a Power Series with Bounded Coefficients}, accepted
+MathOverflow answer, created 12 June 2019 at 03:24:50 UTC and last edited
+18 June 2019 at 01:50:51 UTC, CC BY-SA 4.0.
+\url{https://mathoverflow.net/a/333801}.
+
+\bibitem{MatthewsGeneralized}
+K. R. Matthews,
+\emph{Generalized $3x + 1$ Mappings: Markov Chains and Ergodic Theory},
+in Jeffrey C. Lagarias (ed.), \emph{The Ultimate Challenge: The $3x+1$
+Problem}, American Mathematical Society, Providence, RI, 2010, pp.~79--103.
+The consulted author-form witness states that it contains small additions and
+deletions relative to the book chapter.
+
+\bibitem{KohlRCWA}
+Stefan Kohl,
+\emph{Algorithms for a class of infinite permutation groups},
+\emph{Journal of Symbolic Computation} \textbf{43}(8) (2008), 545--581.
+\url{https://doi.org/10.1016/j.jsc.2007.12.001}.
+
+\bibitem{BohmSontacchi}
+Corrado B\"ohm and Giovanna Sontacchi,
+\emph{On the existence of cycles of given length in integer sequences like
+$x_{n+1}=x_n/2$ if $x_n$ even, and $x_{n+1}=3x_n+1$ otherwise},
+\emph{Atti della Accademia Nazionale dei Lincei. Classe di Scienze Fisiche,
+Matematiche e Naturali. Rendiconti}, Series~8, \textbf{64}(3) (1978),
+260--264.
+\url{https://www.bdim.eu/item?id=RLINA_1978_8_64_3_260_0}.
+
+\bibitem{BernsteinLagarias}
+Daniel J. Bernstein and Jeffrey C. Lagarias,
+\emph{The $3x + 1$ Conjugacy Map},
+\emph{Canadian Journal of Mathematics} \textbf{48}(6) (1996), 1154--1169.
+\url{https://doi.org/10.4153/CJM-1996-060-x}.
+
+\bibitem{LaarhovenDeWeger}
+Thijs Laarhoven and Benne de Weger,
+\emph{The Collatz conjecture and De Bruijn graphs},
+arXiv:1209.3495v1, 16 September 2012.
+\url{https://arxiv.org/abs/1209.3495v1}.
+The consulted local PDF also displays 27 November 2024; that display is not
+used as the arXiv submission date.
+
+\bibitem{SiegelWebIII}
+Maxwell C. Siegel,
+\emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory--Part III--
+$(p,q)$-adic Fourier Analysis \& Tauberian Spectral Theory}, author-site post
+(Web installment III in this edition), published 2022-08-12 22:51:30 UTC;
+archived page reports modification 2025-12-26 22:12:20 UTC.
+\url{https://siegelmaxwellc.wordpress.com/2022/08/12/the-collatz-conjecture-non-archimedean-spectral-theory-part-iii-a-pq-adic-fourier-analysis/}.
+
+\bibitem{SiegelWebIV}
+Maxwell C. Siegel,
+\emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory--Part IV--
+A Fourier Analysis of the Numen of the Shortened $qx+1$ map}, author-site
+post (Web installment IV in this edition), published 2022-08-15 19:14:38
+UTC; archived page reports modification 2025-12-26 22:13:00 UTC.
+\url{https://siegelmaxwellc.wordpress.com/2022/08/15/the-collatz-conjecture-non-archimedean-spectral-theory-part-iv-a-fourier-analysis-of-the-numen-of-the-shortened-qx-1-map/}.
+
+\bibitem{SiegelDissertationAugust}
+Maxwell C. Siegel,
+\emph{$(p,q)$-adic Analysis and the Collatz Conjecture}, Ph.D. dissertation,
+University of Southern California, August 2022 author-site edition.
+\url{https://siegelmaxwellc.wordpress.com/wp-content/uploads/2022/08/phd_dissertation_final.pdf}.
+
+\bibitem{SiegelDissertationOctober}
+Maxwell C. Siegel,
+\emph{$(p,q)$-adic Analysis and the Collatz Conjecture}, Ph.D. dissertation,
+University of Southern California, corrected October 2022 author-site
+edition.  \url{https://siegelmaxwellc.wordpress.com/wp-content/uploads/2022/10/phd_dissertation_final.pdf}.
+
+\bibitem{SiegelPartILayout}
+Maxwell C. Siegel,
+\emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory: Part I},
+author-site journal-layout PDF, same-work witness for arXiv:2007.15936.
+\url{https://siegelmaxwellc.wordpress.com/wp-content/uploads/2024/05/blog_post_i_numen_and_correspondence_principle.pdf}.
+
+\bibitem{SiegelInfiniteSeriesLayout}
+Maxwell C. Siegel,
+\emph{Infinite Series Whose Topology of Convergence Varies From Point to
+Point}, author-site journal-layout PDF, same-work witness for
+arXiv:2307.00436.
+\url{https://siegelmaxwellc.wordpress.com/wp-content/uploads/2023/12/infinite_series_whose_topology_of_convergence_varies_from_point_to_point_simplified.pdf}.
+
+\bibitem{SiegelKansasTalk}
+Maxwell C. Siegel,
+\emph{Arithmetic Properties of F-series; or, How to $3$-adically Integrate
+a $5$-adic Function}, Emporia State University talk notes, March 2025;
+author-site PDF uploaded May 2025.
+\url{https://siegelmaxwellc.wordpress.com/wp-content/uploads/2025/05/2025_kansas_talk-3.pdf}.
+
+\bibitem{SiegelEpisodeOne}
+Maxwell C. Siegel,
+\emph{Episode 1---$(p,q)$-adic Analysis and the Collatz Conjecture---A Whole
+New World: Script}, author-site companion script, June 2024.
+\url{https://siegelmaxwellc.wordpress.com/wp-content/uploads/2024/06/episode-1-script.pdf}.
+
+\bibitem{SiegelPadicLFunctions}
+Maxwell C. Siegel,
+\emph{$p$-adic $L$-functions}, graduate seminar notes, author-site PDF.
+\url{https://siegelmaxwellc.wordpress.com/wp-content/uploads/2023/02/algebraic_number_theory_-_presentation_-_p-adic_l-functions.pdf}.
+
+\bibitem{SiegelFourierNotes}
+Maxwell C. Siegel,
+\emph{Fourier Series}, course notes, author-site PDF, 2025 site copy.
+\url{https://siegelmaxwellc.wordpress.com/wp-content/uploads/2025/02/math_445_souto_-_class_notes_-_chapter_11_-_fourier_analysis.pdf}.
+
+\end{thebibliography}
+\endgroup

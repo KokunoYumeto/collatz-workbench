@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "source_freeze_id": "MS-CE-20260824-A",
+  "status": "pass",
+  "claim_ledger": {
+    "path": "apparatus/CLAIM_LEDGER.jsonl",
+    "sha256": "e9ba4255f50c99b1763c136d6307b27ee554146eccfa283e3bd711e5577a2b8c",
+    "record_count": 192,
+    "first_id": "CLM-0001",
+    "last_id": "CLM-0192",
+    "unique_contiguous_ids": true
+  },
+  "schema": {
+    "path": "apparatus/claim_ledger.schema.json",
+    "sha256": "694062452cec1e603cc2cd89cb3d926d5e0c4c3906f6b2fd9d1c2dc0e6c33e55",
+    "failure_count": 0
+  },
+  "dependency_graph": {
+    "edge_count": 214,
+    "all_targets_exist": true,
+    "all_edges_strictly_backward": true,
+    "acyclic": true
+  },
+  "locators": {
+    "total": 398,
+    "edition_path_locators": 206,
+    "nonedition_path_locators": 0,
+    "document_locators": 192,
+    "document_version_mismatches": 0,
+    "exact_label_locators": 129,
+    "failures": 0
+  },
+  "formal_closure": {
+    "theorem_family_environments": 48,
+    "ledger_covered": 48,
+    "immediately_proof_closed": 48,
+    "chapter_10_rows": {
+      "reconstructed_and_proved": 23,
+      "source_checked": 2,
+      "withdrawn_or_invalid": 11,
+      "conditional_or_formal": 6
+    }
+  },
+  "status_counts": {
+    "verified_as_stated": 24,
+    "verified_corrected": 127,
+    "prior_art_overlap": 7,
+    "conditional": 4,
+    "heuristic": 1,
+    "contradicted": 17,
+    "unresolved": 12
+  },
+  "attribution_counts": {
+    "siegel": 91,
+    "prior_literature": 17,
+    "new_synthesis": 84
+  },
+  "nonpromoted_claims": {
+    "conditional": ["CLM-0092", "CLM-0169", "CLM-0182", "CLM-0184"],
+    "heuristic": ["CLM-0093"],
+    "contradicted": ["CLM-0003", "CLM-0060", "CLM-0076", "CLM-0090", "CLM-0109", "CLM-0149", "CLM-0150", "CLM-0170", "CLM-0171", "CLM-0172", "CLM-0178", "CLM-0179", "CLM-0180", "CLM-0181", "CLM-0187", "CLM-0188", "CLM-0189"],
+    "unresolved": ["CLM-0091", "CLM-0108", "CLM-0135", "CLM-0137", "CLM-0138", "CLM-0158", "CLM-0173", "CLM-0174", "CLM-0183", "CLM-0185", "CLM-0186", "CLM-0191"]
+  }
+}

@@ -1,0 +1,150 @@
+\section{First passage as an exact transport map}\label{sec:transport}
+
+Let $D$ be a nonempty subset of $\N_+$ and $F:D\to D$ any map.
+For a real $x\geq1$, define the first entrance time into $D\cap[1,x]$ by
+\[
+ t_x(n)=\inf\{j\in\N_0:F^j(n)\leq x\},\qquad\inf\varnothing=+\infty.
+\]
+Adjoin a point $\dd\notin D$, and define $p_x:D\cup\{\dd\}\to
+D\cup\{\dd\}$ by
+\[
+ p_x(n)=\begin{cases}F^{t_x(n)}(n)&t_x(n)<\infty,\\
+ \dd&t_x(n)=\infty,\end{cases}\qquad p_x(\dd)=\dd.
+\]
+The absorbing point $\dd$ records trajectories that never enter
+$D\cap[1,x]$.  The image of $p_x$ is contained in
+$(D\cap[1,x])\cup\{\dd\}$, and every point of this set is fixed by $p_x$.
+The fibre $p_x^{-1}(\dd)\cap D$ consists exactly of their starting values
+and may be empty.
+
+\begin{lemma}[Nested passage]\label{lem:nested}
+For $1\leq x\leq y$,
+\begin{equation}\label{eq:nested}
+ p_x\circ p_y=p_x=p_y\circ p_x.
+\end{equation}
+When $t_x(n)<\infty$, both hitting times are finite and
+\[
+ t_x(n)=t_y(n)+t_x(p_y(n)),\qquad
+ F^{k}(p_x(n))=F^{k+t_x(p_y(n))}(p_y(n))\quad(k\geq0).
+\]
+\end{lemma}
+\begin{proof}
+If the orbit never reaches $y$, it cannot reach $x$, and the first
+identity gives $\dd$ on both sides.  If it reaches $y$, the orbit prior
+to that first visit is above $y$, hence above $x$.  Searching for the
+first visit to $x$ can therefore begin at $p_y(n)$, giving the hitting-time
+identity when finite and $\dd$ on both sides otherwise.  The equality
+$p_y p_x=p_x$ follows because a successful output of $p_x$ is at most
+$x\leq y$, and $\dd$ is fixed.  The identity of indexed tails follows
+from the semigroup law for $F$.
+\end{proof}
+
+For a signed summable measure $\lambda$ on $D\cup\{\dd\}$, define its
+pushforward $K_x\lambda=(p_x)_*\lambda$, explicitly
+\[
+ (K_x\lambda)(z)=\sum_{n:p_x(n)=z}\lambda(n).
+\]
+These maps preserve total mass, preserve nonnegativity, and contract
+$\ell^1$: $\normone{K_x\lambda}\leq\normone{\lambda}$.  Indeed, take
+absolute values inside each fibre sum and sum over the disjoint fibres.
+Lemma~\ref{lem:nested} gives
+\begin{equation}\label{eq:kernel}
+ K_xK_y=K_x=K_yK_x\quad(x\leq y),\qquad K_x^2=K_x.
+\end{equation}
+The kernel of $K_x$ consists exactly of signed measures whose sum on
+each fibre of $p_x$ is zero.  In particular,
+$K_x(\delta_n-\delta_{n'})=0$ whenever $p_x(n)=p_x(n')$.
+
+\begin{proposition}[Finite-chain transport bound]\label{prop:chain}
+Let $1\leq x_0\leq\cdots\leq x_J$ and let $\nu_0,\ldots,\nu_J$
+be probability measures satisfying $K_{x_i}\nu_i=\nu_i$.
+Put $e_i=\normone{\nu_i-K_{x_i}\nu_{i+1}}$ for $0\leq i<J$.
+Then
+\begin{equation}\label{eq:chain}
+ \normone{\nu_0-K_{x_0}\nu_J}\leq\sum_{i=0}^{J-1}e_i.
+\end{equation}
+\end{proposition}
+\begin{proof}
+For $J=0$ both sides are zero.  For $J\geq1$, the exact telescoping
+identity is
+\[
+ \nu_0-K_{x_0}\nu_J=
+ \sum_{i=0}^{J-1}K_{x_0}(\nu_i-K_{x_i}\nu_{i+1}).
+\]
+Here $K_{x_0}\nu_0=\nu_0$ and $K_{x_0}K_{x_i}=K_{x_0}$ by
+\eqref{eq:kernel}.  The triangle inequality and contraction prove
+\eqref{eq:chain}.
+\end{proof}
+
+The following scale formulation records exactly the summability used in
+Tao's reduction.  Fix $\alpha>1$.  Suppose $\mu_s$, for $s\geq1$, is a probability
+measure on $D\cap[s,s^\alpha]$ whenever that set is nonempty.  Choose
+$s_*\geq2$ so every required block is nonempty for $s\geq s_*$.
+For such $s$, set
+\[
+ \nu_s=K_s\mu_{s^\alpha},\qquad d(s)=\nu_s(\{\dd\}),\qquad
+ e(s)=\normone{\nu_s-K_s\nu_{s^\alpha}}.
+\]
+For $R\geq s_*$ define the possibly infinite quantity
+\begin{equation}\label{eq:error-tail}
+ \mathcal E(R)=\sup_{u\geq R}
+ \left(d(u)+\sum_{i=0}^{\infty}e(u^{\alpha^i})\right).
+\end{equation}
+Here $d(s)$ is the failure mass at scale $s$, while $e(s)$ measures the
+change in the entrance law between two successive starting scales.
+
+\begin{theorem}[Summable transport implies tight orbit minima]
+\label{thm:transport}
+For $K\geq s_*^{\alpha^3}$ and any nonempty block supporting $\mu_s$,
+\begin{equation}\label{eq:abstract-tight}
+ \mu_s\{n:F_{\min}(n)>K\}\leq\mathcal E(K^{1/\alpha^3}).
+\end{equation}
+In particular, if $\mathcal E(R)\to0$ as $R\to\infty$, the laws of
+$F_{\min}$ under these block measures are uniformly tight.
+\end{theorem}
+\begin{proof}
+Let $A_K=\{n\in D:F_{\min}(n)\leq K\}$, so $\dd\notin A_K$.
+A successful passage landing in $A_K$ certifies that the original
+orbit enters $A_K$.  Thus $p_u^{-1}(A_K)\subseteq A_K$ on the extended
+space, for every $u$.
+
+If $s^\alpha\leq K$, the left side of \eqref{eq:abstract-tight} is zero.
+Otherwise choose $J\geq1$ minimal such that
+$y=s^{\alpha^{-J}}<K^{1/\alpha}$.  Then
+\[
+ K^{1/\alpha^2}\leq y<K^{1/\alpha},\qquad
+ u=y^{1/\alpha}\geq K^{1/\alpha^3}\geq s_*,\qquad
+ u^{\alpha^J}=s^{1/\alpha}.
+\]
+The successful part of $\nu_u$ is supported below $u<K$, so
+$\nu_u(A_K)=1-d(u)$.
+For each intermediate scale $v=u^{\alpha^i}$,
+\[
+ \nu_{v^\alpha}(A_K)
+ \geq (K_v\nu_{v^\alpha})(A_K)
+ \geq \nu_v(A_K)-e(v).
+\]
+Summing for $0\leq i<J$ gives
+\[
+ \nu_{s^{1/\alpha}}(A_K)
+ \geq1-d(u)-\sum_{i=0}^{J-1}e(u^{\alpha^i}).
+\]
+But $\nu_{s^{1/\alpha}}=K_{s^{1/\alpha}}\mu_s$, and
+$p_{s^{1/\alpha}}^{-1}(A_K)\subseteq A_K$, so
+$\mu_s(A_K)$ is at least this large.  Formula \eqref{eq:error-tail}
+proves the bound.
+\end{proof}
+
+For example, if $d(s)\leq Ds^{-b}$ and $e(s)\leq E(\log s)^{-c}$,
+with $D,E,b,c>0$, then
+\begin{equation}\label{eq:power-error}
+ \mathcal E(R)\leq DR^{-b}
+ +\frac{E}{1-\alpha^{-c}}(\log R)^{-c}.
+\end{equation}
+This follows by summing the geometric series $\sum_{i\geq0}\alpha^{-ci}$.
+The same theorem also accepts, for instance,
+$e(s)=O((\log\log s)^{-1-c})$ for large $s$: for sufficiently large
+$R>e$, writing
+$h=\log\alpha>0$ and $v=\log\log R$, the sum is bounded by
+$v^{-1-c}+v^{-c}/(ch)$ by integral comparison.  Tao already notes this
+weaker sufficient error regime after Proposition~1.11 \cite{Tao7}.

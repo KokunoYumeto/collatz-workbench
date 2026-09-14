@@ -1,0 +1,159 @@
+\section{Editorial method, attribution, and mathematical status}
+
+\subsection{What this edition is}
+
+The primary sources are the mathematical works written by Maxwell Charles
+Siegel and distributed through arXiv or through his author-controlled site.
+
+The purpose of the present text is narrower and more exact.  It fixes a
+canonical witness for each work, states how older versions relate to it,
+places any running notation beside the typed source notation through an
+explicit crosswalk, and arranges the results by mathematical dependence rather
+than by upload date.  The result is a modern recasting of the corpus: neither
+a facsimile anthology nor a survey that replaces formulas by descriptions.
+
+\subsection{Four statement statuses}
+
+The edition uses the following four dispositions.  A source-issue or status
+environment states its disposition locally; Chapter~10 records the source
+identity and disposition of each theorem-like item admitted to its result
+table.  A theorem-style heading by itself neither assigns authorship nor
+certifies that a source proof has been completed.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item A \emph{reconstructed theorem} is a statement in Siegel's corpus whose
+      source hypotheses and conclusion are preserved and placed beside any
+      running notation through an explicit typed crosswalk, and whose proof is
+      reproduced or reconstructed at the level needed by the subsequent
+      chain.
+\item A \emph{source theorem} is stated as a theorem of the named source.  If
+      this edition gives only its proof mechanism, that limitation is said
+      explicitly; the label does not mean that this edition supplies an
+      independent proof of every auxiliary assertion in the source.
+\item A \emph{source issue} records a typing error, a changed convention, an
+      omitted hypothesis, a withdrawn paper, or a point at which the source
+      itself supplies only a sketch.  The issue is not repaired by pretending
+      that the altered statement was what the source always said.
+\item An \emph{editorial proposition} is a formal consequence proved in this
+      edition in order to join two source formulations.  It is marked as
+      editorial and is not attributed to Siegel as an original theorem.
+\end{enumerate}
+
+Extraction is not verification.  Conversely, a typographical defect does not
+by itself refute the intended theorem.  The edition therefore distinguishes
+the exact source string, the mathematically typed reconstruction, and the
+status of the proof.
+
+\subsection{Notation policy}
+
+The source convention $x\overset{a}{\equiv}y$ is rendered as
+$x\equiv y\pmod a$.  The source symbol $[x]_a$ is retained for the standard
+representative when it is part of a digit formula.  Iverson brackets are
+written $\ind{P}$.  Composition is read from right to left.  Thus, for a word
+$\mathbf j=(j_0,\ldots,j_{m-1})$, the ordered branch composition used below
+is
+\[
+ H_{\mathbf j}=H_{j_0}\circ H_{j_1}\circ\cdots\circ H_{j_{m-1}}.
+\]
+The source sometimes indexes a word from $1$ and sometimes from $0$; the
+edition uses $0$-based digit indices and states the convention whenever an
+order-sensitive identity is used.
+
+The name \emph{$(p,q)$-adic analysis} is retained as Siegel's name for
+analysis of functions whose domain carries a $p$-adic topology and whose
+values lie in a field with a distinct $q$-adic (or, more generally,
+place-dependent) topology.  This is not the standard adjective ``adic''
+applied to a single topological ring; the domain and codomain places must
+always be displayed.
+
+The name \emph{rising-continuity} is retained for the source condition
+\[
+ f(z)=\lim_{n\to\infty} f([z]_{p^n}),
+\]
+where the limit is taken in the specified codomain.  In standard language it
+is continuity along the canonical truncation sequence, not automatically
+topological continuity with respect to every sequence converging to $z$.
+The distinction is used in \cref{sec:rising-fseries}.
+
+\subsection{Version precedence}
+
+The latest non-withdrawn arXiv version controls a work unless an
+author-controlled later witness explicitly corrects it.  A later technical
+manual controls a definition when it declares that earlier definitions are
+inconsistent and fixes a forward convention.  Under this rule the 2026
+Hydra/Numen manual controls the basic definitions of Hydra maps, numens, and
+the general Correspondence Principle; the 2022 dissertation remains the
+largest source for the analytic development.  A withdrawn record remains in
+the historical corpus but cannot control a theorem contradicted by its own
+withdrawal notice.
+
+\begin{sourceissue}[Canonical does not mean infallible]
+The word \emph{canonical} refers to source identity, version precedence, and
+the stable presentation adopted by this edition.  It does not convert an
+author claim into a proved theorem.  In particular, the 2026 paper labels its
+Correspondence Principle proof a sketch; this edition preserves that fact and
+separates the fully checked affine-word calculation from the remaining
+dynamical implications.
+\end{sourceissue}
+
+\subsection{The exactness standard}
+
+Each comparison is attached to an explicit object.  For example, the chain
+used for a characteristic distribution is the following typed sequence, not
+the sentence ``Fourier analysis detects periodic points.''  Starting from a
+centered admissible pre-Hydra
+\[
+ \mathcal H=(K,\Lambda,(H_j)_{j\in\mathcal A_p})
+ \in\{(K,\Lambda,\mathbf H):H_j\in\Aff_{\F}(K)\},
+\]
+affine word multiplication gives
+\[
+ (M_H,X_H)\in
+ \operatorname{Map}(\Sigma_p^*,\operatorname{GL}_{\F}(K))
+ \times\operatorname{Map}(\Sigma_p^*,K).
+\]
+Centeredness proves that the second component descends along
+$\Dig:\Sigma_p^*\twoheadrightarrow\N_0$ to
+$X_H:\N_0\to K$.  At a place $\ell$ let
+\[
+ D_{H,\ell}=\{z\in\Z_p^{\mathrm{dig}}:
+             (X_H([z]_{p^N}))_{N\geq0}\text{ converges in }K_\ell\}.
+\]
+The truncation limit is a map
+\[
+ X_{H,\ell}:D_{H,\ell}\longrightarrow K_\ell.
+\]
+These measurability assertions are automatic.  Each truncation map
+$S_N(z)=X_H([z]_{p^N})$ is locally constant.  Writing
+$d_\ell(x,y)=|x-y|_\ell$, completeness of $K_\ell$ gives
+\[
+ D_{H,\ell}
+ =\bigcap_{r\geq1}\bigcup_{N_0\geq0}
+   \bigcap_{m,n\geq N_0}
+   \{z:d_\ell(S_m(z),S_n(z))<1/r\},
+\]
+so $D_{H,\ell}$ is Borel.  On that Borel subspace,
+$X_{H,\ell}=\lim_NS_N$ is Borel as the pointwise limit of metric-space-valued
+Borel maps.  Thus only conullness remains a hypothesis.  If
+$m_p(D_{H,\ell})=1$, then the pushforward is the Borel probability
+\[
+ \nu_{H,\ell}=(X_{H,\ell})_*
+   (m_p|_{D_{H,\ell}})\in\operatorname{Prob}(K_\ell).
+\]
+Its Fourier--Stieltjes transform is the bounded continuous function
+\[
+ \widehat\nu_{H,\ell}:\widehat{K_\ell}\longrightarrow\C,
+ \qquad
+ \widehat\nu_{H,\ell}(\gamma)
+ =\int_{K_\ell}\gamma(-x)\,d\nu_{H,\ell}(x).
+\]
+If a cyclic-translate space is subsequently considered, translations are
+indexed by the character group, not by $K_\ell$: for
+$\eta\in\widehat{K_\ell}$,
+$(\tau_\eta f)(\gamma)=f(\gamma+\eta)$, and the asserted closure must name
+its ambient function space and norm.  No self-duality of $K_\ell$ is being
+silently chosen here.  Likewise, the numen is not merely ``a function
+encoding the dynamics'': it is the translation term of an ordered affine
+branch composition and satisfies a digit recursion with a specified initial
+condition.  This level of explicitness is the governing editorial standard
+throughout the edition.

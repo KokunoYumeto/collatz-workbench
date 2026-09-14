@@ -1,0 +1,825 @@
+{
+  "schema_version": 1,
+  "id": "ACT46-AFFINE-FRESH-CONTEXT-RECOVERY",
+  "recorded_utc": "2026-09-04T16:31:47Z",
+  "status": "PASS_bounded_checkpoint_recovery_with_recorded_findings",
+  "scope": "Bounded ACT46 checkpoint recovery from raw user directives, current external state, exact source TeX, current proofs and read-only executable checks. Not a full corpus audit or live browser verification.",
+  "independence": {
+    "starting_files": [
+      "state/project_state.json",
+      "DIRECTIVES.md"
+    ],
+    "user_records_read": "All eighteen raw/USR-0001 through USR-0018 records read directly and hashed.",
+    "controlling_ancestor_read": "C:/Users/LOCAL_USER/Documents/AGENTS.md",
+    "evidence_exclusions": [
+      "No other task, conversation recap, compaction, handoff, or prior agent narrative used as mathematical evidence.",
+      "No contact with other user tasks.",
+      "No existing file modified; only this new recovery record created.",
+      "No Lean, Lake, TeX build, Git command, source mutation, browser operation, upload, project creation, or sharing change."
+    ],
+    "exact_proof_reading": "The current companion text and exact local-antecedent TeX were read directly. Stored review claims are not substituted for this proof reading.",
+    "historical_receipt_boundary": "Build/visual/remote receipts were checked as stored, hash-linked observations, not independently repeated visual or live-browser observations."
+  },
+  "authority_and_scope": {
+    "project": "COLLATZ-LITERATURE-FIRST-20260824",
+    "outcome": "Literature-first Collatz/3x+1 reconstruction of admitted published mathematics and modern Chatnotes; exact claims, maps, proofs, source crosswalks, reproducible certificates and readable separate artifacts. Correct local mathematics may be repaired; unsupported endpoints are not to be salvaged.",
+    "admission_gate": "Direct Collatz content or a content-verified mathematical edge. Source literature first, modern Chatnotes next, residual Gemini-science intake later, archived runaway work only after those layers. No invented mathematical connection from the procedural zeta template.",
+    "raw_authority": {
+      "USR-0001": "Controlling corpus request and procedural Collatz substitution; Gemini-science is permitted later intake, not theorem authority.",
+      "USR-0004,USR-0005": "Negative evidentiary authority for compaction, mandatory raw/external-state recovery, complete rejection of the former BCM/adelic proposal.",
+      "USR-0006 through USR-0011": "Standing AGENTS non-mutation rule; historical narrow editing exceptions do not authorize a future edit.",
+      "USR-0009": "Typed exact gaps/unresolved dependencies; downgrade unsupported claims; work items are not mathematical open problems.",
+      "USR-0013": "Separate rigorously framed Tao preprint, preserve workbench, check actual source editions and results, five-GB historical direct ceiling.",
+      "USR-0014,USR-0015": "Keep checked work accessible in ONLY canonical project 6a91f06e408dd545780c660f, three independent TeX entries; no new project or recreation of deleted Tao project.",
+      "USR-0016": "Reader-facing result/definition/proof exposition, accurate ChatGPT 5.6 Sol, Ultra mode, in Codex disclosure.",
+      "USR-0017": "V7 mathematical baseline; V5 comparison is audit history, not the contribution; no restatement or Tao correction advertised as strengthening.",
+      "USR-0018": "Routine task-local workflow repairs need no repeated permission; preserve exclusions and unfinished objective."
+    },
+    "exclusions": [
+      "No public publication or new sharing permissions.",
+      "Do not bundle protected books/private source corpus.",
+      "Do not contact the quarantined task or infer theorem evidence from its narrative.",
+      "No broad indexing, repository scans, cleanup or archive ritual.",
+      "Do not replace original coordinates without proved maps, inverses/fibres and exact information-loss analysis.",
+      "No completion claim before full coverage, proof/crosswalk/formal-status, artifact QA and full recovery gates pass."
+    ],
+    "resource_policy": "The live ancestor says 5,000,000,000 aggregate process-tree bytes for non-critical calculations and no cap for explicitly recorded critical calculations; current project policy still states a universal five-GB Lean ceiling. This discrepancy is recorded below. No resource-intensive work or build was started by this check."
+  },
+  "current_checkpoint": {
+    "receipt_id": "ACT-COL-000046",
+    "action_receipt_timestamp_utc": "2026-09-04T16:24:23Z",
+    "checkpoint_path": "qa/ACT46-AFFINE-CRT-CHECKPOINT.json",
+    "checkpoint_sha256": "b3cb81323db5ecc05767c20dc9e1e870c6e2e9f3ed5b0fefd8bde7dea0bd83ca",
+    "preceding_checkpoint": "ACT-COL-000045, V7-based Tao family checkpoint; previous full-checkpoint marker ACT-COL-000043 does not describe all later edits.",
+    "contribution_scope": "Synchronized CRT/common-word transport, exact marginal kernel, reduced-denominator conjugacy, complete (10,16) table, three antecedent repairs, source-attribution correction and canonical sync.",
+    "new_claims": [
+      "CLM-COL-000189",
+      "CLM-COL-000190",
+      "CLM-COL-000191",
+      "CLM-COL-000192",
+      "CLM-COL-000193",
+      "CLM-COL-000194",
+      "CLM-COL-000195"
+    ],
+    "new_morphisms": [
+      "MOR-COL-000068",
+      "MOR-COL-000069",
+      "MOR-COL-000070"
+    ],
+    "inherited_affine_claims": [
+      "CLM-COL-000182",
+      "CLM-COL-000183",
+      "CLM-COL-000184",
+      "CLM-COL-000185",
+      "CLM-COL-000186"
+    ],
+    "inherited_affine_morphisms": [
+      "MOR-COL-000063",
+      "MOR-COL-000064",
+      "MOR-COL-000065",
+      "MOR-COL-000066"
+    ],
+    "goal_status": "active",
+    "global_completion": false,
+    "full_corpus_recovery": false,
+    "all_raw_affine_coverage_reconciled": false
+  },
+  "artifact_separation": {
+    "canonical_project_id": "6a91f06e408dd545780c660f",
+    "canonical_url": "https://www.overleaf.com/project/6a91f06e408dd545780c660f",
+    "staging_directory": "overleaf/sync_20260904/canonical_project",
+    "critical": {
+      "local_entry": "tex/main.tex",
+      "canonical_entry": "main.tex",
+      "canonical_dependency_prefix": "critical/",
+      "current_affine_chapter": "tex/chapters/06_affine_packet_source_audit.tex",
+      "purpose": "Critical/expository source reconstruction and visibly identified source repairs.",
+      "stored_remote_pages": 183
+    },
+    "companion": {
+      "local_entry": "research_companion/main.tex",
+      "canonical_entry": "research_companion.tex",
+      "canonical_dependency_prefix": "companion/",
+      "current_affine_chapter": "research_companion/chapters/04_affine_packets_parity_necklaces_and_residue_automata.tex",
+      "purpose": "Separately authored research companion, retaining exact classical/local source attribution.",
+      "stored_remote_pages": 53
+    },
+    "tao": {
+      "local_entry": "preprints/tao_clock_audit/main.tex",
+      "canonical_entry": "tao_preprint.tex",
+      "canonical_dependency_prefix": "tao/",
+      "purpose": "Separate current V7-based first-passage/clock preprint; not merged into either workbench.",
+      "stored_remote_pages": 16,
+      "unchanged_by_ACT46": true,
+      "claims": [
+        "CLM-COL-000187",
+        "CLM-COL-000188"
+      ],
+      "morphism": "MOR-COL-000067",
+      "source": "SRC-COL-000005",
+      "recovery_boundary": "Identity, separation, latest directive and recorded claim scope recovered; Tao analytic proofs were not re-audited in this affine check."
+    },
+    "latest_sync_receipt": "overleaf/sync_20260904/affine_crt_remote_receipt.json",
+    "recorded_active_main_document": "research_companion.tex",
+    "remote_verification": "Eight uploaded paths and two compiled roots are preserved in the hash-verified stored receipt. Critical errors 0/warnings 0; companion errors 0/warnings 1/info 2. No new live browser observation or byte-level remote download verification is claimed.",
+    "portable_boundary": "Legacy standalone companion manifest and unbundled apparatus remain unreconciled; current compiled staging does not certify all prose-referenced apparatus."
+  },
+  "source_identity_and_attribution": {
+    "raw_affine": {
+      "intake_id": "CHATINT-COL-000002",
+      "path": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/more col thread/ChatGPT-Implications of Affine Formula.md",
+      "bytes": 143053,
+      "physical_lines_recorded": 3021,
+      "sha256": "abb1abbb948dc140394de3d35f0efbde9b3facdf718c24b065b8d0adb951366e",
+      "authority": "none_without_independent_proof_or_source",
+      "coverage_boundary": "This recovery hashes the raw export but does not claim new full raw content reading. Existing unadmitted full-agent report CHATINT-COL-000005 is not current reconciled coverage."
+    },
+    "local_antecedent": {
+      "publication_unit": "PUBUNIT-CF4FD708E6C6DE523385FD85",
+      "path": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/automata/V5/odd_step_collatz_orbit_packets_note.tex",
+      "bytes": 114074,
+      "sha256": "406ef13e43ae0af68fabdbda4dd16145d313407f7d38ea22311803c7533cfec7",
+      "direct_loci_read": [
+        "83-156",
+        "574-610",
+        "1233-1250",
+        "1307-1344",
+        "2359-2481",
+        "3647-3677"
+      ],
+      "prior_affine_transport": "Theorem label thm:cyclic-shift-fixed-points, TeX2359-2419, explicitly proves x_(sigma p)=g_a1(x_p) by applying g_a1 to the fixed-point identity, identifying g_(sigma p), and using its unique fixed point. Definitions83-116 and574-605 give the same g_a, C, chi and x=C/(2^A-3^m) coordinates.",
+      "attribution_result": "Current companion prose and CLM-COL-000183.source_relation correctly acknowledge prior Theorem10.1; the current proof supplies an explicit numerator/valuation/divisibility derivation, not a previously absent affine arrow.",
+      "nonclaims": [
+        "No full-source reading or whole-TeX/PDF identity claim.",
+        "No authorship identity inferred from folder V5; that folder is not the Tao version baseline."
+      ]
+    },
+    "published_sources": [
+      {
+        "source_id": "SRC-COL-000013",
+        "role": "Lagarias1990 rational parity/primitive reduced-denominator lineage; source registry points to official IM PAN PDF."
+      },
+      {
+        "source_id": "SRC-COL-000009",
+        "role": "Urata2003 odd-type rational/exponent formulation; registry distinguishes official Aichi PDF from unauthenticated re-typesetting."
+      },
+      {
+        "source_id": "SRC-COL-000004",
+        "role": "Laarhoven–de Weger 1209.3495v1 shortened-map/parity comparison."
+      },
+      {
+        "source_id": "SRC-COL-000050",
+        "role": "Laura Wirth common-letter/Hadamard-product weighted automata, Def4.1.4 and Prop4.3.10; no book-specific Collatz theorem attributed."
+      },
+      {
+        "source_id": "SRC-COL-000051",
+        "role": "Belaga–Mignotte configuration-to-membership/reduced-denominator correspondence and existing456-cycle count.",
+        "boundary": "Manifestations empty; author-uploaded online transcription only, primary PDF not acquired, no primary source hash, transcription-sensitive candidate defects not admitted. Not independently browsed in this recovery."
+      }
+    ],
+    "source_reading_boundary": "Published-source IDs and witness limits recovered from current source records; this check independently verifies the current algebra and exact local antecedent passage, not every published attribution or all prior literature audits."
+  },
+  "proof_checks": [
+    {
+      "claims": [
+        "CLM-COL-000182"
+      ],
+      "morphisms": [
+        "MOR-COL-000063",
+        "MOR-COL-000064"
+      ],
+      "locus": "companion chapter04, thm:packet-parity-coordinate-isomorphism and thm:packet-parity-cyclic-groupoid",
+      "result": "Directly read gap inverse, numerator equality, arrow composition S_(j+k)=S_j+S_k(sigma^j p) modA and stabilizer correspondence kd->kB. Distinguished one/odd base point and nonempty packet hypotheses retained."
+    },
+    {
+      "claims": [
+        "CLM-COL-000183",
+        "CLM-COL-000184"
+      ],
+      "morphism": "MOR-COL-000065",
+      "locus": "companion chapter04, thm:cyclic-affine-transport and thm:packet-three-clocks",
+      "result": "3C(p)+D=2^a1 C(sigma p); nonzero odd numerator/denominator gives exact valuation. gcd(D,6)=1 supports both divisibility directions. Primitive-root periods d,B,B+d follow from the positive affine slope not1 and actual odd-visit times. Antecedent attribution directly checked."
+    },
+    {
+      "claim": "CLM-COL-000185",
+      "morphism": "MOR-COL-000066",
+      "locus": "companion chapter04, thm:packet-residue-automaton, especially415-443",
+      "result": "Unique first-part decomposition preserves integer multiplicities, odd-modulus transition inverse is explicit, and periodic-letter decomposition proves the rational formal series coefficientwise. Modulus1 and m1 cases are retained."
+    },
+    {
+      "claim": "CLM-COL-000189",
+      "morphism": "MOR-COL-000068",
+      "locus": "companion chapter04:466-546, thm:packet-synchronized-crt",
+      "result": "Both CRT inverse identities follow by reducing q2*c1*u+q1*c2*v modulo each factor and coprime divisibility; representatives and coefficient choices are immaterial. On e_r both sides of J M_q=(M_q1 tensor M_q2)J have the same affine residue pair. Summation is over one common packet and one first letter; factorwise independent words are not substituted. Joint recurrence and rational generating series therefore follow at their stated base/empty ranges. No missing general-proof step found."
+    },
+    {
+      "claim": "CLM-COL-000190",
+      "morphism": "MOR-COL-000069",
+      "locus": "companion chapter04:548-576, prop:packet-marginal-kernel",
+      "result": "Equal-total image has the displayed signed integer section. Zero-marginal rectangles span by elimination of interior cells and are independent at those cells. Fibres are kernel translates and nonnegative fibres are intersections, not an unsupported nonnegative inverse."
+    },
+    {
+      "claim": "CLM-COL-000191",
+      "morphism": "MOR-COL-000070",
+      "locus": "companion chapter04:578-619, prop:packet-reduced-denominator-cycles",
+      "result": "Taking gcds in cyclic transport preserves g; division yields positive odd coprime n_j and exact valuations. Odd d preserves parity, so multiplication/division by d intertwines both shortened-map branches and preserves orbit times. D>0, word primitivity and coprimality are not conflated."
+    },
+    {
+      "claim": "CLM-COL-000192",
+      "locus": "companion chapter04:621-689; affine_crt_synchronization_checks.py, check()",
+      "result": "Certificate read in full, then freshly run without receipt output and with -B. Independent cut/recursive enumerators, three numerator formulas, common-letter DP, separate scalar DPs, both CRT inverses and408681 transition/inverse cases pass. The dense-table hash exactly reproduces the stored receipt. This is fixed(10,16) enumeration, not a proof by finite testing of the general statements."
+    },
+    {
+      "claim": "CLM-COL-000193",
+      "locus": "critical chapter06:245-258, issue:affine-pointed-words; antecedent2434-2481",
+      "result": "The source's iff with cyclic shifts is false for pointed periodic words. The corrected equality of primitive pointed roots follows from the common two-sided period subgroup; the already-aligned source base points give the required converse. The orbit-classification statement survives."
+    },
+    {
+      "claim": "CLM-COL-000194",
+      "locus": "critical chapter06:260-292, issue:affine-H1-domain; antecedent3647-3677",
+      "result": "The current maximal diagonal domain identifies the adjoint exactly, finite truncations give a core, and resolvent entries tending to0 give compactness; the geometric trace formula holds for beta>0. This fills the domain gap without any BCM identification."
+    },
+    {
+      "claim": "CLM-COL-000195",
+      "locus": "critical chapter06:233-243, issue:affine-singleton-average; antecedent1238-1247,1307-1344",
+      "result": "At m1 the packet is(A), so the moments are immediate. The source sets r=m-2 although its binomial lemma requires r>=0; the present singleton completion is correct."
+    }
+  ],
+  "executable_checks": {
+    "policy": "Each script was read completely before execution; validate_state.py's invoked validate_chatnotes_intake.py was also read. All three commands were read-only and used -B; no --receipt output or package/build operation.",
+    "bounded_checkpoint": {
+      "command": "python -B scripts/validate_affine_crt_checkpoint.py",
+      "exit_code": 0,
+      "wall_time_seconds": 0.2206213,
+      "result": {
+        "id": "AFFINE-CRT-CHECKPOINT-VALIDATION-20260904",
+        "status": "pass",
+        "checkpoint_sha256": "b3cb81323db5ecc05767c20dc9e1e870c6e2e9f3ed5b0fefd8bde7dea0bd83ca",
+        "pin_count": 74,
+        "new_claim_count": 7,
+        "new_morphism_count": 3,
+        "table_cells_rechecked": 6487,
+        "errors": [],
+        "visual_pages_hash_checked": 110,
+        "scope": "Bounded checkpoint pins, source/proof linkage, stored table, build and remote receipts.",
+        "nonclaims": [
+          "Does not rerun enumeration or prove the general theorems mechanically.",
+          "Does not replace full state validation or fresh-context reading.",
+          "Does not certify whole-corpus coverage or unbundled private apparatus."
+        ]
+      }
+    },
+    "full_state": {
+      "command": "python -B scripts/validate_state.py",
+      "exit_code": 1,
+      "wall_time_seconds": 0.986377,
+      "result": {
+        "schema_version": "1.0",
+        "status": "fail",
+        "project_id": "COLLATZ-LITERATURE-FIRST-20260824",
+        "route_record_count": 152,
+        "document_route_count": 80,
+        "topic_route_count": 6,
+        "source_record_count": 51,
+        "claim_record_count": 195,
+        "morphism_record_count": 70,
+        "exact_gap_count": 3,
+        "legacy_status_mapping_count": 8,
+        "chatnotes_validator_status": "pass",
+        "warning_count": 8,
+        "warnings": [
+          "route manifestation absent after index freeze: ROUTE-COL-F0B60EA101282557AFB9: C:\\Users\\LOCAL_USER\\Downloads\\OS\\2107.12475v2 Hardness of busy beaver value BB(15).pdf",
+          "route manifestation absent after index freeze: ROUTE-COL-3629F92A6B131CB6D6DB: C:\\Users\\LOCAL_USER\\Downloads\\OS\\Advances in number theory and applied analysis.pdf",
+          "route manifestation absent after index freeze: ROUTE-COL-091F8EFB870FD5F78876: C:\\Users\\LOCAL_USER\\Downloads\\OS\\1209.3495v1 The Collatz conjecture and De Bruijn graphs.pdf",
+          "route manifestation absent after index freeze: ROUTE-COL-32B2942DB3BF022A116E: C:\\Users\\LOCAL_USER\\Downloads\\OS\\1209.3495v1 The Collatz conjecture and De Bruijn graphs.pdf",
+          "route manifestation absent after index freeze: ROUTE-COL-BDFEB561BA8B70EDDBA7: C:\\Users\\LOCAL_USER\\Downloads\\OS\\2107.12475v2 Hardness of busy beaver value BB(15).pdf",
+          "route manifestation absent after index freeze: ROUTE-COL-38C004FA897F0EE6B363: C:\\Users\\LOCAL_USER\\Downloads\\OS\\Advances in number theory and applied analysis.pdf",
+          "document route manifestation absent after index freeze: DOCROUTE-COL-E2EEBB6A57D941BC8B18: C:\\Users\\LOCAL_USER\\Downloads\\OS\\2107.12475v2 Hardness of busy beaver value BB(15).pdf",
+          "document route manifestation absent after index freeze: DOCROUTE-COL-5A0D26184D9E2035AEF6: C:\\Users\\LOCAL_USER\\Downloads\\OS\\Advances in number theory and applied analysis.pdf"
+        ],
+        "failure_count": 1,
+        "failures": [
+          "source manifestation missing: C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\tmp\\source_inspection_conway_1972_20260826\\zbmath_document_3526785.json"
+        ]
+      }
+    },
+    "finite_certificate": {
+      "command": "python -B research_companion/certificates/affine_crt_synchronization_checks.py",
+      "exit_code": 0,
+      "wall_time_seconds": 0.6981009,
+      "result": {
+        "status": "pass",
+        "scope": {
+          "m": 10,
+          "A": 16,
+          "D": 6487,
+          "factorization": [
+            13,
+            499
+          ]
+        },
+        "word_count": 5005,
+        "primitive_word_count": 4970,
+        "imprimitive_word_count": 35,
+        "all_cyclic_class_count": 504,
+        "primitive_cyclic_class_count": 497,
+        "imprimitive_cyclic_class_count": 7,
+        "word_counts_by_least_packet_period": {
+          "5": 35,
+          "10": 4970
+        },
+        "gcd_strata_all_words": {
+          "1": 4560,
+          "13": 410,
+          "499": 35,
+          "6487": 0
+        },
+        "gcd_strata_primitive_words": {
+          "1": 4560,
+          "13": 410,
+          "499": 0,
+          "6487": 0
+        },
+        "gcd_strata_primitive_cyclic_classes": {
+          "1": 456,
+          "13": 41,
+          "499": 0,
+          "6487": 0
+        },
+        "least_witnesses": {
+          "13": {
+            "lexicographically_least_all_words": {
+              "word": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                4
+              ],
+              "numerator": 65065,
+              "residue_mod_13": 0,
+              "residue_mod_499": 195,
+              "gcd_with_D": 13,
+              "least_packet_rotation_period": 10
+            },
+            "least_numerator_all_words_tie_break_lex": {
+              "word": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                4
+              ],
+              "numerator": 65065,
+              "residue_mod_13": 0,
+              "residue_mod_499": 195,
+              "gcd_with_D": 13,
+              "least_packet_rotation_period": 10
+            },
+            "lexicographically_least_primitive_word": {
+              "word": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                4
+              ],
+              "numerator": 65065,
+              "residue_mod_13": 0,
+              "residue_mod_499": 195,
+              "gcd_with_D": 13,
+              "least_packet_rotation_period": 10
+            }
+          },
+          "499": {
+            "lexicographically_least_all_words": {
+              "word": [
+                1,
+                1,
+                1,
+                1,
+                4,
+                1,
+                1,
+                1,
+                1,
+                4
+              ],
+              "numerator": 105289,
+              "residue_mod_13": 2,
+              "residue_mod_499": 0,
+              "gcd_with_D": 499,
+              "least_packet_rotation_period": 5
+            },
+            "least_numerator_all_words_tie_break_lex": {
+              "word": [
+                1,
+                1,
+                1,
+                1,
+                4,
+                1,
+                1,
+                1,
+                1,
+                4
+              ],
+              "numerator": 105289,
+              "residue_mod_13": 2,
+              "residue_mod_499": 0,
+              "gcd_with_D": 499,
+              "least_packet_rotation_period": 5
+            },
+            "lexicographically_least_primitive_word": null
+          }
+        },
+        "joint_support_size": 3473,
+        "joint_zero_cell_count": 3014,
+        "joint_origin_count": 0,
+        "marginal_support_sizes": {
+          "13": 13,
+          "499": 499
+        },
+        "marginal_zero_counts": {
+          "13": 410,
+          "499": 35
+        },
+        "joint_dense_table_sha256_compact_json": "c96f9a23ccf99710306d4188d737826fc3d03818e0fd80680fa3d9bd3ce626d3",
+        "checks": {
+          "independent_enumerators_equal": true,
+          "numerator_formula_growing_and_first_letter_equal": 5005,
+          "cyclic_transport_and_gcd_invariance": 5005,
+          "imprimitive_squares_and_exact_499_numerator_multiplier": 35,
+          "joint_dp_equals_complete_direct_joint_count": true,
+          "marginals_equal_independent_single_modulus_dp": [
+            13,
+            499
+          ],
+          "joint_CRT_pushforward_equals_independent_mod_D_dp": true,
+          "CRT_both_inverse_identities_each_domain_size": 6487,
+          "synchronized_transition_and_inverse_tests": 408681,
+          "transition_indices": {
+            "m_inclusive": [
+              2,
+              10
+            ],
+            "first_letter_inclusive": [
+              1,
+              7
+            ],
+            "residue_inclusive": [
+              0,
+              6486
+            ]
+          },
+          "joint_dp_cached_states": 64,
+          "single_modulus_dp_cached_states": 192
+        },
+        "CRT_inverse": {
+          "formula": "(3992*u + 2496*v) mod 6487",
+          "coefficient_u": 3992,
+          "coefficient_v": 2496
+        },
+        "execution": {
+          "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "optimized": 0,
+          "elapsed_ns": 527918300,
+          "peak_working_set_bytes": 28147712,
+          "peak_working_set_below_5000000000_bytes": true
+        },
+        "nonclaims": [
+          "Only the (10,16) packet is enumerated; no extended cycle search was run.",
+          "Finite checks do not replace a general proof or establish a novelty claim."
+        ],
+        "recorded_utc": "2026-09-04T16:27:03.036713+00:00",
+        "certificate_sha256": "ee0340744c8886ff55a7246ae0141576eac3ec60d262b7431bc3579c0198d71e",
+        "command_argv": [
+          "research_companion/certificates/affine_crt_synchronization_checks.py"
+        ]
+      }
+    },
+    "table_receipt_link": {
+      "path": "research_companion/audit/affine_crt_watched_review_20260904T151335Z_0212cc90/certificate_receipt.json",
+      "sha256": "b521986a58f0c613ef882e0c22e23c3d06624b0f8ab71df38af3d96421f8670d",
+      "certificate_sha256": "ee0340744c8886ff55a7246ae0141576eac3ec60d262b7431bc3579c0198d71e",
+      "dense_table_sha256": "c96f9a23ccf99710306d4188d737826fc3d03818e0fd80680fa3d9bd3ce626d3",
+      "fresh_replay_matches": true
+    }
+  },
+  "findings": [
+    {
+      "id": "REC46-F1",
+      "severity": "state_policy_discrepancy_nonblocking_for_read_only_check",
+      "evidence": [
+        "C:/Users/LOCAL_USER/Documents/AGENTS.md: COMPUTATION RESOURCE POLICY and LEAN RESOURCE POLICY",
+        "DIRECTIVES.md: USR-0013 resource paragraph",
+        "state/project_state.json: resource_policy",
+        "state/tao_preprint_current.json: lean_policy"
+      ],
+      "finding": "Live pinned ancestor distinguishes uncapped explicitly recorded critical calculations from five-GB non-critical calculations; project records still express a universal five-GB session cap. The same ancestor hash is already recorded, so the discrepancy is not explained by a newly changed file.",
+      "required_action": "Reconcile task-owned operative policy with the verified controlling instructions before any later resource-intensive launch. Do not edit AGENTS.md. No build or launch is necessary for continuing the current raw content reading."
+    },
+    {
+      "id": "REC46-F2",
+      "severity": "known_full_state_failure_retained",
+      "evidence": [
+        "scripts/validate_state.py fresh exit1",
+        "qa/ACT46-FULL-STATE-VALIDATION.json"
+      ],
+      "finding": "Historical tmp/source_inspection_conway_1972_20260826/zbmath_document_3526785.json remains missing. The fresh full validator reports exactly one failure and eight frozen-route warnings.",
+      "required_action": "Recover the exact historical manifestation or explicitly resolve its provenance under the user's rules; do not weaken the validator or substitute a fresh response body as historical byte identity."
+    },
+    {
+      "id": "REC46-F3",
+      "severity": "coverage_boundary",
+      "evidence": [
+        "scripts/validate_chatnotes_intake.py: expected_complete_intervals",
+        "state/chatnotes_intake.jsonl: CHATINT-COL-000002,000005,000006",
+        "state/affine_packet_current.json: whole_source_coverage_reconciled=false"
+      ],
+      "finding": "The intake validator's pass authenticates historical report intervals/hashes and fail-closed admission labels. It does not establish that all3021 raw lines have now been directly read or crosswalked. Current state correctly leaves full coverage unresolved.",
+      "required_action": "Credit fresh raw coverage only from actual content-level reading records and propagated checks; do not promote the old full-agent report to reconciled coverage."
+    },
+    {
+      "id": "REC46-F4",
+      "severity": "verification_boundary",
+      "finding": "No mathematical contradiction found in the CRT inverse/intertwining, marginal kernel, reduced-denominator proof, finite table or three checked antecedent repairs. Historical remote and visual receipts are linked, but no live browser, new visual inspection, general Lean formalization or full-source/literature audit occurred in this recovery."
+    }
+  ],
+  "recoverable_next_action": {
+    "immediate": "Continue the source-identified chronological affine export reading and content-level crosswalk. State records root901–1800 and a separate1–900 pass as in progress; read1801–3021 and reconcile the complete content records before asserting full coverage or taking new consequences.",
+    "coordination_boundary": "Reading may be progressing in separate new audit files while this bounded recovery runs. This record does not claim those files complete, does not overwrite them, and does not prescribe duplicate reading of completed raw intervals.",
+    "mathematical_work": "For each newly checked raw claim, preserve its exact coordinates, proof/source relation, discrepancies and limited scope; propagate any material finding into the relevant critical/companion text and claim/morphism/dependency records, then verify and synchronize substantive checked changes only to the canonical project.",
+    "remaining_global_work": [
+      "Historical Conway JSON provenance recovery.",
+      "Legacy standalone companion manifest and all prose-referenced portable apparatus.",
+      "Remaining admitted literature/Chatnotes coverage and full corpus recovery."
+    ],
+    "no_scope_change": "Keep the V7 Tao preprint distinct and unchanged absent new relevant content; no new Overleaf project, public publication, AGENTS edit, Lean launch or index rebuild is part of this next raw-reading step."
+  },
+  "evidence_pins_observed_utc": "2026-09-04T16:28:47Z",
+  "evidence_pin_semantics": "Exact byte identities observed for files used in this recovery; mutable current-state/ledger files are observations, not a freeze of future legitimate work. The immutable ACT46 checkpoint and its own checked74 pins remain the checkpoint anchor.",
+  "evidence_pins": [
+    {
+      "path": "state/project_state.json",
+      "bytes": 25031,
+      "sha256": "4528bfd71b685eda46d9429d1732b31e029f2bc703918e2aeb1d719c4dd17dd4"
+    },
+    {
+      "path": "DIRECTIVES.md",
+      "bytes": 16761,
+      "sha256": "ff8d581c649e9a393c3d5ab9722d5c49dfae65da0e392dc1a2a5dbcb5b7783c3"
+    },
+    {
+      "path": "state/affine_packet_current.json",
+      "bytes": 5965,
+      "sha256": "61ef9902b3ac5d5837bfd17f86509e91e6122738eb19ea5cc877466d505e3432"
+    },
+    {
+      "path": "state/affine_packet_topic_route.json",
+      "bytes": 14104,
+      "sha256": "2d18b870bdfa1e128a575b40f168835119a661708ee84b4fb01cf07f84875de5"
+    },
+    {
+      "path": "state/overleaf_current.json",
+      "bytes": 3766,
+      "sha256": "e94b005e2c94fda4b064890bf9f9e872594ba4fa44b6f07ac0fb9c1f1d94a20c"
+    },
+    {
+      "path": "state/tao_preprint_current.json",
+      "bytes": 3732,
+      "sha256": "6976d0cd1f7396e7ff5195b540dadaa4e117da72ed897ce7aff2ab5b74cdbdf7"
+    },
+    {
+      "path": "state/claims.jsonl",
+      "bytes": 252337,
+      "sha256": "26cddd88e8da90a3d5b1e679b2519be34d7b11ff71dfb6540e090cdebb94ad64"
+    },
+    {
+      "path": "state/morphisms.jsonl",
+      "bytes": 120259,
+      "sha256": "2f0df961419d37458fb51f027e8aee001a314cbd93bcc2fc0ca21ad759afd811"
+    },
+    {
+      "path": "state/source_registry.jsonl",
+      "bytes": 184171,
+      "sha256": "3a000ea4bcfa129055bf47eaca2b2153909f0b82181d1ac90c2ed5bb80519975"
+    },
+    {
+      "path": "state/action_receipts.jsonl",
+      "bytes": 221667,
+      "sha256": "09d5f8b6d546ecc9d7f015318935a6cc1ce66e6874bbe3974e6e11a27e50db16"
+    },
+    {
+      "path": "state/chatnotes_intake.jsonl",
+      "bytes": 21039,
+      "sha256": "e6ed2b8526de0e1e0beadb99c01b610affe0aecdbf2946929da696673e31a82e"
+    },
+    {
+      "path": "qa/ACT46-AFFINE-CRT-CHECKPOINT.json",
+      "bytes": 19352,
+      "sha256": "b3cb81323db5ecc05767c20dc9e1e870c6e2e9f3ed5b0fefd8bde7dea0bd83ca"
+    },
+    {
+      "path": "qa/ACT46-AFFINE-CRT-VALIDATION.json",
+      "bytes": 673,
+      "sha256": "a5850d735dc28e7b7b20f7347cf022e2f444dfe199f87cbb1f24bdf0a85340bf"
+    },
+    {
+      "path": "qa/ACT46-FULL-STATE-VALIDATION.json",
+      "bytes": 2072,
+      "sha256": "7368614a987fa916c2468b4665f5abbdc4335a62160b2613c4f5cc011f1b0bf7"
+    },
+    {
+      "path": "scripts/validate_affine_crt_checkpoint.py",
+      "bytes": 11060,
+      "sha256": "7496bedba019a45ba14d93e52faa3161eb653740e36bab179d476c555a0df5c2"
+    },
+    {
+      "path": "scripts/validate_state.py",
+      "bytes": 35453,
+      "sha256": "d45b67b71e54acbd68d73a5046ab42fddd6e30c9e89aeffb2cf5361da77f8e4e"
+    },
+    {
+      "path": "scripts/validate_chatnotes_intake.py",
+      "bytes": 8426,
+      "sha256": "cb55e08c891525b94bc63f7accb5863e51007c8210ab25b1b846e01202a9f862"
+    },
+    {
+      "path": "research_companion/certificates/affine_crt_synchronization_checks.py",
+      "bytes": 13678,
+      "sha256": "ee0340744c8886ff55a7246ae0141576eac3ec60d262b7431bc3579c0198d71e"
+    },
+    {
+      "path": "research_companion/audit/affine_crt_watched_review_20260904T151335Z_0212cc90/certificate_receipt.json",
+      "bytes": 67542,
+      "sha256": "b521986a58f0c613ef882e0c22e23c3d06624b0f8ab71df38af3d96421f8670d"
+    },
+    {
+      "path": "research_companion/chapters/04_affine_packets_parity_necklaces_and_residue_automata.tex",
+      "bytes": 31627,
+      "sha256": "82f4f52973471a370b037488f522c5bc4b60d0f4d87eff29a8ffdf78cc53b72c"
+    },
+    {
+      "path": "tex/chapters/06_affine_packet_source_audit.tex",
+      "bytes": 17418,
+      "sha256": "675e185cc3845137b8ee124868fd498f5b1618f4d22bed1f60cfd78fdb028b28"
+    },
+    {
+      "path": "tex/main.tex",
+      "bytes": 2565,
+      "sha256": "69d954e1f941901a9fb245527deb49e689d80c3b0c7254333c9457a45fab637a"
+    },
+    {
+      "path": "research_companion/main.tex",
+      "bytes": 5632,
+      "sha256": "1d5bc216e010fec07d5420bb84f8c67c68cce5444a7ea437b036d17e36a2c835"
+    },
+    {
+      "path": "preprints/tao_clock_audit/main.tex",
+      "bytes": 6567,
+      "sha256": "c4423fcf4d9be9db296d6db0ee4d922a4be04667cafeb30c7a81d167d90284a5"
+    },
+    {
+      "path": "overleaf/sync_20260904/canonical_project/main.tex",
+      "bytes": 2646,
+      "sha256": "610f4acf98694b9f629cb9add5838521f09c33d4ea29ddd80e6e58ef59013c16"
+    },
+    {
+      "path": "overleaf/sync_20260904/canonical_project/research_companion.tex",
+      "bytes": 5682,
+      "sha256": "a2a493103c016422e94b7e14254f9f4b32ea523bbf4dfe2bf025a402fa05c69d"
+    },
+    {
+      "path": "overleaf/sync_20260904/canonical_project/tao_preprint.tex",
+      "bytes": 6591,
+      "sha256": "6394c3a9ae16ebb24e48f04698af73acad63698984d55ceb654b02280d27f581"
+    },
+    {
+      "path": "overleaf/sync_20260904/affine_crt_remote_receipt.json",
+      "bytes": 5427,
+      "sha256": "70ff60f2137cc6610481c5274d96f8bce32dfc4b510f7937179ff17822620c5c"
+    },
+    {
+      "path": "C:/Users/LOCAL_USER/Documents/AGENTS.md",
+      "bytes": 8519,
+      "sha256": "1106c1f36627d8ea1ea5fe7317472a91c149935bf36e3363888300a11a271748"
+    },
+    {
+      "path": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/automata/V5/odd_step_collatz_orbit_packets_note.tex",
+      "bytes": 114074,
+      "sha256": "406ef13e43ae0af68fabdbda4dd16145d313407f7d38ea22311803c7533cfec7"
+    },
+    {
+      "path": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/more col thread/ChatGPT-Implications of Affine Formula.md",
+      "bytes": 143053,
+      "sha256": "abb1abbb948dc140394de3d35f0efbde9b3facdf718c24b065b8d0adb951366e"
+    },
+    {
+      "path": "raw/USR-0001.txt",
+      "bytes": 5156,
+      "sha256": "8ab3bd5f53338cc9fcb3494018763d29c89f67aa0623d26b1c39ee09f69cd442"
+    },
+    {
+      "path": "raw/USR-0002.txt",
+      "bytes": 379,
+      "sha256": "4d09eabbaf85ef4351493c89afd9ffabc1d630283a92d1d6927f632158088729"
+    },
+    {
+      "path": "raw/USR-0003.txt",
+      "bytes": 324,
+      "sha256": "675bc42a44356f579f63f6abd816b9c2cf36701f0d017ffd467eca033d5c7925"
+    },
+    {
+      "path": "raw/USR-0004.txt",
+      "bytes": 1055,
+      "sha256": "02ae6e9787e50ad5a402e72d01b9816501b63b26a6eff0ff93692d808f74409c"
+    },
+    {
+      "path": "raw/USR-0005.txt",
+      "bytes": 849,
+      "sha256": "446ec334303f429b6631219003cd3dfde295b035047ea1803972d582b4cb16fe"
+    },
+    {
+      "path": "raw/USR-0006.txt",
+      "bytes": 598,
+      "sha256": "83075f03e213254adcfd827ce3d06186cc2b6dad1f48f37689228de19fd4052d"
+    },
+    {
+      "path": "raw/USR-0007.txt",
+      "bytes": 729,
+      "sha256": "0e5dd21c7148c0552e4f9f0838f98f0c3076189eeed90f16f9ac8407138653fd"
+    },
+    {
+      "path": "raw/USR-0008.txt",
+      "bytes": 1356,
+      "sha256": "e8b2dbe8ede48e5abf7b943d31854efee13cc9c5ad4a733507ec1784a64a5e88"
+    },
+    {
+      "path": "raw/USR-0009.txt",
+      "bytes": 1147,
+      "sha256": "838c80f06d7c64b4a13989b4201a477a4145e8d55ac06cae43c652b81cf7df5a"
+    },
+    {
+      "path": "raw/USR-0010.txt",
+      "bytes": 1819,
+      "sha256": "0a2eee978281a514be0a674232b0de27aaf725c59ab9743060cdd925075f1a85"
+    },
+    {
+      "path": "raw/USR-0011.txt",
+      "bytes": 1645,
+      "sha256": "9afb2c4a03bebbd4d764d352cb41a1ce47b78f454b22f33cbff57ed7e3878d21"
+    },
+    {
+      "path": "raw/USR-0012.txt",
+      "bytes": 817,
+      "sha256": "cd726fce3faa5fead6897fab54816a63c5851ac822b886287920b4f6e159ff29"
+    },
+    {
+      "path": "raw/USR-0013-tao-preprint.txt",
+      "bytes": 4284,
+      "sha256": "a0149d5b627a02c6ce77cc03a04bac4aac4343c995d5133a98be77053507feb3"
+    },
+    {
+      "path": "raw/USR-0014-overleaf-current.txt",
+      "bytes": 1133,
+      "sha256": "f662594407765df78ce6689900516e2a78391f6be17a85d411e8bdeeb966a7ee"
+    },
+    {
+      "path": "raw/USR-0015-canonical-overleaf-only.txt",
+      "bytes": 1236,
+      "sha256": "7ef38dc207ef753c339fb642025df7f00af52a0aa0fed4ca120b89a9278d1710"
+    },
+    {
+      "path": "raw/USR-0016-preprint-reader-and-model.txt",
+      "bytes": 1791,
+      "sha256": "297af33aac959129c12f18c202231655de15193d5417f10f5416257b146eb7dd"
+    },
+    {
+      "path": "raw/USR-0017-tao-v7-baseline.txt",
+      "bytes": 954,
+      "sha256": "2a929548c8e9e58e0c025fc1a1beaca2a833e7e9ebf81b5218e1cf3aa0b8548f"
+    },
+    {
+      "path": "raw/USR-0018-workflow-autonomy.txt",
+      "bytes": 1196,
+      "sha256": "60dad4d794c6c636ad4d1eb3de040b5bedf4648cdb88f01de70ed93195f8b7e8"
+    }
+  ]
+}

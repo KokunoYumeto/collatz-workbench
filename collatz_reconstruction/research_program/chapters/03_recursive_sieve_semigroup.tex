@@ -1,0 +1,150 @@
+\section{The restricted predecessor semigroup}
+
+Four exact lower-predecessor transports occur in the public sieve generator:
+\[
+ T(2q+1)=3q+2,
+\]
+\[
+ T^3(8q+3)=9q+4,qquad
+ T^6(64q+7)=81q+10,qquad
+ T^7(128q+95)=243q+182.
+\]
+Solving for the source gives partial inverse maps
+\begin{equation}
+ \phi_j(L)=\frac{2^{t_j}L-H_j}{3^{d_j}},qquad
+ (d_j,t_j,H_j)\in
+ \{(1,1,1),(2,3,5),(4,6,73),(5,7,211)\},
+ \label{eq:primitive-inverse-maps}
+\end{equation}
+on the respective domains
+\[
+ L\equiv2\pmod3,quad L\equiv4\pmod9,quad
+ L\equiv10\pmod{81},quad L\equiv182\pmod{243}.
+\]
+On those domains $T^{t_j}(\phi_j(L))=L$.  Outside them, the floor expression
+used in code is not promoted to this branch-word identity.
+
+\begin{theorem}[exact word law and rounding loss]
+\label{thm:predecessor-word-law}
+Let $w=(j_1,\ldots,j_m)$ be a nonempty admissible composition of the maps in
+\eqref{eq:primitive-inverse-maps}.  There are integers $d(w),t(w),H(w)>0$
+such that
+\begin{equation}
+ \phi_w(L)=\frac{2^{t(w)}L-H(w)}{3^{d(w)}}
+ =\frac{2^{t(w)}}{3^{d(w)}}L-h(w),qquad
+ h(w)=\frac{H(w)}{3^{d(w)}}.
+ \label{eq:word-affine-law}
+\end{equation}
+They satisfy
+\begin{equation}
+ 0<h(w)<m\le d(w).
+ \label{eq:word-rounding-loss}
+\end{equation}
+If a primitive $j$ is appended after $w$, then
+\begin{align}
+ d(jw)&=d(w)+d_j,&t(jw)&=t(w)+t_j,\notag\\
+ H(jw)&=2^{t_j}H(w)+H_j3^{d(w)},&
+ h(jw)&=\frac{2^{t_j}}{3^{d_j}}h(w)+\frac{H_j}{3^{d_j}}.
+ \label{eq:word-recurrence}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Substitution of \eqref{eq:word-affine-law} into a primitive map gives
+\eqref{eq:word-recurrence}.  For every primitive,
+\[
+ 0<\frac{H_j}{3^{d_j}}<1,qquad
+ 0<\frac{2^{t_j}}{3^{d_j}}<1.
+\]
+Thus $0<h(jw)<h(w)+1$.  Induction gives $0<h(w)<m$; and each primitive has
+$d_j\ge1$, so $m\le d(w)$.
+\end{proof}
+
+\begin{theorem}[coefficient-correct lift and exact soundness criterion]
+\label{thm:recursive-lift-criterion}
+Let $0\le r<2^k$, suppose
+\[
+ T^s(r)=L
+\]
+after exactly $c$ odd shortened steps, and let an admissible predecessor word
+$w$ satisfy $P=\phi_w(L)$ and $T^{t(w)}(P)=L$.  Assume $d(w)\le c$ and
+$s\le k$.  For $n=2^kh+r$ define
+\begin{equation}
+ Q=3^{c-d(w)}2^{k-s+t(w)}h+P.
+ \label{eq:coefficient-correct-lift}
+\end{equation}
+Then $T^{t(w)}(Q)=T^s(n)$.  Moreover
+\[
+ Q<n\quad\text{for every integer }h\ge1
+\]
+if and only if
+\begin{equation}
+ P<r,qquad 2^{t(w)}3^{c-d(w)}\le2^s.
+ \label{eq:recursive-soundness-criterion}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The dyadic prefix identity gives
+\[
+ T^s(n)=3^c2^{k-s}h+L.
+\]
+Applying the exact inverse word \eqref{eq:word-affine-law} yields
+\[
+ \phi_w(T^s(n))
+ =3^{c-d(w)}2^{k-s+t(w)}h+P=Q,
+\]
+which proves the trajectory identity.  Comparing \eqref{eq:coefficient-correct-lift}
+with $n=2^kh+r$ gives
+\[
+ \bigl(3^{c-d(w)}2^{k-s+t(w)}-2^k\bigr)h<r-P.
+\]
+This holds for every $h\ge1$ exactly when the high coefficient is at most
+$2^k$ and the constant term is strictly smaller, which is
+\eqref{eq:recursive-soundness-criterion}.
+\end{proof}
+
+The public routine returns $P$ but does not retain $d(w),t(w)$ and does not
+test \eqref{eq:recursive-soundness-criterion}.  The next result closes that
+gap only on its implemented exponent domain.
+
+\begin{certificate}[finite $k\le34$ recursive closure]
+\label{cert:finite-k34}
+For every invocation arising in the packed public-generator domain $k\le34$,
+every returned $P<r$ has a uniformly lower coefficient-correct lift.  In the
+current-state branch, the exhaustive certificate checks $7105$ restricted
+word states, $1557$ identity endpoint pairs, $2983$ nonidentity
+common-endpoint pairs, and all $2585$ budget-admissible pairs.  In the
+coalescence branch it checks $7216$ word states, $1003$ common-endpoint pairs
+($480$ identity and $523$ nonidentity), and all $487$ budget-admissible
+nonidentity pairs.
+\end{certificate}
+
+\begin{proof}
+In the relevant exponent boxes, the smallest possible coefficient strictly
+above one is
+\[
+ C_{\min}=\frac{3^{12}}{2^{19}}
+ =\frac{531441}{524288},qquad
+ C_{\min}-1=\frac{7153}{524288}.
+\]
+If the current-state coefficient criterion failed while $P<r$, the affine
+prefix formula and \eqref{eq:word-rounding-loss} imply
+\[
+ P(C_{\min}-1)<h(w)<34,qquad r-P\le33,
+\]
+and hence $P\le2492$.  The coalescence lift has one additional half-step; an
+unsafe witness would satisfy $P\le2528$ and $r-P\le34$.  These are proved
+finite supersets, not sampled cutoffs.  The deterministic certificate
+\nolinkurl{certificates/computational_verification_chronology_checks.py}
+enumerates them and obtains exactly the counts stated above; every
+budget-admissible pair satisfies the applicable coefficient inequality.
+\end{proof}
+
+\begin{nonclaim}
+Certificate~\ref{cert:finite-k34} proves neither an invariant for unbounded
+$k$ nor the correctness of a historical distributed computation.  It does
+not authenticate hardware, compiler output, a completed-work database, or a
+compressed sieve map merely because those artifacts exist.
+\end{nonclaim}
+

@@ -1,0 +1,1619 @@
+\section{Weighted odd-step paths, exact completions, and finite residue actions}
+\label{sec:chatnotes-weighted-path-algebra}
+
+This separately authored research companion develops a theorem package
+suggested by a chronological collection of Collatz research notes.  The notes
+are intellectual provenance, not theorem authority: every statement retained
+here is rederived from the displayed definitions.  The starting sketches
+contained a substantial finite core, together with four precise defects:
+mutually incompatible composition orders, nonunital transformation
+semigroups called monoids, infinite path sums placed in a finite-support
+algebra, and a prefix $3$-adic cocycle identified with a forward affine
+intercept without reversing the exponent word.  The constructions below keep
+the original odd-step coordinates and repair those defects at the point where
+they occur.
+
+The standard algebraic vocabulary is crosswalked against the definitions of
+free monoids, semirings, formal power series, weighted paths, and
+transformation monoids in
+\cite{KuichSalomaa1986,DrosteKuichVogler2009,Steinberg2016}.  Those sources do
+not contain the Collatz-specific theorems below; every such theorem is proved
+here.  No claim of priority is made for results independently reconstructed in
+this paper.
+
+\subsection{The odd first-return category and its local block category}
+
+Let
+\[
+ \mathcal O=\{1,3,5,\ldots\},
+ \qquad
+ a(x)=\nu_2(3x+1),
+ \qquad
+ C(x)=\frac{3x+1}{2^{a(x)}}
+ \quad(x\in\mathcal O).
+\]
+Thus $C$ is the positive-odd first-return map.  Write
+\[
+ o(n)=\frac{3n+1}{2}\quad(n\text{ odd}),
+ \qquad
+ e(n)=\frac n2\quad(n\text{ even})
+\]
+for the two legal branches of the shortened map, with their domains retained.
+
+\begin{definition}[first-return path category]
+\label{def:odd-first-return-path-category}
+The category $\mathcal E_C$ has object set $\mathcal O$.  For every
+$x\in\mathcal O$ it has a generating arrow
+\[
+ \epsilon_x:x\longrightarrow C(x),
+ \qquad \lambda(\epsilon_x)=a(x),
+\]
+and its morphisms are finite composable strings of these arrows, including
+the empty path $1_x$ at each object.  A path
+\[
+ p:x_0\xrightarrow{a_1}x_1\xrightarrow{a_2}\cdots
+       \xrightarrow{a_n}x_n
+\]
+has length and total exponent
+\[
+ \ell(p)=n,
+ \qquad A(p)=a_1+\cdots+a_n,
+\]
+and weight
+\[
+ w(p)=u^{\ell(p)}v^{A(p)-\ell(p)}.
+\]
+The category $\mathcal D_C^{\mathrm{blk}}$ has the same objects.  Its
+morphisms are precisely the legal shortened-map paths between odd endpoints
+whose local word has the form
+\[
+ (oe^{m_1})(oe^{m_2})\cdots(oe^{m_n}),
+ \qquad m_i\geq0.
+\]
+For a block path $q$, put
+\[
+ \#_o(q)=\text{number of $o$-steps},
+ \qquad
+ \#_e(q)=\text{number of $e$-steps},
+ \qquad
+ w_{\mathrm{blk}}(q)=u^{\#_o(q)}v^{\#_e(q)}.
+\]
+Composition in both categories is path concatenation.
+\end{definition}
+
+The set of strict first-return edges by itself is a directed graph, not a
+category: a composite of two strict first-return edges is usually not a
+single strict first-return edge.  The free path category $\mathcal E_C$ is the
+typed categorical object used below.
+
+\begin{theorem}[exact odd-block category isomorphism]
+\label{thm:chatnotes-block-category-isomorphism}
+For a positive exponent put
+\[
+ \iota(a)=oe^{a-1}.
+\]
+There is a functor
+\[
+ \iota:\mathcal E_C\longrightarrow\mathcal D_C^{\mathrm{blk}}
+\]
+which is the identity on objects and replaces each exponent edge by its local
+block.  It is an isomorphism.  Its inverse is
+\[
+ U\bigl((oe^{m_1})\cdots(oe^{m_n})\bigr)
+   =(m_1+1,\ldots,m_n+1).
+\]
+Moreover
+\[
+ \#_o(\iota(p))=\ell(p),
+ \qquad
+ \#_e(\iota(p))=A(p)-\ell(p),
+ \qquad
+ w_{\mathrm{blk}}(\iota(p))=w(p).
+\]
+In particular, this block passage loses no local trajectory information.
+\end{theorem}
+
+\begin{proof}
+Fix $x\in\mathcal O$ and put $a=a(x)$.  The first local step gives
+$(3x+1)/2$.  If $a>1$, this value and the following $a-2$ intermediate
+values are even, so exactly $a-1$ legal $e$-steps follow.  Their endpoint is
+$(3x+1)/2^a=C(x)$, which is odd.  Conversely, if a legal local path from an
+odd $x$ has word $oe^m$ and first returns to an odd state at its endpoint,
+then $3x+1$ is divisible by $2^{m+1}$ and not by $2^{m+2}$.  Hence
+$a(x)=m+1$.
+
+Every displayed block word has a unique parsing: each occurrence of $o$
+starts a block and every following run of $e$'s ends immediately before the
+next $o$ or at the word endpoint.  Therefore $U\iota$ and $\iota U$ are the
+identity on every morphism.  Both maps preserve endpoints and concatenation,
+so they are mutually inverse functors.  Counting the one $o$ and the $a_i-1$
+copies of $e$ in each block proves the three weight identities.
+\end{proof}
+
+The theorem corrects a recurrent description of $U$ as a proper forgetful
+quotient.  It would be information-losing on an unrestricted local word
+category, but on the explicitly defined legal odd-to-odd block category it
+has the displayed two-sided inverse.
+
+\subsection{Two different \texorpdfstring{$\mathbb F_2^2$}{F2-squared} degrees}
+
+The weighted block counts give a degree
+\[
+ d_{\mathrm{count}}(p)
+ =\bigl(\ell(p)\bmod2,\,(A(p)-\ell(p))\bmod2\bigr).
+\]
+A separate coefficient-label convention assigns $00$ to every even branch
+and $11$ to every odd branch.  On an odd-to-odd block path it instead gives
+\[
+ d_{\mathrm{coeff}}(p)
+   =\bigl(\ell(p)\bmod2,\ell(p)\bmod2\bigr).
+\]
+
+\begin{proposition}[exact comparison of the two degrees]
+\label{prop:chatnotes-two-path-gradings}
+The homomorphism
+\[
+ \kappa:\mathbb F_2^2\longrightarrow\mathbb F_2^2,
+ \qquad \kappa(r,s)=(r,r),
+\]
+satisfies $d_{\mathrm{coeff}}=\kappa\circ d_{\mathrm{count}}$.  Its kernel,
+image, and fibres are
+\[
+ \ker\kappa=\{00,01\},
+ \qquad \operatorname{im}\kappa=\{00,11\},
+\]
+\[
+ \kappa^{-1}(00)=\{00,01\},
+ \qquad
+ \kappa^{-1}(11)=\{10,11\},
+\]
+with empty fibres over $01$ and $10$.  Thus $\kappa$ is an idempotent
+projection onto the diagonal $\Delta=\{00,11\}$.  Equivalently, its codomain
+restriction induces the quotient isomorphism
+$\mathbb F_2^2/\ker\kappa\simeq\Delta$.  It is not a quotient onto the whole
+displayed codomain, and the two degrees are not interchangeable.
+\end{proposition}
+
+\begin{proof}
+Substitution gives
+$\kappa(\ell,A-\ell)=(\ell,\ell)$ modulo two.  The kernel, image, and four
+fibres follow by evaluating the four elements of $\mathbb F_2^2$.
+\end{proof}
+
+\subsection{Composition order and the ordinary category algebra}
+
+We use the standard target-left convention throughout this section.  If
+$p:x\to y$ and $q:y\to z$, then $q\circ p$ means first $p$, then $q$, and
+the category-algebra product is
+\begin{equation}
+\label{eq:weighted-path-target-left-product}
+ [q][p]=[q\circ p],
+ \qquad
+ [q][p]=0\quad\text{when }t(p)\ne s(q).
+\end{equation}
+Consequently
+\[
+ [p]=e_{t(p)}[p]e_{s(p)},
+ \qquad e_x=[1_x],
+\]
+and for the path in Definition~\ref{def:odd-first-return-path-category},
+\[
+ [p]=[\epsilon_{x_{n-1}}]\cdots[\epsilon_{x_0}].
+\]
+Chronological word concatenation is the opposite written order from this
+target-left product.  Several raw formulas use one order in the path algebra
+and the other order in a transformation or pullback algebra without an
+opposite construction; Subsection~\ref{subsec:typed-finite-actions} gives the
+forced repair.
+
+Let $R$ be a commutative ring.  The ordinary weighted category algebra is
+\[
+ \mathfrak A_C
+   =\bigoplus_{p\in\operatorname{Mor}(\mathcal E_C)}R[u,v][p]
+\]
+with multiplication \eqref{eq:weighted-path-target-left-product}.  Every
+element has finite path support.  Therefore neither the sum of all object
+idempotents nor the sum of all finite paths is generally an element of
+$\mathfrak A_C$.
+
+\subsection{Endpoint series and the exact path completion}
+
+For $x,y\in\mathcal O$, define
+\begin{equation}
+\label{eq:weighted-endpoint-series}
+ Z_{x\to y}(u,v)
+   =\sum_{\substack{n\geq0\\ C^n(x)=y}}
+      u^n v^{A_n(x)-n}
+   \in R[v][[u]],
+\end{equation}
+where $A_0(x)=0$ and
+$A_n(x)=\sum_{j=0}^{n-1}a(C^j(x))$.  The coefficient of each $u^n$ is
+either zero or one monomial in $v$; no convergence assertion is needed for
+this formal series.
+
+\begin{proposition}[exact hit-time alternatives]
+\label{prop:weighted-endpoint-hit-times}
+For fixed $x,y\in\mathcal O$, the set
+\[
+ H_{x,y}=\{n\geq0:C^n(x)=y\}
+\]
+is empty, a singleton, or
+\[
+ r+d\mathbb N_0
+\]
+for a unique first hit $r$ and the least positive period $d$ of $y$.  In the
+last case, if
+\[
+ B=\sum_{j=0}^{d-1}a(C^j(y)),
+\]
+then
+\begin{equation}
+\label{eq:weighted-cyclic-endpoint-rational-form}
+ Z_{x\to y}(u,v)
+ =\frac{u^r v^{A_r(x)-r}}{1-u^d v^{B-d}}
+\end{equation}
+as a formal geometric series.  Every positive $d$-cycle satisfies
+\begin{equation}
+\label{eq:positive-cycle-weight-inequality}
+ 2^B>3^d.
+\end{equation}
+Hence the numerical specialization $(u,v)=(3/2,1/2)$ converges on every
+cyclic endpoint series.  In contrast,
+\[
+ Z_{1\to1}(1,1)=\sum_{n\geq0}1
+\]
+diverges.
+\end{proposition}
+
+\begin{proof}
+If $m<n$ are two hit times, then $C^{n-m}(y)=y$, so $y$ is periodic.  Once
+the orbit first reaches a periodic $y$, its later returns occur exactly at
+multiples of the least period.  This proves the alternatives and the
+uniqueness of $r,d$.  Each traversal of the cycle adds $d$ to the length and
+$B$ to the exponent sum, which gives
+\eqref{eq:weighted-cyclic-endpoint-rational-form}.
+
+Write the cycle as $y_i\xrightarrow{a_i}y_{i+1}$ with indices modulo $d$.
+For every $i$,
+\[
+ 2^{a_i}y_{i+1}=3y_i+1>3y_i.
+\]
+Multiplication and cancellation of the positive product $\prod_i y_i$
+give $2^B>3^d$.  At $(3/2,1/2)$ the geometric ratio is $3^d/2^B<1$.
+Finally $C(1)=1$ and $a(1)=2$, so every term of
+$Z_{1\to1}$ has weight $(uv)^n$.
+\end{proof}
+
+The completion needed for global path sums is not the preceding direct sum.
+
+\begin{definition}[coefficientwise path completion]
+\label{def:weighted-path-product-completion}
+Put
+\[
+ \widehat{\mathfrak A}_C
+  =\prod_{p\in\operatorname{Mor}(\mathcal E_C)}R[u,v][p].
+\]
+For $F=(F_p)$ and $G=(G_p)$, define the coefficient at a path $r$ by
+\[
+ (FG)_r=\sum_{r=q\circ p}F_qG_p.
+\]
+This is a finite sum: a path of length $n$ has exactly $n+1$ cuts.
+\end{definition}
+
+The finite-cut statement proves that multiplication is well defined for
+arbitrary path support.  Associativity follows by identifying both
+parenthesizations with the finite set of two-cut decompositions of a fixed
+path.  The completion contains
+\[
+ E=\sum_{x\in\mathcal O}e_x,
+ \qquad
+ W=\sum_{x\in\mathcal O}u v^{a(x)-1}[\epsilon_x],
+ \qquad
+ G=\sum_{p}w(p)[p].
+\]
+Every nonempty path has a unique first edge and a unique last edge, so
+\begin{equation}
+\label{eq:weighted-path-resolvent-identities}
+ G=E+WG=E+GW.
+\end{equation}
+Because $R$ is a ring, this says $G=(E-W)^{-1}$ inside the displayed
+completion.  If $S$ is instead a commutative semiring, repeat
+Definition~\ref{def:weighted-path-product-completion} with coefficients
+$S[u,v]$.  The finite-cut convolution and the identities
+$G=E+WG=E+GW$ remain valid there and define the Kleene star $W^*$; the
+subtraction and inverse notation are not used.  None of $E,W,G$ is silently
+placed in an ordinary finite-support algebra.
+
+\subsection{The predecessor transfer operator}
+
+For odd $y$ define
+\[
+ \mathcal P(y)=\left\{a\geq1:
+       x_a(y)=\frac{2^a y-1}{3}\text{ is an integer}\right\}.
+\]
+
+\begin{lemma}[exact predecessor fibres]
+\label{lem:weighted-predecessor-fibres}
+For odd $y$,
+\[
+ \mathcal P(y)=
+ \begin{cases}
+  \varnothing,&y\equiv0\pmod3,\\
+  \{2,4,6,\ldots\},&y\equiv1\pmod3,\\
+  \{1,3,5,\ldots\},&y\equiv2\pmod3.
+ \end{cases}
+\]
+For every $a\in\mathcal P(y)$, $x_a(y)$ is positive odd and
+\[
+ C(x_a(y))=y,
+ \qquad a(x_a(y))=a.
+\]
+Every positive odd predecessor of $y$ occurs exactly once in this list.
+\end{lemma}
+
+\begin{proof}
+Modulo three, $2^a y=1$ is impossible when $3\mid y$.  Since $2^a$ is
+$1$ for even $a$ and $2$ for odd $a$ modulo three, the other two cases have
+the stated parities.  The numerator is positive and odd; division by three
+preserves oddness.  The identity
+$3x_a(y)+1=2^ay$ with $y$ odd proves both displayed first-return identities.
+Solving that same identity for $x$ proves uniqueness.
+\end{proof}
+
+Define
+\begin{equation}
+\label{eq:weighted-predecessor-transfer}
+ (Lf)(y)=u\sum_{a\in\mathcal P(y)}v^{a-1}f(x_a(y)).
+\end{equation}
+This formula has several distinct exact domains.
+
+\begin{theorem}[algebraic, formal, and analytic transfer domains]
+\label{thm:weighted-transfer-exact-domains}
+Let $R$ be a commutative ring.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item Formula \eqref{eq:weighted-predecessor-transfer} defines an
+$R[u,v]$-linear endomorphism of the finite-support module
+$R[u,v]^{(\mathcal O)}$.
+
+\item It defines a continuous endomorphism of
+\[
+ \mathcal M=(R[[v]][[u]])^{\mathcal O}.
+\]
+All $v$-series in this product are interpreted coefficientwise.  The module
+$\mathcal M$ carries the complete linear, uniform $u$-adic topology with
+\[
+ F^k\mathcal M=(u^kR[[v]][[u]])^{\mathcal O}\qquad(k\geq0).
+\]
+For a fixed coefficient of $v^j$, only $a\leq j+1$ can contribute, and $L$
+obeys $L(F^k\mathcal M)\subseteq F^{k+1}\mathcal M$.  Consequently
+\[
+ (I-L)^{-1}=\sum_{n\geq0}L^n
+\]
+is well defined $u$-adically and
+\begin{equation}
+\label{eq:transfer-endpoint-kernel}
+ \bigl[(I-L)^{-1}\delta_x\bigr](y)=Z_{x\to y}(u,v).
+\end{equation}
+
+\item Let $u,v\in\mathbb C$ and $u\ne0$.  On counting-measure sequence
+spaces, $L$ is bounded on $\ell^1(\mathcal O)$ exactly when $|v|\leq1$, and
+then
+\[
+ \lVert L\rVert_{\ell^1\to\ell^1}=|u|.
+\]
+For $1<p\leq\infty$, let $q$ be conjugate to $p$, with $q=1$ when
+$p=\infty$.  Then $L$ is bounded on $\ell^p(\mathcal O)$ exactly when
+$|v|<1$, and
+\begin{equation}
+\label{eq:weighted-transfer-lp-norm}
+ \lVert L\rVert_{\ell^p\to\ell^p}
+ =|u|\bigl(1-|v|^{2q}\bigr)^{-1/q}.
+\end{equation}
+The same strict condition and norm hold on $c_0(\mathcal O)$.
+\end{enumerate}
+If $u=0$, the zero operator is defined for every finite $v$.
+\end{theorem}
+
+\begin{proof}
+For (i), a finitely supported $f$ has only finitely many states $x$ with
+$f(x)\ne0$, and each such state has one image $C(x)$.  Thus the apparently
+infinite predecessor formula is a finite sum on this domain.
+
+For (ii), the coefficient of $v^j$ can receive a term only from $a-1\leq j$.
+This proves coefficientwise finiteness.  The factor $u$ proves the filtration
+statement and hence the Neumann identity.  Starting from $\delta_x$, each
+application of $L$ follows the unique forward edge from the current odd
+state and multiplies by $uv^{a-1}$.  Induction gives
+\[
+ (L^n\delta_x)(y)
+ =\begin{cases}
+ u^n v^{A_n(x)-n},&C^n(x)=y,\\
+ 0,&C^n(x)\ne y,
+ \end{cases}
+\]
+which proves \eqref{eq:transfer-endpoint-kernel}.
+
+For (iii), the input coordinates split into disjoint fibres $C^{-1}(y)$.
+The absolute row weights over a fibre are either
+\[
+ |u|(1,|v|^2,|v|^4,\ldots)
+ \quad\text{or}\quad
+ |u|(|v|,|v|^3,|v|^5,\ldots),
+\]
+or the empty sequence.  For $1<p\leq\infty$, Hölder's inequality gives the
+row-functional norm as the $\ell^q$ norm of this weight sequence.  The first
+row is the larger one, and its norm is exactly the right side of
+\eqref{eq:weighted-transfer-lp-norm}.  Finite truncations with phases aligned
+to the weights approach equality, so the upper bound is sharp.  If
+$|v|\geq1$, those same finite truncations have unbounded row-functional norm.
+
+For $p=1$, each input state occupies exactly one column and has column sum
+$|u||v|^{a(x)-1}$.  All positive exponents occur by
+Lemma~\ref{lem:weighted-predecessor-fibres}.  The supremum is $|u|$ when
+$|v|\leq1$ and is infinite when $|v|>1$.  Finally, for $|v|<1$, the same row
+estimate maps $c_0$ to itself: split the series into finitely many exponents,
+whose predecessors tend to infinity with $y$, and a uniformly small
+geometric tail.  Finite-support phase-aligned vectors prove sharpness.  When
+$|v|\geq1$, choose values tending slowly to zero along one predecessor fibre
+and align their phases; the defining row sum fails to be bounded.  This proves
+the $c_0$ assertion.
+\end{proof}
+
+At $u=v=1$, the operator is therefore norm one on $\ell^1$, but it is
+unbounded on $\ell^\infty$ and is not defined on the constant function one by
+the raw infinite-sum formula.  An arbitrary product of polynomial-valued
+functions is likewise not an algebraic domain for $L$: the missing $v$-adic
+completion is essential.
+
+\subsection{Prefix cocycles and forward affine intercepts}
+
+For a finite exponent word $w=a_1\cdots a_n$, put
+\[
+ A_k(w)=a_1+\cdots+a_k,
+ \qquad
+ A(w)=A_n(w),
+\]
+and define the finite prefix coordinate
+\begin{equation}
+\label{eq:weighted-prefix-cocycle}
+ \rho(w)=\sum_{k=1}^n3^{k-1}2^{-A_k(w)}\in\mathbb Z_3.
+\end{equation}
+For the empty word, $A(\varnothing)=0$ and $\rho(\varnothing)=0$.
+
+\begin{proposition}[typed prefix cocycle and its exact fibres]
+\label{prop:weighted-prefix-cocycle-injection}
+For exponent words $w,z$ in chronological concatenation order,
+\begin{equation}
+\label{eq:weighted-prefix-concatenation}
+ \rho(wz)=\rho(w)+3^{|w|}2^{-A(w)}\rho(z).
+\end{equation}
+Let
+\[
+ P=\{(m,A)\in\mathbb N_0^2:A\geq m\},
+ \qquad
+ \theta_{(m,A)}(r)=3^m2^{-A}r\quad(r\in\mathbb Z_3).
+\]
+With addition on $P$ and multiplication
+\[
+ (r,p)\star(s,q)=(r+\theta_p(s),p+q),
+\]
+the semidirect product $\mathbb Z_3\rtimes_\theta P$ is a monoid and
+\[
+ \chi_{\mathrm{pre}}(w)=(\rho(w),(|w|,A(w)))
+\]
+is an injective monoid homomorphism from positive-exponent words.
+
+More explicitly, put $R(w)=2^{A(w)}\rho(w)\in\mathbb Z$.  If $n>1$, then
+\begin{equation}
+\label{eq:weighted-prefix-recursive-inverse}
+ a_n=\nu_2\bigl(R(w)-3^{n-1}\bigr),
+ \qquad
+ R(a_1\cdots a_{n-1})
+ =\frac{R(w)-3^{n-1}}{2^{a_n}}.
+\end{equation}
+Together with $a_1=A(w)$ when $n=1$, this is a two-sided recursive inverse
+on the image.  Every fibre of $\chi_{\mathrm{pre}}$ is therefore a singleton.
+\end{proposition}
+
+\begin{proof}
+Splitting the sum \eqref{eq:weighted-prefix-cocycle} after $|w|$ terms and
+factoring $3^{|w|}2^{-A(w)}$ from the remainder proves
+\eqref{eq:weighted-prefix-concatenation}.  The endomorphisms satisfy
+$\theta_p\theta_q=\theta_{p+q}$, so the displayed semidirect multiplication is
+associative with identity $(0,(0,0))$; the cocycle identity proves
+multiplicativity of $\chi_{\mathrm{pre}}$.
+
+Multiplying \eqref{eq:weighted-prefix-cocycle} by $2^A$ gives
+\[
+ R(w)=\sum_{k=1}^n3^{k-1}2^{A-A_k}.
+\]
+The last term is $3^{n-1}$.  After subtracting it, the preceding term has
+exact $2$-adic valuation $a_n$, while every earlier term is divisible by
+$2^{a_{n-1}+a_n}$.  Hence no cancellation changes that valuation, proving
+the first formula in \eqref{eq:weighted-prefix-recursive-inverse}.  Division
+gives the same integer for the prefix word.  Recursion recovers all exponents,
+which proves injectivity and the inverse identities.
+\end{proof}
+
+The acting object here is a monoid, not a group: $\theta_{(m,A)}$ is not
+surjective on $\mathbb Z_3$ when $m>0$.  In the coordinate pair $(m,A)$ its
+multiplier is $3^m2^{-A}$, not $3^m2^{-(m+A)}$.
+
+The preceding injectivity is a statement about exponent words.  Erasing the
+source and target of a path is a different operation and has exact infinite
+fibres.
+
+\begin{proposition}[exact source fibres of an exponent word]
+\label{prop:weighted-word-source-fibres}
+For a word $w=(a_1,\ldots,a_n)$ with $n\geq0$, put $A=A(w)$ and
+\[
+ B_w=\sum_{i=1}^n3^{n-i}2^{a_1+\cdots+a_{i-1}}\in\mathbb Z.
+\]
+The word $w$ is the exact successive valuation word of a positive odd source
+$x$ if and only if
+\begin{equation}
+\label{eq:weighted-word-source-congruence}
+ x\equiv3^{-n}(2^A-B_w)\pmod{2^{A+1}}.
+\end{equation}
+Thus every exponent word has one odd residue class of positive sources modulo
+$2^{A+1}$, hence infinitely many path-category realizations.  Retaining the
+source object selects one of them.
+\end{proposition}
+
+\begin{proof}
+If $n=0$, the claim is the tautology $x\equiv1\pmod2$ for a positive odd
+source, and the word is empty.  Now let $n\geq1$.  We prove directly, by
+induction on $n$, that $w$ is the exact valuation
+word of $x$ if and only if
+\begin{equation}
+\label{eq:weighted-word-terminal-congruence}
+ 3^nx+B_w\equiv2^A\pmod{2^{A+1}}.
+\end{equation}
+For $n=1$, this is
+$3x+1\equiv2^{a_1}\pmod{2^{a_1+1}}$, exactly the assertion
+$\nu_2(3x+1)=a_1$.
+
+For $n>1$, write $w'=(a_2,\ldots,a_n)$,
+$A'=A-a_1$, and let $B_{w'}$ be its displayed integer.  Then
+\[
+ B_w=3^{n-1}+2^{a_1}B_{w'}.
+\]
+Reducing \eqref{eq:weighted-word-terminal-congruence} modulo $2^{a_1}$
+first shows that $2^{a_1}$ divides $3x+1$.  Put
+$x_1=(3x+1)/2^{a_1}$.  Dividing the full congruence by $2^{a_1}$ gives
+\[
+ 3^{n-1}x_1+B_{w'}\equiv2^{A'}\pmod{2^{A'+1}}.
+\]
+Here $A'\geq1$ and $B_{w'}$ is odd, so reduction modulo two shows that
+$x_1$ is odd; positivity is immediate from $x>0$.  By induction the displayed
+congruence is equivalent to $x_1$ being positive odd with exact
+valuation word $w'$.  In particular $x_1$ is odd, so the first valuation is
+exactly $a_1$.  Reversing the argument proves the converse.
+
+Solving \eqref{eq:weighted-word-terminal-congruence} for $x$ is legitimate
+because $3^n$ is a unit modulo $2^{A+1}$, and gives the unique class
+\eqref{eq:weighted-word-source-congruence}.  For $n\geq1$, the integer $B_w$
+is odd: its first summand is odd and every later summand is even.  Hence the
+class is odd; the $n=0$ class was handled separately.
+Adding positive multiples of $2^{A+1}$ gives infinitely many positive
+sources.  This direct induction also supplies, without using it as a proof
+dependency, the finite characterization appearing in Tao's source
+\cite[source lines 455--470]{Tao2026v7}.
+\end{proof}
+
+Now put
+\[
+ g_a(X)=\frac{3X+1}{2^a}
+\]
+and apply $a_1$ first.  The forward chronological composite is
+\begin{equation}
+\label{eq:weighted-forward-affine-word}
+ G_w=g_{a_n}\circ\cdots\circ g_{a_1}
+ =3^n2^{-A(w)}X+\beta(w),
+\end{equation}
+where
+\begin{equation}
+\label{eq:weighted-forward-beta}
+ \beta(w)=\sum_{i=1}^n3^{n-i}2^{-(a_i+\cdots+a_n)}.
+\end{equation}
+Thus $B_w=2^{A(w)}\beta(w)$, now as a consequence of the two displayed
+formulas rather than as a definition used before $\beta$ is introduced.
+
+\begin{proposition}[exact reversal to Tao's offset]
+\label{prop:weighted-prefix-forward-reversal}
+For every finite positive-exponent word,
+\[
+ \beta(w)=\rho(w^{\mathrm{rev}}).
+\]
+Moreover $\beta(w)$ is exactly Tao's finite offset $F_n(a_1,\ldots,a_n)$ in
+the forward convention of \cite[source lines 208--229 and
+384--393]{Tao2026v7}.  Thus the prefix coordinate and forward intercept are
+connected by word reversal; they are not equal on the same chronological
+word in general.
+\end{proposition}
+
+\begin{proof}
+Reverse the index in \eqref{eq:weighted-prefix-cocycle}.  The $k$th prefix
+sum of $w^{\mathrm{rev}}$ is the $k$-term suffix sum of $w$, and its
+coefficient $3^{k-1}$ becomes $3^{n-i}$.  This is exactly
+\eqref{eq:weighted-forward-beta}.  Induction in
+\eqref{eq:weighted-forward-affine-word} gives the same sum, and direct
+comparison with Tao's displayed definition gives the final identity.  No
+external reversal assertion is used: the displayed reindexing is the complete
+comparison map.
+\end{proof}
+
+For example,
+\[
+ \rho(1,4)=\rho(3,1,1)=\frac{19}{32},
+ \qquad
+ \beta(1,4)=\frac5{32},
+ \qquad
+ G_{(1,4)}(X)=\frac{9X+5}{32}.
+\]
+The distinction is not cosmetic: $G_{(1,4)}(3)=1$, whereas the unreversed
+prefix constant would give the wrong value.  The first equality also shows
+that $\rho$ alone is not injective.  The decoration in $\chi_{\mathrm{pre}}$
+is essential: the two words have respective $(|w|,A(w))$ coordinates $(2,5)$
+and $(3,5)$.
+
+Because target-left category multiplication writes later arrows on the left,
+$\chi_{\mathrm{pre}}$ becomes covariant on the path algebra only after its
+coefficient monoid is replaced by the opposite monoid.  This typing is made
+explicit in Proposition~\ref{prop:weighted-typed-representations} below.
+
+\subsection{Gaussian prefix angles and the Collatz--Machin relation lattice}
+\label{subsec:collatz-machin-relations}
+
+The individual summands of the prefix cocycle carry a second, multiplicative
+structure.  It is independent of whether the exponent word is realized by a
+particular positive source; Proposition~\ref{prop:weighted-word-source-fibres}
+then shows that every word considered below has infinitely many such sources.
+
+\begin{definition}[Collatz--Machin relation lattice]
+\label{def:collatz-machin-relation-lattice}
+Let $w=(a_1,\ldots,a_n)$ be a nonempty positive exponent word.  For
+$1\leq k\leq n$, define
+\begin{equation}
+\label{eq:collatz-machin-angle-data}
+ r_k(w)=\frac{3^{k-1}}{2^{A_k(w)}},\qquad
+ \vartheta_k(w)=\arctan r_k(w),\qquad
+ z_k(w)=2^{A_k(w)}+i3^{k-1},
+\end{equation}
+where $\arctan$ is the principal value in $(0,\pi/2)$, and put
+\begin{equation}
+\label{eq:collatz-machin-unit-product}
+ u_k(w)=\frac{z_k(w)}{\overline{z_k(w)}}
+       =\frac{1+i r_k(w)}{1-i r_k(w)}
+       =e^{2i\vartheta_k(w)}.
+\end{equation}
+The integer relation lattice is
+\begin{equation}
+\label{eq:collatz-machin-relation-lattice}
+ \operatorname{Rel}_{\pi}(w)=
+ \left\{m\in\mathbb Z^n:
+ \sum_{k=1}^n m_k\vartheta_k(w)\in\pi\mathbb Q\right\}.
+\end{equation}
+\end{definition}
+
+Write
+\[
+ \mathcal U_1(\mathbb Q(i))
+ =\{x\in\mathbb Q(i)^\times:x\overline{x}=1\},
+ \qquad \mu_4=\{1,-1,i,-i\}.
+\]
+Exponentiating \eqref{eq:collatz-machin-relation-lattice} gives the exact
+criterion
+\begin{equation}
+\label{eq:collatz-machin-torsion-criterion}
+ m\in\operatorname{Rel}_{\pi}(w)
+ \quad\Longleftrightarrow\quad
+ \prod_{k=1}^n u_k(w)^{m_k}\in\mu_4.
+\end{equation}
+Indeed the product lies in $\mathbb Q(i)^\times$, whose roots of unity are
+exactly $\mu_4$; conversely a value in $\mu_4$ places the angle sum in
+$(\pi/4)\mathbb Z$.  This is a multiplicative torsion test, not an additive
+unit equation.
+
+The fixed-instance theory is classical.  Conway, Radin, and Sadun reconstruct
+the $d=1$ St\o rmer theory by orienting the Gaussian primes above
+$p\equiv1\pmod4$ and prove the resulting prime angles independent modulo
+$\pi$ \cite[Theorems~1--2 and Section~2]{ConwayRadinSadun1999}.  Calcut's
+Main Lemma and Corollaries~1--3 give the same $\mu_4$ restriction and exclude
+a rational multiple of $\pi$ for a single rational tangent other than
+$0,\pm1$ \cite{Calcut2009}.  We now type that factorization as an exact
+morphism for the present prefix family.
+
+\begin{theorem}[Gaussian coordinates for every fixed word]
+\label{thm:collatz-machin-fixed-word-kernel}
+For each rational prime $p\equiv1\pmod4$, choose one Gaussian prime
+$\varpi_p$ above $p$, so $p=\varpi_p\overline{\varpi_p}$.  There is an
+isomorphism
+\begin{equation}
+\label{eq:collatz-machin-gaussian-valuation-isomorphism}
+ \nu_{\mathrm G}:\mathcal U_1(\mathbb Q(i))/\mu_4
+ \xrightarrow{\ \sim\ }
+ \bigoplus_{p\equiv1\ (4)}\mathbb Z,
+ \qquad
+ [x]\longmapsto\bigl(v_{\varpi_p}(x)\bigr)_p,
+\end{equation}
+with inverse
+\[
+ (e_p)_p\longmapsto
+ \left[\prod_p
+ \left(\frac{\varpi_p}{\overline{\varpi_p}}\right)^{e_p}\right].
+\]
+For the word $w$, define
+\begin{equation}
+\label{eq:collatz-machin-signed-valuation-matrix}
+ E_w:\mathbb Z^n\longrightarrow
+ \bigoplus_{p\equiv1\ (4)}\mathbb Z,
+ \qquad
+ (E_w)_{p,k}
+ =v_{\varpi_p}(z_k(w))-v_{\overline{\varpi_p}}(z_k(w)).
+\end{equation}
+Then
+\begin{equation}
+\label{eq:collatz-machin-exact-kernel}
+ \operatorname{Rel}_{\pi}(w)=\ker E_w.
+\end{equation}
+Every fibre over $y\in\operatorname{im}E_w$ is the coset
+$m+\operatorname{Rel}_{\pi}(w)$ for any $m$ with $E_w(m)=y$, and the induced
+map
+\[
+ \mathbb Z^n/\operatorname{Rel}_{\pi}(w)
+ \xrightarrow{\ \sim\ }\operatorname{im}E_w
+\]
+has inverse $y\mapsto m+\operatorname{Rel}_{\pi}(w)$.  Changing the chosen
+orientation over one split prime changes only the sign of that coordinate.
+Every fibre over a point outside $\operatorname{im}E_w$ is empty.
+\end{theorem}
+
+\begin{proof}
+Unique factorization in $\mathbb Z[i]$ gives a finite prime factorization for
+every $x\in\mathbb Q(i)^\times$.  If $x\overline{x}=1$, the valuations at the
+two primes above a split $p$ are opposite.  A prime $p\equiv3\pmod4$ is fixed
+by conjugation, and $1+i$ is associated to its conjugate, so their valuations
+must be zero.  The remaining factor is a Gaussian unit.  Quotienting by
+$\mu_4$ therefore leaves exactly one integer exponent for each oriented split
+prime.  This proves that \eqref{eq:collatz-machin-gaussian-valuation-isomorphism}
+is well defined, injective, and surjective, and the displayed product proves
+its inverse formula.  All coordinate vectors have finite support.
+
+Define
+\[
+ \overline{\Gamma}_w:\mathbb Z^n\longrightarrow
+ \mathcal U_1(\mathbb Q(i))/\mu_4,
+ \qquad
+ m\longmapsto\left[\prod_{k=1}^n u_k(w)^{m_k}\right].
+\]
+It is a homomorphism, and
+\eqref{eq:collatz-machin-torsion-criterion} says that its kernel is
+$\operatorname{Rel}_{\pi}(w)$.  Since
+\[
+ v_{\varpi_p}(u_k(w))
+ =v_{\varpi_p}(z_k(w))-v_{\varpi_p}(\overline{z_k(w)})
+ =v_{\varpi_p}(z_k(w))-v_{\overline{\varpi_p}}(z_k(w)),
+\]
+the composite $\nu_{\mathrm G}\circ\overline{\Gamma}_w$ is exactly $E_w$.
+The kernel formula follows because $\nu_{\mathrm G}$ is injective.  The fibre
+and inverse-on-image statements are the first isomorphism theorem written in
+coordinates; they introduce no choice after passage to the quotient coset.
+\end{proof}
+
+The theorem makes every fixed word decidable after exact factorization of the
+finitely many norms
+\[
+ N(z_k(w))=2^{2A_k(w)}+3^{2(k-1)}.
+\]
+Its content is not the conjecture below: the latter asks for a uniform rank
+classification as both the word and these factorizations vary.
+
+\begin{theorem}[unweighted Collatz--Machin non-torsion]
+\label{thm:collatz-machin-unweighted-nontorsion}
+For every nonempty positive exponent word $w=(a_1,\ldots,a_n)$,
+\[
+ \sum_{k=1}^n\vartheta_k(w)\notin\pi\mathbb Q.
+\]
+Equivalently, $(1,\ldots,1)\notin\operatorname{Rel}_{\pi}(w)$.
+\end{theorem}
+
+\begin{proof}
+Put
+\[
+ Z(w)=\prod_{k=1}^n z_k(w)=X+iY\in\mathbb Z[i].
+\]
+Modulo three, every factor with $k\geq2$ is the nonzero real number
+$2^{A_k(w)}$, while the first factor is $2^{A_1(w)}+i$.  Hence both $X$ and
+$Y$ are nonzero modulo three.  It follows that $Z/\overline Z$ is neither
+$1$ nor $-1$, since those two equalities would force respectively $Y=0$ or
+$X=0$.
+
+Modulo two, every factor is $i$, because $A_k(w)\geq1$ and $3^{k-1}$ is odd.
+Thus $Z\equiv i^n\pmod2$: $X$ and $Y$ have opposite parity.  The equalities
+$Z/\overline Z=i$ and $Z/\overline Z=-i$ would force $X=Y$ and $X=-Y$,
+respectively, both impossible for integers of opposite parity.  Therefore
+$Z/\overline Z\notin\mu_4$.  But
+\[
+ \frac{Z}{\overline Z}=\prod_{k=1}^n u_k(w),
+\]
+so \eqref{eq:collatz-machin-torsion-criterion} completes the proof.
+\end{proof}
+
+The coefficients cannot be removed from the statement: the legal word
+$(1,1)$ has a genuine weighted relation.
+
+\begin{theorem}[the exact exceptional two-letter lattice]
+\label{thm:collatz-machin-exceptional-seed}
+For $w=(1,1)$,
+\begin{equation}
+\label{eq:collatz-machin-seed}
+ \operatorname{Rel}_{\pi}(1,1)=\mathbb Z(2,1),
+ \qquad
+ 2\arctan(1/2)+\arctan(3/4)=\frac{\pi}{2}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Here
+\[
+ z_1=2+i,\qquad z_2=4+3i=i(2-i)^2=i\overline{z_1}^{\,2},
+\]
+and therefore
+\[
+ (2+i)^2(4+3i)=25i,\qquad u_2=-u_1^{-2}.
+\]
+It follows that $u_1^2u_2=-1$ and hence $(2,1)$ belongs to the relation
+lattice.  Since both angles lie in $(0,\pi/4)$, the resulting congruence is
+the displayed equality with $\pi/2$, not merely equality modulo $\pi$.
+
+The Gaussian prime $2+i$ divides the numerator but not the denominator of
+$u_1=(2+i)/(2-i)$, so $v_{2+i}(u_1^d)=d$.  Every element of $\mu_4$ has
+$v_{2+i}=0$; hence $u_1^d\in\mu_4$ forces $d=0$.  For arbitrary $(m_1,m_2)$,
+\[
+ u_1^{m_1}u_2^{m_2}=(-1)^{m_2}u_1^{m_1-2m_2}
+\]
+lies in $\mu_4$ exactly when $m_1-2m_2=0$.  Hence the full lattice, including
+all zero and nonzero right-hand sides, is $\mathbb Z(2,1)$.
+\end{proof}
+
+The same identity occurs in Gasull, Luca, and Varona as
+\[
+ \arctan(1/2)+\tfrac12\arctan(3/4)=\pi/4
+\]
+inside their classification of two-term, nonzero-right-hand-side formulas
+with $2$-integer arguments \cite[Theorem~1]{GasullLucaVarona2023}.  Their
+theorem does not state the full higher-length prefix classification.
+
+\begin{theorem}[exact full-grid relation lattice]
+\label{thm:collatz-machin-finite-census}
+Let
+\[
+ \mathcal G_{15,60}
+ =\{(k,A):1\leq k\leq15,\ k\leq A\leq60\},
+ \qquad |\mathcal G_{15,60}|=795,
+\]
+and attach
+ $z_{k,A}=2^A+i3^{k-1}$ and
+ $\vartheta_{k,A}=\arctan(3^{k-1}/2^A)$ to each column.  Define
+\[
+ L_{15,60}:=\operatorname{Rel}_{\pi}(\mathcal G_{15,60})
+ =\left\{m\in\mathbb Z^{\mathcal G_{15,60}}:
+ \sum_{(k,A)\in\mathcal G_{15,60}}m_{k,A}\vartheta_{k,A}
+ \in\pi\mathbb Q\right\}.
+\]
+The complete integer relation lattice on these 795 angles is
+\begin{equation}
+\label{eq:collatz-machin-grid-lattice}
+ L_{15,60}=\mathbb Z\mathbf r_1\oplus\mathbb Z\mathbf r_2,
+\end{equation}
+where
+\begin{align*}
+ \mathbf r_1&=2e_{(1,1)}+e_{(2,2)},\\
+ \mathbf r_2&=2e_{(1,1)}+e_{(1,2)}+e_{(1,3)}+e_{(3,5)}.
+\end{align*}
+The two exact Gaussian certificates are
+\[
+ (2+i)^2(4+3i)=25i
+\]
+and
+\[
+ (2+i)^2(4+i)(8+i)(32+9i)=5525i.
+\]
+Consequently every positive word with $n\leq15$ and $A_n(w)\leq60$ has
+exactly the lattice predicted in Conjecture~\ref{conj:collatz-machin-rigidity};
+there is no bound on the coefficients of a tested relation.
+\end{theorem}
+
+\begin{proof}
+The portable certificate
+\path{certificates/arctangent_relation_lattice_checks.py} uses only exact
+integer and finite-field arithmetic.  It takes all 1,008 primes
+$q\leq38{,}821$ with $q\equiv1\pmod{12}$.  A prime is retained when every
+$z_{k,A}/\overline{z_{k,A}}$ has good reduction in $\mathbb F_q$.  For each
+of the 794 retained primes, choose a square root of $-1$ and apply the cubic
+character
+\[
+ \chi_q(x)=x^{(q-1)/3}.
+\]
+Because $4$ divides $(q-1)/3$, this character kills $\mu_4$.  After identifying
+its values with $\mathbb F_3$, every genuine relation therefore reduces to a
+vector in the kernel of the resulting $794\times795$ matrix over
+$\mathbb F_3$.  Exact row reduction gives rank 793 and nullity two.  The rank
+before the last prime is 792; $38{,}821$ is the first prime giving full rank.
+The reductions of $\mathbf r_1$ and $\mathbf r_2$ are independent kernel
+vectors, so they are the complete mod-three kernel.
+
+Let
+\[
+ \overline\Gamma_{\mathcal G}:\mathbb Z^{\mathcal G_{15,60}}
+ \longrightarrow\mathcal U_1(\mathbb Q(i))/\mu_4
+\]
+be the product map defined as in
+Theorem~\ref{thm:collatz-machin-fixed-word-kernel}.  Let $L$ be its kernel and
+$\mathcal L_0=\mathbb Z\mathbf r_1+\mathbb Z\mathbf r_2$.  The displayed
+Gaussian products prove $\mathcal L_0\subseteq L$.  The character calculation
+gives, for every $\ell\in L$, an expression $\ell=r+3z$ with
+$r\in\mathcal L_0$ and
+$z\in\mathbb Z^{\mathcal G_{15,60}}$.  In the target
+$\mathcal U_1(\mathbb Q(i))/\mu_4$ this implies
+$\overline\Gamma_{\mathcal G}(z)^3=1$.
+That target is torsion-free: if $[x]^d=1$, then $x^d\in\mu_4$, hence
+$x^{4d}=1$ and $x\in\mu_4$.  Therefore $z\in L$ and
+$L=\mathcal L_0+3L$.
+
+On the two coordinates $(2,2)$ and $(1,2)$, the columns of
+$(\mathbf r_1,\mathbf r_2)$ form the identity matrix.  Thus $\mathcal L_0$ is a direct
+summand of the ambient integer lattice.  The subgroup $L/\mathcal L_0$ is
+consequently finitely generated and free, while
+$L/\mathcal L_0=3(L/\mathcal L_0)$; reducing a free basis modulo three forces
+$L/\mathcal L_0=0$.
+This proves \eqref{eq:collatz-machin-grid-lattice} over the integers.
+
+A prefix chain contains at most one column for each $k$.  In
+$a\mathbf r_1+b\mathbf r_2$, the exact coefficients at both $(1,2)$ and
+$(1,3)$ equal $b$.
+Thus $b\ne0$ is incompatible with support on a prefix chain.  A nonzero
+multiple of $\mathbf r_1$ is supported
+on a chain exactly when that chain contains $(1,1)$ and $(2,2)$, equivalently
+when $(a_1,a_2)=(1,1)$.  The coordinate embedding
+$e_k\mapsto e_{(k,A_k(w))}$ identifies the word relation lattice with the
+intersection of $L_{15,60}$ and its chain coordinate subspace.  This proves
+the final assertion.
+\end{proof}
+
+The certificate pins the grid, prime lists, full trit matrix, independent-row
+list, and pivot columns by SHA-256.  It also checks all 631,230 character
+entries, both Gaussian products, the unit saturation minor, and all nine
+mod-three combinations of the script vectors named \texttt{R1}, \texttt{R2},
+which are $\mathbf r_1,\mathbf r_2$ above.  It certifies no point outside the
+displayed grid.
+
+\begin{conjecture}[Collatz--Machin rigidity]
+\label{conj:collatz-machin-rigidity}
+For every nonempty positive exponent word $w=(a_1,\ldots,a_n)$,
+\[
+ \operatorname{Rel}_{\pi}(w)=
+ \begin{cases}
+ \mathbb Z(2,1,0,\ldots,0),
+   & n\geq2\text{ and }(a_1,a_2)=(1,1),\\
+ \{0\},&\text{otherwise}.
+ \end{cases}
+\]
+\end{conjecture}
+
+The fixed-word theorem proves that this is exactly a uniform signed-valuation
+rank statement for the Gaussian integers
+$2^{A_k(w)}+i3^{k-1}$.  Theorems
+\ref{thm:collatz-machin-unweighted-nontorsion} and
+\ref{thm:collatz-machin-exceptional-seed} prove two all-length boundaries, and
+Theorem~\ref{thm:collatz-machin-finite-census} proves the complete result for
+$n\leq15$, $A_n\leq60$.  Conway--Radin--Sadun, Section~2, supplies the
+classical Gaussian-UFD coordinates for fixed rational angles; Gasull--Luca--
+Varona, Theorem~1, supplies its stated two-term classification and the
+$\mathbf r_1$ identity.  Neither cited statement establishes the 795-column
+lattice or the uniform prefix-word classification.  This is a source-scope
+comparison, not a novelty or priority claim.  The conjecture concerns
+relations among prefix angles; it asserts neither Collatz termination nor any
+endpoint property of an orbit.
+
+\subsection{Finite residue transformation semigroups}
+
+Fix $N\geq1$ and write
+\[
+ R_N=\mathbb Z/3^N\mathbb Z,
+ \qquad U_N=R_N^\times,
+ \qquad \varphi_N=|U_N|=2\cdot3^{N-1}.
+\]
+Since
+\[
+ \operatorname{ord}_{3^N}(2)=2\cdot3^{N-1},
+\]
+the elements $2^{-a}$, $a\geq1$, run through all of $U_N$.  For
+$\eta\in U_N$ put
+\[
+ G_\eta(r)=\eta(3r+1)=3\eta r+\eta.
+\]
+Let $S_N$ be the image of all nonempty words in the transformations $G_\eta$,
+and let
+\[
+ T_N=S_N\sqcup\{\operatorname{id}_{R_N}\}.
+\]
+Every nonempty word sends $0$ to a unit, so the identity is not in $S_N$.
+Thus $S_N$ is a transformation semigroup and $T_N$ is its identity-adjoined
+transformation monoid.
+
+For chronological $\boldsymbol\eta=(\eta_1,\ldots,\eta_k)$, with $\eta_1$
+applied first,
+direct expansion gives
+\begin{equation}
+\label{eq:finite-residue-word-affine-formula}
+ G_{\boldsymbol\eta}(r)
+ =3^k\left(\prod_{i=1}^k \eta_i\right)r
+  +\sum_{j=1}^k3^{k-j}\prod_{i=j}^k \eta_i.
+\end{equation}
+The constant term is congruent to $\eta_k$ modulo three and is therefore a
+unit.
+
+\begin{lemma}[order of two modulo powers of three]
+\label{lem:order-two-mod-three-power}
+For every $N\geq1$,
+$\operatorname{ord}_{3^N}(2)=2\cdot3^{N-1}$.
+\end{lemma}
+
+\begin{proof}
+By Euler's theorem the order divides
+$\varphi(3^N)=2\cdot3^{N-1}$, and reduction modulo three shows that it is
+even.  Hence it has the form $2\cdot3^j$ with $0\leq j\leq N-1$.  The
+lifting-the-exponent
+identity gives
+\[
+ \nu_3(2^{2\cdot3^j}-1)
+ =\nu_3(4^{3^j}-1)=\nu_3(4-1)+\nu_3(3^j)=j+1.
+\]
+The congruence $2^{2\cdot3^j}\equiv1\pmod{3^N}$ therefore holds exactly when
+$j\geq N-1$.  The only possible order is $2\cdot3^{N-1}$; the case $N=1$
+is included with $j=0$.
+\end{proof}
+
+For $N\geq2$ define
+\[
+ L_{N,1}=\{r\mapsto3br+b:b\in U_N\},
+\]
+and for $2\leq k<N$ define
+\[
+ L_{N,k}=\{r\mapsto3^ksr+b:
+          s\in(\mathbb Z/3^{N-k}\mathbb Z)^\times, b\in U_N\}.
+\]
+Finally let
+\[
+ \mathcal C_N=\{c_b:b\in U_N\},
+ \qquad c_b(r)=b.
+\]
+
+\begin{theorem}[exact finite residue normal form]
+\label{thm:finite-residue-semigroup-normal-form}
+For $N=1$,
+\[
+ S_1=\mathcal C_1=\{c_1,c_2\}.
+\]
+For every $N\geq2$, there is a disjoint union
+\begin{equation}
+\label{eq:finite-residue-semigroup-strata}
+ S_N=L_{N,1}\sqcup
+     \bigsqcup_{k=2}^{N-1}L_{N,k}\sqcup\mathcal C_N.
+\end{equation}
+More precisely, $L_{N,k}$ is exactly the set represented by words of length
+$k<N$, every word of length at least $N$ is constant, and every unit-valued
+constant already has a representative of length $N$.
+\end{theorem}
+
+\begin{proof}
+Formula \eqref{eq:finite-residue-word-affine-formula} shows that a word of
+length $k<N$ has slope of exact $3$-adic valuation $k$ and unit intercept;
+at length at least $N$ it is constant.  At length one, slope and intercept
+satisfy the exceptional relation $\alpha=3b$, giving $L_{N,1}$.
+
+We prove surjectivity onto every later stratum constructively.  First suppose
+$N\geq3$.  At length two, prescribe
+$s\in(\mathbb Z/3^{N-2}\mathbb Z)^\times$ and $b\in U_N$.
+Put
+\[
+ q=sb^{-1}\pmod{3^{N-2}},
+ \qquad
+ \eta_1=\frac q{1-3q}\pmod{3^{N-2}},
+\]
+choose any unit lift of $\eta_1$ to $U_N$, and set
+\[
+ \eta_2=\frac b{1+3\eta_1}\pmod{3^N}.
+\]
+Then
+\[
+ \eta_2(3\eta_1+1)=b,
+ \qquad \eta_2\eta_1\equiv s\pmod{3^{N-2}},
+\]
+so $G_{\eta_2}\circ G_{\eta_1}(r)=9sr+b$.  When $N=2$, choose an arbitrary
+$\eta_1\in U_2$ and put $\eta_2=b/(1+3\eta_1)$ in $U_2$; the resulting
+length-two word is the constant $c_b$.
+
+Suppose all length-$(k-1)$ forms occur, where $3\leq k<N$.  Given a desired
+$3^ks'r+b'$, choose any prior unit intercept $b_0$, put
+\[
+ \eta_k=\frac{b'}{3b_0+1},
+\]
+and choose the prior slope parameter $s_0$ so that
+$s_0\equiv s'\eta_k^{-1}\pmod{3^{N-k}}$.  Applying $G_{\eta_k}$ on the left
+gives the prescribed slope and intercept.  To obtain a prescribed constant
+$c_{b'}$ at length $N\geq3$, choose any already constructed length-$(N-1)$
+form with intercept $b_0$ and apply
+$G_{\eta_N}$ with $\eta_N=b'/(3b_0+1)$; its slope vanishes modulo $3^N$.
+Equality of two affine maps is equivalent to equality of their
+values at $0$ and $1$, hence of intercept and slope; distinct strata have
+different slope valuations.  This proves both completeness and disjointness.
+\end{proof}
+
+\begin{corollary}[cardinalities and ranks]
+\label{cor:finite-residue-cardinalities-ranks}
+For $N\geq2$,
+\begin{equation}
+\label{eq:finite-residue-cardinality}
+ |S_N|=\varphi_N(3^{N-2}+1),
+ \qquad
+ |T_N|=1+\varphi_N(3^{N-2}+1).
+\end{equation}
+The first six semigroup cardinalities are
+\[
+ 2,\ 12,\ 72,\ 540,\ 4536,\ 39852,
+\]
+and the corresponding monoid cardinalities are
+\[
+ 3,\ 13,\ 73,\ 541,\ 4537,\ 39853.
+\]
+An element of $L_{N,k}$ has image $b+3^kR_N$ and rank $3^{N-k}$;
+the constants have rank one, while the adjoined identity has rank $3^N$.
+\end{corollary}
+
+\begin{proof}
+The stratum sizes are
+\[
+ |L_{N,1}|=\varphi_N,
+ \quad |L_{N,k}|=\varphi_N\varphi_{N-k}\ (2\leq k<N),
+ \quad |\mathcal C_N|=\varphi_N.
+\]
+Since $\sum_{j=1}^{N-2}\varphi_j=3^{N-2}-1$, their sum is
+\eqref{eq:finite-residue-cardinality}.  The image and rank statements follow
+by varying $3^ksr$ over the ideal $3^kR_N$.
+\end{proof}
+
+\begin{proposition}[the minimum ideal]
+\label{prop:finite-residue-minimum-ideal}
+The rank-one stratum $\mathcal C_N$ is the minimum two-sided ideal of both
+$S_N$ and $T_N$.  Its multiplication is left-zero:
+\[
+ c_bc_d=c_b.
+\]
+\end{proposition}
+
+\begin{proof}
+For every $f\in T_N$ and unit $b$,
+\[
+ c_bf=c_b,
+ \qquad fc_b=c_{f(b)}\in\mathcal C_N,
+\]
+because every transformation in $T_N$ sends units to units.  Hence
+$\mathcal C_N$ is a two-sided ideal.  If a nonempty ideal contains $f$, then
+it contains $c_bf=c_b$ for every $b\in U_N$, so it contains
+$\mathcal C_N$.  This direct proof agrees with the general minimum-rank
+description for faithful finite transformation monoids
+\cite[Proposition 13.1 and Lemma 13.2]{Steinberg2016}.
+\end{proof}
+
+\subsection{Reduction maps and the exact inverse limit}
+
+For $M>N$, coefficient reduction gives
+\[
+ \pi_{M,N}:S_M\longrightarrow S_N,
+ \qquad (\alpha,b)\longmapsto
+       (\alpha\bmod3^N,b\bmod3^N).
+\]
+
+\begin{theorem}[surjectivity and exact reduction fibres]
+\label{thm:finite-residue-reduction-fibres}
+The maps $\pi_{M,N}$ are surjective semigroup homomorphisms.  Put $d=M-N$.
+If $N\geq2$, then
+\begin{equation}
+\label{eq:finite-residue-general-fibres}
+ |\pi_{M,N}^{-1}(s)|=
+ \begin{cases}
+  3^d,&s\in L_{N,1},\\
+  3^{2d},&s\in L_{N,k},\quad2\leq k<N,\\
+  3^{2d},&s\in\mathcal C_N.
+ \end{cases}
+\end{equation}
+For the bottom reduction $S_M\to S_1$, each of the two fibres has size
+\[
+ 3^{M-1}(3^{M-2}+1).
+\]
+The maps extend to $T_M\to T_N$, and the identity has the singleton fibre
+$\{\operatorname{id}\}$.
+\end{theorem}
+
+\begin{proof}
+Reduction intertwines every generator and therefore every word.  The normal
+form theorem supplies a lift, proving surjectivity.  A target in $L_{N,1}$
+has exactly the $3^d$ unit lifts of its intercept; its slope remains forced to
+be three times that intercept.  In an intermediate stratum, the intercept
+and unit slope parameter each have $3^d$ lifts, giving $3^{2d}$.
+
+A constant target receives $3^d$ constant lifts and lifts from every source
+stratum of slope valuation $k\geq N$.  Their number is
+\[
+ 3^d\left(1+\sum_{k=N}^{M-1}\varphi_{M-k}\right)
+ =3^d\left(1+\sum_{j=1}^{d}\varphi_j\right)=3^{2d}.
+\]
+At level one both target elements are constants.  Symmetry of the unit
+intercepts modulo three splits $|S_M|$ equally, giving the stated bottom
+fibre.  A nonempty word has unit intercept, so it cannot reduce to the
+identity, which proves the last assertion.
+\end{proof}
+
+\begin{theorem}[exact $3$-adic inverse limit]
+\label{thm:finite-residue-inverse-limit}
+Under coefficientwise reduction,
+\begin{equation}
+\label{eq:finite-residue-inverse-limit}
+ \varprojlim_N S_N
+ \cong
+ \{x\mapsto3b\,x+b:b\in\mathbb Z_3^\times\}
+ \ \sqcup\
+ \{x\mapsto\alpha x+b:
+       \alpha\in9\mathbb Z_3,\ b\in\mathbb Z_3^\times\}.
+\end{equation}
+The second family includes $\alpha=0$.  Moreover
+\[
+ \varprojlim_N T_N
+ =\{\operatorname{id}_{\mathbb Z_3}\}
+  \sqcup\varprojlim_N S_N.
+\]
+For $\eta\in\mathbb Z_3^\times$ define
+$G_\eta(x)=\eta(3x+1)$, and distinguish the two semigroups
+\[
+ \mathcal S_{\mathrm{unit}}
+   =\langle G_\eta:\eta\in\mathbb Z_3^\times\rangle,
+ \qquad
+ \mathcal S_{\mathrm{exp}}
+   =\langle G_{2^{-a}}:a\geq1\rangle.
+\]
+In the coefficientwise $3$-adic topology,
+\[
+ \overline{\mathcal S_{\mathrm{exp}}}
+ =\overline{\mathcal S_{\mathrm{unit}}}
+ =\varprojlim_N S_N.
+\]
+\end{theorem}
+
+\begin{proof}
+A compatible transformation family determines unique compatible coefficients
+\[
+ b_N=f_N(0),
+ \qquad \alpha_N=f_N(1)-f_N(0),
+\]
+hence unique $b\in\mathbb Z_3^\times$ and $\alpha\in\mathbb Z_3$.
+At every level $N\geq2$, the normal form says either
+$\alpha_N=3b_N$ or $\alpha_N\in9R_N$.  A higher-level element of the second
+kind cannot reduce to a level-$N$ element of the first kind, whose slope has
+valuation exactly one.  Thus a compatible family lies entirely in the first
+branch from level two onward, giving $\alpha=3b$, or entirely in the second,
+giving $\alpha\in9\mathbb Z_3$.  Conversely every displayed coefficient pair
+reduces to the finite normal form at every level, so it defines a compatible
+family.  Composition of affine coefficient pairs is
+\[
+ (\alpha,b)\circ(\gamma,d)=(\alpha\gamma,\alpha d+b).
+\]
+In the displayed family $b,d$ are units and $3\mid\alpha$, so
+$\alpha d+b$ is a unit, while $\alpha\gamma\in9\mathbb Z_3$.  Hence the
+family is closed under composition, and coefficient extraction respects
+composition.  This proves the asserted semigroup isomorphism.  The
+identity-fibre statement in the preceding theorem prevents a mixed identity
+sequence.
+
+For arbitrary unit generators, the constructive normal-form proof works
+unchanged over $\mathbb Z_3$: a word of length one gives $\alpha=3b$, and
+words of each fixed length $k\geq2$ give every pair with
+$\nu_3(\alpha)=k$ and unit intercept.  Closing these strata adds exactly the
+zero slopes.  Thus
+$\overline{\mathcal S_{\mathrm{unit}}}$ is the displayed inverse limit.
+
+For the actual exponent generators, Lemma~\ref{lem:order-two-mod-three-power}
+shows that their reductions $2^{-a}$ fill $U_N$ at every level $N$.  Given
+any cylinder determined by an element of $S_N$, choose an exponent separately
+for every unit letter in one representing word.  The resulting element of
+$\mathcal S_{\mathrm{exp}}$ has the prescribed reduction.  Therefore
+$\mathcal S_{\mathrm{exp}}$ meets every finite-level cylinder and is dense in
+the same inverse limit.  This proves both closure equalities without
+identifying the countable exponent semigroup with the all-unit semigroup.
+\end{proof}
+
+The slope condition cannot be weakened to
+$\alpha\in3\mathbb Z_3$ with arbitrary unit intercept.  At valuation one the
+exact relation is $\alpha=3b$; for example $x\mapsto3x+2$ is already excluded
+modulo nine.
+
+\subsection{Typed finite actions and the two source obstructions}
+\label{subsec:typed-finite-actions}
+
+The specific object-erasing assignment that sends each path to its residue
+transformation cannot extend linearly to an algebra representation in one
+transformation algebra.  For distinct objects $x\ne y$,
+\[
+ e_xe_y=0,
+\]
+whereas erasing the object coordinate sends both empty paths to the same
+identity transformation.  The product of their images is then nonzero.
+
+There is a separate variance defect.  For a map $h:R_N\to R_N$, let
+$P_hf=f\circ h$.  Then
+\[
+ P_hP_k=P_{k\circ h},
+\]
+so pullback reverses composition.  This is visible on the actual composable
+path
+\[
+ 3\xrightarrow{1}5\xrightarrow{4}1.
+\]
+Modulo nine,
+\[
+ G_1(r)=6r+5,
+ \qquad G_4(r)=3r+4,
+\]
+but
+\[
+ G_4\circ G_1=c_1,
+ \qquad G_1\circ G_4=c_2.
+\]
+Thus the two orderings are genuinely different transformations, not merely
+different notation.
+
+Let $R_0=R[u,v]$ and use the monoid algebra $R_0[T_N]$ with multiplication
+induced by ordinary target-left transformation composition.  Put
+\[
+ \mathcal B_N=\operatorname{Mat}^{\mathrm{fin}}_{\mathcal O}(R_0[T_N]),
+\]
+the algebra of matrices having finite support in the infinite object index.
+For the decorated prefix coordinate, put
+\[
+ \mathcal B_{\mathrm{pre}}
+ =\operatorname{Mat}^{\mathrm{fin}}_{\mathcal O}
+   \left(R_0\left[(\mathbb Z_3\rtimes_\theta P)^{\mathrm{op}}\right]\right),
+\]
+where the bracket denotes the finite-support monoid algebra.
+
+\begin{proposition}[typed forward and pullback representations]
+\label{prop:weighted-typed-representations}
+For $p:x\to y$, let $G_p$ be its forward residue transformation.  The map
+\begin{equation}
+\label{eq:typed-forward-representation}
+ \Pi_N([p])=w(p)E_{y,x}\otimes[G_p]
+\end{equation}
+is an $R_0$-algebra homomorphism
+$\mathfrak A_C\to\mathcal B_N$.
+
+On the explicitly based free module
+\[
+ \mathcal V_N=\bigoplus_{x\in\mathcal O}
+     \bigoplus_{r\in R_N}R_0e_{x,r}
+\]
+it has the concrete forward action
+\[
+ \Pi_N([p])e_{x,r}=w(p)e_{y,G_p(r)},
+\]
+and is zero on every other object fibre.
+
+For pullback, put
+\[
+ \mathcal F_N=\operatorname{Fun}(R_N,R_0),
+ \qquad
+ \mathcal K_N=
+ \operatorname{Mat}^{\mathrm{fin}}_{\mathcal O}
+   \bigl(\operatorname{End}_{R_0}(\mathcal F_N)\bigr).
+\]
+The typed pullback map
+\[
+ K_N([p])=w(p)E_{x,y}\otimes P_{G_p}
+\]
+from $\mathfrak A_C$ to $\mathcal K_N$ is an anti-homomorphism:
+\[
+ K_N(ab)=K_N(b)K_N(a).
+\]
+Finally, the decorated prefix map has the covariant typed realization
+\[
+ \Psi([p])
+ =w(p)E_{t(p),s(p)}\otimes
+   [\chi_{\mathrm{pre}}(\operatorname{word}(p))]_{\mathrm{op}}
+\]
+as an $R_0$-algebra homomorphism
+$\Psi:\mathfrak A_C\to\mathcal B_{\mathrm{pre}}$.
+\end{proposition}
+
+\begin{proof}
+If $p:x\to y$ and $q:z\to x$, then matrix-unit multiplication and forward
+composition give
+\[
+ \Pi_N([p])\Pi_N([q])
+ =w(p)w(q)E_{y,z}\otimes[G_p\circ G_q]
+ =\Pi_N([p\circ q]).
+\]
+For noncomposable paths the matrix units multiply to zero.  Also
+$\Pi_N(e_x)=E_{x,x}\otimes[\operatorname{id}]$, so the object idempotents
+remain orthogonal.  This proves the algebra and concrete-module statements.
+
+The identity $P_hP_k=P_{k\circ h}$ proves the pullback anti-homomorphism,
+with the transposed matrix unit sending target functions back to source
+functions.  For the last statement, the chronological word of $p\circ q$ is
+the word of $q$ followed by the word of $p$.  Proposition
+\ref{prop:weighted-prefix-cocycle-injection} therefore gives
+\[
+ \chi_{\mathrm{pre}}(\operatorname{word}(p\circ q))
+ =\chi_{\mathrm{pre}}(\operatorname{word}(q))\star
+  \chi_{\mathrm{pre}}(\operatorname{word}(p)),
+\]
+which is exactly the product in the opposite semigroup algebra after the
+matrix units have enforced composability.
+\end{proof}
+
+\begin{theorem}[exact kernels of the typed representations]
+\label{thm:weighted-typed-representation-kernels}
+Let $R$ be a nonzero commutative ring.  The decorated prefix representation
+$\Psi$ is injective.  For
+$F=\sum_p f_p[p]\in\mathfrak A_C$, the finite-residue representation has the
+exact kernel criterion
+\begin{equation}
+\label{eq:weighted-finite-representation-kernel}
+ F\in\ker\Pi_N
+ \quad\Longleftrightarrow\quad
+ \sum_{\substack{p:x\to y\\G_p=h}}f_p w(p)=0
+ \quad\text{for every }x,y\in\mathcal O\text{ and }h\in T_N.
+\end{equation}
+In particular, every $\Pi_N$ is noninjective.  If
+$\epsilon_1:1\to1$ is the exponent-two loop, then
+\begin{equation}
+\label{eq:weighted-explicit-finite-kernel-element}
+ uv[\epsilon_1^N]-[\epsilon_1^{N+1}]
+ \in\ker\Pi_N\cap\ker K_N
+\end{equation}
+is nonzero.
+\end{theorem}
+
+\begin{proof}
+Distinct paths have either different source-target matrix units or different
+exponent words.  In the latter case the decorated map
+$\chi_{\mathrm{pre}}$ separates them by
+Proposition~\ref{prop:weighted-prefix-cocycle-injection}.  Hence distinct path
+basis elements have distinct matrix-monoid basis coordinates under $\Psi$.
+Multiplication by the monomial $w(p)$ only shifts polynomial exponents and is
+injective in $R[u,v]$.  Finite linear independence proves that $\Psi$ is
+injective.
+
+For $\Pi_N$, collect the image of a finite sum by its matrix coordinate
+$(y,x)$ and transformation basis element $[h]$.  Its coefficient is exactly
+the sum on the right of
+\eqref{eq:weighted-finite-representation-kernel}; independence of those basis
+coordinates proves both directions of the criterion.
+
+Finally $a(1)=2$, so $w(\epsilon_1)=uv$.  In $R_N$, where $4$ is invertible,
+the residue transformation $H=G_{\epsilon_1}$ satisfies
+\[
+ H(r)-1=\frac34(r-1).
+\]
+Therefore $H^N(r)-1=(3/4)^N(r-1)=0$ in $R_N$, so
+$H^N=H^{N+1}=c_1$.  The two terms in
+\eqref{eq:weighted-explicit-finite-kernel-element} consequently have the same
+image $(uv)^{N+1}E_{1,1}\otimes[c_1]$.  Their pullback images likewise agree,
+because both use $P_{c_1}$ and the same matrix unit.  The original paths are
+distinct basis elements and $R$ is nonzero, so their displayed difference is
+nonzero.  No equality between the full kernels of $K_N$ and $\Pi_N$ is
+asserted.
+\end{proof}
+
+The target $\mathcal B_N$ is finite in each residue fibre but not
+finite-dimensional: it retains the infinite object set $\mathcal O$.  A
+genuinely finite quotient would require a separately proved categorical
+congruence.  Merely reducing object labels modulo $3^N$ identifies orthogonal
+ idempotents and does not provide one.  Theorem
+\ref{thm:finite-residue-semigroup-normal-form} classifies the image
+transformations and their strata, not the word fibres.  The exact linear
+collision criterion is instead
+\eqref{eq:weighted-finite-representation-kernel}.
+
+\subsection{Exact boundary of the construction}
+
+Several proposed extensions fail before any Collatz-specific issue arises.
+The exact failures determine which algebraic structures have actually been
+built.
+
+\begin{sourceissue}[four algebraic type failures]
+\label{sourceissue:weighted-path-four-type-failures}
+First, the natural reduction maps
+\[
+ \mathbb Z/3^{N+1}\mathbb Z\longrightarrow\mathbb Z/3^N\mathbb Z
+\]
+form an inverse system, not the direct system printed in an early draft.  Its
+limit is $\mathbb Z_3=\varprojlim_N\mathbb Z/3^N\mathbb Z$; a residue class
+modulo $3^m$ has no canonical lift modulo $3^{m+n}$.
+
+Second, $\mathbb R_{>0}$ under its usual addition and multiplication is not a
+semiring because it has no additive zero.  The path weights may instead take
+values in the multiplicative monoid $\mathbb R_{>0}$ or in the semiring
+$\mathbb R_{\geq0}$.
+
+Third, ordinary deconcatenation is a coalgebra coproduct on words but is not
+multiplicative for ordinary concatenation.  For two letters $a,b$,
+\[
+ \Delta(a)\Delta(b)
+ =1\otimes ab+a\otimes b+b\otimes a+ab\otimes1,
+\]
+whereas
+\[
+ \Delta(ab)=1\otimes ab+a\otimes b+ab\otimes1.
+\]
+The uncancelled term $b\otimes a$ proves that the printed data do not define
+a bialgebra.  An unshuffle coproduct, a braided tensor product, or another
+explicit compatibility law would be a different construction.
+
+Fourth, the two-element set of local affine formulas
+$\{X/2,(3X+1)/2\}$ is not closed under affine composition: already
+$(X/2)\circ(X/2)=X/4$.  It is therefore not an algebra acting on the path
+algebra, and no crossed product with it is defined by the passage.
+\end{sourceissue}
+
+At the proved scope, the programme supplies:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item an exact equivalence between exponent paths and legal local
+odd-to-odd blocks;
+\item a genuine two-variable path weight and two explicitly compared
+$\mathbb F_2^2$ degrees;
+\item endpoint formal series, a coefficientwise path completion, and exact
+resolvent identities;
+\item a predecessor transfer operator with precise algebraic, formal, and
+analytic domains;
+\item an injective decorated prefix map $\chi_{\mathrm{pre}}$ and its exact
+reversal relation to the forward affine/Tao offset;
+\item an exact Gaussian signed-valuation map for every prefix-angle relation
+lattice, an all-word unweighted non-torsion theorem, the exceptional
+two-letter lattice, and a coefficient-unbounded full-grid calculation;
+\item finite residue transformation semigroups with complete normal forms,
+cardinalities, ranks, minimum ideals, reduction fibres, and inverse limit;
+\item typed forward representations and pullback anti-representations that
+retain object idempotents and composition order.
+\end{enumerate}
+
+\begin{nonclaim}
+The displayed data do not construct a path groupoid of local homeomorphisms,
+a groupoid $C^*$-algebra, a Leavitt or Cuntz--Krieger algebra, a quotient
+category $\operatorname{QGr}$, a Hopf or bialgebra structure, a crossed
+coefficient product, or an operator-algebra completion.  Names and analogies
+do not supply the absent objects or maps.  None of the theorems in this paper
+proves termination of every positive Collatz orbit.
+\end{nonclaim}
+
+The portable certificate
+\path{certificates/finite_actions_checks.py} verifies bounded instances of the
+block inverse, grading fibres, cocycle and reversal formulas, the
+noninjective undecorated $\rho$ example, source congruences, predecessor
+fibres, endpoint coefficients, finite path-cut counts, the exact generated
+residue semigroups through $N=6$, their ranks and adjacent reduction fibres,
+finite projections of the inverse-limit classification, typed path products,
+and the explicit fixed-point-loop kernel relation.  It has no private-corpus
+dependency.  Source-identity pins belong to the nonportable critical
+workspace and are deliberately not copied into this package.  The finite
+certificate does not independently prove the infinite, analytic,
+faithfulness, or exact-kernel theorems printed above.
+
+The separate portable certificate
+\path{certificates/arctangent_relation_lattice_checks.py} proves the complete
+integer relation lattice on the 795-column grid
+$1\leq k\leq15$, $k\leq A\leq60$ by exact cubic-character rows, finite-field
+rank, a saturated-lattice lift, and two Gaussian product identities.  It has
+no coefficient search bound.  It does not certify any column outside that
+grid or the all-length conjecture.

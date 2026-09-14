@@ -1,0 +1,105 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,mathrsfs}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[
+  hidelinks,
+  pdftitle={Hydra Maps, Numens, and (p,q)-Adic Analysis: A Critical Expository Edition of the Mathematical Work of Maxwell C. Siegel},
+  pdfauthor={Maxwell C. Siegel (source works)},
+  pdfsubject={Canonical critical-expository edition of the mathematical corpus of Maxwell C. Siegel}
+]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{sourceissue}[theorem]{Source issue}
+\newtheorem{status}[theorem]{Status record}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{editorial}[theorem]{Editorial note}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\OK}{\mathcal O_K}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Aff}{\operatorname{Aff}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\Dig}{\operatorname{Dig}_p}
+\newcommand{\sh}{\vartheta_p}
+\newcommand{\Num}{X_H}
+\newcommand{\mult}{M_H}
+\newcommand{\ind}[1]{\mathbf 1_{#1}}
+\newcommand{\vpp}{\vphantom{\Large A}}
+
+\title[Hydra maps, numens, and $(p,q)$-adic analysis]
+{Hydra Maps, Numens, and $(p,q)$-Adic Analysis:\\
+A Critical Expository Edition of the Mathematical Work of Maxwell C. Siegel}
+\author{Mathematical works by Maxwell C. Siegel}
+\thanks{The critical apparatus, typed reconstructions, counterexamples, and
+edition-supplied proofs are components of this edition and are not attributed
+to Siegel as source text.}
+\date{ArXiv corpus through 12 February 2026; source audit and edition dated
+24 August 2026}
+
+\begin{document}
+
+\begin{abstract}
+This critical expository edition reconstructs the mathematical programme of
+Maxwell C. Siegel from his author-controlled and arXiv corpus.  Its organizing
+object is a residue-class piecewise-affine arithmetic dynamical system, called
+a Hydra map, together with the digit-recursive function called its numen.
+The defining recursion is derived from affine word composition, its extension
+from non-negative integers to $p$-adic integers is separated from the
+place-dependent convergence hypotheses, and the Correspondence Principle is
+stated with all of the hypotheses used in the latest source formulation.
+The analytic developments are then placed around that core: singularity
+conservation and dreamcatchers; Dirichlet series, Mellin--Perron inversion and
+the contour formulation of weak Collatz; $(p,q)$-adic Fourier analysis and
+Wiener--Tauberian cyclicity; rising-continuous functions and variable
+topologies of convergence; and the later algebra of products of F-series.
+
+This is an edition of Siegel's corpus, not a new joint research article.
+Siegel retains authorship of the source mathematics and of his terms
+\emph{Hydra map}, \emph{numen}, \emph{dreamcatcher}, and
+\emph{rising-continuity}.  Source forms are preserved; any running notation
+is placed beside them by an explicit crosswalk.  Published, current-preprint,
+superseded, and withdrawn witnesses remain distinct, and source defects are
+recorded before a corrected statement is proved.
+\end{abstract}
+
+\maketitle
+\tableofcontents
+
+\input{chapters/00_editorial_method}
+\input{chapters/01_canonical_corpus}
+\input{chapters/02_arithmetic_dynamics}
+\input{chapters/03_hydra_maps}
+\input{chapters/04_numen}
+\input{chapters/05_correspondence}
+\input{chapters/06_dreamcatchers}
+\input{chapters/07_contour_mellin}
+\input{chapters/08_pq_fourier}
+\input{chapters/09_rising_fseries}
+\input{chapters/10_synthesis}
+\input{chapters/11_source_register}
+
+\end{document}

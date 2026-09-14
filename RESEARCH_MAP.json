@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "title": "Collatz research workbench",
+  "style": "PolyClank",
+  "snapshot_utc": "2026-09-14T00:26:59.160161+00:00",
+  "objective": "Develop and expose correct mathematics concerning Collatz dynamics through literature reconstruction, explicit comparison maps, independently proved research and reproducible checks.",
+  "programmes": [
+    {
+      "id": "siegel-edition",
+      "type": "critical exposition",
+      "source": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/main.tex",
+      "source_author": "Maxwell C. Siegel"
+    },
+    {
+      "id": "literature-reader",
+      "type": "working literature and local-source reconstruction",
+      "source": "collatz_reconstruction/tex/main.tex"
+    },
+    {
+      "id": "research-companion",
+      "type": "independent research",
+      "source": "collatz_reconstruction/research_companion/main.tex"
+    },
+    {
+      "id": "tao-clocks",
+      "type": "exposition and first-passage-law deductions from Tao V7",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/main.tex"
+    },
+    {
+      "id": "split-zero-histories",
+      "type": "finite spectral reconstruction",
+      "source": "collatz_reconstruction/research_program/split_zero_history_20260913/note.tex"
+    },
+    {
+      "id": "rejected-early-programme",
+      "type": "quarantined historical scratch",
+      "source": "collatz_reconstruction/research_program/QUARANTINED.md"
+    }
+  ],
+  "claim_records": "collatz_reconstruction/state/claims.jsonl",
+  "map_records": "collatz_reconstruction/state/morphisms.jsonl",
+  "source_records": "collatz_reconstruction/state/source_registry.jsonl",
+  "peer_source": "https://github.com/KokunoYumeto/zeta-function-research-reader/blob/16fc4dbb817b82023c6126e636f1c6df28d4cecd/workbenches/splitzero-tandem/continuations/20260913-toda/tex/historical_hurwitz_jets.tex",
+  "peer_use": "The Split Zero note states and proves the finite use of the cited H10-H13 reconstruction; later web-session integral-extension work has not been imported or audited here.",
+  "completion_claimed": false
+}

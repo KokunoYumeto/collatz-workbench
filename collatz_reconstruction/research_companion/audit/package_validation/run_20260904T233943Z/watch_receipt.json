@@ -1,0 +1,347 @@
+{
+  "cap_bytes": 5000000000,
+  "command": [
+    "C:\\Users\\LOCAL_USER\\miniconda3\\python.exe",
+    "-X",
+    "utf8",
+    "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\research_companion\\validate_package.py"
+  ],
+  "cwd": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\research_companion",
+  "elapsed_seconds": 342.634,
+  "finished_utc": "2026-09-04T23:45:26.039311+00:00",
+  "peak_aggregate_private_bytes": 283963392,
+  "peak_aggregate_rss_bytes": 228900864,
+  "process_tree_clear": true,
+  "returncode": 0,
+  "run_id": "run_20260904T233943Z",
+  "sample_seconds": 0.1,
+  "samples": 964,
+  "schema_version": 1,
+  "started_utc": "2026-09-04T23:39:43.404882+00:00",
+  "stdout_path": "research_companion/audit/package_validation/run_20260904T233943Z/validator_stdout.json",
+  "stdout_sha256": "d49975c27e2f02d25bbc35f71093881ff61bbaf65b9a3e25925bd13035917de1",
+  "task_process_pids": [
+    14216,
+    22448,
+    31284,
+    32996,
+    33664,
+    35568,
+    38704,
+    40704,
+    41804,
+    46944,
+    47036,
+    51960,
+    54048,
+    55384,
+    56176,
+    57372,
+    64004,
+    67496,
+    69144,
+    70700,
+    71404
+  ],
+  "termination_reason": null,
+  "timeout_seconds": 900,
+  "validator_result": {
+    "affine_CRT_certificate_checks": {
+      "CRT_both_inverse_identities_each_domain_size": 6487,
+      "cyclic_transport_and_gcd_invariance": 5005,
+      "imprimitive_squares_and_exact_499_numerator_multiplier": 35,
+      "independent_enumerators_equal": true,
+      "joint_CRT_pushforward_equals_independent_mod_D_dp": true,
+      "joint_dp_cached_states": 64,
+      "joint_dp_equals_complete_direct_joint_count": true,
+      "marginals_equal_independent_single_modulus_dp": [
+        13,
+        499
+      ],
+      "numerator_formula_growing_and_first_letter_equal": 5005,
+      "single_modulus_dp_cached_states": 192,
+      "synchronized_transition_and_inverse_tests": 408681,
+      "transition_indices": {
+        "first_letter_inclusive": [
+          1,
+          7
+        ],
+        "m_inclusive": [
+          2,
+          10
+        ],
+        "residue_inclusive": [
+          0,
+          6486
+        ]
+      }
+    },
+    "affine_packet_certificate_check_families": 14,
+    "affine_packet_certificate_metrics": {
+      "exhaustive_packet_scans": [
+        {
+          "A": 8,
+          "denominator": 13,
+          "integral_word_count": 0,
+          "m": 5,
+          "maximum_C": 1121,
+          "minimum_C": 211,
+          "stream_sha256": "dfbff92e10eaea255370be2bbc5aab306b53a0909493eec1750da28f2845d56d",
+          "word_count": 35
+        },
+        {
+          "A": 13,
+          "denominator": 1631,
+          "integral_word_count": 0,
+          "m": 8,
+          "maximum_C": 133963,
+          "minimum_C": 6305,
+          "stream_sha256": "0b67f08b3c7d3804c740af3b958cb6a4e2e4b5976ec4d4b5e97df8d6b5dbec69",
+          "word_count": 792
+        },
+        {
+          "A": 16,
+          "denominator": 6487,
+          "integral_word_count": 0,
+          "m": 10,
+          "maximum_C": 2473571,
+          "minimum_C": 58025,
+          "stream_sha256": "53555b5b8f67c8350e6e7bf61a062562b0a333b45984e2118377323139543378",
+          "word_count": 5005
+        },
+        {
+          "A": 18,
+          "denominator": 84997,
+          "integral_word_count": 0,
+          "m": 11,
+          "maximum_C": 14913449,
+          "minimum_C": 175099,
+          "stream_sha256": "d705445b90e445277590a6356440022cbd36f668fdcdd11bb236166fe41f2019",
+          "word_count": 19448
+        },
+        {
+          "A": 21,
+          "denominator": 502829,
+          "integral_word_count": 0,
+          "m": 13,
+          "maximum_C": 270532081,
+          "minimum_C": 1586131,
+          "stream_sha256": "4da62c00e26e5bf9916e721816bd5579758b7663872aa6cad3a98481f44b37be",
+          "word_count": 125970
+        },
+        {
+          "A": 23,
+          "denominator": 3605639,
+          "integral_word_count": 0,
+          "m": 14,
+          "maximum_C": 1625792467,
+          "minimum_C": 4766585,
+          "stream_sha256": "d8263e05c1e7478b5dca0df4167d3fb8e07d95c576f84fcd2687809d1bf4a543",
+          "word_count": 497420
+        },
+        {
+          "A": 24,
+          "denominator": 2428309,
+          "integral_word_count": 0,
+          "m": 15,
+          "maximum_C": 4885766009,
+          "minimum_C": 14316139,
+          "stream_sha256": "04dfc6af0b5928f64e4a274c505b6a9402833eba4c9214a5a05f8e1fd670079e",
+          "word_count": 817190
+        },
+        {
+          "A": 26,
+          "denominator": 24062143,
+          "integral_word_count": 0,
+          "m": 16,
+          "maximum_C": 29333801579,
+          "minimum_C": 42981185,
+          "stream_sha256": "a228fd686384564476a29ba9bf868ff9e57f29f2b40cfc917d268e6813ffc633",
+          "word_count": 3268760
+        }
+      ],
+      "independent_full_scan_methods": 2,
+      "length_five_class_count": 7,
+      "packet_parity_morphism_checks": {
+        "exact_odd_returns": 78478,
+        "full_rational_steps": 233525,
+        "imprimitive_packets": 100,
+        "negative_rational_cycle_packets": 953,
+        "packet_words": 12089,
+        "positive_rational_cycle_packets": 11136,
+        "primitive_packets": 11989,
+        "shortened_rational_steps": 155047,
+        "three_clock_minimal_period_checks": 36267
+      },
+      "period_eight": {
+        "class_count": 99,
+        "class_size": 8,
+        "class_table_bytes": 3358,
+        "class_table_sha256": "13bd2d5451530fc7ab674720b5f142b489d0a1111161730a6d013f8fab69025b",
+        "missing_residues_mod_233": [
+          0,
+          138
+        ],
+        "representatives_divisible_by_1631": 0,
+        "representatives_divisible_by_233": 0,
+        "representatives_divisible_by_7": 15,
+        "residue_set_size_mod_233": 231,
+        "word_count": 792
+      },
+      "prime_obstructions": [
+        {
+          "A": 8,
+          "m": 5,
+          "prime": 13,
+          "residue_count": 12
+        },
+        {
+          "A": 13,
+          "m": 8,
+          "prime": 233,
+          "residue_count": 231
+        },
+        {
+          "A": 18,
+          "m": 11,
+          "prime": 7727,
+          "residue_count": 7329
+        },
+        {
+          "A": 21,
+          "m": 13,
+          "prime": 502829,
+          "residue_count": 113441
+        }
+      ],
+      "residue_multiplicity_and_series_checks": {
+        "empty_A_less_than_m_vectors": 189,
+        "matrix_basis_images_and_inverses": 1840,
+        "matrix_periodicity_checks": 1840,
+        "multiplicity_vectors": 702,
+        "q_one_composition_coefficients": 78,
+        "rational_series_coefficient_vectors": 546
+      },
+      "rotation_groupoid_checks": {
+        "arrow_inverse_checks_both_clocks": 3960,
+        "composition_checks_both_clocks": 17820,
+        "identity_checks_both_clocks": 922,
+        "packet_arrows": 1980,
+        "packets": 461,
+        "stabilizer_checks_both_clocks": 922
+      },
+      "strip_candidates_m_2_through_17": {
+        "10": [
+          16
+        ],
+        "11": [
+          18
+        ],
+        "12": [],
+        "13": [
+          21
+        ],
+        "14": [
+          23
+        ],
+        "15": [
+          24
+        ],
+        "16": [
+          26
+        ],
+        "17": [
+          27,
+          28
+        ],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [
+          8
+        ],
+        "6": [],
+        "7": [],
+        "8": [
+          13
+        ],
+        "9": []
+      },
+      "total_integral_words": 0,
+      "total_words_scanned_by_each_method": 4734620
+    },
+    "affine_series_certificate_metrics": {
+      "packet_coefficients": 63,
+      "rational_recurrence_checks": 48,
+      "tail_affine_equalities": 16380,
+      "words": 4095
+    },
+    "affine_signed_necklace_certificate_metrics": {
+      "composition_words": 39202,
+      "coprime_parameter_pairs": 62,
+      "negative_primitive_points": 925,
+      "packet_binary_necklace_bijections": 6136,
+      "parameter_pairs": 100,
+      "positive_primitive_points": 38097,
+      "primitive_composition_words": 39022,
+      "primitive_orbits": 6136,
+      "unrestricted_moreau_sums": 7
+    },
+    "arctangent_certificate_check_families": 9,
+    "arctangent_certificate_metrics": {
+      "bad_primes_sha256": "e93aa2993a88d8d6fa3626b52bc43eb21e500281207cad0546422f2c6916b385",
+      "bad_rows": 214,
+      "candidate_primes": 1008,
+      "candidate_primes_sha256": "2f908102d0ceb0ce76dbec035f0c5144904cc61b4c962b572f09cefdf4c2a784",
+      "character_matrix_trits_sha256": "15071896fda6f1d4e75b42c91db02a2155777baa4a7eb7bdb79c6959959e1ab6",
+      "columns": 795,
+      "dependent_good_primes": [
+        38749
+      ],
+      "first_full_rank_prime": 38821,
+      "good_primes_sha256": "b9d5651f3a798be55f0db4f7bf0bcc4c150d3df03ac612928fecfe3ba96c1ca4",
+      "good_rows": 794,
+      "grid_sha256": "44a20a0e9275cf53c7270cbf8bf8bf8ec0650fd66cf562ba3b5c56933ff70e80",
+      "independent_primes_sha256": "b6741708e4657d844cebb7c339beedd08e3cb8f3dbd48550ce04728265935369",
+      "independent_rows": 793,
+      "nullity_F3": 2,
+      "pivot_columns_sha256": "8895d50418089aefded51fa863c04474fc77c71cab2b04a38238160a5a9e766e",
+      "rank_F3": 793,
+      "rank_before_38821": 792
+    },
+    "finite_certificate_check_families": 30,
+    "groupoid_motivic_certificate_check_families": 16,
+    "groupoid_motivic_certificate_metrics": {
+      "alternative_representation_checks": 14378,
+      "cayley_checks": 870,
+      "character_product_checks": 192,
+      "groupoid_elements": 9108,
+      "groupoid_product_checks": 6000,
+      "groupoid_representatives": 23486,
+      "metrics_sha256": "89791d5517538fcd6adc111c67dc40aa03442a1b43960fe65a8f3b7c896f749c",
+      "motive_square_checks": 1344,
+      "path_composition_checks": 5600,
+      "path_embedding_checks": 1120,
+      "prefix_endomorphism_obstruction_checks": 1,
+      "torus_character_checks": 192,
+      "xi_functor_checks": 6000,
+      "xi_injective_images": 9108,
+      "xi_representation_checks": 23486,
+      "z3_inverse_checks": 6534
+    },
+    "manifested_source_files": 18,
+    "output_pdf": {
+      "bytes": 761019,
+      "path": "output/pdf/collatz_research_companion.pdf",
+      "sha256": "074dcc1be3c5a66f28a8568a725d0a0093583faabff888bac177d24c6360119b"
+    },
+    "schema_version": "1.0",
+    "status": "PASS",
+    "tex": {
+      "citations": 23,
+      "labels": 176,
+      "references": 94,
+      "tex_files": 7
+    }
+  }
+}

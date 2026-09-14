@@ -1,0 +1,153 @@
+{
+  "receipt_id": "TAO-V7-FAMILY-LOCAL-20260904",
+  "updated_utc": "2026-09-04T14:40:41.050868+00:00",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\LOCAL_USER\\miniconda3\\python.exe",
+        "-X",
+        "utf8",
+        "verify.py"
+      ],
+      "cwd": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit",
+      "exit_code": 0,
+      "peak_process_tree_rss_bytes": 34443264,
+      "cap_bytes": 5000000000,
+      "output": "preprints\\tao_clock_audit\\audit\\v7_family_20260904\\portable_verify.txt",
+      "bytes": 2074,
+      "sha256": "1812cc9fbd781c0edadf5b8d3f16e396aeefcdcd62daf145f84103818c0757d7"
+    },
+    {
+      "command": [
+        "C:\\Users\\LOCAL_USER\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\pdflatex.exe",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-jobname=tao_clock_audit",
+        "-output-directory=C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\output\\pdf",
+        "main.tex"
+      ],
+      "cwd": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit",
+      "exit_code": 0,
+      "peak_process_tree_rss_bytes": 146366464,
+      "cap_bytes": 5000000000,
+      "output": "preprints\\tao_clock_audit\\audit\\v7_family_20260904\\pdflatex_1.txt",
+      "bytes": 9648,
+      "sha256": "d5b2d055f9f32e3e03359482dea7581bd1b613e212ab2d1099aa7bc91f0d9fda"
+    },
+    {
+      "command": [
+        "C:\\Users\\LOCAL_USER\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\pdflatex.exe",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-jobname=tao_clock_audit",
+        "-output-directory=C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\output\\pdf",
+        "main.tex"
+      ],
+      "cwd": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit",
+      "exit_code": 0,
+      "peak_process_tree_rss_bytes": 146665472,
+      "cap_bytes": 5000000000,
+      "output": "preprints\\tao_clock_audit\\audit\\v7_family_20260904\\pdflatex_2.txt",
+      "bytes": 9212,
+      "sha256": "6f3edb92c021179d93e9dacefac36cf5510358faaa40bc02e92f03b400fcd2c8"
+    },
+    {
+      "command": [
+        "C:\\Users\\LOCAL_USER\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\pdflatex.exe",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-jobname=tao_clock_audit",
+        "-output-directory=C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\output\\pdf",
+        "main.tex"
+      ],
+      "cwd": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit",
+      "exit_code": 0,
+      "peak_process_tree_rss_bytes": 146857984,
+      "cap_bytes": 5000000000,
+      "output": "preprints\\tao_clock_audit\\audit\\v7_family_20260904\\pdflatex_3.txt",
+      "bytes": 9212,
+      "sha256": "6f3edb92c021179d93e9dacefac36cf5510358faaa40bc02e92f03b400fcd2c8"
+    }
+  ],
+  "pdf": {
+    "path": "preprints\\tao_clock_audit\\output\\pdf\\tao_clock_audit.pdf",
+    "bytes": 462716,
+    "sha256": "cfb0c07de2952f4c9e4ce44cf5828398601dd6c6ae09d77a60a332771052f919",
+    "pages": 16
+  },
+  "changed_remote_paths": [
+    "MANIFEST.json",
+    "PACKAGE_STATUS.json",
+    "SOURCE_MAP.json",
+    "tao/bibliography.tex",
+    "tao/certificates/check_finite.py",
+    "tao/proof_registry.json",
+    "tao/sections/consequences.tex",
+    "tao/sections/versions.tex",
+    "tao/source_manifest.json",
+    "tao_preprint.tex"
+  ],
+  "files": [
+    {
+      "path": "MANIFEST.json",
+      "bytes": 8480,
+      "sha256": "ae2913951271481ab5c5c54307fa8337d30ac9f54ebada2d1196a402ae9b5283"
+    },
+    {
+      "path": "PACKAGE_STATUS.json",
+      "bytes": 9805,
+      "sha256": "d7338167ee22086d6459f7a8ed53fb2715b1416d13cdde5e135a73f9651d56c5"
+    },
+    {
+      "path": "SOURCE_MAP.json",
+      "bytes": 48716,
+      "sha256": "d19e3b924cd3efa89d80735fda6de372a997dce041fb8af87e836144e0e7936b"
+    },
+    {
+      "path": "tao/bibliography.tex",
+      "bytes": 1180,
+      "sha256": "08f6272e840a336ba3428b9e7c9c95769236fcf123a5d02de377919c5014d224"
+    },
+    {
+      "path": "tao/certificates/check_finite.py",
+      "bytes": 14234,
+      "sha256": "a0124b3de952e2ff77f2b2dc842370b0ec333c94c1fbd526ad5d5ca976562295"
+    },
+    {
+      "path": "tao/proof_registry.json",
+      "bytes": 3730,
+      "sha256": "288e87d56c4f17092d726c0d640d20f6e0c4cf3a709ea5b207a40ba517598c82"
+    },
+    {
+      "path": "tao/sections/consequences.tex",
+      "bytes": 12361,
+      "sha256": "853f19899655f2fd1605a12d7dc819513410c09e812d5dc70210c5b60e2d7ea5"
+    },
+    {
+      "path": "tao/sections/versions.tex",
+      "bytes": 5802,
+      "sha256": "9d72c924273f49dd4bc97c17b740967b4b69acdf0a434cf732427baa20ab6ef5"
+    },
+    {
+      "path": "tao/source_manifest.json",
+      "bytes": 3723,
+      "sha256": "5cf1abe5efeb4d2489d72cafc92aca2f09ef3033967657924db1c2b408e83d9a"
+    },
+    {
+      "path": "tao_preprint.tex",
+      "bytes": 6591,
+      "sha256": "6394c3a9ae16ebb24e48f04698af73acad63698984d55ceb654b02280d27f581"
+    }
+  ],
+  "claims": [
+    "CLM-COL-000187",
+    "CLM-COL-000188"
+  ],
+  "morphisms": [
+    "MOR-COL-000067"
+  ],
+  "visual_status": "pending",
+  "remote_status": "pending",
+  "whole_goal_complete": false,
+  "new_archive": false
+}

@@ -1,0 +1,217 @@
+{
+  "updated_utc": "2026-09-04T13:33:34.107659+00:00",
+  "status": "PASS",
+  "scope": "Isolated source-package verification and PDF rebuild, not an independent mathematical proof audit",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\LOCAL_USER\\miniconda3\\python.exe",
+        "verify.py"
+      ],
+      "cwd": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\tmp\\portable_check_nehza2as",
+      "exit_code": 0,
+      "output_log": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\tmp\\portable_check_nehza2as\\verify_output.json",
+      "output_sha256": "66c2c627d7f50189e05c781df4db249c3bb46b16955f51904a09dc68b70a2c5d"
+    },
+    {
+      "argv": [
+        "C:\\Users\\LOCAL_USER\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\pdflatex.exe",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-jobname=tao_clock_audit",
+        "-output-directory=output/pdf",
+        "main.tex"
+      ],
+      "cwd": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\tmp\\portable_check_nehza2as",
+      "exit_code": 0,
+      "output_log": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\tmp\\portable_check_nehza2as\\tex_pass_1.log",
+      "output_sha256": "2fa9a69e77bd80774afe392302a7e94d9c0665896b5ffbd0b60eb683b876601d"
+    },
+    {
+      "argv": [
+        "C:\\Users\\LOCAL_USER\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\pdflatex.exe",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-jobname=tao_clock_audit",
+        "-output-directory=output/pdf",
+        "main.tex"
+      ],
+      "cwd": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\tmp\\portable_check_nehza2as",
+      "exit_code": 0,
+      "output_log": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\tmp\\portable_check_nehza2as\\tex_pass_2.log",
+      "output_sha256": "13ca3d9d357265d0507b78c173befdc1fde89c9ca81cb73b604821975f2619e8"
+    },
+    {
+      "argv": [
+        "C:\\Users\\LOCAL_USER\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\pdflatex.exe",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-jobname=tao_clock_audit",
+        "-output-directory=output/pdf",
+        "main.tex"
+      ],
+      "cwd": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\tmp\\portable_check_nehza2as",
+      "exit_code": 0,
+      "output_log": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\tmp\\portable_check_nehza2as\\tex_pass_3.log",
+      "output_sha256": "5c65946ecb6cfe15626929b28d037d43fd316ed90601b5fcfa3da9b38b32c6b0"
+    }
+  ],
+  "lean_launched": false,
+  "upload_performed": false,
+  "previous_attempt": {
+    "status": "PASS",
+    "updated_utc": "2026-09-04T13:32:14.140748+00:00",
+    "isolated_root": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\tmp\\portable_check_d9kfqjtq",
+    "error": null,
+    "diagnostics": [],
+    "resolution": "Previous check retained for chronology with its original status and diagnostics; the current package is checked afresh."
+  },
+  "source_archive": {
+    "path": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\output\\tao_clock_audit_source.zip",
+    "bytes": 28916,
+    "sha256": "a51c2243deee6a24f63a212045f7fb62b61bd5f24b77f8f2a7157c016ec4d728"
+  },
+  "reference_pdf": {
+    "path": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\output\\pdf\\tao_clock_audit.pdf",
+    "bytes": 456718,
+    "sha256": "ad14a2c31c7cb4c11328fa237f6a987de06c016263551eb0ff894e988dcb000f"
+  },
+  "isolated_root": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\tmp\\portable_check_nehza2as",
+  "archive_checks": {
+    "status": "PASS",
+    "entries": 13,
+    "exact_membership": true,
+    "crc": "PASS",
+    "safe_paths": true,
+    "no_symlinks": true,
+    "all_entries_equal_current_authored_sources": true,
+    "manifest_sha256": "a40dae1bd6bc8568faa12ae5a364e867f069d53a019c43d52c9054180bbe2b22"
+  },
+  "extracted_verification": {
+    "status": "PASS",
+    "source_files": 12,
+    "tex_labels": 48,
+    "bibliographic_keys_used": 7,
+    "proof_records": 14,
+    "finite_certificate": {
+      "status": "PASS",
+      "clock_segment_checks": 86238,
+      "sampling_cutoffs": 256,
+      "finite_map_nested_passage_checks": 12800,
+      "positive_valuation_words_checked": 1554,
+      "arithmetic": "integers_and_exact_rationals_only",
+      "exclusions": [
+        "No proof of Tao's analytic first-passage or Fourier-renewal estimates",
+        "No finite experiment is used as proof of the limiting entrance law",
+        "No Collatz convergence assertion and no Lean formalization claim"
+      ]
+    }
+  },
+  "tex_passes": 3,
+  "maximum_tex_passes": 4,
+  "final_tex_diagnostics": [],
+  "rebuilt_pdf": {
+    "path": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\preprints\\tao_clock_audit\\tmp\\portable_check_nehza2as\\output\\pdf\\tao_clock_audit.pdf",
+    "bytes": 456718,
+    "sha256": "54b7e27b3ba4ba121cbda3ef36f32bc9598f61bd19b8952caaafeff17fd6a259"
+  },
+  "pdf_comparison": {
+    "status": "PASS",
+    "pages": 15,
+    "comparison": "Exact per-page extracted text and page rectangles; byte-identical PDF not required because build metadata may vary",
+    "page_checks": [
+      {
+        "page": 1,
+        "text_sha256": "91acdc196a7f1b71828e6d376a19caab968773333f084ca60da4cd8e5ce44c0d",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 2,
+        "text_sha256": "97fb155fe50de556379276c8bdd5d7c7cc082671958c24960de7aba3c091185a",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 3,
+        "text_sha256": "87c568d0e2e413844d5b6edd6070d947c6a89e290dba5a8fdb45189bd927cce5",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 4,
+        "text_sha256": "ed87791fd5e06665ef9e8c3747379068568a8f2b26264fd776fbf338d35bfcbf",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 5,
+        "text_sha256": "9fbbe5540ca7e305462f4b929f57eec536eb9aadc409f3004908e3e8a7fd9b6b",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 6,
+        "text_sha256": "41ea5aa6dbbd17fa306347cd2f0b9d916dc58c2d568834594a2b2a7d626aca41",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 7,
+        "text_sha256": "9c2fbd171f5e486616ea56c3a7e9b89c639b4d98c1d20049698f525a424bc312",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 8,
+        "text_sha256": "5c0ed954efe92102d1d8e35ff0c41990b94895414436c11aeb88c914457ec5e6",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 9,
+        "text_sha256": "4310dc22968991cbfa5be223ba021115d91df261d471aaddad405499bca652a7",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 10,
+        "text_sha256": "711ef518976f29ecb41ad6bf377d4aeb4026b62b2c9b6bff531376d603412622",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 11,
+        "text_sha256": "e9bdf94c4fea934e8b68549d126305e664ea25c32fa52d254de0198c78739a14",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 12,
+        "text_sha256": "5d33e0f3829a9ee622aaa9bb3ab3168c68a8dd8862e592aa0643480b3d917d82",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 13,
+        "text_sha256": "b31a1c43b47a97f6a69f9cf39fe5d450e5a48ab6b119ec02c0fdeb99c60f69bf",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 14,
+        "text_sha256": "6ba612bde77b4a246805e58cc6853d787a59a0ae6f87e299503618d7f021f3e9",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      },
+      {
+        "page": 15,
+        "text_sha256": "42eb44742ef684279ebd3dd83839a406e7c3550495591def0622cc120befc532",
+        "exact_text_equal": true,
+        "geometry_equal": true
+      }
+    ],
+    "visual_scope": "No new visual assertion; root agent separately inspected all final rendered pages"
+  },
+  "finished_utc": "2026-09-04T13:33:37.776029+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "record_type": "bounded_finite_joint_entry_certificate_execution",
+  "recorded_utc": "2026-09-04T14:39:13Z",
+  "working_directory": "C:/Users/LOCAL_USER/Documents/Erdos Strauss and related/collatz_reconstruction/preprints/tao_clock_audit",
+  "command": "C:/Users/LOCAL_USER/miniconda3/python.exe certificates/check_finite.py",
+  "exit_code": 0,
+  "certificate_sha256": "a0124b3de952e2ff77f2b2dc842370b0ec333c94c1fbd526ad5d5ca976562295",
+  "manuscript_files_read": {
+    "sections/transport.tex": "b3233b2b79614e1279a9d880eb7e82c21d5822873085bdaadf49332c2cd88678",
+    "sections/consequences.tex": "853f19899655f2fd1605a12d7dc819513410c09e812d5dc70210c5b60e2d7ea5"
+  },
+  "mathematical_locator": "sections/consequences.tex, cor:joint-entry and its proof; sections/transport.tex, completed passage p_x and lem:nested",
+  "optimized_python_check": {
+    "command": "C:/Users/LOCAL_USER/miniconda3/python.exe -O certificates/check_finite.py",
+    "exit_code": 1,
+    "error": "RuntimeError: Run without -O: disabled assertions must not yield a PASS."
+  },
+  "captured_output": {
+    "status": "PASS",
+    "clock_segment_checks": 86238,
+    "sampling_cutoffs": 256,
+    "finite_map_nested_passage_checks": 12800,
+    "positive_valuation_words_checked": 1554,
+    "joint_first_entry_checks": {
+      "scope": {
+        "finite_domain": "D={1,...,n}, 1<=n<=4; all maps D->D",
+        "failure_state": "0 represents dagger and is not in D",
+        "thresholds": "all half-integers 1,3/2,...,n+1; all nondecreasing chains of lengths 1,2,3",
+        "signed_measure_probes": "all coefficients in {-1,0,1} on E_largest, plus one mixed-sign rational probe",
+        "common_inputs": "uniform and harmonic probabilities on D, plus every Dirac column including dagger"
+      },
+      "maps": 288,
+      "maps_with_failed_positive_start_passage": 212,
+      "threshold_state_passages": 9826,
+      "failed_positive_start_passages": 1506,
+      "chains_by_length": {"1": 2516, "2": 12342, "3": 44658},
+      "chains_with_repeated_thresholds": 24684,
+      "chains_with_noninteger_thresholds": 44433,
+      "chains_with_largest_threshold_above_domain": 27488,
+      "independently_enumerated_product_tuples": 2392317,
+      "compatible_tuples_and_inverse_checks": 260417,
+      "bijections": 59516,
+      "signed_l1_isometry_checks": 9881658,
+      "rational_signed_l1_isometry_checks": 59516,
+      "common_input_dirac_columns_including_dagger": 293870,
+      "common_input_probability_laws": 119032,
+      "common_input_marginal_laws": 322348,
+      "positive_starts_with_mixed_success_failure_coordinates": 49955
+    },
+    "arithmetic": "integers_and_exact_rationals_only",
+    "exclusions": [
+      "No proof of Tao's analytic first-passage or Fourier-renewal estimates",
+      "No finite experiment is used as proof of the limiting entrance law",
+      "No Collatz convergence assertion and no Lean formalization claim"
+    ]
+  },
+  "review_notes": [
+    "Every compatible-tuple set is enumerated directly from its defining equations, independently of the proposed image of J.",
+    "The two inverse identities are tested: last projection after J and J after last projection on every compatible tuple.",
+    "The pushforward test explicitly forms fibre sums for signed measures and compares unhalved l1 norms.",
+    "Common-input joint laws are enumerated directly and compared with the pushforward of the largest-threshold law; all marginal projections are checked as well.",
+    "Equal thresholds, r=1, noninteger thresholds, thresholds above the finite domain, all-failure outcomes, and mixed success/failure coordinate vectors are included.",
+    "The finite tests do not establish convergence of an infinite sequence of laws or Tao's analytic estimates.",
+    "All pre-existing tests, output fields, and exclusions were retained. Only check_finite.py was changed among existing files; no manifest, TeX, ledger, Lean, AGENTS, or remote mutation occurred."
+  ]
+}

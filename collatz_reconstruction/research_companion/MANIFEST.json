@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "files": {
+    "bibliography.tex": {
+      "bytes": 8771,
+      "sha256": "5c2737630d5e8e1c597c78bdfb12b26b7fdd424ea1d9f0e1e6f0004859518ad1"
+    },
+    "certificates/affine_crt_synchronization_checks.py": {
+      "bytes": 13678,
+      "sha256": "ee0340744c8886ff55a7246ae0141576eac3ec60d262b7431bc3579c0198d71e"
+    },
+    "certificates/affine_packet_residue_checks.py": {
+      "bytes": 34101,
+      "sha256": "3684832af599c1f761cb61665e0d907406a67135b0c595c6acce3731b05bfb60"
+    },
+    "certificates/affine_packet_series_checks.py": {
+      "bytes": 4465,
+      "sha256": "c8fef8e6a24ff190db39def342dcc1a863d77d1ce33b818024b6d60d75f2251a"
+    },
+    "certificates/affine_signed_necklace_checks.py": {
+      "bytes": 8159,
+      "sha256": "8e51437eb64c5c9cee6601d6fe654383302a3ee3d1430c52981ec9b773c29c97"
+    },
+    "certificates/arctangent_relation_lattice_checks.py": {
+      "bytes": 19204,
+      "sha256": "3b324c5ff1862bdef17d5cc2ab413e85d4a3dd011012fcdde9797dccab08df26"
+    },
+    "certificates/finite_actions_checks.py": {
+      "bytes": 26755,
+      "sha256": "3d3fdad968fcc89fe415854ef8edd9c7342575726dada89138f0d05e2e14f776"
+    },
+    "certificates/groupoid_motivic_interface_checks.py": {
+      "bytes": 17495,
+      "sha256": "ca460277a54e016a6ef84377cde5cc2e670f08c6cf3f57073f2a3c62d6400916"
+    },
+    "chapters/01_weighted_path_and_finite_residue_actions.tex": {
+      "bytes": 59385,
+      "sha256": "2b85cb503f2dc53e2eddba9a10e8d0a9980fb3c81c13087b0e3899daab7517e5"
+    },
+    "chapters/02_two_adic_survivor_coding_and_exact_interface_boundaries.tex": {
+      "bytes": 29632,
+      "sha256": "41f185ba53af531eb8bfa96b7ac45aca34307276bda45521bd05d049a4ba8d50"
+    },
+    "chapters/03_arithmetic_groupoids_and_toric_period_morphisms.tex": {
+      "bytes": 22563,
+      "sha256": "aad14427358e569931071abbaa14a1d0a05da3644702ce2aa5a7f2077c99dcd4"
+    },
+    "chapters/04_affine_packets_parity_necklaces_and_residue_automata.tex": {
+      "bytes": 36741,
+      "sha256": "f5a25459b6f0088d14158426b6ca6085c021b5722c972a495bcd2ece7887663e"
+    },
+    "chapters/05_packet_fixed_point_series.tex": {
+      "bytes": 9948,
+      "sha256": "ca9fe654da657b32a07641e2d18ab6bef41d73a93851302448ba9510702537d4"
+    },
+    "data/period_8_A_13_classes.csv": {
+      "bytes": 3358,
+      "sha256": "13bd2d5451530fc7ab674720b5f142b489d0a1111161730a6d013f8fab69025b"
+    },
+    "main.tex": {
+      "bytes": 6033,
+      "sha256": "619baaa26a7494de3e37dad7d34f808ad375c452f06d3ab8ec32068bb4b1a205"
+    },
+    "provenance.json": {
+      "bytes": 6265,
+      "sha256": "00c075e3b3f767851b746de61363ebd31ad855ebc7022d58e11049760ed53ef5"
+    },
+    "README.md": {
+      "bytes": 6163,
+      "sha256": "508a3acbea6bebc18f7fa741efea73b1dac67a55da2c6d6402de2ff3ba4b7976"
+    },
+    "validate_package.py": {
+      "bytes": 21593,
+      "sha256": "734d2e95e4ce2596886e3194e3b1e90ee6fb8bc85983efbe406a1099cec7ad9a"
+    }
+  },
+  "output_pdf": {
+    "path": "output/pdf/collatz_research_companion.pdf",
+    "bytes": 761019,
+    "sha256": "074dcc1be3c5a66f28a8568a725d0a0093583faabff888bac177d24c6360119b"
+  },
+  "resolved_ids": []
+}

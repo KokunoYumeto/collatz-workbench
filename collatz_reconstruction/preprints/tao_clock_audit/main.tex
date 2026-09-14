@@ -1,0 +1,133 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Clocks and First-Passage Measures in Tao's Collatz Theorem},pdfauthor={Kokuno Yumeto}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Opos}{\mathcal O}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Col}{\mathrm C}
+\newcommand{\Short}{\mathrm T}
+\newcommand{\Syr}{\mathrm S}
+\newcommand{\vnu}{\nu_2}
+\newcommand{\dd}{\dagger}
+\newcommand{\push}{_{*}}
+\newcommand{\normone}[1]{\left\|#1\right\|_1}
+\newcommand{\ind}{\mathbf 1}
+\title{Clocks and First-Passage Measures\\in Tao's Collatz Theorem}
+\author{Kokuno Yumeto}
+\date{Preprint draft, 4 September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For every prescribed function tending to infinity, Tao proved that the
+Collatz orbit minimum lies below that function on a set of starting
+integers of logarithmic density one.
+An exact treatment of the orbit clocks and sampling measures gives a
+first-passage formulation of this result.  Valuation sums relate ordinary
+Collatz time, division-counting time, and odd-return time.  With a separate
+failure state, the first-passage pushforwards satisfy composition identities
+that turn summable scale errors into a quantitative transport bound.  The
+same estimate gives, along a common sequence of starting scales, limiting
+first-entry laws at every threshold. These laws are exactly compatible
+under further first passage, and their joint distributions at any finite
+collection of thresholds converge with a common quantitative bound.
+Applied to Tao's first-passage estimate, the transport bound
+yields his fixed-threshold and diverging-threshold conclusions with exact
+harmonic weights.  Two further estimates supply a multiplicative endpoint
+buffer and a uniform coefficient bound in the first-passage argument.
+An explicit reserve calculation verifies the margin used in the
+$3$-adic separation estimate.
+\end{abstract}
+
+\section{Introduction}
+
+Collatz descent is studied with three natural clocks: every application of
+the usual map, every division by two, or every passage from one odd number
+to the next.  These clocks give the same orbit minimum but different
+stopping times.  Their exact relation becomes important when a descent
+estimate is restricted to a finite time interval or when the distribution
+of an orbit at its first visit to a smaller scale is used as the input to
+another estimate.
+
+The historical descent results of Terras and Everett, and the power-descent
+results of Allouche and Korec, provide the setting for Tao's
+almost-bounded theorem, as reviewed in his Section~1.1
+\cite{Terras,Everett,Allouche,Korec,Tao7}.
+Repeated descent requires control of more than the exceptional set at one
+scale: the image of a typical set need not be typical for the measure used
+at the next scale.  Tao addresses this difficulty by comparing first-passage
+distributions.  Successive descent steps can then be combined through the
+transport of measures, rather than through an independence assumption on
+the successive values of a single orbit.
+
+The clock identities in Section~\ref{sec:clocks} separate a change of time
+parameter from a change of sampling measure.  Passing from arbitrary
+starting integers to their odd parts, for example, requires the exact
+dyadic fibre weights at each finite cutoff.  Section~\ref{sec:transport}
+then treats first passage as a family of maps indexed by the destination
+threshold.  A separate failure state makes their composition identities
+valid on the entire domain.  The corresponding pushforwards contract
+total variation, so discrepancies between adjacent scales can be added
+before taking a limit.
+
+The resulting transport estimate formulates the mechanism in Tao's
+Section~3. Section~\ref{sec:consequences} constructs a family of limiting
+first-entry laws at all thresholds from one common sequence of inputs.
+The family satisfies exact first-passage compatibility. Its finite joint
+laws obey the same total-variation error bound, independently of the number
+of thresholds. The section also passes from a fixed-threshold estimate
+to an arbitrary diverging threshold. The latter
+tightness formulation is already present in Tao's Remark~1.4 and
+Theorem~3.1.  Keeping the finite harmonic sums throughout identifies the
+sampling law and the order of limits in each step.
+
+Two estimates needed in the first-passage proof are developed in
+Section~\ref{sec:repairs}.  A buffer in logarithmic time corresponds to a
+multiplicative buffer in the initial value.  The coefficient estimate
+requires a geometric weight that remains summable uniformly in the word
+length.  Section~\ref{sec:versions} gives an explicit size bound for the
+retained reserve in the $3$-adic separation argument and records the
+finite-weight and threshold reductions to which it is adjacent.
+
+The analytic input throughout is Tao's Proposition~1.11 in
+arXiv:1909.03562v7, dated 16 July 2026 \cite{Tao7}, whose proof uses
+Fourier--renewal estimates.  The deduction from that proposition and the
+local estimates above are proved here.  The first arXiv version appeared
+in September 2019, and the journal paper appeared in 2022
+\cite{TaoJournal}. The exact compatible family is a distributional
+consequence of the first-passage estimate; the quantitative orbit-minimum
+bound remains Tao's Theorem~3.1.
+
+\input{sections/clocks}
+\input{sections/transport}
+\input{sections/consequences}
+\input{sections/repairs}
+\input{sections/versions}
+
+\section*{Computational materials and authorship}
+The accompanying dependency-free Python certificate checks finite clock
+identities, harmonic-weight transport, first-passage composition including
+failure, and the algebraic constants in the estimates using exact
+arithmetic.  Source identities and proof dependencies accompany the
+certificate.  This work was developed through human--LLM collaboration
+using ChatGPT 5.6 Sol, Ultra mode, in Codex, including source comparison,
+proof development, and computational checks.
+\input{bibliography}
+\end{document}

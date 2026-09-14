@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "record_type": "certificate_execution_receipt",
+  "id": "AFFINE-SIGNED-NECKLACE-CERT-20260905",
+  "recorded_utc": "2026-09-04T23:39:21Z",
+  "status": "PASS",
+  "certificate": {
+    "path": "research_companion/certificates/affine_signed_necklace_checks.py",
+    "bytes": 8159,
+    "sha256": "8e51437eb64c5c9cee6601d6fe654383302a3ee3d1430c52981ec9b773c29c97",
+    "command": "C:/Users/LOCAL_USER/miniconda3/python.exe -X utf8 research_companion/certificates/affine_signed_necklace_checks.py",
+    "python": "3.13.9",
+    "optimized_python_rejected": true,
+    "arithmetic": "integer and fractions.Fraction only; no floating point",
+    "exit_code": 0
+  },
+  "source_pins": [
+    {
+      "role": "primary_raw_chronological_witness",
+      "path": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/more col thread/ChatGPT-Implications of Affine Formula.md",
+      "physical_lines": "1041-1083",
+      "sha256": "abb1abbb948dc140394de3d35f0efbde9b3facdf718c24b065b8d0adb951366e"
+    },
+    {
+      "role": "local_antecedent_proof_witness",
+      "path": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/automata/V5/odd_step_collatz_orbit_packets_note.tex",
+      "source_lines": [
+        "2537-2628",
+        "2750-2791"
+      ],
+      "sha256": "406ef13e43ae0af68fabdbda4dd16145d313407f7d38ea22311803c7533cfec7"
+    },
+    {
+      "role": "published_primitive_necklace_lineage",
+      "source_id": "SRC-COL-000004",
+      "path": "C:/Users/LOCAL_USER/Documents/arxiv_latex/library/collatz_reconstruction/latex/1209.3495v1/main.tex",
+      "source_lines": "303-315",
+      "sha256": "51b2c072646d33fc7f37fcd23e966f4435dc3e2026cd3fe83b6717829c31e0eb"
+    },
+    {
+      "role": "published_rational_cycle_and_primitive_binary_necklace_lineage",
+      "source_id": "SRC-COL-000013",
+      "locator": "Lagarias 1990, printed pp. 34-39, especially equations (2.4)-(2.6) on printed p. 38"
+    }
+  ],
+  "bounds": {
+    "max_packet_length": 8,
+    "max_exponent_budget": 16,
+    "parameter_pairs": 100
+  },
+  "checks": {
+    "positive_composition_count": "PASS",
+    "primitive_root_moebius_inversion": "PASS",
+    "free_cyclic_orbit_division": "PASS",
+    "fixed_weight_binary_formula": "PASS",
+    "packet_to_binary_necklace_bijection": "PASS",
+    "packet_denominator_sign_split": "PASS",
+    "distinct_points_per_primitive_orbit": "PASS",
+    "coprime_specialization": "PASS",
+    "unrestricted_moreau_recovery": "PASS"
+  },
+  "metrics": {
+    "composition_words": 39202,
+    "coprime_parameter_pairs": 62,
+    "negative_primitive_points": 925,
+    "packet_binary_necklace_bijections": 6136,
+    "parameter_pairs": 100,
+    "positive_primitive_points": 38097,
+    "primitive_composition_words": 39022,
+    "primitive_orbits": 6136,
+    "unrestricted_moreau_sums": 7
+  },
+  "metrics_sha256": "e5b5e44e3737c67631a79231b0b333ceebb7166a387d38d2028c4ca27836cb6b",
+  "proof_scope": "The execution is a bounded exact certificate. The all-parameter proof is Theorem signed-fixed-content-necklace-count in research_companion/chapters/04_affine_packets_parity_necklaces_and_residue_automata.tex.",
+  "reader_artifacts": [
+    {
+      "path": "research_companion/chapters/04_affine_packets_parity_necklaces_and_residue_automata.tex",
+      "label": "thm:signed-fixed-content-necklace-count",
+      "sha256_at_execution": "f5a25459b6f0088d14158426b6ca6085c021b5722c972a495bcd2ece7887663e"
+    },
+    {
+      "path": "tex/chapters/06_affine_packet_source_audit.tex",
+      "subsection": "Signed fixed-content necklace counts",
+      "sha256_at_execution": "8a4de14fddc13259bb6144866a9924ec9fa58b37477786e0f0a0b789188d91db"
+    }
+  ],
+  "nonclaims": [
+    "The finite run does not replace the all-parameter proof.",
+    "The fixed-content formula is not presented as historically novel.",
+    "The sign split concerns rational periodic orbits and does not imply integrality or Collatz termination.",
+    "No Lean process was launched."
+  ],
+  "Lean_launched": false
+}

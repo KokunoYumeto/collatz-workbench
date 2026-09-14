@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "id": "AFFINE-TAIL-MAHLER-WITNESS-COLLATION-20260904",
+  "status": "bounded_visual_collation_complete",
+  "scope": "Two specified theorem passages and their required definitions only. No whole-text identity or complete source audit.",
+  "witnesses": [
+    {
+      "id": "controlling61",
+      "path": "C:/Users/LOCAL_USER/Documents/Erdos Strauss and related/ES-Fable-C123-support/external_sources/combined_live_theorem_package_dependencies/odd_step_collatz_orbit_packets_note.pdf",
+      "bytes": 546452,
+      "sha256": "13f49961a60b870fa7a6f0f646758b4d72c1a4e4267f347606cc8a3238d552f1",
+      "pages": 61,
+      "visually_read_physical_pages": [
+        2,
+        3,
+        7,
+        29,
+        30,
+        31,
+        47,
+        48,
+        50,
+        51
+      ],
+      "printed_page_numbers": "Equal physical indices on inspected pages."
+    },
+    {
+      "id": "indexed62",
+      "path": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/automata/V5/odd_step_collatz_orbit_packets_note.pdf",
+      "resolved_path_observed": "F:/user/Documents/Papors/Chatnotes/automata/V5/odd_step_collatz_orbit_packets_note.pdf",
+      "bytes": 566720,
+      "sha256": "878d3ddbb3fefc0c781aa7ca0cd6536dcd7b5d7a46df18ecdb3662eee47d3ab1",
+      "pages": 62,
+      "visually_read_physical_pages": [
+        3,
+        4,
+        9,
+        30,
+        31,
+        32,
+        48,
+        49,
+        52
+      ],
+      "printed_page_numbers": "Equal physical indices on inspected pages."
+    },
+    {
+      "id": "indexed_tex",
+      "path": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/automata/V5/odd_step_collatz_orbit_packets_note.tex",
+      "bytes": 114074,
+      "sha256": "406ef13e43ae0af68fabdbda4dd16145d313407f7d38ea22311803c7533cfec7",
+      "read_line_ranges": [
+        [
+          80,
+          119
+        ],
+        [
+          433,
+          448
+        ],
+        [
+          1902,
+          2003
+        ],
+        [
+          3347,
+          3424
+        ]
+      ],
+      "additional_locators_checked": [
+        90,
+        441,
+        1977,
+        3107,
+        3142,
+        3376
+      ],
+      "pairing_boundary": "The formulas and statements actually collated agree passage-wise with both PDFs. No producing build or whole-file pairing is inferred from the sibling filename."
+    }
+  ],
+  "definitions": [
+    {
+      "object": "Exponent packet and affine coordinates",
+      "tex": "80-119,433-448",
+      "controlling61": "printed/physical2 and7",
+      "indexed62": "printed/physical3-4 and9",
+      "content": "a_i>=1; m>=1; A=sum a_i>=m; g_a(x)=(3x+1)/2^a; g_p=g_am o ... o g_a1; C(p)=sum_(k=0)^(m-1)3^(m-1-k)2^A_k; c(p)=C(p)/2^A; Pi_(m,A) consists of all positive compositions of A into m parts."
+    },
+    {
+      "object": "Packet offset generating series",
+      "tex": "3107,3114,3142; theorem16.3",
+      "controlling61": "printed/physical47-48",
+      "indexed62": "printed/physical48-49",
+      "content": "S_m(A)=sum_p c(p); F_m(q)=sum_(A>=m) S_m(A)q^A; u(q)=q/(1-q), v(q)=q/(2-q); F_m(q)=sum_(k=0)^(m-1)3^(m-1-k)u(q)^k v(q)^(m-k)."
+    },
+    {
+      "object": "Fixed-point sum",
+      "tex": "3347-3367",
+      "controlling61": "printed/physical50",
+      "indexed62": "printed/physical52",
+      "content": "X_m(A)=sum_p x_p; X_m(q)=sum_(A>=m)X_m(A)q^A; X_m(A)=2^A S_m(A)/(2^A-3^m)."
+    }
+  ],
+  "passages": [
+    {
+      "id": "tail-expansion",
+      "theorem": "9.2 Rigidity of eventual periodic exponent tails",
+      "tex": "1902-2003; erroneous intermediate expansion at1977",
+      "controlling61": "Theorem9.1 p29; Theorem9.2 statement/proof p30, conclusion p31",
+      "indexed62": "Theorem9.1 p30; Theorem9.2 statement/proof p31, conclusion p32",
+      "defect_present_in_controlling_pdf": true,
+      "defect_present_in_indexed_pdf": true,
+      "printed_error": "The third line of the z_(j+1) expansion has numerator 3^m(2^A-3^m)y_j + 3^m C - 2^A C.",
+      "correct_expansion": "The preceding line gives numerator 3^m(2^A-3^m)y_j + (2^A-3^m)C - 2^A C = 3^m((2^A-3^m)y_j-C).",
+      "diagnosis": "The erroneous displayed equality is real in both PDFs, not text-extraction corruption. Its successor, z_(j+1)=(3^m/2^A)z_j, is correct. The error is local algebra in an intermediate line; it does not invalidate the integrality/divisibility proof after that line is corrected.",
+      "retained_scope": "The printed argument uses integer y_j, positive exponents A>=m>=1, coprimality of3^m and2^A, then 2^(jA)|z0 for everyj. The theorem states exact periodicity from the beginning of the stipulated exponent tail, not merely eventual convergence.",
+      "other_differences": "Controlling PDF refers to block fixed point by ??; indexed PDF resolves it to Theorem9.1. Both have the same mathematical error and the same correct final recurrence."
+    },
+    {
+      "id": "mahler-analytic-domain",
+      "theorem": "17.1 Generalized Mahler equation",
+      "tex": "3347-3424; unit-disc phrase at3376",
+      "controlling61": "Definitions p50; full theorem/proof/corollary17.2 p51",
+      "indexed62": "Definitions, full theorem/proof/corollary17.2 p52",
+      "defect_present_in_controlling_pdf": true,
+      "defect_present_in_indexed_pdf": true,
+      "printed_identity": "X_m(2q)-3^m X_m(q)=F_m(2q)",
+      "printed_domain_phrase": "as a formal power series, and hence on the open unit disc",
+      "formal_part": "Coefficient identity (2^A-3^m)X_m(A)=2^A S_m(A) and uniqueness in q^m C[[q]] are explicitly proved; 2^A-3^m is nonzero.",
+      "diagnosis": "The implication to the entire unit disc is false for m=2 under the stated power-series meanings. It is not a PDF version difference. This diagnosis does not refute the formal identity or its formal uniqueness.",
+      "bounded_countercheck": "For m=2, summing c(a,A-a)=(3+2^a)/2^A over1<=a<=A-1 gives S_2(A)=1+(3A-5)/2^A. Thus X_2(A)=(2^A+3A-5)/(2^A-9) tends1. At q=1/2 (inside the claimed open unit disc), X_2(2q)=X_2(1) diverges since its terms do not tend0. F_2(1)=3v(1)^2+u(1)v(1) has a pole. The natural common Taylor-series domain for m=2 is |q|<1/2.",
+      "exception": "For m=1, X_1(A)=1/(2^A-3) has radius2 and F_1=v has radius2, so the stated dilated identity does hold for |q|<1. The defect is the assertion for everym>=1 without distinguishing the domain.",
+      "other_differences": "The controlling PDF has unresolved equation/theorem references; indexed PDF supplies references17.1,17 and Theorems15.3/14.1. No correction of the unit-disc phrase occurs in the indexed PDF.",
+      "not_claimed": "No complete analytic continuation/pole classification proved in this witness task; other task owns the general analytic reconstruction."
+    }
+  ],
+  "method": {
+    "visual": "PDF pages rendered to PNG bytes in memory with PyMuPDF and directly viewed through image outputs. No PDF or rendered image files written.",
+    "extraction": "Native PDF text used only to locate passages; decisive signs/domain phrases visually checked.",
+    "failed_calls": "Initial native-text output hit Windows encoding error and was repeated with -X utf8. One oversized in-memory image batch was truncated before JSON parsing; it contributed no visual coverage and was repeated in smaller successful batches."
+  },
+  "nonclaims": [
+    "No whole-text or edition identity inferred.",
+    "No primary literature priority claim or source attribution beyond these local witnesses.",
+    "No existing source, TeX, metadata, state ledger, PDF, or remote service changed.",
+    "Only this audit file was created; no builds, Lean, Git, AGENTS edits or cleanup."
+  ]
+}

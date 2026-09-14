@@ -1,0 +1,456 @@
+\section{The Chatnotes groupoid and motivic interval: exact maps and source boundaries}
+\label{sec:chatnotes-groupoid-motivic}
+
+This section audits physical lines 11088--14011 of the directly read
+17,437-line \emph{$Z_n$ Symmetries} export.  It closes the only interval of
+that file which lacked a direct-locator audit.  The chronology consists of
+four successive expansions:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item lines 11088--11720 attach the $1$-motive and Nori sources and propose a
+  symbolic/groupoid ladder and a period ladder;
+\item lines 11721--12206 repeat the grading and period formulas and replace
+  the unnamed groupoid by an inverse-edge shift groupoid;
+\item lines 12207--12660 attach a much broader operator and motivic
+  vocabulary without constructing the proposed comparison maps; and
+\item lines 12677--14011 discover genuine partial homeomorphisms of
+  $\mathbb Z_3$, then incorrectly identify their compact operator model with
+  the positive-integer path algebra and promote that identification to a
+  larger arithmetic and equilibrium package.
+\end{enumerate}
+The chronology contains real mathematics.  Its two torus coordinate systems,
+its $3$-adic branch maps, and its logarithmic and arctangent formulas can all
+be made exact.  The exact results require maps which the raw response did not
+supply, and those independently proved repairs are explicitly separated from
+the source assertions below.
+
+The controlling raw file has 538,005 bytes and SHA-256
+\nolinkurl{9a80f53764a9da42c0f8e0b6d19ce61f978980a448a683b9c45f04038716160d}.
+The locator report is
+\path{intake/chatnotes/ZN-SYMMETRIES-GROUPOID-MOTIVIC-DIRECT-LOCATOR-AUDIT-06.md}.
+
+\subsection{What is already proved before this interval}
+
+The raw grading
+\[
+ \deg(p)=(\ell(p),A(p)-\ell(p))
+\]
+and its torus action at lines 11130--11265 are correct in the target-left
+category algebra already defined in
+Section~\ref{sec:chatnotes-weighted-path-algebra}.  The finite maps at lines
+11269--11298 repeat the maps audited in
+Theorem~\ref{thm:finite-residue-semigroup-normal-form} and
+\ref{prop:weighted-typed-representations}; the raw text again erases object
+idempotents and again calls the nonempty-word image a monoid before adjoining
+an identity.  No second finite representation is admitted from that
+repetition.
+
+The full countable-word pressure calculation at lines 11302--11354 and
+13637--13684 is the calculation already proved in
+Section~\ref{sec:symbolic-completion-geometric-boundaries}.  It applies to
+the full label shift.  The raw response does not verify the hypotheses needed
+to transfer a Gibbs or equilibrium theorem to the positive-integer image.
+
+The groupoid arrow at lines 11358--11391,
+\[
+ R[\mathcal E_C]\leadsto\mathcal G_C\leadsto C^*(\mathcal G_C),
+\]
+does not declare a topology, Haar system, full or reduced completion, or an
+algebra map.  The inverse-edge version at lines 11813--11885 declares a path
+space and shift but still gives no topology and no proof that the shift is a
+local homeomorphism.  The later $3$-adic formulas supply a different exact
+route; it must not be identified with either of those arrows without the maps
+proved below.
+
+\subsection{The literature actually used}
+
+Deaconu begins with the set of triples attached to a map and proves his
+topological theorem when the map is a covering of a compact Hausdorff space
+\cite[printed pp.~1779--1781]{Deaconu1995}.  The positive-odd set with the
+discrete topology is not compact and $C$ is not a self-covering, so that
+theorem is not invoked.  Its set-theoretic groupoid formula is used as a
+reference point; the required discrete topology and Haar assertions are
+proved directly here.
+
+Huber--W\"ustholz define a $1$-motive $[L\to G]$ and its morphisms as maps of
+complexes, compute $\log\alpha$ from the Kummer motive
+$[\mathbb Z\xrightarrow{1\mapsto\alpha}\mathbf G_m]$, and identify all
+$1$-periods with periods of $1$-motives
+\cite[Definition~8.1, Section~10.2, and Proposition~12.10]{HuberWustholz2022}.
+Their Theorem~10.4 explicitly uses characters
+$(x,y)\mapsto x^ny^m$ of $\mathbf G_m^2$.
+Huber--M\"uller-Stach define a Nori vertex as a triple $(X,Y,i)$ and permit
+exactly two primitive edge types: a contravariant edge from an actual map of
+pairs and a coboundary edge from an actual nested triple
+\cite[Definition~9.1.1]{HuberMullerStach2025}.  Concatenation of integration
+paths is not a third edge type.
+
+Barbieri-Viale--Kahn define a Deligne $1$-motive and its morphisms by a
+commutative square in source TeX lines 728--750, prove the fully faithful
+curve-generated embedding in source lines 1736--1751, and define $LAlb$ in
+source lines 3796--3800 \cite{BarbieriVialeKahn2016}.  Their source provides
+the general machinery, not the particular point $(2,3)$, the character
+$x^Ay^{-\ell}$, or a curve realizing that object.  The concrete squares below
+are therefore independent constructions.
+
+\subsection{The exact positive-integer groupoid}
+
+For $n\geq0$ write
+\[
+ S_na(x)=\sum_{j=0}^{n-1}a(C^jx),\qquad S_0a(x)=0.
+\]
+Define
+\begin{equation}
+\label{eq:critical-arithmetic-groupoid}
+ \mathcal G_{\mathrm{arith}}
+ =\{(x,k,y):x,y\in\mathcal O,\ \exists m,n\geq0,\
+ k=m-n,\ C^m(x)=C^n(y)\}.
+\end{equation}
+Put $r(x,k,y)=x$, $s(x,k,y)=y$,
+\[
+ (x,k,y)(y,l,z)=(x,k+l,z),
+ \qquad (x,k,y)^{-1}=(y,-k,x),
+\]
+and give the set the discrete topology.
+
+\begin{theorem}[independent arithmetic groupoid repair]
+\label{thm:critical-arithmetic-groupoid}
+The object \eqref{eq:critical-arithmetic-groupoid} is a countable Hausdorff,
+locally compact, \'{e}tale groupoid with counting Haar system.  The formula
+\[
+ c_a(x,k,y)=S_ma(x)-S_na(y)
+\]
+is independent of the representative $(m,n)$.  The maps
+\begin{equation}
+\label{eq:critical-groupoid-cocycles}
+ D(x,k,y)=(-k,-c_a(x,k,y)+k),
+ \qquad
+ \delta_{\mathcal G}(x,k,y)=-c_a(x,k,y)\log2+k\log3
+\end{equation}
+are additive groupoid cocycles.
+
+For a path $p:x\to y$,
+\[
+ J(p)=(y,-\ell(p),x)
+\]
+defines an injective functor and
+\[
+ D(J(p))=(\ell(p),A(p)-\ell(p)),\qquad
+ \delta_{\mathcal G}(J(p))=A(p)\log2-\ell(p)\log3.
+\]
+Therefore $[p]\mapsto1_{\{J(p)\}}$ is an injective algebra map
+$\mathbb C[\mathcal E_C]\to C_c(\mathcal G_{\mathrm{arith}})$.
+The two cocycles give respectively a $\mathbb T^2$ gauge action and an
+$\mathbb R$ time action on both the full and reduced groupoid
+$C^*$-algebras.
+\end{theorem}
+
+\begin{proof}
+If $(m,n)$ is a representative and $u=C^m(x)=C^n(y)$, extending both times
+by $t$ adds the same sum $S_ta(u)$ to the two terms defining $c_a$.  Any two
+representatives have the same difference and admit a common extension, so
+$c_a$ is well-defined.  For composable representatives $(m,n)$ and $(p,q)$,
+extend them until the two middle times equal $\max\{n,p\}$.  The middle
+Birkhoff sums cancel, proving additivity of both $k$ and $c_a$, hence of the
+two displayed linear combinations.
+
+Every singleton is a compact open bisection in the discrete topology, which
+proves all topological and Haar assertions.  The pair $(0,\ell(p))$
+represents $J(p)$ and has $c_a=-A(p)$, proving the cocycle formulas.  Source
+and length determine a path of the deterministic first-return category, so
+$J$ is injective.  Point masses respect the target-left product and are
+linearly independent.  Multiplication by the characters of $D$ and by
+$e^{it\delta_{\mathcal G}}$ gives convolution $*$-automorphisms.  Universal
+norms give the full extensions and diagonal unitaries in regular
+representations give the reduced extensions.
+\end{proof}
+
+\subsection{The exact 3-adic object and the missing arithmetic map}
+
+Lines 12801--12928 introduce
+\begin{equation}
+\label{eq:critical-three-adic-branches}
+ X=\mathbb Z_3,\qquad
+ Y_a=\{y:2^ay\equiv1\pmod3\},\qquad
+ g_a(x)=\frac{3x+1}{2^a},\qquad
+ \beta_a(y)=\frac{2^ay-1}{3}.
+\end{equation}
+This is a genuine construction.
+
+\begin{proposition}[exact branch homeomorphisms]
+\label{prop:critical-three-adic-homeomorphisms}
+For every $a\geq1$, $Y_a=2^{-a}+3\mathbb Z_3$ is clopen and
+$g_a:X\to Y_a$ is a homeomorphism with inverse $\beta_a$.  For a word
+$w=(a_1,\ldots,a_n)$,
+\[
+ h_w(x)=g_{a_n}\circ\cdots\circ g_{a_1}(x)
+ =\frac{3^nx+B_w}{2^{A(w)}},
+ \qquad
+ B_w=\sum_{i=1}^n3^{n-i}2^{a_1+\cdots+a_{i-1}},
+\]
+and $h_w$ maps $X$ homeomorphically onto a clopen set.
+\end{proposition}
+
+\begin{proof}
+The residue class is clopen because $2^a$ is a $3$-adic unit.  Both inverse
+identities follow by direct substitution, and the affine word formula follows
+by induction.
+\end{proof}
+
+Let $\mathcal H_3$ be the groupoid of germs of the pseudogroup generated by
+these homeomorphisms and their inverses.  Each pseudogroup element is locally
+affine.  Two affine maps agreeing on a nonempty $3$-adic open set have equal
+slope and intercept; this proves that the germ groupoid is Hausdorff.  Its
+germ bisections make it second countable, locally compact, and \'{e}tale.
+
+\begin{theorem}[independent arithmetic-to-$3$-adic germ functor]
+\label{thm:critical-arithmetic-germ-functor}
+For $(x,m-n,y)\in\mathcal G_{\mathrm{arith}}$, let $p_m(x)$ and $p_n(y)$
+denote the actual exponent words along the indicated positive orbits.  The
+formula
+\begin{equation}
+\label{eq:critical-arithmetic-germ-map}
+ \Xi(x,m-n,y)=
+ [h_{p_m(x)}^{-1}\circ h_{p_n(y)},y]
+\end{equation}
+defines an injective groupoid functor
+$\Xi:\mathcal G_{\mathrm{arith}}\to\mathcal H_3$.
+If $u$ is the rational slope of the affine germ, then
+\[
+ u=3^{n-m}2^{S_ma(x)-S_na(y)},\qquad
+ D=(\nu_3u,-\nu_2u-\nu_3u),\qquad
+ \delta_{\mathcal G}=-\log|u|_\infty.
+\]
+Indeed $\nu_3u=n-m=-k$ and $\nu_2u=c_a$, so these are exactly
+the coordinates $(-k,-c_a+k)$.
+\end{theorem}
+
+\begin{proof}
+Adding a common future word on both sides of
+\eqref{eq:critical-arithmetic-germ-map} cancels that affine map against its
+inverse, so the germ is independent of $(m,n)$.  Common-middle extension
+proves functoriality.  Its slope has $\nu_3(u)=n-m$ and
+$\nu_2(u)=S_ma(x)-S_na(y)$.  Source, range, and $-\nu_3(u)$ recover the
+triple, proving injectivity and the cocycle formulas.
+\end{proof}
+
+The raw recovery on $\ell^2(\mathcal O)$ at lines 12995--13042 is false.
+Indeed $g_1(1)=2\notin\mathcal O$.  Under the printed formula for $V_1$, the
+equation $\beta_1(y)=1$ has the unique solution $y=2$, so
+$V_1\delta_1=0$ and $V_1^*V_1\ne1$.  The subsequent claims that the old path
+algebra is exactly recovered, that an unspecified semigroup crossed product
+equals $C^*(\mathcal H_3)$, and that prefixing defines the printed
+endomorphism therefore do not follow.  The exact replacement is the functor
+$\Xi$; because $\mathbb Z_3$ is nondiscrete, it is not a point-mass embedding
+into $C_c(\mathcal H_3)$.
+
+The prefix defect can be proved before any completion.  In the free-monoid
+algebra let $L_q[p]=[qp]$.  For nonempty $q$,
+\[
+ L_q(1\cdot1)=[q],\qquad L_q(1)L_q(1)=[qq],
+\]
+and these are distinct basis vectors.  Thus left prefixing is not an algebra
+endomorphism.  A genuine endomorphism would require a different declared map
+and a proof that it respects every covariance relation.
+
+\subsection{The two torus coordinates and the actual 1-motive squares}
+
+The raw text uses the degree character $(\ell,A-\ell)$ and the arithmetic
+character $(A,-\ell)$ as if they were the same coordinates.  They are related
+by a specific unimodular torus isomorphism.
+
+\begin{theorem}[independent torus and Kummer repair]
+\label{thm:critical-torus-kummer-repair}
+Let
+\[
+ T_{\mathrm{ar}}=(\mathbf G_m)^2_{x,y},\qquad
+ T_{\deg}=(\mathbf G_m)^2_{\lambda,\mu},
+\]
+and
+\[
+ \Phi(x,y)=(x/y,x),\qquad
+ \Phi^{-1}(\lambda,\mu)=(\mu,\mu/\lambda).
+\]
+For a path $p$ put
+\[
+ \chi_p(x,y)=x^{A(p)}y^{-\ell(p)},\qquad
+ \psi_p(\lambda,\mu)=\lambda^{\ell(p)}\mu^{A(p)-\ell(p)}.
+\]
+Then $\psi_p\Phi=\chi_p$, with lattice matrices
+\[
+ \binom{A}{-\ell}
+ =\begin{pmatrix}1&1\\ -1&0\end{pmatrix}
+ \binom{\ell}{A-\ell},
+ \qquad
+ \binom{\ell}{A-\ell}
+ =\begin{pmatrix}0&-1\\ 1&1\end{pmatrix}
+ \binom{A}{-\ell}.
+\]
+
+Over $\mathbb Q$, define
+\[
+ M_{\mathrm{ar}}=[\mathbb Z\to T_{\mathrm{ar}}],
+ \quad n\mapsto(2^n,3^n),
+ \qquad
+ K(\alpha_p)=[\mathbb Z\to\mathbf G_m],
+ \quad n\mapsto\alpha_p^n,
+\]
+where $\alpha_p=2^{A(p)}3^{-\ell(p)}$.  Then
+$(\mathrm{id},\chi_p):M_{\mathrm{ar}}\to K(\alpha_p)$ is a morphism of
+$1$-motives and, for $\gamma(s)=(2^s,3^s)$,
+\[
+ \int_\gamma\chi_p^*\frac{dz}{z}
+ =A(p)\log2-\ell(p)\log3.
+\]
+The path fixes the logarithm branch.  The same square with
+$\chi_{p,k}(x,y)=x^{-A_k}y^{k-1}$ gives the period
+$\log(3^{k-1}2^{-A_k})$.
+\end{theorem}
+
+\begin{proof}
+Substitution proves the torus inverse and character identity; multiplication
+of the integral matrices gives the identity.  The square of group schemes
+commutes because
+\[
+ \chi_p(2^n,3^n)=(2^{A(p)}3^{-\ell(p)})^n.
+\]
+Finally
+$\chi_p^*(dz/z)=A(p)\,dx/x-\ell(p)\,dy/y$, and integration on the declared
+path proves the period formula.  The prefix calculation is identical.
+\end{proof}
+
+The Cartier dual specialization is
+\[
+ M_{\mathrm{ar}}^\vee=[\mathbb Z^2\to\mathbf G_m],\qquad
+ (r,s)\mapsto2^r3^s.
+\]
+Thus the alternate raw object
+$[\mathbb Z^2\to\mathbf G_m]$, $(m,n)\mapsto2^m3^{-n}$, is the same dual
+after the declared basis involution $(m,n)\mapsto(m,-n)$.  It is not a
+replacement for the commutative square just proved.
+
+\subsection{The arctangent pair and the Nori edge direction}
+
+Over $K=\mathbb Q(i)$, put
+$U_K=\mathbf P^1_K\setminus\{i,-i\}$.  The Cayley map and inverse are
+\[
+ \kappa(z)=\frac{1+iz}{1-iz},
+ \qquad
+ \kappa^{-1}(w)=\frac{w-1}{i(w+1)}.
+\]
+
+\begin{proposition}[independent Cayley pair repair]
+\label{prop:critical-cayley-nori-repair}
+The map $\kappa$ is an isomorphism $U_K\simeq\mathbf G_{m,K}$.  For
+$r\in\mathbb Q_{>0}$ and $\alpha(r)=(1+ir)/(1-ir)$ it is an isomorphism of
+pairs
+\[
+ (U_K,\{0,r\})\overset\sim\longrightarrow
+ (\mathbf G_{m,K},\{1,\alpha(r)\}),
+ \qquad
+ \kappa^*\frac{dw}{w}=\frac{2i\,dz}{1+z^2}.
+\]
+The resulting Nori functoriality edge is contravariant:
+\[
+ (\mathbf G_{m,K},\{1,\alpha(r)\},1)\longrightarrow
+ (U_K,\{0,r\},1).
+\]
+Over $\mathbb Q$, the same integral is a $1$-period of
+$(\mathbf P^1\setminus V(z^2+1),\{0,r\},1)$.
+\end{proposition}
+
+\begin{proof}
+Solving the fractional-linear equation proves the inverse.  The deleted
+points map to $0$ and $\infty$, while $0\mapsto1$ and
+$r\mapsto\alpha(r)$.  Logarithmic differentiation proves the differential
+identity.  The Nori edge direction is exactly the contravariant
+functoriality direction in Definition~9.1.1 of
+\cite{HuberMullerStach2025}.  The rational form $dz/(1+z^2)$ is regular away
+from $V(z^2+1)$.  At infinity the coordinate $t=1/z$ gives
+\[
+ \frac{dz}{1+z^2}=-\frac{dt}{1+t^2},
+\]
+so it is regular there as well.  Hence the rational relative curve pair
+supplies the period.
+\end{proof}
+
+The raw curve at lines 11515--11518 deletes infinity unnecessarily.  Under
+$\kappa$, deleting infinity also deletes $-1$ from $\mathbf G_m$, so it is
+not the full pair isomorphism printed above.
+
+The raw assertion at lines 11574--11588 of a path-indexed Nori diagram is
+not constructed.  It omits the degree $i$, switches the attached Nori
+volume's convention $(k,\mathbb Q)$-Vect to $(\mathbb Q,k)$-Vect, and gives
+neither maps of pairs nor nested triples.  Concatenating singular paths gives
+a relation among homology classes, not a map of ambient algebraic pairs.
+
+There is nevertheless an exact multiplication map.  For composable $p,q$,
+\[
+ \chi_{q\circ p}=\chi_q\chi_p,\qquad
+ \alpha_{q\circ p}=\alpha_q\alpha_p.
+\]
+Put
+\[
+ N_{p,q}=[\mathbb Z\to\mathbf G_m^2],\qquad
+ n\mapsto(\alpha_p^n,\alpha_q^n).
+\]
+Then
+\[
+ M_{\mathrm{ar}}
+ \xrightarrow{(\mathrm{id},(\chi_p,\chi_q))}N_{p,q}
+ \xrightarrow{(\mathrm{id},m)}K(\alpha_p\alpha_q),\qquad
+ m(z_1,z_2)=z_1z_2,
+\]
+is a pair of commutative $1$-motive squares.  The map of pairs
+\[
+ m:(\mathbf G_m^2,\{(1,1),(\alpha_p,\alpha_q)\})
+ \to(\mathbf G_m,\{1,\alpha_p\alpha_q\})
+\]
+gives the genuine contravariant Nori edge
+\[
+ (\mathbf G_m,\{1,\alpha_p\alpha_q\},1)
+ \xrightarrow{m^*}
+ (\mathbf G_m^2,\{(1,1),(\alpha_p,\alpha_q)\},1),
+\]
+and
+\[
+ m^*\frac{dz}{z}=\operatorname{pr}_1^*\frac{dz}{z}
+ +\operatorname{pr}_2^*\frac{dz}{z}
+\]
+proves period additivity.  This is the exact replacement for the missing
+``concatenation arrow.''
+
+Finally, for $r>0$,
+\[
+ \operatorname{Im}\frac{1+ir}{1-ir}=\frac{2r}{1+r^2}>0,
+\]
+whereas $2^{A(p)}3^{-\ell(p)}$ is positive rational.  The two marked Kummer
+points are therefore unequal; no direct edge between those literal pairs is
+obtained by identifying them.
+
+\subsection{Status of the remaining assertions}
+
+The status of the raw interval is now exact:
+\begin{itemize}
+\item the bidegree, torus action, finite residue maps, full-shift pressure,
+  logarithmic formulas, and arctangent integrals survive at the proved scopes
+  stated here and in the preceding sections;
+\item the discrete arithmetic groupoid, the $3$-adic germ groupoid, the
+  faithful functor $\Xi$, the torus coordinate isomorphism, the Kummer
+  squares, and the Cayley and multiplication maps are separately authored
+  repairs proved in this edition;
+\item the printed $\ell^2(\mathcal O)$ isometry and exact path-algebra
+  recovery are disproved by $g_1(1)=2$;
+\item the unnamed crossed-product equality, prefix endomorphism, equilibrium
+  classification, cyclic-homology chain, motivic coaction, absolute-arithmetic
+  interpretation, and local-factor package are not constructed by the raw
+  formulas and are not admitted here.
+\end{itemize}
+
+\begin{nonclaim}
+The exact maps above do not prove amenability, equality of full and reduced
+groupoid completions, existence or classification of equilibrium states, a
+universal path-indexed Nori category, a motivic Galois action on the path
+algebra, or a Collatz endpoint theorem.  These are precise nonclaims about
+this audited interval, not assertions that no such mathematics can be
+constructed elsewhere.
+\end{nonclaim}

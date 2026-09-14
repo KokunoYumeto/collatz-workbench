@@ -1,0 +1,162 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(main.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-03-20>
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo))
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.st
+y (C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty)
+ (C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-pd
+ftex.def)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.cf
+g))
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty))
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)
+) (C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty))
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty))
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty)
+) (C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.st
+y (C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty)
+)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty)
+ (C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty))
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.st
+y)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefin
+ekeys.sty)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.
+sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmd
+s.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.
+sty)))
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty)
+
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\getti
+tlestring.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.st
+y)))
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.
+sty)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcal
+c.sty)))
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfi
+lecheck.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\unique
+counter.sty)))
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
+ftex.def)
+(C:\Users\LOCAL_USER\Documents\Erdos Strauss and related\collatz_reconstruction\pre
+prints\tao_clock_audit\output\pdf\tao_clock_audit.aux)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.
+cfg)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.de
+f
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
+kii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)))
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
+base.sty
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.
+cfg)))
+(C:\Users\LOCAL_USER\Documents\Erdos Strauss and related\collatz_reconstruction\pre
+prints\tao_clock_audit\output\pdf\tao_clock_audit.out)
+(C:\Users\LOCAL_USER\Documents\Erdos Strauss and related\collatz_reconstruction\pre
+prints\tao_clock_audit\output\pdf\tao_clock_audit.out)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd)
+(C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg)
+[1{C:/Users/LOCAL_USER/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/F
+loris/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Flor
+is/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+(sections/clocks.tex [2{C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/enc
+/dvips/lm/lm-mathsy.enc}{C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/en
+c/dvips/lm/lm-mathit.enc}{C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/e
+nc/dvips/lm/lm-mathex.enc}] [3]) (sections/transport.tex [4] [5])
+(sections/consequences.tex [6]
+
+LaTeX Warning: Reference `eq:all-threshold-failure' on page 7 undefined on inpu
+t line 123.
+
+[7] [8] [9]) (sections/repairs.tex [10] [11] [12]) (sections/versions.tex
+[13] [14] (C:\Users\LOCAL_USER\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+)) (bibliography.tex [15]) [16]
+(C:\Users\LOCAL_USER\Documents\Erdos Strauss and related\collatz_reconstruction\pre
+prints\tao_clock_audit\output\pdf\tao_clock_audit.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `tao_clock_audit.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )<C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.p
+fb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.
+pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.
+pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10
+.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi1
+0.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi
+6.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi
+8.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr1
+0.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr1
+2.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr1
+7.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6
+.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.
+pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10
+.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy1
+0.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy
+6.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy
+8.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt
+10.pfb><C:/Users/LOCAL_USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb>
+Output written on "C:\Users\LOCAL_USER\Documents\Erdos Strauss and related\collatz_
+reconstruction\preprints\tao_clock_audit\output\pdf\tao_clock_audit.pdf" (16 pa
+ges, 462787 bytes).
+Transcript written on "C:\Users\LOCAL_USER\Documents\Erdos Strauss and related\coll
+atz_reconstruction\preprints\tao_clock_audit\output\pdf\tao_clock_audit.log".

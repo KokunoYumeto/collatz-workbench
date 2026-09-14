@@ -1,0 +1,1682 @@
+\subsection{Crandall's complete accelerated programme}
+\label{subsec:Crandall-complete-audit}
+
+This subsection reconstructs all twelve printed pages of Crandall's 1978
+article from the published witness \cite[pp.~1281--1292]{Crandall1978}.  The
+source uses only the accelerated odd map \eqref{eq:crandall-C}.  Its
+trajectory is the indexed sequence
+\[
+ \mathcal T_m=\bigl(C_{\mathrm{Cr}}^j(m)\bigr)_{j\geq1},
+\]
+stopped after the least index $j$ for which $C_{\mathrm{Cr}}^j(m)=1$, if
+such an index exists, and left infinite otherwise.  Its height is that least
+index, or $\infty$ when there is none.  Thus the braces used in the source's
+display denote an ordered sequence, not its underlying set; repeated values
+in a nonterminating periodic trajectory do not make its height finite.  In
+particular, the source table has $\mathcal T_1=(1)$ and $h(1)=1$; this is not
+the zero-step hitting-time convention.
+
+For a segment $x_i=C_{\mathrm{Cr}}^i(x_0)$, put
+\begin{equation}
+\label{eq:Crandall-cumulative-time}
+ e_i=\vtwo(3x_i+1),
+ \qquad
+ A_0=0,
+ \qquad
+ A_j=\sum_{i=0}^{j-1}e_i.
+\end{equation}
+Repeated use of Proposition~\ref{prop:first-return-clocks} gives
+\begin{equation}
+\label{eq:Crandall-three-clocks}
+ C_{\mathrm{Cr}}^j(x_0)=T^{A_j}(x_0)=U^{A_j+j}(x_0).
+\end{equation}
+Thus every height, trajectory position, and period in Crandall's paper is
+accelerated time $j$.  Neither $A_j$ nor $A_j+j$ may be substituted for it.
+
+\subsubsection{Large finite excursions and the random-walk nonclaim}
+
+\begin{proposition}[Crandall, Theorem 2.2]
+\label{prop:Crandall-excursions}
+For $k\geq2$, let $m_k=2^k-1$.  Then
+\begin{equation}
+\label{eq:Crandall-excursion-orbit}
+ C_{\mathrm{Cr}}^j(m_k)=3^j2^{k-j}-1
+ \qquad(0\leq j<k),
+\end{equation}
+and hence
+\begin{equation}
+\label{eq:Crandall-excursion-ratio}
+ \frac{\sup\mathcal T_{m_k}}{m_k}>
+ \left(\frac32\right)^{k-1}.
+\end{equation}
+Consequently the family of ratios
+\[
+ \left\{\frac{\sup\mathcal T_m}{m}:m\in\Opos\right\}
+\]
+is unbounded.  For the ratios with denominator $m^\alpha$, this construction
+proves unboundedness only for $\alpha<\log_2 3$.
+\end{proposition}
+
+\begin{proof}
+Equation~\eqref{eq:Crandall-excursion-orbit} is immediate at $j=0$.  If it
+holds with $j<k-1$, then
+\[
+ 3(3^j2^{k-j}-1)+1
+ =2(3^{j+1}2^{k-j-1}-1),
+\]
+whose second factor is odd; the next accelerated exponent is therefore one.
+At $j=k-1$, the trajectory contains $2\cdot3^{k-1}-1$.  Direct
+cross-multiplication gives
+\[
+ \frac{2\cdot3^{k-1}-1}{2^k-1}>
+ \frac{3^{k-1}}{2^{k-1}}
+\]
+because $3^{k-1}>2^{k-1}$.  This proves the stated bound.  Dividing the same
+member by $m_k^\alpha$ yields an exponential factor
+$3^{k-1}/2^{\alpha k}$, which this construction forces upward exactly when
+$\alpha<\log_2 3$ \cite[pp.~1282--1283, Thm.~2.2 and following paragraph]
+{Crandall1978}.
+\end{proof}
+
+Section~3 assigns the heuristic probabilities
+$\Pr(e(m)=a)=2^{-a}$ for $a\geq1$.  Its model logarithmic drift is
+\begin{equation}
+\label{eq:Crandall-heuristic-drift}
+ \sum_{a\geq1}2^{-a}\log(3/2^a)=-\log(4/3).
+\end{equation}
+It then proposes the individual estimate
+$h(m)\sim\log m/\log(4/3)$.  For the source average
+\begin{equation}
+\label{eq:Crandall-average-height}
+ H(x)=\frac2x\sum_{\substack{m\leq x\\m\in\Opos}}h(m),
+\end{equation}
+Conjecture~3.1 is
+\begin{equation}
+\label{eq:Crandall-average-conjecture}
+ H(x)\sim\frac{2\log x}{\log(16/9)}.
+\end{equation}
+
+\begin{nonclaim}
+\label{nonclaim:Crandall-random-walk}
+Equations \eqref{eq:Crandall-heuristic-drift}--
+\eqref{eq:Crandall-average-conjecture} are explicitly heuristic or
+conjectural.  They prove neither termination nor unboundedness.  The source
+also reports Everett's almost-everywhere descent theorem, but does not prove
+it.  Everett's primary proof and the exact variable-clock transfer are now
+reconstructed in Theorem~\ref{thm:Everett-density-one-descent} and
+Proposition~\ref{prop:Everett-Crandall-crosswalk}; neither follows from the
+heuristic drift displayed here.  The sentence after Conjecture~3.1 calls it
+``(3.1)'', duplicating the number of the individual-height heuristic
+\cite[pp.~1282--1284]{Crandall1978}.
+\end{nonclaim}
+
+\subsubsection{Backward coordinates and the exact finite-height address}
+
+Crandall defines, for $a\in\Z_{>0}$ and $n\in\Q$,
+\begin{equation}
+\label{eq:Crandall-backward-branch}
+ B_a(n)=\frac{2^a n-1}{3},
+ \qquad
+ B_{a_j\cdots a_1}=B_{a_j}\circ\cdots\circ B_{a_1}.
+\end{equation}
+The subscript order is backward: when all displayed values are integral,
+$C_{\mathrm{Cr}}$ removes the leftmost applied branch $B_{a_j}$.
+
+For a natural-order address $\mathbf a=(a_1,\ldots,a_j)$, define
+\begin{equation}
+\label{eq:Crandall-address-recursion}
+ n_0=1,
+ \qquad
+ n_i=B_{a_i}(n_{i-1})\quad(1\leq i\leq j).
+\end{equation}
+Let $G^\sharp$ be the set of such finite addresses satisfying
+\begin{align}
+ a_1&>2,
+ \label{eq:Crandall-address-first-gate}\\
+ 2^{a_i}n_{i-1}&\equiv1\pmod3
+ &&(1\leq i\leq j),
+ \label{eq:Crandall-address-integrality-gate}\\
+ 2^{a_i}n_{i-1}&\not\equiv1\pmod9
+ &&(1\leq i<j).
+ \label{eq:Crandall-address-continuation-gate}
+\end{align}
+
+\begin{theorem}[Crandall's finite-height address theorem, repaired]
+\label{thm:Crandall-address-bijection}
+Let
+\[
+ \mathcal M=\{m\in\Opos:m>1,\ h(m)<\infty\}.
+\]
+The map
+\begin{equation}
+\label{eq:Crandall-address-evaluation}
+ \operatorname{ev}:G^\sharp\longrightarrow\mathcal M,
+ \qquad
+ (a_1,\ldots,a_j)\longmapsto B_{a_j\cdots a_1}(1)
+\end{equation}
+is a bijection.  Its inverse sends $m\in\mathcal M$ to the length-$h(m)$
+address
+\begin{equation}
+\label{eq:Crandall-address-inverse}
+ a_i=e(C_{\mathrm{Cr}}^{h(m)-i}(m))
+ \qquad(1\leq i\leq h(m)).
+\end{equation}
+The exact trajectory of $n_j=\operatorname{ev}(\mathbf a)$ is
+\[
+ n_j\longmapsto n_{j-1}\longmapsto\cdots\longmapsto n_1
+ \longmapsto1,
+\]
+so its height is exactly $j$.
+\end{theorem}
+
+\begin{proof}
+Suppose first that \eqref{eq:Crandall-address-integrality-gate} holds through
+index $i$.  Then $n_i=(2^{a_i}n_{i-1}-1)/3$ is integral.  Since the numerator
+is odd and the denominator is odd, $n_i$ is odd.  Moreover
+\[
+ n_i\equiv0\pmod3
+ \quad\Longleftrightarrow\quad
+ 2^{a_i}n_{i-1}\equiv1\pmod9.
+\]
+Thus \eqref{eq:Crandall-address-continuation-gate} says exactly that every
+nonterminal $n_i$ is prime to $3$, which is necessary for another inverse
+branch to be integral.  From
+$3n_i+1=2^{a_i}n_{i-1}$ and oddness of $n_{i-1}$, one has
+$\vtwo(3n_i+1)=a_i$ and hence $C_{\mathrm{Cr}}(n_i)=n_{i-1}$.  Finally,
+$a_1>2$ ensures $n_1\ne1$, so the first occurrence of $1$ is terminal and
+the height is $j$.
+
+Conversely, a finite trajectory from $m>1$ supplies the valuations in
+\eqref{eq:Crandall-address-inverse}.  Reversing its branch equations gives
+\eqref{eq:Crandall-address-recursion}.  Every nonterminal orbit value must be
+prime to $3$: if $3\mid n_i$, then no equation
+$3u+1=2^a n_i$ is possible modulo $3$.  Hence all three gates hold.  The
+determinism of $C_{\mathrm{Cr}}$ recovers every $a_i$ uniquely, so evaluation
+and \eqref{eq:Crandall-address-inverse} are literal two-sided inverses.  This
+is the corrected content of Lemmas~4.1--4.3 and Theorem~4.1
+\cite[pp.~1284--1285]{Crandall1978}.
+\end{proof}
+
+\begin{sourceissue}[two finite-address endpoint defects]
+\label{sourceissue:Crandall-address-endpoints}
+The printed definition of $G$ imposes a non-$1\pmod9$ condition on $a_1$
+and a terminal mod-$3$ condition on $a_j$.  At length $j=1$, both apply to
+the same letter.  It thereby excludes the valid height-one example
+\[
+ B_6(1)=21,
+ \qquad C_{\mathrm{Cr}}(21)=1,
+ \qquad 2^6\equiv1\pmod9.
+\]
+The mod-$9$ gate belongs only to nonterminal indices, as in
+\eqref{eq:Crandall-address-continuation-gate}.  Independently, the printed
+Lemma~4.3 includes ``an integer of height $j$'' while $a_1>2$ excludes
+$B_2(1)=1$; the source table nevertheless has $h(1)=1$.  Restricting the
+lemma to the $m>1$ set used by Theorem~4.1 repairs this endpoint.  Likewise,
+inside $\mathcal M$ the height-one family $(4^s-1)/3$ has $s\geq2$, not
+merely $s\geq1$ \cite[pp.~1282, 1284--1285]{Crandall1978}.
+\end{sourceissue}
+
+The address theorem is genuinely a bijection, not a merely suggestive
+parameterization: its domain, codomain, evaluation, inverse, and exact clock
+are all displayed.  It is also a finite-orbit theorem.  It provides no
+infinite address space and no conclusion about nonterminating positive
+orbits.
+
+\subsubsection{Fixed-height and total termination counts}
+
+Let
+\[
+ \pi_h(x)=\#\{m\in\mathcal M:h(m)=h,\ m\leq x\}.
+\]
+The elementary size estimate is
+\begin{equation}
+\label{eq:Crandall-backward-size}
+ B_{a_j\cdots a_1}(1)
+ <\frac{2^{a_1+\cdots+a_j}}{3^j}.
+\end{equation}
+It follows by induction from \eqref{eq:Crandall-backward-branch}, retaining
+the discarded negative translation rather than replacing the branch by an
+equality.
+
+\begin{sourceissue}[domain of the address-counting lemma]
+\label{sourceissue:Crandall-lemma52-domain}
+Printed Lemma~5.2 says that for every real $z>0$, the number of length-$j$
+addresses in $G$ with coordinate sum at most $z$ is at least
+\begin{equation}
+\label{eq:Crandall-address-count}
+ \left(2\left\lfloor\frac{z-2}{6j}\right\rfloor\right)^j.
+\end{equation}
+At $z=1,j=2$, the right side is $4$, while no two positive coordinates have
+sum at most $1$.  The proof's blocks of six require a nonnegative number of
+blocks.  The statement is correct at the scope used later after requiring
+$z\geq2$, or globally after replacing the floor by its nonnegative part.
+\end{sourceissue}
+
+\begin{theorem}[Crandall, fixed accelerated height]
+\label{thm:Crandall-fixed-height-count}
+There are real constants $r,x_0>0$, independent of $h$, such that for every
+$h\in\Z_{>0}$,
+\begin{equation}
+\label{eq:Crandall-fixed-height-hypothesis}
+ x>\max\{x_0,2^{h/r}\}
+\end{equation}
+implies
+\begin{equation}
+\label{eq:Crandall-fixed-height-bound}
+ \pi_h(x)>\frac{(\log_2(x^r))^h}{h!}.
+\end{equation}
+In particular, infinitely many positive odd integers have each prescribed
+positive accelerated height $h$.
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:Crandall-address-bijection},
+\eqref{eq:Crandall-backward-size}, and the repaired form of
+\eqref{eq:Crandall-address-count} give the source's explicit preliminary
+bound
+\[
+ \pi_h(x)\geq
+ \left(\frac{\log_2(3^h x/4)}{3h}-2\right)^h
+\]
+once the displayed base is positive.  Choose $x_0$ so that $x/4>x^{1/2}$
+for $x>x_0$.  Choose $0<r<1$ with
+\begin{equation}
+\label{eq:Crandall-r-choice}
+ r\log_2(3/64)+\frac12>3\mathrm e r>0.
+\end{equation}
+If also $x>2^{h/r}$, then $h<r\log_2x$.  Substituting this strict inequality
+in the preliminary bound and using $h!\mathrm e^h>h^h$ yields
+\eqref{eq:Crandall-fixed-height-bound}.  This follows the source proof while
+making its strict threshold and the repaired Lemma~5.2 domain explicit
+\cite[p.~1286, Thm.~5.1]{Crandall1978}.
+\end{proof}
+
+Let
+\begin{equation}
+\label{eq:Crandall-pi-total}
+ \pi(x)=\#\{m\in\mathcal M:m\leq x\}
+       =\sum_{h\geq1}\pi_h(x).
+\end{equation}
+
+\paragraph{The exact handbook route.}
+Crandall's remark after Lemma~6.1 says only that ``various formulas''
+pertaining to the lemma occur in reference~4; it gives no handbook section,
+page, or formula number \cite[p.~1287]{Crandall1978}.  The relevant formulas
+can nevertheless be identified exactly.  Abramowitz--Stegun use $P(z)$ for
+the standard normal lower tail, but also use $P(\chi^2\mid\nu)$ and
+$Q(\chi^2\mid\nu)=1-P(\chi^2\mid\nu)$ for the lower and upper chi-square
+probabilities.  Their formulas 26.2.2--26.2.6 give $P(0)=Q(0)=1/2$; formula
+26.2.29 relates this $P$ to $\operatorname{erf}$; formula 26.4.11 gives the
+large-$\nu$ normal coordinate
+\[
+ \frac{\chi^2-\nu}{\sqrt{2\nu}};
+\]
+and formula 26.4.21 gives the exact finite Poisson sum below
+\cite[printed pp.~931, 934, 940--941]{AbramowitzStegun1964}.  These are
+identified relevant formulas, not locators supplied by Crandall.
+
+\begin{proposition}[exact Poisson--gamma--chi-square coordinate]
+\label{prop:AS-Poisson-gamma-morphism}
+For $n\in\Nzero$ and $t\geq0$, set
+\begin{equation}
+\label{eq:AS-Poisson-gamma-morphism}
+ F_n(t)=e^{-t}\sum_{j=0}^{n}\frac{t^j}{j!}.
+\end{equation}
+Then, with $\Gamma(a,t)$ denoting the upper incomplete gamma function,
+\begin{equation}
+\label{eq:AS-Poisson-gamma-identities}
+ F_n(t)=\frac{\Gamma(n+1,t)}{\Gamma(n+1)}
+       =Q(2t\mid2n+2).
+\end{equation}
+For fixed $n$,
+\begin{equation}
+\label{eq:AS-Poisson-gamma-derivative}
+ F_n'(t)=-e^{-t}\frac{t^n}{n!}\qquad(t>0),
+\end{equation}
+so $F_n$ is a continuous strictly decreasing bijection
+$[0,\infty)\to(0,1]$.  Its inverse is the unique upper-tail quantile on this
+fixed-$n$ fibre; no elementary inverse formula is asserted.
+\end{proposition}
+
+\begin{proof}
+Integration by parts gives
+\[
+ \Gamma(n+1,t)=n!e^{-t}\sum_{j=0}^{n}\frac{t^j}{j!}
+\]
+by induction from $\Gamma(1,t)=e^{-t}$, proving the first equality in
+\eqref{eq:AS-Poisson-gamma-identities}.  In Abramowitz--Stegun 26.4.21 take
+$c=n+1$, $\nu=2c$, $m=t$, and $\chi^2=2t$ to obtain the second equality
+literally \cite[printed p.~941, Eq.~26.4.21]{AbramowitzStegun1964}.
+Differentiating the finite sum makes every term cancel except the displayed
+last term in \eqref{eq:AS-Poisson-gamma-derivative}.  Finally $F_n(0)=1$,
+while $F_n(t)\to0$ because an exponential dominates the fixed polynomial;
+strict monotonicity supplies the stated fibres and inverse.
+\end{proof}
+
+\begin{lemma}[completion of Crandall's Poisson lemma]
+\label{lem:Crandall-Poisson-half-mass}
+Let $k(t)$ be integer-valued and suppose
+\begin{equation}
+\label{eq:Crandall-Poisson-moving-cutoff}
+ \frac{k(t)-t}{\sqrt t}\longrightarrow0.
+\end{equation}
+Then
+\begin{equation}
+\label{eq:Crandall-Poisson-half-mass}
+ \lim_{t\to\infty}e^{-t}
+ \sum_{u=0}^{k(t)}
+ \frac{t^u}{u!}=\frac12.
+\end{equation}
+Consequently the same limit holds after deleting $u=0$ for each of the
+following three exact upper cutoffs:
+\begin{equation}
+\label{eq:Crandall-Poisson-three-cutoffs}
+ k(t)=\lfloor t\rfloor-1,
+ \qquad
+ k(t)=\lfloor t\rfloor,
+ \qquad
+ k(t)=\lceil t\rceil-1.
+\end{equation}
+The first is Crandall's printed strict cutoff
+$u<\lfloor t\rfloor$; the third is the maximal integer cutoff uniformly
+authorized by the strict height hypothesis in Theorem~5.1.
+\end{lemma}
+
+\begin{proof}
+The handbook route to the source case is now literal.  Put
+$n=\lfloor t\rfloor$, $\nu=2n$, and $\chi^2=2t$ in
+Proposition~\ref{prop:AS-Poisson-gamma-morphism}.  Formula 26.4.21 identifies
+the sum $u=0,\ldots,n-1$ with $Q(2t\mid2n)$, while the normal coordinate in
+26.4.11 is
+\[
+ \frac{2t-2n}{\sqrt{4n}}=\frac{t-n}{\sqrt n}\longrightarrow0.
+\]
+Together with $P(0)=Q(0)=1/2$, this is the exact classical formula path to
+Crandall's limit.  Formula 26.4.11 prints neither an error term nor a proof on
+that page, however, so it is not used as an unspoken uniformity assertion.
+The following argument controls all three real-$t$ endpoints directly.
+
+Let $X_t$ have the Poisson distribution with mean $t$.  The characteristic
+function of $Y_t=(X_t-t)/\sqrt t$ is
+\[
+ \mathbf E(e^{isY_t})
+ =\exp\!\left(t\left(e^{is/\sqrt t}-1-is/\sqrt t\right)\right).
+\]
+The Taylor remainder is $O_s(t^{-1/2})$, so this converges to
+$e^{-s^2/2}$.  The L\'evy continuity theorem gives
+$Y_t\Rightarrow N(0,1)$.  Write $a_t=(k(t)-t)/\sqrt t$.  For every fixed
+$\delta>0$, condition \eqref{eq:Crandall-Poisson-moving-cutoff} gives
+\[
+ \Pr(Y_t\leq-\delta)
+ \leq \Pr(Y_t\leq a_t)
+ \leq \Pr(Y_t\leq\delta)
+\]
+for all sufficiently large $t$.  Weak convergence at the two fixed continuity
+points gives lower and upper limits between $\Phi(-\delta)$ and
+$\Phi(\delta)$; letting $\delta\downarrow0$ proves
+\eqref{eq:Crandall-Poisson-half-mass}.  Every cutoff in
+\eqref{eq:Crandall-Poisson-three-cutoffs} differs from $t$ by at most a fixed
+constant.  Removing the $u=0$ term changes the probability by exactly
+$e^{-t}\to0$.
+
+The high-resolution source page prints
+$u<\lfloor t\rfloor$, not $u\leq\lfloor t\rfloor$.  Crandall points to
+error-function asymptotics but prints no proof
+\cite[p.~1287, Lem.~6.1]{Crandall1978}.  The argument above supplies the
+all-real analytic completion while explicitly retaining its invocation of
+L\'evy's continuity theorem.
+\end{proof}
+
+\begin{theorem}[Crandall's power-law theorem, with an explicit witness]
+\label{thm:Crandall-power-law-count}
+There are $c>0$ and $X_0>0$ such that
+\begin{equation}
+\label{eq:Crandall-power-law-count}
+ \pi(x)>x^c\qquad(x>X_0).
+\end{equation}
+The source leaves $c$ unspecified.  Its proof, with the endpoint repaired,
+permits the concrete edition choice $c=1/100$.
+\end{theorem}
+
+\begin{proof}
+\phantomsection\label{sourceissue:Crandall-theorem61-endpoint}
+For $x>x_0$, Theorem~\ref{thm:Crandall-fixed-height-count} may be summed only
+over $h<r\log_2x$.  The printed proof sums through
+$\lfloor r\log_2x\rfloor$, which includes one unauthorized equality term
+when $r\log_2x$ is integral.  Summing instead through
+$\lceil r\log_2x\rceil-1$ and applying
+Lemma~\ref{lem:Crandall-Poisson-half-mass} gives, for every fixed
+$d\in(0,1/2)$ and all sufficiently large $x$,
+\begin{equation}
+\label{eq:Crandall-power-intermediate}
+ \pi(x)>(1/2-d)e^{r\log_2x}
+       =(1/2-d)x^{r/\log2}.
+\end{equation}
+This proves the source theorem for every $c<r/\log2$ after increasing the
+threshold.
+
+For an exact explicit witness, take $r=1/100$.  Since
+$3/64>2^{-5}$ and $\mathrm e<3$, the left side of
+\eqref{eq:Crandall-r-choice} is greater than $45/100$, while its middle term
+$3\mathrm e/100$ is less than $9/100$.  Thus this $r$ is admissible.  Since
+$\log2<1$, one has $r/\log2>1/100$; the fixed positive factor in
+\eqref{eq:Crandall-power-intermediate} is eventually absorbed by the excess
+power.  Hence $c=1/100$ works.  This is an edition-supplied sharpening of the
+source's existential conclusion, not a number printed by Crandall.
+\end{proof}
+
+\begin{nonclaim}
+\label{nonclaim:Crandall-no-positive-density}
+Theorem~\ref{thm:Crandall-power-law-count} is a lower bound of order $x^c$
+for some $c<1$.  It is compatible with natural density zero and is not a
+positive-density theorem.  It proves neither $\pi(x)\gg x$ nor convergence
+for almost every odd starting value.  The frozen route text that calls this
+positive density is routing metadata, not mathematical evidence.
+\end{nonclaim}
+
+\subsubsection{Membership coordinates and the return obstruction}
+
+For a backward word $m=B_{b_k\cdots b_1}(n)$, Crandall uses the reverse
+cumulative sums
+\begin{equation}
+\label{eq:Crandall-source-A-coordinates}
+ A_0=0,
+ \qquad
+ A_i=\sum_{j=k-i+1}^{k}b_j\quad(1\leq i\leq k).
+\end{equation}
+Expanding the affine composition gives
+\begin{equation}
+\label{eq:Crandall-membership-identity}
+ 2^{A_k}n-3^km
+ =\sum_{j=0}^{k-1}2^{A_j}3^{k-1-j}.
+\end{equation}
+
+\begin{theorem}[Crandall, exact trajectory-membership coordinates]
+\label{thm:Crandall-membership}
+For $m,n\in\Opos$, one has $n\in\mathcal T_m$ if and only if there are an
+integer $k\geq1$ and integers
+\[
+ 0=A_0<A_1<\cdots<A_k
+\]
+satisfying \eqref{eq:Crandall-membership-identity}.  If such data exist, then
+$n=1$ or $n$ is the $k$-th displayed member of $\mathcal T_m$.
+\end{theorem}
+
+\begin{proof}
+If $n=C_{\mathrm{Cr}}^k(m)$, reverse its $k$ branch equations and take
+$b_i=e(C_{\mathrm{Cr}}^{k-i}(m))$; expansion gives
+\eqref{eq:Crandall-membership-identity}.  Conversely, define
+\begin{equation}
+\label{eq:Crandall-recovered-differences}
+ d_i=A_{k-i+1}-A_{k-i}\quad(1\leq i\leq k).
+\end{equation}
+The strict increase makes every $d_i$ positive, and solving
+\eqref{eq:Crandall-membership-identity} gives
+$m=B_{d_k\cdots d_1}(n)$.  Crandall's Lemma~4.1 then proves that every
+formal inverse branch is integral, odd, and removed by the actual accelerated
+map.  Hence $C_{\mathrm{Cr}}^k(m)=n$, with $n=1$ treated as the terminating
+case \cite[pp.~1287--1288, Eq.~(7.2), Thm.~7.1]{Crandall1978}.
+\end{proof}
+
+\begin{sourceissue}[Theorem 7.1 difference index]
+\label{sourceissue:Crandall-theorem71-index}
+The printed converse assigns
+$d_i=A_{k-i+1}-A_{k-1}$.  For $i=2$ this can give zero and it does not recover
+successive coordinate gaps.  Equation~\eqref{eq:Crandall-recovered-differences}
+is the forced correction.  It is exactly the difference needed to recover
+$A_i$ from the $d$-word and makes the printed conclusion
+$m=B_{d_k\cdots d_1}(n)$ valid.
+\end{sourceissue}
+
+Taking $n=m$ in \eqref{eq:Crandall-membership-identity} gives precisely
+\eqref{eq:crandall-cycle-identity}.  The forward clause of Crandall's printed
+Corollary~7.1 assumes that the trajectory has period $k$; its converse says
+that the displayed equation produces a return at the $k$-th element.
+Combining that converse with Theorem~\ref{thm:Crandall-membership} yields the
+edition's slightly more general equivalence: the equation with strict
+$A$-coordinates characterizes a return after $k$ accelerated steps.  It does
+not assert that $k$ is the least period.  Positivity of the right side forces
+\begin{equation}
+\label{eq:Crandall-positive-cycle-denominator}
+ 2^{A_k}>3^k.
+\end{equation}
+
+\begin{proposition}[Crandall's explicit Diophantine obstruction]
+\label{prop:Crandall-cycle-obstruction}
+Suppose integers $a,b$ satisfy
+\begin{equation}
+\label{eq:Crandall-obstruction-hypothesis}
+ b>1,
+ \qquad
+ 0<2^a-3^b\mid 2^{a-b}-1.
+\end{equation}
+Put
+\begin{equation}
+\label{eq:Crandall-obstruction-construction}
+ d=\frac{2^{a-b}-1}{2^a-3^b},
+ \qquad
+ m=2^bd-1.
+\end{equation}
+Then $m\in\Opos$, $m>1$, and $C_{\mathrm{Cr}}^b(m)=m$.  Therefore the
+Collatz conjecture would be false.  The least period is allowed to divide
+$b$.
+\end{proposition}
+
+\begin{proof}
+The positive divisor relation forces $a>b$, so $d$ is a positive integer and
+$m$ is positive odd.  If $m=1$, then $d=2^{1-b}$ is not an integer because
+$b>1$; hence $m>1$.  Multiplying the definition of $d$ by $2^b$ gives
+\[
+ m(2^a-3^b)=3^b-2^b
+ =\sum_{j=0}^{b-1}2^j3^{b-1-j}.
+\]
+This is the return equation with $k=b$, $A_j=j$ for $0\leq j<b$, and
+$A_b=a$.  The strictness $A_{b-1}<A_b$ follows from $a>b$.  Corollary~
+\ref{cor:crandall-cycle-identity} supplies the genuine return
+\cite[p.~1288]{Crandall1978}.
+\end{proof}
+
+\subsubsection{Pillai's fixed-difference citation and the exact P\'olya route}
+
+Crandall reports two external Diophantine results.  The first says that, for
+each fixed integer $z$, the equation
+\begin{equation}
+\label{eq:Crandall-fixed-difference}
+ 2^x-3^y=z
+\end{equation}
+has only finitely many integer solutions $(x,y)$
+\cite[ref.~9 and p.~1288]{Crandall1978}.  Pillai's cited primary paper has now
+been read in full.  Its Corollary~1 states the corresponding positive-
+exponent, positive-difference conclusion
+\cite[p.~4]{Pillai1931}.  The paper also identifies the qualitative result as
+a special case of P\'olya's earlier fixed-prime gap theorem
+\cite[p.~2]{Pillai1931}.  Using P\'olya's sourced gap theorem yields exactly
+the finiteness required by Crandall and bypasses Pillai's defective
+quantitative derivation.  The proof-dependency audit of P\'olya's explicit
+Thue citations is recorded separately below.
+
+\begin{sourceissue}[Pillai's literal quantitative proof]
+\label{sourceissue:Pillai-degree-gap}
+Pillai quotes Siegel's approximation exponent correctly but calls its
+constant a positive \emph{integer}; Siegel asserts only a positive real
+constant \cite[p.~174]{Siegel1921}.  More seriously, Pillai puts
+$\alpha=(A/B)^{1/r}$ and asserts that $\alpha$ has degree $r$ whenever $A$
+and $B$ are not both perfect $r$th powers \cite[p.~3]{Pillai1931}.  This is
+false: $(4/1)^{1/4}=\sqrt2$ has degree two, and
+$(2/2)^{1/2}=1$ has degree one although neither displayed coefficient is a
+square.  His next comparison bounds $Y/X$ only from above, although the step
+which replaces $Y^{r-1}$ by a constant multiple of $X^{r-1}$ needs a lower
+bound.  Finally, the proof of Theorem~I applies the lemma to every residue
+pair without checking its ``not both powers'' hypothesis; the residue pair
+$h=\ell=0$ with outer coefficients one violates it.  Thus the printed
+derivation is not admitted literally.
+\end{sourceissue}
+
+The defect is repairable on the exact source theorem rather than by changing
+Pillai's conclusion.  For $q\geq1$ write
+\begin{equation}
+\label{eq:Pillai-mq}
+ \mu(q)=\min_{1\leq\lambda\leq q}
+ \left(\frac{q}{\lambda+1}+\lambda\right).
+\end{equation}
+
+\begin{theorem}[Siegel's rational-approximation theorem]
+\label{thm:Siegel-rational-approximation}
+Let $\xi$ be algebraic of degree $q\geq2$ and let $\epsilon>0$.
+There is a positive real constant $c=c(\xi,\epsilon)$ such that, for all
+rational integers $u,v$ with $v>0$,
+\[
+ \left|\xi-\frac uv\right|
+ >\frac{c}{v^{\mu(q)+\epsilon}}.
+\]
+The constant is not asserted to be an integer or numerically effective.
+\end{theorem}
+
+\begin{proof}
+This is the denominator form printed on Siegel's p.~174
+\cite[p.~174]{Siegel1921}.  His Hauptsatz is stated in height form on
+printed p.~178 and proved through p.~191; Zus\"atze~1--3 give a uniform
+positive constant and extend the conclusion to nonintegral algebraic
+$\xi$ \cite[pp.~178, 191]{Siegel1921}.  Although the Hauptsatz minimizes over
+$1\leq s<q$, this is the same minimum as in \eqref{eq:Pillai-mq}: the
+excluded endpoint has value $q+q/(q+1)>q$, whereas the candidate $s=1$ has
+value $q/2+1\leq q$.  If $u/v=p/s$ is reduced, then
+$s\leq v$.  In the error-$<1$ case,
+$H(p/s)=\max\{|p|,s\}\leq\max\{1,|\xi|+1\}s$; the complementary error
+case is absorbed by decreasing the positive constant.  This is the exact
+height-to-denominator map, with no assertion of an effective constant.
+\end{proof}
+
+\begin{lemma}[Monotonicity of Siegel's exponent]
+\label{lem:Siegel-exponent-monotone}
+The sequence $\mu(q)$ is nondecreasing on $\Npos$.
+\end{lemma}
+
+\begin{proof}
+For an old candidate $1\leq\lambda\leq q$, replacing $q$ by $q+1$
+increases $q/(\lambda+1)+\lambda$ by $1/(\lambda+1)$.  The only new
+candidate is $\lambda=q+1$, whose value
+$(q+1)/(q+2)+q+1$ is greater than $q+1$.  But
+$\mu(q)\leq q/2+1\leq q+1$, using the old candidate $\lambda=1$.
+Every candidate for $\mu(q+1)$ is therefore at least $\mu(q)$.
+\end{proof}
+
+\begin{proposition}[Actual-degree repair of Pillai's lemma]
+\label{prop:Pillai-actual-degree-repair}
+Fix $A,B,r\in\Npos$ with $r\geq2$ and fix $\eta>0$.  There is a constant
+$C=C(A,B,r,\eta)>0$ such that, for all $X,Y\in\Npos$ with
+$AX^r>BY^r$,
+\begin{equation}
+\label{eq:Pillai-repaired-power-separation}
+ AX^r-BY^r>CX^{r-\mu(r)-\eta}.
+\end{equation}
+Consequently, for every $\delta>0$ the coefficient-free inequality
+$AX^r-BY^r>X^{r-\mu(r)-\delta}$ holds for all sufficiently large $X$.
+No hypothesis that $A$ and $B$ are not both $r$th powers is required.
+\end{proposition}
+
+\begin{proof}
+Put $\alpha=(A/B)^{1/r}$ and
+$d=[\Q(\alpha):\Q]\leq r$.  The exact factorization is
+\begin{equation}
+\label{eq:Pillai-exact-factorization}
+ AX^r-BY^r
+ =B(\alpha X-Y)
+   \sum_{j=0}^{r-1}(\alpha X)^{r-1-j}Y^j.
+\end{equation}
+If $d\geq2$, Siegel's theorem at the \emph{actual} degree gives a constant
+$c>0$ for which
+\[
+ \left|\alpha-\frac YX\right|>cX^{-\mu(d)-\eta}.
+\]
+The difference is positive, and Lemma~\ref{lem:Siegel-exponent-monotone}
+gives $\mu(d)\leq\mu(r)$.  Hence
+$\alpha X-Y>cX^{1-\mu(r)-\eta}$.  Retaining the positive $j=0$ term in
+the sum in \eqref{eq:Pillai-exact-factorization} gives
+\[
+ AX^r-BY^r
+ >Bc\alpha^{r-1}X^{r-\mu(r)-\eta}.
+\]
+If $d=1$, write $\alpha=P/Q$ in lowest positive terms.  Strict positivity
+excludes $PX=QY$, so $PX-QY\geq1$ and $\alpha X-Y\geq1/Q$.  Since $r\geq2$
+and $Y>0$, the factor sum in \eqref{eq:Pillai-exact-factorization} is strictly
+larger than its $j=0$ term.  Hence
+\[
+ AX^r-BY^r>\frac{B\alpha^{r-1}}QX^{r-1}.
+\]
+Moreover $\mu(r)>1$, because every candidate in \eqref{eq:Pillai-mq} has
+$\lambda\geq1$ and a strictly positive first summand.  The displayed bound
+therefore implies \eqref{eq:Pillai-repaired-power-separation} for $X\geq1$.
+Finally, with $\eta=\delta/2$, the ratio of the established lower bound to
+$X^{r-\mu(r)-\delta}$ is $CX^{\delta/2}$, which exceeds one for
+$X>C^{-2/\delta}$.
+\end{proof}
+
+\begin{theorem}[Repaired quantitative Pillai theorem]
+\label{thm:Pillai-repaired-quantitative}
+Fix $A,B,M,N\in\Npos$ with $M,N>1$ and $\delta>0$, and assume, as Pillai
+does, that $\log M/\log N\notin\Q$.  Then there is an integer
+$x_0=x_0(A,B,M,N,\delta)\geq0$ such that
+\begin{equation}
+\label{eq:Pillai-repaired-theorem-I}
+ AM^x-BN^y>M^{x(1-\delta)}
+\end{equation}
+whenever $x,y\in\Npos$, $x>x_0$, and $AM^x>BN^y$.
+\end{theorem}
+
+\begin{proof}
+Replace $\delta$ by $\delta_0=\min(\delta,1/2)$.  The required large $r$
+exists constructively: for $k=\lceil\sqrt r\rceil$ and
+$\lambda=k-1\geq1$,
+\[
+ \mu(r)\leq\frac r{k}+k-1<2\sqrt r,
+\]
+so $\mu(r)/r<2/\sqrt r$.  Choose, for example, an integer
+$r>(4/\delta_0)^2$, increasing it to at least two if necessary.  Then
+$\mu(r)/r<\delta_0/2$.  Choose $\eta>0$ with
+$\eta/r<\delta_0/4$.  Write uniquely
+\[
+ x=rs+h,\qquad y=rt+\ell,
+ \qquad 0\leq h,\ell<r.
+\]
+For the fixed residue pair $(h,\ell)$, put
+$A_h=AM^h$, $B_\ell=BN^\ell$, $X=M^s$, and $Y=N^t$.
+Proposition~\ref{prop:Pillai-actual-degree-repair} gives
+\[
+ AM^x-BN^y
+ >C_{h,\ell}M^{(x-h)(1-(\mu(r)+\eta)/r)}.
+\]
+Put
+\[
+ C_*=\min_{0\leq h,\ell<r}C_{h,\ell}>0,
+ \qquad
+ \gamma=1-\frac{\mu(r)+\eta}{r},
+ \qquad
+ \varepsilon=\delta_0-\frac{\mu(r)+\eta}{r}>\frac{\delta_0}{4}.
+\]
+Here $\gamma>1-3\delta_0/4>0$.  For every residue pair,
+\[
+ \frac{C_{h,\ell}M^{(x-h)\gamma}}{M^{x(1-\delta_0)}}
+ =C_{h,\ell}M^{x\varepsilon-h\gamma}
+ \geq C_*M^{x\varepsilon-(r-1)\gamma}.
+\]
+The last quantity exceeds one whenever
+\[
+ x>\frac{(r-1)\gamma-\log_M C_*}{\varepsilon},
+\]
+a threshold independent of $y,h,\ell$.  This proves
+$AM^x-BN^y>M^{x(1-\delta_0)}\geq M^{x(1-\delta)}$.
+The preceding proof establishes the same quantified conclusion for all
+$M,N>1$, without the irrational-log hypothesis.  This stronger statement is
+an edition result; Pillai's sourced theorem remains recorded with his
+hypothesis.
+\end{proof}
+
+We now type the independent qualitative route used for Crandall.  For a
+finite ordered tuple $S=(p_1,\ldots,p_r)$ of pairwise distinct primes define
+\[
+ \mathcal A_S
+ =\{p_1^{e_1}\cdots p_r^{e_r}:e_i\in\Nzero\}.
+\]
+
+\begin{proposition}[Prime-exponent coordinate morphism]
+\label{prop:Polya-smooth-coordinate}
+The map
+\[
+ E_S:(\Nzero^r,+)\longrightarrow(\mathcal A_S,\mathord\cdot),
+ \qquad
+ E_S(e_1,\ldots,e_r)=\prod_{i=1}^r p_i^{e_i},
+\]
+is a commutative-monoid isomorphism.  Its inverse is
+$a\mapsto(\nu_{p_1}(a),\ldots,\nu_{p_r}(a))$; every fibre is a singleton.
+Thus the coordinate loses no exponent information while the prime set $S$
+is retained.
+\end{proposition}
+
+\begin{proof}
+Multiplication in $\mathcal A_S$ adds every valuation, so $E_S$ preserves
+the monoid law.  Existence and uniqueness of prime factorization prove both
+surjectivity and the displayed two-sided inverse.
+\end{proof}
+
+\begin{theorem}[Thue's fixed-value theorem at P\'olya's exact scopes]
+\label{thm:Thue-fixed-binary-form}
+Let $c\in\Z\setminus\{0\}$.
+\begin{enumerate}
+\item If $U\in\Z[X,Y]$ is homogeneous and irreducible of degree greater
+than two, then $U(x,y)=c$ has only finitely many solutions in $\Z^2$.
+\item More generally, if a homogeneous integral binary form $F$ has
+infinitely many integer solutions of $F(x,y)=c$, then, up to multiplication
+by a nonzero scalar, $F$ is a power of a linear form or an indefinite
+quadratic form.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Thue's Theorem~IV is printed for positive $x,y$
+\cite[pp.~303--304]{Thue1909}.  On the off-axis domain, the map
+\[
+ (x,y)\longmapsto
+ \bigl(\operatorname{sgn}x,\operatorname{sgn}y,|x|,|y|\bigr)
+\]
+is a bijection
+\[
+ (\Z\setminus\{0\})^2
+ \longrightarrow
+ \{\pm1\}^2\times\Npos^2,
+\]
+with inverse $(\epsilon,\delta,X,Y)\mapsto(\epsilon X,\delta Y)$.
+For each of the four sign pairs, the transformed form
+$U_{\epsilon,\delta}(X,Y)=U(\epsilon X,\delta Y)$ remains integral,
+homogeneous, irreducible, and of the same degree, so Thue's positive-quadrant
+theorem gives a finite set.  If $y=0$, irreducibility in degree greater than
+one forces the coefficient $u_d$ of $X^d$ to be nonzero, and the remaining
+equation is $u_dx^d=c$; the other axis is identical.  This proves the exact
+all-integer extension in part~1.
+
+Part~2 is the exceptional-form formulation quoted by P\'olya
+\cite[pp.~144--145]{Polya1918}.  His locator is Thue II, printed p.~3.  Both
+available primary scans omit printed pp.~2--3, so that page is not represented
+as visually verified.  Thue II printed p.~1 gives the equivalent
+dehomogenized theorem and its degree-one/degree-two power exceptions
+\cite[p.~1]{Thue1908II}.  The manifestation gap, P\'olya's exact quotation,
+and the relation between the two formulations are recorded in
+\path{qa/THUE-1908-1909-F017-binary-form-audit.md}.
+\end{proof}
+
+\begin{proposition}[P\'olya's residue-cell cubic morphism]
+\label{prop:Polya-residue-cell-cubic}
+Let
+\[
+ L_1(n)=an+b,\qquad L_2(n)=cn+d,
+\]
+where $a,b,c,d\in\Z$, $a,c\ne0$, and
+$\Delta=ad-bc\ne0$.  Fix pairwise distinct primes
+$p_1,\ldots,p_t$ and residue vectors
+$\mathbf r,\mathbf s\in\{0,1,2\}^t$.  Let
+$D_{\mathbf r,\mathbf s}$ be the set of integers $n$ for which
+$L_1(n),L_2(n)>0$, both values have prime support in
+$\{p_1,\ldots,p_t\}$, and
+\[
+ \nu_{p_i}(L_1(n))\equiv r_i\pmod3,\qquad
+ \nu_{p_i}(L_2(n))\equiv s_i\pmod3
+ \quad(1\leq i\leq t).
+\]
+Put
+\[
+ R=\prod_{i=1}^t p_i^{r_i},\qquad
+ S_0=\prod_{i=1}^t p_i^{s_i},\qquad
+ G_{\mathbf r,\mathbf s}(X,Y)=aS_0Y^3-cRX^3.
+\]
+Then
+\[
+ \Phi_{\mathbf r,\mathbf s}:D_{\mathbf r,\mathbf s}
+ \longrightarrow
+ \mathcal Z_{\mathbf r,\mathbf s}
+ =\{(X,Y)\in\Npos^2:G_{\mathbf r,\mathbf s}(X,Y)=\Delta\},
+\]
+defined by
+\[
+ X=\prod_{i=1}^t
+ p_i^{(\nu_{p_i}(L_1(n))-r_i)/3},
+ \qquad
+ Y=\prod_{i=1}^t
+ p_i^{(\nu_{p_i}(L_2(n))-s_i)/3},
+\]
+is well defined and injective.  Its inverse on its image is
+\[
+ n=\frac{RX^3-b}{a}=\frac{S_0Y^3-d}{c}.
+\]
+The target $\mathcal Z_{\mathbf r,\mathbf s}$ is finite.
+\end{proposition}
+
+\begin{proof}
+The residue hypotheses make the displayed exponents nonnegative integers and
+give the exact identities
+\[
+ an+b=RX^3,\qquad cn+d=S_0Y^3.
+\]
+Multiplying the second identity by $a$, the first by $c$, and subtracting
+gives
+\[
+ aS_0Y^3-cRX^3=ad-bc=\Delta.
+\]
+The two displayed recovery formulas agree by this equation and recover the
+original $n$, proving injectivity and singleton fibres on the image.
+
+The cubic has
+\[
+ \operatorname{Disc}(G_{\mathbf r,\mathbf s})
+ =-27(aS_0)^2(cR)^2\ne0.
+\]
+It need not be irreducible over $\Q$, so part~1 of
+Theorem~\ref{thm:Thue-fixed-binary-form} cannot be invoked alone.  Suppose
+instead that, over a characteristic-zero field,
+\[
+ G_{\mathbf r,\mathbf s}(X,Y)=\lambda(uX+vY)^3.
+\]
+Its nonzero $X^3$ and $Y^3$ coefficients force
+$\lambda,u,v\ne0$, whereas its zero $X^2Y$ coefficient would give
+$3\lambda u^2v=0$, a contradiction.  It is therefore not a scalar linear
+cube.  A quadratic power cannot have degree three.  Part~2 of
+Theorem~\ref{thm:Thue-fixed-binary-form} now proves finiteness.  If one uses
+P\'olya's positive-right-side phrasing and $\Delta<0$, the exact involution
+\[
+ (G_{\mathbf r,\mathbf s},\Delta,X,Y)
+ \longmapsto
+ (-G_{\mathbf r,\mathbf s},-\Delta,X,Y)
+\]
+preserves the solution set and exceptional-form status.
+\end{proof}
+
+\begin{theorem}[P\'olya's fixed-prime gap theorem]
+\label{thm:Polya-smooth-gaps}
+Let $r\geq2$ and enumerate $\mathcal A_S$ increasingly as
+$a_0<a_1<a_2<\cdots$.  Then
+\begin{equation}
+\label{eq:Polya-smooth-gaps}
+ \lim_{j\to\infty}(a_{j+1}-a_j)=\infty.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+This is the exact statement in P\'olya's Section~4, equations (12)--(14)
+\cite[pp.~147--148]{Polya1918}.  P\'olya proves it equivalent to his Satz~I
+for products of two essentially distinct rational linear factors.  His proof
+of Satz~I reduces finitely supported prime-exponent vectors modulo three,
+fixes a residue vector, and invokes Thue's finiteness theorem for the resulting
+binary cubic \cite[pp.~144--145]{Polya1918}.  Proposition~
+\ref{prop:Polya-residue-cell-cubic} verifies the exact dependency, including
+the reducible-cubic cells not covered by Thue's irreducible-form theorem
+alone.  Thue I, Satz~12, records the same modulo-three proof template
+\cite[pp.~30--31]{Thue1908I}; P\'olya supplies the residue-cell reduction used
+here.  No effective gap threshold is imported.
+\end{proof}
+
+\begin{corollary}[Finite fixed-difference fibres]
+\label{cor:Polya-fixed-difference-fibres}
+For every nonempty finite prime set $S$ and every fixed
+$z\in\Z\setminus\{0\}$, the
+fibre
+\[
+ \Delta_S^{-1}(z)
+ =\{(u,v)\in\mathcal A_S^2:u-v=z\},
+ \qquad \Delta_S(u,v)=u-v,
+\]
+is finite.
+\end{corollary}
+
+\begin{proof}
+If $|S|\geq2$, choose an index after which every adjacent gap in
+\eqref{eq:Polya-smooth-gaps} exceeds $|z|$.  The difference between any two
+distinct later terms is a sum of one or more adjacent positive gaps, hence
+also exceeds $|z|$.  Only pairs with at least one earlier coordinate remain.
+If $a_0,\ldots,a_{J-1}$ are the earlier terms, then choosing one of these
+values and which coordinate of $(u,v)$ it occupies leaves the other
+coordinate uniquely determined by $u-v=z$; hence at most $2J$ pairs remain.
+If
+$S=\{p\}$, use directly $p^{j+1}-p^j=(p-1)p^j\to\infty$.
+\end{proof}
+
+\begin{proposition}[Exact fixed-$z$ consequence of P\'olya's sourced theorem]
+\label{prop:Crandall-fixed-z-finiteness}
+For every $z\in\Z$, equation \eqref{eq:Crandall-fixed-difference} has only
+finitely many solutions $(x,y)\in\Z^2$.
+\end{proposition}
+
+\begin{proof}
+First prove the exponent-domain reduction.  If $x=-a<0$ and $y\geq0$, then
+\[
+ 2^x-3^y=\frac{1-2^a3^y}{2^a}
+\]
+has odd numerator and is not an integer.  If $x\geq0$ and $y=-b<0$, the
+numerator of $(3^b2^x-1)/3^b$ is $-1$ modulo $3$.  If both exponents are
+negative, then
+\[
+ 2^{-a}-3^{-b}=\frac{3^b-2^a}{2^a3^b}
+\]
+has absolute value strictly between zero and one: its numerator is nonzero
+by unique factorization and has absolute value smaller than the denominator.
+Thus an integer-valued difference forces $x,y\in\Nzero$.
+
+Define
+\[
+ I:\Nzero^2\longrightarrow\mathcal A_{\{2,3\}}^2,
+ \qquad I(x,y)=(2^x,3^y).
+\]
+The valuation map
+\[
+ V(u,v)=(\nu_2(u),\nu_3(v))
+\]
+satisfies $V\circ I=\operatorname{id}_{\Nzero^2}$, so $I$ is injective.  For
+$z\neq0$,
+the solution set is exactly
+\[
+ I^{-1}\!\left(\Delta_{\{2,3\}}^{-1}(z)\right).
+\]
+Corollary~\ref{cor:Polya-fixed-difference-fibres} makes the inner fibre
+finite, and injectivity makes its preimage finite.  For $z=0$, unique
+factorization gives only
+$2^x=3^y=1$, hence $(x,y)=(0,0)$.  This proves Crandall's literal integer-
+exponent statement; it is not merely the positive-$z$ statement printed in
+Pillai's Corollary~1.
+\end{proof}
+
+\subsubsection{Herschfeld's eventual-uniqueness theorem}
+
+Crandall's reference~10 spells the author's surname ``Herschefeld.''  The
+primary paper's title and byline give \emph{Aaron Herschfeld}
+\cite[pp.~231--234]{Herschfeld1936}.  Crandall reports at most one integer
+solution for sufficiently large $z$ \cite[p.~1288]{Crandall1978}.  The
+primary theorem is stronger in the sign parameter but narrower in the
+exponent domain: it treats sufficiently large $|d|$ and positive exponents.
+The exact domain bridge is proved below rather than hidden in the citation.
+
+\begin{sourceissue}[Herschfeld source boundaries]
+\label{sourceissue:Herschfeld-boundaries}
+On printed p.~232, a congruence argument for the specialized equation (2)
+ends by referring to equation (1); the objects and displayed congruence make
+the intended label unambiguous, but the defect is retained.  Printed p.~233
+reports a further $|d|\leq100$ calculation from an unpublished paper; it is
+not used here.  The final paragraph's general at-most-nine result for
+$a^x-b^y=d$ has a separate Siegel-1929 dependency and is not a premise of the
+special $(2,3)$ theorem.  That general result remains outside the admitted
+scope until its exact cited theorem and coefficient hypotheses are read.
+\end{sourceissue}
+
+\begin{lemma}[The two order coordinates]
+\label{lem:Herschfeld-orders}
+For $r\geq1$ and $s\geq3$,
+\begin{equation}
+\label{eq:Herschfeld-orders}
+ \operatorname{ord}_{3^r}(2)=2\cdot3^{r-1},
+ \qquad
+ \operatorname{ord}_{2^s}(3)=2^{s-2}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If $2^n\equiv1\pmod{3^r}$, reduction modulo three shows that $n=2m$ is
+even.  The lifting-the-exponent identity gives
+\[
+ v_3(2^{2m}-1)=v_3(4^m-1)=1+v_3(m).
+\]
+Thus $3^r\mid2^n-1$ exactly when $2\cdot3^{r-1}\mid n$.  If
+$3^n\equiv1\pmod{2^s}$ with $s\geq3$, reduction modulo eight shows that
+$n$ is even, and
+\[
+ v_2(3^n-1)=v_2(3-1)+v_2(3+1)+v_2(n)-1=2+v_2(n).
+\]
+Therefore $2^s\mid3^n-1$ exactly when $2^{s-2}\mid n$.  This also makes
+precise Herschfeld's older phrase that $3$ ``belongs to'' $2^{s-2}$ modulo
+$2^s$ \cite[pp.~232--234]{Herschfeld1936}.
+\end{proof}
+
+\begin{theorem}[Herschfeld's positive-exponent theorem, with dependency repaired]
+\label{thm:Herschfeld-positive-eventual-uniqueness}
+There is a real number $D>0$ such that, for every $d\in\Z$ with $|d|>D$,
+\begin{equation}
+\label{eq:Herschfeld-positive-fibre}
+ \#\{(x,y)\in\Npos^2:2^x-3^y=d\}\leq1.
+\end{equation}
+The proof supplies no effective numerical value of $D$.
+\end{theorem}
+
+\begin{proof}
+Fix $0<\delta<1/2$.  Apply Theorem~
+\ref{thm:Pillai-repaired-quantitative} first to bases $(2,3)$ and then to
+$(3,2)$.  Let $x_1,y_1\in\Nzero$ be thresholds such that
+\begin{align}
+ 0<2^u-3^v,\quad u>x_1
+ &\Longrightarrow 2^u-3^v>2^{u(1-\delta)},
+ \label{eq:Herschfeld-Pillai-positive}\\
+ 0<3^v-2^u,\quad v>y_1
+ &\Longrightarrow 3^v-2^u>3^{v(1-\delta)}.
+ \label{eq:Herschfeld-Pillai-negative}
+\end{align}
+Set
+\begin{equation}
+\label{eq:Herschfeld-threshold}
+ D=\max\{2^{x_1+5},3^{y_1+2}\}.
+\end{equation}
+
+Suppose two distinct solutions have the same $d$.  They cannot agree in one
+coordinate without agreeing in both.  Relabel them so that $X>x$; then
+\[
+ 2^X-2^x=3^Y-3^y>0,
+\]
+so $Y>y$.  Factoring and using coprimality gives
+\begin{equation}
+\label{eq:Herschfeld-two-solution-factorization}
+ 2^x(2^{X-x}-1)=3^y(3^{Y-y}-1),
+\end{equation}
+and hence
+\begin{equation}
+\label{eq:Herschfeld-two-orders}
+ 2^{X-x}\equiv1\pmod{3^y},
+ \qquad
+ 3^{Y-y}\equiv1\pmod{2^x}.
+\end{equation}
+Lemma~\ref{lem:Herschfeld-orders} yields
+\begin{equation}
+\label{eq:Herschfeld-exponent-separation}
+ X-x\geq2\cdot3^{y-1},
+ \qquad
+ Y-y\geq2^{x-2}\quad(x>2).
+\end{equation}
+
+If $d>0$, then $d>2^{x_1+5}$ and
+$d=2^x-3^y<2^x$, so $x>x_1+5>5$.  Therefore
+\[
+ 2^X=3^Y+d>3^Y
+ \geq3^{2^{x-2}}>2^{2^{x-2}},
+ \qquad X>2^{x-2}>2x.
+\]
+Applying \eqref{eq:Herschfeld-Pillai-positive} at the larger solution gives
+\[
+ d=2^X-3^Y>2^{X(1-\delta)}>2^{X/2}>2^x>d,
+\]
+a contradiction.
+
+If $d<0$, then $|d|>3^{y_1+2}$ and
+$|d|=3^y-2^x<3^y$, so $y>y_1+2>2$.  Now
+\[
+ 3^Y=2^X-d>2^X
+ \geq2^{2\cdot3^{y-1}}>3^{3^{y-1}},
+ \qquad Y>3^{y-1}>2y.
+\]
+Applying \eqref{eq:Herschfeld-Pillai-negative} at the larger solution gives
+\[
+ |d|=3^Y-2^X>3^{Y(1-\delta)}>3^{Y/2}>3^y>|d|,
+\]
+again a contradiction.  The elementary inequalities used above are strict
+for exactly the displayed ranges: $2^{x-2}>2x$ for $x>5$ and
+$3^{y-1}>2y$ for $y>2$.  This reconstructs Herschfeld's printed proof while
+replacing only its reliance on Pillai's defective literal derivation by the
+separately attributed repair already proved in this edition
+\cite[pp.~233--234]{Herschfeld1936}.
+\end{proof}
+
+The next statement is an edition consequence, not part of Herschfeld's
+printed exponent domain.
+
+\begin{proposition}[Exact all-integer extension]
+\label{prop:Herschfeld-integer-eventual-uniqueness}
+For the same $D$ as in \eqref{eq:Herschfeld-threshold} and every
+$d\in\Z$ with $|d|>D$,
+\begin{equation}
+\label{eq:Herschfeld-integer-fibre}
+ \#\{(x,y)\in\Z^2:2^x-3^y=d\}\leq1.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The exponent-domain argument in Proposition~
+\ref{prop:Crandall-fixed-z-finiteness} proves that any integer-valued
+difference has $x,y\in\Nzero$.  It remains to include a possible zero
+coordinate without importing it into Herschfeld's statement.
+
+Suppose two nonnegative solutions are ordered as in the preceding proof.  If
+$d>0$, then $d<2^x$ still forces $x>x_1+5>5$, even if $y=0$.  The second
+congruence in \eqref{eq:Herschfeld-two-orders} and the second bound in
+\eqref{eq:Herschfeld-exponent-separation} remain valid, and the larger pair
+$(X,Y)$ has positive coordinates.  The positive-$d$ contradiction is
+unchanged.  If $d<0$, then $|d|<3^y$ still forces $y>y_1+2>2$, even if
+$x=0$.  The first congruence and first order bound remain valid, the larger
+pair is positive, and the negative-$d$ contradiction is unchanged.  Thus
+the nonnegative fibre has size at most one.  Composing this conclusion with
+the proved integer-to-nonnegative exponent reduction gives
+\eqref{eq:Herschfeld-integer-fibre}.  This proves the exact domain used by
+Crandall and strengthens his one-sided large-$z$ wording to Herschfeld's
+two-sided large-$|d|$ parameter without changing either source statement.
+\end{proof}
+
+\begin{nonclaim}
+Herschfeld's eventual uniqueness is not inferred from P\'olya's fixed-$d$
+finiteness, and fixed-$d$ finiteness is not inferred from eventual
+uniqueness.  The threshold in \eqref{eq:Herschfeld-threshold} is ineffective;
+the theorem supplies neither an effective search bound nor a Collatz
+endpoint or cycle exclusion.
+\end{nonclaim}
+
+\begin{proposition}[Exact primitive-root solution-to-return construction]
+\label{prop:Crandall-primitive-root-return}
+Put $t=\log_2 3$.  Let $p$ be an odd prime such that
+\(\operatorname{ord}_p(2)=p-1\), and suppose
+\begin{equation}
+\label{eq:Crandall-primitive-root-input}
+ (x,y)\in\Z^2,
+ \qquad 2^x-3^y=p,
+ \qquad y\geq\frac{p}{t-1}.
+\end{equation}
+Then one can construct integers
+\[
+ 0=A_0<A_1<\cdots<A_y=x
+\]
+and a positive odd integer $m>1$ such that
+\begin{equation}
+\label{eq:Crandall-primitive-root-return}
+ m(2^{A_y}-3^y)
+ =\sum_{j=0}^{y-1}2^{A_j}3^{y-1-j}.
+\end{equation}
+Consequently $m$ occurs in its own Crandall trajectory, at accelerated
+return time $y$; its least period is only asserted to divide $y$.
+\end{proposition}
+
+\begin{proof}
+The integer-exponent denominator argument in the proof of Proposition~
+\ref{prop:Crandall-fixed-z-finiteness} gives $x,y\in\Nzero$.  Under the last
+hypothesis in \eqref{eq:Crandall-primitive-root-input}, $y>0$.  The equality
+then excludes $p=3$ after reduction modulo $3$, so $p\geq5$.  Since
+$0<t-1<1$, the last hypothesis also gives $y>p\geq5$; in particular all
+index ranges below are nonempty.
+
+Because $2^x>3^y$, one has $x>ty$.  Hence the integer
+\begin{equation}
+\label{eq:Crandall-primitive-root-slack}
+ L=x-y>(t-1)y\geq p
+ \qquad\Longrightarrow\qquad L\geq p+1.
+\end{equation}
+Equivalently, the assumed lower bound on $y$ is the exact integer inequality
+$3^y\geq2^{p+y}$; no decimal approximation to $t$ is being used.
+
+First put $A_j=j$ for $0\leq j\leq y-2$, and set
+\[
+ R_0=\sum_{j=0}^{y-2}2^j3^{y-1-j}.
+\]
+If $R_0\not\equiv0\pmod p$, choose $A_{y-1}$ to be the least integer in
+$[y-1,x-1]$ satisfying
+\begin{equation}
+\label{eq:Crandall-primitive-root-selector-first}
+ 2^{A_{y-1}}\equiv-R_0\pmod p.
+\end{equation}
+Such an exponent exists: the interval contains at least $p-1$ consecutive
+integers by \eqref{eq:Crandall-primitive-root-slack}, and
+\(\operatorname{ord}_p(2)=p-1\) says exactly that the powers of $2$ over any
+complete exponent-residue system modulo $p-1$ biject onto
+\((\Z/p\Z)^\times\).
+
+If instead $R_0\equiv0\pmod p$, keep $A_j=j$ for $0\leq j\leq y-3$, replace
+$A_{y-2}$ by $y-1$, and write
+\[
+ R_1=\sum_{j=0}^{y-3}2^j3^{y-1-j}+2^{y-1}3.
+\]
+The replacement changes the partial sum by
+\[
+ R_1-R_0=3\cdot2^{y-2}\not\equiv0\pmod p,
+\]
+so $R_1\not\equiv0\pmod p$.  Choose $A_{y-1}$ to be the least integer in
+$[y,x-1]$ satisfying
+\begin{equation}
+\label{eq:Crandall-primitive-root-selector-second}
+ 2^{A_{y-1}}\equiv-R_1\pmod p.
+\end{equation}
+This interval again contains at least $p-1$ consecutive integers, since its
+cardinality is $L\geq p+1$.  Thus the selector is defined in both cases, and
+the resulting sequence is strictly increasing with $A_0=0$ and $A_y=x$.
+
+Let
+\[
+ S=\sum_{j=0}^{y-1}2^{A_j}3^{y-1-j}.
+\]
+The selected congruence gives $p\mid S$.  The $j=0$ summand is odd and every
+other summand is even, so $S$ and $m=S/p$ are odd.  Moreover $0<t-1<1$
+gives $y>p$, whence
+\[
+ S\geq3^{y-1}\geq3^p>p;
+\]
+The last strict inequality follows by induction from $3^n>n$ for $n\geq1$;
+therefore $m$ is a positive odd integer greater than $1$.  Finally,
+$2^{A_y}-3^y=2^x-3^y=p$, so $mp=S$ is exactly
+\eqref{eq:Crandall-primitive-root-return}.  Corollary~7.1, in its exact form
+proved above, now gives the asserted self-return.
+\end{proof}
+
+\begin{corollary}[Crandall's conditional primitive-root bound]
+\label{cor:Crandall-primitive-root-bound}
+Assume Conjecture~2.1.  If $p$ is a prime for which $2$ is a primitive root,
+then every integer solution of $2^x-3^y=p$ satisfies
+\[
+ y<\frac{p}{\log_2 3-1}.
+\]
+\end{corollary}
+
+\begin{proof}
+A solution violating the strict bound satisfies the hypotheses of
+Proposition~\ref{prop:Crandall-primitive-root-return} and therefore produces
+a positive odd $m>1$ of infinite height, contrary to Conjecture~2.1.
+\end{proof}
+
+\begin{nonclaim}
+\label{nonclaim:Crandall-primitive-root}
+The source prints the conditional bound but omits this construction.  The
+proposition does not assert that any solution violating the bound exists, and
+it is not the adjacent sufficient obstruction with $A_j=j$.  The selected
+return time $y$ need not be the least period, and the corollary remains
+conditional on the Collatz conjecture.
+\end{nonclaim}
+
+\subsubsection{Continued fractions and the repaired cycle bound}
+
+Put $t=\log_2 3$, and let $p_n/q_n$ be its continued-fraction convergents,
+with
+\begin{equation}
+\label{eq:Crandall-convergent-recurrence}
+ p_{-1}=1,\ q_{-1}=0,\ p_0=a_0,\ q_0=1,
+ \qquad
+ p_n=a_np_{n-1}+p_{n-2},\quad
+ q_n=a_nq_{n-1}+q_{n-2}.
+\end{equation}
+
+\begin{lemma}[Exact continued-fraction transfer for the Crandall variables]
+\label{lem:Crandall-CF-dependency}
+The number $t=\log_2 3$ is irrational.  Let $p_n/q_n$ be its simple
+continued-fraction convergents, with the recurrence
+\eqref{eq:Crandall-convergent-recurrence}.  Then, for $n\geq2$,
+\begin{equation}
+\label{eq:Crandall-CF-error-bounds}
+ \frac{1}{q_n+q_{n+1}}
+ < |p_n-q_nt|
+ < \frac{1}{q_{n+1}}.
+\end{equation}
+If $x\in\Z$ and $0<y<q_n$, then
+\begin{equation}
+\label{eq:Crandall-CF-best-approximation}
+ |p_n-q_nt|<|x-yt|.
+\end{equation}
+For $n\geq4$, if $y=q_n$ and $x\in\Z$ with $x\ne p_n$, then the same
+strict inequality holds with $y=q_n$.
+\end{lemma}
+
+\begin{proof}
+Since $t>1$, a rational representation $t=a/b$ with $b>0$ would have
+$a>0$ and $2^a=3^b$, contradicting unique factorization.  The continued
+fraction is therefore infinite.  Steuding's Theorems~3.1--3.2
+\cite[printed p.~38]{Steuding2005} give the
+displayed recurrence and
+\[
+ p_nq_{n-1}-p_{n-1}q_n=(-1)^{n-1},
+\]
+so each $p_n/q_n$ is reduced.  Steuding's Theorem~3.6
+\cite[printed p.~42]{Steuding2005}, applied to the
+complete tail $\alpha_{n+1}$ of $t$, gives
+\[
+ t-\frac{p_n}{q_n}
+ =\frac{(-1)^n}{q_n(\alpha_{n+1}q_n+q_{n-1})}.
+\]
+Because $a_{n+1}<\alpha_{n+1}<a_{n+1}+1$ and
+$q_{n+1}=a_{n+1}q_n+q_{n-1}$, multiplying by $q_n$ yields
+\eqref{eq:Crandall-CF-error-bounds}.  For $x>0$, Steuding's
+Theorem~3.8 \cite[printed pp.~44--45]{Steuding2005}, with $(p,q)=(x,y)$,
+gives \eqref{eq:Crandall-CF-best-approximation};
+the equality case $x/y=p_n/q_n$ cannot occur because $p_n/q_n$ is reduced
+and $0<y<q_n$.  If $x\leq0$, then $|x-yt|\geq yt>1$, since
+$t=\log_2 3>1$, while the upper bound
+in \eqref{eq:Crandall-CF-error-bounds} is $<1$.
+
+For the final assertion, \eqref{eq:Crandall-CF-error-bounds} gives
+$|p_n-q_nt|<1/q_{n+1}<1/2$ for $n\geq4$.  If $x\ne p_n$, integrality gives
+$|x-p_n|\geq1$, and the triangle inequality gives
+$|x-q_nt|\geq1-|p_n-q_nt|>|p_n-q_nt|$.
+\end{proof}
+
+\begin{sourceissue}[four repairs in the continued-fraction chain]
+\label{sourceissue:Crandall-continued-fraction-chain}
+The proof chain on printed pp.~1289--1290 needs four distinct repairs
+\cite[pp.~1289--1290]{Crandall1978}.
+\begin{enumerate}[label=(\roman*)]
+\item Lemma~7.1 omits $0<y$.  As printed, $(x,y)=(0,0)$ contradicts its
+strict best-approximation inequality.  The used form has $0<y<q_n$ and is
+proved from Lemma~\ref{lem:Crandall-CF-dependency}.
+\item Lemma~7.3 introduces $p_n/q_n$ but then writes $p_m,q_m$, leaves $x$
+unquantified, and uses $|e^u-1|>|u|$.  This analytic inequality holds for
+$u>0$, not for $u<0$.  The exact form needed for cycles is
+\begin{equation}
+\label{eq:Crandall-repaired-exponential-bound}
+ \left.
+ \begin{gathered}
+  x,y\in\Z,\quad 0<y<q_n,\\
+  x-y\log_2 3>0
+ \end{gathered}
+ \right\}
+ \Longrightarrow
+ |2^x-3^y|>3^y\log2\,|p_n-q_nt|.
+\end{equation}
+Indeed, for $u=(x-yt)\log2>0$ the positive-term power series gives
+$e^u-1-u=\sum_{j\geq2}u^j/j!>0$, and best approximation supplies
+$|x-yt|>|p_n-q_nt|$.  In the cycle application, the missing sign is exactly
+\eqref{eq:Crandall-positive-cycle-denominator}.
+\item Theorem~7.2 explicitly reduces to $k\leq q_n$, but then invokes
+Lemma~7.3, whose repaired denominator hypothesis is strict: $y<q_n$.
+The final assertion of Lemma~\ref{lem:Crandall-CF-dependency} handles
+$k=q_n$ when $A_k\ne p_n$.  If $A_k=p_n$, the positive exponential
+inequality is itself strict.  Thus the same denominator estimate holds at
+the equality boundary that the printed proof does not justify.
+\item Corollary~7.2 claims that its minimum becomes unbounded as $n$
+increases.  For a fixed cycle its second entry instead tends to zero.  The
+correct proof first fixes $n$ and only then chooses a sufficiently large
+cycle minimum; this quantifier order is proved below.
+\end{enumerate}
+The later references to Eq.~(7.5) when computing $q_n$ are correct only as
+references to the printed continued-fraction list; the recurrence itself is
+Eq.~(7.6).
+\end{sourceissue}
+
+\begin{theorem}[Crandall's cycle bound, with proof gaps repaired]
+\label{thm:Crandall-cycle-bound}
+Let $m>1$ be the least member of a $C_{\mathrm{Cr}}$-cycle of least
+accelerated period $k$.  For every integer $n\geq4$,
+\begin{equation}
+\label{eq:Crandall-cycle-bound}
+ k>\min\left\{q_n,\frac{2m}{q_n+q_{n+1}}\right\}.
+\end{equation}
+Consequently, only finitely many cycles have any prescribed accelerated
+period \cite[p.~1290]{Crandall1978}.
+\end{theorem}
+
+\begin{proof}
+Minimality of $m$ and the branch equation give, for the coordinates
+\eqref{eq:Crandall-cumulative-time},
+\begin{equation}
+\label{eq:Crandall-cycle-growth-bound}
+ 2^{A_j}\leq(3+1/m)^j.
+\end{equation}
+The return equation and this bound imply
+\begin{equation}
+\label{eq:Crandall-cycle-minimum-bound}
+ m<\frac{k(3+1/m)^{k-1}}{2^{A_k}-3^k}.
+\end{equation}
+If $k>q_n$, \eqref{eq:Crandall-cycle-bound} is immediate.  Otherwise the
+repaired best-approximation argument in
+Source issue~\ref{sourceissue:Crandall-continued-fraction-chain}, including
+its equality case, gives
+\[
+ 2^{A_k}-3^k>3^k\log2\,|p_n-q_nt|.
+\]
+Combining this with \eqref{eq:Crandall-cycle-minimum-bound}, and writing
+$v=1/(3m)>0$, first yields
+\[
+ k>m(3+1/m)(\log2)|p_n-q_nt|(1+v)^{-k}.
+\]
+The function $f(v)=(1+v)^{-k}$ has
+$f''(v)=k(k+1)(1+v)^{-k-2}>0$; strict convexity above its tangent at zero
+therefore gives $f(v)>f(0)+f'(0)v=1-kv$.  Hence
+\begin{equation}
+\label{eq:Crandall-cycle-bound-intermediate}
+ k>m(\log2)(3+1/m)|p_n-q_nt|\left(1-\frac{k}{3m}\right).
+\end{equation}
+For $n\geq4$, the recurrence gives
+$q_n+q_{n+1}\geq q_4+q_5=12+41=53>20$.  If $k\geq m/10$, the second member
+of the minimum in \eqref{eq:Crandall-cycle-bound} is strictly below
+$m/10\leq k$.  Otherwise $k<m/10$, so
+$1-k/(3m)>29/30$, and the continued-fraction lower bound
+$|p_n-q_nt|>(q_n+q_{n+1})^{-1}$ turns
+\eqref{eq:Crandall-cycle-bound-intermediate} into
+\[
+ k>\frac{(3m+1)\log2}{q_n+q_{n+1}}\frac{29}{30}
+   >\frac{2m}{q_n+q_{n+1}}.
+\]
+The final strict inequality is exact: the positive-term expansion
+$\log2=2(1/3+1/(3^3\cdot3)+\cdots)$ gives
+$\log2>56/81>20/29$, while $(3m+1)/m>3$.
+This proves \eqref{eq:Crandall-cycle-bound}.
+
+For finiteness, fix a proposed period $L$ and choose an integer $n\geq4$ with
+$q_n>L$; the convergent denominators are unbounded.  An infinite family of
+distinct period-$L$ cycles would have unbounded distinct
+least members, so choose one with
+$m>L(q_n+q_{n+1})/2$.  Both entries of the minimum would then exceed $L$,
+contradicting \eqref{eq:Crandall-cycle-bound} with $k=L$.
+\end{proof}
+
+\phantomsection\label{historical-10^9-premise}
+Printed p.~1282 says that Conjecture~(2.1) had been verified for
+$m<10^9$, citing references~[1] and~[5] \cite[p.~1282]{Crandall1978}.
+Those references are not two independent witnesses.  Reference~[1] is
+Conway's \emph{Unpredictable iterations}; its correct proceedings pages are
+49--52, not Crandall's 45--52.  Reference~[5], printed as
+``\emph{Zentralblatt f\"ur Mathematik}, Band~233, p.~10041,'' is a defective
+rendering of \emph{Zbl}~0337.10041, the Zentralblatt record for that same
+Conway paper: $10041$ is part of the accession identifier, not a printed
+page.  Thus the two routes collapse to one work, rather than corroborating
+one another \cite[p.~1292]{Crandall1978}.
+
+Conway defines the ordinary one-step map $g$ by $g(n)=n/2$ for even $n$ and
+$g(n)=3n+1$ for odd $n$, literally the map $U$ in
+\eqref{eq:unshortened-U}.  On the first page of his article he reports the
+inclusive range $n\leq10^9$ and attributes its verification to D.~H. Lehmer,
+Emma Lehmer, and J.~L. Selfridge \cite[p.~219]{Conway1972}.  He supplies no
+citation for that sentence and no program, machine, range partition,
+stopping criterion, independent check, checksum, log, or preserved output.
+His proved undecidability theorem is expressly said to say nothing about the
+particular Collatz game; the verification sentence is historical background,
+not a theorem of the article.  The published contemporaneous report and its
+attribution are therefore content-verified, while the underlying computation
+remains unauthenticated and nonreproducible at this checkpoint.
+
+\begin{proposition}[One-step verification to accelerated exclusion]
+\label{prop:Conway-Crandall-historical-transfer}
+Let $N\in\Npos$.  Suppose that for every $n\in\Npos$ with $n\leq N$ there
+exists $r\in\Nzero$ such that $U^r(n)=1$.  Then for every
+$m\in\Opos$ with $m\leq N$ there exists $j\in\Nzero$ such that
+$C_{\mathrm{Cr}}^j(m)=1$.  Consequently no $m\in\Opos$ with
+$1<m\leq N$ can satisfy $C_{\mathrm{Cr}}^k(m)=m$ for any $k\in\Npos$.
+\end{proposition}
+
+\begin{proof}
+Starting from an odd $m$, the successive odd states of the $U$-orbit are
+exactly the $C_{\mathrm{Cr}}$-orbit, with the $j$th odd return occurring at
+the unshortened time $A_j+j$ by \eqref{eq:Crandall-three-clocks}.  Since $1$
+is odd, any occurrence $U^r(m)=1$ is one of those successive odd returns;
+hence $C_{\mathrm{Cr}}^j(m)=1$ for a unique first such index $j$.  Finally
+$C_{\mathrm{Cr}}(1)=1$.  If $m>1$ also satisfied
+$C_{\mathrm{Cr}}^k(m)=m$, its accelerated orbit would be periodic from $m$
+and could not enter the fixed point $1$, a contradiction.
+\end{proof}
+
+Printed p.~1290 uses the ``known result'' that no $1<m<10^9$ appears in
+its own trajectory, without a new inline citation
+\cite[p.~1290]{Crandall1978}.  Proposition
+\ref{prop:Conway-Crandall-historical-transfer} proves the exact clock and
+domain transfer from Conway's stronger inclusive ordinary-map report to that
+accelerated statement; it does not authenticate the computation.
+
+For a hypothetical nontrivial cycle, its least member $m_0$ lies in
+$\Opos$.  Conway's inclusive report, after the proved transfer, directly
+excludes $m_0\leq10^9$.  Independently, Crandall's weaker strict-range form
+first gives $m_0\geq10^9$, and oddness excludes equality with the even
+endpoint.  Both routes therefore give, exactly as Crandall writes,
+\[
+ m_0>10^9,
+ \qquad\text{equivalently}\qquad m_0\geq1{,}000{,}000{,}001.
+\]
+With
+\begin{equation}
+\label{eq:Crandall-historical-convergents}
+ q_{10}=31867,
+ \qquad q_{11}=79335,
+\end{equation}
+Theorem~\ref{thm:Crandall-cycle-bound} gives the least accelerated period
+$\ell$ the bound
+\[
+ \ell>\min\left\{31867,\frac{2\cdot10^9}{111202}\right\}>17985.
+\]
+Every positive return exponent $k$ is a multiple of $\ell$, so this recovers
+Crandall's Theorem~7.3: $C_{\mathrm{Cr}}^k(m)=m$ with $m>1$ implies
+$k>17985$, conditional on the published 1972 report reused by Crandall in
+1978.  The source variable is an accelerated return time, not a current or
+reproducible verification record.
+For the same
+return, \eqref{eq:Crandall-three-clocks} gives
+$A_k\geq k>17985$ shortened steps and $A_k+k>k>17985$ unshortened steps;
+these are transferred inequalities, not an identification of the three
+clocks.
+
+\phantomsection\label{sourceissue:Crandall-bounded-supremum}
+The opening of Section~7 also says every member of a bounded trajectory is
+strictly below its supremum.  The correct relation is $\leq$.  The intended
+finite pigeonhole argument survives: boundedness plus absence of nontrivial
+self-returns would force the trajectory to contain $1$.
+
+\subsubsection{The generalized \texorpdfstring{$qx+r$}{qx+r} programme}
+
+For positive odd $q,r$, $q>1$, Crandall defines
+\begin{equation}
+\label{eq:Crandall-qxr}
+ C_{q,r}(m)=\frac{qm+r}{2^{e_{q,r}(m)}},
+ \qquad
+ e_{q,r}(m)=\vtwo(qm+r),
+ \qquad m\in\Opos.
+\end{equation}
+Conjecture~8.1 predicts that, except for $(q,r)=(3,1)$, some positive odd
+starting value fails to reach $1$.  The exceptional pair is not an assertion
+that the ordinary conjecture is true.
+
+\begin{proposition}[Crandall's proved generalized failures]
+\label{prop:Crandall-generalized-failures}
+The following statements hold.
+\begin{enumerate}[label=(\alph*)]
+\item If $r>1$, every $m\in\Opos$ divisible by $r$ fails to reach $1$.
+\item For $(q,r)=(5,1)$,
+\[
+ 13\longmapsto33\longmapsto83\longmapsto13,
+ \qquad(e_0,e_1,e_2)=(1,1,5).
+\]
+\item For $(q,r)=(181,1)$,
+\[
+ 27\longmapsto611\longmapsto27,
+ \qquad(e_0,e_1)=(3,12).
+\]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+If $r\mid m$, then $qm+r\equiv0\pmod r$; division by a power of $2$, a unit
+modulo odd $r$, preserves divisibility by $r$.  Induction excludes the value
+$1$.  The two cycles follow by exact substitution:
+\[
+ 5(13)+1=2(33),\quad5(33)+1=2(83),\quad5(83)+1=2^5(13),
+\]
+and
+\[
+ 181(27)+1=2^3(611),\qquad181(611)+1=2^{12}(27).
+\]
+The associated differences are $2^7-5^3=3$ and
+$2^{15}-181^2=7$.  The printed starting value in the second cycle is $27$;
+$21$ is an OCR error \cite[p.~1291]{Crandall1978}.
+\end{proof}
+
+\begin{proposition}[the omitted finite certificate for $q=1093$]
+\label{prop:Crandall-q1093}
+For $C_{1093,1}$, a positive odd integer has height one exactly when
+\begin{equation}
+\label{eq:Crandall-q1093-height-one}
+ m=\frac{2^{364p}-1}{1093}
+ \qquad(p\in\Z_{>0}).
+\end{equation}
+No positive odd integer has height two.  Every positive odd integer not in
+\eqref{eq:Crandall-q1093-height-one} therefore has infinite height, and this
+infinite-height set has natural density one in $\Opos$.
+\end{proposition}
+
+\begin{proof}
+Exact modular exponentiation gives
+\begin{equation}
+\label{eq:Crandall-q1093-certificate}
+ \operatorname{ord}_{1093}(2)=364,
+ \qquad
+ 2^{364}\equiv1\pmod{1093^2}.
+\end{equation}
+For the first equality it suffices to check the proper divisors of
+$364=2^2\cdot7\cdot13$; convenient witnesses include
+\[
+ 2^{182}\equiv1092,
+ \qquad2^{52}\equiv27,
+ \qquad2^{28}\equiv121\pmod{1093}.
+\]
+A height-one value satisfies $1093m+1=2^a$, so the order calculation is
+equivalent to $364\mid a$ and proves
+\eqref{eq:Crandall-q1093-height-one}.  The congruence modulo $1093^2$ shows
+that every such $m$ is itself divisible by $1093$.  If it had a predecessor
+$u$, then $1093u+1=2^b m$ would be simultaneously congruent to $1$ and $0$
+modulo $1093$, impossible.  Thus height two does not occur.  Any finite
+trajectory of height greater than one would contain a height-two tail, so no
+other finite height occurs.  Finally, the number of parameters $p$ producing
+$m\leq x$ is $O(\log x)$; division by the number of odd integers at most $x$
+gives density zero for the height-one family.
+
+The source states the classification and calls the height-two impossibility
+easy, but omits the modular certificate
+\cite[p.~1291]{Crandall1978}.  The calculation is reproduced by
+\path{certificates/crandall_1978_checks.py}.
+\end{proof}
+
+\begin{nonclaim}
+\label{nonclaim:Crandall-qxr-unboundedness}
+Infinite height need not mean an unbounded orbit; it may arise from a
+nontrivial cycle.  Crandall explicitly states that no unbounded trajectory
+was then known for any $qx+1$ problem.  The $7x+1$ trajectory from $3$
+exceeding $10^{2000}$ is a finite empirical excursion only.  The heuristic
+drift $\log(q/4)>0$ for $q>3$ is not an unboundedness theorem
+\cite[pp.~1291--1292]{Crandall1978}.
+\end{nonclaim}

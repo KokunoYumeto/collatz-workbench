@@ -1,0 +1,831 @@
+\section{The exponent survivor coding, its arithmetic locus, and two geometric boundaries}
+\label{sec:symbolic-completion-geometric-boundaries}
+
+This section audits the final coherent passage of the raw
+\emph{$Z_n$ Symmetries} export, physical lines 14012--17437.  The passage
+contains three different layers which must not be merged:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item an exact finite exponent-word calculus and its inverse-limit survivor
+  coding;
+\item proposed tropical, operator-algebraic, and prismatic interfaces; and
+\item a later correction of a proposed residue transducer.
+\end{enumerate}
+The first layer has a rigorous core, but its stated map on all odd
+$2$-adic integers misses an exceptional backward orbit.  The second layer
+contains useful source directions but no constructed Collatz morphism.  The
+third layer finds a genuine counterexample to its own earlier transition
+rule, but then makes broader impossibility assertions which the calculation
+does not prove.  We give the exact survivor-coding theorem, retain the explicit
+counterexample, construct the correct refinement tree, and prove the two
+geometric typing boundaries.
+
+The finite residue-class theorem used below is
+Proposition~\ref{prop:weighted-word-source-fibres}.  The tropical square is
+crosswalked against Connes--Consani \cite{ConnesConsani2016}; the
+Cartier--Witt functor against Bhatt--Lurie \cite{BhattLurieWCart}; the
+one-variable cyclotomic calculus against Gros--Le~Stum--Quir\'os
+\cite{GrosLeStumQuiros2025}; and the countable-shift hypotheses against
+Sarig \cite{Sarig1999,Sarig2003,Sarig2015}.  None of those sources contains the
+Collatz-specific deductions proved here.
+
+The terminology matters.  Positive odd integers meet every odd residue class
+modulo every power of two, so their metric completion is the whole space
+$\mathcal O_2=1+2\Ztwo$.  The domain constructed below is instead the
+survivor subspace $D=\mathcal O_2\setminus E$.  Its coding by nested residue
+balls is an inverse-limit survivor extension, not the metric completion of the
+positive dynamics.
+
+\subsection{The partial odd \texorpdfstring{$2$}{2}-adic first-return map}
+
+Put
+\[
+ \mathcal O_2=1+2\Ztwo,
+ \qquad x_*=-\frac13\in\mathcal O_2.
+\]
+For $x\in\mathcal O_2\setminus\{x_*\}$, the nonzero number $3x+1$ has a
+finite positive $2$-adic valuation, and we define
+\begin{equation}
+\label{eq:symbolic-C2-partial}
+ a_2(x)=\vtwo(3x+1),
+ \qquad
+ C_2(x)=\frac{3x+1}{2^{a_2(x)}}\in\mathcal O_2.
+\end{equation}
+Thus $C_2$ is initially a partial map.  For $n\geq0$, let
+\[
+ E_n=\left\{x\in\mathcal O_2:
+ \begin{array}{l}
+ C_2^j(x)\text{ is defined for }0\leq j<n,\\[-1mm]
+ C_2^n(x)=x_*
+ \end{array}\right\},
+ \qquad E=\bigcup_{n\geq0}E_n,
+ \qquad D=\mathcal O_2\setminus E.
+\]
+Here $E_0=\{x_*\}$.  The set $D$ is the \emph{survivor domain}: every
+finite forward iterate is defined there.
+
+\begin{lemma}[the exceptional set cannot be omitted]
+\label{lem:symbolic-exceptional-backward-orbit}
+The map $C_2$ restricts to a self-map $C_2:D\to D$.  The set $E$ is
+countable.  For every $y\in D$ its complete fibre in $D$ is
+\[
+ C_2^{-1}(\{y\})\cap D
+ =\left\{\frac{2^ay-1}{3}:a\geq1\right\}.
+\]
+For every $a\geq1$ the odd $2$-adic integer
+\[
+ x_a=-\frac{2^a+3}{9}
+\]
+satisfies
+\[
+ \vtwo(3x_a+1)=a,
+ \qquad C_2(x_a)=-\frac13.
+\]
+Consequently, deleting only $-1/3$ does not suffice to define every
+infinite itinerary.
+\end{lemma}
+
+\begin{proof}
+If $x\in D$, then $x\ne x_*$, so $C_2(x)$ is defined.  If
+$C_2(x)\in E_n$, then $x\in E_{n+1}$, a contradiction; hence $C_2(x)\in D$.
+Every $y\in\mathcal O_2$ has precisely the inverse branches
+\[
+ x=\frac{2^a y-1}{3}\qquad(a\geq1)
+\]
+in $\mathcal O_2$: the denominator is a $2$-adic unit, the numerator is
+odd, and $3x+1=2^ay$ gives exact valuation $a$.  Each level $E_n$ is
+therefore countable, and so is their union.  If $y\in D$ and one of these
+inverse branches lay in $E$, applying $C_2$ would put $y$ in $E$; hence all
+the displayed branches lie in $D$, proving the fibre formula.  Substituting
+$y=-1/3$ gives
+the displayed $x_a$ and
+\[
+ 3x_a+1=-\frac{2^a}{3},
+\]
+which proves both identities.
+\end{proof}
+
+\subsection{Exact finite cylinders and the survivor-space conjugacy}
+
+For a finite word $w=(a_1,\ldots,a_n)\in\Npos^n$, retain the notation
+\[
+ A(w)=\sum_{i=1}^n a_i,
+ \qquad
+ B_w=\sum_{i=1}^n3^{n-i}2^{a_1+\cdots+a_{i-1}}.
+\]
+Let $r_w$ be the unique representative in
+$\{1,3,\ldots,2^{A(w)+1}-1\}$ of
+\begin{equation}
+\label{eq:symbolic-canonical-prefix-residue}
+ r_w\equiv3^{-n}\bigl(2^{A(w)}-B_w\bigr)
+       \pmod{2^{A(w)+1}}.
+\end{equation}
+For the empty word put $A(\varnothing)=B_\varnothing=0$ and
+$r_\varnothing=1$, with its class interpreted modulo $2$.
+
+\begin{lemma}[$2$-adic extension of the finite-prefix criterion]
+\label{lem:symbolic-Z2-prefix-cylinders}
+For $w\in\Npos^n$, the set of $x\in\mathcal O_2$ whose first $n$
+successive valuations are defined and equal to $w$ is exactly the ball
+\begin{equation}
+\label{eq:symbolic-prefix-ball}
+ U_w=r_w+2^{A(w)+1}\Ztwo.
+\end{equation}
+If $a\geq1$, then $U_{wa}\subset U_w$.  Distinct words of the same length
+have disjoint balls.
+\end{lemma}
+
+\begin{proof}
+The induction proving
+Proposition~\ref{prop:weighted-word-source-fibres} uses only congruences
+modulo powers of two and division by the odd unit $3$; positivity is used
+there only to select positive representatives.  The same induction in
+$\Ztwo$ proves that the first $n$ valuations are exactly $w$ if and only if
+\[
+ 3^n x+B_w\equiv2^{A(w)}\pmod{2^{A(w)+1}}.
+\]
+Since $3^n$ is a unit modulo $2^{A(w)+1}$, this is precisely
+\eqref{eq:symbolic-prefix-ball}.  Appending one valuation preserves the
+earlier valuations, which proves nesting.  Two words which first differ at
+position $j$ prescribe different exact valuations at the same $j$th
+iterate, so their balls are disjoint.
+\end{proof}
+
+\begin{lemma}[exact inverse branches and terminated partition]
+\label{lem:symbolic-inverse-branch-homeomorphism}
+For a finite word $w=(a_1,\ldots,a_n)$, write
+\[
+ h_a(y)=\frac{2^ay-1}{3},
+ \qquad
+ h_w=h_{a_1}\circ\cdots\circ h_{a_n},
+\]
+with $h_\varnothing$ the identity.  Then
+\begin{equation}
+\label{eq:symbolic-inverse-branch-word}
+ h_w(y)=\frac{2^{A(w)}y-B_w}{3^n},
+ \qquad
+ h_w:\mathcal O_2\xrightarrow{\sim}U_w.
+\end{equation}
+The displayed map is an affine homeomorphism, and $C_2^n|_{U_w}$ is its inverse while the
+$n$ displayed branches are read.  There is an exact disjoint decomposition
+\begin{equation}
+\label{eq:symbolic-prefix-ball-partition}
+ U_w=\{h_w(x_*)\}\;\sqcup\!
+       \bigsqcup_{a\geq1}U_{wa}.
+\end{equation}
+Moreover, $E$ is dense in $\mathcal O_2$.
+\end{lemma}
+
+\begin{proof}
+For $y\in\mathcal O_2$, the numerator $2^ay-1$ is odd and division by the
+$2$-adic unit $3$ keeps it in $\mathcal O_2$.  Directly,
+\[
+ 3h_a(y)+1=2^ay,
+ \qquad \vtwo(3h_a(y)+1)=a,
+ \qquad C_2(h_a(y))=y.
+\]
+Induction on $n$, using
+$B_w=3^{n-1}+2^{a_1}B_{(a_2,\ldots,a_n)}$, gives the affine formula in
+\eqref{eq:symbolic-inverse-branch-word}.  It also shows that every
+$h_w(y)$ reads the exact word $w$ and hence lies in $U_w$.  Conversely, if
+$x\in U_w$, then $y=C_2^n(x)\in\mathcal O_2$, and reversing the $n$ exact
+branch equations gives $x=h_w(y)$.  Thus $h_w$ is a continuous bijection
+from the compact space $\mathcal O_2$ to the Hausdorff space $U_w$ and is
+a homeomorphism; the displayed restriction of $C_2^n$ is its inverse.
+
+For $x\in U_w$, put $y=C_2^n(x)$.  Either $y=x_*$, giving
+$x=h_w(x_*)$, or $3y+1\ne0$ has one finite positive valuation $a$.  In the
+second case $y\in U_a$ and hence $x\in h_w(U_a)=U_{wa}$.  Exact valuations
+make the alternatives disjoint, proving
+\eqref{eq:symbolic-prefix-ball-partition}.
+
+Finally, let $V\subset\mathcal O_2$ be nonempty and open.  It contains an
+odd residue ball $m+2^M\Ztwo$ with a positive odd representative $m$.
+The positive orbit of $m$ has an infinite exponent itinerary.  Choose a
+prefix $w$ with $A(w)+1\geq M$.  Then
+$m\in U_w\subset m+2^M\Ztwo\subset V$, while
+$h_w(x_*)\in E\cap U_w$.  Thus every nonempty open set meets $E$.
+\end{proof}
+
+Define the itinerary on $D$ by
+\[
+ \varepsilon_2(x)=
+ \bigl(a_2(x),a_2(C_2x),a_2(C_2^2x),\ldots\bigr).
+\]
+Write $\sigma$ for the left shift on $\Npos^{\Nzero}$.
+
+\begin{theorem}[exact odd $2$-adic survivor coding]
+\label{thm:symbolic-survivor-conjugacy}
+The map
+\[
+ \varepsilon_2:D\longrightarrow\Npos^{\Nzero}
+\]
+is a bijection and satisfies
+\[
+ \varepsilon_2\circ C_2=\sigma\circ\varepsilon_2.
+\]
+With the subspace topology on $D\subset\Ztwo$ and the product topology on
+the full countable shift, it is a homeomorphism.
+
+For $\mathbf a=(a_1,a_2,\ldots)$, its inverse is the unique point
+$x(\mathbf a)\in\Ztwo$ in the nested intersection
+\begin{equation}
+\label{eq:symbolic-nested-residue-inverse}
+ \{x(\mathbf a)\}
+ =\bigcap_{n\geq1}
+ \left(r_{(a_1,\ldots,a_n)}+2^{A_n+1}\Ztwo\right),
+ \qquad A_n=a_1+\cdots+a_n.
+\end{equation}
+That point automatically lies in $D$.
+\end{theorem}
+
+\begin{proof}
+The prefix balls in \eqref{eq:symbolic-nested-residue-inverse} are nested
+by Lemma~\ref{lem:symbolic-Z2-prefix-cylinders}.  Their radii tend to zero
+because $A_n\geq n$.  Completeness and separatedness of $\Ztwo$ therefore
+give a unique intersection point $x(\mathbf a)$.  The same lemma says that
+this point realizes every finite prefix.  It cannot lie in $E$: if
+$C_2^k(x)=x_*$, then its valuation at time $k+1$ is undefined, whereas
+membership in the ball for $(a_1,\ldots,a_{k+1})$ makes that valuation the
+finite integer $a_{k+1}$.  Hence $x(\mathbf a)\in D$ and
+$\varepsilon_2(x(\mathbf a))=\mathbf a$, proving surjectivity.
+
+If $x,y\in D$ have the same itinerary, then for every $n$ they lie in the
+same ball of modulus $2^{A_n+1}$.  Since $A_n\to\infty$, one has
+$x-y\in\bigcap_n2^{A_n+1}\Ztwo=\{0\}$, proving injectivity.  The conjugacy
+identity follows by deleting the first valuation.
+
+For a finite word $w$, the inverse image of its shift cylinder is
+$D\cap U_w$, which is clopen in $D$; hence $\varepsilon_2$ is continuous.
+Conversely, if a $2$-adic neighborhood prescribes a residue modulo $2^M$,
+choose $n$ with $A_n+1\geq M$.  The cylinder determined by the first $n$
+symbols maps into a single residue class modulo $2^{A_n+1}$ and hence into
+that neighborhood.  Thus the inverse is continuous.
+\end{proof}
+
+\begin{sourceissue}[the raw all-odd-domain statement]
+\label{sourceissue:symbolic-all-odd-Z2-domain}
+The raw theorem at physical lines 16227--16255 and its repetitions replace
+$D$ by all of $\mathcal O_2$.  The point $x_*=-1/3$ and the explicit
+preimages in Lemma~\ref{lem:symbolic-exceptional-backward-orbit} disprove
+that domain.  The corrected theorem is not a weakening by convention: it
+identifies the maximal forward-invariant subset on which every displayed
+finite valuation exists.
+\end{sourceissue}
+
+\subsection{Positive integers inside the survivor coding}
+
+For the positive odd system of Section~\ref{sec:chatnotes-weighted-path-algebra},
+put
+\[
+ \Sigma_C^+=\varepsilon_2(\mathcal O)\subset\Npos^{\Nzero}.
+\]
+Positive odd orbits never meet $E$, since every iterate is positive.
+
+\begin{theorem}[full finite language and exact shift image]
+\label{thm:symbolic-positive-language-density}
+Every finite positive-exponent word occurs as the initial word of infinitely
+many positive odd orbits.  Consequently $\Sigma_C^+$ is countable, dense,
+proper, and nonclosed in $\Npos^{\Nzero}$.
+
+It is forward-shift stable, but not shift-surjective.  More precisely,
+\begin{equation}
+\label{eq:symbolic-positive-shift-image}
+ \sigma(\Sigma_C^+)
+ =\varepsilon_2\bigl(\{y\in\mathcal O:3\nmid y\}\bigr)
+ \subsetneq\Sigma_C^+.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:weighted-word-source-fibres} gives one odd residue
+class modulo $2^{A(w)+1}$ for every finite word $w$, and every sufficiently
+large positive representative of that class realizes $w$.  Thus every
+basic shift cylinder meets $\Sigma_C^+$, proving density.  The image is
+countable because $\mathcal O$ is countable, and it is proper because the
+full shift is uncountable.  A dense proper subset of this Hausdorff space is
+not closed.
+
+The conjugacy identity gives forward-shift stability.  By
+Lemma~\ref{lem:weighted-predecessor-fibres}, a positive odd integer $y$ has
+a positive odd predecessor exactly when $3\nmid y$.  Therefore the first
+equality in \eqref{eq:symbolic-positive-shift-image} holds.  It is strict:
+$3\in\mathcal O$ has no predecessor, and injectivity of $\varepsilon_2$ on
+$D$ prevents its itinerary from being the itinerary of a different starting
+point.
+\end{proof}
+
+For $\mathbf a\in\Npos^{\Nzero}$, let $r_n(\mathbf a)$ be the canonical
+positive odd representative \eqref{eq:symbolic-canonical-prefix-residue} of
+its length-$n$ prefix.  The nesting theorem gives
+\begin{equation}
+\label{eq:symbolic-canonical-residue-nesting}
+ r_{n+1}(\mathbf a)\equiv r_n(\mathbf a)
+ \pmod{2^{A_n+1}}.
+\end{equation}
+Because both representatives lie in their canonical intervals, there is a
+unique integer $k_n$ such that
+\begin{equation}
+\label{eq:symbolic-canonical-residue-increment}
+ r_{n+1}=r_n+k_n2^{A_n+1},
+ \qquad 0\leq k_n<2^{a_{n+1}}.
+\end{equation}
+Thus $(r_n)$ is nondecreasing as a sequence of ordinary integers.
+
+\begin{theorem}[the exact positivity selector]
+\label{thm:symbolic-positive-stabilization}
+For $\mathbf a\in\Npos^{\Nzero}$ the following are equivalent:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $\mathbf a\in\Sigma_C^+$;
+\item the sequence of canonical representatives $r_n(\mathbf a)$ is
+eventually constant;
+\item the sequence $r_n(\mathbf a)$ is bounded in the ordinary order.
+\end{enumerate}
+When these conditions hold, the eventual constant is the unique positive
+odd integer $x$ with $\varepsilon_2(x)=\mathbf a$.
+\end{theorem}
+
+\begin{proof}
+Let $x=x(\mathbf a)$ be the $2$-adic inverse from
+Theorem~\ref{thm:symbolic-survivor-conjugacy}.  If $x$ is a positive odd
+integer, then for all $n$ with $2^{A_n+1}>x$, the unique representative of
+$x$ modulo $2^{A_n+1}$ in the prescribed interval is $x$ itself.  Hence
+$r_n=x$ thereafter.  Conversely, if $r_n=r$ for all $n\geq n_0$, then
+\eqref{eq:symbolic-nested-residue-inverse} has intersection point $r$.
+This is positive and odd, and the survivor-coding theorem gives
+$\varepsilon_2(r)=\mathbf a$.
+Finally, eventual constancy implies boundedness, while boundedness implies
+eventual constancy for the nondecreasing integer sequence
+\eqref{eq:symbolic-canonical-residue-increment}.
+\end{proof}
+
+This is an asymptotic prefix-stabilization criterion for the entire rooted
+prefix chain, not a tail-invariant property.  Indeed, $(2,2,2,\ldots)$ is the
+itinerary of the positive fixed point $1$, but the tail-equivalent sequence
+$(1,2,2,\ldots)$ is the itinerary of
+$h_1(1)=(2\cdot1-1)/3=1/3$, which is not an integer.
+
+The properness and nonclosedness in
+Theorem~\ref{thm:symbolic-positive-language-density} also have an explicit
+witness.  The constant sequence $(1,1,1,\ldots)$ corresponds to $-1\in D$,
+since $C_2(-1)=-1$.  Its canonical prefix representatives are
+$2^{n+1}-1$, so it is not in $\Sigma_C^+$; nevertheless every cylinder
+$[1^n]$ contains positive odd realizations.
+
+\begin{construction}[the exact prefix-refinement tree]
+\label{construction:symbolic-prefix-refinement-tree}
+Let $\mathcal T$ have one vertex
+\[
+ v_w=\bigl(w,A(w)+1,r_w\bigr)
+\]
+for every finite positive-exponent word $w$, and one edge $v_w\to v_{wa}$
+for every $a\geq1$.  Retaining $w$ is part of the state.  The ball attached
+to $v_{wa}$ is contained in the ball attached to $v_w$ by
+Lemma~\ref{lem:symbolic-Z2-prefix-cylinders}.  Infinite rooted paths are
+therefore identified, coordinate for coordinate, with
+$\Npos^{\Nzero}$, and their nested-ball endpoint is the inverse map
+\eqref{eq:symbolic-nested-residue-inverse}.  The positive ends are exactly
+those for which the decorations $r_w$ stabilize, by
+Theorem~\ref{thm:symbolic-positive-stabilization}.
+\end{construction}
+
+This construction is an exact rooted-tree model; no appeal to a general
+inverse-sequence analogy is needed to prove it.
+
+\subsection{Pressure on the full survivor shift}
+
+On $\Sigma=\Npos^{\Nzero}$ define the one-coordinate potential
+\[
+ \phi(\mathbf a)=\log3-a_1\log2.
+\]
+
+\begin{theorem}[complete pressure domain and Bernoulli law]
+\label{thm:symbolic-full-shift-pressure}
+For real $\beta$, the unrestricted length-$n$ partition sum is
+\[
+ Z_n(\beta)=
+ \sum_{(a_1,\ldots,a_n)\in\Npos^n}
+ \exp\!\left(\beta\sum_{j=1}^n(\log3-a_j\log2)\right).
+\]
+It is finite exactly when $\beta>0$.  On that domain,
+\begin{align}
+ Z_n(\beta)
+ &=\left(\frac{(3/2)^\beta}{1-2^{-\beta}}\right)^n,\label{eq:symbolic-partition-sum}\\
+ P(\beta)
+ &=\lim_{n\to\infty}\frac1n\log Z_n(\beta)
+ =\beta\log\frac32-\log(1-2^{-\beta}).
+ \label{eq:symbolic-pressure}
+\end{align}
+The probability vector
+\begin{equation}
+\label{eq:symbolic-Bernoulli-law}
+ p_\beta(a)=(1-2^{-\beta})2^{-\beta(a-1)}
+ \qquad(a\geq1)
+\end{equation}
+defines a Bernoulli measure $\mu_\beta$ satisfying the exact cylinder
+identity
+\[
+ \mu_\beta[a_1,\ldots,a_n]
+ =\exp\!\left(
+ \beta\sum_{j=1}^n\phi(\sigma^{j-1}\mathbf a)-nP(\beta)
+ \right).
+\]
+In particular it is an invariant Gibbs measure with Gibbs constant one.
+At $\beta=1$, $p_1(a)=2^{-a}$.
+\end{theorem}
+
+\begin{proof}
+All summands are nonnegative, so Tonelli factorization gives
+\[
+ Z_n(\beta)=
+ \left(\sum_{a\geq1}3^\beta2^{-a\beta}\right)^n.
+\]
+The inner geometric series converges exactly for $2^{-\beta}<1$, equivalently
+$\beta>0$, and then equals the base in
+\eqref{eq:symbolic-partition-sum}.  Taking logarithms proves
+\eqref{eq:symbolic-pressure}.  Dividing the one-symbol weight
+$3^\beta2^{-a\beta}$ by its sum gives
+\eqref{eq:symbolic-Bernoulli-law}; multiplying these normalized weights
+over a cylinder gives the displayed Gibbs identity.
+\end{proof}
+
+This $P(\beta)$ is also the Gurevich pressure used by Sarig.  Indeed, fix a
+symbol $b$ and put
+\[
+ S_\beta=\sum_{a\geq1}e^{\beta\phi(a)}.
+\]
+The period-$n$ partition sum based at $b$ is
+\begin{equation}
+\label{eq:symbolic-gurevich-partition}
+ Z_n^{\mathrm G}(\beta\phi,b)
+ =\sum_{\substack{\sigma^n\mathbf a=\mathbf a\\a_1=b}}
+   e^{\beta\sum_{j=0}^{n-1}\phi(\sigma^j\mathbf a)}
+ =e^{\beta\phi(b)}S_\beta^{\,n-1}.
+\end{equation}
+For $\beta>0$, its exponential growth rate is $\log S_\beta=P(\beta)$.
+For $\beta\leq0$, $S_\beta=\infty$, so the based periodic sum is already
+infinite for every $n\geq2$ and the Gurevich pressure is $+\infty$.
+
+More explicitly, this is the one-sided topological Markov shift of the
+complete directed graph on $\Npos$, hence it is topologically mixing and has
+BIP: any one fixed symbol supplies both the finite big-image and big-preimage
+set; in particular, it satisfies the one-sided big-images condition~(13) of
+Sarig's 1999 article.  The potential $\beta\phi$ is one-cylinder locally constant, so every
+variation from level one onward is zero and the variations are summable; for
+$\beta>0$ one also has
+$\sup\beta\phi=\beta\log(3/2)<\infty$ and finite pressure by
+\eqref{eq:symbolic-pressure}.  Thus the hypotheses of Sarig's 2003 Gibbs/BIP
+theorem \cite{Sarig2003} are individually verified on the full shift when
+$\beta>0$.  Sarig's distinct 1999 Theorem~8 \cite{Sarig1999} additionally
+uses positive recurrence and an RPF eigenfunction uniformly bounded above
+and below, together with its one-sided big-images condition; it is not the
+BIP theorem.  None of these hypotheses is transferred to $\Sigma_C^+$ or the
+prefix tree.  The direct calculation above fixes the measure and Gibbs
+constant without using either theorem as a black box.
+
+\begin{corollary}[the full-shift Gibbs law does not select positive integers]
+\label{cor:symbolic-positive-image-null}
+For every $\beta>0$, the countable dense set $\Sigma_C^+$ has
+$\mu_\beta$-measure zero.  Under the conjugacy of
+Theorem~\ref{thm:symbolic-survivor-conjugacy}, the corresponding invariant
+probability measure on $D$ assigns measure zero to $\mathcal O$.
+\end{corollary}
+
+\begin{proof}
+The largest one-symbol mass is $1-2^{-\beta}<1$.  Hence the mass of any
+single infinite sequence is bounded by $(1-2^{-\beta})^n$ for every $n$ and
+is zero.  Countable additivity and countability of $\Sigma_C^+$ finish the
+proof; the second assertion is its pushforward form.
+\end{proof}
+
+\subsection{The failed compressed transition and its exact replacement}
+
+The raw passage proposes states $(N,r)$, with $r$ an odd representative
+modulo $2^N$, and the update
+\begin{equation}
+\label{eq:symbolic-raw-transducer-update}
+ (N,r)\xrightarrow{a}(N+a,r'),
+ \qquad
+ 3r'+1\equiv2^ar\pmod{2^{N+a}}.
+\end{equation}
+
+\begin{proposition}[explicit obstruction to the proposed update]
+\label{prop:symbolic-transducer-counterexample}
+Rule \eqref{eq:symbolic-raw-transducer-update} does not propagate the
+canonical residue of the initial value.  Starting at $(1,1)$ and reading
+the word $(1,1,2)$ gives
+\[
+ (1,1)\longrightarrow(2,3)\longrightarrow(3,7)
+ \longrightarrow(5,9).
+\]
+But the exact initial-source class for $(1,1,2)$ is
+\[
+ x\equiv7\pmod{32}.
+\]
+The congruence in \eqref{eq:symbolic-raw-transducer-update} is a predecessor
+relation for $r'$ over $r$, not the refinement relation
+$r_{wa}\equiv r_w\pmod{2^{A(w)+1}}$.
+\end{proposition}
+
+\begin{proof}
+Successive solution of the three raw congruences gives $3$, $7$, and $9$
+as displayed.  For $w=(1,1,2)$ one has $A(w)=4$ and
+\[
+ B_w=3^2+3\cdot2+2^2=19.
+\]
+Equation \eqref{eq:symbolic-canonical-prefix-residue} becomes
+$27x+19\equiv16\pmod{32}$, whose unique odd solution is $x\equiv7$.
+Finally, the raw equation has the literal form $3r'+1\equiv2^ar$; it solves
+for a branch predecessor $r'$ of $r$.  It contains no condition involving
+the previous prefix composite applied to an initial-source lift.
+\end{proof}
+
+The exact local update is the edge $v_w\to v_{wa}$ in
+Construction~\ref{construction:symbolic-prefix-refinement-tree}, with
+$r_{wa}$ recomputed by \eqref{eq:symbolic-canonical-prefix-residue}.  This
+retains the prefix and has no ambiguity.  The counterexample proves failure
+of the displayed raw update; it does \emph{not} prove that every possible
+residue encoding, Markov extension, quotient, or recoding is impossible.
+
+\begin{proposition}[canonical residue pairs retain the prefix]
+\label{prop:symbolic-canonical-pair-injection}
+On the canonical state set the pair itself retains the word.  If
+\[
+ \bigl(A(w)+1,r_w\bigr)=\bigl(A(z)+1,r_z\bigr),
+\]
+then $w=z$.  Consequently a successor operation on canonical pairs is
+well-defined by decoding $w$ and passing to $wa$.
+\end{proposition}
+
+\begin{proof}
+Any positive representative of the common residue class realizes both $w$
+and $z$.  Determinism makes the shorter word a prefix of the longer.
+Equality of the total exponents then forces equal lengths, since every
+additional exponent is positive.  Hence the words are equal.
+\end{proof}
+
+What Proposition~\ref{prop:symbolic-transducer-counterexample} rules out is
+the printed predecessor congruence as that successor, not the existence of
+every pair-based presentation.
+
+\subsection{The tropical degree map and the object-idempotent obstruction}
+
+Let $\mathbf B\Nzero^2$ denote the one-object category whose endomorphism
+monoid is $(\Nzero^2,+)$.  Define
+\[
+ \deg(p)=\bigl(\ell(p),A(p)-\ell(p)\bigr).
+\]
+Put $Q=\mathbb R_{\geq0}^2$.  Connes--Consani define
+$\operatorname{Conv}(\Z^2)$ to consist of the empty set and the closed
+convex sets $C\subset\mathbb R^2$ satisfying $C+Q=C$ and
+$C\subset z+Q$ for some $z\in\mathbb R^2$, with integral extreme points.  Its addition is
+convex hull of union, its multiplication is Minkowski sum, its additive
+zero is $\varnothing$, and its multiplicative unit is $Q$
+\cite{ConnesConsani2016}.
+
+\begin{proposition}[the exact tropical shadow]
+\label{prop:symbolic-tropical-degree-shadow}
+The object-erasing assignment
+\[
+ \deg:\mathcal E_C\longrightarrow\mathbf B\Nzero^2
+\]
+is a functor.  The translated-quadrant map
+\[
+ j:\Nzero^2\longrightarrow\operatorname{Conv}(\Z^2),
+ \qquad j(r,s)=(r,s)+Q,
+\]
+is an injective monoid homomorphism for addition on $\Nzero^2$ and
+Minkowski multiplication in $\operatorname{Conv}(\Z^2)$.  After viewing that
+multiplicative monoid as a one-object category, $j\circ\deg$ is a typed
+functorial degree shadow.
+
+For $r\geq1$, the exponent-word part of the fibre over $(r,s)$ consists of
+the $\binom{r+s-1}{r-1}$ compositions of $r+s$ into $r$ positive parts;
+each word has the infinite source fibre proved in
+Proposition~\ref{prop:weighted-word-source-fibres}.  Over $(0,0)$ the fibre
+consists exactly of all object identities, while every fibre over $(0,s)$
+with $s>0$ is empty.  Thus the degree shadow deliberately loses objects,
+exponent order, and arithmetic source data.
+\end{proposition}
+
+\begin{proof}
+Length and total exponent are additive under composable concatenation, so
+both coordinates of $\deg$ are additive and identities map to $(0,0)$.
+For every $(r,s)\in\Nzero^2$, the set $(r,s)+Q$ is closed and convex, obeys
+$((r,s)+Q)+Q=(r,s)+Q$, is contained in the translate $(r,s)+Q$, and has the
+unique integral extreme point $(r,s)$.  It therefore belongs to
+$\operatorname{Conv}(\Z^2)$ under the cited definition.
+Translated upper quadrants satisfy
+\[
+ ((r,s)+Q)+_{\mathrm{Mink}}((r',s')+Q)
+ =(r+r',s+s')+Q,
+\]
+because $Q+Q=Q$.  The unique extreme point of $j(r,s)$ is $(r,s)$, proving
+injectivity, and $j(0,0)=Q$ is the multiplicative unit.  Finally,
+words of length $r$ and total exponent $r+s$ are exactly the positive
+compositions of that integer into $r$ parts, giving the stated count.
+\end{proof}
+
+\begin{proposition}[no object-erasing category-algebra homomorphism]
+\label{prop:symbolic-tropical-algebra-obstruction}
+Let $K$ be a nonzero commutative semiring and let $K[\mathcal E_C]$ denote
+the finite-support category semialgebra.  The $K$-linear map
+\[
+ \pi_{\deg}:K[\mathcal E_C]\longrightarrow K[\Nzero^2],
+ \qquad [p]\longmapsto X^{\ell(p)}Y^{A(p)-\ell(p)}
+\]
+is not multiplicative.
+
+Separately, let $\operatorname{Mor}(\mathcal E_C)^0$ be the path semigroup
+with an absorbing zero, so noncomposable paths multiply to $0$.  The typed
+set map
+\[
+ \theta:\operatorname{Mor}(\mathcal E_C)^0
+ \longrightarrow\operatorname{Conv}(\Z^2),
+ \qquad
+ \theta(0)=\varnothing,
+ \quad \theta(p)=j(\deg p),
+\]
+is multiplicative on composable path pairs but is not a semigroup
+homomorphism.  No coefficient-semiring map into
+$\operatorname{Conv}(\Z^2)$ is asserted.
+\end{proposition}
+
+\begin{proof}
+Choose distinct objects $x\ne y$.  Their identities are orthogonal in the
+category semialgebra: $[1_x][1_y]=0$.  Both monomial images are the target
+unit, so their product is $1\ne0$.  For the separately typed map $\theta$,
+one has
+\[
+ \theta(1_x1_y)=\theta(0)=\varnothing,
+ \qquad
+ \theta(1_x)\theta(1_y)=Q+_{\mathrm{Mink}}Q=Q\ne\varnothing.
+\]
+Thus $\theta$ also fails multiplicativity, now without any unprovided
+coefficient map.
+\end{proof}
+
+Connes--Consani use $\operatorname{Conv}(\Z\times\Z)$, not a silently
+substituted $\operatorname{Conv}(\Nzero^2)$, and explicitly retain a
+noncancellativity caveat before passing to the reduced square.  The Collatz
+image above occupies only translated upper quadrants anchored at
+nonnegative lattice points.
+The typed matrix representations of
+Proposition~\ref{prop:weighted-typed-representations}, not object erasure,
+are the algebraic repair.
+
+\subsection{Cartier--Witt functoriality and the missing formal-scheme map}
+
+Bhatt--Lurie attach a groupoid-valued Cartier--Witt stack $\operatorname{WCart}_X$
+to a bounded $p$-adic formal scheme $X$ and make the construction functorial
+in formal-scheme maps \cite{BhattLurieWCart}.  For
+$X=\operatorname{Spf}(\Z_p)$, finality identifies $\operatorname{WCart}_X$
+with the base Cartier--Witt stack.  Their Witt-vector Frobenius is a separate
+endomorphism in that construction.
+
+\begin{proposition}[the raw branch is not a self-map of
+$\operatorname{Spf}(\Z_3)$]
+\label{prop:symbolic-WCart-formal-map-obstruction}
+Every formal-scheme endomorphism of $\operatorname{Spf}(\Z_3)$ induced by a
+continuous unital ring endomorphism of $\Z_3$ is the identity.  For every
+$a\geq1$, the affine function
+\[
+ g_a(x)=\frac{3x+1}{2^a}
+\]
+is not such a ring endomorphism: $g_a(0)=2^{-a}\ne0$.  Therefore Bhatt--Lurie
+functoriality does not produce a morphism called
+$\operatorname{WCart}(g_a)$ from a branch self-map of
+$\operatorname{Spf}(\Z_3)$.
+\end{proposition}
+
+\begin{proof}
+A unital ring endomorphism $f:\Z_3\to\Z_3$ fixes every integer.  The
+integers are dense in $\Z_3$, so continuity forces $f$ to be the identity.
+Independently, every ring homomorphism sends zero to zero, whereas the
+displayed affine function does not.
+\end{proof}
+
+\begin{proposition}[the exact formal-affine-line repair]
+\label{prop:symbolic-formal-affine-line-repair}
+Put
+\[
+ \widehat{\mathbb A}^1_{\Z_3}
+ =\operatorname{Spf}(\Z_3\langle T\rangle).
+\]
+The continuous coordinate-ring endomorphism fixing $\Z_3$ and sending
+$T\mapsto(3T+1)/2^a$ defines an endomorphism of this formal affine line, so
+Cartier--Witt functoriality may be applied to that map.  On $\Z_3$-valued
+points it is injective with image $2^{-a}+3\Z_3$; the inverse on that image
+is $y\mapsto(2^ay-1)/3$.
+
+This endomorphism does not by itself encode the Collatz branch partition.  In
+$\Z_3$, the element $2$ is a unit, so $(2^m)=\Z_3$ for every $m$; hence the
+$2$-power ideals supply no selector filtration on the formal point.
+\end{proposition}
+
+\begin{proof}
+The coefficient $2^{-a}$ lies in $\Z_3$, so substitution by the displayed
+restricted polynomial gives a continuous $\Z_3$-algebra endomorphism of
+$\Z_3\langle T\rangle$ and hence, contravariantly, the formal-scheme map.
+The pointwise fibre statement follows by solving the affine equation.  The
+ideal identity $(2^m)=\Z_3$ follows from invertibility of $2$.
+\end{proof}
+
+The ideal calculation alone does not prove that the integer valuation strata
+fail to be $3$-adic congruence strata.  The exact obstruction is constructive.
+
+\begin{proposition}[the integer valuation selector is $3$-adically dense and
+codense]
+\label{prop:symbolic-no-three-adic-valuation-selector}
+For $a\geq1$, let
+\[
+ \mathcal D_a^+=\{n\in\mathcal O:\vtwo(3n+1)=a\}.
+\]
+For every $k\geq1$ and every residue $b\pmod{3^k}$, the residue ball
+$b+3^k\Z_3$ contains a positive odd integer in $\mathcal D_a^+$ and a
+positive odd integer outside $\mathcal D_a^+$; the latter can be chosen in
+$\mathcal D_{a+1}^+$.  Thus both $\mathcal D_a^+$ and its complement inside
+$\mathcal O$ meet every finite $3$-adic residue ball.  In particular there is
+no clopen $U\subset\Z_3$ for which
+$U\cap\mathcal O=\mathcal D_a^+$.
+\end{proposition}
+
+\begin{proof}
+Let
+\[
+ c_a\equiv3^{-1}(2^a-1)\pmod{2^{a+1}}.
+\]
+It is an odd residue and
+$3c_a+1\equiv2^a\pmod{2^{a+1}}$.  Since $3^k$ and $2^{a+1}$ are coprime, the
+Chinese remainder theorem gives an integer $n$ with
+\[
+ n\equiv b\pmod{3^k},
+ \qquad n\equiv c_a\pmod{2^{a+1}}.
+\]
+Adding a sufficiently large positive multiple of $3^k2^{a+1}$ makes $n$
+positive without changing either congruence.  It remains odd, and the second
+congruence says exactly that $\vtwo(3n+1)=a$.  Repeating the construction with
+$c_{a+1}$ modulo $2^{a+2}$ gives a positive odd $m$ in the same $3$-adic
+residue ball with $\vtwo(3m+1)=a+1$, so $m\notin\mathcal D_a^+$.
+
+If a clopen $U$ cut out $\mathcal D_a^+$ on $\mathcal O$, choose
+$n\in\mathcal D_a^+\subset U$.  Openness supplies a finite residue ball
+$n+3^k\Z_3\subset U$.  The preceding construction places a positive odd
+$m\notin\mathcal D_a^+$ in the same ball, contradicting
+$U\cap\mathcal O=\mathcal D_a^+$.
+\end{proof}
+
+Moving from the base formal point to the affine line repairs the type of the
+polynomial map.  The CRT theorem proves that its valuation selector cannot be
+recovered from a finite clopen $3$-adic congruence condition on the embedded
+positive odd integers; the required piecewise arithmetic dynamics therefore
+needs additional $2$-adic selector data.
+
+For $W=W(k)$ with $k$ a perfect field of characteristic $p>0$ and a primitive $p$th
+root $\zeta$, Gros--Le~Stum--Quir\'os distinguish the relevant one-variable
+categories precisely: Theorem~7.5 uses complete modules with
+$\Delta$-hyperstratification, while Theorem~7.12 identifies finite-free
+weakly nilpotent $\Delta$-modules with the stated prismatic vector bundles;
+with Frobenius, their later comparison reaches crystalline representation
+lattices \cite{GrosLeStumQuiros2025}.  This source fixes explicit hypotheses
+and the one-variable coordinate ring $W[[q-1]]$.  It contains no two-variable
+ring $W[[q_2-1,q_3-1]]$, no two independent Collatz coordinate directions or
+commuting connection operators, no pair of Collatz branch operators, and no
+theorem identifying their difference with a drift observable.
+
+\begin{nonclaim}[interfaces not admitted at this stage]
+\label{nonclaim:symbolic-late-interface-boundary}
+The raw groupoid $C^*$-algebra, KMS, BCM, motivic, two-coordinate toric,
+Cartier--Witt, prismatic, crystalline, and Langlands statements are not
+theorems of this edition.  The exact degree functor, translated-quadrant
+Newton-polygon map, affine-line branch maps, and survivor-space symbolic conjugacy are the
+proved interfaces.  No further arrow is obtained by similarity of words or
+by the fact that several constructions are spectral.
+\end{nonclaim}
+
+\subsection{What the audited passage actually establishes}
+
+The rigorous content retained from this passage is now exact:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item finite exponent words are exact residue cylinders, and their nested
+  limits give a homeomorphic conjugacy between the survivor domain $D$ and
+  the full one-sided countable shift;
+\item the missing set is the full eventual backward orbit of $-1/3$, not
+  merely one exceptional point;
+\item positive integer itineraries form a countable dense nonclosed subset,
+  characterized exactly by stabilization of canonical prefix
+  representatives and stable only in the forward-shift sense;
+\item the full-shift pressure and Bernoulli law are explicit exactly for
+  $\beta>0$, while the positive arithmetic locus has measure zero for those
+  full-shift laws;
+\item the proposed $(N,r)$ update fails on $(1,1,2)$, and the prefix-refinement
+  tree supplies a correct replacement without claiming that every other
+  recoding is impossible;
+\item the tropical degree is a genuine functor and embeds as translated
+  upper Newton quadrants, but object erasure obstructs the proposed category-algebra
+  homomorphism; and
+\item the raw $\operatorname{Spf}(\Z_3)$ branch map does not exist.  A formal
+  affine-line map exists, but it does not encode the $2$-adic valuation
+  strata required by Collatz dynamics.
+\end{enumerate}
+None of these statements proves termination, excludes divergent positive
+orbits, or identifies the Collatz system with the cited geometric theories.

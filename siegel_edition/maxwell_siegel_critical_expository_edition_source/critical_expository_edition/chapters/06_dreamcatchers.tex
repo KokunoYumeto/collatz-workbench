@@ -1,0 +1,469 @@
+\section{Set-series, dreamcatchers, and singularity conservation}
+\label{sec:dreamcatchers}
+
+Siegel's 2019 paper encodes invariant sets by holomorphic generating series
+and then retains only their dominant radial boundary data.  The resulting
+$\ell^2$ object is called a \emph{dreamcatcher}.  This is a different
+analytic route from the numen: the numen codes branch compositions, whereas
+the permutation operator below acts on coefficient functions and detects
+sets invariant under inverse image.
+
+\subsection{Set-series and the historical Hydra class}
+
+For $V\subseteq\N_0$, define
+\begin{align}
+ \varsigma_V(w)&=\sum_{v\in V}w^v, && |w|<1,\label{eq:ordinary-set-series}\\
+ \psi_V(z)&=\varsigma_V(e^{2\pi iz})
+            =\sum_{v\in V}e^{2\pi ivz},&&\Im z>0.\label{eq:Fourier-set-series}
+\end{align}
+The coefficients are the indicator function $\ind{n\in V}$.  The 2019 paper
+also uses exponential and Dirichlet set-series.  Its displayed Dirichlet
+series $\sum_{v\in V}v^{-s}$ requires either $0\notin V$ or an explicit
+treatment of the term $v=0$.
+
+The Hydra used in that paper is the following one-dimensional historical
+specialization.  It is not the controlling 2026 definition.
+
+\begin{definition}[2019 $\varrho$-Hydra]
+Fix $\varrho\geq2$.  A 2019 $\varrho$-Hydra is a surjection
+$H:\N_0\to\N_0$ with
+\begin{equation}
+\label{eq:2019-hydra}
+ H(n)=\frac{a_jn+b_j}{d_j}
+ \quad(n\equiv j\pmod\varrho),
+\end{equation}
+where $a_j,d_j\geq1$, $b_j\geq0$, $\gcd(a_j,d_j)=1$, and each assigned
+branch is integer-valued and nonnegative.  Set
+\begin{equation}
+\label{eq:mu-j}
+ \mu_j=\frac{\varrho a_j}{d_j}\in\N.
+\end{equation}
+It is \emph{prime} when $\varrho$ is prime and every $a_j$ is $1$ or a
+prime.  It is \emph{regulated} when $\mu_j=1$ for at least one $j$.
+\end{definition}
+
+The integrality of \cref{eq:mu-j} follows by comparing
+$H(\varrho m+j)$ with $H(j)$, and coprimality then gives
+$d_j\mid\varrho$.  Surjectivity is an extra hypothesis of the 2019 analytic
+framework; it is not part of the 2026 word formalism.
+
+\subsection{Permutation operators}
+
+Let $\ell^\infty(\N_0)$ carry its supremum norm.  The coefficient pullback
+is the linear map
+\[
+ \mathsf P_H:\ell^\infty(\N_0)\longrightarrow\ell^\infty(\N_0),
+ \qquad (\mathsf P_Hc)_n=c_{H(n)}.
+\]
+Because the 2019 Hydra $H$ is surjective,
+\[
+ \|\mathsf P_Hc\|_\infty
+ =\sup_{n\geq0}|c_{H(n)}|
+ =\sup_{m\geq0}|c_m|=\|c\|_\infty;
+\]
+thus $\mathsf P_H$ is an isometric injection (not necessarily a surjection).
+For $c\in\ell^\infty(\N_0)$, both
+\[
+ \mathcal G_{\mathbb D}c(w)=\sum_{n\geq0}c_nw^n
+ \quad(|w|<1),
+ \qquad
+ \mathcal G_{\mathbb H}c(z)=\sum_{n\geq0}c_ne^{2\pi inz}
+ \quad(\Im z>0)
+\]
+converge normally on compact subsets of their displayed domains.  The two
+analytic operators are therefore the conjugates of this specified
+coefficient map on the ranges of the injective generating maps:
+\[
+ \mathcal Q_H:\operatorname{ran}(\mathcal G_{\mathbb D})
+ \longrightarrow\operatorname{ran}(\mathcal G_{\mathbb D}),
+ \qquad
+ \mathscr Q_H:\operatorname{ran}(\mathcal G_{\mathbb H})
+ \longrightarrow\operatorname{ran}(\mathcal G_{\mathbb H}).
+\]
+\begin{align}
+ \mathcal Q_H(\mathcal G_{\mathbb D}c)
+   &=\mathcal G_{\mathbb D}(\mathsf P_Hc)
+     =\sum_{n\geq0}c_{H(n)}w^n,\label{eq:ordinary-permutation}\\
+ \mathscr Q_H(\mathcal G_{\mathbb H}c)
+   &=\mathcal G_{\mathbb H}(\mathsf P_Hc)
+     =\sum_{n\geq0}c_{H(n)}e^{2\pi inz}.
+     \label{eq:Fourier-permutation}
+\end{align}
+For set-series this simply records inverse image:
+\begin{equation}
+\label{eq:Q-inverse-image}
+ \mathcal Q_H\varsigma_V=\varsigma_{H^{-1}(V)},
+ \qquad
+ \mathscr Q_H\psi_V=\psi_{H^{-1}(V)}.
+\end{equation}
+Thus $H^{-1}(V)=V$ if and only if the corresponding set-series is a fixed
+point.
+
+Let $\xi_m=e^{2\pi i/m}$.  Splitting the input index modulo $\varrho$ and
+using
+\[
+ H(\varrho n+j)=\mu_jn+H(j)
+\]
+gives, for every
+$\psi\in\operatorname{ran}(\mathcal G_{\mathbb H})$, the finite branch
+formula
+\begin{equation}
+\label{eq:Fourier-permutation-branch}
+ (\mathscr Q_H\psi)(z)
+ =\sum_{j=0}^{\varrho-1}\frac1{\mu_j}
+   \sum_{k=0}^{\mu_j-1}\xi_{\mu_j}^{-kH(j)}
+   e^{-2\pi i(b_j/a_j)z}
+   \psi\left(\frac{\varrho z+k}{\mu_j}\right).
+\end{equation}
+To verify the formula, expand the right side.  The inner root-of-unity sum
+selects coefficients whose indices are congruent to $H(j)$ modulo $\mu_j$;
+the exponential prefactor converts the surviving exponent back to
+$\varrho n+j$.
+
+\begin{proposition}[fixed coefficient functions]
+\label{prop:permutation-fixed-coefficients}
+For a coefficient function $c:\N_0\to\C$, define its coefficient pullback by
+\[
+ (\mathsf P_Hc)_n=c_{H(n)}.
+\]
+Then $\mathsf P_Hc=c$ if and only if
+\begin{equation}
+\label{eq:coeff-orbit-constant}
+ c_n=c_{H(n)}\qquad(n\geq0).
+\end{equation}
+Equivalently, $c$ is constant on every total orbit class of $H$.
+\end{proposition}
+
+\begin{proof}
+By definition, $\mathsf P_Hc=c$ is exactly
+\cref{eq:coeff-orbit-constant}.
+Iterating that identity makes $c$ constant along forward orbits; if two
+points have a common forward image, their coefficients agree.  Conversely,
+constancy on orbit classes implies \cref{eq:coeff-orbit-constant}.
+\end{proof}
+
+\begin{sourceissue}[``basis'' in the Permutation Operator Theorem]
+The source says that the set-series of all orbit classes form a basis of the
+fixed-point space.  \Cref{prop:permutation-fixed-coefficients} gives the exact
+coefficient-level statement.  If infinitely many orbit classes have
+nonzero coefficients, the resulting decomposition is an infinite sum, not
+a finite Hamel-basis expansion.  A topological basis claim requires a named
+function-space topology and a convergence proof.
+\end{sourceissue}
+
+\subsection{Edgepoints and normalization}
+
+Let $\mathbb H_{+i}=\{z\in\C:\Im z>0\}$ and
+$\psi\in\mathcal A(\mathbb H_{+i})$.
+
+\begin{definition}[edgepoint and virtual residue]
+An $x\in\R$ is an \emph{edgepoint} of $\psi$ when the finite limit
+\[
+ \operatorname{VRes}_x[\psi]
+ =\lim_{y\downarrow0}y\psi(x+iy)
+\]
+exists.  It is a \emph{virtual pole} when that limit is nonzero.  Write
+\[
+ P(\psi)=\{x\in\R:x\text{ is an edgepoint of }\psi\}.
+\]
+\end{definition}
+
+For a Fourier set-series, the elementary estimate
+\[
+ |\psi_V(x+iy)|\leq\sum_{n\geq0}e^{-2\pi ny}
+ =\frac1{1-e^{-2\pi y}}
+\]
+implies
+\begin{equation}
+\label{eq:no-super-simple-growth}
+ \lim_{y\downarrow0}y^{1+\delta}\psi_V(x+iy)=0
+ \qquad(x\in\R,\ \delta>0).
+\end{equation}
+Thus the virtual residue records the largest possible radial growth order
+for a digital Fourier series.
+
+\begin{sourceissue}[ordinary versus virtual residues]
+If $\psi$ has an ordinary simple pole at $x$ with complex residue $A$, then
+$y\psi(x+iy)\to A/i=-iA$.  The source's definition of a ``classical virtual
+pole'' subtracts $\operatorname{VRes}_x[\psi]/(z-x)$ and thereby omits this
+factor of $i$.  This edition retains the term \emph{virtual residue} for the
+radial normalization above but does not identify it numerically with the
+ordinary complex residue.
+\end{sourceissue}
+
+\begin{proposition}[cross-section densities give the virtual residue]
+\label{prop:cross-section-vres}
+Let $\alpha\geq1$, $\beta\in\Z$, and assume that every limit
+\[
+ d_k=\lim_{N\to\infty}\frac1N
+ |V\cap(k+\alpha\Z)\cap[0,N)|
+ \qquad(0\leq k<\alpha)
+\]
+exists.  Then $\beta/\alpha$ is an edgepoint of $\psi_V$ and
+\begin{equation}
+\label{eq:VRes-cross-section-density}
+ \operatorname{VRes}_{\beta/\alpha}[\psi_V]
+ =\frac1{2\pi}\sum_{k=0}^{\alpha-1}
+ d_k\xi_\alpha^{\beta k}.
+\end{equation}
+In particular, if $V$ has natural density $d(V)$, then
+$\operatorname{VRes}_0[\psi_V]=d(V)/(2\pi)$.
+\end{proposition}
+
+\begin{proof}
+Put $a_n=\ind{n\in V}\xi_\alpha^{\beta n}$.  Splitting a Ces\`aro sum by
+residue class gives
+\[
+ \lim_{N\to\infty}\frac1N\sum_{n=0}^{N-1}a_n
+ =\sum_{k=0}^{\alpha-1}d_k\xi_\alpha^{\beta k}=:L.
+\]
+The elementary Abel implication for a bounded sequence now gives
+\[
+ (1-r)\sum_{n\geq0}a_nr^n\longrightarrow L
+ \qquad(r\uparrow1).
+\]
+For completeness, if $A_N=\sum_{n<N}(a_n-L)$, then $A_N=o(N)$ and summation
+by parts gives
+$(1-r)\sum_{n\geq0}(a_n-L)r^n=(1-r)^2\sum_{N\geq1}A_Nr^{N-1}\to0$;
+split the last sum at a fixed index after bounding $|A_N|/N$ on its tail.
+Finally set $r=e^{-2\pi y}$.  Since
+$y/(1-e^{-2\pi y})\to1/(2\pi)$,
+\[
+ y\psi_V(\beta/\alpha+iy)
+ =\frac{y}{1-r}(1-r)\sum_{n\geq0}a_nr^n
+ \longrightarrow\frac{L}{2\pi},
+\]
+which proves the assertion.  Only the Abel implication is used; no Tauberian
+converse is invoked.
+\end{proof}
+
+Dreamcatchers therefore contain residue-class density data, not merely a
+list of analytic singularities.
+
+\subsection{The Square Sum Lemma}
+
+Equip subsets of $\R/\Z$ with counting measure.  The result below is stated
+in Siegel's paper, which credits the proof idea to accepted MathOverflow
+answer 333801 by user \emph{fedja} \cite{FedjaMO333801}.  The argument below
+is instead this edition's finite-subset Bessel proof; it is not attributed to
+the answerer.  It avoids the source proof's interchange of infinite sums
+before summability has been established.
+
+\begin{lemma}[Square Sum Lemma]
+\label{lem:square-sum}
+Let $V\subseteq\N_0$ and put $P'=P(\psi_V)\cap[0,1)$.  Then
+\begin{equation}
+\label{eq:square-sum}
+ \sum_{t\in P'}|\operatorname{VRes}_t[\psi_V]|^2
+ \leq\frac1{(2\pi)^2}.
+\end{equation}
+In particular, the virtual-residue function belongs to $\ell^2(P')$ and
+has at most countable nonzero support.
+\end{lemma}
+
+\begin{proof}
+Let $a_n=\ind{n\in V}$, let $r=e^{-2\pi y}$, and put on bounded sequences
+the semidefinite inner product
+\[
+ \langle u,v\rangle_y=(1-r)\sum_{n\geq0}u_n\overline{v_n}r^n.
+\]
+For $t\in\R/\Z$, set $e_t(n)=e^{-2\pi int}$.  Then
+\begin{align*}
+ \langle e_s,e_t\rangle_y
+ &=\frac{1-r}{1-re^{2\pi i(t-s)}}
+   \longrightarrow\ind{s=t},\\
+ \langle a,e_t\rangle_y
+ &=(1-r)\psi_V(t+iy)
+   \longrightarrow2\pi\operatorname{VRes}_t[\psi_V],\\
+ \|a\|_y^2&=(1-r)\sum_{n\geq0}a_nr^n\leq1.
+\end{align*}
+Fix a finite $F\subseteq P'$.  The Gram matrix
+$G_y=(\langle e_s,e_t\rangle_y)_{s,t\in F}$ tends to the identity and is
+invertible for small $y$.  The finite-dimensional projection inequality is
+\[
+ b_y^*G_y^{-1}b_y\leq\|a\|_y^2,
+ \qquad b_y=(\langle a,e_t\rangle_y)_{t\in F}.
+\]
+Passing to the limit yields
+$(2\pi)^2\sum_{t\in F}|\operatorname{VRes}_t[\psi_V]|^2\leq1$.
+Taking the supremum over finite $F$ gives \cref{eq:square-sum}.
+\end{proof}
+
+\subsection{Dreamcatchers and branch-invariant carriers}
+
+\begin{definition}[dreamcatcher over $T$]
+Let $\psi\in\mathcal A(\mathbb H_{+i})$, and let
+$T\subseteq P(\psi)$ be $1$-periodic.  The function $\psi$ \emph{admits a
+dreamcatcher over $T$} when
+\begin{equation}
+\label{eq:dreamcatcher}
+ R_{\psi,T}(x)=\operatorname{VRes}_x[\psi]
+ \quad(x\in T)
+\end{equation}
+belongs to $\ell^2(T/\Z)$.  Following the source, denote the class of such
+functions by $\mathcal D_1(T)$.
+\end{definition}
+
+The carrier $T$ is \emph{$H$-branch invariant} when
+\begin{equation}
+\label{eq:H-branch-invariant}
+ \frac{\varrho T+k}{\mu_j}\subseteq T
+ \quad(0\leq j<\varrho,\ 0\leq k<\mu_j).
+\end{equation}
+This ensures that every virtual residue appearing after applying a branch in
+\cref{eq:Fourier-permutation-branch} is defined on the same carrier.
+
+\begin{lemma}[Virtual Residue Formula]
+\label{lem:VRF}
+Let $T$ be $H$-branch invariant and let
+$\psi\in\mathcal D_1(T)\cap\operatorname{ran}(\mathcal G_{\mathbb H})$.
+At every $t\in T$, the function $\mathscr Q_H\psi$ has an edgepoint and
+\begin{equation}
+\label{eq:VRF}
+ \operatorname{VRes}_t[\mathscr Q_H\psi]
+ =\frac1\varrho\sum_{j=0}^{\varrho-1}
+ e^{-2\pi i(b_j/a_j)t}
+ \sum_{k=0}^{\mu_j-1}\xi_{\mu_j}^{-kH(j)}
+ R_{\psi,T}\left(\frac{\varrho t+k}{\mu_j}\right).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Multiply \cref{eq:Fourier-permutation-branch} by $y$ and substitute
+$z=t+iy$.  The exponential prefactor converges to its value at $t$.  For
+$A_{j,k}(z)=(\varrho z+k)/\mu_j$, the imaginary part of $A_{j,k}(t+iy)$ is
+$\varrho y/\mu_j$, hence
+\[
+ y\psi(A_{j,k}(t+iy))
+ =\frac{\mu_j}{\varrho}
+   \left(\frac{\varrho y}{\mu_j}\right)
+   \psi\left(A_{j,k}(t)+i\frac{\varrho y}{\mu_j}\right).
+\]
+The factor $1/\mu_j$ in \cref{eq:Fourier-permutation-branch} cancels the
+$\mu_j$ here, leaving $1/\varrho$.  The sum is finite, so its limit is the
+sum of the limits.
+\end{proof}
+
+\begin{definition}[dreamcatcher operator]
+For $R\in\ell^2(T/\Z)$ let $\mathcal E_{H:T}R:T\to\C$ denote the raw finite
+expression
+\begin{equation}
+\label{eq:dreamcatcher-operator}
+ (\mathcal E_{H:T}R)(x)
+ =\frac1\varrho\sum_{j=0}^{\varrho-1}
+ e^{-2\pi i(b_j/a_j)x}
+ \sum_{k=0}^{\mu_j-1}\xi_{\mu_j}^{-kH(j)}
+ R\left(\frac{\varrho x+k}{\mu_j}\right).
+\end{equation}
+Here $R(y)$ means the value on the class $y+\Z$; branch invariance ensures
+that every argument belongs to $T$.  Define the maximal graph domain
+\[
+ \operatorname{Dom}(\mathfrak Q_{H:T})
+ =\{R\in\ell^2(T/\Z):
+     \mathcal E_{H:T}R\text{ is $1$-periodic on $T$ and }
+     [\mathcal E_{H:T}R]\in\ell^2(T/\Z)\}.
+\]
+The dreamcatcher operator is the linear operator
+\[
+ \mathfrak Q_{H:T}:\operatorname{Dom}(\mathfrak Q_{H:T})
+ \subseteq\ell^2(T/\Z)\longrightarrow\ell^2(T/\Z),
+ \qquad R\longmapsto[\mathcal E_{H:T}R].
+\]
+\end{definition}
+
+\begin{theorem}[Singularity Conservation Law]
+\label{thm:SCL}
+Let $T$ be $H$-branch invariant, let
+$\psi\in\mathcal D_1(T)\cap\operatorname{ran}(\mathcal G_{\mathbb H})$ be
+fixed by $\mathscr Q_H$, and put $R=R_{\psi,T}$.  Suppose
+$R\in\operatorname{Dom}(\mathfrak Q_{H:T})$.  Then
+\begin{equation}
+\label{eq:SCL}
+ \mathfrak Q_{H:T}R=R.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Since $\mathscr Q_H\psi=\psi$, the left side of
+\cref{eq:VRF} is $\operatorname{VRes}_t[\psi]=R(t)$.  Its right side is
+$\mathcal E_{H:T}R(t)$, whose descended class is
+$\mathfrak Q_{H:T}R$.  Equality holds pointwise on $T$ and hence in
+$\ell^2(T/\Z)$.
+\end{proof}
+
+\begin{sourceissue}[undefined class and operator domain]
+The Virtual Residue Formula and SCL in the source assume
+$\psi\in\mathcal D_2(T)$, but only $\mathcal D_1(T)$ is defined.  The intended
+symbol appears to be $\mathcal D_1(T)$.  More seriously, the proof that
+\cref{eq:dreamcatcher-operator} preserves $\ell^2(T/\Z)$ treats the inclusion
+in \cref{eq:H-branch-invariant} as saying that each affine branch map is a
+bijection of $T$.  A bijection of $\R$ whose image sends $T$ into $T$ need
+not map $T$ onto itself.  The typed SCL above therefore uses the exact
+maximal graph domain and makes membership an explicit hypothesis for the
+particular dreamcatcher.  It does not assert that the graph domain is all of
+$\ell^2(T/\Z)$ or that the operator is bounded.  Either conclusion needs
+two-sided branch invariance or a separate finite-multiplicity norm estimate.
+\end{sourceissue}
+
+A function $\psi$ is \emph{tame} in the source when every rational number is
+an edgepoint.  In that case $T=\Q$ is available and, by
+\cref{lem:square-sum}, the rational virtual residues of a Fourier set-series
+form an element of $\ell^2(\Q/\Z)$.
+
+\subsection{The Finite Dreamcatcher Theorem}
+
+The later half of the 2019 paper studies
+$\ker(I-\mathfrak Q_H)$ purely on $\ell^2(\Q/\Z)$.  Its central statement is
+the following.
+
+\begin{status}[Finite Dreamcatcher Theorem, source theorem]
+\label{status:FDT}
+Let $H$ be a prime, regulated 2019 Hydra.  If
+\[
+ R\in\ker(I-\mathfrak Q_{H:\Q})\subseteq\ell^2(\Q/\Z)
+\]
+and $\supp R$ is finite modulo $\Z$, then
+\begin{equation}
+\label{eq:FDT}
+ R(x)=R(0)\ind{x\in\Z}
+ \qquad(x\in\Q).
+\end{equation}
+The source proof proceeds through the Off-$\varrho$ Theorem, an auxiliary
+functional equation, two support propositions, and the Off-$\varrho$
+Infinity Theorem.  This edition records the result with that proof status;
+it does not use the earlier flawed $\ell^2(T)$-invariance argument as an
+independent proof of the finite-support theorem.
+\end{status}
+
+The result says that a finitely supported conserved singularity pattern has
+no nonintegral rational frequency.  Combining it with the SCL gives the
+paper's first weak rationality consequence.
+
+\begin{status}[Weak Rationality Theorem 1, source consequence]
+If $V\subseteq\N_0$ is rational in the sense that its ordinary generating
+function is rational, and if $H^{-1}(V)=V$ for a prime regulated Hydra, then
+$V$ is finite or cofinite in $\N_0$.
+\end{status}
+
+Indeed, rationality makes the virtual-pole support finite modulo $\Z$;
+invariance gives a permutation-operator fixed point; SCL and FDT force the
+only possible dominant rational boundary frequency to be $0$.  The remaining
+step uses the eventual periodicity of a $0$--$1$ sequence with rational
+generating function.
+
+\begin{sourceissue}[results not promoted from the 2019 paper]
+Three later claims are kept out of the proved chain.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item The proof of Weak Rationality Theorem 2 asserts that naturally
+      measurable subsets of $\N_0$ form a $\sigma$-algebra and that natural
+      density is countably additive.  Both assertions are false in general,
+      so that theorem is not canonized as proved.
+\item Theorem 12 assumes branch invariance of both the rational edgepoints
+      and their rational complement.  The source itself calls this double
+      requirement the method's ``Achilles heel''; the edition retains the
+      result only with that hypothesis if cited.
+\item The assertion that a limit of dreamcatchers is the dreamcatcher of the
+      limiting function is explicitly Conjecture 1.  A nearby corollary also
+      uses an asymptotic fixed-point premise not present in its statement.
+\end{enumerate}
+\end{sourceissue}

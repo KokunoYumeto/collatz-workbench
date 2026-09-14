@@ -1,0 +1,963 @@
+\section{Synthesis: terminology, dependencies, and exact theorem status}
+\label{sec:synthesis}
+
+This section is the control panel for the edition.  It does not add another
+layer of analogy to the preceding mathematics.  It identifies the same
+objects in Siegel's terminology and in standard mathematical language,
+records the hypotheses needed to pass from one object to the next, and marks
+the precise point at which each proved chain stops.  A status assigned below
+belongs to a particular statement in a particular witness; it is not a
+judgment on an entire paper or on the programme as a whole.
+
+\subsection{Authorship and editorial boundary}
+
+\begin{status}[Authorship boundary]
+The mathematical corpus edited in this volume is the work of Maxwell C.
+Siegel.  In particular, the source constructions and the names
+\emph{Hydra map}, \emph{numen}, \emph{dreamcatcher},
+\emph{$(p,q)$-adic analysis}, \emph{rising-continuity}, and
+\emph{F-series} remain attributed to Siegel.  The standard-language column
+in the crosswalk below explains those objects; it does not rename them and
+does not transfer their authorship.
+
+Typed recastings with explicit source crosswalks, corrected quantifiers,
+padded-word conventions,
+replacement hypotheses, counterexamples to printed assertions, and proofs
+explicitly supplied in this edition are editorial work.  They are described
+as reconstructions or repairs, not retroactively attributed to Siegel as
+source text.  Conversely, a correction supplied by this edition does not
+change authorship of the underlying corpus.
+\end{status}
+
+\subsection{Terminology crosswalk}
+
+The third column gives a standard description of the typed source object.
+The fourth records an identification which must \emph{not} be made.
+
+\begingroup\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.18\textwidth}p{0.23\textwidth}p{0.28\textwidth}p{0.23\textwidth}@{}}
+\toprule
+Siegel term & Typed object in this edition & Standard-language description & Exactness boundary\\
+\midrule
+\endfirsthead
+\toprule
+Siegel term & Typed object in this edition & Standard-language description & Exactness boundary\\
+\midrule
+\endhead
+Hydra map & A residue-class assignment of affine branches
+$H_j=(r_j,c_j)$ on $\mathcal O_K$, admissible on the assigned classes & A
+piecewise-affine arithmetic dynamical system with a finite digit alphabet &
+The 2019 surjective $\varrho$-Hydra is a historical specialization; it is not
+identical to the 2026 global-field definition.\\
+
+Scalar integer Hydra & The specialization with $D\in\Z_{\geq2}$,
+$K=\F=\Q$, $\OK=\Z$, $\Lambda=D\Z$, and rational-affine branches integral
+on their assigned classes & Exactly a fixed-modulus Matthews generalized
+Collatz presentation, hence an rcwa mapping in Kohl's mapping monoid; see
+\cref{prop:scalar-hydra-matthews,prop:scalar-hydra-rcwa} & The displayed
+modulus need not be minimal, an rcwa mapping need not be bijective, and rcwa
+membership supplies none of the Hydra-specific centeredness, properness, or
+branch-recognition predicates.  Exact-integrality of a displayed
+$D$-presentation is equivalent to Matthews relatively prime type only together
+with $D=d_{\mathrm{Mat}}(H)$.\\
+
+Affine lattice morphism &
+$\Aff_\F(K)=\operatorname{GL}_\F(K)\ltimes K$, acting by
+$x\mapsto rx+c$ & An affine $\F$-linear automorphism of the affine space
+underlying $K$ & The source phrase does not imply that such a map preserves
+$\mathcal O_K$, $\Lambda$, or any lattice; each lattice condition is stated
+separately.\\
+
+Exact-integral Hydra &
+$H_j(x)\in\mathcal O_K$ exactly when $x\in\Lambda_j$, for
+$x\in\mathcal O_K$ & A branch recognition or branch-correctness condition &
+Mere admissibility only says that the selected branch maps its selected class
+into $\mathcal O_K$; the stronger field-wide predicate on all $x\in K$ is
+not substituted.\\
+
+Hydra word &
+$H_{\mathbf j}=H_{j_0}\circ\cdots\circ H_{j_{L-1}}$ & A word in an affine
+semigroup, or a symbolic cylinder word & The rightmost map acts first;
+chronological itineraries must therefore be reversed under this convention.\\
+
+$M_H$ & The linear part of $H_{\mathbf j}$ & A multiplicative linear cocycle
+or monoid representation & In the global-field theory it is generally an
+endomorphism, not a scalar.\\
+
+Numen $X_H$ & The translation part
+$H_{\mathbf j}(x)=M_H(\mathbf j)x+X_H(\mathbf j)$ & An affine translation
+cocycle, equivalently $H_{\mathbf j}(0)$ for every affine word & Centeredness
+is what makes this word cocycle descend through appended zero digits.  For a
+noncentered Hydra the digit-recursive solution also contains the terminal
+zero-branch fixed point.\\
+
+Primitive F-series & The truncation expansion of $X_H$ along the digits of
+$z$ & A digit-recursive affine series & Its infinite value has no meaning
+until a codomain completion and a convergence condition are specified.\\
+
+Correspondence Principle & Repeated symbolic code $\mapsto$ affine fixed
+point, followed by branch correctness & A periodic symbolic-coding theorem
+for a piecewise-affine map & A formal fixed point of a branch composition is
+not automatically a periodic point of the piecewise map.\\
+
+Classical parity conjugacy &
+$Q_q:\Z_2\to\Z_2$ is the chronological parity encoder and
+$\Phi_q=Q_q^{-1}$ conjugates the binary shift to $T_q$ & The
+Bernstein--Lagarias solenoidal conjugacy, with the B\"ohm--Sontacchi return
+formula at $q=3$ & For odd prime $q$, neither classical map is the cross-adic
+numen $\chi_q:\Z_2\to\Z_q$.  Their purely periodic values have the same
+rational representative under separate canonical embeddings only after
+reversing the chronological word; see
+\cref{thm:BL-numen-periodic-overlap,cor:BL-numen-global-nonidentity}.\\
+
+Set-series & $\varsigma_V(w)=\sum_{v\in V}w^v$ and
+$\psi_V(z)=\sum_{v\in V}e^{2\pi ivz}$ & Ordinary and Fourier generating
+functions of an indicator sequence & The Dirichlet set-series needs a
+separate convention when $0\in V$.\\
+
+Permutation operator &
+$\mathsf P_H:\ell^\infty(\N_0)\to\ell^\infty(\N_0)$,
+$(\mathsf P_Hc)_n=c_{H(n)}$, together with its conjugates on the named
+generating-map ranges & An isometric coefficient pullback when the 2019
+Hydra $H$ is surjective & It is not the transfer operator which sums over
+inverse branches, and the isometric injection $\mathsf P_H$ need not be
+surjective.\\
+
+Edgepoint and virtual residue &
+$\operatorname{VRes}_x\psi=\lim_{y\downarrow0}y\psi(x+iy)$ when finite & A
+radial first-order boundary coefficient & It differs by a factor from the
+ordinary complex residue of a simple pole.\\
+
+Dreamcatcher & The trace
+$R_{\psi,T}(t)=\operatorname{VRes}_t[\psi]$ in $\ell^2(T/\Z)$ & A
+square-summable boundary-singularity profile on a specified periodic carrier
+$T\subseteq P(\psi)$ & It is not the original holomorphic function and need
+not determine that function.\\
+
+Singularity Conservation Law & The fixed-point identity
+$\mathfrak Q_{H:T}R_{\psi,T}=R_{\psi,T}$ on the maximal graph domain defined
+by the raw finite expression $\mathcal E_{H:T}$ & A typed boundary-value
+intertwining identity & One-sided branch invariance makes the raw expression
+defined; it does not prove that $\mathfrak Q_{H:T}$ is an everywhere-defined
+bounded operator on $\ell^2(T/\Z)$.\\
+
+$(p,q)$-adic analysis & Functions on $\Z_p$ with values in a complete field
+of residue characteristic $q\ne p$ & Harmonic analysis with different
+domain and codomain places & It is not analysis over a single object carrying
+simultaneously the $p$- and $q$-adic topologies.\\
+
+Rising-continuity &
+$f(z)=\lim_N f([z]_{p^N})$; on the bounded subspace
+$\widetilde C_b(\Z_p,K)$ the del norm equals the supremum norm & Sequential
+continuity along the one canonical truncation path at each point, with an
+exact Banach subspace after boundedness is imposed & It is weaker than
+topological continuity and does not itself imply boundedness.\\
+
+Frame & A point-indexed choice $z\mapsto\mathcal F(z)$ of a complete valued
+extension in which to read a limit & A field of pointwise convergence
+topologies, or a bundle of chosen completions & It is not one normed target
+space unless additional uniform structure is imposed.\\
+
+M-function &
+$M_N(z)=\prod_{h<N}r_{d_h(z)}$ & A multiplicative digit cocycle or prefix
+product & Decay of $M_N(z)$ does not by itself make its norm sequence
+monotone.\\
+
+Quasi-integrability & In one fixed complete field $K$, pointwise limits
+$A_{\mathbf m}(t)=\lim_N\widehat X_{\mathbf m,N}(t)$; each resulting function
+$A:\Gamma_p\to K$ acts on locally constant tests by the finite sum
+\cref{eq:formal-Fourier-distribution} & An algebraic distributional
+realization of specified limiting Fourier data & A merely formal solution of
+the Fourier recursion does not establish the required finite-transform
+limits.\\
+
+Breakdown locus & The resonance equation
+$\alpha_{\mathbf n}(0)=1$ & A zero-mode resonance locus for the formal
+Fourier recurrence & It does not mean automatic nonexistence: the lower-term
+compatibility sum decides between no solution and an affine family.\\
+
+Algebra of distributions & The declared rule
+$(X^m dz)(X^n dz):=X^{m+n}dz$ on designated symbols, realized by an
+$R$-linear map $\Phi:R[T]\to\mathcal S(\Z_p,R)'$ & A polynomial algebra
+transported from powers of the named F-series & Multiplication descends to
+$\operatorname{im}\Phi$ exactly when $\ker\Phi$ is an ideal; even then it is
+not an intrinsic product of arbitrary distributions or ordinary convergent
+Fourier convolution.\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subsection{The typed dependency and result map}
+
+There are four principal chains.  Each arrow below has the hypotheses shown
+in its row; no arrow is supplied merely by similarity of notation.
+
+\begingroup\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.18\textwidth}p{0.34\textwidth}p{0.39\textwidth}@{}}
+\toprule
+Chain & Input and indispensable hypothesis & Output, and the next permitted
+step\\
+\midrule
+\endfirsthead
+\toprule
+Chain & Input and indispensable hypothesis & Output, and the next permitted
+step\\
+\midrule
+\endhead
+Number-field state space & A number field $K$, its full Minkowski map
+$\iota_K:K\to\R^{r_1}\times\C^{r_2}$, and an integral basis of $\OK$ &
+$\iota_K(\OK)$ is a full lattice and hence locally finite; the
+preperiodic-or-escaping dichotomy then applies to self-maps of this full
+image.  A single archimedean projection is not substituted; see
+\cref{prop:minkowski-lattice,prop:preperiodic-or-escaping}.\\
+
+Digit compactum & An integer $p\geq2$, the discrete alphabet
+$\mathcal A_p$, and the compatible residue system
+$\varprojlim_N\Z/p^N\Z$ & The digit map is a homeomorphism
+$\mathcal A_p^{\N_0}\simeq\Z_p^{\mathrm{dig}}$, and Haar probability is the
+uniform product law with cylinder mass $p^{-N}$; see
+\cref{prop:digit-compactum-haar}.\\
+
+Affine foundation & Admissible branches
+$H_j=(r_j,c_j)$ and the affine semidirect-product law & The piecewise map
+$H$ and the exact decomposition
+$H_{\mathbf j}(x)=M_H(\mathbf j)x+X_H(\mathbf j)$; see
+\cref{prop:affine-concatenation}.\\
+
+Scalar prior-art boundary & $K=\F=\Q$, $\OK=\Z$, standard classes modulo a
+displayed $D\in\Z_{\geq2}$, and rational-affine branches integral on their assigned
+classes & Unique integers $m_i\ne0$ and $\rho_i\equiv im_i\pmod D$ give
+$H_i(x)=(m_ix-\rho_i)/D$; the resulting map is rcwa and
+$d_{\mathrm{Mat}}(H)=\operatorname{Mod}(H)\mid D$.  Exact-integrality is
+equivalent to $\gcd(m_0\cdots m_{D-1},D)=1$ for the displayed presentation;
+it forces both least moduli to equal $D$ and hence makes the map Matthews
+relatively-prime.  Conversely, Matthews relatively prime type gives this
+exact-integral presentation only when $D=d_{\mathrm{Mat}}(H)$.
+Membership in Kohl's group
+$\operatorname{RCWA}(\Z)$ requires a separate global bijectivity proof; see
+\cref{prop:scalar-hydra-matthews,prop:scalar-hydra-rcwa}.\\
+
+Affine recentering & An integral translation $\tau_a$ and the induced
+quotient permutation $\Lambda_{\pi_a(j)}=\Lambda_j+a$ & The conjugated branch
+on $\Lambda_j$ is $\tau_a^{-1}H_{\pi_a(j)}\tau_a$; its zero-class branch is
+centered exactly when $H_{\pi_a(0)}(a)=a$.  A fixed point of $H_0$ suffices
+without another branch equation only when $a\in\Lambda$; see
+\cref{prop:translation-conjugacy-cosets}.  Properness after translation is
+likewise the exact condition that $I-r_{\pi_a(0)}$ be invertible.\\
+
+ Finite numen & A specified terminal value $a$ satisfying
+ $(I-r_0)a=c_0$; for a centered proper Hydra this forces $a=0$ & A unique
+ digit-recursive function on $\N_0$ with $f(0)=a$ and
+ $f(pn+j)=r_j f(n)+c_j$; see
+ \cref{thm:digit-recursive-characterization}.\\
+
+Infinite numen & A named completion $K_\ell$ and pointwise prefix-product
+decay, almost-everywhere geometric-mean contraction, or uniform contraction
+& A rising, measurable, or continuous extension, respectively, satisfying
+the same digit equations; see
+\cref{prop:numen-pointwise-convergence,thm:numen-ae-extension,thm:numen-uniform-contraction}.\\
+
+Rational digit input & The canonical CRT identification
+$\Z_p^{\mathrm{dig}}\simeq\prod_{\ell\mid p}\Z_\ell$ and the diagonal copy of
+$\Q$ & The intersection is exactly
+$\Z_{(p)}=\{a/b:\gcd(b,p)=1\}$, and these are exactly the eventually periodic
+base-$p$ digit strings; see \cref{prop:rational-eventually-periodic}.\\
+
+Periodic code & A repeated word $\mathbf j$ and invertibility of
+$I-M_H(\mathbf j)$ (obtained, for example, from
+$\|M_H(\mathbf j)\|_\ell<1$) & The unique \emph{formal} fixed point
+$(I-M_H(\mathbf j))^{-1}X_H(\mathbf j)$; see
+\cref{thm:repeated-code-fixed-point}.\\
+
+Classical conjugacy comparison & An odd integer $q$, the chronological
+parity encoder $Q_q$, and a length-$L$ parity block with code $e$ and reversed
+code $\operatorname{rev}_L(e)$ & The typed isometric conjugacy
+$Q_qT_q=SQ_q$ for every odd $q$ and the common rational representative
+$R_{q,\boldsymbol\varepsilon}$ of \cref{eq:BL-periodic-rational} under the
+separate embeddings; when $q$ is prime, its cross-adic numen evaluation is
+\cref{eq:BL-numen-overlap}.  The latter equality is neither a global map
+identity nor a composite-$q$ extension of $\chi_q$.\\
+
+Genuine periodicity & The preceding formal fixed point lies in the integral
+state space, and branch correctness is proved & A periodic point of the
+piecewise map.  This implication is proved for $T_q$ by
+\cref{prop:Tq-correct-fixed-point}; the general 2026 implication remains at
+source-sketch status.\\
+
+Dreamcatcher input & A function
+$\psi\in\mathcal D_1(T)\cap\operatorname{ran}(\mathcal G_{\mathbb H})$, a
+branch-invariant carrier $T$, and the coefficient pullback
+$\mathscr Q_H$ on its declared range & The Virtual Residue Formula
+\cref{eq:VRF}; cross-section densities provide an independent exact Abelian
+criterion for its radial limits by \cref{prop:cross-section-vres}.\\
+
+Dreamcatcher conservation & The preceding data and a verified
+$R_{\psi,T}$-membership in the maximal graph domain of
+$\mathfrak Q_{H:T}$ & The fixed-point identity
+$\mathfrak Q_{H:T}R_{\psi,T}=R_{\psi,T}$ in \cref{thm:SCL}; no all-space
+boundedness is inferred.\\
+
+Finite rational obstruction & Prime and regulated 2019 Hydra plus finite
+support modulo $\Z$ & The Finite Dreamcatcher conclusion
+$R=R(0)\ind{\Z}$; rational invariant sets are then finite or cofinite.\\
+
+Contour coefficient & The exact coefficients
+$a_n(x)=(1-M_q(n))x-\chi_q(n)$ and a line
+$c>\sigma_q$ of absolute convergence & Perron inversion recovers one
+coefficient by \cref{eq:coefficient-contour}; the integral vanishes exactly
+when that particular word numerator vanishes.\\
+
+Dirichlet recursion & The coefficient recursions
+\cref{eq:Fq-coefficient-recursion} and $\Re s>\sigma_q$ & The corrected
+ordinary and Dirichlet generating-function identities
+\cref{eq:fq-corrected-functional-equation,eq:Fq-functional-equation}.\\
+
+Dirichlet continuation & The corrected shift equation and the normal-tail
+estimate \cref{lem:Fq-normal-shifted-tail} & Unique meromorphic
+continuation to $\C$, the candidate-pole containment
+\cref{eq:Fq-candidate-poles}, and the corrected $q=3$ principal parts.
+No actual pole is inferred merely from a denominator zero.\\
+
+Contour dynamics & A synchronized block length and the $T_q$ branch-
+correctness theorem & A phase-sensitive periodicity statement using
+$B_{2,L}(n)$; shortest-word data alone do not encode every phase.\\
+
+Function Fourier theory & $q\ne p$, a specified tower
+$\zeta_{N+1}^p=\zeta_N$ of primitive roots, normalized $K$-valued Haar
+integration, and a complete algebraically closed nonarchimedean target & The
+explicit pairing $\Gamma_p\times\Z_p\to K^\times$, classification of locally
+constant $K$-valued characters, both finite orthogonality identities, the
+isometry $C(\Z_p,K)\simeq c_0(\Gamma_p,K)$, and the precisely signed
+product--convolution identities; see
+\cref{prop:K-valued-character-duality,prop:finite-character-orthogonality,%
+thm:pq-Fourier-isometry,prop:typed-convolution-identities}.\\
+
+Function cyclicity & The preceding Banach-algebra isomorphism & The four-way
+Wiener--Tauberian equivalence in \cref{thm:pq-WTT-function}.  Its dense
+finite translate span is
+$\widehat\chi*c_{00}(\Gamma_p,K)$; only after closure does it equal the
+closed principal ideal
+$\overline{\widehat\chi*c_0(\Gamma_p,K)}$.\\
+
+Measure cyclicity & A bounded Fourier--Stieltjes transform and existing local
+density limits & Density of translates implies nonvanishing of each existing
+limit.  The reverse arrow is not proved.\\
+
+Rising Banach domain & A complete nonarchimedean target $K$ and the bounded
+rising-continuous class $\widetilde C_b(\Z_p,K)$ & The del norm equals the
+supremum norm and makes this exact subspace Banach; unrestricted
+rising-continuity still permits infinite del quantity; see
+\cref{prop:del-norm-domain}.\\
+
+Product algebra, finite level & Degree-one affine digit recursions in a common
+commutative coefficient ring; for analytic transforms, one fixed
+nonarchimedean field $K$ and continuous $K$-valued products & The
+multinomial branch identity \cref{eq:product-branch-recursion}, the continuous
+Fourier recursion, the universally exact truncation recursion, and the
+zero-mode compatibility classification \cref{prop:formal-compatibility}.\\
+
+Product distributions & For every $\mathbf m\leq\mathbf n$ and
+$t\in\Gamma_p$, convergence of
+$\widehat X_{\mathbf m,N}(t)$ in one fixed complete field $K$ & The limiting
+functions satisfy the exact Fourier recursion and define unique algebraic
+distributions on $\mathcal S(\Z_p,K)$; the truncation distributions converge
+pointwise on that test space by \cref{prop:finite-transform-limit}.  The
+printed Main Limit sufficient conditions do not establish this hypothesis.\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+In compact form, the verified central spine is
+\[
+ \{H_j=(r_j,c_j)\}
+ \longrightarrow (M_H,X_H)
+ \longrightarrow X_H\!\mid_{\N_0}
+ \longrightarrow X_{H,\ell}
+ \longrightarrow (I-M_H(\mathbf j))^{-1}X_H(\mathbf j),
+\]
+where the fourth arrow requires a place and convergence, and the last value
+becomes a periodic point only after branch correctness.  The three analytic
+branches are
+\[
+ \psi_V\longrightarrow\operatorname{VRes}\psi_V
+ \longrightarrow\mathfrak Q_{H:T}R,
+ \qquad
+ (M_q,\chi_q)\longrightarrow F_q\longrightarrow a_n(x),
+\]
+and
+\[
+ C(\Z_p,K)\xrightarrow{\ \mathscr F\ }c_0(\Gamma_p,K),
+ \qquad
+ (X_j)_j\longrightarrow X_{\mathbf n,N}\longrightarrow
+ \widehat X_{\mathbf n,N}.
+\]
+Within these three displayed analytic branches, the unresolved steps are the
+everywhere-defined boundedness of the dreamcatcher operator, the
+shortest-word contour biconditional, the converse measure cyclicity criterion,
+and source-sufficient hypotheses for the general product limit.  The exact
+maximal graph domain and the exact consequence of pointwise finite-transform
+convergence are proved.  The separate source-status table below records
+additional unproved or false claims outside those displayed branches.
+
+\subsection{Result-status table}
+
+The five codes below are mutually exclusive as editorial dispositions.
+``Proof checked'' means that the source proof and its named dependencies were
+read against the typed statement used here; it does not mean computer formal
+verification.  When this edition gives a complete proof or changes a
+hypothesis and proves the changed statement, the stronger code
+\textbf{R} is used instead.
+
+\begin{description}[leftmargin=2.8em,labelwidth=1.8em,style=multiline]
+\item[\textbf{R}] reconstructed and proved in this edition;
+\item[\textbf{S}] source theorem with its proof checked against the typed
+      hypotheses;
+\item[\textbf{C}] conditional, conjectural, or formal statement not promoted
+      to an unconditional theorem;
+\item[\textbf{U}] superseded witness retained for mathematical history;
+\item[\textbf{W}] withdrawn witness or statement invalid as printed.
+\end{description}
+
+\begingroup\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.07\textwidth}p{0.27\textwidth}p{0.18\textwidth}p{0.39\textwidth}@{}}
+\toprule
+Code & Result or witness & Source & Exact disposition\\
+\midrule
+\endfirsthead
+\toprule
+Code & Result or witness & Source & Exact disposition\\
+\midrule
+\endhead
+\textbf{R} & Preperiodic-or-escaping dichotomy & 2601.17030v3 &
+Reconstructed and proved in \cref{prop:preperiodic-or-escaping} with the
+necessary locally finite hypothesis replacing bare uniform discreteness.\\
+
+\textbf{R} & Full Minkowski lattice foundation & Standard number-field
+foundation supplied by this edition & The full map, its domain and codomain,
+the integral-basis matrix, nonzero discriminant, and local finiteness are
+proved in \cref{prop:minkowski-lattice}; no one-embedding substitute is used.\\
+
+\textbf{R} & Digit compactum and Haar product law & 2412.02902v1 and
+2601.17030v3, rebuilt & The explicit map from digit sequences to the inverse
+limit, its inverse, homeomorphism property, and every cylinder mass are
+proved in \cref{prop:digit-compactum-haar}, including composite $p$.\\
+
+\textbf{R} & Rational points and eventually periodic digits & Edition-supplied
+arithmetic foundation & The compatible CRT isomorphism, diagonal
+intersection $\Q\cap\Z_p^{\mathrm{dig}}=\Z_{(p)}$, and both directions of
+eventual periodicity are proved in
+\cref{prop:rational-eventually-periodic}.\\
+
+\textbf{R} & Affine word calculus and repeated-word fixed point &
+2601.17030v3, reorganized & Proved in
+\cref{prop:affine-concatenation,prop:repeated-word}; endomorphism order and
+invertibility are explicit.\\
+
+\textbf{R} & Exact scalar prior-art identification & Matthews's generalized
+Collatz form and Kohl's rcwa definition & The fixed-displayed-modulus
+equivalence, the typed inclusion in the rcwa mapping monoid, divisibility of
+the displayed modulus by the minimal modulus
+$d_{\mathrm{Mat}}(H)=\operatorname{Mod}(H)$, the exact equivalence between
+scalar exact-integrality and the conjunction of Matthews relatively-prime type
+with a displayed least modulus, equality of the minimal modulus with the
+displayed modulus under exact-integrality, and the
+separate bijectivity condition for
+$\operatorname{RCWA}(\Z)$ are proved in
+\cref{prop:scalar-hydra-matthews,prop:scalar-hydra-rcwa}.\\
+
+\textbf{R} & Translation conjugacy and zero-class centering &
+2601.17030v3, corrected & The induced residue-class permutation, every
+conjugated branch, preservation of admissibility and exact-integrality, and
+the necessary-and-sufficient centering equation are proved in
+\cref{prop:translation-conjugacy-cosets}.\\
+
+\textbf{R} & Digit recursion and the finite numen & 2007.15936v3,
+2412.02902v1, 2601.17030v3 & Reconstructed and proved in
+\cref{thm:digit-recursive-characterization}, including the noncentered
+terminal-value alternative.\\
+
+\textbf{R} & Pointwise, almost-everywhere, and uniform rising extension &
+2412.02902v1, 2601.17030v3 & Proved under the displayed prefix-product,
+geometric-mean, and uniform contraction hypotheses in
+\cref{prop:numen-pointwise-convergence,thm:numen-ae-extension,thm:numen-uniform-contraction}.\\
+
+\textbf{R} & Phase-sensitive $T_q$ correspondence & 2007.15936v3 & The
+affine identity, $2$-adic branch correctness, and padded length-$L$ converse
+are proved in \cref{thm:Tq-periodic-word-CP}.\\
+
+\textbf{R} & Classical conjugacy and reversed periodic overlap &
+B\"ohm--Sontacchi (1978), Bernstein--Lagarias (1996), and
+Laarhoven--de Weger (2012) & The parity map and inverse conjugacy are typed
+and proved for every odd $q$ in \cref{prop:BL-conjugacy-typed}.  The two
+adic values are proved to be the images of one rational representative under
+their separate canonical embeddings.  The mandatory reversal, the $q=3$
+specialization to the B\"ohm--Sontacchi Proposition~5 candidate, its
+period-dividing boundary, and global nonidentity with $\chi_q$ are proved in
+\cref{thm:BL-numen-periodic-overlap,cor:BL-numen-global-nonidentity}.\\
+
+\textbf{R} & Square Sum Lemma, Virtual Residue Formula, and typed SCL &
+1909.09733v3 & The square-sum proof-idea attribution is bound to accepted
+MathOverflow answer 333801 by user \emph{fedja} \cite{FedjaMO333801}; this
+edition's finite-subset Bessel proof remains editorial and is not attributed
+to the answerer.  VRF/SCL are proved with the operator-domain premise stated.\\
+
+\textbf{R} & Exact coefficient pullback & 1909.09733v3, rebuilt & The map
+$\mathsf P_H:\ell^\infty\to\ell^\infty$ is proved to be an isometric
+injection from surjectivity, and the two generating-series operators are
+defined only as its conjugates on their declared ranges.\\
+
+\textbf{R} & Cross-section densities and virtual residues & 1909.09733v3,
+rebuilt & The residue-class Ces\`aro limits, summation-by-parts Abel passage,
+and exact factor $1/(2\pi)$ are proved in
+\cref{prop:cross-section-vres}; no Tauberian converse is used.\\
+
+\textbf{R} & Dyadic sums and coefficient contour identity &
+2111.07883v2 & Recalculated and proved in
+\cref{eq:chi-block-sum,eq:M-block-sum,thm:coefficient-contour}.\\
+
+\textbf{R} & Nonarchimedean Fourier isometry and function
+Wiener--Tauberian theorem & 2208.11082v2 & Reconstructed from finite Fourier
+duality.  The compatible-root pairing, character classification, both finite
+orthogonality formulas, the isometry, the typed convolution morphisms, and
+the cyclicity theorem are proved in
+\cref{prop:K-valued-character-duality,prop:finite-character-orthogonality,%
+thm:pq-Fourier-isometry,prop:typed-convolution-identities,%
+thm:pq-WTT-function}.\\
+
+\textbf{R} & Rising van der Put theorem and unique rising continuation &
+2412.02902v1 & Proved by the exact telescoping path argument in
+\cref{thm:rising-vdp,cor:unique-rising-continuation}.\\
+
+\textbf{R} & Del norm on the bounded rising class & 2412.02902v1, corrected &
+The level operators are defined for every $N$, the extended del quantity is
+proved equal to the supremum quantity on rising-continuous functions, and
+$\widetilde C_b(\Z_p,K)$ is proved complete in
+\cref{prop:del-norm-domain}.\\
+
+\textbf{R} & Product branch recursion and formal compatibility trichotomy &
+2507.13358v1 & Proved at the finite/formal level in
+\cref{prop:product-branch-recursion,prop:formal-compatibility}; no limiting
+distribution is inferred.\\
+
+\textbf{R} & Fixed-target F-series domains and the $\chi_3$ frame identity &
+2307.00436v1 and 2412.02902v1, rebuilt & Padded digit counts give the exact
+convergence domains $D_E$ and $D_X$, every forward/converse domain
+implication, and the scalar and affine branch equations in one complete
+field.  The two-place $\chi_3$ identity follows instead from the finite
+telescoping formula \cref{eq:chi3-finite-frame-identity}; no disputed
+pointwise-necessity argument is used.\\
+
+\textbf{R} & Pointwise finite-transform limits and algebraic distributions &
+2507.13358v1, reconstructed & Under the exact fixed-$K$ pointwise convergence
+hypothesis, the limiting Fourier recursion, unique functional on locally
+constant tests, and pointwise convergence of the truncation distributions are
+proved in \cref{prop:finite-transform-limit}.\\
+
+\textbf{S} & Finite Dreamcatcher Theorem & 1909.09733v3 & Source theorem;
+the Off-$\varrho$ theorem, auxiliary functional equation, support lemmas,
+Off-$\varrho$ Infinity theorem, and final dependency chain were checked.  It
+is retained with the source-proof status recorded in \cref{status:FDT}.\\
+
+\textbf{S} & Weak Rationality Theorem 1 & 1909.09733v3 & Source consequence;
+its dependency on rational generating functions, SCL, finite virtual-pole
+support, and the Finite Dreamcatcher Theorem was checked.  This disposition
+does not extend to Weak Rationality Theorem 2.\\
+
+\textbf{R} & Corrected coefficient, ordinary generating-function, and
+Dirichlet functional equations for $F_q$ & 2111.07883v2, corrected & The
+printed ordinary generating-function derivation has a wrong first even
+term.  The recursions and both corrected identities are proved directly in
+\cref{prop:Fq-coefficient-recursion,thm:Fq-corrected-functional-equation}
+on the proved initial absolute-convergence half-plane
+$\Re s>\sigma_q$.\\
+
+\textbf{R} & Global continuation and corrected $q=3$ principal parts &
+2111.07883v2 and Web II, rebuilt & Normal convergence and strip induction
+prove \cref{thm:Fq-global-meromorphic-continuation}; direct Laurent
+calculation proves \cref{prop:F3-corrected-principal-parts}.  The pole set
+is contained in the stated candidate set; equality is not asserted.\\
+
+\textbf{C} & General global-field Correspondence Principle and divergence
+clause & 2601.17030v3 & Conditional/source formulation only.  The source
+labels the proof a sketch, and the zero fibre, correctness, and irrational-
+fibre steps are not established by its displayed hypotheses.\\
+
+\textbf{C} & Theorem 12 rational-edgepoint conclusion & 1909.09733v3 & May
+be cited only with branch invariance of both rational edgepoints and rational
+non-edgepoints; the source itself identifies this as the method's Achilles
+heel.\\
+
+\textbf{C} & Identification of a limiting dreamcatcher with the virtual
+residue of the limiting function & 1909.09733v3 & Explicitly Conjecture 1,
+not a theorem.\\
+
+\textbf{W} & Printed $F_q$ functional equation and its dependent
+singularity chain & 2111.07883v2 & The printed identity fails for every
+$x\ne0$, as certified by the $s\to+\infty$ limit in Chapter 7.  Its
+residue formulas contain spurious $x$-terms, and its actual-pole assertions
+lack noncancellation proofs.  The continuation theorem and every retained
+principal part are instead re-derived from the corrected equation.\\
+
+\textbf{C} & Self-similar numen measure uniqueness & 2601.17030v3 &
+Existence of the pushforward and its functional equation are
+typed; uniqueness requires a separate contraction or IFS hypothesis.\\
+
+\textbf{C} & Main Limit, product distributions, power theorem, and inversion
+& 2507.13358v1 & Formal or conditional.  Exact pointwise convergence of every
+required finite transform in one fixed $K$ would produce the limiting
+recursion and algebraic distributions by
+\cref{prop:finite-transform-limit}; the printed sufficient-condition proof
+and induction do not establish that convergence.\\
+
+\textbf{C} & Declared product/convolution algebra of named distributions &
+2507.13358v1 & The symbolic polynomial algebra exists formally.  After the
+designated distributions exist, its multiplication descends to their realized
+image if and only if the realization kernel is an ideal.  It is not ordinary
+distribution multiplication or convergent convolution.\\
+
+\textbf{U} & Parity-vector Fourier predecessor & 2002.12762v1 & Preserved as
+a historical stage but superseded by the numen formulations; v2 is the
+withdrawal notice declaring the work obsolete.\\
+
+\textbf{U} & Original 2111.07883v1 & 2111.07883v1 & Materially different
+title and subject; superseded for the logical work by the current contour
+paper v2, not silently merged with it.\\
+
+\textbf{U} & Earlier general Hydra conventions & pre-2601 corpus & The 2026
+manual v3 controls the general name and word formalism.  The specialized
+2019 $\varrho$-Hydra remains the correct historical object for the
+dreamcatcher theorems.\\
+
+\textbf{U} & Earlier witnesses of the 2026 manual & 2601.17030v1--v2 & v3 is
+the controlling witness and includes the correction to Proposition 7.6;
+earlier text is retained only for version history.\\
+
+\textbf{W} & Number-ring functional-equation paper & 2111.07882 v1/v2 & v2
+withdraws the work for an error in the quotient-ring section.  It is not used
+to certify a general number-ring theorem.\\
+
+\textbf{W} & Weak Rationality Theorem 2 proof & 1909.09733v3 & Invalid as
+printed: naturally measurable sets do not form a $\sigma$-algebra and
+natural density is not a countably additive measure on such a class.\\
+
+\textbf{W} & Shortest-word contour biconditional for every listed cycle
+phase & 2111.07883v2, relying on 2007.15936 & Invalid as printed; the point
+$2$ of the $T_3$ cycle already requires a padded block.  The coefficient
+identity survives.\\
+
+\textbf{W} & Measure Wiener--Tauberian equivalence & 2208.11082v2 & The
+proof gives density $\Rightarrow$ no existing zero local density and then
+repeats its contrapositive; the converse is not proved and can be vacuous.\\
+
+\textbf{W} & Banach space of all compatible frame functions & 2307.00436v1
+& Invalid without boundedness or continuity: compactness of the domain does
+not bound an arbitrary function.\\
+
+\textbf{W} & Banach algebra of all rising-continuous functions &
+2412.02902v1 & Invalid as defined: rising-continuity does not imply
+boundedness or finite del norm.  This edition instead introduces and proves
+the exact Banach space $\widetilde C_b(\Z_p,K)$ in
+\cref{prop:del-norm-domain}; the unrestricted source claim remains invalid.\\
+
+\textbf{W} & Main Limit proof and resulting unconditional product theorems &
+2507.13358v1 & Invalid as a proof: decay is repeatedly treated as eventual
+monotonicity; root bounds are used to claim a tail is the order of its first
+term; and $Na_N=O(a_N)$ is asserted.\\
+
+\textbf{W} & Simultaneous universal and exact integrality clauses &
+2601.17030v3 & Inconsistent for $p\geq2$ and incompatible with $T_3$.
+Both source clauses quantify over $\mathcal O_K$.
+\Cref{eq:branch-admissibility,eq:exact-integrality} preserves that domain and
+separates the two mathematically usable predicates.\\
+
+\textbf{W} & Pointwise digit-density convergence criterion &
+2601.17030v3 & Invalid as printed: the source uses a limsup for frequencies
+of contractive branches and a liminf for expansive branches, reversing the
+inequalities needed for an upper Lyapunov bound.  The corrected bound is
+\cref{eq:density-lyapunov-upper-bound}.\\
+
+\textbf{W} & Multidimensional repeated-block identity and resulting
+Correspondence Principle & 2412.02902v1 & Invalid as printed when coordinate
+digit lengths differ.  Repetition of one synchronized vector block of common
+length $N$ gives coordinate $n_i/(1-p^N)$, not
+$n_i/(1-p^{\lambda_p(n_i)})$.  The multidimensional correspondence built on
+the latter identity is not promoted.\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subsection{Source-by-source repair ledger}
+
+This ledger gives the minimum repair actually used by the edition.  An entry
+of ``not promoted'' means that no repaired theorem is smuggled into a later
+argument.
+
+\begingroup\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.16\textwidth}p{0.35\textwidth}p{0.41\textwidth}@{}}
+\toprule
+Witness & Source defect or unstable point & Editorial treatment in this
+edition\\
+\midrule
+\endfirsthead
+\toprule
+Witness & Source defect or unstable point & Editorial treatment in this
+edition\\
+\midrule
+\endhead
+1909.09733v3 & The paper alternates between the defined class
+$\mathcal D_1(T)$ and an undefined $\mathcal D_2(T)$; its operator proof
+treats one-sided branch inclusion as bijectivity; its virtual residue is not
+the ordinary complex residue; the Permutation Operator Theorem says
+ ``basis'' without a topology. & Declare $\mathcal D_1(T)$ as the edition's
+ explicit source-level choice and intersect it with the declared generating-
+operator range wherever $\mathscr Q_H$ is used; define the maximal graph
+domain and state its membership premise in SCL; retain the radial
+normalization; prove the exact coefficient pullback and Abelian cross-section
+residue formula; and replace the Hamel-basis wording by the coefficient-orbit
+statement.  Exclude Weak Rationality Theorem 2 and retain the limit
+identification as Conjecture 1.\\
+
+2007.15936v3 & The shortest binary word loses a high zero that belongs to a
+periodic block; one repeated-block truncation is written modulo $2^m$ rather
+than $2^{mL}$.  Its general integer-domain Hydra definition also requires
+the selected branch value to be a \emph{nonnegative} integer iff the input
+has the assigned residue, which fails for negative inputs (including the
+negative fixed point of $T_3$). & Keep the block length in
+$B_{2,L}(n)=n/(1-2^L)$, reverse the chronological itinerary explicitly, and
+prove correctness in $\Z_2$.  The shortest notation $B_2(n)$ is used only
+for a phase whose high block digit is nonzero.  On domain $\Z$, branch
+recognition means \emph{integer} iff assigned residue; nonnegativity belongs
+only to a separately restricted state space such as $\N_0$.\\
+
+B\"ohm--Sontacchi (1978) & Printed Proposition~4 identifies a formal affine
+branch composition with $u^n(x)$ while quantifying independently over every
+$x\in\Z$ and every run tuple.  This is false: for
+$x=0$, $m=1$, and $n_0=n_1=1$, its right side is $1/4$ whereas
+$u^3(0)=0$.  The same right side is correctly
+$f\circ g\circ f(0)=1/4$. & Derive the formal-composition identity from
+their Proposition~1 and identify it with an iterate only after the branch
+word is proved to be the actual parity itinerary.  Recover the
+Proposition~5 fixed-return candidate independently from the edition's
+branch-correctness theorem; retain the unnumbered paragraph after
+Proposition~5 on p.~264 as the exact period-dividing locator; and mark the
+last position inequality as a reconstruction from the formal run data, not
+as text printed in Proposition~5.\\
+
+2111.07883v2 & The contour theorem inherits the shortest-word phase defect;
+its common $c>\sigma_q$ quantifier is not correctly specialized to the
+$q=3,5$ parts; the $q\geq7$ excluded set is malformed; one abscissa paragraph
+says ``minimum''; the derivation of $f_q(z^2,x)$ uses $z/(1-z)$ in place of
+$z^2/(1-z^2)$; and the resulting false Dirichlet identity underlies the
+later singularity discussion. & Prove the Perron coefficient identity on
+$c>\sigma_q$ and state each specialization with its own line.  Re-derive
+the coefficient, ordinary generating-function, and Dirichlet recursions;
+prove the corrected identity first on $\Re s>\sigma_q$; prove normal
+convergence and continue it strip by strip; compute the corrected $q=3$
+principal parts; and treat the remaining lattice as candidates unless
+noncancellation is separately proved.\\
+
+2208.11082v2 & The body restatement omits some headline hypotheses; a radius
+in the differentiation discussion tends in the wrong direction; and the
+measure WTT proves only one implication.  Its notation also asks for an
+embedding $\overline{\Q}\hookrightarrow K$, which is unavailable in positive
+characteristic even though the stated field class allows that case. & Carry
+the full nonarchimedean setting and residue-characteristic restriction;
+construct only the required compatible $p$-power roots directly in $K$;
+prove representative independence, character classification, and finite
+orthogonality; fix $(f*\mu)(z)=\mu(y\mapsto f(z-y))$ so the local-density
+coset is exact; use balls shrinking to a point; reconstruct the function WTT
+from finite Fourier duality; retain only density $\Rightarrow$ nonzero
+existing local densities for measures.\\
+
+2307.00436v1 & The abstract reverses the complex and $q$-adic parts of the
+standard frame; one $X_{p,q}$ display swaps $p$ and $q$; a convergence proof
+replaces the chosen input by $-1$; and all compatible functions are declared
+Banach under a possibly infinite sup norm. & The body frame definition and
+the original $S_{p,q}$ summand control; define the exact fixed-target domains
+$D_E$ and $D_X$ and test convergence on the actual digit path; prove the
+branch equations only on those domains; and derive the two-place $\chi_3$
+identity from its finite telescoping formula.  Normed claims are restricted to
+a bounded or continuous class.\\
+
+2412.02902v1 & The definition of rising-continuity is pointwise, but a
+footnote asserts all such functions are bounded and the later del-norm Banach
+algebra uses that assertion.  In the multidimensional block construction,
+coordinates of unequal digit lengths are repeated with their individual
+denominators even though the vector word has one synchronized common length.
+& Retain the pointwise definition and the valid truncation/van der Put
+theory.  The prefix-free example
+$f(p^k)=q^{-k}$, with $f=0$ elsewhere, is rising-continuous and unbounded in
+$\Q_q$.  Define every del operator, prove that the del and supremum quantities
+agree on the rising-continuous class, and prove completeness of the exact
+bounded subspace $\widetilde C_b(\Z_p,K)$.  For a common block length $N$, use
+$n_i/(1-p^N)$ in every coordinate; the printed multidimensional
+Correspondence Principle is not retained without a new proof from that
+corrected synchronization.\\
+
+2507.13358v1 & Haar mass and the finite character factor are printed as
+$1/p$ instead of $p^{-N}$; the archimedean Wiener norm is printed as a
+coefficient supremum instead of $\ell^1$; one finite recursion double-counts
+the diagonal; the Main Limit proof uses false monotonicity and tail
+estimates; localization and fraction-field hypotheses are insufficient; the
+paper's own warning says ordinary convolution usually diverges. & Correct
+the finite normalizations and use $\mathbf m<\mathbf n$ after separating the
+diagonal.  Retain the multinomial and formal compatibility algebra.  Prove
+the exact fixed-$K$ consequence of pointwise finite-transform convergence,
+including the algebraic distribution and pointwise test-space limit.  Require
+ideals disjoint from the localization set and a domain before taking a
+fraction field.  Classify the source's limiting product/inversion results as
+conditional, and make the named transported multiplication descend to a
+realized image only under the exact kernel-ideal condition.\\
+
+2601.17030v3 & The Hydra definition simultaneously imposes universal branch
+integrality and an incompatible iff branch condition; properness is used as
+though it implied centeredness; the source's ``affine lattice morphisms'' are
+typed as all affine $\F$-linear automorphisms and need not preserve a lattice;
+scalar division notation is used for an endomorphism; bare uniform
+discreteness is used as local finiteness; the
+pointwise density criterion reverses liminf and limsup; and the
+Correspondence proof is a sketch with an unlisted hypothesis, an unresolved
+zero orbit, and an unsupported fibre inference.  Its preliminary
+ultrametric proposition says equality holds iff the summands have unequal
+norms; unequal norms are sufficient, not necessary. & Separate admissibility
+from exact-integrality; call $\Aff_\F(K)$ the affine automorphism group and
+state lattice preservation separately; track the quotient permutation under
+translation and use $H_{\pi_a(0)}(a)=a$ as the exact centering condition;
+retain the zero-branch fixed point in the noncentered recursion; use
+$(I-M)^{-1}$; impose local finiteness for the escape dichotomy; use the
+corrected Lyapunov upper bound; and prove only the affine repeated-word
+calculation.  The false biconditional for ultrametric equality is not used.
+Record the general Correspondence Principle and divergence statement at
+source-sketch status; do not infer self-similar-measure uniqueness without
+contraction.\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+The two withdrawn logical works require no mathematical repair inside this
+volume.  The witness arXiv:2002.12762v1 is retained only as a superseded
+predecessor and its v2 record is the withdrawal notice.  The witness
+arXiv:2111.07882 is retained only as
+a historical record of the number-ring programme; its quotient-ring theorem
+is not imported through another paper.
+
+\subsection{Exact coverage and explicit nonclaims}
+
+The edition provides exact mathematical coverage of the following objects.
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item The full Minkowski embedding of a number-field integer ring as a locally
+      finite lattice and the resulting exact preperiodic-or-escaping
+      dichotomy.
+\item Residue-class affine dynamics, affine-automorphism typing, the
+      translation-induced coset permutation and exact centering condition,
+      the distinction between admissibility and branch recognition, affine
+      word composition, and the ordered cocycles $M_H$ and $X_H$; together
+      with the exact scalar fixed-modulus equivalence to Matthews's form and
+      the typed inclusion into Kohl's rcwa mapping monoid.
+\item The base-$p$ digit compactum as an explicit inverse limit and product
+      probability space, including composite $p$; its compatible CRT
+      decomposition; and the exact equivalence between diagonal rational
+      points and eventually periodic digit strings.
+\item The finite digit recursion for the numen, its rising extension in a
+      specified completion, and pointwise, almost-everywhere, and uniform
+      convergence criteria with their hypotheses displayed.
+\item The repeated-code fixed-point identity, the complete branch-correctness
+      argument for shortened $T_q$, and the phase-sensitive padded-word
+      periodic correspondence; the complete classical parity
+      encoder/conjugacy typing; the valid formal-composition identity behind
+      B\"ohm--Sontacchi's printed Proposition~4; the independently recovered
+      Proposition~5 return candidate; and the reversed purely periodic common
+      rational representative under the separate Bernstein--Lagarias and
+      numen embeddings.
+\item Set-series, the exact isometric coefficient pullback and its declared
+      generating-map ranges, edgepoints, the Abelian cross-section density
+      formula, the Square Sum Lemma, the Virtual Residue Formula, the maximal
+      graph-domain Singularity Conservation Law, and the source-status Finite
+      Dreamcatcher Theorem.
+\item The Dirichlet series $\zeta_{M_q}$, $\zeta_{\chi_q}$, and $F_q$; exact
+      dyadic block sums; Perron extraction of one coefficient; the exact
+      coefficient recursions; and the corrected ordinary and Dirichlet
+      functional equations in $\Re s>\sigma_q$; unique meromorphic
+      continuation to $\C$; a rigorous candidate-pole set; and corrected
+      $q=3$ principal parts and negative-integer residue recurrence.
+\item The explicit compatible-root $K$-valued character pairing on $\Z_p$,
+      classification and finite orthogonality, normalized nonarchimedean Haar
+      and Fourier analysis, the isometric Fourier transform, precisely signed
+      function/sequence/function--measure convolution, and the function
+      Wiener--Tauberian equivalence, together with the one proved direction
+      of the measure claim.
+\item Rising-continuity, canonical truncations, the exact del operators and
+      bounded Banach subspace, van der Put path expansions, point-selected
+      frames, fixed-target digit-multiplicative and affine F-series, and the
+      finite proof of the two-place $\chi_3$ identity.
+\item Multinomial product recursions over a common coefficient ring, exact
+      continuous and finite Fourier recursions, the formal compatibility
+      trichotomy at a breakdown index, the exact distributional consequence
+      of fixed-field finite-transform convergence, and the kernel-ideal
+      condition for a transported polynomial product to descend.
+\end{enumerate}
+
+It makes none of the following claims.
+\begin{enumerate}[label=\textup{(N\arabic*)}]
+\item It does not prove the full Collatz conjecture, the weak Collatz
+      conjecture, or a classification of all integer cycles.
+\item It does not claim that the scalar integer Hydra is a new class distinct
+      from Matthews's generalized Collatz presentation or Kohl's rcwa mapping
+      monoid.  It does not identify an rcwa mapping with an rcwa permutation,
+      equate a displayed Hydra modulus with the minimal rcwa modulus in
+      general or without the scalar exact-integrality hypothesis, or infer
+      Hydra-specific predicates from rcwa membership.
+\item It does not identify $Q_q$, $\Phi_q$, and $\chi_q$ as global maps,
+      suppress the mandatory chronological-word reversal, promote a return
+      under $T_q^L$ to exact period $L$, or use Bernstein--Lagarias's
+      composite-odd-$q$ conjugacy to enlarge the prime-$q$ codomain theorem
+      for $\chi_q$.  It does not use B\"ohm--Sontacchi's false unrestricted
+      Proposition~4 identity to replace a formal branch word by $u^L$ without
+      first proving that the word is the actual parity itinerary.
+\item It does not claim that every phase of a cycle is represented by the
+      shortest positive digit word, or that a periodic-point theorem rules
+      out divergent positive trajectories.
+\item It does not prove the full 2026 global-field Correspondence Principle,
+      its divergence clause, general injectivity of a numen, or a theorem
+      identifying every point of a numen fibre.
+\item It does not claim that the 2019 natural-density argument is a measure-
+      theoretic proof, that rational edgepoint carriers are automatically
+      branch invariant, or that a limit of dreamcatchers is automatically the
+      dreamcatcher of the limiting holomorphic function.
+\item It does not retain any continuation, residue, or pole conclusion
+      merely because it was derived from the source's false printed $F_q$
+      equation.  The newly proved global continuation does not imply that
+      every candidate lattice point is an actual pole, does not establish a
+      complete pole classification or the source's asserted
+      hyperexponential growth, and does not justify shifting the Perron
+      contour left of the absolute-convergence half-plane.
+\item It does not prove the converse Wiener--Tauberian theorem for arbitrary
+      measures, nor uniqueness of the self-similar numen measure without an
+      independent regularity or contraction hypothesis.
+\item It does not treat every rising-continuous or frame-compatible function
+      as bounded, and it does not assert the dissertation's Banach-algebra
+      theorem on the unrestricted class.
+\item It does not define a general product of distributions, identify the
+      formal convolution powers with ordinarily convergent convolution, or
+      promote the 2025 Main Limit, product, measure, and inversion conclusions
+      beyond their conditional status.  The edition proves what follows from
+      actual pointwise finite-transform convergence; it does not claim the
+      source's defective sufficient-condition argument establishes that
+      premise.
+\item It does not promote the dissertation's multidimensional
+      Correspondence Principle: its repeated vector block uses
+      coordinatewise digit lengths where one common synchronized block length
+      is required.
+\item It does not revive the withdrawn quotient-ring paper or merge materially
+      different arXiv versions into one theorem.
+\end{enumerate}
+
+These exclusions are part of the mathematical result.  They identify the
+exact frontier of the reconstructed corpus: the affine and finite-level
+structures are strong and explicit; several infinite-level analytic
+passages remain conditional; and the celebrated dynamical conjecture is a
+target of the programme, not a conclusion of this edition.

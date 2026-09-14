@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "topic_id": "TOPIC-COL-TAO-V7-0006",
+  "topic": "Exact coherent first-entry laws derived from Tao V7 first-passage stabilization",
+  "workspace": "C:/Users/LOCAL_USER/Documents/Erdos Strauss and related/collatz_reconstruction",
+  "corpus_entrypoint": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/Zeta-Function-Foundation/config/literature_index_entrypoint.json",
+  "updated_utc": "2026-09-04T14:54:06Z",
+  "mathematical_objects": [
+    "Syracuse first-passage maps with a separate failure state",
+    "total-variation convergence",
+    "compatible finite-threshold distributions",
+    "common logarithmic scale sequence"
+  ],
+  "queries": [
+    {
+      "query": "Tao first passage",
+      "layer": "research_literature",
+      "index_level": "canonical",
+      "executed_utc": "2026-09-04T14:32:29Z",
+      "reason": "Time is recording time after execution, not a claimed exact launch timestamp. Route current first-passage theorem; primary V7 path independently read from source audit and hash checked.",
+      "result_unit_ids": [
+        "PUBUNIT-808654374124DFA4A51601F4",
+        "PUBUNIT-7B52CC4A159765C800B92B6B"
+      ]
+    },
+    {
+      "query": "Collatz first passage",
+      "layer": "all",
+      "index_level": "canonical",
+      "executed_utc": "2026-09-04T14:54:06Z",
+      "reason": "Recording time after the two-layer query. V7 source identity returned directly; local hits remain routing-only and are not evidence for the new distributional claims. Limit two per layer.",
+      "result_unit_ids": [
+        "PUBUNIT-7B52CC4A159765C800B92B6B",
+        "PUBUNIT-847E4E7212BFCD7A613CA573",
+        "PUBUNIT-2676B09FB419EB0CC9BC6868",
+        "PUBUNIT-CC4C12890E64135EF1712B11"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_class": "research_literature",
+      "publication_unit_or_source_id": "PUBUNIT-847E4E7212BFCD7A613CA573",
+      "exact_locators": [
+        "C:/Users/LOCAL_USER/Documents/arxiv_latex/library/collatz_reconstruction/latex/1909.03562v7/collatz.tex:310-339,535-593"
+      ],
+      "relevance_edge": "Proposition 1.11 supplies summable adjacent-scale discrepancies and failure bounds; Section3 gives the existing fixed-threshold theorem, which is not a new contribution of this draft.",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-04T14:32:29Z",
+        "relevant_sections": [
+          "1.3 Reduction to a stabilisation property for first passage locations",
+          "3 Reduction to stabilisation of first passage"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "310-339",
+        "535-593"
+      ],
+      "dependencies": [],
+      "claim_or_proof_crosswalk_ids": [
+        "CLM-COL-000118",
+        "CLM-COL-000187",
+        "CLM-COL-000188"
+      ],
+      "notes": "SHA256 bfbc39432d4084a276416cb019a592003c868fa32f18e2f90028ac325ae5c19d directly checked. Proposition1.11 is cited analytic input, not a claimed independent reproof of Fourier-renewal Sections6-7. Historical V5 source is not the research baseline. No novelty inference from query absence or from inspected sections alone."
+    }
+  ],
+  "unresolved_dependencies": [],
+  "refresh_reason": "USR-0017 redirects preprint emphasis to added consequences relative to V7. Audit the common-input all-threshold coherent law, not an obsolete-version repair.",
+  "anti_loop_note": "No index rebuild. Query results only route sources; primary V7 was read and its hash checked. Full corpus and full analytic-proof coverage are not claimed."
+}

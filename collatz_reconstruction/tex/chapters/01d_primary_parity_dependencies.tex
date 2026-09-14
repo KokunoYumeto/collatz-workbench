@@ -1,0 +1,291 @@
+\subsection{Primary parity and rational-cycle dependencies}
+\label{subsec:primary-parity-dependencies}
+
+The De Bruijn source invokes three earlier results whose exact scopes now
+have controlling primary witnesses.  Everett already proves the finite
+parity bijection and its nonnegative affine fibres \cite{Everett1977};
+Lagarias adds the finite permutation structure and proves the infinite parity
+map \cite{Lagarias1985}; Bernstein proves the inverse-series inclusion
+\cite{Bernstein1994}, and Lagarias's rational-cycle coordinates
+\cite{Lagarias1990}.  This section keeps all three map orientations and both
+the raw and reduced denominator layers visible.
+
+Put
+\[
+ \mathcal R=\Q\cap\Ztwo=\Z_{(2)}.
+\]
+Lagarias 1985 denotes this ring by $\mathbf Q_2$; it is the set of rationals
+with odd reduced denominator, not the full $2$-adic field.  Its elements are
+exactly the finite or eventually periodic binary expansions in $\Ztwo$.
+
+\begin{proposition}[Everett's finite bijection; Lagarias's permutation structure]
+\label{prop:Lagarias-finite-parity}
+For $k\geq1$, define
+\[
+ \overline Q_k([n]_k)
+ =\left[\sum_{i=0}^{k-1}(T^i(n)\bmod2)2^i\right]_k.
+\]
+Then $\overline Q_k$ is a permutation of $\Z/2^k\Z$.  Its order is a power
+of two, in fact it divides $2^k$.  Every permutation cycle of length $r$ at
+level $k$ lifts at level $k+1$ either to one cycle of length $2r$ or to two
+cycles of length $r$.
+\end{proposition}
+
+\begin{proof}
+Everett's Theorem~1 proves the bijection by the complete four-case affine
+induction in Theorem~\ref{thm:Everett-finite-fibres}.  Lagarias's Theorem B
+states the permutation and power-of-two order
+\cite[p.~7, Thm.~B]{Lagarias1985}; its proof is explicitly a sketch and omits
+the induction details.  Bernstein independently states the lift alternative
+\cite[p.~407]{Bernstein1994}.  For the later structure at the scope used here,
+Proposition~\ref{prop:BL-Q} gives
+\[
+ a\equiv b\pmod{2^k}
+ \quad\Longleftrightarrow\quad
+ Q_3(a)\equiv Q_3(b)\pmod{2^k}.
+\]
+Thus $\overline Q_k$ is the reduction of the same isometric bijection $Q_3$
+and is a permutation.  Each residue has two lifts.  A lifted permutation
+cycle either returns each chosen lift after $r$ steps, yielding two
+$r$-cycles, or exchanges the two lifts after $r$ steps, yielding one
+$2r$-cycle.  Induction from level one proves that every cycle length and the
+permutation order divide $2^k$.
+\end{proof}
+
+This is the finite labeling called $\Phi_k$ by Laarhoven--de Weger.  Its
+cycles are cycles of a permutation of labels.  They are not cycles of the
+two-successor modular Collatz relation $\mathcal T_k$, and
+Proposition~\ref{prop:Lagarias-finite-parity} alone is not the graph
+isomorphism of Theorem~\ref{thm:LDW-finite-debruijn}.
+
+\begin{sourceissue}[Lagarias 1985 finite table and examples]
+\label{sourceissue:Lagarias1985-finite-table}
+The sentence immediately before Table~2 on printed p.~7 says that one-cycles
+are omitted; the table itself is on printed p.~8.  Its $k=6$ row also omits
+the nontrivial transposition $(14,46)$.  Direct evaluation gives
+\[
+ \overline Q_6(14)=46,
+ \qquad
+ \overline Q_6(46)=14.
+\]
+The displayed permutation order $4$ remains correct.  The calculation
+certificate \path{certificates/lagarias_dependency_checks.py} enumerates
+all residues for $k\leq6$ and verifies that this is the only nontrivial cycle
+missing from the printed $k=6$ row.
+
+On printed p.~18 the series for $Q_\infty(1)$ has summation index $i$ but
+exponent $2n$; the intended exponent is $2i$.  More substantially, the
+printed value $Q_\infty(3)=-20/3$ is inconsistent with the paper's own map:
+the trajectory $3,5,8,4,2,1,2,\ldots$ has parity word
+$11000(10)^\infty$, and hence
+\[
+ Q_\infty(3)=1+2+\frac{2^5}{1-2^2}=-\frac{23}{3}.
+\]
+The printed value is not used.
+\end{sourceissue}
+
+Lagarias's Eq.~(2.33) defines the infinite map in the forward orientation
+\[
+ Q_\infty(x)=\sum_{i\geq0}(T^i(x)\bmod2)2^i.
+\]
+
+\begin{proposition}[Lagarias infinite parity theorem, proof completed]
+\label{prop:Lagarias-infinite-parity}
+The map $Q_\infty$ is a continuous, bijective, measure-preserving self-map of
+$\Ztwo$.  It is $Q_3$ and Laarhoven--de Weger $\Phi$; it is not the inverse
+map $\Phi_3$.
+\end{proposition}
+
+\begin{proof}
+Theorem L states the result \cite[pp.~17--18]{Lagarias1985}.  Its printed
+argument proves prefix preservation, injectivity, surjectivity through finite
+inverse residues, and inverse continuity.  Compatibility of those inverse
+residues follows because every $\overline Q_k$ is a reduction of the same
+prefix map.  Every residue cylinder modulo $2^k$ is therefore permuted onto
+one cylinder of the same Haar measure, which supplies the measure-preservation
+step not printed at the end of the source proof.
+\end{proof}
+
+\begin{proposition}[one proved half of Periodicity]
+\label{prop:Bernstein-periodicity-half}
+Let $\Phi_3=Q_3^{-1}$.  Then
+\begin{equation}
+\label{eq:Bernstein-rational-inclusion}
+ \Phi_3(\mathcal R)\subseteq\mathcal R,
+\end{equation}
+or equivalently
+\begin{equation}
+\label{eq:Bernstein-rational-inclusion-forward}
+ \mathcal R\subseteq Q_3(\mathcal R).
+\end{equation}
+The Periodicity Conjecture is the equality
+\begin{equation}
+\label{eq:Lagarias-periodicity-conjecture}
+ Q_3(\mathcal R)=\mathcal R.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Bernstein writes a rational parity address as a finite or eventually
+periodic sequence of one-positions and substitutes it into his explicit
+series for $\Phi_3$.  The resulting geometric relation proves that the image
+is rational \cite[p.~407, Cor.~1]{Bernstein1994}.  Applying the bijection
+$Q_3$ gives the equivalent forward inclusion.  Lagarias prints
+\eqref{eq:Lagarias-periodicity-conjecture} as an unproved conjecture on
+printed p.~18 \cite{Lagarias1985}; no reverse inclusion is added.
+\end{proof}
+
+The positive-integer ``third form'' in Lagarias 1985 is likewise a conjecture:
+\begin{equation}
+\label{eq:Lagarias-third-form}
+ Q_3(\Npos)\subseteq\frac13\Z\setminus\Z.
+\end{equation}
+Bernstein instead proves that the inverse-oriented assertion
+$\Z^+\subseteq\Phi_3((1/3)\Z)$ is equivalent to the ordinary conjecture
+\cite[pp.~406--407, Thms.~2--3]{Bernstein1994}.  An equivalence to an endpoint
+conjecture is not a proof of either formulation.
+
+Lagarias's last exploratory value on printed p.~18 is left as
+$Q_3(-82/7)=?/15$.  Exact iteration gives a prefix of length $13$ followed by
+the parity block $1100$, hence the independent finite calculation
+\begin{equation}
+\label{calc:Lagarias1985-minus82}
+ Q_3(-82/7)=\frac{18098}{5}=\frac{54294}{15}.
+\end{equation}
+The same certificate reproduces this value.  It is not attributed to the
+source and does not prove Periodicity.
+
+\begin{theorem}[Lagarias rational fixed-return coordinates]
+\label{thm:Lagarias-rational-return}
+Let $n\geq1$ and $v=(v_0,\ldots,v_{n-1})\in\{0,1\}^n$, and put
+\[
+ m(v)=\sum_{i=0}^{n-1}v_i,
+ \qquad
+ D(v)=2^n-3^{m(v)}\neq0,
+\]
+\[
+ N(v)=\sum_{j=0}^{n-1}
+ v_j2^j3^{v_{j+1}+\cdots+v_{n-1}}.
+\]
+There is exactly one $x(v)\in\mathcal R$ with
+$T^n(x(v))=x(v)$ and initial parity word $v$, namely
+\begin{equation}
+\label{eq:Lagarias-rational-return}
+ x(v)=\frac{N(v)}{D(v)}.
+\end{equation}
+Its least $T$-period is $n$ exactly when $v$ is not a proper repeated block.
+\end{theorem}
+
+\begin{proof}
+The branch composition determined by $v$ is
+\[
+ U_{v_{n-1}}\circ\cdots\circ U_{v_0}(x)
+ =\frac{3^{m(v)}x+N(v)}{2^n},
+\]
+and $D(v)\neq0$ because $2^n$ is even while $3^{m(v)}$ is odd.  Thus its
+unique formal fixed point is
+\eqref{eq:Lagarias-rational-return}.  Lagarias proves that this formal point
+has the prescribed actual branches: for each $y\in\mathcal R$, exactly one of
+the two forward branch expressions $U_0(y)=y/2$ and
+$U_1(y)=(3y+1)/2$ lies in $\mathcal R$, with the choice determined by the
+parity of $y$; if $y\notin\mathcal R$, both expressions remain outside
+$\mathcal R$ \cite[pp.~36--37, Thm.~2.1]{Lagarias1990}.  The denominator
+$D(v)$ is odd, so the formal fixed point lies in $\mathcal R$.  If its
+prescribed composition ever selected the other forward expression, it would
+leave $\mathcal R$ and could never return, contradicting that the composition
+ends again at $x(v)\in\mathcal R$.  Thus every prescribed branch is actual.
+For every $d\geq1$, the conjugacy in
+Proposition~\ref{prop:BL-Q} gives
+$Q_3(T^d(x(v)))=S^d(Q_3(x(v)))$.  Hence a $T$-return after $d$ steps implies
+a shift return after $d$ steps.  Conversely, a shift return and the
+injectivity of $Q_3$ from Proposition~\ref{prop:Lagarias-infinite-parity}
+imply $T^d(x(v))=x(v)$.  The two sets of positive return times are equal, so
+their least elements agree; this least period is $n$ exactly when $v$ is not
+a proper repeated block.
+\end{proof}
+
+Write the positive reduced common denominator as
+\begin{equation}
+\label{eq:Lagarias-reduced-denominator}
+ \delta(v)=\frac{|D(v)|}{\gcd(|N(v)|,|D(v)|)}.
+\end{equation}
+It is always odd and prime to $3$.  The proof cannot omit the all-even word.
+If $m(v)\geq1$, then $3\nmid D(v)$.  If $m(v)=0$, the return equation is
+$x=x/2^n$, so $x=0$ and $\delta(v)=1$.  Thus
+\begin{equation}
+\label{eq:Lagarias-denominator-mod-six}
+ \delta(v)\equiv\pm1\pmod6.
+\end{equation}
+
+\begin{proposition}[raw scaling fibres and the primitive layer]
+\label{prop:Lagarias-primitive-scaling}
+For odd $b$, let
+\[
+ T^{(3,b)}(n)=
+ \begin{cases}
+ (3n+b)/2,&n\text{ odd},\\
+ n/2,&n\text{ even}.
+ \end{cases}
+\]
+Multiplication by a common positive odd denominator gives
+\[
+ bT(x_j)=T^{(3,b)}(bx_j).
+\]
+Consequently rational $T$-cycles correspond to common-odd-scaling classes
+of integer $T^{(3,b)}$-cycles.  Without identifying the raw representatives,
+the unique member with $b$ equal to the positive reduced common denominator
+is characterized by
+\[
+ \gcd(b,n_0,\ldots,n_{L-1})=1.
+\]
+It is exactly a primitive integer $T^{(3,b)}$-cycle, and division by $b$ is
+the two-sided inverse.  Its parameter satisfies $b\equiv\pm1\pmod6$.
+\end{proposition}
+
+\begin{proof}
+The branch identity is the calculation in
+Proposition~\ref{prop:LDW-rational-cycle-scaling}.  Lagarias explicitly
+defines the primitive condition and the inverse correspondence on printed
+pp.~39--40 \cite{Lagarias1990}.  For the raw strata, if $d\mid b$ and
+$n=dm$, $b=dc$, then
+\[
+ T^{(3,b)}(dm)=dT^{(3,c)}(m).
+\]
+This proves every scaling fibre without suppressing it.  Choosing the reduced
+common denominator gives the displayed gcd condition and a literal inverse.
+Equation~\eqref{eq:Lagarias-denominator-mod-six} supplies the parameter
+restriction.
+\end{proof}
+
+\begin{sourceissue}[Lagarias 1990 local coordinate defects]
+\label{sourceissue:Lagarias1990-local-defects}
+Six printed statements require exact local repair.
+
+First, the itinerary sentence at the top of printed p.~34 defines
+$v=(v_0,\ldots,v_{n-1})$ but quantifies
+$T^i(x(v))\equiv v_i\pmod2$ for $1\leq i\leq n$, which skips $v_0$ and invokes
+the undefined $v_n$.  The correct range is $0\leq i\leq n-1$.  Second,
+printed p.~39 says that $T$ never changes the denominator of an
+arbitrary element of $\mathcal R$, but $T(1/3)=1$.  The correct preserved
+scope is a reduced odd denominator prime to $3$; every periodic rational has
+that property by the case split above.  Third, the printed formula for
+$\delta(v)$ needs $|D(v)|$ for a positive denominator unless a signed-gcd
+convention is supplied.  Fourth, printed p.~40 writes
+$T^{(3,b)}(n)=T^{(3,-b)}(-n)$, whereas direct branch evaluation gives
+\[
+ T^{(3,b)}(n)=-T^{(3,-b)}(-n).
+\]
+Fifth, printed p.~34 ends one correspondence sentence with
+$b\equiv1\pmod6$; the preceding sentence, printed p.~40, and the examples
+require $b\equiv\pm1\pmod6$.  Sixth, the invariant gcd stratum on p.~40 uses
+the standing $\gcd(b,3)=1$ hypothesis and is not a statement for arbitrary
+odd $b$.
+\end{sourceissue}
+
+\begin{nonclaim}
+The Periodicity Conjecture does not follow from the one-sided Bernstein
+inclusion.  Lagarias's primitive-cycle existence and finiteness statements
+are conjectures.  A periodic parity address gives a rational periodic state,
+but this does not classify the positive integers inside $\Ztwo$, exclude
+nontrivial integer cycles, or prove convergence to $1$.
+\end{nonclaim}

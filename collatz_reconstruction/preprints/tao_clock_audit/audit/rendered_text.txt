@@ -1,0 +1,915 @@
+Clocks and First-Passage Measures
+in Tao’s Collatz Theorem
+Kokuno Yumeto
+Preprint draft, 4 September 2026
+Abstract
+For every prescribed function tending to infinity, Tao proved that the Collatz orbit minimum
+lies below that function on a set of starting integers of logarithmic density one. An exact
+treatment of the orbit clocks and sampling measures gives a first-passage formulation of this
+result. Valuation sums relate ordinary Collatz time, division-counting time, and odd-return
+time. With a separate failure state, the first-passage pushforwards satisfy composition identities
+that turn summable scale errors into a quantitative transport bound. The same estimate gives
+a total-variation limit for first-entry laws along an explicit scale sequence, with an error bound
+and compatible threshold projections. Applied to Tao’s first-passage estimate, the transport
+bound yields his fixed-threshold and diverging-threshold conclusions with exact harmonic
+weights. Two further estimates supply a multiplicative endpoint buffer and a uniform coefficient
+bound in the first-passage argument. An explicit reserve calculation explains the larger margin
+in Tao’s revised 3-adic separation estimate.
+1
+Introduction
+Collatz descent is studied with three natural clocks: every application of the usual map, every
+division by two, or every passage from one odd number to the next. These clocks give the same
+orbit minimum but different stopping times. Their exact relation becomes important when a
+descent estimate is restricted to a finite time interval or when the distribution of an orbit at its
+first visit to a smaller scale is used as the input to another estimate.
+The historical descent results of Terras and Everett, and the power-descent results of Allouche
+and Korec, provide the setting for Tao’s almost-bounded theorem, as reviewed in his Section 1.1
+[7, 2, 1, 3, 5]. Repeated descent requires control of more than the exceptional set at one scale: the
+image of a typical set need not be typical for the measure used at the next scale. Tao addresses
+this difficulty by comparing first-passage distributions. Successive descent steps can then be
+combined through the transport of measures, rather than through an independence assumption on
+the successive values of a single orbit.
+The clock identities in Section 2 separate a change of time parameter from a change of sampling
+measure. Passing from arbitrary starting integers to their odd parts, for example, requires the
+exact dyadic fibre weights at each finite cutoff. Section 3 then treats first passage as a family
+of maps indexed by the destination threshold. A separate failure state makes their composition
+identities valid on the entire domain. The corresponding pushforwards contract total variation, so
+discrepancies between adjacent scales can be added before taking a limit.
+The resulting transport estimate formulates the mechanism in Tao’s Section 3. Section 4 uses
+it both to obtain a limiting first-entry law along an explicit scale sequence and to pass from a
+1
+
+fixed-threshold estimate to an arbitrary diverging threshold. The latter tightness formulation
+is already present in Tao’s Remark 1.4 and Theorem 3.1. Keeping the finite harmonic sums
+throughout identifies the sampling law and the order of limits in each step.
+Two estimates needed in the first-passage proof are developed in Section 5.
+A buffer in
+logarithmic time corresponds to a multiplicative buffer in the initial value. The coefficient estimate
+requires a geometric weight that remains summable uniformly in the word length. Section 6 gives
+an explicit size bound for the retained reserve in the 3-adic separation argument and records the
+finite-weight and threshold reductions to which it is adjacent.
+The analytic input is Tao’s Proposition 1.11 in arXiv:1909.03562v7, dated 16 July 2026 [5],
+whose proof uses Fourier–renewal estimates. The deduction from that proposition and the local
+estimates above are proved here. The first arXiv version appeared in September 2019, and the
+journal paper appeared in 2022 [6]; version comparisons below refer explicitly to the identified
+arXiv sources.
+2
+Three clocks and one orbit minimum
+Write N0 = {0, 1, . . .}, N+ = {1, 2, . . .}, and O = {1, 3, 5, . . .}. Throughout, logarithms are natural.
+The three maps are
+C(n) =
+(
+3n + 1
+n odd,
+n/2
+n even,
+T(n) =
+(
+(3n + 1)/2
+n odd,
+n/2
+n even,
+and S(m) = (3m + 1)/2ν2(3m+1) for m ∈O. The first two maps have domain and codomain N+,
+and the third has domain and codomain O. The map T counts one division by two per step. The
+map S counts one multiplication by three per step. Tao makes this distinction in Section 1.2 of [5];
+the shortened clock also occurs explicitly in Terras and Korec [7, 3].
+For N = 2am with m odd, define
+mj = Sj(m),
+qj = ν2(3mj + 1),
+Q0 = 0,
+Qj =
+j−1
+X
+i=0
+qi
+(j ≥1).
+Every qj is a positive integer. For a map F on positive integers, write Fmin(n) = mink≥0 F k(n);
+the minimum exists by well-ordering, regardless of whether the orbit is bounded.
+Proposition 2.1 (Exact clock conversion). For every j ∈N0,
+Ta+Qj(N) = mj = Ca+j+Qj(N).
+(1)
+The maps j 7→a + Qj and j 7→a + j + Qj are strictly increasing bijections onto the respective sets
+of odd-visit times. On these images the inverse maps assign to each odd-visit time its unique index
+j in the displayed equalities. Furthermore,
+Cmin(2am) = Tmin(2am) = Smin(m).
+(2)
+Proof. The first a iterates under either full-domain map divide by two, reaching m. Starting at
+the full-clock time a + j + Qj, the subsequent segment is
+Ca+j+Qj+r(N) = 2qj−r+1mj+1
+(1 ≤r ≤qj + 1).
+2
+
+It has qj + 1 steps. The shortened segment omits the first even value 2qjmj+1 and has qj steps.
+All intervening values are even, and the terminal value is odd. Induction proves (1) and identifies
+exactly, with no additional visits, the odd-visit times. Every deleted value is at least the following
+odd value, and the initial segment is at least m. Deletion therefore preserves the minimum. The
+full sequence can be recovered from a and the indexed odd orbit: each qj is determined by mj and
+the displayed segments fill every omitted time. Repeated values on a periodic orbit do not affect
+this indexed reconstruction.
+For example, the odd orbit beginning at 3 is 3, 5, 1, 1, . . . with initial valuations 1, 4, 2, . . ..
+The shortened orbit visits these states at times 0, 1, 5, 7, . . ., whereas the full orbit visits them at
+0, 2, 7, 10, . . .. Thus a horizon of j odd returns corresponds to Qj shortened steps and j + Qj full
+steps.
+The corresponding change of starting coordinates also changes weights. Set
+H(X) =
+X
+1≤n≤X
+1
+n,
+Ho(X) =
+X
+1≤m≤X
+m odd
+1
+m,
+with either sum zero when its range is empty. Integral comparison gives H(X) = log X + O(1)
+and Ho(X) = 1
+2 log X + O(1) as X →∞.
+Proposition 2.2 (Dyadic weight transport). The map (a, m) 7→2am is a bijection N0 × O →N+
+with inverse n 7→(ν2(n), n/2ν2(n)). For every A ⊆O, a ∈N0, and X ≥1,
+X
+n≤X
+n∈2aA
+1
+n = 2−a
+X
+m≤X/2a
+m∈A
+1
+m.
+(3)
+Consequently the stratum ν2(n) = a has logarithmic density 2−a−1, while
+X
+n≤X
+ν2(n)>A0
+1
+n = 2−A0−1H(X/2A0+1)
+(A0 ∈N0).
+(4)
+Proof. Unique factorization by the largest power of two gives the bijection, whose fibres are
+singletons. Substitution in the finite sum proves (3). For fixed a its right-hand side with A = O
+is 2−a−1 log X + Oa(1). Division by H(X) proves the density claim. The tail consists exactly of
+multiples of 2A0+1; substituting n = 2A0+1r proves (4).
+The odd-part projection π(n) = n/2ν2(n) has fibre {2am : a ≥0} over m. Retaining a recovers
+the starting integer; (1) supplies the corresponding time change. This time change is essential: for
+example, π(C(6)) = 3, whereas S(π(6)) = 5.
+There is also a useful comparison at a fixed cutoff. For an integer X ≥1, let ρX(n) = 1/(nH(X))
+on 1 ≤n ≤X and let ρo
+X(m) = 1/(mHo(X)) on odd m ≤X.
+Proposition 2.3 (Finite-cutoff sampling comparison). The odd-part pushforward obeys
+sup
+E⊆O
+|(π∗ρX)(E) −ρo
+X(E)| ≤H(X) −H(⌊X/2⌋)
+H(X)
+.
+In particular its ℓ1 distance from ρo
+X is O(1/ log X) as X →∞. Upper and lower logarithmic
+densities of π−1(E) therefore equal the respective relative odd logarithmic densities of E, whether
+or not either density exists as a limit.
+3
+
+Proof. For odd m ≤X, let rm be the unique integer with 2rmm ≤X < 2rm+1m. The fibre mass
+is exactly (2 −2−rm)/(mH(X)). Put
+BE =
+X
+m≤X
+m∈E
+1
+m,
+DE =
+X
+m≤X
+m∈E
+2−rm
+m ,
+D = DO.
+The fibre partition gives H(X) = 2Ho(X) −D; separating the even terms also gives D =
+H(X) −H(⌊X/2⌋), with H(0) = 0. Writing q = BE/Ho(X), direct subtraction yields
+(π∗ρX)(E) −ρo
+X(E) = qD −DE
+H(X)
+.
+Since 0 ≤q ≤1 and 0 ≤DE ≤D, this proves the event bound. The ℓ1 distance of probability
+measures is twice the supremum event difference: the positive and negative parts of their difference
+have equal mass. Finally D →log 2 and H(X) ∼log X. The assertions about upper and lower
+densities follow by taking limsups and liminfs in the finite bound.
+3
+First passage as an exact transport map
+Let D be a nonempty subset of N+ and F : D →D any map. For a real x ≥1, define the first
+entrance time into D ∩[1, x] by
+tx(n) = inf{j ∈N0 : F j(n) ≤x},
+inf ∅= +∞.
+Adjoin a point † /∈D, and define px : D ∪{†} →D ∪{†} by
+px(n) =
+(
+F tx(n)(n)
+tx(n) < ∞,
+†
+tx(n) = ∞,
+px(†) = †.
+The absorbing point † records trajectories that never enter D ∩[1, x]. The image of px is contained
+in (D ∩[1, x]) ∪{†}, and every point of this set is fixed by px. The fibre p−1
+x (†) ∩D consists exactly
+of their starting values and may be empty.
+Lemma 3.1 (Nested passage). For 1 ≤x ≤y,
+px ◦py = px = py ◦px.
+(5)
+When tx(n) < ∞, both hitting times are finite and
+tx(n) = ty(n) + tx(py(n)),
+F k(px(n)) = F k+tx(py(n))(py(n))
+(k ≥0).
+Proof. If the orbit never reaches y, it cannot reach x, and the first identity gives † on both sides.
+If it reaches y, the orbit prior to that first visit is above y, hence above x. Searching for the first
+visit to x can therefore begin at py(n), giving the hitting-time identity when finite and † on both
+sides otherwise. The equality pypx = px follows because a successful output of px is at most x ≤y,
+and † is fixed. The identity of indexed tails follows from the semigroup law for F.
+4
+
+For a signed summable measure λ on D ∪{†}, define its pushforward Kxλ = (px)∗λ, explicitly
+(Kxλ)(z) =
+X
+n:px(n)=z
+λ(n).
+These maps preserve total mass, preserve nonnegativity, and contract ℓ1: ∥Kxλ∥1 ≤∥λ∥1. Indeed,
+take absolute values inside each fibre sum and sum over the disjoint fibres. Lemma 3.1 gives
+KxKy = Kx = KyKx
+(x ≤y),
+K2
+x = Kx.
+(6)
+The kernel of Kx consists exactly of signed measures whose sum on each fibre of px is zero. In
+particular, Kx(δn −δn′) = 0 whenever px(n) = px(n′).
+Proposition 3.2 (Finite-chain transport bound). Let 1 ≤x0 ≤· · · ≤xJ and let ν0, . . . , νJ be
+probability measures satisfying Kxiνi = νi. Put ei = ∥νi −Kxiνi+1∥1 for 0 ≤i < J. Then
+∥ν0 −Kx0νJ∥1 ≤
+J−1
+X
+i=0
+ei.
+(7)
+Proof. For J = 0 both sides are zero. For J ≥1, the exact telescoping identity is
+ν0 −Kx0νJ =
+J−1
+X
+i=0
+Kx0(νi −Kxiνi+1).
+Here Kx0ν0 = ν0 and Kx0Kxi = Kx0 by (6). The triangle inequality and contraction prove (7).
+The following scale formulation records exactly the summability used in Tao’s reduction. Fix
+α > 1. Suppose µs, for s ≥1, is a probability measure on D ∩[s, sα] whenever that set is nonempty.
+Choose s∗≥2 so every required block is nonempty for s ≥s∗. For such s, set
+νs = Ksµsα,
+d(s) = νs({†}),
+e(s) = ∥νs −Ksνsα∥1 .
+For R ≥s∗define the possibly infinite quantity
+E(R) = sup
+u≥R
+ 
+d(u) +
+∞
+X
+i=0
+e(uαi)
+!
+.
+(8)
+Here d(s) is the failure mass at scale s, while e(s) measures the change in the entrance law between
+two successive starting scales.
+Theorem 3.3 (Summable transport implies tight orbit minima). For K ≥sα3
+∗
+and any nonempty
+block supporting µs,
+µs{n : Fmin(n) > K} ≤E(K1/α3).
+(9)
+In particular, if E(R) →0 as R →∞, the laws of Fmin under these block measures are uniformly
+tight.
+Proof. Let AK = {n ∈D : Fmin(n) ≤K}, so † /∈AK. A successful passage landing in AK certifies
+that the original orbit enters AK. Thus p−1
+u (AK) ⊆AK on the extended space, for every u.
+If sα ≤K, the left side of (9) is zero. Otherwise choose J ≥1 minimal such that y = sα−J <
+K1/α. Then
+K1/α2 ≤y < K1/α,
+u = y1/α ≥K1/α3 ≥s∗,
+uαJ = s1/α.
+5
+
+The successful part of νu is supported below u < K, so νu(AK) = 1 −d(u). For each intermediate
+scale v = uαi,
+νvα(AK) ≥(Kvνvα)(AK) ≥νv(AK) −e(v).
+Summing for 0 ≤i < J gives
+νs1/α(AK) ≥1 −d(u) −
+J−1
+X
+i=0
+e(uαi).
+But νs1/α = Ks1/αµs, and p−1
+s1/α(AK) ⊆AK, so µs(AK) is at least this large. Formula (8) proves
+the bound.
+For example, if d(s) ≤Ds−b and e(s) ≤E(log s)−c, with D, E, b, c > 0, then
+E(R) ≤DR−b +
+E
+1 −α−c (log R)−c.
+(10)
+This follows by summing the geometric series P
+i≥0 α−ci. The same theorem also accepts, for
+instance, e(s) = O((log log s)−1−c) for large s: for sufficiently large R > e, writing h = log α > 0
+and v = log log R, the sum is bounded by v−1−c + v−c/(ch) by integral comparison. Tao already
+notes this weaker sufficient error regime after Proposition 1.11 [5].
+4
+Application to Tao’s theorem
+Take D = O, F = S, and α = 1001/1000. Let
+Rs = O ∩[s, sα],
+hs =
+X
+n∈Rs
+1
+n,
+µs({n}) =
+1
+hsn
+(n ∈Rs),
+whenever Rs ̸= ∅. The measure is zero outside Rs. Choose s∗sufficiently large that all blocks
+used below are nonempty.
+Theorem 4.1 (Tao, Proposition 1.11). There are absolute constants B, c > 0 such that, for all
+sufficiently large x and y ∈{xα, xα2}, an input Ny with law µy satisfies
+P(tx(Ny) = ∞) ≤Bx−c.
+Let bpx(n) agree with px(n) on successful passage and equal 1 on failed passage, as in Tao’s
+convention. Then
+(bpx)∗µxα −(bpx)∗µxα2
+
+1 ≤B(log x)−c.
+(11)
+The norm in (11) is the unhalved ℓ1 norm used in [5]. Tao proves this proposition using
+the valuation law and fine-scale mixing of Syracuse random variables, obtained through Fourier
+estimates and a two-dimensional renewal argument. The estimates in Section 5 supply the endpoint
+margin and uniform coefficient bound used in his Section 5.
+The change to † costs only the known failure probability. Indeed, if q merges † with 1 and
+fixes the other points, then for two probability measures λ, λ′ on O ∪{†},
+λ −λ′
+1 ≤
+q∗λ −q∗λ′
+1 + 2|λ(†) −λ′(†)|.
+(12)
+To check it, only the coordinates 1 and † need attention: |a|+|b| ≤|a+b|+2|b| for their respective
+differences. By (6), Kxνxα = Kxµxα2. Thus Theorem 4.1 proves, after increasing a constant,
+d(s) ≤Bs−c,
+e(s) ≤B′(log s)−c
+(s ≥s∗).
+(13)
+These measures retain their failure mass and the original denominators hs.
+6
+
+4.1
+A limiting first-entry law on an explicit scale sequence
+Fix u ≥s∗and define tj = uαj. For j ≥0 put
+λu,j = Kuνtj = Kuµuαj+1.
+(14)
+The equality follows from nested passage. These are laws on the finite set (O ∩[1, u]) ∪{†}: they
+describe where the orbit first enters [1, u], not where it is at a fixed iteration time.
+Corollary 4.2 (Total-variation entrance-law limit). There is a probability measure λ∞
+u on that
+finite set with
+∥λu,j −λ∞
+u ∥1 ≤
+B′
+1 −α−c (αj log u)−c.
+(15)
+Its failure mass satisfies
+λ∞
+u (†) ≤Bu−c +
+B′
+1 −α−c (log u)−c.
+If v = uαk for an integer k ≥0, then
+Kuλ∞
+v = λ∞
+u .
+(16)
+Proof. Contraction and KuKtj = Ku give
+∥λu,j+1 −λu,j∥1 ≤e(tj) ≤B′(αj log u)−c.
+The geometric tail makes the sequence Cauchy in ℓ1. In this finite state space the limit is a
+probability measure, and summing from j to infinity gives (15). At j = 0, λu,0 = νu; the failure
+bound follows from (13) and (15). Finally, Kuλv,j = λu,j+k at every finite j. Passing to the limit
+under the contraction Ku proves (16).
+The compatibility in (16) relates thresholds on a common scale sequence; it does not compare
+different scale phases. These are first-entry laws, rather than one-step stationary laws. The bound
+on failure mass tends to zero with u, but permits positive mass at a fixed threshold.
+4.2
+The quantitative fixed-threshold theorem
+Theorem 4.3 (Tao’s fixed-threshold theorem). There are absolute constants C, c > 0 such that,
+for all real K, X ≥2,
+X
+m≤X, m∈O
+Smin(m)>K
+1
+m ≤C log X
+(log K)c ,
+(17)
+X
+n≤X
+Cmin(n)>K
+1
+n ≤C log X
+(log K)c .
+(18)
+Proof. Equations (13) and (10), followed by Theorem 3.3, give
+µs(Smin > K) ≤C1(log K)−c
+7
+
+for all sufficiently large K, uniformly over nonempty blocks. Bounded K ≥2 is included by
+increasing C1. For s ≥2, integral comparison gives hs ≤Cα log s. If 1 < s < 2, the block contains
+no odd integer, since sα < 2α < 3. Hence every relevant block obeys
+X
+m∈Rs
+Smin(m)>K
+1
+m ≤C2(log s)(log K)−c,
+(19)
+with empty blocks contributing zero.
+If X ≤K, the sum in (17) is zero, since the orbit contains its starting value. Otherwise
+let zi = Xα−i, and let J ≥1 be minimal with zJ ≤K. The blocks [zi, zα
+i ], 1 ≤i ≤J, cover
+[zJ, X]. Every bad starting value exceeds K, so the remaining prefix contributes nothing. Possible
+duplicated endpoints only increase an upper bound. Since
+J
+X
+i=1
+log zi = log X
+J
+X
+i=1
+α−i ≤log X
+α −1,
+summing (19) proves (17).
+For the full-domain map, Propositions 2.1 and 2.2 give the finite identity
+X
+n≤X
+Cmin(n)>K
+1
+n =
+X
+a≥0
+2−a
+X
+m≤X/2a, m∈O
+Smin(m)>K
+1
+m.
+Only finitely many terms are nonzero. If X/2a < 2, the inner bad sum is zero. For the others,
+apply (17) and use
+X
+a:X/2a≥2
+2−a log(X/2a) ≤log X
+X
+a≥0
+2−a = 2 log X.
+This proves (18).
+4.3
+Diverging thresholds and the exact meaning of tightness
+Corollary 4.4 (Tao’s almost-bounded theorem). For every f : N+ →R with f(n) →+∞,
+lim
+X→∞
+1
+H(X)
+X
+n≤X
+Cmin(n)≥f(n)
+1
+n = 0.
+Thus Cmin(n) < f(n) on a set of logarithmic density one. The analogous statement on O, with
+Ho(X) and S, also holds.
+Proof. Fix an integer K ≥2. There is YK such that f(n) > K for n ≥YK. Therefore
+{n : Cmin(n) ≥f(n)} ⊆[1, YK] ∪{n : Cmin(n) > K}.
+Theorem 4.3 bounds its harmonic mass up to X by H(YK) + C log X/(log K)c. Divide by H(X)
+and first let X →∞at fixed K. The resulting limsup is at most C/(log K)c, which tends to zero
+as K →∞. The odd case is identical, using Ho(X) ∼1
+2 log X. The argument allows nonmonotone
+f with arbitrarily slow divergence. Its negative values occur only in a finite prefix, and the equality
+part of the bad event is included throughout.
+8
+
+The finite-prefix argument gives a general tightness criterion for weighted counting measures.
+Proposition 4.5 (Weighted tightness equivalence). Let D ⊆N+ be infinite, let w(n) > 0, and
+suppose W(X) = P
+n∈D,n≤X w(n) →∞. Let g : D →[0, ∞) be finite-valued and let ρX be the
+probability proportional to w on the nonempty prefix D ∩[1, X]. The following assertions are
+equivalent:
+1. For every real-valued f(n) →∞, ρX(g ≥f) →0.
+2.
+lim
+K→∞lim sup
+X→∞
+ρX(g > K) = 0.
+3.
+lim
+K→∞sup
+X
+ρX(g > K) = 0.
+The supremum is over nonempty prefixes.
+Proof. The finite-prefix argument in Corollary 4.4, with W in place of H, proves (2)⇒(1). If (2)
+fails, choose ε > 0 such that for every integer j ≥1 there are arbitrarily large X with ρX(g > j) ≥ε.
+Start with an integer X0 ≥min D. Choose integers Xj > Xj−1 recursively with this property and
+with W(Xj−1)/W(Xj) ≤ε/2. Set f(n) = j for Xj−1 < n ≤Xj, assigning any finite value on the
+initial prefix. This tends to infinity. At Xj, removal of the earlier prefix leaves mass at least ε/2
+on which g > j = f, contradicting (1).
+To prove (2)⇒(3), choose K0 so the limsup in (2) is less than ε/2. For some X0, all X ≥X0
+have ρX(g > K0) ≤ε. Increase K0 to exceed every value of g on the finite prefix up to X0. All
+earlier tails are now empty, and the later bound persists. Finally (3)⇒(2) is immediate.
+For w(n) = 1/n and g = Cmin or Smin, this gives the qualitative equivalence stated by Tao. The
+quantitative rate in Theorem 4.3 uses his first-passage estimate in addition to this equivalence.
+5
+Endpoint margins and uniform coefficient estimates
+Two estimates in the proof of Tao’s Proposition 5.2 control the location of the first-passage time
+and the effect of fine-scale mixing on the first-entry distribution. Retain his parameters
+L = log x,
+α = 1.001,
+β = log(4/3),
+n0 =
+
+L
+10 log 2
+
+,
+m0 =
+
+L
+100000
+
+.
+(20)
+Here x is sufficiently large; in particular m0 ≥1.
+5.1
+A buffer in time is multiplicative in the initial value
+In the proof of Proposition 5.2, Tao obtains an event Gx with P(Gc
+x) = O(L−10) on which, for
+Ny ∼µy and y ∈{xα, xα2},
+log Sj(Ny)
+Ny
++ jβ
+ ≤C0L3/5
+(0 ≤j ≤n0).
+(21)
+The desired time interval is
+Iy =
+log(y/x)
+β
++ L4/5,
+log(yα/x)
+β
+−L4/5
+
+.
+The input restriction printed at this point in v7 adds and subtracts 2L4/5 at the endpoints y, yα.
+An additive displacement of that size produces logarithmic displacement O(L4/5/y) at the lower
+endpoint, not the required time margin. A multiplicative restriction supplies the required margin.
+9
+
+Proposition 5.1 (Multiplicative endpoint estimate). Set
+Jy = [y exp(L4/5), yα exp(−L4/5)].
+For all sufficiently large x this is nonempty,
+Gx ∩{Ny ∈Jy} ⊆{tx(Ny) ∈Iy},
+P(tx(Ny) ∈Iy) = 1 −O(L−1/5),
+uniformly for the two indicated values of y.
+Proof. Since Ny ≤xα3, (21) gives
+log Sn0(Ny)
+x
+≤(α3 −1)L −βn0 + C0L3/5 < 0
+for large x. For example α3 −1 < 1/300 and β/(10 log 2) > 1/40, whereas the floor costs only a
+constant. Since Ny > x, the first crossing is therefore at an integer 1 ≤t ≤n0. Applying (21) at t
+and t −1 gives
+t −log(Ny/x)
+β
+ ≤C1L3/5.
+(22)
+Indeed the inequalities St(Ny) ≤x and St−1(Ny) > x bound t from below and above; the additional
+one-step term is absorbed into C1.
+If Ny ∈Jy, the central expression in (22) lies inside Iy with extra margin (β−1 −1)L4/5 on
+both sides. Since 0 < β < 1, this dominates C1L3/5. This proves the event inclusion.
+For 1 ≤a < b, integral comparison along the odd progression gives
+X
+a≤m≤b
+m odd
+1
+m = 1
+2 log(b/a) + O(1/a),
+uniformly in the real endpoints. Thus the block denominator is 1
+2(α −1) log y + O(1/y), whereas
+the two excluded pieces have total harmonic mass L4/5 + O(1/y). Their probability is O(L−1/5).
+The logarithmic width of Jy is (α −1) log y −2L4/5 > 0. Finally add P(Gc
+x) = O(L−10).
+Thus the multiplicative buffer gives the same interval Iy and exceptional probability O(L−1/5)
+required in the subsequent argument.
+5.2
+A uniform coefficient bound over valuation words
+For a positive tuple a = (a1, . . . , am) put
+A = a1 + · · · + am,
+b = am,
+Fm(a) =
+m
+X
+i=1
+3m−i2−(ai+···+am),
+F0 = 0.
+Composition of the maps z 7→(3z + 1)/2ai gives
+Sm(M) = 3m2−AM + Fm(a)
+(23)
+when a is the actual valuation tuple of M. Induction proves the formula: the next map multiplies
+every existing term by 3/2am+1 and adds 2−am+1. In particular 0 ≤Fm ≤3m, a bound uniform in
+10
+
+the tuple. For the latter bound, replace every negative power of two by at most 1/2 and sum the
+finite geometric series.
+For an arbitrary E ⊆O ∩[1, x] set
+E′ =
+(
+M ∈O : tx(M) = m0,
+px(M) ∈E,
+e−L7/10(4/3)m0x ≤M ≤eL7/10(4/3)m0x
+)
+.
+This is the same set as in the approximate formula of [5, Proposition 5.2]; successful passage makes
+its meaning independent of the failure convention. For n ∈Iy ∩Z write m = m0, r = n −m ≥0,
+and define on Z/3rZ
+cn(z) = 3r
+X
+M∈E′
+M≡z
+(mod 3r)
+1
+M .
+(24)
+The source parameters ensure m ≤n ≤n0 for sufficiently large x. The case r = 0 is allowed in the
+estimate below, with modulus one.
+Proposition 5.2 (Uniform coefficient bound). There is an absolute constant C such that 0 ≤
+cn(z) ≤C for all sufficiently large x, both choices of y, all n ∈Iy ∩Z, all residue classes z, and
+every set E above.
+Proof. Partition (24) by the unique length-m valuation tuple of M, and call a tuple’s contribution
+cn,a(z). At its first crossing, the exact affine formulas give
+3m2−AM + Fm ≤x < 3m−12−(A−b)M + Fm−1.
+The coefficient 3m−1 corresponds to the preceding m −1 iterates. Uniformly Fm−1 ≤3m−1 = o(x),
+so every such M lies between
+M0 = 3−m2A−bx
+and
+M1 = 3−m2Ax
+(25)
+for large x. Indeed the upper bound follows by discarding Fm ≥0, and the lower follows from
+x −Fm−1 > x/3.
+The integer Ba = 2AFm is odd: its first term is 3m−1 and all its later terms are even. The
+terminal value in (23) is odd, hence
+3mM + Ba ≡2A
+(mod 2A+1).
+Since 3m is a unit modulo 2A+1, this requires a single class of M modulo 2A+1. Combining it with
+M ≡z (mod 3r) gives a single class modulo q = 2A+13r by the Chinese remainder theorem. Only
+this necessary restriction is needed for the upper bound.
+For any progression and 1 ≤U ≤V ,
+X
+U≤M≤V
+M≡z
+(mod q)
+1
+M ≤1
+U + 1
+q log(V/U).
+(26)
+To prove it, keep the first progression term separately; for each subsequent term at t, use
+1/t ≤q−1 R t
+t−q du/u. The integration intervals are disjoint and lie inside [U, V ]. If there are no
+progression terms, the bound is immediate.
+11
+
+If 2A ≤x1/2, then
+q
+M0
+= 2b+13n
+x
+≤2x−17/50 ≤1
+for large x. Here b ≤A and 3n ≤x4/25, since n ≤L/(10 log 2) and 35 < 28. Because M1/M0 = 2b
+and b ≥1, (26) gives
+cn,a(z) ≤C2b2−A.
+(27)
+If 2A > x1/2, set V∗= 3m−12−(A−b)M. The previous crossing inequality gives V∗> x −Fm−1,
+and therefore Fm−1 = o(V∗) uniformly. The last valuation is
+b = ν2(3(V∗+ Fm−1) + 1).
+The positive integer inside the valuation is divisible by 2b, so 2b ≤3(V∗+ Fm−1) + 1 ≤5V∗for
+large x. Consequently M ≥(3/5)3−m2A. Apply (26) with lower endpoint max(M0, (3/5)3−m2A)
+and upper endpoint M1. If they are out of order the contribution is zero; otherwise their ratio is
+at most 2b. We obtain
+cn,a(z) ≤C3(3n2−A + b2−A).
+(28)
+The weights must now be summed before weakening them. Exactly,
+X
+a1,...,am≥1
+b2−A =
+
+X
+a≥1
+2−a
+
+
+m−1 X
+b≥1
+b2−b = 2.
+For the additional term in (28),
+3n
+X
+2A>x1/2
+2−A ≤3nx−1/4
+X
+a1,...,am≥1
+2−A/2
+= 3nx−1/4(1 +
+√
+2)m ≤x4/25−1/4+1/100000 = x−8999/100000.
+The last step uses 1 +
+√
+2 < e and m ≤L/100000. All summands are nonnegative, so enlarging
+the actual finite tuple range to all positive tuples is valid.
+Summing (27) and (28) proves
+cn(z) ≤C4(2 + x−8999/100000), uniformly in every stated variable.
+The last displayed majorant in the printed proof of Lemma 5.3 is instead P
+a1,...,am≥1 2−A/2 =
+(1 +
+√
+2)m. It is finite for a fixed m but is not uniformly bounded when m = ⌊L/100000⌋grows.
+Keeping the sharper weights already available in the preceding estimates proves exactly the uniform
+result needed by that lemma.
+To apply the uniform bound, first observe that the source range gives r = n −m ≥m: the
+lower endpoint gives n ≥(α −1)L/β + L4/5, whereas 2m ≤(α −1)L/50 and β < 1. If pr is the law
+of Tao’s r-Syracuse random variable on Z/3rZ, define the uniform lift of its reduction to Z/3mZ by
+(Lm→rpm)(z) = 3m−rpm(z mod 3m)
+(0 ≤m ≤r).
+Reduction has fibres of size 3r−m, so this lift preserves mass. Tao’s projective identity says that
+reducing pr gives pm. His fine-scale mixing estimate controls ∥pr −Lm→rpm∥1. Proposition 5.2
+now gives the precise dual estimate
+
+X
+z mod 3r
+cn(z)
+ pr(z) −(Lm→rpm)(z)
+
+ ≤C ∥pr −Lm→rpm∥1 .
+The coefficient therefore transfers the fine-scale mixing error with a constant independent of x, n,
+and E.
+12
+
+6
+Reserve bounds and threshold reductions
+Two further parts of the first-passage argument depend on retaining the appropriate finite-scale
+information: lifting a congruence between offset integers requires a size bound, and passing to
+logarithmic density requires the finite dyadic weights and the correct range of a threshold function.
+6.1
+A reserve for 3-adic separation
+Tao’s v7 uses a larger retained reserve than v5 [4, 5] in the proof of 3-adic separation of offsets.
+The following estimate gives the sufficient margin in this size argument. Put
+a = log(4/3),
+b = log 2,
+ρ∗= b
+4a.
+For positive integers a1, . . . , ak, write Sj = a1+· · ·+aj and l = Sk. Clearing the dyadic denominator
+of the reversed offset produces the positive integer
+U =
+k
+X
+j=1
+3j−12l−Sj.
+Bounding U below 3n is what permits an equality modulo 3n between two such integers to be
+lifted to an equality of integers.
+Proposition 6.1 (An explicit reserve bound). Suppose n ≥2, C > 0, and ρ > ρ∗satisfy
+Sj ≥2j −2 −C(
+p
+j log n + log n)
+(1 ≤j ≤k),
+l ≤nlog 3
+b
+−ρC2 log n.
+Put γ = ρb −b2/(4a) > 0. Then
+U
+3n ≤8
+3n1−γC2+bC.
+(29)
+In particular U < 3n if γC2 −bC ≥3.
+Proof. For each j, the hypotheses give
+3j−12l−Sj
+3n
+≤4
+3 exp
+
+−ρbC2 log n + bC log n −aj + bC
+p
+j log n
+
+.
+Complete the square:
+−aj + bC
+p
+j log n = −a
+ 
+p
+j −bC√log n
+2a
+!2
++ b2C2 log n
+4a
+.
+Every summand is thus at most 4
+3n−γC2+bC. Since k ≤l < n log 3/ log 2 < 2n, summation gives
+(29). Under the stated last condition its right-hand side is at most 8/(3n2) ≤2/3 < 1.
+Numerically ρ∗= 0.602355 . . .. In particular
+b2
+4a = 0.417520 . . . ,
+1
+2b = 0.346573 . . . ,
+0.99b = 0.686215 . . . .
+The half-reserve used in v5 does not give the negative quadratic exponent needed by this estimate.
+Its displayed calculation also omits a factor log 2 when converting a power of two to an exponential.
+Tao’s replacement of the half-reserve by 0.99 in v7 places the coefficient above ρ∗.
+13
+
+Here is the connection with the stopping event used there. If T = n log 3/ log 2 −C2 log n and
+the accumulated valuation first exceeds T at index k + 1, the source concentration condition for
+the last two coordinates gives
+Sk+1 ≤T + 1 + C(
+p
+log n + log n) ≤T + 6C log n.
+For C ≥600 this is at most n log 3/ log 2 −0.99C2 log n, exactly the improved reserve. In deriving
+the first inequality, use Sk ≤T and ak ≥1 in |ak + ak+1 −2| ≤C(√log n + log n).
+The
+source has already restricted the index to k = n log 3/(2 log 2) + O(C√n log n), so k ≥1 for
+sufficiently large n at fixed C. The prefix bound in Proposition 6.1 allows the additive two
+arising from the source’s interval indexing: for j ≥2, its interval starting at index one gives
+Sj ≥2(j −1) −C(
+p
+(j −1) log n + log n); the case j = 1 follows from a1 ≥1.
+The role of the reserve is to ensure that congruent offset integers in this size range are equal as
+integers. Fourier decay additionally uses the analytic estimates in Tao’s argument.
+6.2
+Dyadic weights and diverging thresholds
+The density factor in v7 Section 1.2 assigns mass 2−a to ν2(n) = a. Proposition 2.2 shows that
+the absolute logarithmic density is 2−a−1; already a = 0 distinguishes the formulas. The source
+prints the partial sum as 1 −2−A0; the corrected finite partial sum is 1 −2−A0−1. These two
+expressions tend to one, so this slip does not alter the limiting conclusion, but it must be corrected
+in a finite-weight calculation.
+At the end of Section 3, the source sets ef(X) = infm≥X, m odd f(m) and applies it to a sum
+over m ≤X. This lower envelope does not control the earlier values. For a counterexample to
+the displayed bound, take f(1) = 0 and f(m) = em for odd m ≥3. The source’s bad harmonic
+sum is exactly 1, since Smin(1) = 1 and Smin(m) ≤m < em for all other m.
+Its proposed
+bound is O(log X/Xc) and tends to zero. The fixed-threshold argument of Corollary 4.4 supplies
+the complete conclusion, including the strict inequality and arbitrary real-valued nonmonotone
+functions, without that display.
+6.3
+Source locations
+The following locators refer to collatz.tex in arXiv v7; the source manifest records its SHA-256
+identity. Line numbers refer to that TeX source, alongside the section and proposition numbers,
+rather than to the journal pagination.
+Source locus
+Estimate
+Corresponding result
+Section 1.2, line 206
+Dyadic density factor
+Exact finite transport, Propositions 2.2 and
+2.3.
+Section 3, lines 591–593
+Tail envelope used on the
+wrong range
+Counterexample to the display; full
+replacement in Corollary 4.4.
+Proposition 5.2 proof,
+lines 759–762
+Additive input buffer
+Multiplicative buffer, Proposition 5.1.
+Lemma 5.3 proof, lines
+868, 899, 913–914
+Previous-iterate exponent;
+nonuniform final sum
+Exact affine coefficient and uniformly
+summable weights, Proposition 5.2.
+Section 6, lines 989, 997,
+1080–1084
+Larger reserve than v5
+Size bound for Tao’s v7 reserve,
+Proposition 6.1.
+14
+
+Computational materials and authorship
+The accompanying dependency-free Python certificate checks finite clock identities, harmonic-
+weight transport, first-passage composition including failure, and the algebraic constants in
+the estimates using exact arithmetic. Source identities and proof dependencies accompany the
+certificate. This work was developed through human–LLM collaboration using ChatGPT 5.6 Sol,
+Ultra mode, in Codex, including source comparison, proof development, and computational checks.
+References
+[1] J.-P. Allouche, Sur la conjecture de “Syracuse–Kakutani–Collatz”, Séminaire de Théorie des
+Nombres de Bordeaux (1978–1979), exposé 9, 9-01–9-15, 1979. https://eudml.org/doc/1820
+44.
+[2] C. J. Everett, Iteration of the number-theoretic function f(2n) = n, f(2n + 1) = 3n + 2,
+Advances in Mathematics 25 (1977), no. 1, 42–45.
+[3] I. Korec, A density estimate for the 3x + 1 problem, Mathematica Slovaca 44 (1994), no. 1,
+85–89. https://dml.cz/handle/10338.dmlcz/133225.
+[4] T. Tao, Almost all orbits of the Collatz map attain almost bounded values, arXiv:1909.03562v5,
+15 February 2022. https://arxiv.org/abs/1909.03562v5.
+[5] T. Tao, Almost all orbits of the Collatz map attain almost bounded values, arXiv:1909.03562v7,
+16 July 2026. First submitted 8 September 2019. https://arxiv.org/abs/1909.03562v7.
+[6] T. Tao, Almost all orbits of the Collatz map attain almost bounded values, Forum of Mathematics,
+Pi 10 (2022), e12, 56 pp.
+[7] R. Terras, A stopping time problem on the positive integers, Acta Arithmetica 30 (1976), no. 3,
+241–252. https://doi.org/10.4064/aa-30-3-241-252.
+15

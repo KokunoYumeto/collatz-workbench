@@ -1,0 +1,583 @@
+{
+  "schema_version": "1.0",
+  "project_id": "COLLATZ-LITERATURE-FIRST-20260824",
+  "coverage_status": "active_signed_fixed_content_necklace_local_package_build_visual_and_validation_pass_remote_resync_pending_wider_raw_reconciliation_active",
+  "layers": [
+    {
+      "layer_id": "LIT",
+      "label": "published_literature",
+      "status": "foundational_spine_in_progress_52_bounded_content_read_source_documents_including_Stanley_fixed_content_necklace_source_remaining_literature_continues",
+      "documents_read": 52,
+      "documents_admitted": 52,
+      "counting_rule": "complete source_document record set in state/source_registry.jsonl; physical record order is irrelevant",
+      "reading_count_boundary": "Count is admitted source_document records, not whole-source reads. SRC-COL-000052 was read only at the exact fixed-content necklace and bibliographic locators."
+    },
+    {
+      "layer_id": "CHAT",
+      "label": "modern_chatnotes",
+      "status": "pinned_Zn_export_complete_direct_locator_audit_affine_export_has_bounded_direct_read_records_for_1_3021_and_incremental_mathematical_reconciliation_through_signed_count_block",
+      "programmes_reconstructed": 2,
+      "continuous_direct_ranges": [
+        "CHATINT-COL-000001:1-17437"
+      ],
+      "next_continuous_range": "CHATINT-COL-000002:1091-1208 packet envelopes and one-large-exponent staircase",
+      "bounded_direct_read_records": [
+        "research_companion/audit/affine_raw_lines_0001_0900_20260904.json",
+        "research_companion/audit/affine_raw_lines_0901_3021_20260904.json"
+      ],
+      "reconciled_affine_blocks": [
+        "CHATINT-COL-000002:959-1040 packet/cyclic transport represented by CLM-COL-000182 through CLM-COL-000184",
+        "CHATINT-COL-000002:1041-1083 signed fixed-content counts represented by CLM-COL-000200"
+      ],
+      "whole_affine_mathematical_reconciliation_complete": false
+    },
+    {
+      "layer_id": "GEM",
+      "label": "residual_gemini_science",
+      "status": "deferred_until_lit_and_chat",
+      "programmes_reconstructed": 0
+    },
+    {
+      "layer_id": "ARCH",
+      "label": "archived_runaway_tasks",
+      "status": "deferred_until_lit_and_chat",
+      "tasks_reconstructed": 0
+    },
+    {
+      "layer_id": "FORMAL",
+      "label": "lean_and_certificates",
+      "status": "30_distinct_current_Python_certificate_artifacts_with_recorded_PASS_runs_signed_necklace_certificate_rerun_current_optimized_runs_fail_closed",
+      "artifacts_verified": 30,
+      "weighted_path_certificate_families": 30,
+      "optimized_python_checks": "FAIL_CLOSED",
+      "artifact_counting_rule": "Distinct current .py files under certificates and research_companion/certificates with a recorded normal PASS run at their respective checkpoint; not all 30 were rerun in ACT50.",
+      "artifact_inventory": [
+        "certificates/affine_packet_source_and_cycle_checks.py",
+        "certificates/chatnotes_color_coefficient_checks.py",
+        "certificates/chatnotes_symbolic_completion_checks.py",
+        "certificates/chatnotes_weighted_path_finite_actions.py",
+        "certificates/computational_verification_chronology_checks.py",
+        "certificates/continued_fraction_dependency_checks.py",
+        "certificates/crandall_1978_checks.py",
+        "certificates/everett_1977_checks.py",
+        "certificates/herschfeld_1936_checks.py",
+        "certificates/krasikov_lagarias_2003_checks.py",
+        "certificates/lagarias_dependency_checks.py",
+        "certificates/pillai_fixed_difference_checks.py",
+        "certificates/primitive_root_return_checks.py",
+        "certificates/siegel_v1_tao_syracuse_crosswalk_checks.py",
+        "certificates/steuding_522_checks.py",
+        "certificates/tao_main_reduction_checks.py",
+        "certificates/tao_prop111_transport_checks.py",
+        "certificates/tao_prop19_valuation_checks.py",
+        "certificates/tao_v7_endpoint_buffer_checks.py",
+        "certificates/tao_v7_fourier_renewal_checks.py",
+        "certificates/tao_v7_prop52_cn_checks.py",
+        "certificates/tao_whole_version_checks.py",
+        "certificates/terras_allouche_korec_checks.py",
+        "research_companion/certificates/affine_crt_synchronization_checks.py",
+        "research_companion/certificates/affine_packet_residue_checks.py",
+        "research_companion/certificates/affine_packet_series_checks.py",
+        "research_companion/certificates/affine_signed_necklace_checks.py",
+        "research_companion/certificates/arctangent_relation_lattice_checks.py",
+        "research_companion/certificates/finite_actions_checks.py",
+        "research_companion/certificates/groupoid_motivic_interface_checks.py"
+      ],
+      "symbolic_certificate_families": 18,
+      "arctangent_certificate_families": 9,
+      "groupoid_motivic_certificate_families": 16,
+      "signed_necklace_certificate": {
+        "path": "research_companion/certificates/affine_signed_necklace_checks.py",
+        "sha256": "8e51437eb64c5c9cee6601d6fe654383302a3ee3d1430c52981ec9b773c29c97",
+        "status": "PASS",
+        "check_families": 9,
+        "metrics_sha256": "e5b5e44e3737c67631a79231b0b333ceebb7166a387d38d2028c4ca27836cb6b"
+      }
+    },
+    {
+      "layer_id": "SYN",
+      "label": "tex_pdf_synthesis",
+      "status": "ACT43_176_page_working_corpus_and_42_page_separately_authored_companion_built_package_validated_and_all_pages_visually_checked",
+      "working_pdf_pages": 176,
+      "working_pdf_bytes": 1630444,
+      "working_pdf_sha256": "c03e4000464940377b2bdef87e19d0d92e9c4ddba7a570424ac5b0c72fbbf15e",
+      "research_companion_pdf_pages": 42,
+      "research_companion_pdf_bytes": 636148,
+      "research_companion_pdf_sha256": "5c734ac770501539c36f9fe782395b26483caa09e8ec15d8602ded23eeb65441",
+      "root_rendered_page_count": 176,
+      "root_render_dpi": 160,
+      "root_render_bytes": 58530850,
+      "root_render_sha256": "2dfc78d765c7c2f1b8ac90031708c7a87d557811234e054970c20c34a6bc6e77",
+      "root_contact_sheet_count": 15,
+      "root_contact_sheet_bytes": 7804730,
+      "root_contact_sheet_sha256": "e24bc32ea6675abbf595a79d617517d3da04e3641c9a05c7e7b4a23d317b22a4",
+      "current_pages_visually_checked": 218,
+      "root_all_pages_contact_sheet_checked": 176,
+      "root_pages_checked_at_original_detail": [
+        160,
+        161,
+        162,
+        163,
+        164,
+        165
+      ],
+      "root_edge_min_px": {
+        "left": 171,
+        "top": 173,
+        "right": 169,
+        "bottom": 106
+      },
+      "independent_rendered_page_count": 42,
+      "independent_render_bytes": 17174756,
+      "independent_render_sha256": "28e941bb4c111e2dc379166e01393959e6d1f67f735bc861b1ba4a2ccc82242b",
+      "independent_contact_sheet_count": 3,
+      "independent_contact_sheet_bytes": 1756417,
+      "independent_contact_sheet_sha256": "d1b0941a25852c31bcdbc782045fb54228dbf7f4a641bbd8fa8f2d86217d0c2c",
+      "independent_current_pages_visually_checked": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "independent_pages_checked_at_original_detail": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "independent_render_dpi": 200,
+      "independent_edge_min_px": null,
+      "companion_edge_min_px": {
+        "left": 214,
+        "top": 218,
+        "right": 211,
+        "bottom": 132
+      },
+      "checkpoint_visual_qa_passed": true,
+      "visual_qa_complete": true,
+      "fresh_render_policy": {
+        "current_pdf_pages_freshly_rendered": 218,
+        "root_render_dpi": 160,
+        "companion_render_dpi": 200,
+        "current_all_contact_sheets_inspected": 18,
+        "all_pages_checked": 218,
+        "original_detail_pages": {
+          "root": [
+            160,
+            161,
+            162,
+            163,
+            164,
+            165
+          ],
+          "companion": [
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40
+          ]
+        },
+        "reason": "All 176 root and 42 companion pages were covered by contact-sheet inspection; every page of both new theorem chapters was additionally inspected at original detail. No visual defect was found."
+      },
+      "root_contact_sheet_thumbnail_percent": 28,
+      "independent_contact_sheet_thumbnail_percent": 22,
+      "final_build_directory": "tmp/pdfs/act43_groupoid_motivic_final_root_20260830_03",
+      "companion_build_directory": "research_companion/tmp/pdfs/act43_groupoid_motivic_final_companion_20260830_04",
+      "final_layout_sha256": "c03e4000464940377b2bdef87e19d0d92e9c4ddba7a570424ac5b0c72fbbf15e",
+      "companion_layout_sha256": "5c734ac770501539c36f9fe782395b26483caa09e8ec15d8602ded23eeb65441",
+      "final_log_sha256": "ca2b648e364413cfe0fc25efc5d3a226a1f13229c4d092cfea8912c531444a64",
+      "companion_log_sha256": "e3443f945b40094a39cbebf0462b47815cdcfb23145190436c9b94dbd2942e43",
+      "actionable_log_diagnostics": 0,
+      "unresolved_placeholder_hits": 0,
+      "literal_quad_leak_hits": 0,
+      "embedded_subset_font_rows": 29,
+      "companion_embedded_subset_font_rows": 22,
+      "core_certificate": {
+        "path": "certificates/chatnotes_symbolic_completion_checks.py",
+        "bytes": 15543,
+        "sha256": "f6130edbabd04602a7d686943416d6adb715d94bb3d44c959a0d1c8f07d4cbd0"
+      },
+      "portable_certificate": {
+        "path": "research_companion/certificates/finite_actions_checks.py",
+        "bytes": 26755,
+        "sha256": "3d3fdad968fcc89fe415854ef8edd9c7342575726dada89138f0d05e2e14f776"
+      },
+      "unembedded_font_rows": 0,
+      "final_root_render_directory": "tmp/qa/act43_release_root_160dpi_01/pages",
+      "final_independent_render_directory": "tmp/qa/act43_release_companion_200dpi_01/pages",
+      "final_root_contact_sheet_directory": "tmp/qa/act43_release_root_160dpi_01/contact_sheets",
+      "final_independent_contact_sheet_directory": "tmp/qa/act43_release_companion_200dpi_01/contact_sheets",
+      "build_correction": {
+        "initial_failed_build_accepted": false,
+        "defects": [],
+        "action": "ACT42 rebuilt and validated the working corpus and independent companion after globally propagating the symbolic and Gaussian-relation results. The accepted artifacts have zero actionable diagnostics, complete font checks, complete visual coverage, and exact package inventory.",
+        "final_build_accepted": true,
+        "qpdf_available": false,
+        "qpdf_nonavailability_is_not_a_passed_check": true
+      },
+      "package_validation": {
+        "manifested_source_files": 11,
+        "tex_files": 5,
+        "labels": 130,
+        "references": 66,
+        "citations": 15,
+        "finite_certificate_check_families": 30,
+        "arctangent_certificate_check_families": 9,
+        "groupoid_motivic_certificate_check_families": 16,
+        "normal_run": "PASS",
+        "optimized_python_run": "FAIL_CLOSED",
+        "source_to_pdf_rebuild": "PASS_two_canonical_rebuilds_match_declared_output",
+        "validation_transcript": {
+          "path": "qa/ACT43-VALIDATION-TRANSCRIPT.json",
+          "bytes": 31925,
+          "sha256": "d6d7890dfd3c93d7f00ccfa1dc07cccea4e39d2f3a4c67f93d93d9ad4c81a1bc"
+        }
+      },
+      "prior_checkpoint_independent_QA": {
+        "checkpoint": "ACT28",
+        "rendered_pages": 73,
+        "dpi": 300,
+        "render_bytes": 52397831,
+        "contact_sheets": 9,
+        "contact_sheet_bytes": 14620025,
+        "all_pages_checked": 73,
+        "original_detail_pages": [
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73
+        ],
+        "note": "Retained as prior-checkpoint evidence only; it is not represented as an independent render of the current 106-page PDF."
+      },
+      "live_tex_advanced_after_checkpoint": false,
+      "fresh_ACT33_build_pending": false,
+      "nonactionable_underfull_warnings": {
+        "root": 6,
+        "companion": 2
+      },
+      "arctangent_certificate": {
+        "path": "research_companion/certificates/arctangent_relation_lattice_checks.py",
+        "bytes": 19204,
+        "sha256": "3b324c5ff1862bdef17d5cc2ab413e85d4a3dd011012fcdde9797dccab08df26",
+        "status": "PASS_exact_complete_795_column_integer_relation_lattice",
+        "columns": 795,
+        "rank_F3": 793,
+        "nullity_F3": 2,
+        "character_entries": 631230
+      },
+      "groupoid_motivic_certificate": {
+        "path": "research_companion/certificates/groupoid_motivic_interface_checks.py",
+        "bytes": 17495,
+        "sha256": "ca460277a54e016a6ef84377cde5cc2e670f08c6cf3f57073f2a3c62d6400916",
+        "status": "PASS_exact_groupoid_germ_torus_motive_and_Cayley_checks",
+        "check_families": 16,
+        "metrics_sha256": "89791d5517538fcd6adc111c67dc40aa03442a1b43960fe65a8f3b7c896f749c"
+      }
+    },
+    {
+      "layer_id": "RECOVERY",
+      "label": "fresh_context_recovery",
+      "status": "ACT43_groupoid_motivic_artifact_state_sealed_and_external_state_recovery_passed",
+      "checkpoint_passed": true,
+      "checkpoint_record": "qa/ACT43-GROUPOID-MOTIVIC-RELEASE-AUDIT.md",
+      "latest_receipt": "ACT-COL-000043",
+      "passed": true,
+      "act41_fresh_context_test": {
+        "status": "PASS_external_state_only_recovery",
+        "path": "qa/ACT41-FRESH-CONTEXT-RECOVERY.md",
+        "bytes": 1709,
+        "sha256": "8939332e0c7957c2dbf5ef276bf346f9b87049a7d5a6925417299165917c72b0",
+        "checkpoint": "ACT-COL-000041",
+        "goal_status": "active",
+        "completion_claimed": false,
+        "working_pdf_pages": 155,
+        "research_companion_pdf_pages": 18,
+        "commands_passed": [
+          "certificates/chatnotes_weighted_path_finite_actions.py",
+          "research_companion/certificates/finite_actions_checks.py",
+          "research_companion/validate_package.py"
+        ],
+        "validator_failures": 0
+      },
+      "act33_fresh_context_test": {
+        "status": "PASS_no_discrepancy",
+        "path": "qa/ACT33-FRESH-CONTEXT-RECOVERY-TEST.md",
+        "bytes": 6097,
+        "sha256": "80f7553721f23088b097fa040393a6c8d85f2023a9c37a525f0618176707d63c",
+        "checkpoint_bytes": 24909,
+        "checkpoint_sha256": "613a1c5b6c2f5487c171e6b0e7e3688929062cc798d616bc34604fcb9fe87b41",
+        "validator_failures": 0,
+        "expected_route_warnings": 8,
+        "certificates_passed": [
+          "F028",
+          "F029",
+          "F030"
+        ],
+        "intentional_preseal_discrepancy_repaired_by": "ACT-COL-000033"
+      },
+      "act42_fresh_context_test": {
+        "status": "PASS_external_state_only_recovery",
+        "path": "qa/ACT42-FRESH-CONTEXT-RECOVERY.md",
+        "bytes": 2073,
+        "sha256": "9fcf286aaeceede13a35febd1a2417e420a5ac013c0659d2e4d1e59990899490",
+        "checkpoint": "ACT-COL-000042",
+        "goal_status": "active",
+        "completion_claimed": false,
+        "working_pdf_pages": 169,
+        "research_companion_pdf_pages": 34,
+        "validator_failures": 0,
+        "expected_route_warnings": 8,
+        "ledger_maximum_rule": "derive from complete ID set plus header; never use physical JSONL tail"
+      },
+      "act43_fresh_context_test": {
+        "status": "PASS_external_state_only_recovery",
+        "path": "qa/ACT43-FRESH-CONTEXT-RECOVERY.md",
+        "bytes": 2055,
+        "sha256": "b7c29b4a0d92dfcc6612b515063fed3a785c0168adbd87787bea7127cae44c78",
+        "checkpoint": "ACT-COL-000043",
+        "goal_status": "active",
+        "completion_claimed": false,
+        "working_pdf_pages": 176,
+        "research_companion_pdf_pages": 42,
+        "validator_failures": 0,
+        "expected_route_warnings": 8,
+        "ledger_maximum_rule": "derive from complete ID set plus header; never use physical JSONL tail"
+      }
+    }
+  ],
+  "post_ACT43_affine_checkpoint": {
+    "path": "state/affine_packet_current.json",
+    "claims": [
+      "CLM-COL-000182",
+      "CLM-COL-000183",
+      "CLM-COL-000184",
+      "CLM-COL-000185",
+      "CLM-COL-000186"
+    ],
+    "morphisms": [
+      "MOR-COL-000063",
+      "MOR-COL-000064",
+      "MOR-COL-000065",
+      "MOR-COL-000066"
+    ],
+    "historical_layer_counts": "Older layer counters are ACT43 history, not a claim that later affine results or manuscript pages are absent.",
+    "new_full_source_reading_claimed": false
+  },
+  "live_tex_advanced_after_checkpoint": true,
+  "post_ACT45_affine_CRT_propagation": {
+    "audit": "qa/AFFINE-CRT-REGISTRY-PROPAGATION-20260904.json",
+    "source_ids": [
+      "SRC-COL-000050",
+      "SRC-COL-000051"
+    ],
+    "claims": [
+      "CLM-COL-000189",
+      "CLM-COL-000190",
+      "CLM-COL-000191",
+      "CLM-COL-000192",
+      "CLM-COL-000193",
+      "CLM-COL-000194",
+      "CLM-COL-000195"
+    ],
+    "morphisms": [
+      "MOR-COL-000068",
+      "MOR-COL-000069",
+      "MOR-COL-000070"
+    ],
+    "certificate": "research_companion/certificates/affine_crt_synchronization_checks.py",
+    "watched_execution_receipt": "research_companion/audit/affine_crt_watched_review_20260904T151335Z_0212cc90/certificate_receipt.json",
+    "stored_full_joint_table_cells_rechecked": 6487,
+    "certificate_rerun_in_registration_task": false,
+    "raw_3021_full_root_coverage_reconciled": false,
+    "twelve_block_collation_is_whole_text_identity": false,
+    "Belaga_primary_PDF_or_source_hash_acquired": false,
+    "Belaga_candidate_errors_admitted": false,
+    "source_manuscripts_edited_by_registry_task": false,
+    "build_and_remote_delivery_status": "Root-owned; not certified by this registry propagation.",
+    "fresh_context_pass_claimed": false,
+    "whole_corpus_complete": false
+  },
+  "post_ACT47_affine_analytic_checkpoint": {
+    "path": "qa/ACT47-AFFINE-ANALYTIC-CHECKPOINT.json",
+    "sha256": "377255ab806df0e7c42a5471225bccc1a4959039d46cd37a23b5332aff6585b1",
+    "claims": [
+      "CLM-COL-000196",
+      "CLM-COL-000197",
+      "CLM-COL-000198",
+      "CLM-COL-000199"
+    ],
+    "morphism": "MOR-COL-000071",
+    "working_pdf_pages": 184,
+    "research_companion_pdf_pages": 57,
+    "certificate_status": "PASS",
+    "visual_QA_status": "PASS",
+    "remote_sync_complete": false,
+    "full_raw_3021_line_reconciliation": false,
+    "whole_corpus_complete": false
+  },
+  "post_ACT48_research_companion_package": {
+    "path": "qa/ACT48-RESEARCH-COMPANION-PACKAGE.json",
+    "sha256": "3125c23cfbded40037bb4e43cc66474fabbe52d424d0ba289d920951b2fd0e32",
+    "portable_source_files": 17,
+    "certificate_families": 6,
+    "deterministic_rebuilds": 2,
+    "pdf_pages": 57,
+    "visual_identity_pages": 57,
+    "remote_sync_complete": false,
+    "full_raw_3021_line_reconciliation": false,
+    "whole_corpus_complete": false
+  },
+  "post_ACT49_affine_remote_sync": {
+    "path": "qa/ACT49-AFFINE-ANALYTIC-REMOTE-SYNC.json",
+    "sha256": "854cf93b422a5091c9648e199ed4418fc797788b3c78402cde53830a64c39da8",
+    "remote_receipt": "overleaf/sync_20260904/affine_analytic_remote_receipt.json",
+    "remote_source_manifested_files_verified": 49,
+    "critical_pages": 184,
+    "research_companion_pages": 57,
+    "remote_sync_complete": true,
+    "full_raw_3021_line_reconciliation": false,
+    "whole_corpus_complete": false
+  },
+  "post_ACT50_signed_fixed_content_necklace_reconstruction": {
+    "receipt_id": "ACT-COL-000050",
+    "claim": "CLM-COL-000200",
+    "source": "SRC-COL-000052",
+    "morphisms_used": [
+      "MOR-COL-000064",
+      "MOR-COL-000065"
+    ],
+    "certificate": {
+      "path": "research_companion/certificates/affine_signed_necklace_checks.py",
+      "bytes": 8159,
+      "sha256": "8e51437eb64c5c9cee6601d6fe654383302a3ee3d1430c52981ec9b773c29c97"
+    },
+    "execution_receipt": {
+      "path": "research_companion/audit/affine_signed_necklace_checks_20260905.json",
+      "bytes": 3958,
+      "sha256": "b2037db0fe04451f54e5edb6742d9b811735324a471a0c924d1b2d6b976d866d"
+    },
+    "audit": {
+      "path": "research_companion/audit/affine_signed_necklace_reconstruction_20260905.json",
+      "bytes": 6768,
+      "sha256": "c76f9f5e111c38289e63c0aa609bf2634c0df89ed4df415ad146ae3445feb455"
+    },
+    "companion_chapter": {
+      "path": "research_companion/chapters/04_affine_packets_parity_necklaces_and_residue_automata.tex",
+      "bytes": 36733,
+      "sha256": "6537c8391e349aaa4aa4361c5fd0dee8fd44fc112a685f7edf19240587c19476"
+    },
+    "critical_chapter": {
+      "path": "tex/chapters/06_affine_packet_source_audit.tex",
+      "bytes": 24050,
+      "sha256": "27f1f0986c8191bba5ce9e5711e2e1c154fad6bf6b2406f73149ffae5d7c171e"
+    },
+    "remote_sync_complete": false,
+    "portable_package_validation_complete": false,
+    "visual_QA_complete": false,
+    "full_raw_3021_line_reconciliation": false,
+    "whole_corpus_complete": false
+  },
+  "post_ACT51_signed_fixed_content_necklace_local_closure": {
+    "receipt_id": "ACT-COL-000051",
+    "claim": "CLM-COL-000200",
+    "source": "SRC-COL-000052",
+    "morphisms_used": [
+      "MOR-COL-000064",
+      "MOR-COL-000065"
+    ],
+    "companion_chapter": {
+      "path": "research_companion/chapters/04_affine_packets_parity_necklaces_and_residue_automata.tex",
+      "bytes": 36741,
+      "sha256": "f5a25459b6f0088d14158426b6ca6085c021b5722c972a495bcd2ece7887663e"
+    },
+    "critical_chapter": {
+      "path": "tex/chapters/06_affine_packet_source_audit.tex",
+      "bytes": 24084,
+      "sha256": "8a4de14fddc13259bb6144866a9924ec9fa58b37477786e0f0a0b789188d91db"
+    },
+    "certificate": {
+      "path": "research_companion/certificates/affine_signed_necklace_checks.py",
+      "bytes": 8159,
+      "sha256": "8e51437eb64c5c9cee6601d6fe654383302a3ee3d1430c52981ec9b773c29c97"
+    },
+    "execution_receipt": {
+      "path": "research_companion/audit/affine_signed_necklace_checks_20260905.json",
+      "bytes": 3958,
+      "sha256": "2518cb91702a3ea91f8e3e519d9b69d8c31e0bb79c94170a920dbd06cf1e1a94"
+    },
+    "content_audit": {
+      "path": "research_companion/audit/affine_signed_necklace_reconstruction_20260905.json",
+      "bytes": 6768,
+      "sha256": "0ff92a85fe32277c73baad82ee0b381a4a0f52f903d1efa0e491d5e19bcfcb61"
+    },
+    "package_visual_receipt": {
+      "path": "research_companion/audit/affine_signed_necklace_package_visual_20260905.json",
+      "bytes": 7074,
+      "sha256": "9ea79f1eb40a41e125d570b663f68af64a7cc46dba3cc20d3f391714008a53fe"
+    },
+    "portable_manifest": {
+      "path": "research_companion/MANIFEST.json",
+      "bytes": 3235,
+      "sha256": "bc1ab3bb5ec00432623cb259281c2b25cd6565df10072cf4ef602bb156144828"
+    },
+    "portable_package_validation_complete": true,
+    "visual_QA_complete": true,
+    "remote_sync_complete": false,
+    "full_raw_3021_line_reconciliation": false,
+    "whole_corpus_complete": false
+  }
+}

@@ -1,0 +1,201 @@
+\section{Arithmetic dynamics before the encoding}
+\label{sec:arithmetic-dynamics}
+
+The numen formalism does not begin with a transform.  It begins with an
+ordinary discrete dynamical system and with the elementary distinction
+between a bounded recurrent trajectory and a trajectory which escapes every
+bounded subset.  This section fixes those notions before any coding is
+introduced.
+
+\subsection{Forward orbits and eventual repetition}
+
+Let $Y$ be a set and let $T:Y\to Y$.  Write $T^{\circ 0}=\operatorname{id}_Y$
+and $T^{\circ(n+1)}=T\circ T^{\circ n}$.
+
+\begin{definition}
+For $y\in Y$, the \emph{forward orbit} is
+\[
+  \mathcal O_T^+(y)=\bigl(T^{\circ n}(y)\bigr)_{n\geq 0}.
+\]
+The point $y$ is \emph{periodic} if $T^{\circ m}(y)=y$ for some $m\geq1$,
+and \emph{preperiodic} if $T^{\circ a}(y)$ is periodic for some $a\geq0$.
+It is \emph{strictly preperiodic} if it is preperiodic but not periodic.
+The least positive period of a periodic point is its \emph{exact period}.
+\end{definition}
+
+\begin{lemma}[eventual repetition]
+\label{lem:eventual-repetition}
+For $y\in Y$, the following are equivalent.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $y$ is preperiodic;
+\item $T^{\circ m}(y)=T^{\circ n}(y)$ for some $0\leq m<n$;
+\item the set $\{T^{\circ n}(y):n\geq0\}$ is finite.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+If $T^{\circ m}(y)=T^{\circ n}(y)$ with $m<n$, then
+$T^{\circ m}(y)$ is periodic of period dividing $n-m$.  This proves
+(ii)$\Rightarrow$(i).  A preperiodic orbit consists of a finite initial tail
+followed by a finite cycle, proving (i)$\Rightarrow$(iii).  Finally, an
+infinite sequence taking values in a finite set repeats a value, so
+(iii)$\Rightarrow$(ii).
+\end{proof}
+
+The relation used in Siegel's latest manual is
+\[
+ x\sim_T y
+ \quad\Longleftrightarrow\quad
+ T^{\circ m}(x)=T^{\circ n}(y)
+ \quad\text{for some }m,n\geq0.
+\]
+It is an equivalence relation: symmetry and reflexivity are immediate, and
+transitivity follows by iterating the two common-forward-image equalities
+until their middle iterates agree.  Its equivalence classes are the weak
+connected components of the functional graph of $T$.
+
+\subsection{The compact-bounded dichotomy}
+
+Suppose now that $Y$ is contained in a normed finite-dimensional real vector
+space $V$.  In the arithmetic applications the unconditional locally finite
+model is the image of the ring of integers of a number field under its full
+Minkowski embedding.  The image under one archimedean embedding need not be
+locally finite when the field has degree greater than one.  A subset
+$Y\subset V$ is \emph{locally finite} when
+$Y\cap B$ is finite for every bounded $B\subset V$.
+
+\begin{proposition}[the full Minkowski image is a lattice]
+\label{prop:minkowski-lattice}
+Let $K$ be a number field of degree $d=r_1+2r_2$.  Choose its real
+embeddings $\sigma_1,\ldots,\sigma_{r_1}$ and one embedding
+$\tau_j$ from each pair of complex-conjugate embeddings.  Then
+\[
+ \iota_K:K\longrightarrow\R^{r_1}\times\C^{r_2}\cong\R^d,
+ \qquad
+ x\longmapsto
+ (\sigma_1(x),\ldots,\sigma_{r_1}(x),
+  \tau_1(x),\ldots,\tau_{r_2}(x))
+\]
+maps $\OK$ onto a full lattice.  In particular, $\iota_K(\OK)$ is locally
+finite.
+\end{proposition}
+
+\begin{proof}
+Choose an integral basis $\omega_1,\ldots,\omega_d$ of $\OK$.  The matrix
+whose columns are the images of these basis elements under all $d$
+embeddings has nonzero determinant: its squared determinant is the nonzero
+field discriminant of the basis.  Replacing each conjugate pair of complex
+coordinates by its real and imaginary parts is an invertible real-linear
+change of coordinates.  Hence the real-linear map
+\[
+ A:\R^d\longrightarrow\R^{r_1}\times\C^{r_2},
+ \qquad e_j\longmapsto\iota_K(\omega_j),
+\]
+is an isomorphism, and
+$\iota_K(\OK)=A(\Z^d)$.  If $B$ is bounded, then $A^{-1}(B)$ is bounded and
+therefore meets $\Z^d$ in finitely many points.  Thus $B$ meets
+$\iota_K(\OK)$ in finitely many points.
+\end{proof}
+
+\begin{proposition}[preperiodic or escaping]
+\label{prop:preperiodic-or-escaping}
+Let $Y\subset V$ be locally finite and let $T:Y\to Y$.  For every $y\in Y$
+exactly one of the following occurs:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $y$ is preperiodic;
+\item $\|T^{\circ n}(y)\|\to\infty$ as $n\to\infty$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The alternatives are disjoint because a preperiodic orbit is finite.  If
+$y$ is not preperiodic, \cref{lem:eventual-repetition} says that all members
+of its forward orbit are distinct.  Fix $R>0$.  The set
+$Y\cap\{v:\|v\|\leq R\}$ is finite, so only finitely many of those distinct
+orbit points can lie in it.  Hence there is $N_R$ such that
+$\|T^{\circ n}(y)\|>R$ for all $n\geq N_R$.  Since $R$ was arbitrary, the
+norms tend to infinity.
+\end{proof}
+
+\begin{sourceissue}[the discreteness hypothesis in the 2026 statement]
+The source states \cref{prop:preperiodic-or-escaping} for a uniformly
+discrete subset of an arbitrary valued field and infers that every bounded
+ball meets that subset in finitely many points.  Uniform separation alone
+does not imply this in a non-proper metric space.  The proof is valid under
+the locally finite hypothesis above; in particular it is valid for the full
+Minkowski lattice.  It is not automatically valid after projection to one
+archimedean embedding, where bounded sets may contain infinitely many
+algebraic integers.  This edition does not silently retain either the more
+general but insufficient source hypothesis or that single-embedding
+specialization without an added discreteness assumption.
+\end{sourceissue}
+
+\subsection{The Collatz and shortened
+\texorpdfstring{$qx+1$}{qx+1} maps}
+
+The classical Collatz map on $\Z$ is
+\[
+ C(n)=
+ \begin{cases}
+ n/2,&n\equiv0\pmod2,\\
+ 3n+1,&n\equiv1\pmod2.
+ \end{cases}
+\]
+Its odd branch is followed by an even value.  Compressing that forced even
+step gives the shortened map
+\[
+ T_3(n)=
+ \begin{cases}
+ n/2,&n\equiv0\pmod2,\\
+ (3n+1)/2,&n\equiv1\pmod2.
+ \end{cases}
+\]
+More generally, for an odd integer $q$, put
+\begin{equation}
+\label{eq:Tq}
+ T_q(n)=
+ \begin{cases}
+ n/2,&n\equiv0\pmod2,\\
+ (qn+1)/2,&n\equiv1\pmod2.
+ \end{cases}
+\end{equation}
+The restriction to odd $q$ is structural: it makes the second expression an
+integer exactly on the odd residue class.  The parity itinerary of $n$ is
+\[
+ \varepsilon_k(n)=[T_q^{\circ k}(n)]_2\in\{0,1\},\qquad k\geq0,
+\]
+where $[a]_2$ denotes the standard residue representative.  For a finite
+orbit segment of length $m$ we package the itinerary as
+\[
+ \boldsymbol\varepsilon_m(n)
+   =(\varepsilon_0(n),\ldots,\varepsilon_{m-1}(n)).
+\]
+
+There are two orders in the corpus which must not be conflated.  The entries
+of an itinerary are chronological: the branch indexed by $\varepsilon_0$ is
+applied first.  The numen word $\mathbf j=(j_0,\ldots,j_{m-1})$ is used in
+the ordered affine composition
+\[
+ H_{\mathbf j}=H_{j_0}\circ\cdots\circ H_{j_{m-1}},
+\]
+so the rightmost branch acts first.  Consequently the numen word attached to
+a chronological orbit segment is its reversal unless a statement explicitly
+adopts the opposite composition convention.  Every order-sensitive formula
+below is derived rather than inferred from prose.
+
+\subsection{What the coding is required to preserve}
+
+The goal is not merely to replace an integer orbit by a digit string.  A
+usable coding must simultaneously retain:
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item the residue class which makes each branch the genuine branch of the
+      piecewise map;
+\item the linear part of a branch word;
+\item the translation part of that branch word;
+\item convergence at a specified completion when an infinite digit string
+      is substituted; and
+\item enough branch correctness to turn a fixed point of a formal branch
+      composition back into a periodic point of the original map.
+\end{enumerate}
+Hydra maps provide (a), the pair $(M_H,X_H)$ provides (b)--(c), the extension
+lemma provides (d), and integrality supplies the principal mechanism for (e).

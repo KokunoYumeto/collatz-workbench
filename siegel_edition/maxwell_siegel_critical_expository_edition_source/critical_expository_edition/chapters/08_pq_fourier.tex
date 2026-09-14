@@ -1,0 +1,539 @@
+\section{\texorpdfstring{$(p,q)$-adic}{(p,q)-adic} Fourier analysis and
+Wiener--Tauberian cyclicity}
+\label{sec:pq-fourier}
+
+Siegel's phrase \emph{$(p,q)$-adic} means that the domain topology and the
+value-field topology come from different primes.  The cleanest theorem in
+this strand is a Wiener--Tauberian theorem for continuous functions on
+$\Z_p$ with values in a complete nonarchimedean field of residue
+characteristic $q\ne p$.  We reconstruct that theorem after fixing the
+character and Haar normalizations.
+
+\subsection{The two-place setting}
+
+Let $p$ be prime.  Let $K$ be a complete algebraically closed
+nonarchimedean field whose residue characteristic is a prime $q\ne p$.
+The strongest headline assumptions in the source also take $K$ to be
+spherically incomplete, as is the standard completed algebraic closure
+$\C_q$.  Since $p$ is a unit in $K$, every $p^N$ has absolute value $1$ in
+$K$.
+
+As an abstract group, the Pontryagin dual of the additive compact group
+$\Z_p$ is
+\begin{equation}
+\label{eq:dual-Zp}
+ \Gamma_p=\Z[1/p]/\Z.
+\end{equation}
+Because $\operatorname{char}K\ne p$ and $K$ is algebraically closed, choose
+roots of unity
+\begin{equation}
+\label{eq:compatible-p-power-roots}
+ \zeta_0=1,
+ \qquad \operatorname{ord}(\zeta_N)=p^N,
+ \qquad \zeta_{N+1}^{p}=\zeta_N
+ \quad(N\geq0).
+\end{equation}
+Such a system can be constructed recursively.  First choose a nontrivial
+root $\zeta_1$ of $X^p-1$; it exists because this polynomial has $p$
+distinct roots in $K$.  After $\zeta_N$ is chosen with $N\geq1$, take any
+root of $X^p-\zeta_N$ in $K$.  Its order divides $p^{N+1}$ and cannot divide
+$p^N$, so it has order exactly $p^{N+1}$.
+
+For $t=a/p^N+\Z\in\Gamma_p$ and $z\in\Z_p$, let $z_N$ be the image of $z$
+in $\Z/p^N\Z$, choose any integer lift $\widetilde z_N$ of $z_N$, and set
+\begin{equation}
+\label{eq:K-valued-character-pairing}
+ \left\langle \frac{a}{p^N}+\Z,z\right\rangle
+ :=\zeta_N^{a\widetilde z_N}\in K^\times.
+\end{equation}
+
+\begin{proposition}[the chosen $K$-valued duality]
+\label{prop:K-valued-character-duality}
+Formula \cref{eq:K-valued-character-pairing} is independent of every chosen
+representative and defines a pairing that is a group homomorphism in each
+variable,
+\[
+ \langle\ ,\ \rangle:\Gamma_p\times\Z_p\longrightarrow K^\times.
+\]
+For each $t$, the map $\chi_t(z)=\langle t,z\rangle$ is locally constant,
+and
+\begin{equation}
+\label{eq:K-character-classification}
+ \Gamma_p\xrightarrow{\ \sim\ }
+ \operatorname{Hom}_{\mathrm{lc}}\bigl((\Z_p,+),K^\times\bigr),
+ \qquad t\longmapsto\chi_t,
+\end{equation}
+is an isomorphism of groups.
+\end{proposition}
+
+\begin{proof}
+Changing $a$ or $\widetilde z_N$ by a multiple of $p^N$ does not change
+\cref{eq:K-valued-character-pairing}, because $\zeta_N$ has order $p^N$.
+Suppose the same $t$ is also represented by $b/p^M+\Z$.  At a common level
+$L\geq M,N$,
+\[
+ ap^{L-N}\equiv bp^{L-M}\pmod{p^L},
+ \qquad \zeta_L^{p^{L-N}}=\zeta_N,
+ \qquad \zeta_L^{p^{L-M}}=\zeta_M.
+\]
+Reading both values at level $L$ proves independence of the denominator and
+hence of the representative of $t$.  At a common level, addition in either
+variable adds exponents modulo $p^L$; this proves biadditivity.  If
+$p^Nt=0$, then $\chi_t$ factors through $\Z_p/p^N\Z_p$, so it is locally
+constant.
+
+If $\chi_t$ is trivial, evaluation at $1$ in any presentation
+$t=a/p^N+\Z$ gives $\zeta_N^a=1$, hence $p^N\mid a$ and $t=0$; thus
+\cref{eq:K-character-classification} is injective.  Conversely, let
+$\chi:\Z_p\to K^\times$ be a locally constant homomorphism.  Local
+constancy at $0$ gives $p^N\Z_p\subseteq\ker\chi$ for some $N$, so $\chi$
+factors through the cyclic group $\Z/p^N\Z$.  Put $u=\chi(1)$.  Then
+$u^{p^N}=1$.  The $p^N$ distinct powers of $\zeta_N$ exhaust the roots of
+$X^{p^N}-1$ in $K$, so $u=\zeta_N^a$ for a unique $a$ modulo $p^N$.
+Therefore $\chi(z)=\zeta_N^{a\widetilde z_N}=\chi_{a/p^N+\Z}(z)$, proving
+surjectivity and uniqueness.
+\end{proof}
+
+The complex-looking notation $e^{2\pi i\{tz\}_p}$ in the source denotes
+the element \cref{eq:K-valued-character-pairing}; it is not a complex
+exponential living in a $q$-adic field.  This compatible-root construction,
+rather than the source's characteristic-zero embedding notation, also works
+when $K$ has positive characteristic different from $p$.
+
+There is a unique normalized $K$-valued Haar integral, specified by
+\begin{equation}
+\label{eq:K-Haar-ball}
+ \int_{k+p^N\Z_p}dz=p^{-N}.
+\end{equation}
+For continuous $f:\Z_p\to K$ it is the following limit in $K$:
+\begin{equation}
+\label{eq:K-Haar-Riemann}
+ \int_{\Z_p}f(z)\,dz
+ =\lim_{N\to\infty}\frac1{p^N}\sum_{k=0}^{p^N-1}f(k).
+\end{equation}
+
+Indeed, on functions constant modulo $p^N$ the right side of
+\cref{eq:K-Haar-Riemann} is $p^{-N}\sum_{k\bmod p^N}f(k)$; refinement from
+level $N$ to $N+1$ repeats every value $p$ times.  Since $|p|=1$ in $K$,
+these finite-level functionals have norm at most $1$ and extend uniquely from
+the uniformly dense locally constant functions to $C(\Z_p,K)$.  The
+extension is translation-invariant and sends $1$ to $1$.  Conversely, any
+translation-invariant continuous functional sending $1$ to $1$ gives the
+same mass to all $p^N$ residue classes, and their $p^N$ disjoint indicators
+sum to $1$; their common mass is therefore $p^{-N}$.  Finally, the locally
+constant functions $z\mapsto f([z]_{p^N})$, where
+$[z]_{p^N}\in\{0,\ldots,p^N-1\}$ is the canonical residue representative,
+converge uniformly to $f$.  Applying the continuous integral proves
+\cref{eq:K-Haar-Riemann}.  This proves existence and uniqueness as well.
+
+Put $\Gamma_p[p^N]=\{t\in\Gamma_p:p^Nt=0\}$; it consists of the $p^N$
+classes $a/p^N+\Z$, $0\leq a<p^N$.
+
+\begin{proposition}[finite character orthogonality]
+\label{prop:finite-character-orthogonality}
+For $N\geq0$ one has
+\begin{align}
+ \sum_{t\in\Gamma_p[p^N]}\langle t,x\rangle
+ &=p^N\ind{x\in p^N\Z_p}
+ &&(x\in\Z_p),\label{eq:finite-orthogonality-primal}\\
+ \sum_{k\in\Z/p^N\Z}\langle t-u,k\rangle
+ &=p^N\ind{t=u}
+ &&(t,u\in\Gamma_p[p^N]).\label{eq:finite-orthogonality-dual}
+\end{align}
+In the second sum the residue class $k$ is evaluated through any lift in
+$\Z_p$.
+Consequently,
+\begin{equation}
+\label{eq:finite-character-indicator}
+ \ind{z\equiv k\pmod{p^N}}
+ =\frac1{p^N}\sum_{t\in\Gamma_p[p^N]}
+   \langle t,z-k\rangle.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Writing $x_N$ for any integer representing $x$ modulo $p^N$, the first sum
+is
+\[
+ \sum_{a=0}^{p^N-1}(\zeta_N^{x_N})^a.
+\]
+If $x\in p^N\Z_p$, every summand is $1$.  Otherwise
+$\zeta_N^{x_N}\ne1$, while $(\zeta_N^{x_N})^{p^N}=1$, so the finite
+geometric sum is $0$.  This proves
+\cref{eq:finite-orthogonality-primal}.  For the second identity write
+$t-u=b/p^N+\Z$ and apply the same geometric-sum argument to
+$\sum_{k=0}^{p^N-1}(\zeta_N^b)^k$.  Division by $p^N$ is valid because
+$\operatorname{char}K\ne p$, and the first identity with $x=z-k$ gives
+\cref{eq:finite-character-indicator}.
+\end{proof}
+
+\subsection{Fourier transform and inversion}
+
+Let $C(\Z_p,K)$ carry the supremum norm.  Let
+\[
+ c_0(\Gamma_p,K)=\left\{a:\Gamma_p\to K:
+ \text{for every }\epsilon>0,
+ \#\{t:|a(t)|\geq\epsilon\}<\infty\right\}
+\]
+with its supremum norm.  Define
+\begin{equation}
+\label{eq:pq-Fourier}
+ \widehat f(t)=\int_{\Z_p}f(z)\langle-t,z\rangle\,dz.
+\end{equation}
+
+\begin{theorem}[nonarchimedean Fourier isometry]
+\label{thm:pq-Fourier-isometry}
+The Fourier transform extends to an isometric isomorphism
+\begin{equation}
+\label{eq:Fourier-isometry}
+ \mathscr F:C(\Z_p,K)\xrightarrow{\sim}c_0(\Gamma_p,K).
+\end{equation}
+For every $f\in C(\Z_p,K)$,
+\begin{equation}
+\label{eq:pq-Fourier-inversion}
+ f(z)=\sum_{t\in\Gamma_p}\widehat f(t)\langle t,z\rangle,
+\end{equation}
+where the series converges uniformly.
+\end{theorem}
+
+\begin{proof}
+Suppose first that $f$ is constant modulo $p^N$.  For
+$t\in\Gamma_p[p^N]$, \cref{eq:K-Haar-Riemann} gives
+\begin{equation}
+\label{eq:finite-pq-transform}
+ \widehat f(t)=\frac1{p^N}\sum_{k\bmod p^N}
+ f(k)\langle-t,k\rangle.
+\end{equation}
+If $t\notin\Gamma_p[p^N]$, choose $M>N$ with
+$t\in\Gamma_p[p^M]$.  In the level-$M$ Riemann sum, partitioning residues as
+$k=r+p^Nh$ produces, for each $r\bmod p^N$, the factor
+\[
+ \sum_{h=0}^{p^{M-N}-1}\langle-t,p^Nh\rangle.
+\]
+This is a geometric sum with nontrivial ratio and ratio raised to
+$p^{M-N}$ equal to $1$, so it vanishes.  Thus $\widehat f$ is supported on
+$\Gamma_p[p^N]$.  Substitution of \cref{eq:finite-pq-transform} and
+\cref{eq:finite-orthogonality-primal} now gives finite inversion.  Conversely,
+\cref{eq:finite-orthogonality-dual} shows that every function supported on
+$\Gamma_p[p^N]$ is the transform of its finite inverse series.
+
+All chosen characters, $p^N$, and $p^{-N}$ have absolute value $1$ in $K$.
+The ultrametric inequality applied to the forward and inverse finite
+transforms therefore gives
+\[
+ \sup_t|\widehat f(t)|\leq\sup_z|f(z)|
+ \quad\text{and}\quad
+ \sup_z|f(z)|\leq\sup_t|\widehat f(t)|.
+\]
+Thus the finite transform is isometric.  Locally constant functions are
+uniformly dense in $C(\Z_p,K)$, and finitely supported sequences are dense
+in $c_0(\Gamma_p,K)$; every finite character set is contained in
+$\Gamma_p[p^N]$ for some $N$.  Completion therefore extends the compatible
+finite transforms to the isometric bijection \cref{eq:Fourier-isometry}.
+For $a\in c_0$, the inverse family
+$\sum_ta(t)\langle t,z\rangle$ converges uniformly, because the supremum norm
+of every tail is at most the largest omitted $|a(t)|$.  This proves
+\cref{eq:pq-Fourier-inversion}.
+\end{proof}
+
+The source develops the same conclusion through van der Put expansions.
+For $n\geq1$, the relevant basis function is the indicator of the ball
+$n+p^{\lambda_p(n)}\Z_p$; every continuous function has a unique uniformly
+convergent expansion in these indicators with coefficients tending to zero.
+That route supplies explicit formulas relating van der Put and Fourier
+coefficients, but the finite-transform completion above exposes the norm
+structure used by the Wiener theorem.
+
+\subsection{Convolution algebra}
+
+We use the following conventions throughout this chapter.  For
+$a,b\in c_0(\Gamma_p,K)$,
+\begin{equation}
+\label{eq:c0-convolution}
+ (a*b)(t)=\sum_{s\in\Gamma_p}a(s)b(t-s).
+\end{equation}
+For $f,g\in C(\Z_p,K)$ and $\mu\in C(\Z_p,K)'$,
+\begin{align}
+ (f*g)(z)&=\int_{\Z_p}f(z-y)g(y)\,dy,
+ \label{eq:function-convolution}\\
+ (f*\mu)(z)=(\mu*f)(z)
+ &=\mu\bigl(y\longmapsto f(z-y)\bigr).
+ \label{eq:function-measure-convolution}
+\end{align}
+The last line is a definition of both displayed notations; it fixes the
+minus sign in the translate.  Uniform continuity of $f$ shows that
+$z\mapsto f(z-\cdot)$ is continuous into $C(\Z_p,K)$ in the supremum norm,
+so $f*\mu\in C(\Z_p,K)$ and
+$\|f*\mu\|_\infty\leq\|f\|_\infty\|\mu\|$.
+The Fourier--Stieltjes transform uses the same negative character as the
+function transform:
+\begin{equation}
+\label{eq:Fourier-Stieltjes}
+ \widehat\mu(t)=\mu\bigl(z\longmapsto\langle-t,z\rangle\bigr).
+\end{equation}
+In particular $|\widehat\mu(t)|\leq\|\mu\|$, because every chosen character
+has supremum norm $1$.
+
+\begin{proposition}[the three convolution identities]
+\label{prop:typed-convolution-identities}
+The convolution in \cref{eq:c0-convolution} is a well-defined continuous
+bilinear map $c_0\times c_0\to c_0$, with
+\begin{equation}
+\label{eq:c0-convolution-bound}
+ \|a*b\|_\infty\leq\|a\|_\infty\|b\|_\infty.
+\end{equation}
+With the Fourier and Fourier--Stieltjes signs fixed by
+\cref{eq:pq-Fourier,eq:Fourier-Stieltjes}, one has
+\begin{equation}
+\label{eq:product-convolution}
+ \widehat{fg}=\widehat f*\widehat g.
+\end{equation}
+Moreover,
+\begin{equation}
+\label{eq:function-convolution-Fourier}
+ \widehat{f*g}(t)=\widehat f(t)\widehat g(t),
+ \qquad
+ \widehat{f*\mu}(t)=\widehat f(t)\widehat\mu(t).
+\end{equation}
+Thus \cref{eq:Fourier-isometry} is an isometric Banach-algebra isomorphism
+from pointwise multiplication on $C(\Z_p,K)$ to convolution on
+$c_0(\Gamma_p,K)$.
+\end{proposition}
+
+\begin{proof}
+For fixed $t$, the family $a(s)b(t-s)$ tends to zero off finite subsets:
+if $b\ne0$ and $|a(s)b(t-s)|\geq\epsilon$, then
+$|a(s)|\geq\epsilon/\|b\|_\infty$, which occurs for only finitely many
+$s$.  Completeness and the nonarchimedean criterion for summability therefore
+give \cref{eq:c0-convolution}.  The ultrametric inequality gives
+\cref{eq:c0-convolution-bound}.  If $b$ has finite support, $a*b$ is a finite
+sum of translates of $a$ and hence belongs to $c_0$.  Approximating an
+arbitrary $b\in c_0$ by finitely supported $b_n$ and using
+\cref{eq:c0-convolution-bound} proves $a*b\in c_0$ and continuity.
+
+If $f$ and $g$ are constant modulo $p^N$, finite inversion and
+\cref{eq:finite-orthogonality-dual} give, for $t\in\Gamma_p[p^N]$,
+\[
+ \widehat{fg}(t)
+ =\sum_{s\in\Gamma_p[p^N]}\widehat f(s)\widehat g(t-s).
+\]
+Both sides vanish outside a sufficiently large finite character group, so
+this is \cref{eq:product-convolution} at finite level.  Uniformly approximate
+$f,g$ by locally constant functions.  Pointwise multiplication, the Fourier
+isometry, and sequence convolution are continuous, so the identity passes to
+all $f,g\in C(\Z_p,K)$.
+
+Fourier inversion gives, uniformly in $(z,y)\in\Z_p^2$,
+\[
+ f(z-y)=\sum_{s\in\Gamma_p}
+ \widehat f(s)\langle s,z\rangle\langle-s,y\rangle.
+\]
+Applying the continuous functional $g(y)\,dy$, respectively $\mu$, term by
+term yields
+\[
+ (f*g)(z)=\sum_s\widehat f(s)\widehat g(s)\langle s,z\rangle,
+ \qquad
+ (f*\mu)(z)=\sum_s\widehat f(s)\widehat\mu(s)\langle s,z\rangle.
+\]
+The coefficient families lie in $c_0$ because $\widehat f\in c_0$ and
+$\widehat g,\widehat\mu$ are bounded.  Uniqueness in Fourier inversion proves
+\cref{eq:function-convolution-Fourier}.
+\end{proof}
+
+For $s\in\Gamma_p$, write
+\[
+ (\tau_sa)(t)=a(t+s).
+\]
+
+\begin{proposition}[finite translates and the closed principal ideal]
+\label{prop:finite-translates-principal-closure}
+For every $a\in c_0(\Gamma_p,K)$,
+\begin{align}
+ \tau_sa&=a*\delta_{-s}\qquad(s\in\Gamma_p),
+ \label{eq:translate-pointmass}\\
+ \Span_K\{\tau_sa:s\in\Gamma_p\}
+ &=a*c_{00}(\Gamma_p,K),\label{eq:translate-span-c00}\\
+ \overline{\Span_K\{\tau_sa:s\in\Gamma_p\}}
+ &=\overline{a*c_0(\Gamma_p,K)}.\label{eq:translate-ideal-closure}
+\end{align}
+The closures are taken in the supremum norm.  Thus the finite translate span
+is generally not the algebraic principal ideal $a*c_0$; its closure is the
+closed principal ideal generated by $a$.
+\end{proposition}
+
+\begin{proof}
+For $t\in\Gamma_p$,
+\[
+ (a*\delta_{-s})(t)
+ =\sum_{u\in\Gamma_p}a(u)\delta_{-s}(t-u)
+ =a(t+s),
+\]
+which proves \cref{eq:translate-pointmass}.  Every element of $c_{00}$ is a
+finite linear combination of point masses, so bilinearity gives
+\cref{eq:translate-span-c00} in both directions.
+
+Let $T_a:c_0(\Gamma_p,K)\to c_0(\Gamma_p,K)$ be $T_a(b)=a*b$.
+The convolution estimate gives
+$\|T_a(b)\|_\infty\leq\|a\|_\infty\|b\|_\infty$, hence $T_a$ is continuous.
+For every $b\in c_0$, choose $b_N\in c_{00}$ with
+$\|b_N-b\|_\infty\to0$.  Then $T_a(b_N)\to T_a(b)$, so
+$a*c_0\subseteq\overline{a*c_{00}}$.  The reverse inclusion before taking
+closures follows from $c_{00}\subseteq c_0$.  This proves
+\cref{eq:translate-ideal-closure}.
+\end{proof}
+
+\begin{remark}
+The distinction cannot be removed even for the convolution unit.  If
+$a=\delta_0$, then its finite translate span is
+$c_{00}(\Gamma_p,K)$, whereas
+$\delta_0*c_0(\Gamma_p,K)=c_0(\Gamma_p,K)$.  The group $\Gamma_p$ is
+infinite, so these two spaces are unequal.
+\end{remark}
+
+\begin{theorem}[Wiener--Tauberian theorem for continuous $(p,q)$-adic functions]
+\label{thm:pq-WTT-function}
+For $\chi\in C(\Z_p,K)$ the following are equivalent.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $1/\chi\in C(\Z_p,K)$;
+\item $\widehat\chi$ is invertible in the convolution algebra
+      $c_0(\Gamma_p,K)$;
+\item $\Span_K\{\tau_s\widehat\chi:s\in\Gamma_p\}$ is dense in
+      $c_0(\Gamma_p,K)$;
+\item $\chi(z)\ne0$ for every $z\in\Z_p$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The transform of $1$ is the convolution unit $\delta_0$.  If (i) holds,
+\cref{eq:product-convolution} shows that
+$\widehat{1/\chi}$ is a convolution inverse of $\widehat\chi$.  Conversely,
+if $b*\widehat\chi=\delta_0$, surjectivity of \cref{eq:Fourier-isometry}
+gives $b=\widehat g$ for a unique $g\in C(\Z_p,K)$; injectivity and
+\cref{eq:product-convolution} then give $g\chi=1$, so $g=1/\chi$.  This proves
+the equivalence of (i) and (ii).
+
+If (ii) holds, then every $a\in c_0$ equals
+\[
+ a=\widehat\chi*(\widehat\chi^{-1}*a).
+\]
+Choose $b_N\in c_{00}$ converging to
+$\widehat\chi^{-1}*a$ in the supremum norm.  Boundedness of convolution gives
+\[
+ \widehat\chi*b_N\longrightarrow
+ \widehat\chi*(\widehat\chi^{-1}*a)=a.
+\]
+By \cref{eq:translate-span-c00}, every $\widehat\chi*b_N$ is a finite linear
+combination of translates of $\widehat\chi$.  This proves (iii).
+
+Suppose (iii) holds but $\chi(z_0)=0$.  Fourier inversion makes evaluation
+at $z_0$ the nonzero continuous functional
+\[
+ L_{z_0}(a)=\sum_{t\in\Gamma_p}a(t)\langle t,z_0\rangle
+ \quad(a\in c_0).
+\]
+The sum converges and $|L_{z_0}(a)|\leq\|a\|_\infty$ by the same
+nonarchimedean tail criterion used in Fourier inversion.
+For every $s$, a change of variables gives
+$L_{z_0}(\tau_s\widehat\chi)
+=\langle-s,z_0\rangle\chi(z_0)=0$.  Thus $L_{z_0}$ vanishes on a dense
+subspace and hence on all of
+$c_0$, contradicting $L_{z_0}(\delta_0)=1$.  Therefore (iii) implies (iv).
+Finally, if $\chi$ is continuous and nowhere zero on compact $\Z_p$, then
+$1/\chi$ is continuous (equivalently, $|\chi|$ is bounded away from zero),
+so (iv) implies (i).
+\end{proof}
+
+\subsection{Measures and the proposed measure theorem}
+
+A $K$-valued measure in the paper is a continuous functional
+$\mu\in C(\Z_p,K)'$.  Its Fourier--Stieltjes transform is the precisely
+signed functional in \cref{eq:Fourier-Stieltjes}; integral notation writes
+the same value as
+$\int_{\Z_p}\langle-t,z\rangle\,d\mu(z)$.
+Via \cref{eq:Fourier-isometry} and the nonarchimedean duality
+$c_0'=\ell^\infty$, this transform is naturally bounded, not necessarily
+vanishing at infinity.
+
+Let
+\begin{equation}
+\label{eq:Dirichlet-kernel-padic}
+ D_N(z)=p^N\ind{z\in p^N\Z_p}.
+\end{equation}
+Then
+\begin{equation}
+\label{eq:measure-local-density}
+ (D_N*\mu)(z)=p^N\mu(z+p^N\Z_p)
+\end{equation}
+with no sign ambiguity.  Here $\mu(U)=\mu(\ind U)$ for a clopen set $U$.
+Indeed, the convention \cref{eq:function-measure-convolution} gives
+\[
+ (D_N*\mu)(z)
+ =\mu\bigl(y\longmapsto p^N\ind{z-y\in p^N\Z_p}\bigr)
+ =p^N\mu(z+p^N\Z_p),
+\]
+because $z-y\in p^N\Z_p$ if and only if
+$y\in z+p^N\Z_p$.  The source calls the limit, when it exists, the
+pointwise Radon--Nikodym derivative of $\mu$ at $z$.
+
+\begin{status}[measure Wiener--Tauberian claim]
+The paper asserts that the translates of $\widehat\mu$ are dense enough to
+approximate every element of $c_0(\Gamma_p,K)$ if and only if every existing
+limit
+\[
+ \lim_{N\to\infty}(D_N*\mu)(z)
+\]
+is nonzero.  Since $\widehat\mu$ need not itself lie in $c_0$, the precise
+typed density condition is
+\begin{equation}
+\label{eq:measure-cyclicity-typed}
+ c_0(\Gamma_p,K)
+ \subseteq\overline{\Span_K\{\tau_s\widehat\mu:s\in\Gamma_p\}}^{\,\ell^\infty}.
+\end{equation}
+The proof establishes the forward implication from
+\cref{eq:measure-cyclicity-typed} to nonvanishing of every existing local
+density limit.
+\end{status}
+
+\begin{sourceissue}[the converse for measures is not proved]
+The purported second half assumes both a zero local-density limit and the
+density of translates, then derives a contradiction.  This is the
+contrapositive of the already proved implication; it is not the converse
+``no zero limit implies density.''  The proposed condition is also vacuous
+for a measure for which no limit in \cref{eq:measure-local-density} exists.
+A valid converse requires an annihilator/closed-ideal argument together with
+an existence or regularity hypothesis.  The measure equivalence is therefore
+not promoted to a theorem in this edition.
+\end{sourceissue}
+
+\subsection{The characteristic distribution of a numen}
+
+Suppose $X_{H,\ell}:\Z_p\to K_\ell$ is measurable and satisfies
+\cref{eq:numen-FE-adic}.  Push normalized real Haar probability forward by
+$X_{H,\ell}$ and call the resulting probability measure $\nu_{H,\ell}$.
+For an additive character $\gamma_t$ of $K_\ell$, define
+\begin{equation}
+\label{eq:numen-characteristic}
+ \widehat\nu_{H,\ell}(t)
+ =\int_{\Z_p}\gamma_t(-X_{H,\ell}(z))\,dz.
+\end{equation}
+Partitioning $\Z_p$ into $j+p\Z_p$ and using the numen recursion gives
+\begin{equation}
+\label{eq:numen-characteristic-FE}
+ \widehat\nu_{H,\ell}(t)
+ =\frac1p\sum_{j=0}^{p-1}
+ \gamma_t(-c_j)\widehat\nu_{H,\ell}(r_j^*t),
+\end{equation}
+where $r_j^*$ is pullback on the character group:
+$\gamma_{r_j^*t}(x)=\gamma_t(r_jx)$.  When $r_j$ is scalar multiplication,
+this is the source's shorter notation $r_jt$.
+
+Equivalently, the pushforward measure satisfies
+\begin{equation}
+\label{eq:self-similar-measure}
+ \nu_{H,\ell}=\frac1p\sum_{j=0}^{p-1}(H_j)_*\nu_{H,\ell}.
+\end{equation}
+Existence follows from the numen and its functional equation.  Uniqueness of
+a probability measure solving \cref{eq:self-similar-measure} is a separate
+IFS theorem and requires, for example, that all $H_j$ be strict contractions
+on a complete metric space.  The latest manual's unconditional uniqueness
+wording is not used without such a hypothesis.

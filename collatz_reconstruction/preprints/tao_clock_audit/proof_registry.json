@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "priority_claim": false,
+  "whole_tao_analytic_proof_independently_certified": false,
+  "claims": [
+    {"id":"PC-01","tex_label":"prop:clocks","type":"proved_explicit_coordinate_reconstruction","dependencies":[],"source_relation":"Expands the accelerations and minimum identity in Tao Section 1.2"},
+    {"id":"PC-02","tex_label":"prop:dyadic","type":"proved_exact_weight_identity","dependencies":["PC-01"],"source_relation":"Corrects the factor in the v7 Section 1.2 density display, not the theorem"},
+    {"id":"PC-03","tex_label":"prop:sampling","type":"proved_finite_measure_comparison","dependencies":["PC-02"],"source_relation":"Elementary quantitative elaboration; no novelty claim"},
+    {"id":"PC-04","tex_label":"lem:nested","type":"proved_deterministic_passage_identity","dependencies":[],"source_relation":"Explicit failure-completed form of the nested-passage step"},
+    {"id":"PC-05","tex_label":"prop:chain","type":"proved_measure_transport_bound","dependencies":["PC-04"],"source_relation":"Exact telescoping and contraction"},
+    {"id":"PC-06","tex_label":"thm:transport","type":"proved_abstract_summable_transport_theorem","dependencies":["PC-04","PC-05"],"source_relation":"Abstract formulation of Tao Section 3 mechanism"},
+    {"id":"PC-07","tex_label":"thm:tao-input","type":"sourced_analytic_theorem","source":"TAO-V7 Proposition 1.11","dependencies":[],"source_relation":"Cited, not independently reproved by this preprint"},
+    {"id":"PC-08","tex_label":"cor:limit","type":"proved_statistical_corollary","dependencies":["PC-04","PC-05","PC-07"],"source_relation":"One common base b gives TV limits for every threshold x>=1, exact compatibility for all x<=y, uniform rate for x<=t_j, and explicit failure-mass decay. Extends the preceding draft's lattice-threshold compatibility, without asserting arbitrary-base independence or a stronger orbit-minimum bound."},
+    {"id":"PC-09","tex_label":"thm:fixed","type":"complete_proof_from_cited_analytic_input","dependencies":["PC-01","PC-02","PC-06","PC-07"],"source_relation":"Recovers Tao Theorem 3.1 with the original uniform quantifiers"},
+    {"id":"PC-10","tex_label":"cor:tao","type":"complete_proof_from_cited_analytic_input","dependencies":["PC-09"],"source_relation":"Recovers original strict almost-bounded theorem; replaces false tail-envelope display"},
+    {"id":"PC-11","tex_label":"prop:tightness","type":"proved_known_qualitative_reformulation","dependencies":[],"source_relation":"Equivalence already stated in Tao Remark 1.4; no new strengthening"},
+    {"id":"PC-12","tex_label":"prop:buffer","type":"proved_local_proof_completion","dependencies":[],"source_relation":"Uses explicitly cited good-orbit estimate from Proposition 5.2 proof; multiplicative endpoint replacement"},
+    {"id":"PC-13","tex_label":"prop:cn","type":"proved_local_uniformity_completion","dependencies":[],"source_relation":"Proves Lemma 5.3 at its original scope using exact affine words, CRT and retained weights"},
+    {"id":"PC-14","tex_label":"prop:reserve","type":"proved_explicit_bound","dependencies":[],"source_relation":"Explicit sufficient size bound for the reserve used in V7; no necessity assertion for arbitrary proofs"},
+    {"id":"PC-15","tex_label":"cor:joint-entry","type":"proved_joint_distribution_corollary","dependencies":["PC-04","PC-08"],"source_relation":"Finite joint first-entry laws are the bijective pushforward of the largest-threshold law; singleton fibres, explicit inverse, and l1 isometry yield a convergence bound independent of the number of thresholds."}
+  ],
+  "finite_certificate":"certificates/check_finite.py",
+  "formal_status":"No Lean formalization of the analytic theorem is asserted."
+}

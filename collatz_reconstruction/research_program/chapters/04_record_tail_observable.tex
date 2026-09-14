@@ -1,0 +1,226 @@
+\section{Private record tails and an exact Haar comparison law}
+\label{sec:record-tail}
+
+This section reconstructs a programme from the modern Chatnotes working note
+\emph{Uniform image-support variation for the shortened Collatz map}
+\cite{KokunoRecordTailNotes}.  The support reduction and the two finite record
+calculations come from that note.  The joint-moment and finite-variance theorem
+below sharpens its one-point Haar calculation.  The two layers are stated
+separately so that the probabilistic model is never substituted for the
+selected integer record tails.
+
+For a positive integer whose shortened Collatz orbit reaches $\{1,2\}$, put
+\[
+ \tau(n)=\min\{k\ge0:T^k(n)\in\{1,2\}\}.
+\]
+No value is assigned when this set is empty.  A \emph{finite-delay record} is
+an integer $r\ge3$ such that $\tau(n)$ exists for every $1\le n\le r$ and
+\[
+ M_r=\max_{1\le n<r}\tau(n)<\tau(r),
+ \qquad g_r=\tau(r)-M_r.
+ \tag{4.1}\label{eq:record-gap}
+\]
+This definition concerns a finite, completely specified family; it assumes
+nothing about starts larger than $r$.
+
+For $N\ge1$ and $k\ge0$, define the image support and its uniform observable
+by
+\[
+ S_{N,k}=\{T^k(n):1\le n\le N\},
+ \qquad
+ a_{N,k}=\frac1{|S_{N,k}|}\sum_{x\in S_{N,k}}2^{-\nu_2(x)}.
+ \tag{4.2}\label{eq:support-observable}
+\]
+This is the uniform measure on the new support.  Because $T$ is not
+injective, it is not in general the pushforward of the preceding uniform
+measure.
+
+\begin{theorem}[exact private-tail reduction]
+\label{thm:record-tail-reduction}
+Let $r$ be a finite-delay record and write $x_k=T^k(r)$.  For
+$M_r\le k<\tau(r)$,
+\begin{equation}
+ S_{r,k}=\{1,2,x_k\},
+ \qquad
+ a_{r,k}=\frac12+\frac13,2^{-\nu_2(x_k)}.
+ \label{eq:private-support}
+\end{equation}
+Moreover $x_{\tau(r)-1}=4$.  The positive variation contributed from the
+private tail through the final merger into $\{1,2\}$ is exactly
+\begin{equation}
+ W(r)=\frac13\sum_{k=M_r}^{\tau(r)-2}
+       \mathbf 1_{2\mid x_k},2^{-\nu_2(x_k)}+\frac16.
+ \label{eq:private-tail-variation}
+\end{equation}
+Consequently the total positive variation of the full support trajectory is
+at least $W(r)$.
+\end{theorem}
+
+\begin{proof}
+For $n<r$ and $k\ge M_r$, the point $T^k(n)$ lies on the two-cycle.  The
+starts $1$ and $2$ ensure that both cycle points occur in $S_{r,k}$.  For
+$k<\tau(r)$, the point $x_k$ is not on that cycle, which proves the first
+identity in \eqref{eq:private-support}; the second follows from
+$2^{-\nu_2(1)}=1$ and $2^{-\nu_2(2)}=1/2$.
+
+The only positive predecessor of $\{1,2\}$ outside that set is $4$, so the
+first entrance gives $x_{\tau(r)-1}=4$.  Put $f(x)=2^{-\nu_2(x)}$.  If $x$
+is even, then $f(Tx)-f(x)=f(x)$; if $x$ is odd, then $f(x)=1$ and
+$f(Tx)-f(x)\le0$.  Thus every positive increment before the final merger is
+exactly the corresponding summand in \eqref{eq:private-tail-variation}
+divided by three.  At the last private state the support mean is
+$1/2+(1/4)/3=7/12$, while the mean on $\{1,2\}$ is $3/4$, giving the terminal
+increment $1/6$.
+\end{proof}
+
+\subsection{The exact stationary comparison process}
+
+Let $\mu$ be normalized Haar measure on $\mathbb Z_2$.  The chronological
+parity encoder for $T$ carries $\mu$ to the fair Bernoulli product measure on
+$\{0,1\}^{\mathbb N}$; this is the inverse-limit form of the exact finite
+parity-word bijection \cite[Theorems~1.1--1.2]{Terras1976}.  Define
+\begin{equation}
+ \varphi(x)=\mathbf 1_{2\mid x},2^{-\nu_2(x)},
+ \qquad \varphi_k(x)=\varphi(T^kx).
+ \label{eq:haar-observable}
+\end{equation}
+
+\begin{theorem}[joint moments and exact finite variance]
+\label{thm:record-tail-haar-covariance}
+On $(\mathbb Z_2,\mu)$,
+\begin{align}
+ \mathbf E\varphi_0&=\frac16,&
+ \mathbf E\varphi_0^2&=\frac1{14},&
+ \operatorname{Var}(\varphi_0)&=\frac{11}{252}.
+ \label{eq:phi-one-point-moments}
+\end{align}
+For every $h\ge1$,
+\begin{align}
+ \mathbf E(\varphi_0\varphi_h)
+  &=\frac1{36}-\frac5{126\,4^h},&
+ \operatorname{Cov}(\varphi_0,\varphi_h)
+  &=-\frac5{126\,4^h}.
+ \label{eq:phi-covariance}
+\end{align}
+Consequently, for $S_g=\sum_{k=0}^{g-1}\varphi_k$ and $g\ge1$,
+\begin{equation}
+ \operatorname{Var}(S_g)
+ =\frac{39g+80-20\,4^{1-g}}{2268}
+ =\frac{13}{756}g+\frac{20}{567}(1-4^{-g}).
+ \label{eq:finite-haar-variance}
+\end{equation}
+In particular, for every $\varepsilon>0$,
+\begin{equation}
+ \mu\left(\left|\frac{S_g}{g}-\frac16\right|\ge\varepsilon\right)
+ \le
+ \frac{39g+80-20\,4^{1-g}}
+      {2268\,g^2\varepsilon^2}.
+ \label{eq:haar-chebyshev}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let $J$ be the length of the initial zero run in the parity sequence.  Then
+$\varphi_0=0$ when the first bit is one, while for $j\ge1$,
+\[
+ \mu(J=j)=2^{-j-1},\qquad \varphi_0=2^{-j}.
+\]
+Therefore
+\[
+ \mathbf E\varphi_0
+ =\sum_{j\ge1}2^{-2j-1}=\frac16,
+ \qquad
+ \mathbf E\varphi_0^2
+ =\sum_{j\ge1}2^{-3j-1}=\frac1{14},
+\]
+which gives the stated variance.
+
+Fix $h\ge1$.  On $J=j<h$, the bits beginning at time $h$ are independent
+of the event $J=j$, so the conditional mean of $\varphi_h$ is $1/6$.  On
+$J=h$, the bit at time $h$ is one and $\varphi_h=0$.  On $J=j>h$, the
+shifted zero run has length $j-h$ and $\varphi_h=2^{-(j-h)}$.  Hence
+\begin{align*}
+ \mathbf E(\varphi_0\varphi_h)
+ &=\frac16\sum_{j=1}^{h-1}2^{-2j-1}
+   +\sum_{j=h+1}^{\infty}2^{-j}2^{-(j-h)}2^{-j-1}\\
+ &=\frac1{36}(1-4^{1-h})+\frac{4^{-h}}{14}
+  =\frac1{36}-\frac5{126\,4^h}.
+\end{align*}
+Subtracting $(1/6)^2$ gives the covariance.  Stationarity and
+\eqref{eq:phi-covariance} now give
+\[
+ \operatorname{Var}(S_g)
+ =\frac{11g}{252}-\frac5{63}
+   \sum_{h=1}^{g-1}(g-h)4^{-h}.
+\]
+The finite geometric derivative is
+\[
+ \sum_{h=1}^{g-1}(g-h)4^{-h}
+ =\frac g3-\frac49+\frac49,4^{-g},
+\]
+which proves \eqref{eq:finite-haar-variance}.  Inequality
+\eqref{eq:haar-chebyshev} is Chebyshev's inequality with
+$\mathbf E S_g=g/6$.
+\end{proof}
+
+For a private record tail, equation
+\eqref{eq:private-tail-variation} may be written
+\begin{equation}
+ \frac{W(r)}{g_r}
+ =\frac1{3g_r}\sum_{k=M_r}^{M_r+g_r-2}\varphi(T^kr)
+  +\frac1{6g_r}.
+ \label{eq:record-haar-crosswalk}
+\end{equation}
+Theorem~\ref{thm:record-tail-haar-covariance} proves the complete second-order
+law for an unselected Haar segment.  It does not say that the arithmetically
+selected segment on the right of \eqref{eq:record-haar-crosswalk} has that
+law.
+
+\begin{certificate}[two exact finite records]
+\label{cert:record-tail-examples}
+An exhaustive shortened-map scan gives
+\[
+ M_{27}=15,\quad \tau(27)=69,\quad g_{27}=54,
+ \quad
+ \frac{W(27)}{g_{27}}=\frac{137}{2592}
+ =\frac1{18}-\frac7{2592},
+\]
+and
+\[
+ M_{63728127}=465,\quad \tau(63728127)=591,\quad g_{63728127}=126,
+\]
+\[
+ W(63728127)=\frac{445}{64},\qquad
+ \frac{W(63728127)}{126}
+ =\frac1{18}-\frac1{2688}.
+\]
+The scan enumerates every start through $63{,}728{,}127$; the independent
+exact replay evaluates \eqref{eq:private-tail-variation} on the displayed
+orbits.  The source and output hashes are recorded in the accompanying
+certificate receipt.
+\end{certificate}
+
+The preceding reduction, the Haar mean, the negative geometric covariance,
+and the two certified long tails give a precise mathematical basis for the
+following statement.
+
+\begin{conjecture}[record-gap and record-tail genericity]
+\label{conj:record-tail-genericity}
+Among the finite-delay records of \eqref{eq:record-gap}, the gaps $g_r$ are
+unbounded.  For every sequence of such records with $g_r\to\infty$,
+\begin{equation}
+ \frac1{g_r-1}\sum_{k=M_r}^{M_r+g_r-2}
+       \varphi(T^kr)\longrightarrow\frac16.
+ \label{eq:record-tail-genericity}
+\end{equation}
+Consequently $W(r)/g_r\to1/18$ along every such sequence, and the total
+positive variations of the finite support trajectories are unbounded.
+\end{conjecture}
+
+\begin{nonclaim}
+The conjecture does not assert independence of adjacent values of
+$\varphi$---Theorem~\ref{thm:record-tail-haar-covariance} proves that their
+covariance is negative.  It does not follow from the Haar theorem, and it does
+not imply that every positive integer reaches $\{1,2\}$.  It asserts an exact
+genericity property of a highly selected family of finite orbit segments.
+\end{nonclaim}

@@ -1,0 +1,609 @@
+\subsection{Siegel's Hydra and numen formalism: typed source boundary}
+\label{sec:Siegel-Hydra-numen}
+
+The controlling witness in this subsection is Siegel's version-pinned source
+for arXiv:2601.17030v3 \cite{Siegel2026v3}.  Its Hydra and numen sections are
+unchanged from v2 to v3; the v3 change is confined to the later Fourier
+calculation audited at the end of this subsection.  The source permits both
+number fields and finite extensions of $\mathbb F_q(T)$.  Accordingly,
+$\mathcal O_K$ is a finite free module over the integer ring
+$\mathcal O_{\mathbb F}$ of the base field; it has a finite
+$\mathbb Z$-basis only in the number-field case.
+
+Let $K/\mathbb F$ be such a global field, let
+$\Lambda\subsetneq\mathcal O_K$ be a nonzero ideal, and retain an enumeration
+of the $p=\lvert\mathcal O_K/\Lambda\rvert$ cosets by
+$\{0,\ldots,p-1\}$, with $0$ denoting $\Lambda$.  If $\ell$ is a place, an
+$\mathbb F$-linear map used on $K_\ell$ will always be assumed bounded at
+$\ell$.  This assumption is necessary: an arbitrary
+$\mathbb F$-linear endomorphism of $K$ need not extend continuously to a fixed
+completion.  The operator norm is
+\[
+ \lVert r\rVert_\ell
+ =\sup_{z\in K\setminus\{0\}}\frac{|r(z)|_\ell}{|z|_\ell},
+\]
+when this supremum is finite.  The source display includes $z=0$ in a quotient
+by $|z|_\ell$ and its following remark asserts extendibility without this
+boundedness condition.
+
+\begin{definition}[Siegel's printed branch data]
+\label{def:Siegel-Hydra-v3}
+A pre-Hydra has, for every $j\in\mathcal O_K/\Lambda$, an invertible affine
+$\mathbb F$-linear branch
+\[
+ H_j:K\longrightarrow K,\qquad H_j(z)=r_j(z)+c_j,
+ \qquad
+ r_j\in\operatorname{End}_{\mathbb F}^{\times}(K),\quad c_j\in K.
+\]
+The selected piecewise evaluator is
+\[
+ H(z)=H_{[z]_\Lambda}(z)\qquad(z\in\mathcal O_K).
+\]
+The source's literal Definition~5.3 additionally requires
+$H_j(z)\in\mathcal O_K$ for every $z\in\mathcal O_K$ and every $j$.
+\end{definition}
+
+The enumeration in the source should read
+$i=\Lambda_{\beta(i)}$ for a coset $i\in\mathcal O_K/\Lambda$, not
+$i\in\Lambda_{\beta(i)}$.  After the cosets have been replaced by digit
+labels, $\operatorname{DigSum}_p$ uses those labels directly; applying
+$\beta$ to them a second time is ill-typed.  We retain the enumeration rather
+than normalize it away.
+
+\begin{sourceissue}[the two printed integrality predicates]
+\label{issue:Siegel-Hydra-integrality}
+Definition~5.3 requires
+\[
+ H_j(\mathcal O_K)\subseteq\mathcal O_K
+ \qquad\text{for every }j,
+\tag{G}
+\]
+whereas Definition~5.4 calls the same Hydra \emph{integral} when
+\[
+ H_j(z)\in\mathcal O_K
+ \quad\Longleftrightarrow\quad z\in j+\Lambda
+ \qquad(z\in\mathcal O_K).
+\tag{E}
+\]
+These conditions cannot coexist.  Since $\Lambda$ is proper, choose a coset
+different from $j+\Lambda$ and an integer $z$ in it.  Condition~(G) says
+$H_j(z)$ is integral and condition~(E) says it is not.  The source's own
+shortened Collatz example displays the intended distinction:
+$(3z+1)/2$ is integral exactly on odd $z$, so it satisfies~(E) but not~(G).
+\end{sourceissue}
+
+We therefore use three explicitly different predicates:
+\[
+\begin{array}{ll}
+\text{\emph{selected-branch admissible}}&
+ H_j(j+\Lambda)\subseteq\mathcal O_K,\\[2mm]
+\text{\emph{exact-integral on global integers}}&
+ H_j^{-1}(\mathcal O_K)\cap\mathcal O_K=j+\Lambda,\\[2mm]
+\text{\emph{inverse-integral at a completion $v$}}&
+ H_j^{-1}(\mathcal O_{K_v})=j+\Lambda\mathcal O_{K_v}.
+\end{array}
+\]
+The first makes the piecewise evaluator a map
+$\mathcal O_K\to\mathcal O_K$.  The second detects the assigned coset among
+global integers.  The third is the stronger local inverse-image statement
+needed by a backward branch-correctness argument.  It is not implied merely
+by writing the second predicate.
+
+\begin{proposition}[scalar Hydra--Matthews bridge at retained modulus]
+\label{prop:Siegel-scalar-Hydra-Matthews}
+Let $K=\mathbb Q$, $\mathcal O_K=\mathbb Z$, and
+$\Lambda=D\mathbb Z$, with the residue labels $0,\ldots,D-1$ retained.
+Scalar selected-branch-admissible data
+\[
+ H_i(n)=a_i n+b_i
+\]
+are in exact two-sided correspondence with Matthews data
+\[
+ H_i(n)=\frac{m_i n-s_i}{D},
+ \qquad m_i,s_i\in\mathbb Z,\qquad
+ s_i\equiv i m_i\pmod D,
+\]
+by
+\[
+ m_i=Da_i,\qquad s_i=-Db_i.
+\]
+The complete integrality locus of the $i$th extension is
+\[
+ i+\frac{D}{\gcd(m_i,D)}\mathbb Z.
+\]
+Consequently, exact integrality on global integers is equivalent to
+$\gcd(m_i,D)=1$ for every $i$.
+\end{proposition}
+
+\begin{proof}
+Admissibility gives $H_i(i),H_i(i+D)\in\mathbb Z$.  Subtracting gives
+$Da_i\in\mathbb Z$, and then
+\[
+ Db_i=D H_i(i)-(Da_i)i\in\mathbb Z.
+\]
+Thus $m_i$ and $s_i$ are integral, while
+\[
+ m_i i-s_i=D(a_i i+b_i)=D H_i(i)
+\]
+proves the congruence.  Conversely, that congruence makes
+$(m_i n-s_i)/D$ integral on $i+D\mathbb Z$, and the two displayed
+assignments are literal inverses.
+
+For arbitrary $n\in\mathbb Z$, branch integrality is equivalent to
+$m_i(n-i)\equiv0\pmod D$.  Writing $g_i=\gcd(m_i,D)$, this is equivalent to
+$n-i\in(D/g_i)\mathbb Z$, which proves the locus and the final assertion.
+\end{proof}
+
+This proposition applies only to scalar branches.  A genuinely non-scalar
+$\mathbb F$-linear Hydra is not silently placed in the Matthews or rcwa
+classes.  For the scalar subclass, the further reduced rcwa crosswalk is
+Proposition~\ref{prop:Matthews-Kohl-crosswalk}; neither step minimizes the
+retained modulus.
+
+\begin{sourceissue}[uniform separation is not bounded finiteness]
+\label{issue:Siegel-discrete-orbit-classification}
+Source Proposition~4.2 claims that if $Y$ is uniformly separated in an
+arbitrary valued field, every orbit of every map $T:Y\to Y$ is preperiodic or
+norm-divergent.  Its proof uses the stronger assertion that every bounded
+intersection with $Y$ is finite.
+
+For a nontrivially valued counterexample, take $K=\mathbb Q((t))$ with the
+$t$-adic absolute value, $Y=\mathbb Z\subset K$, and $T(n)=n+1$.  Distinct
+integers have distance one, but the orbit of zero is injective and has norm
+one after the first term.  It is neither preperiodic nor divergent.
+
+The proof becomes valid under the exact replacement
+\[
+ \#\{y\in Y:|y|\leq R\}<\infty
+ \qquad\text{for every }R>0.
+\tag{BF}
+\]
+For a number field, $\mathcal O_K$ is boundedly finite in its full Minkowski
+embedding.  It need not be discrete at one archimedean embedding:
+$\mathbb Z[\sqrt2]$ has nonzero elements arbitrarily close to zero there.
+Nor does escape in the full Minkowski norm imply escape at every individual
+archimedean absolute value.
+\end{sourceissue}
+
+For the numen, let $\Sigma_p^*$ be the finite words in
+$\{0,\ldots,p-1\}$, including the empty word.  The source fixes
+least-significant digit first:
+\[
+ \operatorname{DigSum}_p(j_1,\ldots,j_N)
+ =\sum_{a=1}^{N}j_a p^{a-1}.
+\]
+
+\begin{proposition}[finite affine word and numen cocycle]
+\label{prop:Siegel-word-numen}
+For $\mathbf j=(j_1,\ldots,j_N)$, define
+\[
+ H_{\mathbf j}=H_{j_1}\circ\cdots\circ H_{j_N},
+ \qquad
+ H_{\mathbf j}(z)=M_{\mathbf j}(z)+X_{\mathbf j}.
+\]
+Then
+\[
+ M_{\mathbf j}=r_{j_1}\circ\cdots\circ r_{j_N},
+ \qquad
+ X_{\mathbf j}
+ =\sum_{m=0}^{N-1}
+   (r_{j_1}\circ\cdots\circ r_{j_m})(c_{j_{m+1}}),
+\tag{W}
+\label{eq:Siegel-word-formula}
+\]
+with the empty operator product equal to $I$.  For concatenation,
+\[
+ M_{\mathbf i\wedge\mathbf j}
+ =M_{\mathbf i}\circ M_{\mathbf j},
+ \qquad
+ X_{\mathbf i\wedge\mathbf j}
+ =M_{\mathbf i}(X_{\mathbf j})+X_{\mathbf i}.
+\tag{C}
+\label{eq:Siegel-word-cocycle}
+\]
+\end{proposition}
+
+\begin{proof}
+The rightmost branch in $H_{j_1}\circ\cdots\circ H_{j_N}$ acts first.
+Composing two affine maps gives
+\[
+ (M_i,X_i)\circ(M_j,X_j)
+ =(M_i\circ M_j,M_i(X_j)+X_i).
+\]
+Induction proves both~\eqref{eq:Siegel-word-formula} and
+\eqref{eq:Siegel-word-cocycle}; the empty word gives $(I,0)$.
+\end{proof}
+
+Here and below a word is an address.  It is not automatically an actual
+piecewise-Hydra itinerary.
+
+\begin{proposition}[centered numen descent and multiplier non-descent]
+\label{prop:Siegel-centered-numen-descent}
+Let $\mathbf i\sim\mathbf j$ when their DigSum values agree.  If
+$c_0=H_0(0)=0$, then $X_{\mathbf i}=X_{\mathbf j}$ whenever
+$\mathbf i\sim\mathbf j$, so the finite numen factors as
+\[
+ \Sigma_p^*/{\sim}\ \xrightarrow[\cong]{\operatorname{DigSum}_p}\mathbb N_0
+ \xrightarrow{X_H}K.
+\]
+The multiplier does not generally factor through this quotient:
+\[
+ M_{\mathbf j\wedge(0)}=M_{\mathbf j}\circ r_0
+\]
+need not equal $M_{\mathbf j}$.
+\end{proposition}
+
+\begin{proof}
+Every finite DigSum fibre consists of the canonical base-$p$ word and its
+finitely many terminal-zero extensions.  Since the appended zero is the
+rightmost map in the composition,
+\[
+ X_{\mathbf j\wedge(0)}
+ =H_{\mathbf j}(H_0(0))=H_{\mathbf j}(0)=X_{\mathbf j}.
+\]
+Iteration proves descent.  The displayed multiplier identity follows directly
+from Proposition~\ref{prop:Siegel-word-numen} and supplies the obstruction.
+\end{proof}
+
+Thus every occurrence of $M_H(n)$ requires a canonical digit word and its
+retained length.  The source proves descent only for $X_H$.
+
+\begin{proposition}[finite digit functional equations]
+\label{prop:Siegel-numen-functional-equations}
+Functions $f:\mathbb N_0\to K$ satisfying
+\begin{equation}
+\label{eq:Siegel-finite-recursion}
+ f(pn+j)=r_j(f(n))+c_j
+ \qquad(n\in\mathbb N_0,\ 0\leq j<p)
+\end{equation}
+are in bijection with the affine fibre
+\[
+ \{a\in K:(I-r_0)a=c_0\},
+\]
+by $a=f(0)$.  If $I-r_0$ is invertible, there is one solution, with
+$a=(I-r_0)^{-1}c_0$.  If
+$n=\sum_{m=0}^{N-1}d_m p^m$ is its canonical digit expansion and
+\[
+ P_0=I,\qquad P_m=r_{d_0}\circ\cdots\circ r_{d_{m-1}},
+\]
+then
+\begin{equation}
+\label{eq:Siegel-corrected-finite-truncation}
+ f(n)=P_N(a)+\sum_{m=0}^{N-1}P_m(c_{d_m}).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Putting $n=j=0$ in~\eqref{eq:Siegel-finite-recursion} gives
+$(I-r_0)f(0)=c_0$.  Conversely, once an admissible $a$ is chosen, repeated
+Euclidean division by $p$ reaches zero and recursively defines one value at
+every nonnegative integer.  Applying the recursion along the canonical digits
+proves~\eqref{eq:Siegel-corrected-finite-truncation}.
+\end{proof}
+
+The finite theorem is sound.  It also isolates the term omitted in the
+source's proof of its continuation lemma.
+
+\begin{sourceissue}[Lemma 6.1 as printed]
+\label{issue:Siegel-numen-extension}
+Lemma~6.1 assumes only that $I-r_0$ is invertible, but its finite formula uses
+the centered word sum and omits $P_N(a)$ from
+\eqref{eq:Siegel-corrected-finite-truncation}.  Its equation~(6.29) prints
+equality between the norm of a sum and the sum of termwise norm bounds; only
+$\leq$ follows.  Its pointwise density definition uses a limsup frequency
+when $\log\lVert r_j\rVert_\ell\leq0$ and a liminf when that logarithm is
+positive.  These are the reverse of the choices needed for an upper Lyapunov
+bound.  Almost-everywhere convergence leaves a null nonconvergence set on
+which no value is assigned.  The proof establishes uniqueness on
+$\mathbb N_0$, not uniqueness of arbitrary functions on $\mathbb Z_p$
+satisfying the same recursion.  Finally, in the nonarchimedean case the
+displayed bound omits $|a|_\ell$.
+
+The last omission has a concrete instance.  Over $\mathbb Q_2$, take
+$r_0=3$ and $c_0=1$.  Then
+$a=(1-3)^{-1}=-1/2$, so $|a|_2=2>|c_0|_2=1$.
+\end{sourceissue}
+
+\begin{theorem}[corrected numen continuation]
+\label{thm:Siegel-numen-extension-repair}
+Fix a completion $K_\ell$ at which all $r_j$ are bounded, assume
+$I-r_0$ is invertible, and put $a=(I-r_0)^{-1}c_0$.  For
+\[
+ \mathfrak z=\sum_{m\geq0}d_m p^m\in\mathbb Z_p,
+\]
+define
+\begin{equation}
+\label{eq:Siegel-corrected-continuation}
+ f_N(\mathfrak z)
+ =P_N(a)+\sum_{m=0}^{N-1}P_m(c_{d_m}),
+ \qquad
+ P_m=r_{d_0}\circ\cdots\circ r_{d_{m-1}}.
+\end{equation}
+For $q_{j,m}=m^{-1}\#\{0\leq k<m:d_k=j\}$ and
+$\alpha_j=\log\lVert r_j\rVert_\ell$, set
+\begin{equation}
+\label{eq:Siegel-upper-Lyapunov}
+ L^+(\mathfrak z)=
+ \sum_{\alpha_j<0}\alpha_j\liminf_{m\to\infty}q_{j,m}
+ +\sum_{\alpha_j>0}\alpha_j\limsup_{m\to\infty}q_{j,m}.
+\end{equation}
+Then:
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item if $L^+(\mathfrak z)<0$, the sequence
+  \eqref{eq:Siegel-corrected-continuation} converges;
+\item if $\prod_{j=0}^{p-1}\lVert r_j\rVert_\ell<1$, it converges for
+  Haar-almost every $\mathfrak z$ and defines a measurable function on its
+  conull convergence domain;
+\item if $\rho=\max_j\lVert r_j\rVert_\ell<1$, it converges uniformly on
+  $\mathbb Z_p$ to a continuous function;
+\item whenever $\mathfrak z$ lies in the convergence domain,
+  $p\mathfrak z+j$ also lies there and
+  \[
+   f(p\mathfrak z+j)=r_j(f(\mathfrak z))+c_j;
+  \]
+\item if $\ell$ is nonarchimedean and
+  $\max_j\lVert r_j\rVert_\ell\leq1$, every finite truncation satisfies
+  \[
+   |f_N(\mathfrak z)|_\ell
+   \leq\max\{|a|_\ell,\max_j|c_j|_\ell\}.
+  \]
+\end{enumerate}
+In case~(iii), the continuous extension is the unique continuous function
+with the digit recursion and initial value $a$.
+\end{theorem}
+
+\begin{proof}
+Submultiplicativity gives
+\[
+ \lVert P_m\rVert_\ell
+ \leq\prod_{j=0}^{p-1}
+      \lVert r_j\rVert_\ell^{m q_{j,m}}.
+\]
+For a negative $\alpha_j$, the limsup of
+$\alpha_jq_{j,m}$ is $\alpha_j\liminf q_{j,m}$; for a positive
+$\alpha_j$, it is $\alpha_j\limsup q_{j,m}$.  Since there are finitely many
+digits,
+\[
+ \limsup_{m\to\infty}\frac1m\log\lVert P_m\rVert_\ell
+ \leq L^+(\mathfrak z).
+\]
+Under~(i), there are $\eta<1$ and $m_0$ such that
+$\lVert P_m\rVert_\ell\leq\eta^m$ for $m\geq m_0$.  The translations form a
+finite set, so the series in
+\eqref{eq:Siegel-corrected-continuation} is absolutely convergent and
+$P_N(a)\to0$.
+
+Haar-almost every base-$p$ digit sequence has each digit frequency $1/p$.
+Its Lyapunov exponent is bounded above by
+\[
+ \frac1p\sum_j\log\lVert r_j\rVert_\ell
+ =\frac1p\log\prod_j\lVert r_j\rVert_\ell,
+\]
+which proves~(ii); a pointwise limit of measurable truncations is measurable
+on the convergence domain.  Under~(iii),
+$\lVert P_m\rVert_\ell\leq\rho^m$ for every digit sequence, and the geometric
+tail estimate is uniform.  The truncations are locally constant, hence their
+uniform limit is continuous.
+
+The finite identity
+\[
+ f_N(p\mathfrak z+j)=r_j(f_{N-1}(\mathfrak z))+c_j
+\]
+proves~(iv) on passage to the limit.  In the nonarchimedean case, the
+ultrametric inequality and $\lVert P_m\rVert_\ell\leq1$ give~(v).
+Finally, $\mathbb N_0$ is dense in $\mathbb Z_p$, and
+Proposition~\ref{prop:Siegel-numen-functional-equations} fixes all its values;
+two continuous extensions therefore agree everywhere.
+\end{proof}
+
+Functional equations alone do not give literal uniqueness among arbitrary
+functions on $\mathbb Z_p$.  For example, with $p=2$,
+$r_0=r_1=1/2$, and $c_0=c_1=0$, choose a non-eventually-periodic digit
+sequence.  Its tail-equivalence class is countable and contains no shift
+cycle.  A nonzero seed value propagates consistently over that class by the
+invertible branch factors, while the function may be set to zero off the
+class.  The result is Borel and satisfies the recursion, but is not the zero
+function.
+
+\begin{proposition}[operator-typed periodic word]
+\label{prop:Siegel-periodic-word-fixed-point}
+For a nonempty finite word $\mathbf w$, put
+$M=M_{\mathbf w}$ and $X=X_{\mathbf w}$.  Then
+\begin{equation}
+\label{eq:Siegel-repeated-word}
+ X_{\mathbf w^{\wedge m}}
+ =\sum_{k=0}^{m-1}M^k(X).
+\end{equation}
+If $\lVert M\rVert_\ell<1$, then $I-M$ is invertible on $K_\ell$ and
+\[
+ z_{\mathbf w}=(I-M)^{-1}X
+\]
+is the unique fixed point of the affine extension $H_{\mathbf w}$.
+It is a point of an actual $N$-step piecewise-Hydra cycle only if, for
+$\mathbf w=(w_1,\ldots,w_N)$,
+\begin{equation}
+\label{eq:Siegel-branch-correctness}
+\begin{split}
+ z_{\mathbf w}&\in w_N+\Lambda,\\
+ H_{w_N}(z_{\mathbf w})&\in w_{N-1}+\Lambda,\\
+ &\ \vdots\\
+ H_{w_2}\circ\cdots\circ H_{w_N}(z_{\mathbf w})
+   &\in w_1+\Lambda.
+\end{split}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The cocycle gives
+$X_{\mathbf w^{\wedge m}}=M(X_{\mathbf w^{\wedge(m-1)}})+X$;
+induction proves~\eqref{eq:Siegel-repeated-word}.  The Neumann series
+$\sum_{k\geq0}M^k$ converges in operator norm and is the inverse of $I-M$.
+Thus $M(z_{\mathbf w})+X=z_{\mathbf w}$, and subtracting two fixed-point
+equations proves uniqueness.  Since the rightmost branch acts first,
+conditions~\eqref{eq:Siegel-branch-correctness} are exactly the successive
+branch-selection requirements.  Without them, the calculation concerns only
+the affine extension.
+\end{proof}
+
+The source's fractions $(1-M^m)/(1-M)$ and $X/(1-M)$ must be replaced by
+operator composition with $(I-M)^{-1}$.  Its equality
+$\lVert M^m\rVert=\lVert M\rVert^m$ is false for a general operator norm;
+the sufficient relation is
+$\lVert M^m\rVert\leq\lVert M\rVert^m$.
+
+\begin{sourceissue}[Siegel Theorem 6.1 as stated]
+\label{thm:Siegel-correspondence-registered}
+The source assumes a proper, centered, integral $\Lambda$-Hydra and the two
+conditions
+\begin{enumerate}
+\item for every $n\geq1$, some place $\ell_n$ satisfies
+  $\lVert M_H(n)\rVert_{\ell_n}<1$;
+\item some nontrivial nonarchimedean place $v$ satisfies
+  $\lVert r_j\rVert_v>1$ for every digit $j$ and $v(\Lambda)\geq1$.
+\end{enumerate}
+It then states:
+\begin{enumerate}
+\item an element $z\in\mathcal O_K$ is periodic for $H$ if and only if
+  $z=X_H(\mathfrak z)$ for some
+  $\mathfrak z\in(\mathbb Z_p\setminus\mathbb N_0)\cap\mathbb Q$;
+\item if $K$ is a number field and
+  $X_H(\mathfrak z)\in\mathcal O_K$ for an irrational
+  $\mathfrak z\in\mathbb Z_p\setminus\mathbb Q$, then the source calls
+  $X_H(\mathfrak z)$ a trajectory divergent with respect to every
+  nontrivial archimedean absolute value.
+\end{enumerate}
+This is a source-statement record, not an admitted theorem of this edition.
+\end{sourceissue}
+
+The proof sketch does not certify either conclusion.  The exact blocking
+points are as follows.
+\begin{enumerate}
+\item The literal Hydra and integral hypotheses have no simultaneous models,
+  by Source Issue~\ref{issue:Siegel-Hydra-integrality}.
+\item $M_H$ does not descend through finite DigSum equivalence.  Thus
+  $M_H(n)$ is not defined until a canonical word and its retained length are
+  specified.  The displayed $\lambda_p(n)$ is likewise not defined.
+\item Two formulas use an undefined $M_q$.  Scalar fractions such as
+  $(1-M^m)/(1-M)$ are not typed for general endomorphisms, and the equality
+  $\lVert M^m\rVert=\lVert M\rVert^m$ is false.  The operator-typed,
+  submultiplicative replacement is
+  Proposition~\ref{prop:Siegel-periodic-word-fixed-point}.
+\item Passing from an arbitrary finite word to the canonical digit word of
+  its DigSum may remove terminal zeroes.  Repeating those two words need not
+  give the same multiplier or affine map.  The centered all-zero word and
+  the fixed point zero also lie outside the displayed $n\geq1$ construction.
+\item The notation $v(\Lambda)$, the \emph{correctness} predicate, and the
+  claimed extension of the branches to $\mathcal O_{K_v}$ are not defined or
+  proved in this source.  A formal affine fixed point is not an actual
+  piecewise orbit until every condition in
+  \eqref{eq:Siegel-branch-correctness} is established.
+\item The converse uses integrality backwards: from an integral later value
+  it infers that a possibly nonintegral predecessor is integral.  The
+  printed global predicate does not imply the completion-level inverse-image
+  identity needed for this step, nor is a local-to-global arrow supplied.
+\item The forward direction gives, at most, an existential rational address
+  for a periodic point.  It does not prove that the same numen fibre contains
+  no irrational address.  Consequently it cannot support the later inference
+  that an irrational address has a nonpreperiodic value.  The zero fibre is
+  also unclassified.
+\item Part II begins by invoking a nonexistent hypothesis~(iii), then imports
+  a zero-fibre assertion and a correctness result without rebuilding their
+  hypotheses.  It also depends on the false uniformly-discrete orbit
+  classification repaired in
+  Source Issue~\ref{issue:Siegel-discrete-orbit-classification}.
+\item A numen value is a point, not a trajectory.  Even after replacing it
+  by its forward orbit, escape in the full Minkowski embedding would not by
+  itself prove divergence at every individual archimedean place.
+\end{enumerate}
+
+Accordingly, the periodic-word fixed-point proposition is retained at its
+proved scope, while the source's rational-fibre correspondence and
+irrational-address divergence conclusions are not proved and are not used.
+The legacy audit identifier \texttt{PO-COL-000006} records that gap; it is not
+a mathematical problem or a commitment attributed to the source or reader.
+
+\begin{sourceissue}[the v3 nonarchimedean Fourier inversion]
+\label{issue:Siegel-v3-prop76}
+Let $L=K_\ell$ be a finite extension of $\mathbb Q_q$, let
+$\mathcal O_L$ be its integer ring, let $\pi$ be a uniformizer, and let
+$\mathfrak D=\mathfrak D_{L/\mathbb Q_q}$ be its different.  The source uses
+the trace character
+\[
+ e_\ell(x)=
+ \exp\!\left(2\pi i
+ \{\operatorname{Tr}_{L/\mathbb Q_q}(x)\}_q\right).
+\]
+The annihilator of $\mathcal O_L$ under the pairing
+$(t,x)\mapsto e_\ell(tx)$ is
+\[
+ \mathfrak D^{-1}
+ =\{t\in L:\operatorname{Tr}_{L/\mathbb Q_q}(t\mathcal O_L)
+                    \subseteq\mathbb Z_q\},
+\]
+not $\mathcal O_L$ in general.  Thus the source's asserted dual
+$L/\mathcal O_L$ is correct for this character only after a
+conductor normalization, for example when the relevant different is
+trivial.  With the printed character the dual is
+$L/\mathfrak D^{-1}$.
+
+For comparison, if an $L$-valued random variable $X$ has first been proved
+to lie in $\mathcal O_L$ almost surely, define
+\[
+ \widehat\mu(t)=\mathbb E[e_\ell(-tX)]
+ \qquad(t\in L/\mathfrak D^{-1}).
+\]
+Writing $e$ and $f=[L:\mathbb Q_q]/e$ for the ramification index and residue
+degree, finite character orthogonality gives the correctly typed identity
+\begin{equation}
+\label{eq:Siegel-corrected-local-Fourier}
+\Pr(X\in w+\pi^n\mathcal O_L)
+=q^{-nf}
+ \sum_{t\in\pi^{-n}\mathfrak D^{-1}/\mathfrak D^{-1}}
+   \widehat\mu(t)e_\ell(tw)
+\qquad(w\in\mathcal O_L,\ n\geq0).
+\end{equation}
+Indeed, the displayed frequency quotient is the complete character group of
+$\mathcal O_L/\pi^n\mathcal O_L$, which has $q^{nf}$ elements.  Averaging
+those characters is one on the zero residue class and zero on every other
+class, proving~\eqref{eq:Siegel-corrected-local-Fourier}.
+
+This correction does not certify source Proposition~7.6.  Its surrounding
+Fourier chain has further independent defects:
+\begin{enumerate}
+\item for a nonscalar bounded local branch $r_j$, the frequency map is the
+  trace adjoint $r_j^\dagger$, defined by
+  \[
+   \operatorname{Tr}_{L/\mathbb Q_q}(t\,r_jx)
+   =\operatorname{Tr}_{L/\mathbb Q_q}(r_j^\dagger t\,x),
+  \]
+  not $t\mapsto r_jt$ unless the required self-adjoint or scalar identity is
+  proved;
+\item the characteristic function is naturally defined first on $L$; its
+  descent to a quotient requires an almost-sure support statement matched to
+  the annihilator;
+\item source Proposition~7.5 multiplies values in an object assumed only to
+  be an abelian group, shadows its summation variable, and leaves another
+  variable unbound, so it cannot justify the later rearrangement;
+\item $B_{H,\ell}=e\max_j\log_q|c_j|_\ell$ is undefined when every
+  translation is zero and may be negative, although Proposition~7.5 is
+  invoked only for a nonnegative integer parameter;
+\item the correct size relation is
+  $q^{B/e}=|\pi^{-B}|_\ell$, not $|\pi^B|_\ell$; a real absolute value cannot
+  be compared to the field element $\pi^B$; and division by $\pi^B$ cannot
+  be replaced by division by the real number $q^{B/e}$.
+\end{enumerate}
+The visible v3 changes repair neither the dual lattice nor these typing and
+scaling defects.  No proposition depending on this Fourier chain is used
+downstream.  The legacy audit identifier
+\texttt{PO-COL-}\allowbreak\texttt{000007} records the resulting dependency
+gap; it does not convert the defective chain into an open mathematical problem.
+\end{sourceissue}
+
+\begin{nonclaim}
+The finite numen is an address-to-state construction.  It is not identified
+with a state-to-itinerary conjugacy, and its fibres are not classified.
+Neither the corrected continuation theorem nor the formal periodic-word
+fixed point proves an ordinary-integer Collatz endpoint.  The source's
+Correspondence Principle and Fourier consequences are recorded as open
+audits, not imported conclusions.
+\end{nonclaim}

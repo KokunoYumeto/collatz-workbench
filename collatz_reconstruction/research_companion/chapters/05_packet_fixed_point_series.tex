@@ -1,0 +1,234 @@
+\section{Packet fixed-point series and their dyadic poles}
+\label{sec:packet-fixed-point-series}
+
+The affine coordinates retain useful analytic information when summed over
+all words of a prescribed length and exponent sum.  The total affine offset
+has a rational generating function, whereas the total fixed point has
+infinitely many poles.  We construct both functions in the original packet
+coordinates and determine their exact domains of power-series convergence.
+The rational recursion and formal dilation equation occur in the local
+\emph{Affine Packets} note, Sections~15--17, and in raw Chatnotes
+\emph{Implications of Affine Formula}, lines~432--475.  The continuation
+below extends the note's one-letter pole calculation to every packet length.
+These statements concern sums over rational fixed points, with repeated
+words retained; they are not sums over positive integral cycles alone.
+
+\subsection{The rational offset family}
+
+For $m\ge1$ and $A\ge m$, retain $C(p)$, $D=2^A-3^m$, and
+$x_p=C(p)/D$ from \eqref{eq:packet-C-D-x}.  Put
+\[
+ c(p)=2^{-A}C(p),\qquad
+ G_m(A)=|\Pi_{m,A}|,\qquad
+ S_m(A)=\sum_{p\in\Pi_{m,A}}c(p),\qquad
+ X_m(A)=\sum_{p\in\Pi_{m,A}}x_p.
+\]
+Set these three coefficients to zero for $A<m$.  Their generating
+functions are $G_m(q)=\sum_A G_m(A)q^A$, $F_m(q)=\sum_A S_m(A)q^A$,
+and $X_m(q)=\sum_A X_m(A)q^A$.  The same letter $X_m$ with an integer
+argument denotes a coefficient; with $q$ it denotes the series.  Define
+\[
+ u(q)=\frac q{1-q},\qquad v(q)=\frac q{2-q}.
+\]
+
+\begin{proposition}[Packet sums and their two-state representation]
+\label{prop:packet-total-offset-series}
+As formal series, and hence as rational functions where defined,
+\begin{align}
+ G_m(q)&=u(q)^m,\label{eq:analytic-packet-cardinality}\\
+ F_{m+1}(q)&=v(q)(3F_m(q)+G_m(q)),\qquad F_1(q)=v(q),
+ \label{eq:analytic-packet-recursion}\\
+ F_m(q)&=\sum_{k=0}^{m-1}3^{m-1-k}u(q)^k v(q)^{m-k}.
+ \label{eq:analytic-packet-closed}
+\end{align}
+In particular, with column vectors,
+\[
+ \binom{F_{m+1}}{G_{m+1}}
+ =\begin{pmatrix}3v&v\\0&u\end{pmatrix}\binom{F_m}{G_m},
+ \qquad \binom{F_1}{G_1}=\binom vu.
+\]
+The bivariate formal series is
+\begin{equation}\label{eq:analytic-bivariate-offset}
+ \sum_{m\ge1}F_m(q)z^{m-1}
+ =\frac{v(q)}{(1-3v(q)z)(1-u(q)z)}.
+\end{equation}
+For $m\ge2$, $F_m$ has exactly two poles: order $m-1$ at $1$ and
+order $m$ at $2$.  For $m=1$ its only pole is the simple pole at $2$.
+At the regular point $q=1/2$, $F_m(1/2)=m/3$.
+\end{proposition}
+\begin{proof}
+A word is a composition of $A$ into $m$ positive parts, so
+$G_m(A)=\binom{A-1}{m-1}$ and its series is $u^m$.  Appending $a\ge1$
+to a word $p$ gives $c(p,a)=2^{-a}(3c(p)+1)$.  Sum first over
+$p\in\Pi_{m,A-a}$ and then over $1\le a\le A-m$.  Each coefficient
+is a finite sum, and multiplication by $\sum_{a\ge1}2^{-a}q^a=v(q)$
+gives \eqref{eq:analytic-packet-recursion}.  Induction proves
+\eqref{eq:analytic-packet-closed}.  Summing that finite-sum formula over
+$m$ gives the product of the two geometric series in
+\eqref{eq:analytic-bivariate-offset}; both denominators have constant
+term one in $z$.
+
+At $q=1$, only the $k=m-1$ term of \eqref{eq:analytic-packet-closed}
+has pole order $m-1$, and its coefficient relative to
+$(1-q)^{-(m-1)}$ is one.  At $q=2$, only the $k=0$ term has order
+$m$, and its coefficient relative to $(2-q)^{-m}$ is
+$3^{m-1}2^m$.  Both coefficients are nonzero.  The finite-sum formula
+has no other denominator zeros.
+Finally $u(1/2)=1$ and $v(1/2)=1/3$, so every one of the $m$ terms
+in the finite sum equals $1/3$.
+\end{proof}
+
+\subsection{Formal inversion and convergence domains}
+
+\begin{proposition}[The exact dilation map]\label{prop:packet-dilation-inverse}
+For each $m\ge1$, the map
+\[
+ \mathcal D_m:q^m\mathbb C[[q]]\longrightarrow q^m\mathbb C[[q]],
+ \qquad f(q)\longmapsto f(2q)-3^m f(q)
+\]
+is a continuous complex-linear bijection for the $q$-adic topology.
+Its inverse is
+\[
+ \mathcal D_m^{-1}\!\left(\sum_{A\ge m}h_Aq^A\right)
+ =\sum_{A\ge m}\frac{h_A}{2^A-3^m}q^A.
+\]
+Both maps preserve the order of every nonzero formal series.  Their
+kernels are zero and every fibre is a singleton.  In particular,
+\begin{equation}\label{eq:packet-dilation-equation}
+ X_m(2q)-3^mX_m(q)=F_m(2q).
+\end{equation}
+The radius of convergence of $X_1$ is $2$.  For every $m\ge2$ the
+radius of $X_m$ is exactly $1$.  Consequently
+\eqref{eq:packet-dilation-equation}, interpreted as an equality of the
+defining convergent power series, holds on $|q|<1$ for $m=1$, and on
+$|q|<1/2$ for $m\ge2$.
+\end{proposition}
+\begin{proof}
+The coefficient multiplier $2^A-3^m$ is nonzero: its first term is even
+and its second odd.  The two displayed maps are inverse coefficient by
+coefficient and preserve the least index of a nonzero coefficient.
+This proves all the formal topological and linear assertions.  It does
+not assert preservation of multiplication.  The identity
+\[
+ X_m(A)=\frac{S_m(A)}{1-3^m2^{-A}}
+\]
+then gives \eqref{eq:packet-dilation-equation}.
+
+For $m=1$, $X_1(A)=(2^A-3)^{-1}$ and
+$|X_1(A)|^{1/A}\to1/2$.  For fixed $m$, every word satisfies
+\[
+ 0<c(p)\le \sum_{j=0}^{m-1}3^{m-1-j}2^{-(m-j)}
+ =(3/2)^m-1.
+\]
+Here $A-S_j\ge m-j$ because the remaining letters are positive.
+For all sufficiently large $A$, $1-3^m2^{-A}\ge1/2$.  Therefore
+\[
+ 0<X_m(A)\le 2\bigl((3/2)^m-1\bigr)\binom{A-1}{m-1}.
+\]
+The finitely many earlier coefficients do not affect the radius.  This
+polynomial upper bound gives convergence for $|q|<1$.  For $m\ge2$
+and each $A\ge m$, there is a word whose last letter is $1$, for example
+$(A-m+1,1,\ldots,1)$.  Its final numerator summand gives $c(p)\ge1/2$.
+Once $2^A>3^m$, all packet terms are positive, so $X_m(A)\ge1/2$.
+The terms therefore cannot tend to zero when $|q|>1$.  The radius is
+exactly one, and the claimed domains follow after replacing $q$ by $2q$.
+The same lower bound shows failure of the term test at every point of
+the boundary circle for $m\ge2$.  For $m=1$, the terms on $|q|=2$
+have magnitudes $2^A/|2^A-3|\to1$, so they also fail that test.
+\end{proof}
+
+For example,
+\[
+ X_2(A)=\frac{2^A+3A-5}{2^A-9}\quad(A\ge2),
+\]
+because $C(a,A-a)=3+2^a$.  Thus $X_2(A)\to1$.  At $q=3/4$, the
+terms defining $X_2(2q)$ do not tend to zero.  This disproves the
+whole-unit-disc convergence assertion appended to the formal identity
+in the local note's Theorem~17.1.  The formal identity itself is exact.
+
+\subsection{Meromorphic continuation with exact pole orders}
+
+\begin{theorem}[The dyadic pole family]\label{thm:packet-dyadic-poles}
+For every $m\ge1$, $X_m$ has a meromorphic continuation to the complex
+plane.  When $m=1$ its poles are precisely $2^j$, $j\ge1$, all simple.
+When $m\ge2$, it has a pole of order $m-1$ at $1$ and a pole of order
+$m$ at each $2^j$, $j\ge1$, with no other poles.  More precisely,
+\begin{align}
+ \lim_{q\to1}(1-q)^{m-1}X_m(q)&=1 &&(m\ge2),
+ \label{eq:packet-pole-one}\\
+ \lim_{q\to2^j}(2^j-q)^mX_m(q)&=3^{mj-1}2^{jm}
+ &&(m\ge1,\ j\ge1).
+ \label{eq:packet-dyadic-leading}
+\end{align}
+In particular, none of the functions $X_m$ is rational.
+\end{theorem}
+\begin{proof}
+Choose an integer $L\ge m$ with $2^L>3^m$; for example $L=2m$.
+Set
+\[
+ P_m(q)=\sum_{A=m}^{L-1}X_m(A)q^A,\qquad
+ H_m(q)=F_m(q)-\sum_{A=m}^{L-1}S_m(A)q^A.
+\]
+The empty sums are zero.  The rational function $H_m$ vanishes to
+order at least $L$ at zero and has exactly the same poles and principal
+parts as $F_m$.  The following explicit expression continues $X_m$:
+\begin{equation}\label{eq:packet-dyadic-continuation}
+ X_m(q)=P_m(q)+\sum_{r\ge0}3^{mr}H_m(q/2^r).
+\end{equation}
+Indeed, for $A\ge L$,
+\[
+ \frac1{1-3^m2^{-A}}=\sum_{r\ge0}3^{mr}2^{-rA}.
+\]
+For $|q|<1$, the sum of absolute values of this double series is at most
+\[
+ \frac{1}{1-3^m2^{-L}}\sum_{A\ge L}S_m(A)|q|^A<\infty.
+\]
+The previous proposition supplies the polynomial bound needed here.
+Interchanging the sums proves \eqref{eq:packet-dyadic-continuation}
+near zero.
+
+For an explicit normal-convergence estimate put
+\[
+ B_{m,L}=2^L H_m(1/2)>0,\qquad \eta=3^m2^{-L}<1.
+\]
+All coefficients of $H_m$ from degree $L$ onward are positive.  Hence
+$|H_m(z)|\le B_{m,L}|z|^L$ for $|z|\le1/2$.
+For $|q|\le R$ and any integer $N\ge0$ with $R/2^N\le1/2$,
+\begin{equation}\label{eq:packet-continuation-error}
+ \sup_{|q|\le R}\left|\sum_{r=N}^{\infty}3^{mr}H_m(q/2^r)\right|
+ \le \frac{B_{m,L}R^L\eta^N}{1-\eta}.
+\end{equation}
+The constant is explicitly rational:
+$B_{m,L}=2^L(m/3-\sum_{A=m}^{L-1}S_m(A)2^{-A})$.
+This is a summable geometric bound uniform on every compact set.
+Only finitely many earlier summands remain.  Each is rational, with
+poles confined to the positive dyadic points.  Away from those points,
+the sum is locally uniformly convergent and holomorphic.  Near each
+such point, all but finitely many summands are holomorphic and their
+tail converges uniformly, so the sum is meromorphic there.
+
+At $q=1$ only $r=0$ can be singular, giving
+\eqref{eq:packet-pole-one}.  At $q=2^j$, $j\ge1$, the term $r=j-1$
+inherits the pole of $F_m$ at $2$, of order $m$.  Its leading
+coefficient in powers of $(2^j-q)^{-1}$ is
+\[
+ 3^{m(j-1)}3^{m-1}(2^j)^m=3^{mj-1}2^{jm}.
+\]
+For $m\ge2$, the only other singular term is $r=j$, whose order is
+$m-1$; it cannot cancel the leading pole.  For $m=1$ that term is
+regular.  No other terms are singular.  This proves the exact pole
+list and both limits.  A rational function has only finitely many
+poles, whereas this list is infinite.
+\end{proof}
+
+The same expression also proves that the dilation equation holds globally
+as an identity of meromorphic functions, by analytic continuation from
+its disc of convergent series.  This is a different assertion from
+convergence of the defining series beyond its radius.  For $m=1$, taking
+$L=2$ gives $P_1(q)=-q$ and recovers the source's formula
+\[
+ X_1(q)=-q+\sum_{r\ge0}3^r
+ \frac{(q/2^{r+1})^2}{1-q/2^{r+1}}.
+\]
+Thus the one-letter pole calculation and the general packet continuation
+are related by an explicit specialization, without changing either series.

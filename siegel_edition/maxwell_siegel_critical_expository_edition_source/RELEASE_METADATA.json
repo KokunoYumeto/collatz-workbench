@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "source_freeze_id": "MS-CE-20260824-A",
+  "release_date": "2026-08-24",
+  "manifest_path": "MANIFEST.sha256",
+  "title": "Hydra Maps, Numens, and (p,q)-Adic Analysis: A Critical Expository Edition of the Mathematical Work of Maxwell C. Siegel",
+  "source_author": "Maxwell C. Siegel",
+  "pdf_author_metadata": "Maxwell C. Siegel (source works)",
+  "editorial_scope": "Critical apparatus, typed reconstructions, counterexamples, and edition-supplied proofs are distinguished from Siegel's source text.",
+  "stable_pdf": {
+    "filename": "maxwell_siegel_critical_expository_edition.pdf",
+    "sha256": "3e89313b9d47e27390bdfe79dfc3d87ae204dc39de9f451dd136241107810061",
+    "bytes": 1198545,
+    "pages": 76,
+    "page_width_points": 612,
+    "page_height_points": 792,
+    "pdf_version": "1.5"
+  },
+  "source": {
+    "tex_file_count": 13,
+    "document_record_count": 16,
+    "claim_record_count": 192,
+    "claim_ledger_sha256": "e9ba4255f50c99b1763c136d6307b27ee554146eccfa283e3bd711e5577a2b8c"
+  },
+  "reference_toolchain": {
+    "latexmk": "4.88",
+    "pdftex": "MiKTeX-pdfTeX 4.27 (MiKTeX 26.5)",
+    "pdftex_engine": "pdfTeX 1.40.29",
+    "pdflatex_format": "pdflatex 2026.8.21",
+    "latex2e": "2025-11-01",
+    "python": "3.13.9",
+    "jsonschema": "4.26.0",
+    "source_date_epoch": 1787529600
+  },
+  "reproducibility_boundary": "Source bytes, text, metadata, page geometry, and page rasters are reproducible under the recorded build; PDF trailer identifiers can vary with the build path."
+}

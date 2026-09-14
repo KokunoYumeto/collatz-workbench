@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "topic_id": "TOPIC-COL-AFFINE-ANALYTIC-0007",
+  "topic": "Exact periodic-tail rigidity and packet fixed-point dilation series, Taylor domains and dyadic pole orders",
+  "workspace": "C:/Users/LOCAL_USER/Documents/Erdos Strauss and related/collatz_reconstruction",
+  "corpus_entrypoint": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/Zeta-Function-Foundation/config/literature_index_entrypoint.json",
+  "updated_utc": "2026-09-04T16:43:16Z",
+  "mathematical_objects": [
+    "positive exponent compositions and affine fixed points",
+    "integral block recurrence z_(j+1)=3^m 2^(-A)z_j",
+    "rational two-state offset series F_m",
+    "formal q-adic linear dilation inverse",
+    "regularized dyadic dilation sum and explicit analytic tail bound"
+  ],
+  "queries": [
+    {
+      "query": "Collatz Mahler",
+      "layer": "all",
+      "index_level": "canonical",
+      "executed_utc": "2026-09-04T16:33:07Z",
+      "reason": "Exact source and neighboring terminology routing, limit four per layer. Only identified source passages are admitted reading; unrelated word matches are not mathematical edges.",
+      "result_unit_ids": [
+        "PUBUNIT-F23441CFF110FE9440B792FF",
+        "PUBUNIT-682078875A2690F2E57BAF7E",
+        "PUBUNIT-63B411C31EC8706D6DBBCE8B",
+        "PUBUNIT-CCA8D54E7421E785241E17C9",
+        "PUBUNIT-004F3DB5D12B4A71C77EDE18",
+        "PUBUNIT-CF4FD708E6C6DE523385FD85"
+      ]
+    },
+    {
+      "query": "Lambert series",
+      "layer": "all",
+      "index_level": "canonical",
+      "executed_utc": "2026-09-04T16:33:08Z",
+      "reason": "Exact source and neighboring terminology routing, limit four per layer. Only identified source passages are admitted reading; unrelated word matches are not mathematical edges.",
+      "result_unit_ids": [
+        "PUBUNIT-07CE8EF9B5E9B0D3E79D5E69",
+        "PUBUNIT-001E75515AF8FB010ED3F0C3",
+        "PUBUNIT-97ED6323F816024A43466E60",
+        "PUBUNIT-01A3D3ADFA75217E3C59E900",
+        "PUBUNIT-CF4FD708E6C6DE523385FD85",
+        "PUBUNIT-004F3DB5D12B4A71C77EDE18"
+      ]
+    },
+    {
+      "query": "odd step orbit packets",
+      "layer": "all",
+      "index_level": "canonical",
+      "executed_utc": "2026-09-04T16:33:09Z",
+      "reason": "Exact source and neighboring terminology routing, limit four per layer. Only identified source passages are admitted reading; unrelated word matches are not mathematical edges.",
+      "result_unit_ids": [
+        "PUBUNIT-BD982BCE2D4ECC2FA5519C9C",
+        "PUBUNIT-DFB7B5B3DBB8D1EDE71D8F7A",
+        "PUBUNIT-7B76FE922BB4531367A62429",
+        "PUBUNIT-924E873BF512632C00D0BFE2",
+        "PUBUNIT-CF4FD708E6C6DE523385FD85",
+        "PUBUNIT-438CC647B15CADA2BEB230B6",
+        "PUBUNIT-B08DF95062442C8D54C7D427",
+        "PUBUNIT-07AB44D69B57F012DF508607"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_class": "local_unpublished_work",
+      "publication_unit_or_source_id": "PUBUNIT-CF4FD708E6C6DE523385FD85",
+      "exact_locators": [
+        "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/automata/V5/odd_step_collatz_orbit_packets_note.tex:1902-2003,2990-3424",
+        "C:/Users/LOCAL_USER/Documents/Erdos Strauss and related/ES-Fable-C123-support/external_sources/combined_live_theorem_package_dependencies/odd_step_collatz_orbit_packets_note.pdf:30,50-51",
+        "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/automata/V5/odd_step_collatz_orbit_packets_note.pdf:31,52"
+      ],
+      "relevance_edge": "The same C(p), c(p), fixed-point coordinates and positive packet define the integer-tail recurrence and analytic family; no vocabulary-only interface is used.",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-04T16:43:16Z",
+        "relevant_sections": [
+          "9 Eventual periodic exponent tails",
+          "15 Fixed-point generating function and its Mahler equation",
+          "16 Packet total offsets and recognizable rational series",
+          "17 Packet fixed-point sum series"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "Root: complete TeX1902-2003 and2990-3424; raw176-218,432-475; controllingPDF30,50,51 visually",
+        "Independent witness reviewer: controllingPDF2,3,7,29-31,47,48,50,51; indexedPDF3,4,9,30-32,48,49,52"
+      ],
+      "dependencies": [],
+      "claim_or_proof_crosswalk_ids": [
+        "CLM-COL-000196",
+        "CLM-COL-000197",
+        "CLM-COL-000198",
+        "CLM-COL-000199",
+        "MOR-COL-000071"
+      ],
+      "notes": "Witness-specific defects at indexedTeX1977 and3376 occur in both PDFs. Raw general formal equation omits the faulty analytic-domain phrase. The all-m continuation/pole classification is a proved consequence, with no priority claim. See two independent audit reports."
+    }
+  ],
+  "unresolved_dependencies": [
+    {
+      "dependency": "Complete local analytic-family literature and prior-note crosswalk",
+      "reason_unresolved": "The current derivations are self-contained and source-anchored; query absence and inspected passages do not prove novelty or whole-literature coverage. Older dyadic note routed but not yet compared in full.",
+      "next_bounded_query_or_read": "Read the exact earlier local dyadic-note analytic sections before making any lineage or novelty claim."
+    }
+  ],
+  "refresh_reason": "Direct raw affine content reading located the correct rational/formal family and a false general Taylor domain; repair without changing coefficients, then construct all-m continuation explicitly.",
+  "anti_loop_note": "No index rebuild. Query tool live hash differs from contract's old script pin; direct source files control mathematics, no matching query-script pin claimed."
+}

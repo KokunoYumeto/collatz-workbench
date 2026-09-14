@@ -1,0 +1,671 @@
+\section{Rising-continuity, frames, and products of F-series}
+\label{sec:rising-fseries}
+
+The 2022 dissertation, the 2023 paper on variable topologies, and the 2025
+paper on products all study series whose target topology depends on the input
+digit sequence.  The stable core is: canonical truncation limits,
+point-selected completions (frames), digit-multiplicative F-series, and
+finite-level Fourier recursions.  Several Banach-algebra and product-of-
+distributions conclusions in the sources require repairs recorded below.
+
+\subsection{Rising-continuity}
+
+Let $p$ be prime, let $K$ be a complete nonarchimedean field, and let
+$f:\Z_p\to K$.
+
+\begin{definition}[rising-continuity]
+The function $f$ is \emph{rising-continuous} when
+\begin{equation}
+\label{eq:rising-continuity}
+ f(z)=\lim_{N\to\infty}f([z]_{p^N})
+ \qquad(z\in\Z_p).
+\end{equation}
+Write $\widetilde C(\Z_p,K)$ for the class of such functions.
+\end{definition}
+
+For an arbitrary function $f:\Z_p\to K$, define the source's level
+differences by
+\begin{align}
+ (\nabla_{p^0}f)(z)&=f(0),\label{eq:del-zero}\\
+ (\nabla_{p^N}f)(z)
+ &=f([z]_{p^N})-f([z]_{p^{N-1}}),
+ &&N\geq1,\label{eq:del-positive}
+\end{align}
+and its extended del quantity by
+\begin{equation}
+\label{eq:del-norm}
+ \|f\|_{\nabla}
+ =\sup_{N\geq0}\sup_{z\in\Z_p}|(\nabla_{p^N}f)(z)|_K
+ \in[0,\infty].
+\end{equation}
+
+\begin{proposition}[the exact domain of the del norm]
+\label{prop:del-norm-domain}
+If $f\in\widetilde C(\Z_p,K)$, then
+\begin{equation}
+\label{eq:del-equals-sup}
+ \|f\|_{\nabla}=\sup_{z\in\Z_p}|f(z)|_K
+\end{equation}
+as an equality in $[0,\infty]$.  Consequently
+\[
+ \widetilde C_b(\Z_p,K)
+ :=\{f\in\widetilde C(\Z_p,K):\|f\|_\nabla<\infty\}
+\]
+is precisely the bounded rising-continuous class, and it is a Banach space
+under $\|\cdot\|_\nabla$.
+\end{proposition}
+
+\begin{proof}
+For every $N$ and $z$, the ultrametric inequality bounds
+$|(\nabla_{p^N}f)(z)|_K$ by $\sup_w|f(w)|_K$, including $N=0$.  Conversely,
+the finite telescoping identity
+\[
+ f([z]_{p^N})=\sum_{h=0}^N(\nabla_{p^h}f)(z)
+\]
+and the ultrametric inequality give
+$|f([z]_{p^N})|_K\leq\|f\|_\nabla$.  Rising-continuity and continuity of
+the absolute value let $N\to\infty$, proving the reverse inequality in
+\cref{eq:del-equals-sup}.  Thus the two finite norms agree.  Bounded
+$K$-valued functions are complete under the supremum norm.  If $(f_m)$ is a
+uniformly Cauchy sequence of bounded rising-continuous functions with uniform
+limit $f$, then for fixed $z$ the ultrametric estimate
+\[
+ |f(z)-f([z]_{p^N})|_K
+ \leq\max\{|f(z)-f_m(z)|_K,
+            |f_m(z)-f_m([z]_{p^N})|_K,
+            |f_m([z]_{p^N})-f([z]_{p^N})|_K\}
+\]
+first becomes small by choosing $m$ and then $N$.  Hence $f$ is
+rising-continuous, so the displayed subspace is closed and complete.
+\end{proof}
+
+Every continuous function is rising-continuous because
+$[z]_{p^N}\to z$ in $\Z_p$.  The converse is false: the condition tests one
+distinguished convergent sequence at each point, not every convergent
+sequence.  For every odd prime $q$, the shortened numen
+$\chi_q:\Z_2\to\Z_q$ is the principal example (the preceding definition with
+$p=2$ and $K=\Q_q$): it is rising-continuous everywhere but discontinuous at
+each nonnegative integer.
+
+Define the truncation of $f$ at level $N$ by
+\begin{equation}
+\label{eq:function-truncation}
+ f_N(z)=f([z]_{p^N})
+ =\sum_{k=0}^{p^N-1}f(k)\ind{z\equiv k\pmod{p^N}}.
+\end{equation}
+
+\begin{proposition}[pointwise versus uniform truncation]
+\label{prop:rising-vs-continuous}
+For an arbitrary $f:\Z_p\to K$:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $f_N\to f$ pointwise if and only if $f$ is rising-continuous;
+\item $f_N\to f$ uniformly if and only if $f$ is continuous.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Part (i) is the definition.  Every $f_N$ is locally constant and hence
+continuous, so a uniform limit is continuous.  Conversely, a continuous
+function on compact $\Z_p$ is uniformly continuous.  Since
+$|z-[z]_{p^N}|_p\leq p^{-N}$ uniformly in $z$, uniform continuity gives
+$\sup_z|f(z)-f_N(z)|\to0$.
+\end{proof}
+
+\subsection{Van der Put paths}
+
+Set $\lambda_p(0)=0$ and
+\[
+ \lambda_p(n)=1+\lfloor\log_p n\rfloor\qquad(n\geq1).
+\]
+For $n\geq1$, let $n^-$ be the integer obtained by deleting the highest
+nonzero base-$p$ digit of $n$.  Define
+\begin{align}
+ v_0(z)&=1,\\
+ v_n(z)&=\ind{z\equiv n\pmod{p^{\lambda_p(n)}}},\qquad n\geq1,\label{eq:vdp-basis}\\
+ c_0(f)&=f(0),\\
+ c_n(f)&=f(n)-f(n^-),\qquad n\geq1.
+\end{align}
+
+\begin{theorem}[rising van der Put representation]
+\label{thm:rising-vdp}
+A function $f:\Z_p\to K$ is rising-continuous if and only if
+\begin{equation}
+\label{eq:rising-vdp}
+ f(z)=\sum_{n=0}^{\infty}c_n(f)v_n(z)
+\end{equation}
+converges at every $z$.  Equivalently, along every truncation path,
+\begin{equation}
+\label{eq:vdp-path-condition}
+ c_{[z]_{p^N}}(f)\,ind{\lambda_p([z]_{p^N})=N}
+ \longrightarrow0.
+\end{equation}
+The expansion is unique.
+\end{theorem}
+
+\begin{proof}
+At a fixed $z$, exactly one possible new van der Put ball appears when the
+$N$th digit is nonzero: its index is $[z]_{p^N}$ and its coefficient is the
+difference between two successive effective truncation values.  Therefore
+the partial sum through level $N$ telescopes to $f([z]_{p^N})$.  In a
+complete nonarchimedean field, the path series converges exactly when its
+terms tend to zero, giving \cref{eq:vdp-path-condition}; its sum is $f(z)$
+exactly when \cref{eq:rising-continuity} holds.  Evaluation successively on
+the nested balls recovers every coefficient, proving uniqueness.
+\end{proof}
+
+\begin{corollary}[unique rising continuation]
+\label{cor:unique-rising-continuation}
+Let $g:\N_0\to K$.  A rising-continuous extension to $\Z_p$ exists if and
+only if $g([z]_{p^N})$ converges in $K$ for every $z\in\Z_p$.  When it exists
+it is unique and equals
+\[
+ \widetilde g(z)=\lim_{N\to\infty}g([z]_{p^N}).
+\]
+\end{corollary}
+
+\begin{proof}
+If a rising-continuous extension $f$ exists, then
+$g([z]_{p^N})=f([z]_{p^N})\to f(z)$ for every $z$, so the displayed limit is
+necessary and determines $f$ uniquely.  Conversely, suppose every displayed
+limit exists and use it to define $\widetilde g$.  If $m\in\N_0$, then
+$[m]_{p^N}=m$ for all sufficiently large $N$, hence
+$\widetilde g(m)=g(m)$.  Therefore
+\[
+ \widetilde g([z]_{p^N})=g([z]_{p^N})\longrightarrow\widetilde g(z),
+\]
+which is exactly rising-continuity.  Thus $\widetilde g$ is the required
+extension, and the necessity argument already proved uniqueness.
+\end{proof}
+
+This is the precise uniqueness condition missing from several functional-
+equation statements in the 2026 manual: uniqueness on $\N_0$ does not by
+itself imply uniqueness on all infinite digit strings, but rising-continuity
+does.
+
+\subsection{Frames: a topology selected at each point}
+
+Let $F$ be a global field and let $\operatorname{Comp}(F)$ denote a chosen
+collection of complete valued extensions of $F$.
+
+\begin{definition}[frame]
+An $F$-\emph{frame} on a set $X$ is a map
+\[
+ \mathcal F:X\to\operatorname{Comp}(F).
+\]
+A function $f$ is compatible with $\mathcal F$ when
+$f(x)\in\mathcal F(x)$ for every $x$.  A sequence $f_N$ converges to $f$ in
+the frame when
+\begin{equation}
+\label{eq:frame-convergence}
+ f_N(x)\longrightarrow f(x)\quad\text{in }\mathcal F(x)
+ \qquad(x\in X).
+\end{equation}
+\end{definition}
+
+Thus a frame is not one exotic topology on a disjoint union.  It is a rule
+for which ordinary completion is to judge convergence at each input.
+Pointwise sums and products of compatible functions are meaningful because
+both operands at a fixed point lie in the same selected field.
+
+The standard two-place example in the body of the 2023 paper uses complex
+convergence on $\N_0$ and $q$-adic convergence on
+$\Z_p\setminus\N_0$.  Its abstract describes the assignments in the opposite
+order; the body definition controls this edition.
+
+\begin{sourceissue}[an unrestricted frame function need not have a sup norm]
+One source proposition declares all functions from compact $X$ to a complete
+field to be a Banach space under the supremum norm.  Compactness bounds
+continuous functions, not arbitrary functions.  The statement becomes
+valid after restricting to bounded functions (and proving completeness
+pointwise plus uniformly), or to continuous functions in a fixed target.
+The same issue reappears in the dissertation's proposed Banach algebra of all
+rising-continuous functions: rising-continuity alone does not imply
+boundedness or finiteness of the displayed ``del'' norm.
+\end{sourceissue}
+
+\subsection{Digit-multiplicative F-series}
+
+For a digit prefix of fixed length $N$, use the padded count
+\begin{equation}
+\label{eq:padded-count}
+ \#^{(N)}_{p:j}(z)=\#\{0\leq h<N:d_h(z)=j\}.
+\end{equation}
+This count includes high zero digits.  The ordinary digit count of the
+integer $[z]_{p^N}$ silently discards them and is not interchangeable with
+\cref{eq:padded-count} when a zero-digit multiplier occurs.
+
+Fix a complete valued field $E$ containing nonzero parameters
+$d,q_0,\ldots,q_{p-1}$.  For $z\in\Z_p$, put
+\[
+ u_N(z)=d^{-N}\prod_{j=0}^{p-1}
+ q_j^{\#^{(N)}_{p:j}(z)},
+ \qquad
+ D_E=\left\{z\in\Z_p:\sum_{N\geq0}u_N(z)
+                       \text{ converges in }E\right\}.
+\]
+Define the $E$-valued F-series on its exact convergence domain by
+\begin{equation}
+\label{eq:general-F-series}
+ S^E_{d;\mathbf q}:D_E\longrightarrow E,
+ \qquad S^E_{d;\mathbf q}(z)=\sum_{N=0}^{\infty}u_N(z).
+\end{equation}
+ For $0\leq k<p$, the digit identity
+\[
+ \#^{(N+1)}_{p:j}(pz+k)
+ =\#^{(N)}_{p:j}(z)+\ind{j=k}
+\]
+gives the termwise tail identity
+\[
+ u_{N+1}(pz+k)=\frac{q_k}{d}u_N(z).
+\]
+Since $q_k/d\ne0$, it follows without an unstated convergence condition that
+$pz+k\in D_E$ if and only if $z\in D_E$, and on this common domain
+\begin{equation}
+\label{eq:F-series-FE}
+ S^E_{d;\mathbf q}(pz+k)=1+\frac{q_k}{d}S^E_{d;\mathbf q}(z).
+\end{equation}
+A frame may select a different completion at different inputs, but an
+identity comparing $z$ with $pz+k$ is typed only after both values are placed
+in one specified field $E$ (or after a specified identification of their
+target fields).
+
+The primitive numen series \cref{eq:partial-F-series} is the affine version:
+its $N$th term contains a digit-dependent translation $c_{d_N}$ and the
+ordered product of all earlier linear multipliers.  Fix a complete valued
+field $E$ and scalars $a_0,\ldots,a_{p-1},b_0,\ldots,b_{p-1}\in E$.  In this
+scalar commuting case put
+\[
+ D_X=\left\{z\in\Z_p:
+ \sum_{N=0}^{\infty}b_{d_N(z)}
+  \prod_{h=0}^{N-1}a_{d_h(z)}\text{ converges in }E\right\}
+\]
+and define
+\begin{equation}
+\label{eq:scalar-affine-F-series}
+ X:D_X\longrightarrow E,\qquad
+ X(z)=\sum_{N=0}^{\infty}b_{d_N(z)}
+ \prod_{j=0}^{p-1}a_j^{\#^{(N)}_{p:j}(z)}.
+\end{equation}
+For $0\leq k<p$ and $z\in D_X$ one has $pz+k\in D_X$ and
+\begin{equation}
+\label{eq:scalar-affine-FE}
+ X(pz+k)=a_kX(z)+b_k.
+\end{equation}
+Conversely, if $a_k\ne0$, then $pz+k\in D_X$ implies $z\in D_X$.
+Indeed, the zeroth summand at $pz+k$ is $b_k$, and its summand of index
+$N+1$ is $a_k$ times the summand of index $N$ at $z$.  Thus convergence in
+the forward direction is automatic even when $a_k=0$, while division by
+$a_k$ in the converse is valid exactly under the displayed nonvanishing
+hypothesis.
+
+For the Collatz numen, the 2023 paper writes the useful frame identity
+\begin{equation}
+\label{eq:chi3-F-series}
+ \chi_3(z)=-\frac12+\frac14
+ \sum_{N=0}^{\infty}\frac{3^{\#^{(N)}_{2:1}(z)}}{2^N}.
+\end{equation}
+On nonnegative integers the right side is read archimedeanly; on
+$\Z_2\setminus\N_0$ it is read $3$-adically.  This differing-codomain
+identity does not follow from \cref{cor:unique-rising-continuation}, whose
+domain and codomain are fixed.  It follows directly from one finite identity.
+Indeed, write
+\[
+ A_N(z)=\frac{3^{\#^{(N)}_{2:1}(z)}}{2^N},
+ \qquad S_N(z)=\sum_{h=0}^{N-1}A_h(z),
+\]
+and let $d_h(z)\in\{0,1\}$ be the $h$th digit.  The $N$-digit numen partial
+sum is
+\[
+ \chi_{3,N}(z)=\frac12\sum_{h=0}^{N-1}d_h(z)A_h(z).
+\]
+Since $A_{h+1}=(\frac12+d_h)A_h$ and $A_0=1$, telescoping gives the exact
+finite relation
+\begin{equation}
+\label{eq:chi3-finite-frame-identity}
+ \chi_{3,N}(z)=\frac14S_N(z)-\frac12+\frac12A_N(z).
+\end{equation}
+If $z\in\N_0$, its one-count is eventually constant and $A_N(z)\to0$ in
+$\R$.  If $z\in\Z_2\setminus\N_0$, its binary expansion has infinitely many
+one digits, so $|A_N(z)|_3=3^{-\#^{(N)}_{2:1}(z)}\to0$.  In the first case
+$\chi_{3,N}(z)$ is eventually the finite numen value; in the second it
+converges in $\Q_3$ by the primitive numen series.  Passing to the limit in
+\cref{eq:chi3-finite-frame-identity} proves
+\cref{eq:chi3-F-series} separately in the stated completion at every input.
+
+\begin{sourceissue}[pointwise convergence claim in the 2023 paper]
+One necessity proof chooses a general nonnatural input and then replaces it
+by $z=-1$.  That proves a global obstruction, not the asserted pointwise
+necessity for the original digit sequence.  Placewise convergence should be
+checked from the actual prefix products, as in
+\cref{prop:numen-pointwise-convergence}, rather than from that substitution.
+\end{sourceissue}
+
+\subsection{Products and the exact finite recursion}
+
+Let $R$ be a commutative ring with identity, let
+$a_{j,k},b_{j,k}\in R$, and let
+$X_1,\ldots,X_d:\Z_p\to R$ be degree-one digit-recursive functions
+satisfying
+\begin{equation}
+\label{eq:degree-one-recursion}
+ X_j(pz+k)=a_{j,k}X_j(z)+b_{j,k}
+ \qquad(1\leq j\leq d,\ 0\leq k<p).
+\end{equation}
+For a multi-index $\mathbf n=(n_1,\ldots,n_d)\in\N_0^d$, put
+\[
+ X_{\mathbf n}=\prod_{j=1}^dX_j^{n_j}.
+\]
+If $\mathbf m\leq\mathbf n$ coordinatewise, define
+\begin{align}
+ \binom{\mathbf n}{\mathbf m}&=\prod_j\binom{n_j}{m_j},\\
+ a_{\mathbf m,k}&=\prod_ja_{j,k}^{m_j},\\
+ b_{\mathbf n-\mathbf m,k}&=\prod_jb_{j,k}^{n_j-m_j},\\
+ r_{\mathbf m,\mathbf n,k}
+ &=\binom{\mathbf n}{\mathbf m}
+   a_{\mathbf m,k}b_{\mathbf n-\mathbf m,k}.
+\end{align}
+
+\begin{proposition}[multinomial branch recursion]
+\label{prop:product-branch-recursion}
+For every $k$,
+\begin{equation}
+\label{eq:product-branch-recursion}
+ X_{\mathbf n}(pz+k)
+ =\sum_{\mathbf m\leq\mathbf n}
+ r_{\mathbf m,\mathbf n,k}X_{\mathbf m}(z).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Raise each equation in \cref{eq:degree-one-recursion} to the power $n_j$,
+expand by the binomial theorem, multiply over $j$, and collect the term with
+multi-index $\mathbf m$.
+\end{proof}
+
+This finite algebraic identity is independent of every limiting assumption
+in the 2025 paper.
+
+\subsection{Finite Fourier recursion and formal solutions}
+
+Fix through the end of \cref{prop:finite-transform-limit} a complete
+nonarchimedean field $K$ of residue
+characteristic $q\ne p$, a compatible system of $p$-power roots of unity,
+and the normalized $K$-valued Haar integral of
+\cref{sec:pq-fourier}.  Assume the branch parameters and the functions under
+transformation are $K$-valued.  A point-varying frame by itself is not a
+single coefficient field in which Fourier sums can be added.
+
+Let
+\begin{equation}
+\label{eq:alpha-product}
+ \alpha_{\mathbf m,\mathbf n}(t)
+ =\frac1p\sum_{k=0}^{p-1}
+ r_{\mathbf m,\mathbf n,k}\langle-t,k\rangle,
+ \qquad
+ \alpha_{\mathbf n}=\alpha_{\mathbf n,\mathbf n}.
+\end{equation}
+Fix $\mathbf n$ and assume explicitly that
+$X_{\mathbf m}\in C(\Z_p,K)$ for every $\mathbf m\leq\mathbf n$.  Then all
+Fourier transforms below are the normalized Haar integrals of
+\cref{eq:pq-Fourier}.  The substitution
+$x=pz+k:\Z_p\xrightarrow{\sim}k+p\Z_p$ gives
+\[
+ \int_{k+p\Z_p}f(x)\,dx
+ =\frac1p\int_{\Z_p}f(pz+k)\,dz
+\]
+for continuous $f$.  Applying this identity to
+$f(x)=X_{\mathbf n}(x)\langle-t,x\rangle$, using
+\cref{eq:product-branch-recursion}, and interchanging only finite sums gives
+\begin{equation}
+\label{eq:product-Fourier-recursion}
+ \widehat X_{\mathbf n}(t)
+ =\sum_{\mathbf m\leq\mathbf n}
+ \alpha_{\mathbf m,\mathbf n}(t)
+ \widehat X_{\mathbf m}(pt).
+\end{equation}
+At finite truncation level the identity is exact before any limiting
+integrability claim, but it has a necessary one-level shift.  Put
+\[
+ X_{j,N}(z)=X_j([z]_{p^N}),\qquad
+ X_{\mathbf n,N}(z)=\prod_{j=1}^dX_{j,N}(z)^{n_j}.
+\]
+Then
+\begin{equation}
+\label{eq:finite-product-Fourier-recursion}
+ \widehat X_{\mathbf n,N+1}(t)
+ =\sum_{\mathbf m\leq\mathbf n}
+ \alpha_{\mathbf m,\mathbf n}(t)\widehat X_{\mathbf m,N}(pt).
+\end{equation}
+Indeed, $[pz+k]_{p^{N+1}}=p[z]_{p^N}+k$.  More generally, for
+$f_N(z)=f([z]_{p^N})$,
+\begin{equation}
+\label{eq:finite-truncation-transform}
+ \widehat f_N(t)=
+ \frac{\ind{p^Nt=0}}{p^N}
+ \sum_{r=0}^{p^N-1}f(r)\langle-t,r\rangle.
+\end{equation}
+
+At $t=0$, separate the diagonal term in
+\cref{eq:product-Fourier-recursion}:
+\begin{equation}
+\label{eq:formal-mean-equation}
+ (1-\alpha_{\mathbf n}(0))\widehat X_{\mathbf n}(0)
+ =\sum_{\mathbf m<\mathbf n}
+ \alpha_{\mathbf m,\mathbf n}(0)\widehat X_{\mathbf m}(0).
+\end{equation}
+
+\begin{proposition}[formal compatibility classification]
+\label{prop:formal-compatibility}
+Assume the lower-degree transforms are fixed.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item If $\alpha_{\mathbf n}(0)\ne1$, the formal recursion has a unique
+      value at $0$, and hence a unique value at every $t\in\Gamma_p$ by
+      repeated use of \cref{eq:product-Fourier-recursion} until $p^Nt=0$.
+\item If $\alpha_{\mathbf n}(0)=1$ and the right side of
+      \cref{eq:formal-mean-equation} is nonzero, no formal solution exists.
+\item If $\alpha_{\mathbf n}(0)=1$ and that right side is zero, the value
+      $\widehat X_{\mathbf n}(0)$ is free and the solutions form a
+      one-dimensional affine family.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\Cref{eq:formal-mean-equation} gives the three alternatives at
+$0$.  Every $t\in\Gamma_p$ has $p$-power order, so $p^Nt=0$ for some $N$;
+running \cref{eq:product-Fourier-recursion} backward from that terminal value
+determines all other values.
+\end{proof}
+
+The paper calls the locus $\alpha_{\mathbf n}(0)=1$ a breakdown locus.
+\Cref{prop:formal-compatibility} shows why breakdown does not automatically
+mean nonexistence: the compatibility sum decides between no solution and an
+affine family.
+
+\subsection{M-functions and limits}
+
+For scalar branch multipliers $r_0,\ldots,r_{p-1}\in K^\times$, the associated
+M-function is the prefix cocycle
+\begin{equation}
+\label{eq:M-function}
+ M_N(z)=\prod_{h=0}^{N-1}r_{d_h(z)}
+ =r_0^N\prod_{j=1}^{p-1}\left(\frac{r_j}{r_0}\right)^{
+ \#^{(N)}_{p:j}(z)}.
+\end{equation}
+It satisfies
+\[
+ M_{N+L}(z)=M_N(z)M_L(\sh^{\circ N}z).
+\]
+These cocycles are the proposed majorants for passing from
+\cref{eq:finite-truncation-transform} to a framewise distributional limit.
+
+Before stating the exact limit consequence, set
+\begin{align*}
+ \mathcal S(\Z_p,K)
+ &=\{\phi:\Z_p\to K:\phi\text{ is locally constant modulo }p^N
+       \text{ for some }N\},\\
+ \mathcal S(\Z_p,K)'
+ &=\operatorname{Hom}_K(\mathcal S(\Z_p,K),K).
+\end{align*}
+
+\begin{proposition}[the exact consequence of transform convergence]
+\label{prop:finite-transform-limit}
+Fix $\mathbf n$.  Suppose that for every $\mathbf m\leq\mathbf n$ and every
+$t\in\Gamma_p$ the limit
+\[
+ A_{\mathbf m}(t)=\lim_{N\to\infty}
+ \widehat X_{\mathbf m,N}(t)
+\]
+exists in the fixed complete field $K$.  Then
+\begin{equation}
+\label{eq:limit-product-Fourier-recursion}
+ A_{\mathbf n}(t)=
+ \sum_{\mathbf m\leq\mathbf n}
+ \alpha_{\mathbf m,\mathbf n}(t)A_{\mathbf m}(pt)
+ \qquad(t\in\Gamma_p).
+\end{equation}
+Moreover, every function $A:\Gamma_p\to K$ defines a unique algebraic
+distribution $T_A\in\mathcal S(\Z_p,K)'$ by
+\begin{equation}
+\label{eq:formal-Fourier-distribution}
+ \langle T_A,\phi\rangle
+ =\sum_{t\in\Gamma_p}\widehat\phi(t)A(-t),
+ \qquad \phi\in\mathcal S(\Z_p,K),
+\end{equation}
+where the sum is finite.  With the Fourier sign of
+\cref{eq:pq-Fourier}, this convention gives
+$\langle T_A,\langle-t,\cdot\rangle\rangle=A(t)$.  In particular, if
+\[
+ \langle\mu_{\mathbf m,N},\phi\rangle
+ =\int_{\Z_p}X_{\mathbf m,N}(z)\phi(z)\,dz,
+\]
+then $\mu_{\mathbf m,N}\to T_{A_{\mathbf m}}$ pointwise on
+$\mathcal S(\Z_p,K)$ for every $\mathbf m\leq\mathbf n$.
+\end{proposition}
+
+\begin{proof}
+Take $N\to\infty$ in
+\cref{eq:finite-product-Fourier-recursion}.  Its sum over
+$\mathbf m\leq\mathbf n$ is finite, so convergence of the displayed terms is
+all that is required and yields
+\cref{eq:limit-product-Fourier-recursion}.  Every locally constant test
+function has a unique finite character expansion
+$\phi(z)=\sum_t\widehat\phi(t)\langle t,z\rangle$ by finite Fourier
+inversion.  Hence \cref{eq:formal-Fourier-distribution} is a well-defined
+$K$-linear functional, and evaluating it on the character
+$\langle-t,\cdot\rangle$ proves the final identity and uniqueness.  Finally,
+finite Fourier inversion for $\phi$ gives
+\[
+ \langle\mu_{\mathbf m,N},\phi\rangle
+ =\sum_t\widehat\phi(t)\widehat X_{\mathbf m,N}(-t),
+\]
+where the sum is finite.  Termwise passage to the limit is therefore exact
+and yields \cref{eq:formal-Fourier-distribution} with
+$A=A_{\mathbf m}$.
+\end{proof}
+
+\begin{status}[conditional analytic theorem in the 2025 paper]
+The paper explicitly introduces a Main Limit Assumption before asserting
+that the formal Fourier data are realized by frame-quasi-integrable products.
+\Cref{prop:finite-transform-limit} isolates exactly what follows if all of
+the required finite-transform limits exist in one fixed completion.
+
+The later Main Limit Lemma proposes sufficient conditions in terms of strong
+frame summability of $M_N$, uniform control of shifted $X$, and
+$(\mathcal F,M)$-type decay.  The printed proof does not establish those
+sufficient conditions, so the ensuing base case, induction, power theorem,
+and main product corollary remain conditional.
+\end{status}
+
+\subsection{Test functions, distributions, and what the product means}
+
+More generally, for a commutative coefficient ring $R$ with identity, let
+\begin{align}
+ \mathcal S(\Z_p,R)
+ &=\{\phi:\Z_p\to R:\phi\text{ is locally constant modulo }p^N
+       \text{ for some }N\},\\
+ \mathcal S(\Z_p,R)'&=\operatorname{Hom}_R(\mathcal S(\Z_p,R),R).
+\end{align}
+The second module is the algebraic space of $(p,R)$-adic distributions.  If
+$\mu$ is a distribution and $\phi$ a test function, multiplication by a test
+function is unambiguous:
+\[
+ \langle\phi\mu,\psi\rangle
+ =\langle\mu,\phi\psi\rangle
+ \qquad\bigl(\psi\in\mathcal S(\Z_p,R)\bigr).
+\]
+Here the distribution occupies the first slot and the test function the
+second.  This convention is used throughout the subsection.
+Products of two arbitrary distributions are not defined by this rule.
+
+\begin{sourceissue}[the product algebra is transported, not intrinsic]
+The 2025 paper defines, for its designated family,
+\[
+ (X^m(z)\,dz)(X^n(z)\,dz):=X^{m+n}(z)\,dz
+\]
+and defines the corresponding ``convolution powers'' to be the recursively
+constructed formal Fourier data.  The exact formal object is the polynomial
+algebra $R[T]$, with $T^n$ labelled by the symbol $[X^n(z)\,dz]$ and with
+$T^mT^n=T^{m+n}$.  This construction exists without realizing any symbol as
+a distribution.
+
+Suppose separately that distributions
+$\mu_n\in\mathcal S(\Z_p,R)'$ have actually been constructed for the named
+symbols, and define the $R$-linear realization map
+\[
+ \Phi:R[T]\longrightarrow\mathcal S(\Z_p,R)',
+ \qquad \Phi\!\left(\sum_na_nT^n\right)=\sum_na_n\mu_n.
+\]
+The rule
+\begin{equation}
+\label{eq:transported-product-rule}
+ \mu_m\mathbin\odot\mu_n:=\mu_{m+n}
+\end{equation}
+descends to a well-defined multiplication on $\operatorname{im}\Phi$ if and
+only if $\ker\Phi$ is an ideal of $R[T]$.  Indeed, well-defined descent is
+equivalent to
+$\Phi(f)=\Phi(f')\Rightarrow\Phi(fg)=\Phi(f'g)$ for every $g$, which is
+equivalent to closure of $\ker\Phi$ under multiplication by every
+polynomial.  When this holds, the realized algebra is canonically
+$R[T]/\ker\Phi$; when $\Phi$ is injective it is the polynomial algebra
+itself.  If $\ker\Phi$ is not an ideal, the declaration
+\cref{eq:transported-product-rule} depends on the chosen polynomial
+representative and is not a product on the image.
+
+The paper also warns that ordinary convolution of its Fourier data generally
+diverges.  The formal product above is therefore not a proof that arbitrary
+distributions possess pointwise products, nor that standard Fourier
+convolution realizes the declared multiplication.
+\end{sourceissue}
+
+\subsection{Failure and repair ledger for the product paper}
+
+The following defects affect theorem status rather than notation alone.
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item Haar probability of a residue class modulo $p^N$ is printed in two
+      places as $1/p$; it is $p^{-N}$.  The corresponding finite character
+      expansion needs the same correction.
+\item In the archimedean Wiener algebra, absolutely summable Fourier
+      coefficients must carry the $\ell^1$ norm
+      $\sum_t|\widehat f(t)|$, not the coefficient supremum norm printed in
+      the paper.
+\item The Main Limit Lemma repeatedly infers that a positive sequence tending
+      to zero is monotone on a tail, and that a tail sum is
+      $O$ of its first term.  Neither follows from convergence or from a root
+      bound.  The base case also uses the false estimate $Na_N=O(a_N)$.
+\item The localization $R[(1-a_0)^{-1}]$ can be quotiented by an ideal $I$
+      only after requiring $I$ to be disjoint from every power of
+      $1-a_0$; the weaker printed condition $1-a_0\notin I$ does not suffice.
+      A fraction field of the quotient additionally requires a domain, for
+      example a prime ideal.  Multivariable polynomial localizations are not
+      Dedekind domains in dimension greater than one.
+\item A final corollary says a breakdown index gives no solution for any
+      initial data, contradicting the compatible affine-family case already
+      proved in the paper and restated in
+      \cref{prop:formal-compatibility}.
+\end{enumerate}
+
+A repair programme must first correct Haar and Wiener normalization, impose
+domain-safe localization hypotheses, replace the false monotonicity steps by
+a genuine monotone majorant or regular-variation estimate, and prove rising
+continuity of the proposed limits.  Only then can the analytic product and
+inversion conclusions be promoted from conditional claims.

@@ -1,0 +1,72 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  pdftitle={Exact Residue Coordinates, Path Cocycles, and Sieve Certificates for Collatz-Type Maps},
+  pdfauthor={Kokuno Yumeto},
+  pdfsubject={Collatz research programme, exact affine coordinates, sieve certificates}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{certificate}[theorem]{Finite certificate}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{nonclaim}[theorem]{Explicit nonclaim}
+
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Nzero}{\mathbb N_0}
+\newcommand{\Npos}{\mathbb N_{>0}}
+\newcommand{\vtwo}{\nu_2}
+\newcommand{\T}{\mathcal T}
+
+\title{Exact Residue Coordinates, Path Cocycles, and Sieve Certificates\\
+\large A Research Programme for Collatz-Type Maps}
+\author{Kokuno Yumeto}
+\date{Live research programme -- no completion claim}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document is the separately authored research layer accompanying a
+source-faithful Collatz critical reader.  It develops exact residue-cylinder
+coordinates for piecewise-affine integer maps, proves the resulting uniform
+descent and coalescence criteria, and isolates a finite theorem validating the
+recursive high-coordinate test used by a public $2^{34}$ sieve generator.
+It also proves that a printed generalized-map coordinate cannot be repaired by
+silently reducing modulo its displayed denominator. Every finite computation
+is stated at its exact certified scope; the point at which the current finite
+theorem stops is not promoted to a conjecture merely because further
+mathematics remains to be done.
+\end{abstract}
+
+\tableofcontents
+
+\input{chapters/00_status_and_scope}
+\input{chapters/01_residue_cylinders}
+\input{chapters/02_dyadic_uniformity}
+\input{chapters/03_recursive_sieve_semigroup}
+\input{chapters/04_record_tail_observable}
+\input{chapters/04_research_programme}
+\input{chapters/99_references}
+
+\end{document}

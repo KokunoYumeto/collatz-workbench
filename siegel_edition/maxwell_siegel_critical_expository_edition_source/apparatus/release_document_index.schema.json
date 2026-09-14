@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/maxwell-siegel/release-document-index.schema.json",
+  "title": "Portable release document-index record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "document_id",
+    "title",
+    "authors",
+    "version",
+    "public_identifiers",
+    "cited_locators"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "document_id": {"type": "string", "pattern": "^DOC-[0-9]{4}$"},
+    "title": {"$ref": "#/$defs/nonblank_string"},
+    "authors": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/nonblank_string"}
+    },
+    "version": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "type", "status", "date"],
+      "properties": {
+        "label": {"$ref": "#/$defs/nonblank_string"},
+        "type": {
+          "enum": [
+            "arxiv_version",
+            "arxiv_bannered_witness",
+            "withdrawal_record",
+            "published_book_chapter",
+            "published_journal_article",
+            "public_author_site_post",
+            "public_online_answer"
+          ]
+        },
+        "status": {
+          "enum": ["current", "public", "published", "withdrawn", "identity_unresolved"]
+        },
+        "date": {
+          "type": "string",
+          "pattern": "^[0-9]{4}(?:-[0-9]{2}-[0-9]{2}(?:T[0-9]{2}:[0-9]{2}:[0-9]{2}Z)?)?$"
+        },
+        "note": {"$ref": "#/$defs/nonblank_string"}
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "venue": {"$ref": "#/$defs/nonblank_string"},
+        "publisher": {"$ref": "#/$defs/nonblank_string"},
+        "editor": {"$ref": "#/$defs/nonblank_string"},
+        "year": {"type": "integer", "minimum": 1800, "maximum": 2100},
+        "series": {"$ref": "#/$defs/nonblank_string"},
+        "volume": {"$ref": "#/$defs/nonblank_string"},
+        "issue": {"$ref": "#/$defs/nonblank_string"},
+        "pages": {"type": "string", "pattern": "^[0-9]+(?:[-\u2013][0-9]+)?$"}
+      }
+    },
+    "witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["description", "sha256", "bytes"],
+      "properties": {
+        "description": {"$ref": "#/$defs/nonblank_string"},
+        "sha256": {"type": "string", "const": "fecb54070ee6e22766fd1bfe3f5975033957e2ec5c2d558b1e968d9b8b32b0f6"},
+        "bytes": {"type": "integer", "const": 426445}
+      }
+    },
+    "public_identifiers": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "value", "url"],
+        "properties": {
+          "kind": {"enum": ["arxiv", "doi", "url", "mathoverflow_answer", "bdim"]},
+          "value": {"$ref": "#/$defs/nonblank_string"},
+          "url": {"type": "string", "pattern": "^https://[^\\s]+$"}
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"kind": {"const": "arxiv"}}, "required": ["kind"]},
+            "then": {
+              "properties": {
+                "value": {"pattern": "^[0-9]{4}\\.[0-9]{4,5}v[0-9]+$"},
+                "url": {"pattern": "^https://arxiv\\.org/abs/[0-9]{4}\\.[0-9]{4,5}v[0-9]+$"}
+              }
+            }
+          },
+          {
+            "if": {"properties": {"kind": {"const": "doi"}}, "required": ["kind"]},
+            "then": {
+              "properties": {
+                "value": {"pattern": "^10\\.[0-9]{4,9}/[^\\s]+$"},
+                "url": {"pattern": "^https://doi\\.org/10\\.[0-9]{4,9}/[^\\s]+$"}
+              }
+            }
+          }
+        ]
+      }
+    },
+    "cited_locators": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim_ids", "kind", "version"],
+        "properties": {
+          "claim_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string", "pattern": "^CLM-[0-9]{4}$"}
+          },
+          "kind": {"$ref": "#/$defs/nonblank_string"},
+          "version": {"$ref": "#/$defs/nonblank_string"},
+          "locator": {"$ref": "#/$defs/nonblank_string"},
+          "lines": {"$ref": "#/$defs/nonblank_string"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "oneOf": [
+          {"required": ["locator"], "not": {"required": ["lines"]}},
+          {"required": ["lines"], "not": {"required": ["locator"]}}
+        ]
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"document_id": {"const": "DOC-0024"}},
+        "required": ["document_id"]
+      },
+      "then": {"required": ["witness"]},
+      "else": {"not": {"required": ["witness"]}}
+    },
+    {
+      "if": {
+        "properties": {"version": {"properties": {"type": {"const": "arxiv_version"}}}},
+        "required": ["version"]
+      },
+      "then": {
+        "properties": {
+          "version": {
+            "properties": {
+              "label": {"pattern": "^arXiv:[0-9]{4}\\.[0-9]{4,5}v[0-9]+"},
+              "status": {"enum": ["current", "public"]}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "version": {"properties": {"type": {"const": "arxiv_bannered_witness"}}}
+        },
+        "required": ["version"]
+      },
+      "then": {
+        "properties": {
+          "version": {
+            "properties": {
+              "status": {"const": "identity_unresolved"},
+              "label": {"pattern": "^Indexed witness carrying the arXiv:[0-9]{4}\\.[0-9]{4,5}v[0-9]+ banner$"}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"version": {"properties": {"type": {"const": "withdrawal_record"}}}},
+        "required": ["version"]
+      },
+      "then": {
+        "properties": {
+          "version": {
+            "properties": {
+              "label": {"pattern": "^arXiv:[0-9]{4}\\.[0-9]{4,5}v[0-9]+ withdrawal record$"},
+              "status": {"const": "withdrawn"}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "version": {
+            "properties": {
+              "type": {"enum": ["published_book_chapter", "published_journal_article"]}
+            }
+          }
+        },
+        "required": ["version"]
+      },
+      "then": {
+        "required": ["publication"],
+        "properties": {"version": {"properties": {"status": {"const": "published"}}}}
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "version": {
+            "properties": {
+              "type": {"enum": ["public_author_site_post", "public_online_answer"]}
+            }
+          }
+        },
+        "required": ["version"]
+      },
+      "then": {
+        "properties": {"version": {"properties": {"status": {"const": "public"}}}}
+      }
+    }
+  ],
+  "$defs": {
+    "nonblank_string": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"}
+  }
+}

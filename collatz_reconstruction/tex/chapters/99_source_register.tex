@@ -1,0 +1,810 @@
+\section{Source register for admitted statements}
+\label{sec:source-register}
+
+\begingroup
+\sloppy
+\hbadness=2000
+
+This working register lists only sources already used in mathematical text.
+Machine-readable identities, hashes, manifestations, and reading status are
+maintained in \path{state/source_registry.jsonl}.
+\begin{thebibliography}{99}
+
+\bibitem{Crandall1978}
+R.~E. Crandall,
+\emph{On the ``$3x+1$'' problem},
+Mathematics of Computation \textbf{32} (1978), no.~144, 1281--1292.  All
+twelve printed pages were read from the published PDF.  The full theorem,
+proof, defect, repair, and nonclaim record is maintained in
+\path{qa/CRANDALL-1978-F010-full-paper-audit.md}; deterministic finite
+arithmetic checks are in \path{certificates/crandall_1978_checks.py}.
+Crandall's Theorem~7.2 is printed for $n\geq4$; its proof explicitly assumes
+$k\leq q_n$ but invokes a lemma with strict denominator range, so the edition
+  supplies the missing $k=q_n$ justification.  Printed p.~1282 routes the
+  historical verification below $10^9$ to references~1 and~5, but content
+  and metadata inspection shows that both refer to Conway's same 1972 paper.
+  Crandall's reference~1 misprints 49--52 as 45--52; reference~5 misprints
+  \emph{Zbl}~0337.10041 as ``Band~233, p.~10041,'' although $10041$ is an
+  accession suffix rather than a page.  Printed p.~1290 uses the resulting
+  self-return exclusion without a new inline citation.  The published report
+  is now content-read; its underlying computation remains unlocated and the
+  numerical corollary remains conditional on that report.
+
+\bibitem{Conway1972}
+J.~H. Conway,
+\emph{Unpredictable iterations},
+in \emph{Proceedings of the 1972 Number Theory Conference}, University of
+Colorado, Boulder, 1972, 49--52; \emph{Zbl}~0337.10041.  Reprinted in
+Jeffrey C. Lagarias, editor, \emph{The Ultimate Challenge: The $3x+1$
+Problem}, American Mathematical Society, 2010, 219--223.  Conway's original
+text occupies reprint pp.~219--221; editorial commentary begins on p.~221.
+All five reprint pages were inspected at 300 dpi, with the copyrighted
+third-party extract retained only as a local inspection manifestation and
+not represented as an official open-access or redistribution-authorized
+copy.  On p.~219 Conway defines the ordinary one-step map and reports
+verification for $n\leq10^9$ by D.~H. Lehmer, Emma Lehmer, and
+J.~L. Selfridge.  No underlying computational record or reproducibility data
+are supplied.  Exact identity, manifestation, clock transfer, and nonclaim
+boundaries are recorded in
+\path{qa/CONWAY-1972-F022-historical-verification-audit.md}.
+
+\bibitem{AbramowitzStegun1964}
+Milton Abramowitz and Irene A. Stegun, editors,
+\emph{Handbook of Mathematical Functions with Formulas, Graphs, and
+Mathematical Tables},
+National Bureau of Standards Applied Mathematics Series~55, U.S. Government
+Printing Office, Washington, D.C., issued June 1964.  Crandall cites the
+ninth Dover printing, New York, 1965; the complete controlling local witness
+is instead the NBS first-printing facsimile and is not represented as the
+cited manifestation.  The relevant definitions and formulas are
+6.5.1--6.5.3, 6.5.11, 6.5.13, 6.5.34--6.5.35, 26.2.1--26.2.6, 26.2.29,
+26.4.1--26.4.2, 26.4.11, 26.4.19, and 26.4.21; the exact manifestation,
+locator, morphism, and nonclaim boundaries are recorded in
+\path{qa/ABRAMOWITZ-STEGUN-1964-F013-poisson-audit.md}.
+
+\bibitem{Pillai1931}
+S.~Sivasankaranarayana Pillai,
+\emph{On the inequality $0<a^x-b^y\leq n$},
+Journal of the Indian Mathematical Society \textbf{19} (1931), 1--11.
+All eleven printed pages were read from the controlling article scan.  Its
+title, author, journal pagination, complete page sequence, and exact
+bibliographic entries agree, but the witness is not represented as a
+publisher-hosted download.  The source theorem, false degree assertion,
+constant-type defect, residue-class gap, separately attributed repair, and
+Crandall crosswalk are recorded in
+\path{qa/PILLAI-1931-F014-fixed-difference-audit.md}.
+
+\bibitem{Herschfeld1936}
+Aaron Herschfeld,
+\emph{The equation $2^x-3^y=d$},
+Bulletin of the American Mathematical Society \textbf{42} (1936), no.~4,
+231--234, doi:10.1090/S0002-9904-1936-06275-0.  All four printed pages were
+read from the official AMS article PDF.  The positive-exponent theorem,
+two-sided $|d|$ quantifier, ineffective threshold, two order coordinates,
+Pillai dependency repair, separately attributed all-integer extension,
+source label defect, unpublished-computation boundary, and distinct
+Siegel-1929 dependency are recorded in
+\path{qa/HERSCHFELD-1936-F018-eventual-uniqueness-audit.md}; deterministic
+finite checks are in \path{certificates/herschfeld_1936_checks.py}.  Crandall's
+reference~10 spelling ``Herschefeld'' is not the spelling on the primary
+byline.  The conditional primitive-root paragraph printed on p.~1288 is
+reconstructed from the full monotone return equation, with its exact domain
+and two residue branches, in
+\path{qa/CRANDALL-1978-F020-primitive-root-audit.md}; the finite selector
+certificate is \path{certificates/primitive_root_return_checks.py}.
+
+\bibitem{Polya1918}
+Georg P\'olya,
+\emph{Zur arithmetischen Untersuchung der Polynome},
+Mathematische Zeitschrift \textbf{1} (1918), no.~2--3, 143--148,
+doi:10.1007/BF01203608.  Every article page was read from the official SUB
+G\"ottingen/GDZ scan.  Satz~I, its explicit Thue dependency, and the exact
+fixed-prime gap theorem on printed pp.~147--148 are audited in
+\path{qa/POLYA-1918-F015-smooth-gap-audit.md}.
+
+\bibitem{Thue1908I}
+Axel Thue,
+\emph{Bemerkungen \"uber gewisse N\"aherungsbr\"uche algebraischer Zahlen},
+Videnskabs-Selskabets Skrifter, I. Math.-Naturv. Klasse, 1908, no.~3,
+34 pp.  The complete 1908 academy volume was read from the public-domain
+BHL/Internet Archive scan.  Satz~12 is on printed pp.~30--31 / physical PDF
+pp.~182--183.
+
+\bibitem{Thue1908II}
+Axel Thue,
+\emph{Om en generel i store hele tal ul{\o}sbar ligning},
+Videnskabs-Selskabets Skrifter, I. Math.-Naturv. Klasse, 1908, no.~7,
+1--15.  The opening theorem is on printed p.~1 / physical PDF p.~335 of the
+same academy-volume scan.  Both located primary scans omit printed pp.~2--3;
+therefore P\'olya's locator to p.~3 is retained as a visible manifestation
+gap, not represented as directly read.
+
+\bibitem{Thue1909}
+Axel Thue,
+\emph{\"Uber Ann\"aherungswerte algebraischer Zahlen},
+Journal f\"ur die reine und angewandte Mathematik \textbf{135} (1909),
+284--305, doi:10.1515/crll.1909.135.284.  Theorem~IV was read on printed
+pp.~303--304 / PDF pp.~21--22 of the official SUB G\"ottingen/GDZ scan.  The
+three identities, locators, exact exceptional-form dependency, quadrant map,
+residue-cell cubic, and scan gap are audited in
+\path{qa/THUE-1908-1909-F017-binary-form-audit.md}.
+
+\bibitem{Siegel1921}
+C.~L. Siegel,
+\emph{Approximation algebraischer Zahlen},
+Mathematische Zeitschrift \textbf{10} (1921), no.~3--4, 173--213,
+doi:10.1007/BF01211608.  The complete article and the controlling theorem
+pages were read from the official GDZ scan.  The introductory denominator
+form, Hauptsatz, proof route, Zus\"atze, height-to-denominator map, exact
+constant type, and actual-degree use are recorded in
+\path{qa/SIEGEL-1921-F016-approximation-audit.md}.
+
+\bibitem{Everett1977}
+C.~J. Everett,
+\emph{Iteration of the number-theoretic function
+$f(2n)=n$, $f(2n+1)=3n+2$},
+Advances in Mathematics \textbf{25} (1977), no.~1, 42--45,
+doi:10.1016/0001-8708(77)90087-1.  The publisher identity was verified by
+DOI and PII.  All four printed pages were read from a matching VOR facsimile;
+the publisher-hosted PDF hash remains unavailable.  The complete theorem,
+proof, manifestation, crosswalk, and nonclaim audit is in
+\path{qa/EVERETT-1977-F012-density-audit.md}; deterministic finite checks are
+in \path{certificates/everett_1977_checks.py}.
+
+\bibitem{Steuding2005}
+J\"orn Steuding,
+\emph{Diophantine Analysis},
+Discrete Mathematics and Its Applications, CRC Press/Taylor \& Francis
+Group, 2005; eBook PDF version dated 13 July 2011,
+ISBN 978-1-4200-5720-1.  The continued-fraction definitions, recurrence and
+determinant identities, exact convergent-error formula, law of best
+approximations, unimodular equivalence, Serret theorem, Markoff formula, and
+starred Exercise~5.22 were read from the local published-book PDF.  The
+Exercise~5.22 solution, printed matrix defects, exact clock crosswalk, and
+nonclaims are recorded in
+\path{qa/STEUDING-2005-F011-exercise-522-audit.md}; exact finite
+quadratic-field checks are in
+\path{certificates/steuding_522_checks.py}.  The exact transfer from
+Theorems~3.1, 3.2, 3.6, and 3.8 to Crandall's Section~7 inequalities, including
+the strict $0<y<q_n$ range and the $y=q_n$ equality boundary, is recorded in
+\path{qa/STEUDING-2005-F021-crandall-continued-fraction-audit.md}; its finite
+arithmetic and pinned-source checks are in
+\path{certificates/continued_fraction_dependency_checks.py}.  This independent
+support is not an identification of Crandall's cited Roberts or Khinchin
+manifestations.
+
+\bibitem{BohmSontacchi1978}
+Corrado B\"ohm and Giovanna Sontacchi,
+\emph{On the existence of cycles of given length in integer sequences like
+$x_{n+1}=x_n/2$ if $x_n$ is even, and $x_{n+1}=3x_n+1$ otherwise},
+Atti della Accademia Nazionale dei Lincei. Classe di Scienze Fisiche,
+Matematiche e Naturali. Rendiconti, series~8, \textbf{64} (1978), 260--264.
+
+\bibitem{BernsteinLagarias1996}
+Daniel J. Bernstein and Jeffrey C. Lagarias,
+\emph{The $3x+1$ conjugacy map},
+Canadian Journal of Mathematics \textbf{48} (1996), no.~6, 1154--1169,
+doi:10.4153/CJM-1996-060-x.
+
+\bibitem{Bernstein1994}
+Daniel J. Bernstein,
+\emph{A non-iterative $2$-adic statement of the $3N+1$ conjecture},
+Proceedings of the American Mathematical Society \textbf{121} (1994),
+no.~2, 405--408, doi:10.1090/S0002-9939-1994-1186982-9.  The official AMS
+PDF and the author-hosted PDF were read in full; the displayed formulas were
+checked visually because the AMS text extraction corrupts symbols.
+
+\bibitem{Lagarias1985}
+Jeffrey C. Lagarias,
+\emph{The $3x+1$ problem and its generalizations},
+American Mathematical Monthly \textbf{92} (1985), no.~1, 3--23,
+doi:10.1080/00029890.1985.11971528.  The complete JSTOR page-image scan was
+read; the author-linked 1996 web conversion is an auxiliary reprint rather
+than the controlling locator witness.
+
+\bibitem{Lagarias1990}
+Jeffrey C. Lagarias,
+\emph{The set of rational cycles for the $3x+1$ problem},
+Acta Arithmetica \textbf{56} (1990), no.~1, 33--53,
+doi:10.4064/aa-56-1-33-53.  The complete official IMPAN scan was read.
+
+\bibitem{Stanley2024}
+Richard P. Stanley,
+\emph{Enumerative Combinatorics}, volume~2, second edition,
+Cambridge Studies in Advanced Mathematics, volume~208,
+Cambridge University Press, 2024,
+doi:10.1017/9781009262538.  Exercise~7.89(a), equations~(7.149)--(7.150)
+on printed p.~480, and the solution on printed p.~555 were inspected for the
+fixed-content primitive-necklace formula.
+
+\bibitem{LaarhovenDeWeger2012}
+Thijs Laarhoven and Benne de Weger,
+\emph{The Collatz conjecture and De Bruijn graphs},
+arXiv:1209.3495v1 (2012).  The complete source TeX was inspected.  The
+official v1 PDF's visible 27 November 2024 date comes from
+\verb|\date{\today}| and is not a mathematical revision.  Exact audit details
+are in the machine-readable source record.
+
+\bibitem{Urata2003}
+Toshio Urata,
+\emph{The Collatz problem over $2$-adic integers},
+The Bulletin of Aichi University of Education \textbf{52} (Natural Science)
+(2003), 5--11.  The official Aichi repository PDF was inspected in full; two
+later local re-typesettings are retained only as unauthenticated editorial
+derivatives and do not control attribution.
+
+\bibitem{Matthews2010AuthorForm}
+K.~R. Matthews,
+\emph{Generalized $3x+1$ mappings: Markov chains and ergodic theory},
+in Jeffrey C. Lagarias (ed.), \emph{The Ultimate Challenge: The $3x+1$
+Problem}, American Mathematical Society, 2010, 79--103.  The inspected local
+author form explicitly contains small additions and deletions and is not
+treated as text-identical to the published chapter.
+
+\bibitem{MatthewsWatts1984}
+K.~R. Matthews and A.~M. Watts,
+\emph{A generalization of Hasse's generalization of the Syracuse algorithm},
+Acta Arithmetica \textbf{43} (1984), no.~2, 167--175,
+doi:10.4064/aa-43-2-167-175.  Official IMPAN scan inspected.
+
+\bibitem{KrasikovLagarias2003}
+Ilia Krasikov and Jeffrey C. Lagarias,
+\emph{Bounds for the $3x+1$ problem using difference inequalities},
+Acta Arithmetica \textbf{109} (2003), no.~3, 237--258,
+doi:10.4064/aa109-3-4.  The complete 22-page official IMPAN scan and the
+complete arXiv source \texttt{math/0205002v1} were read.  The published
+Theorem~6.1 gives
+\(\pi_a(x)\ge x^{0.84}\) beyond an \(a\)-dependent threshold for every
+positive \(a\not\equiv0\pmod3\).  Its proof reports a computer-found feasible
+\(k=11\) point at \(\lambda=1.7922310\), but the paper supplies neither that
+coordinate vector nor code or an exact feasibility certificate.  The
+published theorem is retained; independent reproducibility of this finite
+premise remains open.  The exact source objects and proof chain, six
+published source defects, two preprint-only defects corrected in the
+journal, cycle-target handoff, shortened/unshortened clock morphism, and
+nonclaims are recorded in
+\texttt{qa/KRASIKOV-LAGARIAS-2003-F029-difference-inequality-audit.md} and
+Subsection~\ref{subsec:KL-predecessor-clock}.  Pinned-source, exact-exponent,
+and finite clock checks are in
+\texttt{certificates/krasikov\_lagarias\_2003\_checks.py}.
+
+\bibitem{Terras1976}
+Riho Terras,
+\emph{A stopping time problem on the positive integers},
+Acta Arithmetica \textbf{30} (1976), no.~3, 241--252,
+doi:10.4064/aa-30-3-241-252.  Every printed page was read from the official
+IMPAN scan.  The source uses the shortened map on
+\(\mathbb N=\{0,1,2,\ldots\}\), defines the chronological parity vector,
+coefficient stopping time \(\tau\), and actual stopping time \(\chi\), and
+proves the exact residue-fibre theorem and coefficient-tail estimate.  Four
+local defects are retained rather than normalized: Proposition~1.7 omits the
+hypothesis \(\lambda_k(n)<1\); Theorem~1.9 cites Proposition~1.9 rather than
+1.8; Definition~1.12 prints the proper-prefix range through \(k-2\) rather
+than \(k-1\); and Theorem~1.17 drops \(+1\) from its terminal-string bound.
+The exact counterexamples, repairs, and finite checks are recorded in
+\texttt{qa/TERRAS-ALLOUCHE-KOREC-F030-density-lineage-audit.md} and
+\texttt{certificates/terras\_allouche\_korec\_checks.py}.  The 1976 text's
+point-mass and coefficient-tail results do not by themselves replace the
+finite-complement density-existence proof supplied by Terras's 1979 note.
+
+\bibitem{Terras1979}
+Riho Terras,
+\emph{On the existence of a density},
+Acta Arithmetica \textbf{35} (1979), no.~1, 101--102,
+doi:10.4064/aa-35-1-101-102.  Both printed pages were read from the official
+IMPAN scan.  The note records doubts raised by A.~Garsia, H.~Moeller, and the
+editors, then proves for every fixed positive \(k\) the exact identity
+\(\delta[\chi\geq k]=\mathbb P[\tau\geq k]\) by finite additivity and
+complementation.  This closes the density-existence dependency left implicit
+by ``forming sums'' in the 1976 paper; no infinite sum of densities is used.
+
+\bibitem{Allouche1979}
+Jean-Paul Allouche,
+\emph{Sur la conjecture de ``Syracuse--Kakutani--Collatz''},
+S\'eminaire de Th\'eorie des Nombres de Bordeaux, ann\'ee 1978--1979,
+expos\'e no.~9, printed pp.~9-01--9-15, CNRS, Talence, 1979,
+MR0567874.  All fifteen printed pages were read from the GDZ manifestation
+identified by \texttt{PPN320141322\_0008/LOG\_0014}.  The edition preserves
+the source's unnormalized data \(n,d,A_d,\varphi,g\), the exact affine fibre
+coordinate, bounded remainder, binomial branch counts, and quantitative
+distribution theorem.  The strict exponent
+\(3/2-\log_3 2\) is reconstructed from those lemmas and is not presented as
+a decimal theorem printed by Allouche.  The displayed definition of the
+analogue map \(F:\mathbb Z\to\mathbb Z\) in Theorem~2 omits some divisible
+residue classes (for example \(6\bmod8\) when \(d=2,u=3\)); the live reader
+states the unique bounded residue correction as a separately attributed
+repair before using the same-slopes/opposite-dynamics obstruction.
+
+\bibitem{Korec1994}
+Ivan Korec,
+\emph{A density estimate for the $3x+1$ problem},
+Mathematica Slovaca \textbf{44} (1994), no.~1, 85--89,
+MR1290275, Zbl~0797.11027.  Every printed page was read from the DML-CZ
+manifestation at \texttt{hdl.handle.net/10338.dmlcz/133225}.  Theorem~1 proves
+natural density one for
+\(\{y:\exists n,\ T^n(y)<y^c\}\) at every strict
+\(c>\log_4 3\), with witness \(n\leq\log_2 y\) on the retained range.  Its
+proof contains three locally repairable defects: the auxiliary parameter
+prints \(\log_4 3\) where the required denominator is \(\log_2 3\); the
+claimed logarithmic equivalence omits a factor \(\log_2 3\) in one
+denominator (the printed condition remains stronger and sufficient); and the
+proof text uses a strict parity-count boundary while \(U(m,d)\) and the final
+block count use a non-strict one.  The theorem is used only after all three
+repairs are displayed.  No endpoint exponent, uniform iterate, explicit
+density rate, all-integer statement, or Collatz conclusion is attributed to
+the source.
+
+\bibitem{Kohl2008}
+Stefan Kohl,
+\emph{Algorithms for a class of infinite permutation groups},
+Journal of Symbolic Computation \textbf{43} (2008), no.~8, 545--581,
+doi:10.1016/j.jsc.2007.12.001.  The definition, fixed coefficient
+representation, and image-density remark were inspected in the local author
+PDF; the later group algorithms have not yet been certified in this edition.
+
+\bibitem{Siegel2007v1}
+Maxwell C. Siegel,
+\emph{Syracuse Random Variables and the Periodic Points of Collatz-type
+maps}, arXiv:2007.15936v1 (historical source dated 13 July 2020).  The
+version-pinned source TeX controls only claims attributed to v1 here.  The
+definition and one-position series for the numen were read at source
+lines~405--568, and the explicit discussion of Tao's finite Syracuse random
+variables was read at lines~3441--3501.  This historical version is not
+silently identified with the renamed v3 work.
+
+\bibitem{Siegel2007v3}
+Maxwell C. Siegel,
+\emph{The Collatz Conjecture \& Non-Archimedean Spectral Theory---Part I:
+Arithmetic Dynamical Systems and Non-Archimedean Value Distribution Theory},
+arXiv:2007.15936v3 (source dated 27 March 2023; revised 24 April 2023).
+The finite numen, explicit series, and Syracuse-variable passages were read
+at source lines~1524--1582, 1851--2000, and 3083--3184.  The exact
+run-length/Haar/Syracuse crosswalk is proved in
+Proposition~\ref{prop:Siegel-Tao-Syracuse-coordinate}; the three quarantined
+Fourier-presentation defects are recorded in
+Source Issue~\ref{sourceissue:Siegel-2007-v3-Fourier}.  This is a distinct
+versioned source from both v1 above and arXiv:2601.17030v3 below.
+
+\bibitem{Siegel2026v3}
+Maxwell C. Siegel,
+\emph{The Hydra Map and Numen Formalisms for Collatz-Type Problems},
+arXiv:2601.17030v3 (2026).  Version-pinned source TeX controls this working
+edition; the Hydra, numen, Correspondence Principle, and v3 Fourier boundary
+were inspected against the 30-page source PDF.
+
+\bibitem{Tao2026v7}
+Terence Tao,
+\emph{Almost all orbits of the Collatz map attain almost bounded values},
+arXiv:1909.03562v7 (revision 16 July 2026); published in Forum of Mathematics,
+Pi \textbf{10} (2022), e12, doi:10.1017/fmp.2022.8.  The version-pinned v7
+source TeX controls this working edition; the frozen discovery routes point
+to v5 and are not silently identified with either v7 or the journal text.
+All v7 mathematical source through its proof ending at line~1859 has been
+read at content level; line~1860 is blank, and lines~1863--1952 are the
+active bibliography.  The invalid additive
+endpoint buffer at lines 758--763 is replaced by the proved multiplicative
+interval in Proposition~\ref{prop:Tao-v7-endpoint-buffer}; its dependency use
+has been checked through line 925, with the signed lower bound at
+lines 790--793 and the malformed line 889 estimate also repaired.  The event
+chain, fixed-\(M\) affine equivalence, positive valuation domain, the distinct
+line 868 and line 899 previous-iterate coefficients, line 917 probability
+transfer, the line 689 \(1.9n_0\) index, and the non-uniform line 913
+summation are repaired in
+Proposition~\ref{prop:Tao-v7-Prop52-cn-repair}.  This certifies source
+Proposition 5.2 and the uniform \(c_n\) lemma, and checks their Section 5
+dependency use through line 925.  The exact audit is in
+\texttt{qa/TAO-V7-F001-proof-text-audit.md}; the pinned-source, locator, and
+arithmetic checks are in
+\texttt{certificates/tao\_v7\_endpoint\_buffer\_checks.py} and
+\texttt{certificates/tao\_v7\_prop52\_cn\_checks.py}.  Fine-scale mixing,
+Fourier decay, and renewal are reconstructed in
+Propositions~\ref{prop:Tao-v7-Fourier-to-mixing}--
+\ref{prop:Tao-v7-renewal-monotonicity} and
+Corollary~\ref{cor:Tao-v7-fine-scale-branch}; the line-level and
+version-comparison record is
+\texttt{qa/TAO-V5-V7-JOURNAL-F024-fourier-renewal-audit.md}; the exact finite
+lift, offset, quotient-frequency, holding-law, and entry-budget kernels are in
+\texttt{certificates/tao\_v7\_fourier\_renewal\_checks.py}.  This closes the
+v7 fine-scale branch through Proposition~1.14 at its printed uniform scope.
+The independent residue-fibre proof of Proposition~1.9 is
+Proposition~\ref{prop:Tao-v7-Prop19-valuation-law}; its three-manifestation
+comparison is
+\texttt{qa/TAO-V5-V7-JOURNAL-F025-prop19-valuation-audit.md}, and its exact
+finite kernels are checked by
+\texttt{certificates/tao\_prop19\_valuation\_checks.py}.  The exact source
+edge from Propositions~1.14 and~1.9 to Proposition~1.11 is reconstructed in
+Theorem~\ref{thm:Tao-v7-Prop111-first-passage}.  Its three-manifestation
+comparison, source-defect boundary, affine path--endpoint bijection, integer
+window, and exact mixing collapse are recorded in
+\texttt{qa/TAO-V5-V7-JOURNAL-F026-prop111-first-passage-audit.md}; its finite
+integration kernels are checked by
+\texttt{certificates/tao\_prop111\_transport\_checks.py}.  Proposition~1.11
+is therefore closed at its printed v7 scope.  Its exact deductions through
+Theorem~3.1 and Theorem~1.6 to Theorem~1.3, including the indexed
+nested-threshold morphism, fixed-tail repair, dyadic stratum bijection and
+harmonic transport, are reconstructed in
+Subsection~\ref{subsec:Tao-main-reduction}.  The three-manifestation defect
+record is
+\texttt{qa/TAO-V5-V7-JOURNAL-F027-main-theorem-reduction-audit.md}, and the
+finite exact kernels are checked by
+\texttt{certificates/tao\_main\_reduction\_checks.py}.  The remaining
+whole-version comparison is recorded in
+\texttt{qa/TAO-V5-V7-JOURNAL-F028-whole-version-citation-audit.md}.
+It classifies all 28 non-whitespace v5--v7 hunks, the journal's
+15-v7/12-v5/one-hybrid manifestation matrix, the exact terminal boundary,
+and all active citations.  Its Section~6 calculation proves that the v5 and
+journal half-window is too small for the printed Archimedean argument,
+whereas v7's \(0.99\)-window closes; see
+Source Issue~\ref{sourceissue:Tao-v5-v7-section-six-reserve}.  The
+deterministic source, bibliography, citation, and finite-margin checks are in
+\texttt{certificates/tao\_whole\_version\_checks.py}.  The substantive cited
+literature not yet present locally and the durable whole-paper release gate
+remain open.
+
+\bibitem{Tao2019v5}
+Terence Tao,
+\emph{Almost all orbits of the Collatz map attain almost bounded values},
+arXiv:1909.03562v5 (version-pinned comparison source).  Its source archive
+and extracted TeX were admitted to the topical shelf and compared directly
+with v7 and the published paper.  Its Proposition~1.11 deduction at source
+lines~643--919 has the same substantive modular, logarithmic-mass, affine,
+and integer-window calculations, but lines~789--791 interchange passage time
+and passage location; v7 lines~795--797 provide the typed correction used by
+the edition.  In Section~6, v5's \(\frac12C_A^2\log n\) source window leaves
+only \(\frac12\log2\) times that quadratic reserve after exponentiation,
+below the optimized cost
+\(\log^22/(4\log(4/3))\); it also drops the factor \(\log2\) in the printed
+conversion.  An explicit concentration-admissible family makes one claimed
+sub-\(3^n\) summand exceed \(3^n\).  This invalidates that printed size
+argument without establishing a residue collision or disproving the
+standalone conclusion.  V5 also prints
+\(1_{\overline E_k\cap B_k\cap C_{k,l}}\) where the factorization requires
+\(1_{E_k\cap B_k\cap C_{k,l}}\).  Both defects are repaired in v7 and
+reconstructed in
+Source Issue~\ref{sourceissue:Tao-v5-v7-section-six-reserve}.  V5 and the
+journal also state the stronger
+unconditional form of Lemma~7.9, while v7 states an indicator-restricted
+form.  The stronger displayed induction has an unresolved \(r=1<R\) gap and
+is not used in this edition; see
+Source Issue~\ref{sourceissue:Tao-v5-v7-many-triangles}.  After whitespace
+deletion, its main reduction at lines~529--587 is exactly equal to v7
+lines~535--593; this local equality does not identify the complete versions.
+The shared reduction defects and the independently authored exact repair are
+recorded in
+\texttt{qa/TAO-V5-V7-JOURNAL-F027-main-theorem-reduction-audit.md} and
+Subsection~\ref{subsec:Tao-main-reduction}.  The complete source comparison,
+including the journal's mixed-version boundary and the exact bibliography,
+is F028; local equality of the bibliography and main-reduction blocks still
+does not identify the complete manifestations.
+
+\bibitem{Barina2021}
+David Barina,
+\emph{Convergence verification of the Collatz problem},
+The Journal of Supercomputing \textbf{77} (2021), no.~3, 2681--2688,
+doi:10.1007/s11227-020-03368-x; published online 1 July 2020.
+All eight publisher pages and the distinct eight-page author postprint were
+read.  Their SHA-256 hashes are respectively
+\nolinkurl{737a225fbc291cc182e940cc7ca31da4d2eb99b64e51a33e380213d8ed6b33a3}
+and
+\nolinkurl{6df53d8f2a41d032f215209f06a021d35e447f6bdf222f1d557be730b64409dc}.
+The map charts, block algorithm, affine sieve coordinate, reported strict
+$2^{68}$ bound, record datum, exceptional-start defects, and nonclaims are
+reconstructed in Subsection~\ref{subsec:computational-verification} and
+\path{qa/BARINA-OLIVEIRA-ROOSENDAAL-F031-computational-verification-audit.md}.
+
+\bibitem{Barina2025}
+David Barina,
+\emph{Improved verification limit for the convergence of the Collatz
+conjecture},
+The Journal of Supercomputing \textbf{81} (2025), article~810,
+doi:10.1007/s11227-025-07337-0; accepted 21 April 2025 and published online
+2 May 2025.  All fourteen publisher pages were read and rendered; the
+controlling PDF has SHA-256
+\nolinkurl{764fd732ad79545e71440f74bf738bf315b479eb404f68bae2c3b109785a5d06}.
+The FIT record's volume~81, no.~1, pp.~1--14 coordinate is retained as a
+metadata discrepancy rather than substituted for the publisher's article
+number.  Table~10's strict $n<2^{71}$ boundary and 15 January 2025 completion
+date control over the surrounding phrase \emph{up to}.  The two reversed
+class cardinalities, three exceptional-start cases, optional-kernel and
+validation boundaries, and exact four-new/five-cumulative record
+reconciliation are stated separately from the reported finite result.
+
+\bibitem{OliveiraSilva2010}
+Tomás Oliveira e Silva,
+\emph{Empirical Verification of the $3x+1$ and Related Conjectures},
+in Jeffrey C. Lagarias, editor,
+\emph{The Ultimate Challenge: The $3x+1$ Problem},
+American Mathematical Society, 2010, 189--207.
+Every printed page was read from a third-party scan whose page images remain
+temporary inspection witnesses and are not copied into the topical shelf or
+reader.  Identity and pagination were crosschecked against the author's
+University of Aveiro bibliography and the AMS volume record.  The chapter's
+inclusive $20\cdot2^{58}$, $10^{16}$, and $10^{14}$ reports, duplicate-worker
+protocol, generalized maps, finite tables, and expressly non-rigorous Markov
+argument are retained at their stated scopes.  Its floor sentence is repaired
+locally.  Proposition~2 is not normalized: the exact $i=1,n_0=1$
+counterexample and independently proved $6^i$ branch-cylinder replacement
+are Source Issue~\ref{sourceissue:Oliveira-proposition-two} and
+Proposition~\ref{prop:Oliveira-branch-cylinder}.
+
+\bibitem{Roosendaal2026}
+Eric Roosendaal,
+\emph{On the $3x+1$ problem},
+continuously revised author web page, snapshot identifying itself as last
+modified 30 June 2026.  The retained snapshot has SHA-256
+\nolinkurl{e3ff21c62b1fe108ecaa9086a2c8679207339b3e086289a159b56099515f157d}.
+It was captured over plain HTTP after the HTTPS endpoint presented a
+certificate-name failure, so transport authentication is explicitly absent.
+The modular-maximum argument is reconstructed in
+Proposition~\ref{prop:Roosendaal-mod36}; the page's maximum-variable and
+$N<1$ defects are not silently corrected in attribution.
+
+\bibitem{BarinaCode2025}
+xbarin02,
+\emph{collatz} and \emph{collatz-sieve}, public source-code lineages.
+The 2025 article pins \texttt{collatz} commit
+\nolinkurl{53c2a0608075d6fe3f10cc6eeeaf50e400c86338}, tree
+\nolinkurl{82b9731dcd5108298a2fb2085ba1d76c837de6f5}; the earlier reconstruction
+boundary is commit
+\nolinkurl{0fabf721434b20f00af820564e3b3781dcabe768}, tree
+\nolinkurl{f8597ec3867e5734cd6a9fb57379aef2c670f857}.  Complete history is retained
+in a verified Git bundle with SHA-256
+\nolinkurl{e7b655972c628f060ecbc7aaffaa381eeebe6868567d14c4f4524c18559cc3dd}.
+The separate, article-unpinned sieve dependency is frozen for this audit at
+commit \nolinkurl{e5f0c264ba1f5f9c0a7d32a10c3aa61b225c70d1}, tree
+\nolinkurl{4b5a3b5afdf35596409c91da7f226e338c7c763a}; its complete bundle has
+SHA-256
+\nolinkurl{687f00faba696d2a3dc8b0a6f556c9cc6da56756bdb36535ac8f3ed49575983f}.
+These pins support code-level reconstruction and the finite
+Theorem~\ref{thm:Barina-recursive-k34}; without a completed-work ledger they
+do not authenticate a historical distributed run.
+
+\bibitem{BarinaStatus2026}
+David Barina's Collatz project,
+\emph{verification status API}, dated snapshot generated 28 August 2026 at
+19:24:59 $+0200$.  The 198-byte JSON manifestation has SHA-256
+\nolinkurl{daf454223878d578dc7a87dc0677aa1925eba602ae295f8547ce25927ce5c5ab}
+and reports \texttt{verified\_up\_to\_times\_2\_60=2075},
+\texttt{work\_unit\_exp=40}, and first incomplete/unassigned unit
+\texttt{2175975546}.  It is a dynamic project assertion, not a paper result
+or an independently acquired server ledger.
+
+\bibitem{AizawaIsaacSegar2019}
+N. Aizawa, P. S. Isaac, and J. Segar,
+\emph{$\mathbb Z_2\times\mathbb Z_2$ generalizations of
+$\mathcal N=1$ superconformal Galilei algebras and their representations},
+Journal of Mathematical Physics \textbf{60} (2019), 023507,
+doi:10.1063/1.5054699; arXiv:1808.09112v1 (submitted 28 August 2018).
+The complete 1,127-line source \TeX{} was read.  The paper supplies the color
+bracket, its enveloping-algebra construction, complete relation tables,
+central extension, decompositions, adjoints, and representations.  It contains
+no Collatz map or action; Section~\ref{sec:chatnotes-coefficient-algebra}
+uses it only at the exact color-algebra scope and proves the coefficient
+crosswalk independently.
+
+\bibitem{DrosteKuichVogler2009}
+Manfred Droste, Werner Kuich, and Heiko Vogler, editors,
+\emph{Handbook of Weighted Automata},
+Springer, 2009, ISBN 978-3-642-01491-8,
+eISBN 978-3-642-01492-5.
+The content read for Section~\ref{sec:chatnotes-weighted-path-algebra}
+comprises physical PDF pages 3--7, 20--22, 27, 84, 89, 134--135, and
+191--192: free monoids and morphisms, semirings, formal power series and
+polynomials, path-label products, cycle-free and complete-semiring summation
+conditions, finite weighted automata, and matrix/formal-series behavior.  The
+book supplies this standard framework, not the Collatz-specific theorems of
+that section.
+
+\bibitem{KuichSalomaa1986}
+Werner Kuich and Arto Salomaa,
+\emph{Semirings, Automata, Languages},
+EATCS Monographs on Theoretical Computer Science, volume 5,
+Springer, 1986.
+Physical PDF pages 1--4 of the local chapter-I witness were read for the
+definitions of free monoids, monoid morphisms, semirings, formal series,
+finite-support polynomials, and Cauchy multiplication.  No Collatz result is
+attributed to this source.
+
+\bibitem{Steinberg2016}
+Benjamin Steinberg,
+\emph{Representation Theory of Finite Monoids},
+Universitext, Springer, 2016,
+ISBN 978-3-319-43930-3, eBook ISBN 978-3-319-43932-7.
+Physical PDF pages 4--5, 22, and 203--204 were read for transformation
+monoids, transformation modules, rank, Proposition~13.1, and Lemma~13.2.
+The minimum-ideal argument in
+Proposition~\ref{prop:finite-residue-minimum-ideal} is proved directly and
+then crosswalked against Steinberg's general minimum-rank theorem.
+
+\bibitem{ConnesConsani2016}
+Alain Connes and Caterina Consani,
+\emph{Geometry of the Arithmetic Site},
+\emph{Advances in Mathematics} \textbf{291} (2016), 274--329,
+doi:10.1016/j.aim.2015.11.045; arXiv:1502.05580.
+The complete local source \TeX{} was used for the present crosswalk.  The
+relevant source coordinates are the tensor square and Frobenius maps,
+source lines 1151--1214; the semiring
+$\operatorname{Conv}(\Z\times\Z)$ and its quotient, lines 1364--1400; and
+the reduced-square factorization, lines 1470--1519.  The Frobenius
+correspondence construction and its composition law occur at lines
+1522--1902, with the three cases stated at lines 1747--1755:
+$\Psi(\lambda)\circ\Psi(\lambda')=\Psi(\lambda\lambda')$ when
+$\lambda\lambda'$ is irrational; the same equality when both parameters are
+positive rational; and
+$\Psi(\lambda)\circ\Psi(\lambda')=
+\operatorname{Id}_{\varepsilon}\circ\Psi(\lambda\lambda')$ when both
+parameters are irrational but their product is positive rational.  In
+particular, the
+source does not define a Collatz path algebra or identify a nonnegative
+bidegree cone with the arithmetic-site square.
+
+\bibitem{BhattLurieWCart}
+Bhargav Bhatt and Jacob Lurie,
+\emph{The Prismatization of $p$-adic Formal Schemes},
+preliminary postscript.
+The local source \TeX{} was read at its definition of
+$\operatorname{WCart}_X$, lines 480--483; functoriality in formal-scheme
+maps, lines 523--530; the separate Witt Frobenius and Hodge--Tate material,
+lines 532--550; and the derived/classical warnings, lines 1450--1511.
+Section~\ref{sec:symbolic-completion-geometric-boundaries} uses only that
+stated functorial scope and independently proves that the raw affine branch
+is not an endomorphism of $\operatorname{Spf}(\Z_3)$.
+
+\bibitem{GrosLeStumQuiros2025}
+Michel Gros, Bernard Le~Stum, and Adolfo Quir\'os,
+\emph{Absolute Calculus and Prismatic Crystals on Cyclotomic Rings},
+arXiv:2310.13790v3, 30 June 2025.
+The controlling 72-page PDF was read at Theorems~7.5 and 7.12, the de~Rham
+and Hodge--Tate comparisons in Sections~8--9, and the prismatic
+$F$-crystal/crystalline-representation results in Section~10.  Its base is
+the one-variable cyclotomic ring $W[[q-1]]$ with $k$ a perfect field of
+characteristic $p>0$ and under its explicit root-of-unity hypotheses.  No two-coordinate Collatz calculus is
+attributed to it.
+
+\bibitem{Sarig1999}
+Omri M. Sarig,
+\emph{Thermodynamic Formalism for Countable Markov Shifts},
+\emph{Ergodic Theory and Dynamical Systems} \textbf{19} (1999), no.~6,
+1565--1593, doi:10.1017/S0143385799146820.
+The official 33-page author preprint was read at physical pages 3, 5--7, 18,
+and 24--25.  These pages contain the countable topological Markov shift and
+mixing definitions, fixed-base periodic definition of Gurevich pressure,
+condition~(13), and Theorem~8.  Condition~(13) is the one-sided big-images
+condition: finitely many states $b_1,\ldots,b_n$ receive an edge from every
+state.  It is not BIP.  At the theorem's stated topological-mixing, locally
+H\"older, and finite-pressure scope, Theorem~8 says that a Gibbs measure
+exists exactly when the potential is positive recurrent, its RPF
+eigenfunction is uniformly bounded above and below, and condition~(13)
+holds; then the Gibbs measure is $h\,d\nu$ and its pressure parameter is the
+Gurevich pressure.  This theorem is not silently replaced by the later BIP
+criterion.
+
+\bibitem{Sarig2015}
+Omri M. Sarig,
+\emph{Thermodynamic Formalism for Countable Markov Shifts}, in
+\emph{Hyperbolic Dynamics, Fluctuations and Large Deviations},
+Proceedings of Symposia in Pure Mathematics \textbf{89}, American
+Mathematical Society, 2015, 81--117,
+doi:10.1090/pspum/089/01485.
+The controlling local file is the 36-page 2015 overview despite its
+misleading filename.  Physical pages 14, 16, 18, and 19 were read for
+Theorems~4.3, 4.9, 5.3, Definition~5.8, and Theorem~5.9; physical pages
+35--36 explicitly list the 1999 article as a distinct source.  The overview
+is therefore neither a manifestation nor a theorem locator for the 1999
+article.
+
+\bibitem{Sarig2003}
+Omri Sarig,
+\emph{Existence of Gibbs Measures for Countable Markov Shifts},
+Proceedings of the American Mathematical Society \textbf{131} (2003),
+1751--1758, doi:10.1090/S0002-9939-03-06927-2.
+All eight pages were read.  Theorem~1 gives the Gibbs/BIP equivalence under
+topological mixing, summable variations including finite first variation,
+and finite Gurevich pressure.  In
+Theorem~\ref{thm:symbolic-full-shift-pressure} these hypotheses are checked
+only for the completed full shift; the positive arithmetic locus is handled
+separately.
+
+\bibitem{ConwayRadinSadun1999}
+John H. Conway, Charles Radin, and Lorenzo Sadun,
+\emph{On Angles Whose Squared Trigonometric Functions are Rational},
+\emph{Discrete \& Computational Geometry} \textbf{22} (1999), no.~3,
+321--332, doi:10.1007/PL00009463; arXiv:math-ph/9812019v1.
+The versioned arXiv source was acquired to the topical shelf.  Its controlling
+Plain-\TeX{} file has 42,239 bytes and SHA-256
+\nolinkurl{0b37130b7e958c58c1e9f70f855f9181699b0f42d78ac5d04c29329aae0db21d}.
+Theorems~1--2 are at source lines 151--168.  Lines 251--306 reconstruct the
+$d=1$ St\o rmer theory from unique factorization in $\Z[i]$, orient one
+Gaussian prime over each split rational prime, and prove the corresponding
+angle coordinates rationally independent modulo $\pi$.  This supplies the
+fixed-instance relation algorithm used in
+Section~\ref{sec:chatnotes-arctangent-torsion}, not a uniform Collatz-prefix
+rank theorem.
+
+\bibitem{Calcut2009}
+Jack S. Calcut,
+\emph{Gaussian Integers and Arctangent Identities for $\pi$},
+\emph{The American Mathematical Monthly} \textbf{116} (2009), no.~6,
+515--530, doi:10.1080/00029890.2009.11920967.
+The controlling 16-page PDF has 169,888 bytes and SHA-256
+\nolinkurl{d650da61527c78c67caca06758363280bac7303cb2b553fc786914ddf3a4886f}.
+The Main Lemma is on physical page 5 / printed page 519; Corollaries~1--3 are
+on physical page 6 / printed page 520.  They prove that the relevant rational
+angle is in $(\pi/4)\Z$ and that a single rational tangent gives a rational
+multiple of $\pi$ only for tangent $0$ or $\pm1$.
+
+\bibitem{GasullLucaVarona2023}
+Armengol Gasull, Florian Luca, and Juan L. Varona,
+\emph{Three Essays on Machin's Type Formulas},
+\emph{Indagationes Mathematicae} \textbf{34} (2023), no.~6, 1373--1396,
+doi:10.1016/j.indag.2023.07.002; arXiv:2302.00154v2.
+The versioned arXiv source was acquired to the topical shelf.  Its controlling
+source-\TeX{} file has 82,898 bytes and SHA-256
+\nolinkurl{53f19ec4bf58c9e64ec51a2397401cb51fc450c7d9eb5ec61d2cf0372c162baf}.
+Section~2 begins at source line 230.  Theorem~1 is at lines 246--267 and
+contains $(1,1/2,1/2,3/4)$; lines 278--312 give the Gaussian root-of-unity
+reformulation; and lines 341--352 derive the relevant zero double-angle
+family and its exceptional $a_1=1$ specialization.  Its literal theorem scope
+is two terms with nonzero right-hand side, not all zero relations or arbitrary
+Collatz-prefix length.
+
+\bibitem{Deaconu1995}
+Valentin Deaconu,
+\emph{Groupoids Associated with Endomorphisms},
+\emph{Transactions of the American Mathematical Society} \textbf{347}
+(1995), no.~5, 1779--1786.
+The controlling nine-page PDF has 742,789 bytes and SHA-256
+\nolinkurl{63a34e76b5404328d6eb5e7516660af357511d824a6de4b4a6286112e77cfdae}.
+Physical pages 2--4 / printed pages 1779--1781 were read, and physical pages
+2--3 were rendered.  They supply the set of triples, the groupoid operations,
+and the compact-Hausdorff self-covering hypotheses of Theorem~1.  The
+positive-odd discrete theorem in
+Section~\ref{sec:chatnotes-groupoid-motivic} is proved independently because
+those hypotheses do not hold there.
+
+\bibitem{HuberWustholz2022}
+Annette Huber and Gisbert W\"ustholz,
+\emph{Transcendence and Linear Relations of $1$-Periods},
+Cambridge Tracts in Mathematics, volume 227, Cambridge University Press,
+2022.
+The controlling 265-page PDF has 5,175,455 bytes and SHA-256
+\nolinkurl{1743c141fd0078e7ac19805a5174078a26551d978bf6d1cb623bf3b237da3d17}.
+Physical pages 90, 116--120, and 133--140 / printed pages 69, 95--99, and
+112--119 were read; physical pages 119 and 138 were rendered.  Definition
+8.1 fixes $1$-motives and morphisms as complexes and commutative squares,
+Section~10.2 supplies the Kummer motive and path-selected logarithm, and
+Proposition~12.10 supplies the $1$-period comparison.  The concrete point
+$(2,3)$ and all path characters in the live chapter are independent
+specializations.
+
+\bibitem{HuberMullerStach2025}
+Annette Huber and Stefan M\"uller-Stach, with contributions by Benjamin
+Friedrich and Jonas von Wangenheim,
+\emph{Periods and Nori Motives}, Springer, annotated version dated
+1 July 2025.
+The controlling 402-page PDF has 1,855,231 bytes and SHA-256
+\nolinkurl{6d08014f21a616abb4ba7e177effad4d15e4a215b0f234ce3a4605c20a02b731}.
+Physical pages 161--164, 231--232, and 323--324 / printed pages 139--142,
+209--210, and 301--302 were read.  Definition~9.1.1 states exactly two
+primitive edge types for effective pairs: contravariant functoriality from a
+map of pairs and the coboundary edge from a nested triple.  It also confirms
+the volume's $(k,\mathbb Q)$-Vect convention.  No path-concatenation edge is
+attributed to the source.
+
+\bibitem{BarbieriVialeKahn2016}
+Luca Barbieri-Viale and Bruno Kahn,
+\emph{On the Derived Category of $1$-Motives},
+\emph{Ast\'erisque} \textbf{381} (2016); arXiv:1009.1900v2.
+The versioned source archive was acquired to the topical shelf.  Its
+controlling source file \path{der1motast-pbl.tex} has 564,248 bytes and
+SHA-256
+\nolinkurl{f884b90f3760ac666c1047a975e6788dfc02a1eb7f047e8eae8b57df6f013c18}.
+Source lines 728--750 define a Deligne $1$-motive and its commutative-square
+morphisms; lines 1529--1618 give the Cartier-dual character-lattice
+machinery; lines 1736--1751 state the fully faithful curve-generated
+embedding; and lines 3796--3820 define the Albanese functor and record the
+integral adjunction boundary.  The source contains no Collatz-specific
+$(2,3)$ specialization or Kummer character used in the live chapter.
+
+\end{thebibliography}
+\endgroup

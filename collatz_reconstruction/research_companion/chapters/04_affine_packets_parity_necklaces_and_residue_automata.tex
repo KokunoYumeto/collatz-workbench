@@ -1,0 +1,924 @@
+\section{Affine packets, parity necklaces, and exact residue automata}
+\label{sec:affine-packets-residue-automata}
+
+This section reconstructs an exponent-packet programme that arose in the
+modern Chatnotes corpus.  The fixed-return formula itself is classical:
+B\"ohm--Sontacchi and Crandall give parity-coordinate forms,
+Lagarias proves the rational parity-word correspondence, and Urata writes the
+odd-step exponent formula and asks when its rational periodic points are
+integral
+\cite{BohmSontacchi1978,Crandall1978,Lagarias1990,Urata2003}.
+The comparison below identifies the rational points, transports cyclic
+rotation together with its stabilizers, and relates the full, shortened,
+and odd-return clocks.  It also resolves the packet label $(m,A)$ into an
+exact fixed-content primitive-necklace count and a packetwise sign split.
+The same exponent coordinates give a finite-state recursion for numerator
+residues, retaining their multiplicities.
+
+\subsection{Odd-step coordinates and the classical parity numerator}
+
+Let $\mathbb Z_{(2)}=\{u/v\in\mathbb Q:u,v\in\mathbb Z,
+v\text{ odd}\}$.  The parity of $u/v$ is $u\bmod2$; it is independent of
+the odd-denominator representation.  Both maps
+\[
+ T(x)=\begin{cases}(3x+1)/2,&x\text{ odd},\\x/2,&x\text{ even},\end{cases}
+ \qquad
+ F(x)=\begin{cases}3x+1,&x\text{ odd},\\x/2,&x\text{ even}\end{cases}
+\]
+take $\mathbb Z_{(2)}$ to itself.  We call $T$ the shortened map and $F$
+the full map.  Lagarias uses $T$ in his rational-cycle theorem
+\cite[(1.1), Theorem~2.1]{Lagarias1990}.  Let
+\[
+ \mathcal U_2=\left\{\frac uv\in\mathbb Q:
+     u,v\in\mathbb Z\text{ odd},\ v\ne0\right\}.
+\]
+For $x\in\mathcal U_2\setminus\{-1/3\}$, the numerator of $3x+1$
+in odd-denominator form is even.  Thus
+\[
+ \Phi(x)=\frac{3x+1}{2^{\nu_2(3x+1)}}
+ \quad\text{and}\quad
+ a(x)=\nu_2(3x+1)\in\mathbb N_{>0}
+\]
+are well defined and $\Phi(x)\in\mathcal U_2$.
+
+For $m\ge1$ and a packet $p=(a_1,\ldots,a_m)\in\mathbb N_{>0}^{m}$ put
+\[
+ A=A(p)=\sum_{i=1}^{m}a_i,
+ \qquad S_0=0,\qquad S_j=\sum_{i=1}^{j}a_i,
+\]
+and define
+\begin{equation}
+ C(p)=\sum_{j=0}^{m-1}3^{m-1-j}2^{S_j},
+ \qquad D_{m,A}=2^A-3^m,
+ \qquad x_p=\frac{C(p)}{D_{m,A}}.
+ \label{eq:packet-C-D-x}
+\end{equation}
+The equality $2^A=3^m$ is impossible, so $D_{m,A}\ne0$.  Moreover
+$C(p)$ and $D_{m,A}$ are odd.  For tail recurrences only, set
+$A(\varnothing)=C(\varnothing)=0$; no point $x_{\varnothing}$ is defined.
+
+Write
+\[
+ \Pi_{m,A}=\{p\in\mathbb N_{>0}^{m}:A(p)=A\}.
+\]
+Here $A$ is a nonnegative integer, and $\Pi_{m,A}=\varnothing$ when
+$A<m$.  For $A\ge m$ and $p\in\Pi_{m,A}$ define the shortened parity word
+\begin{equation}
+ E(p)=1,0^{a_1-1}1,0^{a_2-1}\cdots1,0^{a_m-1}
+ \in\{0,1\}^{A}.
+ \label{eq:packet-parity-encoding}
+\end{equation}
+If $v=(v_0,\ldots,v_{A-1})$ is a binary word, set
+\begin{equation}
+ N(v)=\sum_{j=0}^{A-1}v_j\,2^j
+       3^{v_{j+1}+\cdots+v_{A-1}}.
+ \label{eq:lagarias-numerator}
+\end{equation}
+This is the numerator in Lagarias's rational-cycle formula
+\cite[Theorem~2.1]{Lagarias1990}.
+
+\begin{theorem}[Packet--parity coordinate isomorphism]
+\label{thm:packet-parity-coordinate-isomorphism}
+For fixed $m\ge1$ and $A\ge m$, the map $E$ is a bijection
+\[
+ E:\Pi_{m,A}\longrightarrow
+ \mathcal B_{m,A}^{\bullet}:=
+ \{v\in\{0,1\}^{A}:v_0=1,
+              \textstyle\sum_{j=0}^{A-1}v_j=m\}.
+\]
+It satisfies
+\[
+ N(E(p))=C(p).
+\]
+Consequently the rational point attached by Lagarias's formula to $E(p)$ is
+exactly $x_p$.
+\end{theorem}
+
+\begin{proof}
+The $m$ displayed blocks in \eqref{eq:packet-parity-encoding} have lengths
+$a_1,\ldots,a_m$, hence total length $A$, and their initial symbols are
+exactly the $m$ ones.  Conversely, starting at the distinguished one $v_0$,
+record the positive cyclic distances to the successive ones and finally to
+the boundary at $A$.  These distances form the unique inverse packet in
+$\Pi_{m,A}$.
+
+The ones of $E(p)$ occur at positions $S_0,\ldots,S_{m-1}$.  The number of
+ones strictly to the right of $S_j$ is $m-1-j$.  Substitution in
+\eqref{eq:lagarias-numerator} therefore gives
+\[
+ N(E(p))=\sum_{j=0}^{m-1}2^{S_j}3^{m-1-j}=C(p).
+\]
+Lagarias's denominator is $2^A-3^m$, so the two rational points coincide.
+\end{proof}
+
+The preceding bijection retains a distinguished odd point.  Advancing that
+point by one odd return shifts the shortened word by $a_1$ positions.
+
+Let $\sigma(a_1,\ldots,a_m)=(a_2,\ldots,a_m,a_1)$ and let $\rho$ be
+left rotation of a binary word by one position.  The packet groupoid has
+objects $p\in\Pi_{m,A}$ and arrows $(p,j):p\to\sigma^jp$ indexed by
+$j\in\mathbb Z/m\mathbb Z$.  Distinct $j$ remain distinct arrows even
+when their targets coincide.  The binary groupoid is the full subgroupoid
+of the $\mathbb Z/A\mathbb Z$ rotation action whose objects belong to
+$\mathcal B_{m,A}^{\bullet}$.  Its arrows $(v,t):v\to\rho^tv$ are
+exactly those with $v_t=1$.
+
+\begin{theorem}[Exact cyclic groupoid morphism]
+\label{thm:packet-parity-cyclic-groupoid}
+The object map $E$ and arrow map
+\begin{equation}
+ (p,j)\longmapsto\bigl(E(p),S_j(p)\bigr),
+ \qquad 0\le j<m,
+ \label{eq:packet-parity-arrow-map}
+\end{equation}
+give an isomorphism from the cyclic action groupoid of packets to the
+pointed-one rotation groupoid of binary words.  Explicitly,
+\begin{equation}
+ E(\sigma^jp)=\rho^{S_j(p)}E(p).
+ \label{eq:packet-parity-rotation}
+\end{equation}
+The inverse reads the cyclic gaps between consecutive ones.  In particular,
+$p$ is primitive under packet rotation if and only if $E(p)$ is primitive
+under binary rotation, and the induced map on necklace classes is bijective.
+\end{theorem}
+
+\begin{proof}
+Moving the distinguished one past the first $j$ zero-blocks rotates the
+binary word by their total length $S_j(p)$, which proves
+\eqref{eq:packet-parity-rotation}.  For composable arrows,
+\[
+ S_{j+k\bmod m}(p)
+ \equiv S_j(p)+S_k(\sigma^jp)\pmod A,
+\]
+so \eqref{eq:packet-parity-arrow-map} preserves composition.  The positions
+of the ones are exactly $0=S_0<S_1<\cdots<S_{m-1}<A$.  Thus each target
+arrow $(E(p),t)$ has the unique preimage $(p,j)$ with $t=S_j$.
+The object inverse reads gaps, and this arrow inverse proves bijectivity on
+every source fibre.  The identity maps to the identity.  For $j>0$,
+\[
+ S_{m-j}(\sigma^jp)=A-S_j(p),
+\]
+so inverses are preserved as well; $j=0$ is immediate.
+
+Write $p=u^r$ with $u$ primitive, of length $d$ and sum $B$.
+Then $m=rd$, $A=rB$, and the stabilizers are
+\[
+ \operatorname{Stab}(p)=\{kd\bmod m:0\le k<r\},\qquad
+ \operatorname{Stab}(E(p))=\{kB\bmod A:0\le k<r\}.
+\]
+Indeed, a stabilizing binary rotation must send the initial one to a one,
+hence is $S_j$ for some $j$.  The object bijection then forces
+$\sigma^jp=p$, so $d\mid j$ and $S_{kd}=kB$.  Conversely all these
+rotations stabilize $E(p)=E(u)^r$.  The arrow map sends $kd$ to $kB$.
+In particular both stabilizers are trivial exactly when $r=1$; this proves
+the primitive assertion and the bijection on cyclic classes.
+\end{proof}
+
+This is the precise interface between the exponent necklaces used by Urata
+and the parity necklaces counted by Lagarias and later discussed through
+Lyndon words by Laarhoven--de Weger
+\cite{Lagarias1990,LaarhovenDeWeger2012,Urata2003}.
+
+\subsection{Cyclic transport and the exact integrality criterion}
+
+The local antecedent's Theorem~10.1 already proves affine cyclic transport
+by uniqueness of the shifted fixed point.  The calculation below makes the
+numerator identity, exact valuation, and two directions of divisibility
+explicit in the same coordinates.
+
+Put $p'=(a_2,\ldots,a_m)$.  Directly from
+\eqref{eq:packet-C-D-x},
+\[
+ C(p)=3^{m-1}+2^{a_1}C(p'),
+ \qquad
+ C(\sigma p)=3C(p')+2^{A-a_1}.
+\]
+
+\begin{theorem}[Cyclic affine transport]
+\label{thm:cyclic-affine-transport}
+For every positive packet $p$,
+\begin{equation}
+ 3C(p)+D_{m,A}=2^{a_1}C(\sigma p),
+ \qquad
+ 3x_p+1=2^{a_1}x_{\sigma p}.
+ \label{eq:cyclic-affine-transport}
+\end{equation}
+Hence
+\[
+ \nu_2(3x_p+1)=a_1,
+ \qquad \Phi(x_p)=x_{\sigma p}.
+\]
+For fixed $m,A$, divisibility $D_{m,A}\mid C(p)$ is invariant under every
+cyclic rotation of $p$.
+\end{theorem}
+
+\begin{proof}
+Substitution gives
+\[
+ \begin{aligned}
+ 3C(p)+D_{m,A}
+ &=3\bigl(3^{m-1}+2^{a_1}C(p')\bigr)+2^A-3^m\\
+ &=2^{a_1}\bigl(3C(p')+2^{A-a_1}\bigr)
+ =2^{a_1}C(\sigma p).
+ \end{aligned}
+\]
+Division by the nonzero $D_{m,A}$ proves the rational identity.  Both
+$C(\sigma p)$ and $D_{m,A}$ are odd, so $\nu_2(x_{\sigma p})=0$ and the
+valuation is exactly $a_1$.  This also proves $3x_p+1\ne0$, since the
+numerator $C(\sigma p)$ is positive.  Finally $\gcd(D_{m,A},6)=1$:
+$D_{m,A}$ is odd and is congruent to $2^A\ne0$ modulo $3$.
+In the first equality, invertibility of $2^{a_1}$ modulo $D_{m,A}$ gives
+$D_{m,A}\mid C(p)\Rightarrow D_{m,A}\mid C(\sigma p)$; invertibility
+of $3$ gives the converse.  Repeating this argument handles every rotation.
+\end{proof}
+
+\begin{corollary}[Typed cycle criterion]
+\label{cor:typed-positive-cycle-criterion}
+Let $p\in\Pi_{m,A}$.  Then $x_p$ is an integer if and only if
+$D_{m,A}\mid C(p)$; whenever it is an integer it is odd.  It is positive if
+and only if $D_{m,A}>0$.  If, in addition, $p$ is primitive, then
+$x_p\in\mathbb Z_{>0}$ is equivalent to a positive odd integral orbit of
+exact odd-step period $m$ with exponent necklace $[p]$.
+\end{corollary}
+
+\begin{proof}
+The first assertion is the reduced rational integrality test before any
+cancellation: $D_{m,A}\mid C(p)$.  An odd integer divided from odd $C(p)$ by
+odd $D_{m,A}$ is odd.  Since $C(p)>0$, its sign is the sign of $D_{m,A}$.
+Theorem~\ref{thm:cyclic-affine-transport} supplies every actual odd-step
+arrow.  A shorter orbit period would make the exponent itinerary repeat,
+contradicting primitivity.  Conversely, for $f_a(x)=(3x+1)/2^a$, induction
+on the number of branches gives
+\[
+ (f_{a_m}\circ\cdots\circ f_{a_1})(x)
+       =\frac{3^m x+C(p)}{2^A}.
+\]
+At an actual return this forces $D_{m,A}x=C(p)$, hence $x=x_p$.
+If the itinerary were a proper power, its primitive root would itself
+supply this periodic point by the same affine identity, contradicting the
+assumed exact period.
+\end{proof}
+
+\begin{theorem}[Exact comparison of three clocks]
+\label{thm:packet-three-clocks}
+Let $p\in\Pi_{m,A}$ and $x_j=x_{\sigma^jp}$.  For $0\le j<m$,
+\[
+ \Phi^j(x_p)=T^{S_j}(x_p)=F^{S_j+j}(x_p)=x_j.
+\]
+Within its $(j+1)$st block the intermediate values are exactly
+\begin{align*}
+ T^s(x_j)&=2^{a_{j+1}-s}x_{j+1}
+       &&(1\le s\le a_{j+1}),\\
+ F^s(x_j)&=2^{a_{j+1}+1-s}x_{j+1}
+       &&(1\le s\le a_{j+1}+1).
+\end{align*}
+The full parity word is
+\[
+ E_F(p)=1,0^{a_1}\cdots1,0^{a_m}\in\{0,1\}^{A+m}.
+\]
+If $p=u^r$ with $u$ primitive of length $d$ and sum $B$, the exact
+periods of $x_p$ under $\Phi,T,F$ are respectively $d,B,B+d$.
+\end{theorem}
+
+\begin{proof}
+The transport identity is $3x_j+1=2^{a_{j+1}}x_{j+1}$, with
+$x_{j+1}$ odd and nonzero.  The first shortened step gives
+$2^{a_{j+1}-1}x_{j+1}$; successive halving steps give the displayed
+$T$ formula.  Its values are even before the last and odd at the last.
+The full map inserts $2^{a_{j+1}}x_{j+1}$ as its first intermediate
+value, proving the $F$ formula and its parity block.  Concatenation gives
+all return times.  Thus $E_F$ inserts one zero after each one of $E$;
+its inverse deletes that zero.  These are inverse bijections between
+$\mathcal B_{m,A}^{\bullet}$ and the pointed binary words of length
+$A+m$, weight $m$, having at least one zero between consecutive cyclic ones.
+
+To establish exact periods, put $f_u=f_{u_d}\circ\cdots\circ f_{u_1}$.
+It has positive slope $\alpha=3^d/2^B\ne1$, and its $r$th iterate is
+$f_p$.  Since
+\[
+ f_u^r(x)-x=(1+\alpha+\cdots+\alpha^{r-1})(f_u(x)-x),
+\]
+the two maps have the same unique fixed point: $x_p=x_u$.
+The least odd-return period is $d$, since a shorter period would repeat
+the exponent itinerary of $u$.  Any return to the odd starting point under
+$T$ or $F$ must be one of the odd returns just enumerated.  Their first
+return to $x_u$ occurs after the $d$ blocks of $u$, at times $B$ and $B+d$.
+This proves the three exact periods, including imprimitive packets.
+\end{proof}
+
+\subsection{Fixed-content primitive necklaces and the exact sign split}
+
+For $m\geq1$ and $A\geq m$, let $W(m,A)$ be the number of words in
+$\Pi_{m,A}$ whose least cyclic period is $m$.  Let
+$N_{\mathrm{orb}}^{+}(m,A)$ and $N_{\mathrm{orb}}^{-}(m,A)$ denote the
+numbers of positive and negative rational $\Phi$-orbits of exact odd-return
+period $m$ represented by this packet, modulo cyclic phase.  Finally, let
+$N_{\mathrm{pt}}^{\pm}(m,A)$ count the individual rational points in those
+orbits.  These are three different counts: primitive pointed words, cyclic
+orbits, and orbit points.
+
+\begin{theorem}[Signed fixed-content necklace count]
+\label{thm:signed-fixed-content-necklace-count}
+Put $g=\gcd(m,A)$.  Then
+\begin{equation}
+ W(m,A)=\sum_{d\mid g}\mu(d)
+            \binom{A/d-1}{m/d-1}.
+ \label{eq:primitive-packet-word-count}
+\end{equation}
+The unsigned orbit count has the two exactly equal forms
+\begin{equation}
+ N_{\mathrm{orb}}(m,A)
+ =\frac1m\sum_{d\mid g}\mu(d)
+            \binom{A/d-1}{m/d-1}
+ =\frac1A\sum_{d\mid g}\mu(d)
+            \binom{A/d}{m/d}.
+ \label{eq:primitive-packet-orbit-count}
+\end{equation}
+Its sign decomposition is
+\begin{align}
+ N_{\mathrm{orb}}^{+}(m,A)
+ &=\mathbf 1_{\{2^A>3^m\}}N_{\mathrm{orb}}(m,A),
+ &
+ N_{\mathrm{orb}}^{-}(m,A)
+ &=\mathbf 1_{\{2^A<3^m\}}N_{\mathrm{orb}}(m,A),
+ \label{eq:signed-packet-orbit-count}\\
+ N_{\mathrm{pt}}^{+}(m,A)
+ &=mN_{\mathrm{orb}}^{+}(m,A),
+ &
+ N_{\mathrm{pt}}^{-}(m,A)
+ &=mN_{\mathrm{orb}}^{-}(m,A).
+ \label{eq:signed-packet-point-count}
+\end{align}
+There is no zero-sign case.  If $\gcd(m,A)=1$, every word in
+$\Pi_{m,A}$ is primitive and therefore
+\begin{equation}
+ N_{\mathrm{orb}}(m,A)=\frac1m\binom{A-1}{m-1},
+ \qquad
+ N_{\mathrm{pt}}(m,A)=\binom{A-1}{m-1}.
+ \label{eq:coprime-packet-orbit-count}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+There are $\binom{A-1}{m-1}$ positive compositions of $A$ into $m$
+parts.  Every such word has a unique primitive root.  If it is the $d$th
+power of a primitive word, then $d\mid m$ and $d\mid A$, and the root has
+length $m/d$ and exponent sum $A/d$.  Conversely, repeating any primitive
+word with those parameters $d$ times recovers a word in $\Pi_{m,A}$.
+Consequently
+\[
+ \binom{A-1}{m-1}
+ =\sum_{d\mid g}W(m/d,A/d).
+\]
+M\"obius inversion on the common divisors of $(m,A)$ gives
+\eqref{eq:primitive-packet-word-count}; no Burnside coefficient remains
+hidden in this inversion.
+
+The cyclic action on a primitive word is free: a nonidentity stabilizing
+rotation would exhibit the word as a proper power.  Each primitive necklace
+therefore contains exactly $m$ pointed words.  Theorems
+\ref{thm:packet-parity-cyclic-groupoid} and \ref{thm:packet-three-clocks}
+identify one such necklace with one rational $\Phi$-orbit of exact period
+$m$.  Conversely, the orbit determines its successive exact valuations, so
+two necklaces cannot determine the same orbit.  This proves the first form
+of \eqref{eq:primitive-packet-orbit-count}.  For each $d\mid g$,
+\[
+ \frac1m\binom{A/d-1}{m/d-1}
+ =\frac1A\binom{A/d}{m/d},
+\]
+which proves the fixed-Hamming-weight binary-necklace form.
+
+For every rotation $\sigma^jp$, equation \eqref{eq:packet-C-D-x} gives
+\[
+ x_{\sigma^jp}=\frac{C(\sigma^jp)}{2^A-3^m},
+ \qquad C(\sigma^jp)>0.
+\]
+Thus all $m$ points of the orbit have the sign of $2^A-3^m$.  Equality
+$2^A=3^m$ is impossible by unique factorization.  This proves
+\eqref{eq:signed-packet-orbit-count}; exact period supplies the $m$ distinct
+points in \eqref{eq:signed-packet-point-count}.  Finally, a proper power
+would give a repetition number dividing both $m$ and $A$, so coprimality
+forces every word to be primitive and yields
+\eqref{eq:coprime-packet-orbit-count}.
+\end{proof}
+
+Stanley's multivariate Lyndon series counts primitive necklaces by the
+number of occurrences of each colour
+\cite[Exercise~7.89(a), equations~(7.149)--(7.150), and the solution on
+printed p.~555]{Stanley2024}.  Extracting the binary-content coefficient
+with content $(m,A-m)$ gives exactly the second expression in
+\eqref{eq:primitive-packet-orbit-count}.  Lagarias gives the unrestricted
+primitive binary-necklace and rational-cycle coordinates, while
+Laarhoven--de Weger restate the unrestricted count in Lyndon-word language
+\cite[pp.~38--39]{Lagarias1990}\cite[lines~303--315]{LaarhovenDeWeger2012}.
+Thus the enumeration formula is classical.  The packet--parity groupoid
+proves its exact transport to exponent compositions, and the denominator
+$2^A-3^m$ supplies the Collatz-specific sign partition.  Summing over
+$1\leq m\leq A$ recovers the unrestricted primitive binary-necklace count
+for every $A\geq2$.  The sign refinement then uses the packet denominator
+$2^A-3^m$ and does not alter the classical necklace enumeration.  At the
+boundary, $m=1$ gives the negative fixed point for $A=1$ and one positive
+fixed point for every $A\geq2$, whereas $A=m>1$ contains only the
+imprimitive word $(1,\ldots,1)$ and contributes no exact-period-$m$ orbit.
+
+\subsection{The exact minimum strip and its literature boundary}
+
+Let $(x_0,\ldots,x_{m-1})$ be a positive odd integral cycle and write
+$2^{a_i}x_{i+1}=3x_i+1$, with indices modulo $m$.  Multiplication around the
+cycle gives the exact identity
+\begin{equation}
+ 2^A=\prod_{i=0}^{m-1}\left(3+\frac1{x_i}\right).
+ \label{eq:cycle-product-identity}
+\end{equation}
+This product identity and its minimum-point use are classical; compare
+Crandall's cycle formula and minimum estimate
+\cite[Section~7]{Crandall1978}.
+
+If the cycle is nonconstant and $n=\min_i x_i$, then
+\begin{equation}
+ 3^m<2^A<\left(3+\frac1n\right)^m.
+ \label{eq:minimum-packet-strip}
+\end{equation}
+The left inequality is strict termwise.  The right inequality is strict
+because at least one $x_i$ exceeds $n$.  A constant positive integral cycle
+would satisfy $x=1/(2^a-3)$ and is therefore the fixed point $x=1$, $a=2$.
+Moreover $1$ is fixed, while $3\mapsto5\mapsto1$ under $\Phi$; hence a
+nontrivial positive cycle has $n\ge7$.  Thus
+\begin{equation}
+ 3^m<2^A<\left(\frac{22}{7}\right)^m.
+ \label{eq:seven-strip}
+\end{equation}
+
+No logarithmic approximation is required to enumerate the integral points in
+this strip: test
+\[
+ 3^m<2^A
+ \quad\text{and}\quad
+ 7^m2^A<22^m
+\]
+as integer inequalities.  For $2\le m\le17$ the result is
+\begin{center}
+\begin{tabular}{c@{\qquad}l c@{\qquad}l}
+\toprule
+$m$ & admissible $A$ & $m$ & admissible $A$\\
+\midrule
+$2,3,4$ & none & $10$ & $16$\\
+$5$ & $8$ & $11$ & $18$\\
+$6,7$ & none & $12$ & none\\
+$8$ & $13$ & $13$ & $21$\\
+$9$ & none & $14$ & $23$\\
+& & $15$ & $24$\\
+& & $16$ & $26$\\
+& & $17$ & $27,28$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Historical comparison]
+Crandall obtained a much larger cycle-length exclusion in 1978 from the
+verification range available at that time \cite[Theorem~7.3]{Crandall1978}.
+The small table here supplies explicit packet labels for the residue
+calculations below.
+\end{remark}
+
+\subsection{Finite-state residue recursion}
+
+For a positive odd modulus $q$, define
+\[
+ R_{m,A}(q)=\{C(p)\bmod q:p\in\Pi_{m,A}\}
+ \subseteq\mathbb Z/q\mathbb Z.
+\]
+Writing $p=(a,p')$ gives
+\begin{equation}
+ C(a,p')=3^{m-1}+2^aC(p').
+ \label{eq:first-letter-C-recursion}
+\end{equation}
+
+\begin{theorem}[Packet residue automaton]
+\label{thm:packet-residue-automaton}
+For $m\ge2$ and $A\ge m$,
+\begin{equation}
+ R_{m,A}(q)=
+ \bigcup_{a=1}^{A-m+1}
+ \left(3^{m-1}+2^aR_{m-1,A-a}(q)\right),
+ \qquad R_{1,A}(q)=\{\bar1\}\quad(A\ge1).
+ \label{eq:packet-residue-recursion}
+\end{equation}
+Let
+\[
+ v_{m,A}^{(q)}(r)=
+ \#\{p\in\Pi_{m,A}:C(p)\equiv r\pmod q\}.
+\]
+For $A<m$ set $R_{m,A}(q)=\varnothing$ and $v_{m,A}^{(q)}=0$.
+With column vectors, define
+\[
+ M_{m,a}^{(q)}e_r=e_{\,3^{m-1}+2^ar},\qquad
+ (M_{m,a}^{(q)})^{-1}e_s=e_{\,2^{-a}(s-3^{m-1})},
+\]
+where all indices lie in $\mathbb Z/q\mathbb Z$.  Put
+$\lambda=\operatorname{ord}_q(2)$ for $q>1$, and $\lambda=1$ for $q=1$.
+Then the
+formal vector series $V_m^{(q)}(z)=\sum_{A\ge m}v_{m,A}^{(q)}z^A$ obeys
+\begin{equation}
+ V_1^{(q)}(z)=\frac{z}{1-z}e_{\bar1},
+ \qquad
+ V_m^{(q)}(z)=
+ \frac{\sum_{a=1}^{\lambda}z^aM_{m,a}^{(q)}}{1-z^{\lambda}}
+ V_{m-1}^{(q)}(z).
+ \label{eq:packet-residue-rational-series}
+\end{equation}
+Every coordinate of $V_m^{(q)}$ is therefore rational in $z$.
+\end{theorem}
+
+\begin{proof}
+Every packet has a unique first part
+$1\le a\le A-m+1$ and a unique tail in $\Pi_{m-1,A-a}$.
+Equation~\eqref{eq:first-letter-C-recursion} proves the set recursion and,
+with multiplicities retained, the vector recursion
+\[
+ v_{m,A}^{(q)}=\sum_{a=1}^{A-m+1}M_{m,a}^{(q)}v_{m-1,A-a}^{(q)}.
+\]
+Since $q$ is odd,
+multiplication by $2^a$ is invertible modulo $q$, so each $M_{m,a}^{(q)}$ is
+a permutation matrix.  The equality $2^{a+\lambda}\equiv2^a\pmod q$ makes
+the matrix sequence $\lambda$-periodic.  Each $a\ge1$ has a unique form
+$b+k\lambda$, $1\le b\le\lambda$, $k\ge0$.  In
+$\mathbb Z^q[[z]]$, every coefficient of the following product is a finite
+sum, and this decomposition gives
+\[
+ \sum_{a\ge1}z^aM_{m,a}^{(q)}
+ =\frac{\sum_{b=1}^{\lambda}z^bM_{m,b}^{(q)}}{1-z^\lambda}.
+\]
+This proves \eqref{eq:packet-residue-rational-series}.  More explicitly,
+putting $P_j(z)=\sum_{b=1}^{\lambda}z^bM_{j,b}^{(q)}$ gives
+\[
+ V_m^{(q)}(z)=
+ \frac{P_m(z)P_{m-1}(z)\cdots P_2(z)\,z e_{\bar1}}
+ {(1-z)(1-z^\lambda)^{m-1}}.
+\]
+The order of the matrix factors is as displayed.  For $m=1$ their product
+is the identity.  When $q=1$ the formula reduces to
+$V_m(z)=z^m/(1-z)^m$, the generating function for positive compositions.
+\end{proof}
+
+\begin{corollary}[Divisor exclusion]
+\label{cor:packet-prime-factor-exclusion}
+If $q$ is a positive divisor of $|D_{m,A}|$ and $0\notin R_{m,A}(q)$, then
+$D_{m,A}\nmid C(p)$ for every $p\in\Pi_{m,A}$; hence the packet contains no
+integral periodic point.
+\end{corollary}
+
+\begin{proof}
+The divisibility $D_{m,A}\mid C(p)$ would imply $q\mid C(p)$, contradicting
+$0\notin R_{m,A}(q)$.
+\end{proof}
+
+\subsection{Synchronized residues and the Chinese remainder map}
+
+Factorwise information must retain the exponent word that produced each
+residue.  The common-letter product of weighted automata is the standard
+construction behind the Hadamard product of recognizable series
+\cite[Definition~4.1.4, Proposition~4.3.10]{Wirth2022}.  Here its coordinate
+map can be written explicitly.
+
+\begin{theorem}[Synchronized CRT transport]\label{thm:packet-synchronized-crt}
+Let $q_1,q_2$ be coprime positive odd integers and $q=q_1q_2$.
+For each modulus $h$, let $L_h$ be the free abelian group with basis
+$\{e_r:r\in\mathbb Z/h\mathbb Z\}$.  The map
+\[
+ J:L_q\longrightarrow L_{q_1}\otimes_{\mathbb Z}L_{q_2},\qquad
+ Je_r=e_{r\bmod q_1}\otimes e_{r\bmod q_2}
+\]
+is an isomorphism preserving nonnegative coefficients.  Choose integers
+$c_1,c_2$ with $q_2c_1\equiv1\pmod{q_1}$ and
+$q_1c_2\equiv1\pmod{q_2}$.  Its inverse on basis vectors is
+\[
+ J^{-1}(e_u\otimes e_v)=e_{q_2c_1u+q_1c_2v\bmod q}.
+\]
+For every $m\ge2$ and $a\ge1$,
+\begin{equation}\label{eq:crt-transition-intertwiner}
+ JM_{m,a}^{(q)}=
+ \bigl(M_{m,a}^{(q_1)}\otimes M_{m,a}^{(q_2)}\bigr)J.
+\end{equation}
+In particular, if
+\[
+ w_{m,A}(u,v)=\#\{p\in\Pi_{m,A}:
+                  C(p)\equiv u\pmod{q_1},\ C(p)\equiv v\pmod{q_2}\},
+\]
+then $w_{m,A}=Jv_{m,A}^{(q)}$ and
+\begin{equation}\label{eq:joint-residue-recursion}
+ w_{m,A}=\sum_{a=1}^{A-m+1}
+ \bigl(M_{m,a}^{(q_1)}\otimes M_{m,a}^{(q_2)}\bigr)w_{m-1,A-a}.
+\end{equation}
+The base vector is $w_{1,A}=e_{\bar1}\otimes e_{\bar1}$ for $A\ge1$,
+and $w_{m,A}=0$ when $A<m$.
+\end{theorem}
+
+\begin{proof}
+Reducing $q_2c_1u+q_1c_2v$ modulo either factor gives $u$ or $v$,
+respectively.  If two integers have the same pair of residues, their
+difference is divisible by both coprime factors and hence by $q$.
+These facts prove both inverse identities, including independence from the
+chosen representatives and Bezout coefficients.  Thus $J$ permutes the
+basis, has zero kernel and singleton fibres, and preserves each coefficient.
+
+Both sides of \eqref{eq:crt-transition-intertwiner} send $e_r$ to
+\[
+ e_{3^{m-1}+2^ar\bmod q_1}\otimes
+ e_{3^{m-1}+2^ar\bmod q_2}.
+\]
+This proves the identity and, by composition, the corresponding identity
+for every sequence of first-letter transitions.  Summing the basis image
+over the same packets proves $w_{m,A}=Jv_{m,A}^{(q)}$.  Applying $J$ to
+the scalar-modulus vector recursion proves
+\eqref{eq:joint-residue-recursion}; no independent choice of letters in the
+two factors occurs.  The base and empty ranges follow from their definitions.
+\end{proof}
+
+The factorwise inverse transition remains
+$r\mapsto2^{-a}(r-3^{m-1})$.  Consequently this comparison loses no residue
+information.  If $\lambda$ is the least common multiple of the two orders
+of $2$ (with the singleton convention for modulus one), the joint generating
+series $W_m(z)=\sum_{A\ge m}w_{m,A}z^A$ satisfies
+\[
+ W_m(z)=
+ \frac{\sum_{a=1}^{\lambda}z^a
+    (M_{m,a}^{(q_1)}\otimes M_{m,a}^{(q_2)})}{1-z^\lambda}
+ W_{m-1}(z),\qquad
+ W_1(z)=\frac z{1-z}e_{\bar1}\otimes e_{\bar1}.
+\]
+The proof is the same unique decomposition $a=b+k\lambda$ used above;
+every coefficient is a finite sum.  Notice the single power $z^a$ and the
+same letter $a$ in both factors.  A product of the separately summed
+generating series would instead select two words and two budgets.
+For any fixed $m,A$, the alphabet $1,\ldots,A$ and the length and budget
+coordinates give finite layered automata.  Start at $(j,B,r)=(0,0,0)$,
+read the reversed word $a_m,\ldots,a_1$, and use
+\[
+ (j,B,r)\longmapsto(j+1,B+a,3^j+2^ar\bmod q),
+ \qquad j<m,\ B+a\le A.
+\]
+Accept at $j=m$, $B=A$.  The first transition sets the residue to $1$;
+subsequent transitions prepend a letter.  The synchronized product shares
+$j,B,a$ and retains the pair of residues.  It is the common-letter
+construction cited above, restricted to the shared length and budget layers.
+
+\begin{proposition}[Information discarded by the marginals]
+\label{prop:packet-marginal-kernel}
+On integer residue tables define
+\[
+ P(w)=\left(\left(\sum_v w_{uv}\right)_u,
+                \left(\sum_u w_{uv}\right)_v\right).
+\]
+Its image consists of pairs of integer vectors with equal total sum.
+Its kernel has the basis
+\[
+ E_{uv}-E_{u0}-E_{0v}+E_{00}
+ \quad(u\ne0,\ v\ne0),
+\]
+where $E_{uv}=e_u\otimes e_v$, and has rank $(q_1-1)(q_2-1)$.
+Each nonempty fibre is a translate of this kernel; for nonnegative count
+tables it is the intersection of that translate with the nonnegative cone.
+\end{proposition}
+
+\begin{proof}
+The two marginal totals both equal $\sum_{u,v}w_{uv}$.  Given marginals
+$\alpha,\beta$ with common total $N$, the integer table
+$\sum_u\alpha_uE_{u0}+\sum_v\beta_vE_{0v}-NE_{00}$ has those marginals.
+Every displayed rectangle has zero row and column sums.  If $w$ has zero
+marginals, subtract the sum of those rectangles with coefficients $w_{uv}$
+for $u,v\ne0$.  The remaining table is supported on row zero and column
+zero, and its zero marginals force every remaining entry to vanish.
+Independence follows by inspecting each $(u,v)$ entry with $u,v\ne0$.
+The fibre statements follow by subtracting two preimages.
+\end{proof}
+
+\begin{proposition}[Reduced denominators and integral $3x+d$ cycles]
+\label{prop:packet-reduced-denominator-cycles}
+Let $p\in\Pi_{m,A}$ with $D=2^A-3^m>0$, and set
+$g=\gcd(C(p),D)$ and $d=D/g$.  Then $g$ is invariant under cyclic
+rotation, and
+\[
+ n_j=\frac{C(\sigma^jp)}g=d\,x_{\sigma^jp}
+\]
+are positive odd integers satisfying $\gcd(n_j,d)=1$ and
+\[
+ 3n_j+d=2^{a_{j+1}}n_{j+1},\qquad
+ \nu_2(3n_j+d)=a_{j+1}.
+\]
+Multiplication by $d$ conjugates the rational shortened orbit to the
+integral orbit of
+\[
+ T_d(n)=\begin{cases}(3n+d)/2,&n\text{ odd},\\n/2,&n\text{ even}.
+ \end{cases}
+\]
+Its inverse on these orbits is division by $d$.  For primitive $p$, the
+odd-return and shortened periods are exactly $m$ and $A$.
+\end{proposition}
+
+\begin{proof}
+The identity $3C(p)+D=2^{a_1}C(\sigma p)$ and $\gcd(D,6)=1$
+give $\gcd(C(p),D)=\gcd(C(\sigma p),D)$ by taking gcds with $D$.
+Division by this common odd $g$ proves the displayed recurrence; its right
+side has odd nonzero $n_{j+1}$, proving the valuation.  Reduction by the
+full gcd gives $\gcd(n_j,d)=1$.  Since $d$ is odd, scaling by $d$
+preserves parity, and checking the two branches gives
+$T_d(dx)=dT(x)$ at every point of the rational orbit, including its even
+intermediate points.  Division by $d$ proves both inverse identities and
+preserves all return times.  The exact periods follow from
+Theorem~\ref{thm:packet-three-clocks}.
+\end{proof}
+
+The source comparison here is Belaga--Mignotte's configuration-to-membership
+map \cite[Sections~7--8]{BelagaMignotte2000}: their
+$(k,\ell,a(P),B_{k,\ell},H,F,G)$ correspond respectively to
+$(m,A,C(p),D,g,n_0,d)$.  Their aperiodic configuration is a primitive
+exponent word; their primitive $3x+d$ cycle instead specifies coprimality
+with $d$.  The two conditions serve different purposes in this correspondence.
+
+\subsection{A complete joint-residue calculation at
+\texorpdfstring{$(m,A)=(10,16)$}{(m,A)=(10,16)}}
+
+Here
+\[
+ D_{10,16}=2^{16}-3^{10}=6487=13\cdot499,\qquad
+ |\Pi_{10,16}|=\binom{15}{9}=5005.
+\]
+The CRT inverse is particularly explicit:
+\[
+ (u,v)\longmapsto3992u+2496v\pmod{6487},
+ \qquad3992=499\cdot8,\quad2496=13\cdot192.
+\]
+The first coefficient is $(1,0)$ and the second $(0,1)$ in the two residue
+coordinates.  Direct word enumeration and the independent joint recursion
+give the following exact stratification:
+\begin{center}
+\begin{tabular}{r r r r}
+\toprule
+$\gcd(C(p),6487)$ & all words & primitive words & primitive cyclic classes\\
+\midrule
+$1$    & $4560$ & $4560$ & $456$\\
+$13$   & $410$  & $410$  & $41$\\
+$499$  & $35$   & $0$    & $0$\\
+$6487$ & $0$    & $0$    & $0$\\
+\midrule
+Total  & $5005$ & $4970$ & $497$\\
+\bottomrule
+\end{tabular}
+\end{center}
+There are $3473$ occupied joint cells and $3014$ zero cells.  Both marginal
+supports are full, but the marginal zero counts $410$ and $35$ have joint
+zero count $w_{10,16}(0,0)=0$.  Thus a word realizing zero in one factor and
+a word realizing zero in the other need not be the same word.
+
+For explicit witnesses,
+\[
+ \begin{array}{c|r|r|r}
+ p&C(p)&C(p)\bmod13&C(p)\bmod499\\\hline
+ (1,1,1,1,1,1,2,2,2,4)&65065&0&195\\
+ (1,1,1,1,4,1,1,1,1,4)&105289&2&0
+ \end{array}
+\]
+The first word is primitive; the second is a square.  In fact every proper
+repetition number divides both $10$ and $16$, so every imprimitive word is
+$p=u^2$ for $u\in\Pi_{5,8}$.  There are exactly $35$ such words.  Expanding
+the numerator in its first and second five-term blocks gives
+\[
+ C(u^2)=(3^5+2^8)C(u)=499C(u),\qquad
+ D_{10,16}=(2^8-3^5)(2^8+3^5)=13\cdot499.
+\]
+The table shows that these are all the $499$-divisible words.  Therefore
+$499$ alone rules out an integral periodic point for every primitive packet
+at this label, although it does not exclude zero residues for all positive
+words.  The $35$ squares form seven classes
+of least odd period five, in addition to the $497$ primitive classes of
+period ten.  The count of all cyclic classes is consequently $504$.
+
+Under Proposition~\ref{prop:packet-reduced-denominator-cycles}, the first two
+rows give $456$ coprime $3x+6487$ cycles and $41$ coprime $3x+499$ cycles,
+each with ten odd returns and sixteen shortened steps.  The third row gives
+seven coprime $3x+13$ cycles with five odd returns and eight shortened steps,
+represented here twice.  The $456$ count is already reported by
+Belaga--Mignotte \cite[Example~8.5(1)]{BelagaMignotte2000}; the $4560$
+pointed words are its ten choices of odd base point per cycle.
+
+These assertions are finite exact results: the supplied certificate checks
+every one of the $5005$ words and every cell of the $13$-by-$499$ table.
+Its joint recurrence uses the same first letter in both coordinates, and
+its row and column sums agree with separately computed scalar recurrences.
+
+\subsection{Exact finite packet certificates through period sixteen}
+
+For $(m,A)=(5,8)$, $D_{5,8}=13$.  Since $\gcd(5,8)=1$, all $35$
+packets are primitive and form seven cyclic classes.  The lexicographically
+minimal representatives give:
+\begin{center}
+\begin{tabular}{c r r}
+\toprule
+$p$ & $C(p)$ & $C(p)\bmod13$\\
+\midrule
+$(1,1,1,1,4)$ & $211$ & $3$\\
+$(1,1,1,2,3)$ & $227$ & $6$\\
+$(1,1,1,3,2)$ & $259$ & $12$\\
+$(1,1,2,1,3)$ & $251$ & $4$\\
+$(1,1,2,2,2)$ & $283$ & $10$\\
+$(1,1,3,1,2)$ & $331$ & $6$\\
+$(1,2,1,2,2)$ & $319$ & $7$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Theorem~\ref{thm:cyclic-affine-transport} makes divisibility invariant on
+each class, so the packet has no integral point.
+
+For $(m,A)=(8,13)$,
+\[
+ D_{8,13}=2^{13}-3^8=1631=7\cdot233.
+\]
+Here $|\Pi_{8,13}|=\binom{12}{7}=792$ and coprimality of $8$ and $13$
+makes every packet primitive, hence there are $792/8=99$ cyclic classes.
+The recursion \eqref{eq:packet-residue-recursion} gives the exact set
+\begin{equation}
+ R_{8,13}(233)=\mathbb Z/233\mathbb Z\setminus\{0,138\}.
+ \label{eq:period-eight-residue-set}
+\end{equation}
+Among the $99$ minimal representatives, precisely $15$ have numerator
+divisible by $7$, none has numerator divisible by $233$, and none is
+integral.  Thus the factor $233$ excludes the entire packet.
+
+The exact strip leaves the following candidate packets through period
+sixteen.  Two independent streaming enumerations---separator combinations
+with the displayed sum for $C$, and depth-first compositions with
+$B_{j+1}=3B_j+2^{S_j}$---produce identical word streams and the following
+counts.
+\begin{center}
+\begin{tabular}{r r r r r}
+\toprule
+$m$ & $A$ & $|\Pi_{m,A}|$ & $D_{m,A}$ & integral packets\\
+\midrule
+$5$  & $8$  & $35$      & $13$       & $0$\\
+$8$  & $13$ & $792$     & $1631$     & $0$\\
+$10$ & $16$ & $5005$    & $6487$     & $0$\\
+$11$ & $18$ & $19448$   & $84997$    & $0$\\
+$13$ & $21$ & $125970$  & $502829$   & $0$\\
+$14$ & $23$ & $497420$  & $3605639$  & $0$\\
+$15$ & $24$ & $817190$  & $2428309$  & $0$\\
+$16$ & $26$ & $3268760$ & $24062143$ & $0$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Each method processes exactly $4{,}734{,}620$ words.  In the packets
+$(5,8)$, $(8,13)$, $(11,18)$, and $(13,21)$, the respective prime factors
+\[
+ 13,\qquad233,\qquad7727,\qquad502829
+\]
+already exclude zero numerator residues.
+
+\begin{theorem}[Certified finite consequence]
+\label{thm:certified-period-sixteen-exclusion}
+There is no nontrivial positive odd integral periodic orbit of exact odd-step
+period $2\le m\le16$.
+\end{theorem}
+
+\begin{proof}
+For $m=2,3,4,6,7,9,12$, the exact strip
+\eqref{eq:seven-strip} contains no integer $A$.  The remaining values
+$5,8,10,11,13,14,15,16$ have exactly the packets displayed in the table, and
+each exhaustive divisibility count is zero.  The packet criterion in
+Corollary~\ref{cor:typed-positive-cycle-criterion} completes the proof.
+\end{proof}
+
+The same strip first yields two packet labels at $m=17$, namely $(17,27)$
+and $(17,28)$.  This is only the next finite locus selected by
+\eqref{eq:seven-strip}; it is not asserted to be the frontier of the
+published cycle literature.
+
+\subsection{Reproducible calculations}
+
+The portable script
+\path{certificates/affine_packet_residue_checks.py} uses no floating point.
+It checks the packet--parity numerator identity and all three clocks on
+$12{,}089$ packets: $155{,}047$ shortened steps, $233{,}525$ full steps,
+and $78{,}478$ odd returns.  These include $11{,}989$ primitive and $100$
+imprimitive packets; the first return is checked in each clock.
+On a separate $461$-packet range it checks the groupoid arrows, inverses,
+composition, and stabilizers in both binary clocks.  Direct enumeration
+checks $702$ residue multiplicity vectors, including $189$ empty ranges
+$A<m$; $546$ coefficient vectors independently check the rational-series
+recursion for the odd moduli $1,3,5,7,9,11,13$.  It computes
+\eqref{eq:period-eight-residue-set} both by direct enumeration and by
+\eqref{eq:packet-residue-recursion}.  Finally it runs the two independent
+full scans above and pins every stream hash, minimum numerator, maximum
+numerator, denominator, and count.  Optimized Python is rejected so that
+assertions cannot be disabled.
+
+The exhaustive scans stop at period sixteen; the two period-seventeen
+labels are not included.  The general coordinate and generating-series
+results are proved above independently of these finite checks.
+
+The additional script \path{certificates/affine_crt_synchronization_checks.py}
+independently checks the joint-residue calculation at $(10,16)$.  Two word
+generators and three numerator formulas agree; it checks all $6487$ CRT
+inverse pairs, $408681$ transition/inverse instances, the $35$ repeated-root
+identities, and the full joint table including zero cells.  The certificate
+rejects optimized Python and can write a new execution receipt without
+overwriting an existing one.

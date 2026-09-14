@@ -1,0 +1,2943 @@
+\section{Foundational literature spine}
+\label{sec:literature-spine}
+
+The same phrase ``the Collatz map'' is used for maps with different state
+spaces and different clocks.  This section does not normalize those
+presentations.  It first records the source symbols and then introduces
+project-local subscripts only where two source symbols would otherwise
+collide.
+
+\subsection{Three clocks and their exact first-return relation}
+
+Let $\Npos=\{1,2,\ldots\}$ and let $\Opos$ be its odd elements.  The current
+Tao source writes $\operatorname{Col}:\Npos\to\Npos$ for the unshortened map
+\cite[Sec.~1.1]{Tao2026v7}; here it is displayed as
+\begin{equation}
+\label{eq:unshortened-U}
+ U(n)=
+ \begin{cases}
+  3n+1,&n\text{ odd},\\
+  n/2,&n\text{ even}.
+ \end{cases}
+\end{equation}
+B\"ohm--Sontacchi write $u:\Z\to\Z$, and Bernstein--Lagarias write $T$, for
+the shortened map
+\begin{equation}
+\label{eq:shortened-T}
+ T(n)=
+ \begin{cases}
+  (3n+1)/2,&n\text{ odd},\\
+  n/2,&n\text{ even}.
+ \end{cases}
+\end{equation}
+The same branch formula extends continuously to $T:\Ztwo\to\Ztwo$
+\cite[Eqs.~(1.1)--(1.3)]{BernsteinLagarias1996}.  Crandall instead writes
+$C:D^+\to D^+$, where $D^+=\Opos$, for the odd-to-odd map
+\begin{equation}
+\label{eq:crandall-C}
+ e(x)=\vtwo(3x+1),
+ \qquad
+ C_{\mathrm{Cr}}(x)=\frac{3x+1}{2^{e(x)}}.
+\end{equation}
+The subscript in $C_{\mathrm{Cr}}$ is editorial disambiguation; the source
+symbol is $C$ \cite[p.~1281, Eq.~(1.1)]{Crandall1978}.  Tao calls this same
+odd-to-odd map $\operatorname{Syr}$ \cite[Sec.~1.2,
+Eq.~(S-def)]{Tao2026v7}.
+
+\begin{proposition}[the two exact first-return clocks]
+\label{prop:first-return-clocks}
+For $x\in\Opos$, put $a=e(x)$.  Then $a\geq1$ and
+\begin{align}
+ T^j(x)&=\frac{3x+1}{2^j} &&(1\leq j\leq a),
+ \label{eq:T-first-return-intermediates}\\
+ U^{j+1}(x)&=\frac{3x+1}{2^j} &&(0\leq j\leq a).
+ \label{eq:U-first-return-intermediates}
+\end{align}
+The values in \eqref{eq:T-first-return-intermediates} are even for
+$1\leq j<a$ and odd for $j=a$.  Consequently
+\begin{equation}
+\label{eq:exact-first-return}
+ C_{\mathrm{Cr}}(x)=T^{e(x)}(x)=U^{e(x)+1}(x),
+\end{equation}
+and these are respectively the first returns of the shortened and
+unshortened orbits to $\Opos$.
+\end{proposition}
+
+\begin{proof}
+Because $x$ is odd, $3x+1$ is a positive even integer, so
+$a=\vtwo(3x+1)\geq1$.  The odd branch of $T$ gives the case $j=1$ of
+\eqref{eq:T-first-return-intermediates}.  As long as $j<a$, the quotient has
+$2$-adic valuation $a-j>0$, so the next branch of $T$ divides it by $2$.
+Induction proves the first identity and shows that no earlier value is odd.
+For $U$, its first branch sends $x$ to $3x+1$ and each of the next $a$
+branches divides by $2$, proving the second identity and its first-return
+claim.  The terminal quotient is exactly \eqref{eq:crandall-C}.
+\end{proof}
+
+\begin{nonclaim}
+Equation \eqref{eq:exact-first-return} is a variable-time first-return
+identity.  It does not identify one iterate of $C_{\mathrm{Cr}}$ with one
+iterate of $T$ or $U$, and it does not permit stopping times, periods, or
+density statements to be transferred without translating the clock.
+\end{nonclaim}
+
+\subsection{Krasikov--Lagarias predecessor counts and the whole-orbit clock}
+\label{subsec:KL-predecessor-clock}
+
+Krasikov--Lagarias use exactly the shortened map \(T\) in
+\eqref{eq:shortened-T}.  For a fixed positive target
+\(a\not\equiv0\pmod3\), they define
+\begin{align}
+ \pi_a(x)
+  &=
+  \#\{n\in\Npos: n\le x,\ \exists j\in\Nzero,\ T^j(n)=a\},
+  \label{eq:KL-pi}\\
+ \pi_a^*(x)
+  &=
+  \#\{n\in\Npos:n\le x,\ \exists j\in\Nzero,\ T^j(n)=a,\
+       T^i(n)\le x\ (0\le i\le j)\}.
+  \label{eq:KL-pi-star}
+\end{align}
+Thus \(\pi_a^*(x)\le\pi_a(x)\).  For \(k\ge2\), a residue
+\(m\bmod3^k\) not divisible by \(3\), and \(y\ge0\), the typed auxiliary
+function is
+\begin{equation}
+\label{eq:KL-phi}
+ \phi_k^m(y)=
+ \inf_{\substack{a\equiv m\pmod{3^k}\\
+                  a\text{ not contained in a finite }T\text{-cycle}}}
+ \pi_a^*(2^ya).
+\end{equation}
+The printed exponent \(3^j\) in the congruence is an unbound-index source
+defect; Source Issue~\ref{sourceissue:KL-2003-defects} records the
+manifestation and the forced repair.
+
+\begin{proposition}[shortened-to-unshortened clock embedding]
+\label{prop:KL-Tao-clock-embedding}
+Fix \(N\in\Npos\), put \(n_j=T^j(N)\), and define
+\(\iota_N:\Nzero\to\Nzero\) by
+\begin{equation}
+\label{eq:KL-Tao-clock}
+ s_0=0,\qquad
+ s_{j+1}=s_j+
+ \begin{cases}
+  1,&n_j\text{ even},\\
+  2,&n_j\text{ odd},
+ \end{cases}
+ \qquad \iota_N(j)=s_j.
+\end{equation}
+Then
+\begin{equation}
+\label{eq:KL-Tao-clock-intertwining}
+ U^{\iota_N(j)}(N)=T^j(N)\qquad(j\in\Nzero).
+\end{equation}
+The map \(\iota_N\) is strictly increasing.  Its fibres are singletons on
+its image and its equality kernel is the diagonal.  The times outside its
+image are exactly \(s_j+1\) for those \(j\) with \(n_j\) odd, and the omitted
+state is
+\begin{equation}
+\label{eq:KL-Tao-omitted-state}
+ U^{s_j+1}(N)=3n_j+1\ge4.
+\end{equation}
+Consequently
+\begin{equation}
+\label{eq:KL-Tao-reach-one}
+ \exists j\in\Nzero,\ T^j(N)=1
+ \quad\Longleftrightarrow\quad
+ \exists r\in\Nzero,\ U^r(N)=1.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For even \(n\), \(T(n)=U(n)\).  For odd \(n\),
+\[
+ U(n)=3n+1,\qquad U^2(n)=\frac{3n+1}{2}=T(n).
+\]
+Induction using the two increments in \eqref{eq:KL-Tao-clock} proves
+\eqref{eq:KL-Tao-clock-intertwining}.  Every increment is positive, which
+proves strict increase, singleton fibres, and the diagonal equality kernel.
+An increment of two contributes precisely the intermediate time \(s_j+1\);
+an increment of one contributes none.  This proves the asserted complement
+of the image and \eqref{eq:KL-Tao-omitted-state}.  Every \(U\)-time is
+therefore either an image time or one of those intermediate times.  The
+latter cannot carry the value \(1\), while image times carry exactly the
+\(T\)-orbit values, proving \eqref{eq:KL-Tao-reach-one}.
+\end{proof}
+
+Since every \(U\)-orbit value is a positive integer,
+\(\operatorname{Col}_{\min}(N)=1\) if and only if the \(U\)-orbit reaches
+\(1\).  Proposition~\ref{prop:KL-Tao-clock-embedding} therefore gives the
+exact set identity
+\begin{equation}
+\label{eq:KL-Tao-count-identity}
+ \{N\le x:\operatorname{Col}_{\min}(N)=1\}
+ =
+ \{N\le x:\exists j\in\Nzero,\ T^j(N)=1\},
+\end{equation}
+where both sets are subsets of \(\Npos\).  The cardinality on the right is
+\(\pi_1(x)\).  The clock map loses the intermediate state after an odd
+input, but \eqref{eq:KL-Tao-omitted-state} proves that this information loss
+does not affect target-\(1\) reachability.
+
+\begin{theorem}[Krasikov--Lagarias, source theorem]
+\label{thm:KL-2003-predecessor-bound}
+For every fixed \(a\in\Npos\) with \(a\not\equiv0\pmod3\), there exists
+\(x_0(a)\) such that
+\begin{equation}
+\label{eq:KL-084}
+ \pi_a(x)\ge x^{0.84}\qquad(x\ge x_0(a)).
+\end{equation}
+\end{theorem}
+
+This is Theorem~6.1 of
+\cite[p.~254]{KrasikovLagarias2003}.  Its exponent is exactly
+\(0.84=21/25\).  The paper reports a computer-found positive feasible
+solution of \(L_{11}^{NT}(\lambda)\) at
+\(\lambda=1.7922310\).  The exact comparison
+\begin{equation}
+\label{eq:KL-exponent-margin}
+ 1792231^{25}-2^{21}10^{150}>0
+\end{equation}
+proves \(\log_2(1.7922310)>21/25\) without floating-point arithmetic.
+The paper does not print the \(k=11\) coordinate vector or an independently
+checkable feasibility certificate.  Thus
+\eqref{eq:KL-exponent-margin} is independently certified, while the
+feasibility premise and Theorem~\ref{thm:KL-2003-predecessor-bound} retain
+their status as a published computer-assisted result.
+
+\begin{proposition}[typed final-target handoff]
+\label{prop:KL-target-handoff}
+Let \(k\ge2\), let \(1<\lambda\le2\), and suppose the explicitly defined
+linear program \(L_k^{NT}(\lambda)\) has a feasible solution with principal
+coordinates \(c_k^m\).  Put \(\gamma=\log_2\lambda\).  For every
+\(0<\beta<\gamma\) and every fixed \(a\in\Npos\) with
+\(a\not\equiv0\pmod3\), there exists \(x_0(a)\) such that
+\[
+ \pi_a(x)\ge x^\beta\qquad(x\ge x_0(a)).
+\]
+\end{proposition}
+
+\begin{proof}
+Theorem~2.2 of the source gives, for \(m\in[3^k]\),
+\[
+ \phi_k^m(y)\ge
+ \Delta_1c_k^m\lambda^y,\qquad
+ \Delta_1=\frac{1}{4\max_r c_k^r},\qquad y\ge0.
+\]
+First suppose that \(a\) is not in a finite \(T\)-cycle and
+\(a\equiv2\pmod3\).  With \(m=a\bmod3^k\) and
+\(y=\log_2(x/a)\), equations \eqref{eq:KL-pi-star} and
+\eqref{eq:KL-phi} give, for \(x\ge a\),
+\[
+ \pi_a(x)\ge\Delta_1c_k^m a^{-\gamma}x^\gamma.
+\]
+If instead \(a\equiv1\pmod3\), source equation~(2.1),
+\(\phi_k^m(y)=\phi_k^{2m}(y-1)\) for \(y\ge1\), moves to the residue
+\(2m\equiv2\pmod3\) and contributes the further fixed factor
+\(\lambda^{-1}\).  In either case the positive fixed prefactor dominates
+\(x^{\beta-\gamma}\) once \(x\) exceeds an \(a\)-dependent threshold.
+
+Now suppose \(a\) lies in a finite \(T\)-cycle, and let \(M\) be the maximum
+on that cycle.  Choose \(r\ge1\) with \(b=2^ra>M\).  Then \(T^r(b)=a\).
+If \(b\) lay in a finite cycle, its orbit would reach \(a\), so it would lie
+in the same cycle and satisfy \(b\le M\), a contradiction.  The noncyclic
+case applies to \(b\), and every orbit reaching \(b\) reaches \(a\).
+Therefore \(\pi_a(x)\ge\pi_b(x)\ge x^\beta\) beyond \(x_0(b)\).
+\end{proof}
+
+\begin{sourceissue}[Krasikov--Lagarias manifestation and proof-text defects]
+\label{sourceissue:KL-2003-defects}
+The published paper prints \(3^j\), with \(j\) unbound, in
+\eqref{eq:KL-phi}; prints the real variable \(y\), rather than the residue
+\(m\), in a congruence modulo \(3\); prints
+\(\delta=\beta_2-\beta_1>0\) immediately after
+\(\beta_1>\beta_2>\cdots\), although the halting contradiction requires
+\(\delta<0\); closes the Theorem~5.1 induction with
+\(k\in[3^m]\) rather than \(m\in[3^k]\); reverses the indices in
+\(\Delta c_m^k\lambda^y\); and omits a parenthesis from \(T^{(j)}\) in
+Theorem~6.1.  The arXiv source additionally prints the two three-lift
+exponents in (L4) as \(3^k\), while the journal and the source's own
+subsequent minimum use \(3^{k-1}\), and substitutes a tree-vertex macro for
+\(\nu\) in the initial interval of Theorem~5.1.  The exact manifestations,
+typed repairs, and dependency reasons are recorded in
+\texttt{qa/KRASIKOV-LAGARIAS-2003-F029-difference-inequality-audit.md}.
+\end{sourceissue}
+
+\begin{nonclaim}
+Theorem~\ref{thm:KL-2003-predecessor-bound} does not prove the Collatz
+conjecture, positive density, density one, a target-uniform threshold, or the
+claim for targets divisible by \(3\).  Since \(x^{0.84}/x\to0\), it is not an
+\emph{almost all} theorem.  The paper does not prove the stronger rounded
+exponent \(0.8417560\), strict increase or convergence to \(2\) of its
+optimal \(\lambda_k\), or optimality of the difference-inequality method.
+\end{nonclaim}
+
+\subsection{Terras--Allouche--Korec: exact finite coordinates and
+density-one power descent}
+\label{subsec:Terras-Allouche-Korec-density}
+
+The four sources in this subsection use the shortened map
+\[
+ T(y)=
+ \begin{cases}
+  (3y+1)/2,&y\equiv1\pmod2,\\
+  y/2,&y\equiv0\pmod2,
+ \end{cases}
+\]
+which is exactly \eqref{eq:shortened-T}.  It is not one iterate of the
+unshortened map \(U\) on an odd input.  The transfer to the \(U\)-orbit is
+made only after the source results have been stated and audited in their own
+clock.
+
+\subsubsection{Terras's parity coordinate}
+
+Terras works on \(\Nzero\).  Put
+\begin{align}
+ X(y)&=
+ \begin{cases}1,&y\text{ odd},\\0,&y\text{ even},\end{cases}
+ &
+ X_i(y)&=X(T^i(y)),                                      \label{eq:Terras-X}\\
+ S_k(y)&=\sum_{i=0}^{k-1}X_i(y),
+ &
+ \lambda_k(y)&=2^{-k}3^{S_k(y)},                         \label{eq:Terras-lambda}\\
+ E_k(y)&=(X_0(y),\ldots,X_{k-1}(y))\in\{0,1\}^k.         \label{eq:Terras-E}
+\end{align}
+Terras's Theorem~1.1 gives the exact affine expression
+\begin{equation}
+\label{eq:Terras-affine}
+ T^k(y)=\lambda_k(y)y+\rho_k(y),
+\qquad
+ \rho_k(y)=\frac{\lambda_k(y)}2
+ \sum_{i=0}^{k-1}X_i(y)\lambda_{i+1}(y)^{-1}.
+\end{equation}
+In particular \(\rho_k(y)\ge0\); it is not an unspecified error term
+\cite[pp.~241--242, Thm.~1.1]{Terras1976}.
+
+\begin{proposition}[Terras's exact parity coordinate]
+\label{prop:Terras-parity-coordinate}
+For every \(k\in\Nzero\) and \(x,y\in\Nzero\),
+\begin{equation}
+\label{eq:Terras-fibre}
+ E_k(x)=E_k(y)
+ \quad\Longleftrightarrow\quad
+ x\equiv y\pmod{2^k}.
+\end{equation}
+Consequently \(E_k\) induces a bijection
+\[
+ \Z/2^k\Z\xrightarrow{\;\sim\;}\{0,1\}^k.
+\]
+Thus, on every complete interval of \(2^k\) consecutive integers, each
+chronological parity word occurs exactly once.
+\end{proposition}
+
+\begin{proof}
+The assertion is trivial for \(k=0\).  Suppose it is known for \(k\), and
+write \(\epsilon=X(x)=X(y)\).  On the common parity branch,
+\begin{equation}
+\label{eq:Terras-one-step-difference}
+ T(x)-T(y)=\frac{3^\epsilon(x-y)}2.
+\end{equation}
+If \(x\equiv y\pmod{2^{k+1}}\), then \(x,y\) have the same parity and
+\eqref{eq:Terras-one-step-difference} gives
+\(T(x)\equiv T(y)\pmod{2^k}\).  The inductive hypothesis applied to their
+next \(k\) iterates proves \(E_{k+1}(x)=E_{k+1}(y)\).
+
+Conversely, if \(E_{k+1}(x)=E_{k+1}(y)\), then \(x,y\) have the same
+\(\epsilon\), and the final \(k\) coordinates give
+\(E_k(T(x))=E_k(T(y))\).  Hence \(T(x)\equiv T(y)\pmod{2^k}\).
+Equation~\eqref{eq:Terras-one-step-difference} and the oddness of
+\(3^\epsilon\) imply \(2^{k+1}\mid x-y\).  This proves
+\eqref{eq:Terras-fibre} by induction.  Both finite sets in the induced map
+have \(2^k\) elements, so the injection is a bijection.  Translating any
+complete interval to a complete residue system proves the last assertion.
+\end{proof}
+
+This proposition is the arithmetic content behind the independent
+Bernoulli coordinates in Terras's Corollaries~1.3--1.4.  No random surrogate
+has replaced the orbit: probabilities below are normalized, exact counts on
+\(\Z/2^k\Z\).
+
+\subsubsection{Coefficient stopping and actual stopping}
+
+Terras defines the two positive-time stopping functions
+\begin{align}
+ \chi(y)&=\min\{j\in\Npos:T^j(y)<y\},                    \label{eq:Terras-chi}\\
+ \tau(y)&=\min\{j\in\Npos:\lambda_j(y)<1\},              \label{eq:Terras-tau}
+\end{align}
+with value \(\infty\) if the relevant set is empty.  Time zero is excluded.
+Since \(\rho_j(y)\ge0\), \eqref{eq:Terras-affine} gives
+\(\tau(y)\le\chi(y)\).  If \(\tau(y)=j\), Terras's Theorem~1.9 proves that
+all sufficiently large \(z\equiv y\pmod{2^j}\) satisfy \(\chi(z)=j\).
+It follows that, for each fixed \(j\), the two sets
+\(\{\tau=j\}\) and \(\{\chi=j\}\) differ by only finitely many integers
+\cite[pp.~243--244]{Terras1976}.
+
+For \(k\ge1\), define the finite-coordinate tail
+\begin{equation}
+\label{eq:Terras-Fk}
+ F(k)=\mathbb P[\tau\ge k]
+ =2^{-k}\#\{1\le y\le2^k:\tau(y)\ge k\}.
+\end{equation}
+The final equality is independent of the chosen complete residue block by
+Proposition~\ref{prop:Terras-parity-coordinate}.
+
+\begin{theorem}[Terras 1976 coefficient-tail theorem, with the printed
+support bound repaired]
+\label{thm:Terras-1976-coefficient-tail}
+The sequence \(F(k)\) is nonincreasing and
+\[
+ \lim_{k\to\infty}F(k)=0.
+\]
+More exactly, if
+\(\gamma=\log 2/\log 3\), then every length-\(k\) parity word counted by
+\(F(k)\) has at most
+\begin{equation}
+\label{eq:Terras-repaired-zero-cutoff}
+ q_k=\left\lfloor (k-1)(1-\gamma)\right\rfloor+1
+\end{equation}
+zero coordinates.  Hence
+\begin{equation}
+\label{eq:Terras-binomial-tail}
+ F(k)\le 2^{-k}\sum_{a=0}^{q_k}\binom{k}{a}
+ \xrightarrow[k\to\infty]{}0.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The tail events \(\{\tau\ge k+1\}\subseteq\{\tau\ge k\}\) prove
+monotonicity.  Consider a word counted by \(F(k)\), and let \(b'\) be the
+number of ones among its first \(k-1\) coordinates.  Since no coefficient
+drop has occurred before time \(k\),
+\[
+ \lambda_{k-1}=\frac{3^{b'}}{2^{k-1}}\ge1.
+\]
+For \(k>1\) equality is impossible because a positive power of \(2\) is not
+a power of \(3\); thus \(b'>(k-1)\gamma\).  The first \(k-1\) positions
+therefore contain fewer than \((k-1)(1-\gamma)\) zeros, and the last
+coordinate contributes at most one more.  Integrality gives
+\eqref{eq:Terras-repaired-zero-cutoff}.
+
+Proposition~\ref{prop:Terras-parity-coordinate} turns the word count into
+\eqref{eq:Terras-binomial-tail}.  Finally
+\[
+ 3^2>2^3\quad\Longrightarrow\quad
+ \gamma>\frac12
+ \quad\Longrightarrow\quad
+ \frac{q_k}{k}\longrightarrow1-\gamma<\frac12.
+\]
+The lower binomial tail in \eqref{eq:Terras-binomial-tail} therefore tends
+to zero, by the standard de Moivre--Laplace estimate used in the source (or
+by any equivalent fixed-distance binomial tail bound).
+\end{proof}
+
+\begin{sourceissue}[Terras 1976 proof-text defects and forced local repairs]
+\label{sourceissue:Terras-1976-defects}
+Five source distinctions are required.
+
+\begin{enumerate}
+\item Proposition~1.7 prints, without a sign hypothesis,
+\[
+ T^k(y)<y
+ \quad\Longleftrightarrow\quad
+ \frac{\rho_k(y)}{1-\lambda_k(y)}<y.
+\]
+It is false as printed: for \(y=1,k=1\),
+\[
+ T(1)=2\not<1,\qquad
+ \lambda_1(1)=\frac32,\qquad
+ \rho_1(1)=\frac12,
+\]
+but \(\rho_1(1)/(1-\lambda_1(1))=-1<1\).  Division is valid only under
+\(\lambda_k(y)<1\).  Theorem~1.9 invokes it under \(\tau(y)=k\), which
+supplies precisely that missing hypothesis.
+
+\item The proof of Theorem~1.9 cites Proposition~1.9 for
+\(\tau\le\chi\).  The relevant result is Proposition~1.8.
+
+\item Definition~1.12 prints the proper-prefix range \(1\le i\le k-2\).
+Formula~(9), the stopping event, and the subsequent recurrence require every
+proper nonempty prefix, \(1\le i\le k-1\).  The literal range already loses
+the decisive prefix when \(k=2\).
+
+\item In Theorem~1.17, a terminal word of length \(k\), with \(a\) zeros and
+\(b=k-a\) ones, has last digit zero and an active length-\(k-1\) prefix.
+Therefore
+\[
+ \frac{3^b}{2^{k-1}}>1,\qquad
+ a<1+(k-1)(1-\gamma).
+\]
+The source drops \(+1\), and then uses
+\(a\le\lfloor k(1-\gamma)\rfloor\).  The terminal word \((1,0)\) at
+\(k=2\) has \(a=1\), while the printed cutoff is \(0\).  The repaired
+cutoff is exactly \eqref{eq:Terras-repaired-zero-cutoff}; its ratio to \(k\)
+has the same strict limit below \(1/2\), so the theorem's limiting conclusion
+survives.
+
+\item Definition~1.10 introduces point masses and lower-tail sums before
+Theorem~1.11 uses \(\mathbb P[\tau\ge k]\); formula~(6) supplies the direct
+complete-block definition only afterwards.  Equation~\eqref{eq:Terras-Fk}
+states the tail on its finite block before use.
+\end{enumerate}
+These are local repairs.  None is treated as text literally printed by
+Terras \cite[pp.~243--247]{Terras1976}.
+\end{sourceissue}
+
+\begin{theorem}[Terras 1979 finite-complement density identity]
+\label{thm:Terras-1979-density-identity}
+For every \(k\in\Npos\), the natural density exists and satisfies
+\begin{equation}
+\label{eq:Terras-1979-density}
+ \delta\{y\in\Npos:\chi(y)\ge k\}
+ =\mathbb P[\tau\ge k]=F(k).
+\end{equation}
+Both source inequalities are non-strict \(\ge\).
+\end{theorem}
+
+\begin{proof}
+For each fixed \(j\), the 1976 coset theorem recalled above says that
+\(\{\chi=j\}\) and \(\{\tau=j\}\) differ by a finite set.  The second set is
+a union of residue classes modulo \(2^j\); hence
+\[
+ \delta\{\chi=j\}=\mathbb P[\tau=j].
+\]
+Only the finite set of indices \(1\le j<k\) is now summed:
+\[
+ \delta\{\chi<k\}
+ =\sum_{j=1}^{k-1}\mathbb P[\tau=j]
+ =\mathbb P[\tau<k].
+\]
+Taking the complements in \(\Npos\) and in the finite probability space
+\(\Z/2^k\Z\) gives \eqref{eq:Terras-1979-density}.  This is the explicit
+finite-complement closure supplied by the 1979 note; it does not interchange
+natural density with an infinite sum
+\cite[pp.~101--102]{Terras1979}.
+\end{proof}
+
+\begin{corollary}[Terras density-one finite stopping]
+\label{cor:Terras-density-one-stopping}
+The set \(\{y\in\Npos:\chi(y)<\infty\}\) has natural density one.
+\end{corollary}
+
+\begin{proof}
+For every \(k\),
+\[
+ \{\chi=\infty\}\subseteq\{\chi\ge k\}.
+\]
+Theorem~\ref{thm:Terras-1979-density-identity} and
+Theorem~\ref{thm:Terras-1976-coefficient-tail} therefore give
+\[
+ \overline\delta\{\chi=\infty\}
+ \le F(k)\xrightarrow[k\to\infty]{}0.
+\]
+The exceptional set has upper density zero, so its complement has natural
+density one.
+\end{proof}
+
+\begin{nonclaim}
+Corollary~\ref{cor:Terras-density-one-stopping} leaves open a zero-density
+exceptional set and does not prove the Collatz conjecture.  It is a theorem
+about first descent below the starting value, not eventual arrival at \(1\).
+The 1979 argument proves existence of the displayed natural densities by a
+finite complement; it supplies no license to sum arbitrary density limits.
+\end{nonclaim}
+
+\subsubsection{Allouche's unnormalized residue system}
+
+Allouche begins with positive integers \(n,d\), with \(d\ge2\) and
+\(\gcd(n,d)=1\), and a chosen complete representative system
+\begin{equation}
+\label{eq:Allouche-Ad}
+ A_d=\{0,r_1,\ldots,r_{d-1}\}\subset\Z
+\end{equation}
+modulo \(d\).  Let \(\varphi:\Z\to A_d\) send an integer to its chosen
+representative.  The map is
+\begin{equation}
+\label{eq:Allouche-g}
+ g(\ell)=
+ \begin{cases}
+  \ell/d,&\ell\equiv0\pmod d,\\[1mm]
+  (n\ell-\varphi(n\ell))/d,&\ell\not\equiv0\pmod d.
+ \end{cases}
+\end{equation}
+After the introduction, the source assumes \(n>d\ge2\).  The data
+\((n,d,A_d,\varphi)\) are retained: in the classical specialization
+\[
+ n=3,\qquad d=2,\qquad A_2=\{0,-1\},
+\]
+\eqref{eq:Allouche-g} is the shortened Collatz map on \(\Z\).  Replacing the
+source representative \(-1\) by \(1\) would alter the affine remainder and
+is not done.
+
+For \(k\ge1\), set
+\begin{align}
+ \alpha(k,j)
+  &=\#\{0\le v<k:g^v(j)\not\equiv0\pmod d\},              \label{eq:Allouche-alpha}\\
+ P_k(j)
+  &=g^k(j)-\frac{n^{\alpha(k,j)}}{d^k}j.                 \label{eq:Allouche-P}
+\end{align}
+Also put
+\begin{equation}
+\label{eq:Allouche-M}
+ R=\max_{a\in A_d}|a|,
+ \qquad
+ M=\frac{R}{n-d}.
+\end{equation}
+
+\begin{theorem}[Allouche's affine coordinate and exact branch counts]
+\label{thm:Allouche-affine-counting}
+For \(k\ge1\), \(j,\lambda\in\Z\), and \(0\le i\le k\),
+\begin{align}
+ g^k(d^k\lambda+j)
+  &=n^{\alpha(k,j)}\lambda+g^k(j),                        \label{eq:Allouche-affine}\\
+ \alpha(k,d^k\lambda+j)&=\alpha(k,j),                     \label{eq:Allouche-alpha-fibre}\\
+ |P_k(j)|&\le M\frac{n^k}{d^k},                           \label{eq:Allouche-remainder}\\
+ \#\{0\le j<d^k:\alpha(k,j)=i\}
+  &=\binom{k}{i}(d-1)^i.                                 \label{eq:Allouche-count}
+\end{align}
+Thus \(j\bmod d^k\) is the residue-fibre coordinate, \(\lambda\) is its
+integral quotient coordinate, and the affine multiplier is constant on the
+fibre.
+
+More quantitatively, let \(A<B\) be rational numbers, neither equal to any
+\(n^\mu/d^\nu\) with \(\mu\in\Nzero\), \(\nu\in\Npos\).  Let \(C\) be the
+maximum of the absolute denominators of \(A,B\), and
+\(\vartheta=\mathbf 1_{(A,B)}\).  Then the finite-coordinate comparison used
+in Allouche's Theorem~1 is
+\begin{multline}
+\label{eq:Allouche-quantitative-handoff}
+ \left|
+ \sum_{1\le\ell\le x}
+  \vartheta\left(\frac{g^k(\ell)}{\ell}\right)
+ -\frac{x}{d^k}\sum_{i=0}^k
+  \binom{k}{i}(d-1)^i
+  \vartheta\left(\frac{n^i}{d^k}\right)
+ \right|\\
+ \le \frac52d^k+MCn^k.
+\end{multline}
+For every \(\varepsilon>0\), there are \(k_0\) and
+\(\eta\in(0,1)\), depending only on the fixed source data and
+\(\varepsilon\), such that
+\begin{equation}
+\label{eq:Allouche-binomial-concentration}
+ \frac1{d^k}
+ \sum_{\left|i-\frac{d-1}{d}k\right|>\varepsilon k}
+ \binom{k}{i}(d-1)^i
+ \le\eta^k
+ \qquad(k\ge k_0).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For \(a\in\Z\), \(t\in\Z\), and
+\(\epsilon=1_{\{a\not\equiv0\pmod d\}}\), the representative is unchanged
+after adding \(dt\), and direct substitution in \eqref{eq:Allouche-g}
+gives
+\begin{equation}
+\label{eq:Allouche-triangular-step}
+ g(a+dt)=g(a)+n^\epsilon t.
+\end{equation}
+Apply this first with \(t=d^{k-1}\lambda\), and then induct on \(k\).
+The first branch symbol is unchanged, the next \(k-1\) symbols are those of
+\(g(j)\), and their multipliers multiply.  This proves
+\eqref{eq:Allouche-affine} and \eqref{eq:Allouche-alpha-fibre}.
+
+At a nondivisible step the additive correction in
+\eqref{eq:Allouche-g} has absolute value at most \(R/d\); at a divisible
+step it is zero.  Expanding \(k\) iterates and bounding every later branch
+multiplier by \(n/d\) gives
+\[
+ |P_k(j)|
+ \le\frac Rd\sum_{r=0}^{k-1}\left(\frac nd\right)^r
+ =\frac{R}{n-d}\left(\frac{n^k}{d^k}-1\right)
+ \le M\frac{n^k}{d^k},
+\]
+which proves \eqref{eq:Allouche-remainder}.
+
+It remains to count branches without replacing them by a stochastic model.
+The map
+\[
+ j\bmod d^k
+ \longmapsto
+ \bigl(j\bmod d,\ g(j)\bmod d^{k-1}\bigr)
+\]
+is a bijection.  Indeed, for first residue \(a=0\), write \(j=dq\), so
+\(g(j)=q\), which determines \(q\bmod d^{k-1}\).  For \(a\ne0\), write
+\(j=a+dq\); then
+\[
+ g(j)=\frac{na-\varphi(na)}d+nq,
+\]
+and \(\gcd(n,d)=1\) makes \(q\bmod d^{k-1}\) unique.  There is one divisible
+first residue and \(d-1\) nondivisible ones.  Induction therefore gives
+\[
+ \binom{k-1}{i}(d-1)^i+
+ (d-1)\binom{k-1}{i-1}(d-1)^{i-1}
+ =\binom{k}{i}(d-1)^i,
+\]
+proving \eqref{eq:Allouche-count}.  Finally,
+\eqref{eq:Allouche-quantitative-handoff} is the exact proposition on
+pp.~9-08--9-10 of the source, obtained by partitioning the summation into
+residue fibres, using \eqref{eq:Allouche-affine}--\eqref{eq:Allouche-remainder},
+and bounding the two rational interval endpoints.  Equation
+\eqref{eq:Allouche-binomial-concentration} is source Lemma~4
+\cite[pp.~9-04--9-11]{Allouche1979}.
+\end{proof}
+
+For completeness, the hypotheses actually consumed by Allouche's
+Theorem~1 are recorded rather than compressed into the phrase
+\emph{a large-deviation argument}.  Given \(a>1\), put
+\[
+ k=\left\lfloor\frac{\log x}{a\log n}\right\rfloor,
+ \qquad
+ \mathcal F(x)=
+ \sum_{1\le\ell\le x}
+ \vartheta\left(\frac{g^k(\ell)}{\ell}\right).
+\]
+The theorem has three separate cases:
+\begin{enumerate}
+\item if \(A<B<0\), then \(\mathcal F(x)=O(Cx^{1/a})\);
+\item if \(A<B\), \(B>0\), and
+\[
+ \frac{d-1}{d}-\frac{\log d}{\log n}
+ -\frac{\log B}{k\log n}\ge\varepsilon,
+\]
+then, for \(k\ge k_0(\varepsilon)\),
+\[
+ \mathcal F(x)=
+ O\left(Cx^{1/a}+x^{1-\frac{|\log\eta|}{a\log n}}\right);
+\]
+\item if \(0<A<B\) and
+\[
+ \frac{\log d}{\log n}+\frac{\log A}{k\log n}
+ -\frac{d-1}{d}\ge\varepsilon,
+\]
+the same estimate holds.
+\end{enumerate}
+The implied constants depend on \(n,d,A_d\).  These are distinct
+hypothesis packages; no one of them is silently substituted for another.
+
+\begin{theorem}[Allouche's branch-slope obstruction, with the displayed
+domain completed]
+\label{thm:Allouche-slope-obstruction}
+Let \(d<n\) be coprime positive integers.  After the local completion below,
+there are functions \(F,G:\Z\to\Z\) satisfying
+\begin{align*}
+ F(\ell)&=\ell/d+O(1),&G(\ell)&=\ell/d+O(1)
+ &&(\ell\equiv0\pmod d),\\
+ F(\ell)&=n\ell/d+O(1),&G(\ell)&=n\ell/d+O(1)
+ &&(\ell\not\equiv0\pmod d),
+\end{align*}
+such that every \(F\)-orbit is eventually periodic and only finitely many
+periods occur, whereas
+\[
+ |G^k(\ell)|\longrightarrow\infty
+\]
+for every \(\ell\) outside a finite set.
+\end{theorem}
+
+\begin{proof}[Exact source audit and independent domain repair]
+Allouche chooses \(u\) with \(d<n<d^u\).  The displayed divisible branch
+of \(F\) is specified only for
+\[
+ \ell\equiv d^i\pmod{d^u},\qquad1\le i\le u.
+\]
+These classes do not exhaust the multiples of \(d\): for \(d=2,u=3\), the
+class \(\ell\equiv6\pmod8\) is missing.  Thus the printed cases do not
+literally define the announced function \(F:\Z\to\Z\).
+
+For every \(\ell\equiv0\pmod d\), let \(\rho_\ell\) be the unique integer
+with
+\begin{equation}
+\label{eq:Allouche-rho-repair}
+ 0\le\rho_\ell<d^{u-1},
+ \qquad
+ \frac{\ell}{d}+\rho_\ell\equiv0\pmod{d^{u-1}},
+\end{equation}
+and define the completed divisible branch by
+\begin{equation}
+\label{eq:Allouche-F-repair}
+ F(\ell)=\frac{\ell}{d}+\rho_\ell.
+\end{equation}
+Existence and uniqueness are the unique representative of
+\(-\ell/d\bmod d^{u-1}\) in \([0,d^{u-1})\).  On a source class
+\(\ell\equiv d^i\pmod{d^u}\), it gives
+\[
+ \rho_\ell=
+ \begin{cases}
+  d^{u-1}-d^{i-1},&i<u,\\
+  0,&i=u,
+ \end{cases}
+\]
+so \eqref{eq:Allouche-F-repair} agrees exactly with every printed divisible
+case.  It also proves, on every formerly missing divisible residue,
+\begin{equation}
+\label{eq:Allouche-repair-properties}
+ F(\ell)\equiv0\pmod{d^{u-1}},
+ \qquad
+ \left|F(\ell)-\frac{\ell}{d}\right|<d^{u-1}.
+\end{equation}
+Retain the printed nondivisible branches unchanged.  The remainder of the
+source proof uses the divisible branch only through
+\eqref{eq:Allouche-repair-properties}: pp.~9-12--9-14 obtain a uniform bound
+for the \(F\)-iterates, set \(G=F+1\), obtain an expanding lower bound for
+the \(G\)-iterates, and use finite predecessor fibres to isolate the finite
+exceptional set.  Therefore that proof applies to the completed map
+\cite[pp.~9-04, 9-12--9-14]{Allouche1979}.  Formula
+\eqref{eq:Allouche-F-repair} is an edition reconstruction, not a formula
+silently attributed to the printed source.
+\end{proof}
+
+\begin{proposition}[Allouche's exact classical threshold extracted from
+the affine and counting lemmas]
+\label{prop:Allouche-threshold-extraction}
+Put
+\begin{equation}
+\label{eq:Allouche-cA}
+ c_A=\frac32-\log_3 2.
+\end{equation}
+For every real \(c>c_A\), the set
+\begin{equation}
+\label{eq:Allouche-Mc}
+ \mathcal M_c^{T}
+ =\{y\in\Npos:\exists r\in\Nzero,\ T^r(y)<y^c\}
+\end{equation}
+has natural density one.
+\end{proposition}
+
+\begin{proof}
+In the classical specialization of
+Theorem~\ref{thm:Allouche-affine-counting}, write
+\[
+ A_m(y)=\alpha(m,y)=\sum_{i=0}^{m-1}X_i(y).
+\]
+Equations \eqref{eq:Allouche-P} and \eqref{eq:Allouche-remainder}, with
+\(M=1\), give
+\begin{equation}
+\label{eq:Allouche-classical-affine}
+ T^m(y)=\frac{3^{A_m(y)}}{2^m}y+P_m(y),
+ \qquad
+ |P_m(y)|\le\left(\frac32\right)^m.
+\end{equation}
+
+Choose \(\varepsilon>0\) with \(c_A+\varepsilon<c\).  On the
+ternary-height block \(3^m\le y<3^{m+1}\), call \(y\) good when
+\[
+ A_m(y)\le\left(\frac12+\varepsilon\right)m.
+\]
+For a good \(y\),
+\[
+ \frac{3^{A_m(y)}}{2^m}y
+ \le y\left(\frac{3^{1/2+\varepsilon}}2\right)^m.
+\]
+If \(q=3^{1/2+\varepsilon}/2\), the ratio
+\(y/3^m\in[1,3)\) gives the uniform comparison
+\[
+ q^m\le 3^{|\log_3q|}y^{\log_3q}.
+\]
+Since \(1+\log_3q=c_A+\varepsilon\), the main term is at most
+\[
+ C_\varepsilon y^{c_A+\varepsilon},
+ \qquad C_\varepsilon=3^{|\log_3q|}.
+\]
+The remainder has strictly smaller exponent:
+\[
+ \left(\frac32\right)^m
+ \le y^{\log_3(3/2)},
+ \qquad
+ \log_3(3/2)=c_A-\frac12<c_A.
+\]
+Hence \(T^m(y)<y^c\) for all sufficiently large good \(y\).
+
+By \eqref{eq:Allouche-count}, every complete residue block of length \(2^m\)
+contains exactly
+\[
+ \sum_{i>(1/2+\varepsilon)m}\binom mi
+\]
+bad residues.  Its normalized value tends to zero by
+\eqref{eq:Allouche-binomial-concentration}.  The interval
+\([3^m,3^{m+1})\) is a union of complete \(2^m\)-blocks plus at most two end
+fragments, of total length below \(2^{m+1}\).  Their relative contribution is
+\[
+ O\left(\frac{2^m}{3^m}\right)=O((2/3)^m).
+\]
+Thus the proportion outside \(\mathcal M_c^T\) in each ternary-height block
+tends to zero.  Summing these geometrically increasing blocks proves that
+the exceptional proportion up to an arbitrary \(x\) tends to zero: after a
+fixed initial segment, each block error is at most
+\(\epsilon_0 3^m\), and \(\sum_{m\le M}3^m<\tfrac32\,3^M\), while
+\(x\ge3^M\) on the last block.  Since \(\epsilon_0\) is arbitrary,
+\(\delta(\mathcal M_c^T)=1\).
+\end{proof}
+
+\begin{nonclaim}
+Proposition~\ref{prop:Allouche-threshold-extraction} is an edition
+reconstruction from Allouche's printed Lemmas~1--4 and quantitative
+proposition; the decimal exponent is not printed there as a standalone
+theorem.  Korec explicitly records
+\(3/2-\log_3 2=0.86907\ldots\) as the Allouche threshold
+\cite[p.~86]{Korec1994}.  The endpoint \(c=c_A\) is not included.
+Theorem~\ref{thm:Allouche-slope-obstruction} shows, after its explicit domain
+repair, that the two leading branch slopes and bounded additive errors do
+not determine global orbit behaviour; it is not a result about the endpoint
+of the classical Collatz map.
+\end{nonclaim}
+
+\subsubsection{Korec's improved power threshold}
+
+For real \(c\), Korec defines
+\begin{equation}
+\label{eq:Korec-Mc}
+ M_c=\{y\in\Nzero:\exists r\in\Nzero,\ T^r(y)<y^c\}.
+\end{equation}
+With \(X_i,E_m,S_m\) as in
+\eqref{eq:Terras-X}--\eqref{eq:Terras-E}, he also defines, with a
+non-strict boundary,
+\begin{equation}
+\label{eq:Korec-Umd}
+ U(m,d)=\#\{0\le y<2^m:S_m(y)\le md\}.
+\end{equation}
+Proposition~\ref{prop:Terras-parity-coordinate} gives the exact complete-block
+identity
+\[
+ U(m,d)=\sum_{0\le i\le md}\binom mi,
+\]
+where an empty or nonintegral endpoint is interpreted by the displayed
+integer condition.  Korec's Lemma~2 consequently gives
+\begin{equation}
+\label{eq:Korec-CLT}
+ d>\frac12
+ \quad\Longrightarrow\quad
+ \frac{U(m,d)}{2^m}\longrightarrow1.
+\end{equation}
+
+\begin{theorem}[Korec 1994 density estimate, with three local proof-text
+repairs]
+\label{thm:Korec-density-estimate}
+If
+\[
+ c>\log_4 3,
+\]
+then \(M_c\) has natural density one.  The inequality is strict.
+\end{theorem}
+
+\begin{proof}
+It suffices to prove the assertion for
+\(\log_4 3<c<1\): if \(c\ge1\), choose
+\(\log_4 3<c'<1\), and \(M_{c'}\subseteq M_c\) away from the immaterial
+inputs \(0,1\).
+
+For a large cutoff \(a\), choose the least positive integer \(m\) such that
+\begin{equation}
+\label{eq:Korec-m-choice}
+ a\le m^2 2^m.
+\end{equation}
+Define the repaired parameter
+\begin{equation}
+\label{eq:Korec-dstar}
+ d_*=\frac12\left(\frac{c}{\log_2 3}+\frac12\right).
+\end{equation}
+Since
+\[
+ c>\log_4 3=\frac12\log_2 3,
+\]
+the two endpoints whose arithmetic mean occurs in
+\eqref{eq:Korec-dstar} satisfy
+\[
+ \frac12<\frac{c}{\log_2 3};
+\]
+hence
+\begin{equation}
+\label{eq:Korec-dstar-interval}
+ \frac12<d_*<\frac{c}{\log_2 3}.
+\end{equation}
+
+Consider \(m2^m\le y<a\), and put \(k=S_m(y)\).  For \(0\le p<m\),
+every branch of \(T\) divides its input by at most \(2\), so
+\[
+ T^p(y)\ge\frac{y}{2^p}>m.
+\]
+At each of the \(k\) odd steps the exact ratio is
+\((3T^p(y)+1)/(2T^p(y))\), while at each even step it is \(1/2\).
+Therefore
+\begin{align}
+ T^m(y)
+ &<y\left(\frac{3m+1}{2m}\right)^k
+       \left(\frac12\right)^{m-k} \notag\\
+ &=y\frac{3^k}{2^m}
+       \left(1+\frac1{3m}\right)^k \notag\\
+ &\le y\frac{3^k}{2^m}
+       \left(1+\frac1{3m}\right)^m
+ <y\frac{3^k}{2^{m-1}}.                                \label{eq:Korec-product}
+\end{align}
+The final inequality uses
+\((1+1/(3m))^m<e^{1/3}<2\).
+
+Because \(c<1\), equations
+\eqref{eq:Korec-m-choice} and \eqref{eq:Korec-product} show that
+\(T^m(y)<y^c\) whenever
+\begin{equation}
+\label{eq:Korec-sufficient-product}
+ (m^2 2^m)^{1-c}3^k\le2^{m-1}.
+\end{equation}
+Taking base-two logarithms and preserving every denominator proves the exact
+equivalence
+\begin{equation}
+\label{eq:Korec-exact-k-condition}
+ \frac{k}{m}
+ \le
+ \frac{c}{\log_2 3}
+ -\frac{1+2(1-c)\log_2m}{m\log_2 3}.
+\end{equation}
+The right side tends to \(c/\log_2 3>d_*\).  Hence, for all sufficiently
+large \(m\),
+\[
+ S_m(y)\le md_*
+ \quad\Longrightarrow\quad
+ T^m(y)<y^c.
+\]
+The non-strict boundary is the one counted in \eqref{eq:Korec-Umd}.
+
+By \eqref{eq:Korec-CLT} and \eqref{eq:Korec-dstar-interval}, the proportion
+of such \(y\) in every complete interval of \(2^m\) consecutive integers
+tends to one.  The minimality in \eqref{eq:Korec-m-choice} gives
+\[
+ a>(m-1)^2 2^{m-1}.
+\]
+Consequently the discarded initial interval below \(m2^m\) and the single
+terminal fragment shorter than \(2^m\) have relative sizes bounded by
+\[
+ \frac{m2^m}{a}<\frac{2m}{(m-1)^2}\longrightarrow0,
+ \qquad
+ \frac{2^m}{a}<\frac{2}{(m-1)^2}\longrightarrow0.
+\]
+All remaining points lie in complete \(2^m\)-blocks, where the exceptional
+proportion is
+\[
+ 1-\frac{U(m,d_*)}{2^m}\longrightarrow0.
+\]
+Thus \(\#(M_c\cap[0,a))/a\to1\), proving the theorem.
+\end{proof}
+
+\begin{sourceissue}[Korec 1994: the three printed proof defects]
+\label{sourceissue:Korec-1994-defects}
+The theorem above is the published conclusion, but its printed proof
+requires three visible repairs \cite[pp.~86--88]{Korec1994}.
+\begin{enumerate}
+\item The source sets
+\[
+ d=\frac12\left(\frac{c}{\log_4 3}+\frac12\right)
+\]
+and immediately asserts \(d<c/\log_2 3\).  Since
+\[
+ \frac12\left(\frac{c}{\log_4 3}+\frac12\right)
+ =\frac{c}{\log_2 3}+\frac14,
+\]
+the assertion is false.  Equation~\eqref{eq:Korec-dstar} replaces the
+denominator \(\log_4 3\) by the \(\log_2 3\) required by the ensuing
+comparison and proves the claimed open interval.
+
+\item The source calls
+\[
+ \frac{k}{m}\le
+ \frac{c}{\log_2 3}
+ -\frac{1+2(1-c)\log_2m}{m}
+\]
+equivalent to \eqref{eq:Korec-sufficient-product}.  Exact rearrangement gives
+\eqref{eq:Korec-exact-k-condition}, with an additional
+\(\log_2 3\) in the final denominator.  Because the numerator is positive
+and \(\log_2 3>1\), the printed condition subtracts more; it remains a
+stronger sufficient condition, but it is not equivalent.
+
+\item The proof text uses \(S_m(y)<md\), whereas the definition
+\eqref{eq:Korec-Umd} and the final block count use \(S_m(y)\le md\).
+The strict margin in \eqref{eq:Korec-dstar-interval} proves the implication
+with \(S_m(y)\le md_*\) for all sufficiently large \(m\), so the defined
+block count applies including its boundary.
+\end{enumerate}
+The witness time is \(r=m\), and \(m\le\log_2y\) on the retained interval.
+It is controlled by the starting value, not by a constant independent of
+that value.
+\end{sourceissue}
+
+\begin{sourceissue}[Tao line 165: sign-inconsistent Allouche threshold]
+\label{sourceissue:Tao-line165-threshold}
+Tao's v5 and v7 source line~165, and the 2022 journal p.~2, print
+\begin{equation}
+\label{eq:Tao-line165-printed}
+ \theta>\frac32-\frac{\log3}{\log2}\approx0.869.
+\end{equation}
+The symbolic expression and decimal cannot both be correct.  Indeed,
+\[
+ 3^2>2^3
+ \quad\Longrightarrow\quad
+ \frac{\log3}{\log2}>\frac32,
+\]
+so the printed symbolic right side is negative.  The exact correction,
+proved independently in Proposition~\ref{prop:Allouche-threshold-extraction}
+and explicitly reported by Korec, is
+\begin{equation}
+\label{eq:Tao-line165-repaired}
+ \boxed{\theta>
+ \frac32-\log_3 2
+ =\frac32-\frac{\log2}{\log3}}
+ \approx0.8690702464.
+\end{equation}
+Tao's subsequent Korec threshold
+\[
+ \theta>\log_4 3\approx0.7924812504
+\]
+is printed correctly \cite[Sec.~1.1, source line~165]{Tao2026v7}.  This
+repair is not inferred from the decimal alone: the sign obstruction,
+Allouche-coordinate derivation, and Korec's exact retrospective formula
+agree.
+\end{sourceissue}
+
+\begin{proposition}[exact Tao--Korec threshold and clock crosswalk]
+\label{prop:Tao-Korec-threshold-crosswalk}
+Let
+\[
+ c_K=\log_4 3,
+ \qquad
+ c_A=\frac32-\log_3 2.
+\]
+Then:
+\begin{enumerate}
+\item \(c_K<c_A\), with exact difference
+\begin{equation}
+\label{eq:Tao-Korec-threshold-gap}
+ c_A-c_K=
+ \frac{(\log_2 3-1)(2-\log_2 3)}{2\log_2 3}>0.
+\end{equation}
+\item For every \(y\in\Npos\) and real \(c\),
+\begin{equation}
+\label{eq:Tao-Korec-event-equality}
+ \exists j\in\Nzero,\ T^j(y)<y^c
+ \quad\Longleftrightarrow\quad
+ \exists r\in\Nzero,\ U^r(y)<y^c.
+\end{equation}
+Consequently the density statements of
+Proposition~\ref{prop:Allouche-threshold-extraction} and
+Theorem~\ref{thm:Korec-density-estimate} transfer to Tao's whole-orbit
+minimum without any change in their sets of starting values.
+\item For \(N\in\Opos\), define
+\[
+ a_j=\vtwo(3\operatorname{Syr}^j(N)+1),
+ \qquad
+ A_r=\sum_{j=0}^{r-1}a_j.
+\]
+Then the exact accelerated affine coordinate is
+\begin{equation}
+\label{eq:Syr-exact-affine-r}
+ \operatorname{Syr}^r(N)
+ =\frac{3^r}{2^{A_r}}N+
+ \sum_{j=0}^{r-1}\frac{3^{r-1-j}}{2^{A_r-A_j}},
+ \qquad A_0=0.
+\end{equation}
+For \(N>1,r\ge1\), the exponent of its multiplicative term is exactly
+\begin{equation}
+\label{eq:Syr-exponent-coordinate}
+ \log_N\left(\frac{3^r}{2^{A_r}}N\right)
+ =1+\frac{r}{\log N}
+ \left(\log3-\frac{A_r}{r}\log2\right).
+\end{equation}
+At the parameter coordinate
+\[
+ \frac{A_r}{r}=2,\qquad
+ \frac{r}{\log N}=\frac1{\log4},
+\]
+the right side of \eqref{eq:Syr-exponent-coordinate} is exactly
+\(\log_4 3\).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Put \(L=\log_2 3\).  Since \(2<3<4\), one has \(1<L<2\), and
+\[
+ c_A-c_K
+ =\frac32-\frac1L-\frac L2
+ =\frac{(L-1)(2-L)}{2L}>0,
+\]
+proving \eqref{eq:Tao-Korec-threshold-gap}.
+
+Proposition~\ref{prop:KL-Tao-clock-embedding} proves that every shortened
+state \(T^j(y)\) is the unshortened state \(U^{\iota_y(j)}(y)\), giving the
+forward implication in \eqref{eq:Tao-Korec-event-equality}.  Conversely,
+every unshortened time outside the image of \(\iota_y\) is the intermediate
+state
+\[
+ U^{s_j+1}(y)=3T^j(y)+1
+\]
+following an odd shortened state.  Its next unshortened state is
+\[
+ U^{s_j+2}(y)=\frac{3T^j(y)+1}{2}=T^{j+1}(y).
+\]
+If the intermediate state is below \(y^c\), then its half is also below
+\(y^c\).  Thus every unshortened witness produces a shortened witness,
+which proves the reverse implication and the exact equality of starting
+sets.
+
+Finally, the first-return identity gives
+\[
+ \operatorname{Syr}^{j+1}(N)
+ =\frac{3\operatorname{Syr}^j(N)+1}{2^{a_j}}.
+\]
+Induction expands this recurrence to \eqref{eq:Syr-exact-affine-r}; every
+summand in its remainder is positive and its denominator records the exact
+remaining valuation sum.  Taking logarithms of the multiplicative term
+gives \eqref{eq:Syr-exponent-coordinate}.  Substitution of the two displayed
+parameter coordinates gives
+\[
+ 1+\frac{\log3-2\log2}{\log4}
+ =\frac{\log3}{\log4}
+ =\log_4 3.
+\]
+\end{proof}
+
+\begin{nonclaim}
+The exact coordinate calculation in
+\eqref{eq:Syr-exponent-coordinate} explains Tao's statement that optimizing
+the descent parameters recovers Korec
+\cite[source line~695]{Tao2026v7}; it is not a substitute for Korec's
+natural-density proof.  Tao's locally displayed loose choices
+\(n_0=0.1\log_2x\) and \(A_{n_0}>1.9n_0\) do not themselves yield the
+optimal exponent.  The separate \(1.9n\) versus \(1.9n_0\) source defect is
+audited elsewhere and is not conflated with
+Source Issue~\ref{sourceissue:Tao-line165-threshold}.
+
+None of the Terras, Allouche, or Korec density-one theorems includes its
+strict endpoint or removes a possible zero-density exceptional set.  None
+proves the Collatz conjecture.  Equation~\eqref{eq:Tao-Korec-event-equality}
+identifies the existence of a descent witness, not one iterate of \(T\) with
+one iterate of \(U\); their clocks remain related by the variable-time map
+\(\iota_y\).
+\end{nonclaim}
+
+\subsection{Run lengths and chronological parity words}
+
+Put
+\[
+ \mathcal A=(\Z_{\geq1})^{\Nzero},
+ \qquad
+ \mathcal B=\{(b_k)_{k\geq0}\in\{0,1\}^{\Nzero}:
+ b_0=1\text{ and infinitely many }b_k\text{ equal }1\}.
+\]
+Let $\sigma_{\mathcal A}$ and $\sigma_{\mathcal B}$ denote the left shifts.
+For $\mathbf a=(a_0,a_1,\ldots)\in\mathcal A$, set
+\[
+ s_0=0,
+ \qquad
+ s_j=\sum_{i=0}^{j-1}a_i\quad(j\geq1),
+\]
+and define $B:\mathcal A\to\mathcal B$ by
+\begin{equation}
+\label{eq:run-to-parity-B}
+ B(\mathbf a)_k=1
+ \quad\Longleftrightarrow\quad
+ k=s_j\text{ for some }j\geq0.
+\end{equation}
+
+\begin{proposition}[run-length/parity-word isomorphism]
+\label{prop:run-parity-isomorphism}
+The map $B:\mathcal A\to\mathcal B$ is a bijection.  If the one positions of
+$\mathbf b\in\mathcal B$ are
+$0=s_0<s_1<s_2<\cdots$, then
+\begin{equation}
+\label{eq:parity-to-run-B-inverse}
+ B^{-1}(\mathbf b)_j=s_{j+1}-s_j.
+\end{equation}
+Moreover, for every $\mathbf a\in\mathcal A$,
+\begin{equation}
+\label{eq:variable-shift-B}
+ B(\sigma_{\mathcal A}\mathbf a)
+ =\sigma_{\mathcal B}^{a_0}B(\mathbf a).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Every $a_i$ is positive, so the partial sums $s_j$ are strictly increasing,
+start at zero, and are unbounded.  Thus \eqref{eq:run-to-parity-B} defines an
+element of $\mathcal B$.  Conversely, the one positions of an element of
+$\mathcal B$ form a strictly increasing unbounded sequence beginning at zero;
+their successive positive gaps define \eqref{eq:parity-to-run-B-inverse}.
+Taking partial sums of those gaps recovers the original one positions, which
+proves both inverse identities.  Removing the first gap translates every
+later one position by $-a_0$, exactly as the right side of
+\eqref{eq:variable-shift-B} does.
+\end{proof}
+
+For $x\in\Opos$, define the accelerated exponent code and shortened parity
+code by
+\begin{align}
+ E(x)&=\bigl(e(C_{\mathrm{Cr}}^j(x))\bigr)_{j\geq0}
+       \in\mathcal A,
+ \label{eq:E-accelerated-code}\\
+ P(x)&=\bigl(T^k(x)\bmod2\bigr)_{k\geq0}
+       \in\mathcal B.
+ \label{eq:P-parity-code}
+\end{align}
+Both maps are total on $\Opos$: every accelerated value remains a positive odd
+integer and each return time is finite.
+
+\begin{theorem}[typed first-return coding morphism]
+\label{thm:first-return-coding}
+For every $x\in\Opos$,
+\begin{equation}
+\label{eq:PBE-factorization}
+ P(x)=B(E(x)).
+\end{equation}
+The dynamics satisfy
+\begin{equation}
+\label{eq:E-shift}
+ E(C_{\mathrm{Cr}}x)=\sigma_{\mathcal A}E(x),
+ \qquad
+ P(C_{\mathrm{Cr}}x)=\sigma_{\mathcal B}^{e(x)}P(x).
+\end{equation}
+The fibres of $E$ have cardinality at most one.  No surjectivity of
+$E:\Opos\to\mathcal A$ is asserted.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:first-return-clocks} shows that the shortened parity
+block beginning at $C_{\mathrm{Cr}}^j(x)$ is
+\[
+ 1\,0^{\,e(C_{\mathrm{Cr}}^j(x))-1}.
+\]
+Concatenating these blocks gives exactly \eqref{eq:PBE-factorization}.  The
+first equality in \eqref{eq:E-shift} follows directly from the definition of
+$E$; the second follows either from the first equality,
+Proposition~\ref{prop:run-parity-isomorphism}, and
+\eqref{eq:PBE-factorization}, or directly from
+$C_{\mathrm{Cr}}(x)=T^{e(x)}(x)$.
+
+For injectivity, let
+\[
+ Q_3(z)=\sum_{k\geq0}(T^k(z)\bmod2)2^k
+ \qquad(z\in\Ztwo)
+\]
+be the Bernstein--Lagarias chronological parity encoder.  Their theorem,
+reproved below as Proposition~\ref{prop:BL-Q}, makes $Q_3$ injective.  If
+$E(x)=E(y)$, then \eqref{eq:PBE-factorization} gives $P(x)=P(y)$, hence
+$Q_3(x)=Q_3(y)$ and $x=y$.  The proof identifies the image only as
+$E(\Opos)$; it supplies no realization of an arbitrary positive-integer run
+sequence by a positive orbit.
+\end{proof}
+
+\subsection{The accelerated odd \texorpdfstring{$2$}{2}-adic survivor and its
+countable shift}
+
+Urata writes
+\[
+ \mathbb U_2=1+2\Ztwo=\Ztwo^{\times}
+\]
+for the closure of the odd-type rationals.  His continuous extension is the
+map
+\[
+ \varphi:\Ztwo\setminus\{0,-1/3\}\longrightarrow\mathbb U_2
+\]
+given, without merging its two branches, by
+\begin{equation}
+\label{eq:Urata-full-map}
+ \varphi(x)=
+ \begin{cases}
+  (3x+1)/2^{\vtwo(3x+1)},
+    &x\in\mathbb U_2\setminus\{-1/3\},\\
+  x/2^{\vtwo(x)},
+    &x\in\Ztwo\setminus(\mathbb U_2\cup\{0\}).
+ \end{cases}
+\end{equation}
+The restriction to odd units is the accelerated map used below; on positive
+odd integers it is exactly $C_{\mathrm{Cr}}$.  The full even-input branch in
+\eqref{eq:Urata-full-map} is retained because it belongs to the source
+definition, but it is not smuggled into the odd first-return system
+\cite[printed pp.~5--8]{Urata2003}.
+
+\begin{sourceissue}[typing Urata's valuation-continuity sentence]
+After defining the exponent of zero to be infinity, the text calls the
+exponent continuous on $\mathbb Q_2$ without specifying a topology on
+$\Z\cup\{\infty\}$.  Continuity at zero is therefore not yet a typed
+statement.  What is used here is the exact local constancy of $\vtwo$ on
+$\mathbb Q_2^{\times}$; compactness of $\Ztwo$ is invoked independently.
+\end{sourceissue}
+
+For $p\geq1$, define
+\begin{equation}
+\label{eq:Urata-inverse-branch}
+ F_p:\mathbb U_2\longrightarrow\mathbb U_2,
+ \qquad F_p(y)=\frac{2^p y-1}{3}.
+\end{equation}
+The literal identity
+\[
+ 3F_p(y)+1=2^p y
+\]
+shows that $\vtwo(3F_p(y)+1)=p$ and $\varphi(F_p(y))=y$.  Conversely every
+odd-unit preimage has this form with its unique valuation.  Thus
+\begin{equation}
+\label{eq:Urata-fibre}
+ \varphi^{-1}(y)\cap\mathbb U_2
+ =\{F_p(y):p\geq1\},
+\end{equation}
+an explicitly labelled countably infinite fibre
+\cite[printed p.~8, Example~2]{Urata2003}.
+
+For an actual odd-unit orbit $x_k=\varphi^k(x_0)$, put
+\[
+ p_k=\vtwo(3x_{k-1}+1),\qquad
+ S_0=0,\qquad S_n=\sum_{k=1}^{n}p_k,
+\]
+and retain the coordinate polynomial
+\begin{equation}
+\label{eq:Urata-Cn}
+ C_n(p_1,\ldots,p_n)
+ =\sum_{j=1}^{n}3^{n-j}2^{S_{j-1}}.
+\end{equation}
+This is a reindexing of Urata's displayed $C(p_1,\ldots,p_{n-1})$, not a
+replacement source formula.  Successive substitution gives
+\begin{equation}
+\label{eq:Urata-finite-recurrence}
+ 2^{S_n}x_n=C_n+3^n x_0.
+\end{equation}
+Urata Proposition~1 records this relation and the resulting complete
+$n$-step inverse set.  Propositions~2--3 show that common first $n$ exponents
+give $|x-y|_2\leq2^{-S_n}$ and that a complete exponent sequence determines at
+most one survivor.  In fact subtraction of
+\eqref{eq:Urata-finite-recurrence}, together with the even difference of two
+odd $n$th iterates, gives the sharper bound
+\begin{equation}
+\label{eq:Urata-sharp-prefix-bound}
+ |x-y|_2\leq2^{-(S_n+1)}.
+\end{equation}
+
+\begin{sourceissue}[the Cauchy bound in Urata Proposition 4]
+\label{issue:Urata-prop4-bound}
+Proposition~4 constructs approximants $x_n$ whose first $n$ exponents are
+prescribed.  For $m\leq n$, the pair $x_m,x_n$ shares only the first $m$
+prescribed exponents, but the printed comparison uses $S_n$ rather than
+$S_m$.  The stronger printed bound is false.  For $p_1=1,p_2=3$, the first
+two approximants are
+\[
+ x_1=\frac13,\qquad x_2=\frac{11}{9},\qquad
+ |x_2-x_1|_2=\left|\frac89\right|_2=2^{-3}>2^{-4}=2^{-S_2}.
+\]
+This is a proof defect in the displayed Cauchy estimate, not a counterexample
+to the proposition.  The official formula \eqref{eq:Urata-Cn} itself is
+consistent; no correction from the later unauthenticated re-typesetting is
+attributed to Urata.
+\end{sourceissue}
+
+Define the survivor domain
+\begin{equation}
+\label{eq:Urata-survivor}
+ X=\mathbb U_2\setminus
+ \bigcup_{j\geq0}\varphi^{-j}\{-1/3\}.
+\end{equation}
+
+\begin{theorem}[repaired countable-alphabet conjugacy]
+\label{thm:Urata-countable-conjugacy}
+The exponent encoder
+\begin{equation}
+\label{eq:Urata-exponent-encoder}
+ E_U:X\longrightarrow(\Z_{\geq1})^{\Nzero},
+ \qquad
+ E_U(x)_j=\vtwo(3\varphi^j(x)+1),
+\end{equation}
+is a homeomorphism.  If
+$\mathbf p=(p_1,p_2,\ldots)$ and
+$S_j=p_1+\cdots+p_j$, its inverse is the unnormalized coordinate series
+\begin{equation}
+\label{eq:Urata-explicit-inverse}
+ E_U^{-1}(\mathbf p)
+ =-\sum_{j=1}^{\infty}\frac{2^{S_{j-1}}}{3^j}.
+\end{equation}
+Moreover
+\begin{equation}
+\label{eq:Urata-shift-conjugacy}
+ E_U\circ\varphi
+ =\sigma_{\mathcal A}\circ E_U.
+\end{equation}
+Urata Propositions~3--4 supply the uniqueness and existence statements; the
+explicit inverse, repaired proof, and conjugacy formulation here are separate
+constructive reconstructions with no novelty claim.
+\end{theorem}
+
+\begin{proof}
+The series in \eqref{eq:Urata-explicit-inverse} converges because
+$S_{j-1}\geq j-1$.  More generally define, for $k\geq0$,
+\[
+ x_k=-\sum_{r=1}^{\infty}
+ \frac{2^{p_{k+1}+\cdots+p_{k+r-1}}}{3^r},
+\]
+where the empty exponent sum is zero.  Its first term is $-1/3$ and every
+later term is even, so $x_k$ is an odd unit.  Direct cancellation gives
+\begin{equation}
+\label{eq:Urata-suffix-identity}
+ 3x_k+1=2^{p_{k+1}}x_{k+1}.
+\end{equation}
+Therefore the valuation is exactly $p_{k+1}$,
+$\varphi(x_k)=x_{k+1}$, and no $x_k$ is $-1/3$.  This proves existence in
+$X$ without the defective Cauchy estimate.  Urata Proposition~3, or
+\eqref{eq:Urata-sharp-prefix-bound} with $n\to\infty$, proves uniqueness.
+
+Every finite exponent prefix is locally constant on $X$.  Conversely,
+\eqref{eq:Urata-sharp-prefix-bound} shows that common prefixes tending to
+infinite length force the inverse points together.  This proves continuity in
+both directions.  Dropping the first valuation from the definition proves
+\eqref{eq:Urata-shift-conjugacy}.
+\end{proof}
+
+\begin{corollary}[exact exponent cylinders and Haar law]
+\label{cor:Urata-cylinders-Haar}
+For $w=(p_1,\ldots,p_n)$, put
+$F_w=F_{p_1}\circ\cdots\circ F_{p_n}$.  Then
+\begin{align}
+ F_w(y)&=\frac{2^{S_n}y-C_n}{3^n},
+ \label{eq:Urata-Fw-coordinate}\\
+ F_w(\mathbb U_2)&=F_w(1)+2^{S_n+1}\Ztwo.
+ \label{eq:Urata-cylinder-ball}
+\end{align}
+The exponent cylinder in $X$ is $F_w(X)$; its ambient closure is the ball
+\eqref{eq:Urata-cylinder-ball}.  For normalized Haar measure $\mu_U$
+on $\mathbb U_2$,
+\begin{equation}
+\label{eq:Urata-cylinder-measure}
+ \mu_U(F_w(X))
+ =2^{-S_n}=\prod_{j=1}^{n}2^{-p_j}.
+\end{equation}
+Consequently $E_U$ carries Haar measure to the Bernoulli product law
+$\Pr(p_j=k)=2^{-k}$ for $k\geq1$, and the accelerated survivor system is
+Bernoulli and strongly mixing modulo its countable null exceptional set.
+\end{corollary}
+
+\begin{proof}
+Composition of \eqref{eq:Urata-inverse-branch} gives
+\eqref{eq:Urata-Fw-coordinate}.  Since
+$\mathbb U_2=1+2\Ztwo$ and $3^n$ is a unit, its difference set is exactly
+$2^{S_n+1}\Ztwo$, proving \eqref{eq:Urata-cylinder-ball}.  This ball has
+ambient $\Ztwo$-Haar measure $2^{-(S_n+1)}$ and hence normalized
+$\mathbb U_2$-measure $2^{-S_n}$.  The removed preimage tree of $-1/3$ is
+countable, so it has measure zero.  Cylinder products prove the product law;
+the Bernoulli shift consequences follow through
+\eqref{eq:Urata-shift-conjugacy}.
+\end{proof}
+
+\begin{proposition}[exact induced-system bridge]
+\label{prop:Urata-binary-bridge}
+For $x\in X$ and $S_j=p_1+\cdots+p_j$ from
+$E_U(x)$,
+\begin{equation}
+\label{eq:Urata-induced-times}
+ \varphi^j(x)=T^{S_j}(x),
+ \qquad
+ (T^k(x)\bmod2)_{k\geq0}=B(E_U(x)).
+\end{equation}
+Thus $X$ is the first-return system of the shortened binary shift on odd
+inputs whose parity sequence contains infinitely many ones.  The excluded
+word $1000\ldots$ is the parity word of $-1/3$, and words with only finitely
+many ones are its accelerated preimages.
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:Urata-suffix-identity} says that one odd branch followed by
+$p_j-1$ even divisions reaches the next odd unit, so the elapsed shortened
+time is exactly $p_j$.  Summing the retained times proves the first identity;
+the intervening parity block is $1\,0^{p_j-1}$, which proves the second through
+Proposition~\ref{prop:run-parity-isomorphism}.  The final exceptional-set
+description follows from the total Bernstein--Lagarias parity conjugacy.
+\end{proof}
+
+\begin{proposition}[periodic exponent words]
+\label{prop:Urata-periodic-exponents}
+For a genuine survivor orbit with first $n$ exponents,
+\begin{equation}
+\label{eq:Urata-periodic-fraction}
+ \varphi^n(x)=x
+ \quad\Longleftrightarrow\quad
+ (2^{S_n}-3^n)x=C_n
+ \quad\Longleftrightarrow\quad
+ x=\frac{C_n}{2^{S_n}-3^n}.
+\end{equation}
+The orbit returns after $n$ accelerated steps exactly when its full exponent
+sequence is $n$-periodic.  Its least accelerated period equals the least shift
+period; neither need equal a displayed nonleast $n$.
+\end{proposition}
+
+\begin{proof}
+The first equivalence is \eqref{eq:Urata-finite-recurrence} with $x_n=x_0$;
+$2^{S_n}\neq3^n$ gives the second.  Repetition of a returning orbit repeats
+the valuations.  Conversely a periodic exponent sequence determines by
+Theorem~\ref{thm:Urata-countable-conjugacy} the same point after one word.
+These are Urata Propositions~5--6 with the least-period qualification made
+explicit \cite[printed pp.~10--11]{Urata2003}.
+\end{proof}
+
+\begin{nonclaim}
+Urata's arbitrary exponent realization holds on the enlarged domain
+$X\subset\Ztwo^{\times}$, not on $\Opos$.  Thus the earlier
+$E:\Opos\to\mathcal A$ remains only injective.  Rationality of
+\eqref{eq:Urata-periodic-fraction} does not imply integrality or a new positive
+cycle; printed p.~11 asks when that fraction is integral and leaves the
+question open.  The rational eventual-periodicity paragraph on printed p.~6
+is conjectural.  The variable cylinder modulus is $2^{S_n+1}$, not $2^n$, and
+the Haar statements do not transfer to the countable Haar-null ordinary
+integers.
+\end{nonclaim}
+
+\subsection{Chronological affine words and fixed returns}
+
+On $\Q$ put
+\[
+ h_0(z)=\frac z2,
+ \qquad
+ h_1(z)=\frac{3z+1}{2}.
+\]
+Let $\boldsymbol\varepsilon=(\varepsilon_0,\ldots,\varepsilon_{L-1})$ be a
+chronological binary word of length $L\geq1$.  Suppose it has $m$ ones, at
+positions
+\[
+ 0\leq v_0<\cdots<v_{m-1}<L.
+\]
+
+\begin{proposition}[formal chronological composition]
+\label{prop:formal-chronological-composition}
+For every $z\in\Q$,
+\begin{equation}
+\label{eq:formal-affine-word}
+ h_{\varepsilon_{L-1}}\circ\cdots\circ h_{\varepsilon_0}(z)
+ =\frac{3^m z+
+ \displaystyle\sum_{r=0}^{m-1}3^{m-r-1}2^{v_r}}{2^L}.
+\end{equation}
+The sum is empty when $m=0$.
+\end{proposition}
+
+\begin{proof}
+After the first $j$ chronological branches, let
+\[
+ m_j=\sum_{i=0}^{j-1}\varepsilon_i,
+ \qquad
+ A_j=\sum_{\substack{0\leq r<m\\v_r<j}}
+       3^{m_j-r-1}2^{v_r}.
+\]
+The induction invariant is
+\[
+ h_{\varepsilon_{j-1}}\circ\cdots\circ h_{\varepsilon_0}(z)
+ =\frac{3^{m_j}z+A_j}{2^j}.
+\]
+It is the identity at $j=0$.  A zero branch only adds one power of $2$ to
+the denominator.  A one branch multiplies the old numerator by $3$ and adds
+$2^j$; this raises every old exponent of $3$ by one and inserts the new term
+$3^0 2^j$.  The invariant at $j=L$ is \eqref{eq:formal-affine-word}.
+\end{proof}
+
+The formal word equals $T^L(z)$ exactly when every prefix value has the parity
+prescribed by the next $\varepsilon_j$.  Algebra alone does not supply that
+itinerary condition.
+
+\begin{sourceissue}[B\"ohm--Sontacchi Proposition 4]
+\label{sourceissue:BS-prop4}
+B\"ohm--Sontacchi Proposition~1 supplies the formal affine-composition
+algebra.  Their printed Proposition~4 displays its specialization as $u^n(x)$
+while quantifying over every $x\in\Z$ and every run tuple
+\cite[printed p.~263, Props.~1 and~4]{BohmSontacchi1978}.  That unrestricted
+iterate statement is false.  With $x=0$, $m=1$, and $n_0=n_1=1$, the formal
+chronological word is $(0,1,0)$ and
+\[
+ h_0\circ h_1\circ h_0(0)=\frac14,
+ \qquad
+ T^3(0)=0.
+\]
+Thus the right side survives as a formal composition; equality with an
+iterate requires a separate branch-correctness proof.
+\end{sourceissue}
+
+\begin{sourceissue}[B\"ohm--Sontacchi Proposition 5 position range]
+\label{sourceissue:BS-prop5}
+The printed statement gives $v_{i-1}<v_i$ only for $1\leq i<m$ and then
+$v_m=n$; it does not visibly print the necessary final inequality
+$v_{m-1}<v_m$ \cite[printed p.~263, Prop.~5]{BohmSontacchi1978}.  If the
+display is read literally, $m=n=1$ and $(v_0,v_1)=(1,1)$ give the candidate
+$x=-2$, while $T(-2)=-1$.  The formal run construction does impose
+$v_m-v_{m-1}=1+n_m>0$.  This edition therefore states positions directly as
+$0\leq v_0<\cdots<v_{m-1}<L$; that final inequality is an explicit
+reconstruction, not silently attributed printed text.
+\end{sourceissue}
+
+\begin{lemma}[wrong branches cannot close in $\Ztwo$]
+\label{lem:wrong-branch}
+For $z\in\Ztwo$, exactly one of $h_0(z),h_1(z)$ lies in $\Ztwo$, namely
+$h_{z\bmod2}(z)$.  If $v_2(y)<0$, then
+\[
+ v_2(h_0(y))=v_2(h_1(y))=v_2(y)-1.
+\]
+\end{lemma}
+
+\begin{proof}
+If $z$ is even, $z/2$ is integral and $(3z+1)/2$ is not; if $z$ is odd, the
+roles reverse.  When $v_2(y)<0$, the valuations of $3y$ and $1$ are unequal,
+so the ultrametric equality gives $v_2(3y+1)=v_2(y)$; division by $2$ proves
+the second assertion for both branches.
+\end{proof}
+
+\begin{theorem}[recovered fixed-return theorem]
+\label{thm:recovered-fixed-return}
+Define
+\begin{equation}
+\label{eq:fixed-return-candidate}
+ R(\boldsymbol\varepsilon)=
+ \frac{\displaystyle\sum_{r=0}^{m-1}3^{m-r-1}2^{v_r}}
+      {2^L-3^m}\in\Q.
+\end{equation}
+If $R(\boldsymbol\varepsilon)\in\Ztwo$, every branch of the formal word is
+correct and
+\[
+ T^L(R(\boldsymbol\varepsilon))=R(\boldsymbol\varepsilon).
+\]
+Conversely, if $z\in\Ztwo$, $T^L(z)=z$, and
+$\boldsymbol\varepsilon$ is its chronological parity word, then
+$z=R(\boldsymbol\varepsilon)$.  If $z\in\Z$, this is an integer return.  Its
+exact period divides $L$ and need not equal $L$.
+\end{theorem}
+
+\begin{proof}
+The denominator in \eqref{eq:fixed-return-candidate} is nonzero: a positive
+power of $2$ cannot equal a nonnegative power of the odd integer $3$.
+Solving the fixed-point equation for \eqref{eq:formal-affine-word} gives
+exactly \eqref{eq:fixed-return-candidate}.  Start its right-to-left evaluation
+at $R\in\Ztwo$.  If a wrong branch occurs, Lemma~\ref{lem:wrong-branch} sends
+the current value outside $\Ztwo$ with negative valuation, and every later
+formal branch decreases that valuation.  The final value cannot then equal
+the initial integral value.  Hence all branches are correct and the formal
+fixed point is a genuine $T$-return.  The converse substitutes the actual
+itinerary into Proposition~\ref{prop:formal-chronological-composition} and
+solves the same affine equation.  A return after $L$ iterates says only that
+the least positive period divides $L$.  This last scope agrees with the
+unnumbered paragraph following B\"ohm--Sontacchi Proposition~5
+\cite[printed p.~264]{BohmSontacchi1978}.
+\end{proof}
+
+\begin{corollary}[Crandall's accelerated cycle identity]
+\label{cor:crandall-cycle-identity}
+Let $x\in\Opos$, let
+$a_j=e(C_{\mathrm{Cr}}^j(x))$, and put
+\[
+ A_0=0,
+ \qquad
+ A_j=\sum_{r=0}^{j-1}a_r\quad(1\leq j\leq k).
+\]
+If $C_{\mathrm{Cr}}^k(x)=x$, then
+\begin{equation}
+\label{eq:crandall-cycle-identity}
+ x(2^{A_k}-3^k)
+ =\sum_{j=0}^{k-1}2^{A_j}3^{k-1-j}.
+\end{equation}
+Conversely, if $0=A_0<A_1<\cdots<A_k$ and an odd positive integer $x$
+satisfies \eqref{eq:crandall-cycle-identity}, then the corresponding formal
+shortened word fixes $x$; by Theorem~\ref{thm:recovered-fixed-return} it is a
+genuine $T$-return, and its odd returns give
+$C_{\mathrm{Cr}}^k(x)=x$.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:first-return-coding} places the $k$ ones of the shortened
+itinerary at $A_0,\ldots,A_{k-1}$ and gives total shortened length $A_k$.
+Equation \eqref{eq:fixed-return-candidate}, with $L=A_k$ and $m=k$, is
+equivalent to \eqref{eq:crandall-cycle-identity}.  Conversely, the same
+identity makes $x$ the formal fixed point of that word.  Its membership in
+$\Z\subset\Ztwo$ supplies branch correctness, and the one positions split the
+genuine itinerary into the prescribed $k$ first-return blocks.  This is
+Crandall's Eq.~(7.3) and Corollary~7.1, including its return-time rather than
+exact-period direction \cite[pp.~1287--1288]{Crandall1978}.
+\end{proof}
+
+\input{chapters/01a_crandall_1978}
+\input{chapters/01f_everett_1977}
+\input{chapters/01e_steuding_continued_fraction}
+
+\subsection{The \texorpdfstring{$2$}{2}-adic parity conjugacy and notation
+orientation}
+
+Let $S:\Ztwo\to\Ztwo$ be the digit shift
+\[
+ S(z)=\frac{z-(z\bmod2)}2.
+\]
+
+\begin{proposition}[Bernstein--Lagarias, with maps oriented]
+\label{prop:BL-Q}
+Define
+\begin{equation}
+\label{eq:BL-Q}
+ Q_3(x)=\sum_{i=0}^{\infty}(T^i(x)\bmod2)2^i
+ \qquad(x\in\Ztwo).
+\end{equation}
+If $z\ne0$ has one positions
+$0\leq d_1<d_2<\cdots$ (a finite or infinite list), put
+\begin{equation}
+\label{eq:BL-Phi}
+ \Phi_3(z)=-\sum_{r}3^{-r}2^{d_r},
+ \qquad \Phi_3(0)=0.
+\end{equation}
+Then $Q_3$ and $\Phi_3$ are mutually inverse $2$-adic isometries and
+\begin{equation}
+\label{eq:BL-conjugacy}
+ Q_3\circ T=S\circ Q_3,
+ \qquad
+ T=\Phi_3\circ S\circ\Phi_3^{-1}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+If $x\equiv y\pmod{2^N}$, induction through their common parity branches
+shows that the first $N$ digits of $Q_3(x)$ and $Q_3(y)$ agree.  Conversely,
+if those digits agree and contain $r$ ones, the common affine word gives
+\[
+ T^N(x)-T^N(y)=\frac{3^r}{2^N}(x-y).
+\]
+The left side is in $\Ztwo$ and $3^r$ is a $2$-adic unit, so
+$x\equiv y\pmod{2^N}$.  Hence $Q_3$ preserves every $2$-adic congruence
+distance and is injective.
+
+The series \eqref{eq:BL-Phi} converges because its term valuations tend to
+infinity.  Splitting off the first digit gives
+\[
+ \Phi_3(2w)=2\Phi_3(w),
+ \qquad
+ \Phi_3(1+2w)=\frac{2\Phi_3(w)-1}{3}.
+\]
+The first value is even and the second odd, and applying the corresponding
+branch of $T$ gives $T(\Phi_3(z))=\Phi_3(Sz)$.  Thus the chronological
+parities of $\Phi_3(z)$ are the digits of $z$, so
+$Q_3\Phi_3=\operatorname{id}_{\Ztwo}$.  The injective $Q_3$ is therefore
+bijective with inverse $\Phi_3$.  Removing the first parity digit proves the
+first identity in \eqref{eq:BL-conjugacy}; conjugating by the inverse proves
+the second.  This reproduces Bernstein--Lagarias Eqs.~(1.3), (1.5), and
+(1.6) with the inverse orientation explicit
+\cite[author-copy pp.~1--2]{BernsteinLagarias1996}.
+\end{proof}
+
+\begin{corollary}[periodic parity word to fixed-return fraction]
+\label{cor:periodic-word-resummation}
+With the word data of
+Proposition~\ref{prop:formal-chronological-composition}, put
+\[
+ q_{\boldsymbol\varepsilon}=\sum_{i=0}^{L-1}\varepsilon_i2^i,
+ \qquad
+ z_{\boldsymbol\varepsilon}
+ =\frac{q_{\boldsymbol\varepsilon}}{1-2^L}\in\Ztwo.
+\]
+Then
+\begin{equation}
+\label{eq:periodic-word-resummation}
+ \Phi_3(z_{\boldsymbol\varepsilon})
+ =R(\boldsymbol\varepsilon)
+ =\frac{\displaystyle\sum_{r=0}^{m-1}3^{m-r-1}2^{v_r}}
+        {2^L-3^m}.
+\end{equation}
+Thus the B\"ohm--Sontacchi return candidate is the inverse parity image of
+the purely periodic chronological word.  Its exact $T$-period is the least
+shift period of that infinite word.  In particular, a length-$L$ return has
+exact period $L$ precisely when the repeated block has least shift period
+$L$.
+\end{corollary}
+
+\begin{proof}
+The one positions of $z_{\boldsymbol\varepsilon}$ are
+$v_r+sL$ for $0\leq r<m$ and $s\geq0$.  Formula \eqref{eq:BL-Phi} gives
+\begin{align*}
+ \Phi_3(z_{\boldsymbol\varepsilon})
+ &=-\sum_{s\geq0}\sum_{r=0}^{m-1}
+       3^{-(sm+r+1)}2^{v_r+sL}\\
+ &=-\left(\sum_{r=0}^{m-1}3^{-(r+1)}2^{v_r}\right)
+       \sum_{s\geq0}\left(\frac{2^L}{3^m}\right)^s\\
+ &=\frac{\displaystyle\sum_{r=0}^{m-1}3^{m-r-1}2^{v_r}}
+        {2^L-3^m},
+\end{align*}
+where the geometric series converges in $\Ztwo$ because
+$|2^L/3^m|_2=2^{-L}<1$.  The conjugacy
+$Q_3T=SQ_3$ and bijectivity of $Q_3$ identify the least positive return time
+of the point with the least positive shift period of its parity sequence.
+\end{proof}
+
+Laarhoven--de Weger use the symbol $\Phi$ for the chronological series
+\eqref{eq:BL-Q}, first modulo $2^k$ and then on $\Ztwo$.  Their identities are
+$T_k=\Phi_k^{-1}\sigma_{2,k}\Phi_k$ and
+$T=\Phi^{-1}S\Phi$ \cite[Secs.~2--3]{LaarhovenDeWeger2012}.
+Consequently their $\Phi$ is $Q_3$ in the notation of
+Proposition~\ref{prop:BL-Q}, not Bernstein--Lagarias's inverse $\Phi_3$.
+This is an exact notation crosswalk, not a mathematical disagreement.
+
+\input{chapters/01c_debruijn_graphs}
+\input{chapters/01d_primary_parity_dependencies}
+
+\subsection{Relatively-prime generalized maps and the full
+\texorpdfstring{$d$}{d}-adic shift}
+
+Matthews's author form first permits a retained presentation integer
+$d\geq2$, nonzero integers
+$m_0,\ldots,m_{d-1}$, and integers $r_i\equiv i m_i\pmod d$, and writes
+\begin{equation}
+\label{eq:Matthews-general-map}
+ \mathcal T(x)=\frac{m_i x-r_i}{d}
+ \qquad(x\equiv i\pmod d).
+\end{equation}
+The source symbol is $T$; the calligraphic letter here prevents collision with
+the already fixed shortened $3x+1$ map.  The source separately reserves
+$d(\mathcal T)$ for the least modulus on whose residue classes the map is
+affine.  On an arbitrary retained presentation impose the unit condition
+\begin{equation}
+\label{eq:Matthews-unit-gate}
+ \gcd(m_0m_1\cdots m_{d-1},d)=1,
+\end{equation}
+equivalently when every $m_i$ is a unit modulo $d$.  This condition forces the
+retained $d$ to equal $d(\mathcal T)$: if affine data at a smaller modulus $q$
+described the same map, equality of rational slopes on each nonempty
+intersection of a $q$-class and a $d$-class would give
+$q m_i=d m'_j$; coprimality gives $d\mid q$, a contradiction.  At the least
+modulus this is exactly Matthews's \emph{relatively-prime type}
+\cite[author-form pp.~2--3]{Matthews2010AuthorForm}.
+
+The 1984 Matthews--Watts paper uses a nonidentical presentation: positive
+unit multipliers $m_1,\ldots,m_d$, a complete residue set
+$R_d=\{x_1,\ldots,x_d\}$, and branch data indexed by those representatives.
+The exact crosswalk sends the later digit $i$ to the unique $x_j\equiv i\pmod
+d$ and relabels the corresponding $m_j,r_j$.  This reindexing does not erase
+the earlier positivity hypothesis.
+
+\begin{proposition}[source extension and cylinder theorems]
+\label{prop:matthews-extension-cylinders}
+Every map \eqref{eq:Matthews-general-map} at the retained $d$ has a unique
+continuous extension
+$\widehat{\mathcal T}:\mathbb Z_d\to\mathbb Z_d$ with the same branch formula.
+Relative primeness is not needed for this assertion.
+
+Assume \eqref{eq:Matthews-unit-gate}.  For a word
+$\mathbf i=(i_0,\ldots,i_{\alpha-1})\in\{0,\ldots,d-1\}^{\alpha}$, put
+\[
+ b_{\alpha}(\mathbf i)=
+ \sum_{j=0}^{\alpha-1}
+ \frac{r_{i_j}d^j}{m_{i_0}m_{i_1}\cdots m_{i_j}}
+ \in\mathbb Z_d.
+\]
+Then its itinerary cylinder is exactly
+\begin{equation}
+\label{eq:Matthews-cylinder-coordinate}
+ \left\{x\in\mathbb Z_d:
+ \widehat{\mathcal T}^{j}(x)\equiv i_j\pmod d
+ \text{ for }0\leq j<\alpha\right\}
+ =b_{\alpha}(\mathbf i)+d^{\alpha}\mathbb Z_d.
+\end{equation}
+Thus the $d^{\alpha}$ length-$\alpha$ cylinders are exactly the
+$d^{\alpha}$ residue classes modulo $d^{\alpha}$.
+\end{proposition}
+
+\begin{proof}
+On the clopen cylinder $x\equiv i\pmod d$, the congruence
+$r_i\equiv i m_i\pmod d$ puts $m_ix-r_i$ in $d\mathbb Z_d$; division by $d$
+therefore gives a continuous branch into $\mathbb Z_d$.  The branches assemble
+continuously, and uniqueness follows from density of $\mathbb Z$ in
+$\mathbb Z_d$.  When $d=d(\mathcal T)$ this is Matthews's Theorem~6.1
+\cite[author-form p.~12]{Matthews2010AuthorForm}; the displayed clopen-branch
+proof also establishes the stated retained-presentation version.
+
+For the second assertion, every denominator in $b_{\alpha}$ is a unit.  Put
+\[
+ X_k=\sum_{j=k}^{\alpha-1}
+ \frac{r_{i_j}d^{j-k}}{m_{i_k}\cdots m_{i_j}}
+ \qquad(0\leq k<\alpha).
+\]
+Then $X_k\equiv r_{i_k}/m_{i_k}\equiv i_k\pmod d$ and
+$(m_{i_k}X_k-r_{i_k})/d=X_{k+1}$ for $k<\alpha-1$.  Adding any element of
+$d^{\alpha}\mathbb Z_d$ to $X_0=b_{\alpha}$ preserves these first $\alpha$
+digits, because the difference after $j$ common branches remains divisible by
+$d^{\alpha-j}$.  Conversely, repeated rearrangement of the branch equation for
+an $x$ with the displayed itinerary gives
+\[
+ x=b_{\alpha}(\mathbf i)
+ +\frac{d^{\alpha}\widehat{\mathcal T}^{\alpha}(x)}
+ {m_{i_0}\cdots m_{i_{\alpha-1}}},
+\]
+whose second term lies in $d^{\alpha}\mathbb Z_d$.  This proves
+\eqref{eq:Matthews-cylinder-coordinate}.  It reconstructs author-form
+Theorem~2.2(ii) and is the later indexing of Matthews--Watts Eq.~(2.4) and
+Section~3, Lemma~4
+\cite[author-form p.~4]{Matthews2010AuthorForm}
+\cite[pp.~169, 172--173]{MatthewsWatts1984}.
+\end{proof}
+
+Let $S_d:\mathbb Z_d\to\mathbb Z_d$ be the digit shift
+\[
+ S_d\!\left(\sum_{j\geq0}a_jd^j\right)=
+ \sum_{j\geq0}a_{j+1}d^j.
+\]
+For $x\in\mathbb Z_d$, let $i_j(x)\in\{0,\ldots,d-1\}$ be defined by
+$\widehat{\mathcal T}^{j}(x)\equiv i_j(x)\pmod d$.
+
+\begin{theorem}[constructive generalized itinerary conjugacy]
+\label{thm:general-d-itinerary-conjugacy}
+Under \eqref{eq:Matthews-unit-gate}, the map
+\begin{equation}
+\label{eq:general-itinerary-encoder}
+ \operatorname{It}_{\mathcal T}:\mathbb Z_d\longrightarrow\mathbb Z_d,
+ \qquad
+ \operatorname{It}_{\mathcal T}(x)=\sum_{j\geq0}i_j(x)d^j,
+\end{equation}
+is an isometric homeomorphism for the digit-prefix metric.  Its inverse is the
+coordinate series
+\begin{equation}
+\label{eq:general-itinerary-inverse}
+ \operatorname{It}_{\mathcal T}^{-1}
+ \!\left(\sum_{j\geq0}i_jd^j\right)
+ =\sum_{j\geq0}
+ \frac{r_{i_j}d^j}{m_{i_0}m_{i_1}\cdots m_{i_j}}.
+\end{equation}
+It conjugates the extended map to the full shift:
+\begin{equation}
+\label{eq:general-itinerary-conjugacy}
+ \operatorname{It}_{\mathcal T}\circ\widehat{\mathcal T}
+ =S_d\circ\operatorname{It}_{\mathcal T},
+ \qquad
+ \widehat{\mathcal T}
+ =\operatorname{It}_{\mathcal T}^{-1}
+  \circ S_d\circ\operatorname{It}_{\mathcal T}.
+\end{equation}
+Every fibre is a singleton.  No additive or ring-homomorphism property is
+asserted, so no group-theoretic kernel is attached to this map.
+\end{theorem}
+
+\begin{proof}
+For a prescribed digit sequence $(i_j)_{j\geq0}$, define the convergent suffix
+series
+\[
+ X_k=\sum_{j=k}^{\infty}
+ \frac{r_{i_j}d^{j-k}}{m_{i_k}m_{i_{k+1}}\cdots m_{i_j}}.
+\]
+The unit condition gives
+\[
+ X_k\equiv\frac{r_{i_k}}{m_{i_k}}\equiv i_k\pmod d,
+ \qquad
+ \frac{m_{i_k}X_k-r_{i_k}}d=X_{k+1}.
+\]
+Hence $X_0$ has exactly the prescribed itinerary, proving that
+\eqref{eq:general-itinerary-inverse} is a right inverse.
+
+For an arbitrary $x$, repeated rearrangement of its actual branch equations
+gives, for every $\alpha\geq1$,
+\[
+ x=
+ \sum_{j=0}^{\alpha-1}
+ \frac{r_{i_j(x)}d^j}{m_{i_0(x)}\cdots m_{i_j(x)}}
+ +\frac{d^{\alpha}\widehat{\mathcal T}^{\alpha}(x)}
+ {m_{i_0(x)}\cdots m_{i_{\alpha-1}(x)}}.
+\]
+The final term tends to zero in the digit-prefix metric.  Thus
+\eqref{eq:general-itinerary-inverse} is also a left inverse.
+
+If $x\equiv y\pmod{d^{\alpha}}$, common-branch induction gives
+$\widehat{\mathcal T}^{j}(x)\equiv
+\widehat{\mathcal T}^{j}(y)\pmod{d^{\alpha-j}}$ for
+$0\leq j\leq\alpha$; hence their first $\alpha$ itinerary digits agree.
+The converse follows from Proposition~\ref{prop:matthews-extension-cylinders}.
+Therefore
+\[
+ x\equiv y\pmod{d^{\alpha}}
+ \quad\Longleftrightarrow\quad
+ \operatorname{It}_{\mathcal T}(x)\equiv
+ \operatorname{It}_{\mathcal T}(y)\pmod{d^{\alpha}},
+\]
+which proves the isometry and continuity in both directions.  Finally,
+$i_j(\widehat{\mathcal T}x)=i_{j+1}(x)$, so deleting the first itinerary digit
+proves \eqref{eq:general-itinerary-conjugacy}.
+\end{proof}
+
+This is a constructive proof, with no novelty claim, of the general-$d$
+statement that the author form presents only as something that ``should hold''
+\cite[author-form p.~14]{Matthews2010AuthorForm}.  At $d=2$ for the shortened
+$3x+1$ map, \eqref{eq:general-itinerary-encoder} is pointwise the
+Bernstein--Lagarias $Q_3$ and Laarhoven--de Weger's $\Phi$ orientation.  It is
+an explicit choice having the orientation of Matthews's $C_T$.  Matthews's
+Theorem~6.3 alone does not state a coordinate normalization that would identify
+its named $C_T$ pointwise merely from the conjugacy equation.
+
+\begin{corollary}[Haar cylinder independence and strong mixing]
+\label{cor:Matthews-strong-mixing}
+The map $\operatorname{It}_{\mathcal T}$ preserves normalized Haar measure
+$\mu_d$.  If
+$A=a+d^{\alpha}\mathbb Z_d$ and $B=b+d^{\beta}\mathbb Z_d$, then for
+$K\geq\beta$,
+\begin{equation}
+\label{eq:Matthews-cylinder-mixing}
+ \mu_d(\widehat{\mathcal T}^{-K}(A)\cap B)
+ =\mu_d(A)\mu_d(B)=d^{-\alpha-\beta}.
+\end{equation}
+Consequently $\widehat{\mathcal T}$ is strongly mixing and ergodic on
+$(\mathbb Z_d,\mu_d)$.
+\end{corollary}
+
+\begin{proof}
+The isometry permutes the $d^{\alpha}$ residue balls at every level, so it
+preserves their measures and hence Haar measure on the Borel sigma-algebra.
+Under the conjugacy, $B$ fixes the first $\beta$ digits and $S_d^{-K}(A)$ fixes
+digits $K$ through $K+\alpha-1$.  For $K\geq\beta$ these blocks are disjoint,
+giving exactly $d^{-\alpha-\beta}$.  Finite unions of residue balls approximate
+every Borel set in Haar measure.  Replacing two Borel sets by such unions makes
+the error in the intersection at most the sum of the two symmetric-difference
+measures, uniformly in $K$ because the maps preserve measure.  Letting that
+error tend to zero proves strong mixing; ergodicity follows by applying the
+mixing identity to an invariant set.  This reproduces Matthews--Watts Lemma~5
+and Corollary~1 and Matthews's later Theorem~6.2
+\cite[pp.~173--174]{MatthewsWatts1984}
+\cite[author-form pp.~12--13]{Matthews2010AuthorForm}.
+\end{proof}
+
+\begin{proposition}[exact nonunit obstruction]
+\label{prop:nonunit-itinerary-obstruction}
+Suppose instead that $g_i=\gcd(m_i,d)>1$ for some branch $i$.  Among the
+$d$ lifts $i+dt$ modulo $d^2$, the next itinerary digit assumes exactly
+$d/g_i$ values, each with $g_i$ lifts.  Hence some two-digit words beginning
+with $i$ are absent and the canonical itinerary encoder is not a bijection
+onto the full $d$-shift.
+\end{proposition}
+
+\begin{proof}
+The branch equation gives
+\[
+ \mathcal T(i+dt)=\mathcal T(i)+m_it.
+\]
+Modulo $d$, the image of multiplication by $m_i$ has cardinality $d/g_i$ and
+every image element has $g_i$ preimages.  These are exactly the possible
+second digits and their lift multiplicities.
+\end{proof}
+
+For the unshortened Collatz map in Matthews's presentation,
+$d=2,m_1=6,r_1=-2$, so every odd input maps to an even value and the word
+$11$ is absent.  Proposition~\ref{prop:nonunit-itinerary-obstruction} obstructs
+the canonical itinerary map from being a full-shift conjugacy; it does not
+assert categorical nonexistence of every differently defined conjugacy.
+
+\begin{remark}[formal certificate boundary]
+The pinned Lean certificate checks the literal lift identity, the explicit
+unit-affine inverse, the equality between the residue gcd and the ordinary gcd
+of the retained integer multiplier, the
+$d/g_i$ attainable-digit count, and the $g_i$-element fibre over every
+attainable digit.  In particular, the range and fibre assertions in
+Proposition~\ref{prop:nonunit-itinerary-obstruction} are kernel-checked.  The
+artifact deliberately does not certify the inverse limit, infinite series,
+homeomorphism, or full shift conjugacy. Those assertions therefore remain
+outside the formal certificate; extending the formalization is project work,
+not an open mathematical problem.
+\end{remark}
+
+\begin{nonclaim}
+The Haar-almost-every conclusions live in $\mathbb Z_d$.  The embedded ordinary
+integers are countable and Haar-null.  Neither the conjugacy nor strong mixing
+proves an endpoint statement for positive integer Collatz orbits; it transports
+the unresolved embedding of that special subset into shift coordinates.
+\end{nonclaim}
+
+\subsection{Integer rcwa presentations: exact crosswalk and a signed-slope defect}
+
+Kohl calls a map $f:\mathbb Z\to\mathbb Z$ \emph{residue-class-wise affine}
+(rcwa) when some positive integer $q$ admits coefficients
+$a_i,b_i,c_i\in\mathbb Z$ for which
+\begin{equation}
+\label{eq:Kohl-rcwa-presentation}
+ f(n)=\frac{a_i n+b_i}{c_i}
+ \qquad(n\equiv i\pmod q).
+\end{equation}
+The least such $q$ is $\operatorname{Mod}(f)$.  At the least modulus the source
+stores each coefficient triple in primitive form and takes $c_i>0$
+\cite[Defs.~1.1 and 2.1]{Kohl2008}.  Algorithm~2.2 separately permits a
+nonminimal modulus and unreduced input before reduction.  The following bridge
+therefore retains its presentation modulus; it does not normalize either source.
+
+\begin{proposition}[fixed-modulus Matthews--rcwa crosswalk]
+\label{prop:Matthews-Kohl-crosswalk}
+Fix $d\geq2$.  The presentation-level assignment
+\begin{equation}
+\label{eq:Matthews-to-Kohl}
+ (m_i,r_i)_{0\leq i<d}
+ \longmapsto
+ (a_i,b_i,c_i)_{0\leq i<d}
+ =(m_i,-r_i,d)_{0\leq i<d}
+\end{equation}
+sends the Matthews presentation \eqref{eq:Matthews-general-map} to an rcwa
+presentation of the same function $\mathbb Z\to\mathbb Z$.  Its image consists
+of the fixed-modulus, common-denominator presentations with nonzero branch
+slopes, and its inverse on that presentation class is
+$m_i=a_i$, $r_i=-b_i$.
+
+Conversely, let \eqref{eq:Kohl-rcwa-presentation} be a reduced rcwa coefficient
+list at the retained modulus $d$, and assume $a_i\neq0$ for every $i$.  Then
+\begin{equation}
+\label{eq:Kohl-to-Matthews}
+ m_i=\frac{a_i d}{c_i},
+ \qquad
+ r_i=-\frac{b_i d}{c_i}
+\end{equation}
+are integers, satisfy $r_i\equiv i m_i\pmod d$, and reproduce the same branch
+map in Matthews form.  Returning through \eqref{eq:Matthews-to-Kohl} scales the
+$i$th reduced triple by $d/c_i$.  Reducing that scaled triple recovers the
+starting reduced triple exactly; the literal common-denominator list and the
+reduced list are distinct but reversibly related while $d$ is retained.
+\end{proposition}
+
+\begin{proof}
+The Matthews congruence puts $m_i n-r_i$ in $d\mathbb Z$ throughout
+$i+d\mathbb Z$, which proves the first assertion and its displayed inverse.
+For the converse, Kohl's reduced-list divisibility gives
+$c_i\mid d$ and $c_i\mid a_i i+b_i$.  Hence the integers in
+\eqref{eq:Kohl-to-Matthews} obey
+\[
+ i m_i-r_i=\frac{d(a_i i+b_i)}{c_i}\equiv0\pmod d,
+\]
+and direct substitution gives
+$(m_i n-r_i)/d=(a_i n+b_i)/c_i$.
+
+For Matthews data, put $g_i=\gcd(m_i,d)$.  The congruence
+$r_i\equiv i m_i\pmod d$ gives
+\[
+ \gcd(m_i,r_i,d)=g_i.
+\]
+Therefore branchwise reduction sends
+$(m_i,-r_i,d)$ exactly to
+$(m_i/g_i,-r_i/g_i,d/g_i)$.  Applying
+\eqref{eq:Kohl-to-Matthews} with the retained $d$ recovers $(m_i,r_i)$.
+Conversely, primitivity and $c_i\mid a_i i+b_i$ imply
+$\gcd(a_i,c_i)=1$; hence for the reconstructed data
+$\gcd(a_i d/c_i,d)=d/c_i$, so reduction returns precisely
+$(a_i,b_i,c_i)$.  This proves exact reversibility at fixed $d$.
+\end{proof}
+
+This bridge separates three conditions which are not interchangeable.  In the
+common-denominator presentation, the unit condition is
+$\gcd(m_i,d)=1$ for every branch.  As proved above it forces $d$ to be the
+least modulus, makes every triple $(m_i,-r_i,d)$ primitive, and leaves every
+reduced denominator equal to $d$.  Hence Kohl's divisor is exactly $d$.
+Kohl calls a reduced rcwa map \emph{integral} when this divisor is one, so for
+$d\geq2$ Matthews relatively-prime type excludes Kohl integrality.  Neither
+condition says that the integer map is bijective.  For example, the shortened
+$3x+1$ map has reduced triples
+$(1,0,2)$ and $(3,1,2)$: it is Matthews-relatively-prime, has Kohl divisor two,
+and is surjective but not injective on $\mathbb Z$.
+
+\begin{sourceissue}[signed slopes in Kohl Remark 1.2]
+\label{issue:Kohl-signed-density}
+For a reduced coefficient list at modulus $q$, the printed remark uses
+\begin{equation}
+\label{eq:Kohl-printed-density}
+ \frac1q\sum_{i=0}^{q-1}\frac{c_i}{a_i}
+\end{equation}
+and asserts that it is at most one for an injection, at least one for a
+surjection, and equal to one for a bijection
+\cite[Rem.~1.2]{Kohl2008}.  As printed, the expression is undefined on a
+zero-slope branch and false for negative slopes.  The same article lists
+$f(n)=-n$ as an rcwa permutation; at modulus one its reduced triple is
+$(-1,0,1)$, so \eqref{eq:Kohl-printed-density} equals $-1$, not $1$
+\cite[Def.~2.4 and following example]{Kohl2008}.
+\end{sourceissue}
+
+\begin{proposition}[corrected rcwa image-density statistic]
+\label{prop:Kohl-density-repair}
+For a reduced rcwa list at modulus $q$, put
+\begin{equation}
+\label{eq:Kohl-corrected-density}
+ D(f)=\frac1q\sum_{\substack{0\leq i<q\\a_i\neq0}}
+ \frac{c_i}{|a_i|}.
+\end{equation}
+If $f$ is injective, then $D(f)\leq1$; if $f$ is surjective, then
+$D(f)\geq1$; and if $f$ is bijective, then $D(f)=1$.
+\end{proposition}
+
+\begin{proof}
+On $i+q\mathbb Z$ with $a_i\neq0$, the image of the branch is one residue
+class of modulus $|a_i|q/c_i$ and therefore has natural density
+$c_i/(|a_i|q)$.  A zero-slope branch has a singleton image and density zero.
+If $f$ is injective, the branch images are disjoint, so their density sum is at
+most one.  If $f$ is surjective, their finite union, together with any singleton
+images, is all of $\mathbb Z$, so the sum of their densities counted with
+overlap is at least one.  A bijection satisfies both bounds.
+\end{proof}
+
+The absolute value and omission of zero slopes are forced, while the positive-
+slope Collatz calculation in the source remains unchanged.  This repaired
+integer-image statistic neither proves the $d$-adic itinerary conjugacy nor
+transfers a Haar-almost-every statement to ordinary integer orbits.
+
+\input{chapters/01b_siegel_hydra_numen}
+
+\subsection{Current almost-bounded-orbit theorem: registered boundary}
+
+For $A\subset\Npos$, Tao's logarithmic density is the limit, when it exists,
+of
+\[
+ \frac{\displaystyle\sum_{n\in A\cap[1,x]}1/n}
+      {\displaystyle\sum_{n\in\Npos\cap[1,x]}1/n}.
+\]
+The current source is the version-pinned arXiv source $1909.03562v7$, not the
+older routed local witness.
+
+\begin{theorem}[Tao, source theorem]
+\label{thm:Tao-main-registered}
+Let $f:\Npos\to\mathbb R$ satisfy $f(N)\to+\infty$.  With $U$ as in
+\eqref{eq:unshortened-U} and
+\[
+ U_{\min}(N)=\inf_{j\in\Nzero}U^j(N),
+\]
+one has $U_{\min}(N)<f(N)$ on a subset of $\Npos$ of logarithmic density one.
+\end{theorem}
+
+This is Theorem~1.3 of the source
+\cite[Sec.~1.1, Thm.~1.3]{Tao2026v7}.  Its quantifier over every divergent
+$f$ and its logarithmic-density conclusion are retained exactly; it is not a
+natural-density theorem and not a bounded-orbit theorem with a universal
+constant.  At the checkpoint at which this theorem was first registered, its
+proof-dependency audit was still open.  The exact repaired source chain
+through Proposition~1.11, Theorem~3.1, Theorem~1.6, and this theorem is now
+closed in Subsection~\ref{subsec:Tao-main-reduction}; no local claim may use
+more than the displayed conclusion.
+
+\begin{proposition}[exact Siegel--Tao Syracuse coordinate]
+\label{prop:Siegel-Tao-Syracuse-coordinate}
+Let
+\[
+ \Omega=(\Npos)^{\Npos},\qquad
+ \mathbb P_{\rm geom}(a_k=r)=2^{-r},
+\]
+with independent coordinates, and put
+\(A_k=a_1+\cdots+a_k\).  The map
+\begin{equation}
+\label{eq:Siegel-Tao-run-coordinate}
+ \mathcal R:\Omega\longrightarrow\Ztwo,
+ \qquad
+ \mathcal R((a_k)_{k\geq1})=
+       \sum_{k\geq1}2^{A_k-1},
+\end{equation}
+is a bijection onto the set \(\Ztwo^{\infty1}\) of $2$-adic digit strings
+having infinitely many one digits.  Its inverse sends the increasing one
+positions \(0\leq n_1<n_2<\cdots\) to
+\begin{equation}
+\label{eq:Siegel-Tao-run-inverse}
+ a_1=n_1+1,\qquad a_k=n_k-n_{k-1}\quad(k\geq2).
+\end{equation}
+It pushes \(\mathbb P_{\rm geom}\) to normalized Haar measure on \(\Ztwo\);
+the complement of \(\Ztwo^{\infty1}\) is Haar-null.
+
+For Siegel's numen \(\chi_3:\Ztwo\to\mathbb Z_3\), one has the pointwise
+identity
+\begin{equation}
+\label{eq:Siegel-Tao-pointwise-Syracuse}
+ \chi_3(\mathcal R((a_k)))
+   =\sum_{k\geq1}3^{k-1}2^{-A_k}
+   \quad\hbox{in }\mathbb Z_3.
+\end{equation}
+For \(n\geq1\), define the pointwise realization
+\[
+ \operatorname{Syrac}_n(a_1,\ldots,a_n)
+ :=F_n(a_n,\ldots,a_1)\pmod{3^n}.
+\]
+Consequently,
+\begin{equation}
+\label{eq:Siegel-Tao-finite-Syracuse}
+ \chi_3(\mathcal R((a_k)))\pmod{3^n}
+ =\operatorname{Syrac}_n(a_1,\ldots,a_n)
+ =\sum_{k=1}^{n}3^{k-1}2^{-A_k}\pmod{3^n},
+\end{equation}
+and \(\operatorname{Syrac}_n(a_1,\ldots,a_n)\), under
+\(\mathbb P_{\rm geom}\), has exactly Tao's law
+\(\operatorname{Syrac}(\mathbb Z/3^n\mathbb Z)\).  Thus the equality is
+pointwise for this explicitly declared coupling, rather than an unnamed
+equality in distribution.
+\end{proposition}
+
+\begin{proof}
+The partial sums in \eqref{eq:Siegel-Tao-run-coordinate} converge in
+\(\Ztwo\), because \(A_k\to\infty\).  Their one positions are exactly
+\(A_k-1\), which proves \eqref{eq:Siegel-Tao-run-inverse}, both inverse
+identities, and singleton fibres.
+
+Fix \((a_1,\ldots,a_k)\).  Its run-length cylinder has product mass
+\[
+ \prod_{j=1}^k2^{-a_j}=2^{-A_k}.
+\]
+Its image fixes every binary digit from position zero through position
+\(A_k-1\), with ones exactly at \(A_j-1\); that Haar cylinder also has mass
+\(2^{-A_k}\).  These cylinders generate the product sigma-algebra.  Hence
+\(\mathcal R_*\mathbb P_{\rm geom}\) is Haar measure.  A $2$-adic string
+with finitely many ones is a nonnegative integer, so the omitted set is
+countable and Haar-null.
+
+Siegel's historical v1 one-position formula is
+\[
+ \chi_p\!\left(\sum_{k\geq1}2^{n_k}\right)
+ =\sum_{k\geq1}\frac{p^{k-1}}{2^{n_k+1}}.
+\]
+The current v3 source obtains the same formula from its finite word cocycle
+and $q$-adic rising limit
+\cite[historical v1 source lines 405--568]{Siegel2007v1}
+\cite[current v3 source lines 1851--2000]{Siegel2007v3}.
+Substitution of \(p=3\) and \(n_k=A_k-1\) proves
+\eqref{eq:Siegel-Tao-pointwise-Syracuse}.  Tao's source formula is the same
+series with \(A_k=a_{[1,k]}\)
+\cite[source lines 384--393, 436--440]{Tao2026v7}.  Modulo \(3^n\), every
+term with \(k>n\) vanishes.  Expanding the source definition of \(F_n\)
+after the displayed reversal \((a_1,\ldots,a_n)\mapsto(a_n,\ldots,a_1)\)
+gives the middle expression in
+\eqref{eq:Siegel-Tao-finite-Syracuse}.  Reversal preserves the iid product
+law, which proves the final law statement without identifying two
+deterministic functions that the source defines only in distribution.
+\end{proof}
+
+This proves, with sample space, measure, coordinate order, inverse, fibres,
+and projections exposed, the equality of laws stated in Siegel v3 source
+lines~3180--3184.  It does not identify the shortened and accelerated maps or
+their clocks.  The same indexed Siegel source contains no first-passage
+interval, Proposition~5.2 event chain, or Section~5 function \(c_n\); it is a
+coordinate source for the later Fourier layer, not a repair of that argument.
+The exact version and source audit is
+\path{qa/SIEGEL-2007-V1-V3-F023-syracuse-crosswalk-audit.md}; the finite exact
+certificate is
+\path{certificates/siegel_v1_tao_syracuse_crosswalk_checks.py}.
+
+\begin{sourceissue}[current Siegel v3 Fourier presentation]
+\label{sourceissue:Siegel-2007-v3-Fourier}
+The targeted v3 passage has three forced local defects that remain quarantined
+from later use.  Source line~3146 writes \(\widehat{\mathbb Z}_2\) where the
+denominators and the declared characteristic-function domain require
+\(\widehat{\mathbb Z}_3\).  With the source convention
+\(\varphi_3(t)=\mathbb E e^{-2\pi i\{tX\}_3}\), line~3144's inversion
+exponential requires the opposite sign; its printed sign reconstructs the
+mass at \(-m\).  Already modulo three it swaps the masses $1/3$ at $1$ and
+$2/3$ at $2$.  Finally, line~3164's last characteristic function omits its
+subscript~$3$.  None affects Proposition~\ref{prop:Siegel-Tao-Syracuse-coordinate},
+which was proved directly from the coordinate series.
+\end{sourceissue}
+
+\begin{sourceissue}[current v7 proof-text audit]
+\label{sourceissue:Tao-v7-audit}
+A line-level audit of the pinned v7 source records several forced local
+corrections: a function/value omission and the printed $N-1$ in place of the
+induction index $n-1$ in
+Lemma~2.1; a scalar/vector mismatch and an $n^{-1/2}$ factor where a
+$d$-dimensional Gaussian integral gives $n^{-d/2}$ in Lemma~2.2; undefined
+or inconsistent indices in the proofs of Proposition~1.9 and
+Proposition~5.2; a first-passage location written where a first-passage time
+is required; an unsigned $\exp(O(\log^{0.6}x))$ used as a lower bound; the
+malformed expression $q^{-1}\log O(M_1/M_0)$ where the preceding calculation
+gives $q^{-1}(1+\log(M_1/M_0))$; and malformed formulas in the black-set and
+renewal arguments.
+The v7 text does correct an older time/location interchange at the end of
+Proposition~5.2 and an older complemented-event mismatch in Section~6.
+The latter is forced: the factorized Fourier coefficient contains
+\(1_{E_k\cap B_k\cap C_{k,l}}\), so v5's replacement by
+\(1_{\overline E_k\cap B_k\cap C_{k,l}}\) has no equality or domination
+behind it.
+
+The complete v5--v7 comparison has 28 non-whitespace hunks.  The journal
+agrees with v7 on 15 distinguishing hunks, with v5 on 12, and is hybrid on
+the remaining Lemma~7.9 propagation hunk; it is not a uniform intermediate
+version.  In particular, its equations~(6.7)--(6.8) retain the v5 reserve,
+while equation~(6.11) contains the v7 event correction.
+
+The reserve change is substantive.  With
+\(a=\log(4/3)\) and \(b=\log2\), the optimized fluctuation cost is
+\[
+ \frac{b^2}{4a}C_A^2\log n
+ =0.4175208154\ldots C_A^2\log n.
+\]
+The v5/journal half-window retains only
+\(\frac12bC_A^2\log n=0.3465735903\ldots C_A^2\log n\), and its printed
+conversion also drops the factor \(b\); an explicit admissible family makes
+one claimed sub-\(3^n\) summand exceed \(3^n\).  V7's
+\(0.99bC_A^2\log n\) reserve closes with exact remaining coefficient
+\(0.2686948933\ldots\).  The stopping-time derivation and Archimedean
+separation are proved in
+Source Issue~\ref{sourceissue:Tao-v5-v7-section-six-reserve} and
+Proposition~\ref{prop:Tao-v7-Fourier-to-mixing}.  This identifies a failure
+of the printed v5 argument, not a proof that its stated corollary is false
+by every method.
+
+Two issues are not merely typographical.  Lines~758--763 try to infer
+$T_x(\mathbf N_y)\in I_y$ from an additive endpoint restriction
+$\mathbf N_y\in[y+2\log^{0.8}x,y^\alpha-2\log^{0.8}x]$.  Since the preceding
+time estimate depends on $\log(\mathbf N_y/x)$, this additive displacement
+does not supply a margin of order $\log^{0.8}x$.  The following proposition
+proves a replacement and fixes its exact downstream boundary.  In Lemma~5.3,
+lines~909--914 replace summable terms by
+$2^{-(a_1+\cdots+a_{m_0})/2}$ and then call the resulting product uniformly
+bounded.  Its exact sum is $(1+\sqrt2)^{m_0}$, which grows with $x$; a second
+proposition below retains the stronger pre-weakening estimates and proves the
+uniform bound.  Separately,
+the Lemma~7.9
+Markov event must be intersected with $\{R\leq\mathbf r\}$; the next line
+works under exactly that restriction.  The complete v7 renewal dependency is
+reconstructed and certified at its declared scope in
+Corollary~\ref{cor:Tao-v7-fine-scale-branch}, while the stronger v5/journal
+form remains outside that proof.  These findings neither enlarge the theorem
+nor constitute a claim that its conclusion is false.
+
+At the final proof step, v7 line~1851 and journal p.~54 name
+\(E_{p,4^A(1+p^3)}\), whereas \(E_*\) was defined using
+\(E_{p,4^A(1+p)^3}\) and the ensuing inequality again uses
+\(4^A(1+p)^3\).  The edition retains the definitionally supported latter
+event and does not assert an identity between the two parameters.  The
+terminal boundary, all 28 source hunks, the journal matrix, and the active
+citation census are recorded in
+\texttt{qa/TAO-V5-V7-JOURNAL-F028-whole-version-citation-audit.md}.
+\end{sourceissue}
+
+\begin{proposition}[Multiplicative endpoint repair for v7 Proposition~5.2]
+\label{prop:Tao-v7-endpoint-buffer}
+Retain the source constants
+\[
+ \alpha=1.001,\qquad \lambda=\log(4/3),\qquad L=\log x,
+\]
+let $y\in\{x^\alpha,x^{\alpha^2}\}$, and let $\mathbf N_y$ have the source's
+logarithmic distribution on the odd integers in $[y,y^\alpha]$.  Let
+\[
+ \mathcal G_x=
+ \left\{\vec a^{(n_0)}(\mathbf N_y)\in
+                  \mathcal A^{(n_0)}\right\}
+\]
+be the good valuation event in source lines~733--740, and retain the source
+interval
+\[
+ I_y=\left[
+ \frac{\log(y/x)}{\lambda}+L^{0.8},
+ \frac{\log(y^\alpha/x)}{\lambda}-L^{0.8}
+ \right].
+\]
+For all sufficiently large $x$, the interval
+\[
+ R_y=\left[y\exp(L^{0.8}),
+            y^\alpha\exp(-L^{0.8})\right]
+\]
+is nonempty and
+\[
+ \mathcal G_x\cap\{\mathbf N_y\in R_y\}
+ \subseteq\{T_x(\mathbf N_y)\in I_y\}.
+\]
+Uniformly for the two displayed values of $y$,
+\[
+ \mathbb P(\mathbf N_y\notin R_y)=O(L^{-1/5})
+ \quad\hbox{and hence}\quad
+ \mathbb P(T_x(\mathbf N_y)\in I_y)=1-O(L^{-1/5}).
+\]
+\end{proposition}
+
+\begin{proof}
+On $\mathcal G_x$, source lines~741--752 give, with one absolute constant
+$K_0$ uniform in the two choices of $y$,
+\begin{equation}
+ \label{eq:Tao-good-orbit-bound}
+ \left|
+  \log\frac{\operatorname{Syr}^{j}(\mathbf N_y)}{\mathbf N_y}
+  +j\lambda
+ \right|\leq K_0L^{0.6}
+ \qquad(0\leq j\leq n_0).
+\end{equation}
+This estimate reaches the threshold before $n_0$.  Indeed,
+$\mathbf N_y\leq x^{\alpha^3}$ and
+\[
+ \log\frac{\operatorname{Syr}^{n_0}(\mathbf N_y)}x
+ \leq (\alpha^3-1)L-\lambda n_0+K_0L^{0.6}.
+\]
+Here $\alpha^3-1<1/300$, whereas
+\[
+ \frac{\lambda}{10\log2}>\frac1{40}:
+ \qquad
+ \log(4/3)>\frac{1/3}{1+1/3}=\frac14,
+ \quad \log2<1.
+\]
+Since $n_0=\lfloor L/(10\log2)\rfloor$, the preceding upper bound is
+negative for all sufficiently large $x$.  Thus $1\leq T_x(\mathbf N_y)\leq
+n_0$ on $\mathcal G_x$.  Apply
+\eqref{eq:Tao-good-orbit-bound} at $j=T_x(\mathbf N_y)$ and at
+$j=T_x(\mathbf N_y)-1$.  The defining inequalities
+\[
+ \operatorname{Syr}^{T_x(\mathbf N_y)}(\mathbf N_y)\leq x
+ <\operatorname{Syr}^{T_x(\mathbf N_y)-1}(\mathbf N_y)
+\]
+then give an absolute $K\geq K_0$ such that
+\begin{equation}
+ \label{eq:Tao-first-time-two-sided}
+ \left|T_x(\mathbf N_y)-
+       \frac{\log(\mathbf N_y/x)}{\lambda}\right|
+ \leq KL^{0.6}.
+\end{equation}
+
+Since $\lambda<1$, the constant $\delta=1/\lambda-1$ is positive.  If
+$\mathbf N_y\in R_y$, then
+\begin{align*}
+ \frac{\log(\mathbf N_y/x)}\lambda
+ -\left(\frac{\log(y/x)}\lambda+L^{0.8}\right)
+ &\geq \delta L^{0.8},\\
+ \left(\frac{\log(y^\alpha/x)}\lambda-L^{0.8}\right)
+ -\frac{\log(\mathbf N_y/x)}\lambda
+ &\geq \delta L^{0.8}.
+\end{align*}
+Because $\delta L^{0.8}/L^{0.6}=\delta L^{0.2}\to\infty$, both margins
+dominate the error in \eqref{eq:Tao-first-time-two-sided}; this proves the
+event inclusion.  The logarithmic width of $R_y$ is
+$(\alpha-1)\log y-2L^{0.8}>0$ for large $x$.
+
+For $1\leq a<b$, subtracting the even terms from the ordinary harmonic sum
+gives the uniform integral estimate
+\[
+ \sum_{\substack{a\leq m\leq b\\m\equiv1\pmod2}}\frac1m
+ =\frac12\log\frac ba+O(1/a).
+\]
+The denominator of the law of $\mathbf N_y$ is consequently
+$\frac12(\alpha-1)\log y+O(1/y)$, while the two discarded intervals have
+combined mass $L^{0.8}+O(1/y)$.  Their probability is $O(L^{-0.2})=
+O(L^{-1/5})$.  Source line~737 gives
+$\mathbb P(\mathcal G_x^c)=O(L^{-10})$, and the last assertion follows.
+\end{proof}
+
+The multiplicative restriction is used only to replace source lines~759--762.
+Every subsequent line through the end of the section at line~925 uses the
+unchanged interval $I_y$ and the resulting probability estimate, not either
+endpoint restriction.  In particular, lines~816--820 have an $L^{0.8}$
+interval margin against an $O(L^{0.7})$ reconstruction error, and
+$\#(I_y\cap\mathbb Z)$ in lines~841--845 is unchanged.  One other local
+inequality in this path must be written with its sign exposed: on
+$\mathcal G_x$, for $0\leq j\leq n-m_0$, there is an absolute $K_1$ such that
+\[
+ \operatorname{Syr}^{j}(\mathbf N_y)
+ \geq e^{-2K_1L^{0.6}}(4/3)^{n-m_0-j}
+       \operatorname{Syr}^{n-m_0}(\mathbf N_y).
+\]
+If the last factor lies in $E'$, its source lower bound is
+$e^{-L^{0.7}}(4/3)^{m_0}x$; since
+$m_0=\lfloor(\alpha-1)L/100\rfloor$, the resulting lower bound is strictly
+larger than $x$ for sufficiently large $x$.  This is the typed replacement
+for the unsigned $\exp(O(L^{0.6}))$ comparison at lines~790--793.  Likewise,
+the calculation immediately preceding source line~889 gives, when $q\leq
+M_0$,
+\[
+ \sum_{\substack{M_0\leq M\leq M_1\\M\equiv a\pmod q}}\frac1M
+ \leq\frac1q\left(1+\log\frac{M_1}{M_0}\right),
+\]
+which is the exact expression used in the following estimate.
+
+\begin{proposition}[completion of the v7 Section~5 internal argument]
+\label{prop:Tao-v7-Prop52-cn-repair}
+Retain the notation of the pinned source and of
+Proposition~\ref{prop:Tao-v7-endpoint-buffer}.  Put
+\[
+ r=n-m_0,
+ \qquad
+ G_x=\mathcal G_x
+ =\left\{\vec a^{(n_0)}(\mathbf N_y)
+                 \in\mathcal A^{(n_0)}\right\}.
+\]
+For the chosen \(E\subseteq2\mathbb N+1\), write
+\[
+\begin{split}
+ E'=\{M\in2\mathbb N+1:\;&T_x(M)=m_0,\ 
+       \operatorname{Pass}_x(M)\in E,\\
+ &e^{-L^{0.7}}(4/3)^{m_0}x
+       \leq M\leq e^{L^{0.7}}(4/3)^{m_0}x\}.
+\end{split}
+\]
+For \(n\in I_y\cap\mathbb Z\), define
+\[
+\begin{split}
+ B_{n,y}={}&
+ \{T_x(\operatorname{Syr}^{r}(\mathbf N_y))=m_0\}\\
+ &{}\cap
+ \{\operatorname{Pass}_x(\operatorname{Syr}^{r}(\mathbf N_y))\in E\}
+ \cap G_x.
+\end{split}
+\]
+Then the source event \(B_{n,y}\) satisfies
+the exact equality
+\begin{equation}
+\label{eq:Tao-v7-Bny-repaired}
+ B_{n,y}
+ =\left\{\operatorname{Syr}^{r}(\mathbf N_y)\in E'\right\}\cap G_x.
+\end{equation}
+For a fixed positive tuple
+\(\vec a\in\mathcal A^{(r)}\) and fixed \(M\in E'\), the final equivalence
+needed in the approximate formula is
+\begin{equation}
+\label{eq:Tao-v7-fixed-M-repaired}
+ \left\{\operatorname{Syr}^{r}(\mathbf N_y)=M,\,
+        \vec a^{(r)}(\mathbf N_y)=\vec a\right\}
+ =\left\{\operatorname{Aff}_{\vec a}(\mathbf N_y)=M\right\}.
+\end{equation}
+In particular, the displayed approximate formula of source
+Proposition~5.2 follows with \(n-m_0\) in place of the undefined \(n-m\).
+
+For \(X\in\mathbb Z/3^r\mathbb Z\), define exactly as in source line~854
+\begin{equation}
+\label{eq:Tao-v7-cn}
+ c_n(X)=3^r
+   \sum_{\substack{M\in E'\\M\equiv X\pmod{3^r}}}\frac1M.
+\end{equation}
+There is an absolute constant \(C\) such that
+\begin{equation}
+\label{eq:Tao-v7-cn-uniform}
+ 0\leq c_n(X)\leq C
+\end{equation}
+for every sufficiently large \(x\), both choices of \(y\), every
+\(n\in I_y\cap\mathbb Z\), and every \(X\in\mathbb Z/3^r\mathbb Z\).
+
+To type the remaining dependency exactly, put
+\[
+ p_r(Y)=\mathbb P\!\left(
+  \operatorname{Syrac}(\mathbb Z/3^r\mathbb Z)=Y\right).
+\]
+For \(n\in I_y\), the source parameter inequalities give
+\(r=n-m_0\geq m_0\geq1\) for all sufficiently large \(x\), so the two
+levels below lie in the declared domain of the mixing proposition.
+The fine-scale-mixing input used by the source is, for every fixed \(B>0\),
+\begin{equation}
+\label{eq:Tao-v7-fine-mixing-input}
+ \sum_{Y\bmod3^r}\left|
+ p_r(Y)-3^{m_0-r}
+ \sum_{\substack{Y'\bmod3^r\\Y'\equiv Y\pmod{3^{m_0}}}}p_r(Y')
+ \right|\ll_B m_0^{-B}.
+\end{equation}
+After the indicator of \(\mathcal A^{(r)}\) is removed by a correctly typed
+Chernoff estimate, the exact implication from
+\eqref{eq:Tao-v7-fine-mixing-input} changes the expectation by
+\(O_B(m_0^{-B})\).  Its resulting main term collapses, without a further
+estimate, to the source quantity
+\begin{equation}
+\label{eq:Tao-v7-Z-repaired}
+ Z=\sum_{M\in E'}\frac{3^{m_0}}M
+       \mathbb P\!\left(
+       \operatorname{Syrac}(\mathbb Z/3^{m_0}\mathbb Z)
+          \equiv M\pmod{3^{m_0}}\right).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Assume first that \(B_{n,y}\) holds.  Thus
+\(T_x(\operatorname{Syr}^{r}(\mathbf N_y))=m_0\),
+\(\operatorname{Pass}_x(\operatorname{Syr}^{r}(\mathbf N_y))\in E\), and
+\(G_x\) holds.  Time \(n=r+m_0\) is a crossing:
+\[
+ \operatorname{Syr}^{n}(\mathbf N_y)\leq x
+ <\operatorname{Syr}^{n-1}(\mathbf N_y).
+\]
+The good-orbit estimate used in
+\eqref{eq:Tao-first-time-two-sided} places both this crossing time and the
+actual first-passage time within \(O(L^{0.6})\) of
+\(\log(\mathbf N_y/x)/\log(4/3)\).  Hence their difference is
+\(O(L^{0.6})\).  Since
+\(m_0=\lfloor L/100000\rfloor\), this gives
+\(T_x(\mathbf N_y)\geq n-m_0=r\) for all sufficiently large \(x\).  The
+semigroup identity for first passage may therefore be used at time \(r\),
+and gives
+\[
+ T_x(\mathbf N_y)
+ =r+T_x(\operatorname{Syr}^{r}(\mathbf N_y))=n.
+\]
+Writing \(M=\operatorname{Syr}^{r}(\mathbf N_y)\), the same signed
+good-orbit comparison between times \(r\) and \(n\) gives a fixed absolute
+\(K_2\).  Moreover, the crossing at time \(n\) and the two adjacent
+good-prefix bounds imply
+\(e^{-K_2L^{0.6}}x\leq\operatorname{Syr}^n(\mathbf N_y)
+\leq x\).  Consequently,
+\[
+ e^{-K_2L^{0.6}}(4/3)^{m_0}x
+ \leq M\leq
+ e^{K_2L^{0.6}}(4/3)^{m_0}x.
+\]
+Since \(K_2L^{0.6}\leq L^{0.7}\) for all sufficiently large \(x\), this
+lies in the defining window for \(E'\).  The two other defining conditions
+for \(E'\), namely
+\(T_x(M)=m_0\) and \(\operatorname{Pass}_x(M)\in E\), are already part of
+\(B_{n,y}\).  Hence the right side of
+\eqref{eq:Tao-v7-Bny-repaired} holds.
+
+Conversely, suppose that
+\(M=\operatorname{Syr}^{r}(\mathbf N_y)\in E'\) and \(G_x\) holds.  The
+signed lower comparison displayed immediately before this proposition gives,
+for every \(0\leq j\leq r\),
+\[
+ \operatorname{Syr}^{j}(\mathbf N_y)
+ \geq e^{-2K_1L^{0.6}}(4/3)^{r-j}M
+ \geq e^{-2K_1L^{0.6}-L^{0.7}}
+       (4/3)^{n-j}x.
+\]
+The exponent at \(j=r\) is
+\[
+ m_0\log(4/3)-2K_1L^{0.6}-L^{0.7},
+\]
+which tends to \(+\infty\) because
+\(m_0=\lfloor L/100000\rfloor\); for \(j<r\) the exponent is larger.
+Thus the displayed quantity is \(>x\), and no passage has occurred by
+time \(r\).  The defining properties \(T_x(M)=m_0\) and
+\(\operatorname{Pass}_x(M)\in E\) now give passage time \(n\) and passage
+location in \(E\), proving the reverse inclusion in
+\eqref{eq:Tao-v7-Bny-repaired}.  Replacing the full good event by its prefix
+of length \(r\) changes a fixed-\(n\) probability by at most
+\(O(L^{-10})\); summing over the \(O(L)\) integers in \(I_y\) remains
+\(O(L^{-9})\).  Finally, the prefix-valuation uniqueness lemma says that
+\(\operatorname{Aff}_{\vec a}(\mathbf N_y)=M\), with \(M\) an odd positive
+integer, is equivalent to the conjunction on the left of
+\eqref{eq:Tao-v7-fixed-M-repaired}.  This proves the repaired approximate
+formula.
+
+It remains to prove \eqref{eq:Tao-v7-cn-uniform}.  Write
+\[
+ m=m_0,\qquad A=a_1+\cdots+a_m,\qquad b=a_m,
+\]
+where every \(a_i\geq1\); the source's \(\mathbb N^{m_0}\) at lines~862
+and~865 must therefore be \((\mathbb N+1)^{m_0}\).  For
+\(\vec a=(a_1,\ldots,a_m)\) define
+\[
+ c_{n,\vec a}(X)
+ =3^r\!\!\sum_{\substack{M\in E'\\M\equiv X\pmod{3^r}\\
+                  \vec a^{(m)}(M)=\vec a}}\frac1M.
+\]
+Uniqueness of the valuation prefix gives the exact decomposition
+\[
+ c_n(X)=\sum_{\vec a\in(\mathbb N+1)^m}c_{n,\vec a}(X).
+\]
+For an \(M\) in the summand, first passage at time \(m\) gives
+\[
+ 3^m2^{-A}M+F_m(\vec a)\leq x
+ <3^{m-1}2^{-(A-b)}M+F_{m-1}(a_1,\ldots,a_{m-1}).
+\]
+The coefficient in the second term is \(3^{m-1}\), not the printed \(3^m\).
+Since \(0\leq F_{m-1}\leq3^{m-1}=o(x)\), the second inequality gives
+\(M>3^{-m}2^{A-b}x\) for all sufficiently large \(x\); the first gives the
+upper bound below.  Thus every such \(M\) lies in the definite interval
+\[
+ M_0\leq M\leq M_1,\qquad
+ M_0=3^{-m}2^{A-b}x,\qquad
+ M_1=3^{-m}2^A x.
+\]
+
+Multiplying the \(m\)-step affine identity by \(2^A\) shows that \(M\) lies
+in one residue class modulo \(2^{A+1}\).  Together with
+\(M\equiv X\pmod{3^r}\), the Chinese remainder theorem gives one residue
+class modulo
+\[
+ q=2^{A+1}3^r.
+\]
+If \(2^A\leq x^{1/2}\), then \(b\leq A\), \(n\leq n_0\), and
+\(3^n\leq x^{4/25}\) give
+\[
+ \frac q{M_0}=\frac{2^{b+1}3^n}{x}
+ \leq2x^{-17/50}=o(1),
+ \qquad \frac{M_1}{M_0}=2^b.
+\]
+Thus \(q\leq M_0\) for all sufficiently large \(x\).  The exact progression
+estimate already displayed above gives
+\begin{equation}
+\label{eq:Tao-v7-cn-low-A}
+ c_{n,\vec a}(X)\ll b2^{-A}.
+\end{equation}
+If \(2^A>x^{1/2}\), the exact last-step valuation identity is
+\[
+ b=\nu_2\!\left(
+ 3\left(3^{m-1}2^{-(A-b)}M
+          +F_{m-1}(a_1,\ldots,a_{m-1})\right)+1\right).
+\]
+The inner coefficient \(3^{m-1}\) corrects the second occurrence of the
+printed \(3^m\) defect at source line~899.  Put
+\(H=3^{m-1}2^{-(A-b)}M\).  The preceding lower bound gives
+\(H>x-F_{m-1}\), hence \(F_{m-1}=o(H)\).  Because \(2^b\) divides the
+positive integer \(3(H+F_{m-1})+1\), one has
+\[
+ 2^b\leq3(H+F_{m-1})+1\leq5H
+\]
+for all sufficiently large \(x\).  Therefore
+\(M\geq(1/5)3^{1-m}2^A\gg3^{-m}2^A\).  Applying the unsimplified
+progression estimate with the larger of the two lower bounds yields
+\begin{equation}
+\label{eq:Tao-v7-cn-high-A}
+ c_{n,\vec a}(X)\ll3^n2^{-A}+b2^{-A}.
+\end{equation}
+
+The \(b\)-terms in both branches have the exact total mass
+\[
+ \sum_{a_1,\ldots,a_m\geq1}b2^{-A}
+ =\left(\sum_{a\geq1}2^{-a}\right)^{m-1}
+   \sum_{b\geq1}b2^{-b}=2.
+\]
+On the high-\(A\) branch,
+\[
+ \sum_{2^A>x^{1/2}}2^{-A}
+ \leq x^{-1/4}
+       \sum_{a_1,\ldots,a_m\geq1}2^{-A/2}
+ =x^{-1/4}(1+\sqrt2)^m.
+\]
+Since \(3^5<2^8\), \(1+\sqrt2<e\), \(n\leq n_0\), and
+\(m\leq L/100000\),
+\[
+ 3^n x^{-1/4}(1+\sqrt2)^m
+ \leq x^{4/25-1/4+1/100000}
+ =x^{-8999/100000}.
+\]
+Equations~\eqref{eq:Tao-v7-cn-low-A} and
+\eqref{eq:Tao-v7-cn-high-A} now prove the absolute uniform bound.  This is
+the step missing from the printed summation: its weakened majorant has total
+mass \((1+\sqrt2)^m\), which is not uniformly bounded.
+
+For the iid geometric tuple in source line~852, the same union--Chernoff
+calculation used earlier gives
+\[
+ \mathbb P\!\left((\mathsf a_1,\ldots,\mathsf a_r)
+          \notin\mathcal A^{(r)}\right)=O(L^{-10}).
+\]
+This is the typed replacement for citing source line~737, which concerns the
+actual valuation tuple.  Boundedness of \(c_n\) permits removal of the
+indicator with the same error.  Applying the displayed sourced
+\(\ell^1\) input \eqref{eq:Tao-v7-fine-mixing-input} and multiplying by
+\(c_n\) changes the expectation by \(O_B(m_0^{-B})\).  Projective
+consistency of the source variables gives, for each residue \(X\bmod3^{m_0}\),
+\[
+ \sum_{\substack{Y\bmod3^r\\Y\equiv X\pmod{3^{m_0}}}}p_r(Y)
+ =\mathbb P\!\left(
+   \operatorname{Syrac}(\mathbb Z/3^{m_0}\mathbb Z)=X\right);
+\]
+this is source line~355, obtained by reducing the defining finite series.
+Therefore the main term is
+\[
+ \sum_{X\bmod3^r}c_n(X)3^{m_0-r}
+ \mathbb P\!\left(
+   \operatorname{Syrac}(\mathbb Z/3^{m_0}\mathbb Z)
+       \equiv X\pmod{3^{m_0}}\right).
+\]
+Substitution of \eqref{eq:Tao-v7-cn} and interchange of the finite sums
+multiplies \(3^r\) by \(3^{m_0-r}\), leaves one \(X=M\bmod3^r\) for every
+\(M\in E'\), and gives \eqref{eq:Tao-v7-Z-repaired} exactly.  Taking, for
+example, \(B=12\) makes the uniform mixing-output error more than sufficient
+after the \(O(L)\) passage-time sum.  This last paragraph certifies the exact
+dependency use of the stated mixing estimate; it does not supply a proof of
+that estimate.
+\end{proof}
+
+Thus Proposition~5.2 and the uniform \(c_n\) lemma are certified at their
+stated scope, and the Section~5 deduction is checked through source line~925.
+At this dependency boundary the fine-scale-mixing, Fourier, and renewal
+branch was still open; the next subsection reconstructs and discharges that
+branch without treating the durable whole-paper release gate as complete.
+In the source's nonperiodicity remark, line~699 additionally
+requires an exponent representing \(-\mathbf m\) modulo the least positive
+period, or a period multiple at least \(\mathbf m\); the counting conclusion
+then remains unchanged.  The earlier descent estimate also requires
+\(1.9n_0\), not the undefined \(1.9n\), at source line~689.
+
+\input{chapters/01g_tao_fourier_renewal}
+
+\input{chapters/01h_tao_valuation_law}
+
+\input{chapters/01i_tao_first_passage_stabilisation}
+
+\input{chapters/01j_tao_main_theorem_reduction}
+
+\input{chapters/01k_computational_verification}
+
+\begin{nonclaim}
+Crandall's Theorem~6.1 proves only that
+$\pi(X)>X^c$ for some $c>0$ and all sufficiently large $X$, where $\pi$
+counts positive odd $m>1$ known to reach $1$ in accelerated time; the
+repaired source argument permits the edition witness $c=1/100$
+(Theorem~\ref{thm:Crandall-power-law-count}).  It is not a positive-density
+theorem.  Tao's
+theorem gives logarithmic-density-one descent below every prescribed
+divergent threshold, but does not say those orbits reach $1$.  Neither result,
+nor their conjunction, yields logarithmic-density-one convergence to $1$.
+\end{nonclaim}

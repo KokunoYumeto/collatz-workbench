@@ -1,0 +1,547 @@
+\subsection{The exact reduction from first passage to the main theorem}
+\label{subsec:Tao-main-reduction}
+
+The source reduction from Proposition~1.11 to Theorems~3.1, 1.6, and~1.3
+is v7 lines~535--593, with the definitions and statements at lines~159--206
+\cite{Tao2026v7}.  The corresponding v5 loci are lines~529--587 and
+159--206; after deletion of whitespace, the two reduction blocks are
+identical.  The journal manifestation reproduces the same argument on
+physical pages~15--17, with its logarithmic-density and Syracuse setup on
+physical pages~3--4 and Proposition~1.11 on physical page~8.  The comparison
+below is therefore version-pinned but not a claim that the complete
+manifestations are text-identical.
+
+\begin{sourceissue}[defects and suppressed arrows in the printed reduction]
+\label{sourceissue:Tao-main-reduction}
+Eight points must be separated.
+
+First, v7 lines~591--593 define
+\(\widetilde f(x)=\inf_{N\geq x}f(N)\) and then use that lower envelope on
+the range \(N\leq x\), where it supplies no comparison.  The displayed
+bound is false: on the odd positive integers, take \(f(1)=0\) and
+\(f(N)=e^N\) for \(N\geq3\).  The term \(N=1\) contributes one to the
+printed left side, while its asserted right side is
+\(O(\log x/x^c)\).  Second, the complement of
+\(\operatorname{Syr}_{\min}(N)<f(N)\) is
+\(\operatorname{Syr}_{\min}(N)\geq f(N)\), not the printed strict
+inequality in the other direction; equality cannot be discarded.  Third,
+the statement permits real-valued \(f\), while line~591 silently restricts
+its codomain to \([0,+\infty)\).
+
+Fourth, line~206 assigns logarithmic density \(2^{-a}\) to the stratum
+\(\nu_2(N)=a\) and \(1-2^{-a_0}\) to the union
+\(0\leq a\leq a_0\).  The exact values are respectively
+\(2^{-(a+1)}\) and \(1-2^{-(a_0+1)}\); the function on the odd coordinate
+must moreover be \(M\mapsto f(2^aM)\), not \(f(M)\).
+
+Fifth, the iteration at lines~569--580 omits the possible value \(J=0\).
+Sixth, its probabilistic blocks need not be defined at small scales because
+the narrow interval can contain no odd integer.  Seventh, the parenthetical
+at line~552 says that finite passage is redundant when \(x\geq N_0\); this
+is false under the source convention \(\operatorname{Pass}_x=1\) when
+\(T_x=+\infty\), since \(1\in E_{N_0}\).  The displayed proof does retain
+the finite-passage condition.  Eighth, the substitution at lines~569--574
+produces
+\(O((\alpha^{j-2}\log y)^{-c})\), not the printed
+\(O((\alpha^j\log y)^{-c})\).  Their ratio is the fixed factor
+\(\alpha^{2c}\), so the iteration survives only after that factor is
+explicitly absorbed.
+
+The same passage also suppresses the indexed first-passage morphism, the
+actual multiplicative block cover, its harmonic normalisation, and the
+dyadic weight transport.  These are proved below.  None of the repairs is
+silently attributed to the source.
+\end{sourceissue}
+
+For a real cutoff \(X\geq1\), set
+\[
+ H_{\rm odd}(X)=
+ \sum_{\substack{1\leq M\leq X\\M\ {\rm odd}}}\frac1M,
+ \qquad
+ H(X)=\sum_{1\leq N\leq X}\frac1N.
+\]
+The integral test, with the integer cutoffs retained, gives
+\begin{equation}
+\label{eq:Tao-main-harmonic-asymptotics}
+ H_{\rm odd}(X)=\frac12\log X+O(1),
+ \qquad H(X)=\log X+O(1).
+\end{equation}
+For a real threshold \(N_0\geq2\), write
+\begin{equation}
+\label{eq:Tao-main-EN0}
+ E_{N_0}=\{M\in2\mathbb N+1:
+        \operatorname{Syr}_{\min}(M)\leq N_0\}.
+\end{equation}
+
+\begin{lemma}[the indexed nested-threshold morphism]
+\label{lem:Tao-nested-passage-tail}
+Let \(1\leq u\leq v\), and put
+\[
+ \mathcal D_u=\{N\in2\mathbb N+1:T_u(N)<+\infty\}.
+\]
+For \(N\in\mathcal D_u\), define
+\[
+ d_{u,v}(N)=T_u(N)-T_v(N)\in\mathbb N,
+ \qquad \sigma_d(k)=k+d.
+\]
+Then
+\begin{equation}
+\label{eq:Tao-nested-pass-point}
+ \operatorname{Pass}_u(N)
+ =\operatorname{Syr}^{d_{u,v}(N)}
+    (\operatorname{Pass}_v(N)).
+\end{equation}
+More precisely, for the indexed tails
+\[
+ \mathcal O_w^N(k)=
+ \operatorname{Syr}^k(\operatorname{Pass}_w(N)),
+ \qquad k\in\mathbb N,
+\]
+one has the exact identity
+\begin{equation}
+\label{eq:Tao-nested-tail-shift}
+ \mathcal O_u^N=\mathcal O_v^N\circ\sigma_{d_{u,v}(N)}.
+\end{equation}
+The shift \(\sigma_d\) is injective, has image \(d+\mathbb N\), has
+singleton fibres over that image, and has diagonal equality kernel.  Hence
+the value-set of the \(u\)-tail is contained in the value-set of the
+\(v\)-tail.  In particular,
+\begin{equation}
+\label{eq:Tao-nested-EN0-transport}
+ T_u(N)<+\infty,\quad \operatorname{Pass}_u(N)\in E_{N_0}
+ \quad\Longrightarrow\quad
+ \operatorname{Pass}_v(N)\in E_{N_0}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Every iterate at most \(u\) is also at most \(v\), so
+\(T_v(N)\leq T_u(N)<+\infty\).  The semigroup law for the iterates gives
+\[
+ \operatorname{Syr}^{T_u(N)}(N)
+ =\operatorname{Syr}^{T_u(N)-T_v(N)}
+   (\operatorname{Syr}^{T_v(N)}(N)),
+\]
+which is \eqref{eq:Tao-nested-pass-point}.  Applying a further \(k\)
+iterates gives \eqref{eq:Tao-nested-tail-shift}.  If the later tail from
+\(\operatorname{Pass}_u(N)\) reaches \(N_0\), the containing tail from
+\(\operatorname{Pass}_v(N)\) reaches the same value, proving
+\eqref{eq:Tao-nested-EN0-transport}.  No injectivity of
+\(\mathcal O_v^N\) is used or asserted: a periodic orbit can repeat values
+at different indices.
+\end{proof}
+
+For every scale \(s\) for which the odd logarithmic block is nonempty,
+retain
+\[
+ \mathcal R_s=(2\mathbb N+1)\cap[s,s^\alpha],
+ \qquad H_s=\sum_{N\in\mathcal R_s}\frac1N,
+ \qquad
+ \mathbb P(\mathbf N_s=N)=\frac1{H_sN}.
+\]
+Define the numerical event probability
+\begin{equation}
+\label{eq:Tao-main-bs}
+ b_{N_0}(s)=\mathbb P\left(
+  T_s(\mathbf N_{s^\alpha})<+\infty,
+  \ \operatorname{Pass}_s(\mathbf N_{s^\alpha})\in E_{N_0}
+ \right).
+\end{equation}
+
+\begin{proposition}[the exact block recurrence]
+\label{prop:Tao-main-block-recurrence}
+There are absolute constants \(X_*,C,c>0\) such that, whenever
+\(s\geq X_*\),
+\begin{equation}
+\label{eq:Tao-main-block-recurrence}
+ b_{N_0}(s^\alpha)
+ \geq b_{N_0}(s)-C(\log s)^{-c}.
+\end{equation}
+The cutoff \(X_*\) is chosen so that Proposition~1.11 applies and every
+block occurring here contains an odd integer.
+\end{proposition}
+
+\begin{proof}
+On the probability space supporting \(\mathbf N_{s^{\alpha^2}}\), let
+\[
+ A_s=\{T_s(\mathbf N_{s^{\alpha^2}})<+\infty,
+ \ \operatorname{Pass}_s(\mathbf N_{s^{\alpha^2}})\in E_{N_0}\}.
+\]
+Lemma~\ref{lem:Tao-nested-passage-tail}, with \(u=s\) and
+\(v=s^\alpha\), gives
+\[
+ A_s\subseteq
+ \{T_{s^\alpha}(\mathbf N_{s^{\alpha^2}})<+\infty,
+ \ \operatorname{Pass}_{s^\alpha}
+       (\mathbf N_{s^{\alpha^2}})\in E_{N_0}\}.
+\]
+The probability of the event on the right is
+\(b_{N_0}(s^\alpha)\).  Proposition~1.11 and the event inequality for its
+unhalved total-variation convention therefore give
+\begin{align*}
+ b_{N_0}(s^\alpha)
+ &\geq\mathbb P(A_s)\\
+ &\geq
+ \mathbb P(\operatorname{Pass}_s(\mathbf N_{s^{\alpha^2}})
+             \in E_{N_0})-Cs^{-c}\\
+ &\geq
+ \mathbb P(\operatorname{Pass}_s(\mathbf N_{s^\alpha})
+             \in E_{N_0})
+       -C(\log s)^{-c}-Cs^{-c}\\
+ &\geq b_{N_0}(s)-C'(\log s)^{-c}.
+\end{align*}
+Increasing \(C\) proves \eqref{eq:Tao-main-block-recurrence}.  This uses
+the two marginal passage-location laws and failure control; it does not
+construct a coupling.
+\end{proof}
+
+\begin{theorem}[repaired exact form of Tao's Theorem~3.1]
+\label{thm:Tao-main-alt-repaired}
+There are absolute constants \(C,c>0\) such that, for all real
+\(N_0\geq2\) and all real \(X\geq2\),
+\begin{equation}
+\label{eq:Tao-main-alt-odd}
+ \sum_{\substack{M\in2\mathbb N+1,\ M\leq X\\
+       \operatorname{Syr}_{\min}(M)>N_0}}
+       \frac1M
+ \leq C\frac{\log X}{(\log N_0)^c},
+\end{equation}
+and
+\begin{equation}
+\label{eq:Tao-main-alt-collatz}
+ \sum_{\substack{N\in\mathbb N+1,\ N\leq X\\
+       \operatorname{Col}_{\min}(N)>N_0}}
+       \frac1N
+ \leq C\frac{\log X}{(\log N_0)^c}.
+\end{equation}
+Consequently the corresponding good sets have, uniformly in \(X\), odd
+relative and full logarithmic probabilities at least
+\(1-O((\log N_0)^{-c})\).
+\end{theorem}
+
+\begin{proof}
+Choose \(X_*\) as in
+Proposition~\ref{prop:Tao-main-block-recurrence}.  We first prove the block
+bound
+\begin{equation}
+\label{eq:Tao-main-block-bad-probability}
+ \mathbb P(\operatorname{Syr}_{\min}(\mathbf N_s)>N_0)
+ \ll(\log N_0)^{-c}.
+\end{equation}
+For bounded \(N_0\), this follows after increasing the implied constant.
+Thus assume \(N_0\) is large enough that
+\(N_0^{1/\alpha^3}\geq X_*\).
+
+If \(s\leq N_0^{1/\alpha}\), every integer in
+\([s,s^\alpha]\) is at most \(N_0\), so the probability in
+\eqref{eq:Tao-main-block-bad-probability} is exactly zero.  This is the
+omitted \(J=0\) case.
+
+Now suppose \(s>N_0^{1/\alpha}\).  Let \(J\geq1\) be least such that
+\[
+ y=s^{\alpha^{-J}}<N_0^{1/\alpha}.
+\]
+Minimality gives
+\begin{equation}
+\label{eq:Tao-main-y-bounds}
+ y^\alpha\geq N_0^{1/\alpha},
+ \qquad y\geq N_0^{1/\alpha^2},
+ \qquad y^\alpha<N_0.
+\end{equation}
+Put \(r_0=y^{1/\alpha}\).  Then
+\(r_0\geq N_0^{1/\alpha^3}\geq X_*\), and the input in
+\(b_{N_0}(r_0)\) is \(\mathbf N_y\).  On finite passage below \(r_0\),
+the passage location is less than \(N_0\), so Proposition~1.11 gives
+\begin{equation}
+\label{eq:Tao-main-base-event}
+ b_{N_0}(r_0)\geq1-Cr_0^{-c}.
+\end{equation}
+For \(j=1,\ldots,J\), apply
+\eqref{eq:Tao-main-block-recurrence} at the exact scale
+\(y^{\alpha^{j-2}}\).  The accumulated logarithmic error is
+\begin{align}
+ \sum_{j=1}^J
+  (\alpha^{j-2}\log y)^{-c}
+ &\leq (\log y)^{-c}
+     \sum_{j=1}^{\infty}\alpha^{-c(j-2)}\notag\\
+ &=\frac{\alpha^c}{1-\alpha^{-c}}(\log y)^{-c}
+ \ll(\log N_0)^{-c}.
+\label{eq:Tao-main-geometric-error}
+\end{align}
+Here \eqref{eq:Tao-main-y-bounds} was used only after the exact factor in
+the first line was retained.  Equations
+\eqref{eq:Tao-main-base-event} and
+\eqref{eq:Tao-main-geometric-error} yield
+\[
+ b_{N_0}(s^{1/\alpha})\geq1-C(\log N_0)^{-c}.
+\]
+Its input variable is exactly \(\mathbf N_s\).  Whenever its event holds,
+the orbit of \(\mathbf N_s\) reaches \(E_{N_0}\), proving
+\eqref{eq:Tao-main-block-bad-probability}.
+
+For \(s\geq2\), the integral test gives \(H_s\ll\log s\), with an
+absolute constant because \(\alpha=1001/1000\) is fixed.  An applied cover
+scale with \(1<s<2\) has no odd integer in \([s,s^\alpha]\), so its local
+sum is zero; every nonempty cover block to which the estimate is applied
+satisfies \(s\geq2\).  Hence
+\begin{equation}
+\label{eq:Tao-main-local-harmonic-bound}
+ \sum_{\substack{M\in(2\mathbb N+1)\cap[s,s^\alpha]\\
+          \operatorname{Syr}_{\min}(M)>N_0}}
+          \frac1M
+ \ll\frac{\log s}{(\log N_0)^c}.
+\end{equation}
+For a target \(X>N_0\), set
+\(z_k=X^{\alpha^{-k}}\), and let \(L\geq1\) be least such that
+\(z_L\leq N_0\).  Then
+\[
+ z_{L-1}>N_0,
+ \qquad z_L>N_0^{1/\alpha},
+ \qquad
+ [z_L,X]=\bigcup_{k=1}^L[z_k,z_k^\alpha].
+\]
+Every bad starting value is greater than \(N_0\), since its orbit contains
+the starting value.  Thus the leftover interval \([1,z_L]\) is bad-free,
+and endpoint duplication in the displayed cover can only enlarge an upper
+bound.  Finally,
+\begin{equation}
+\label{eq:Tao-main-cover-log-sum}
+ \sum_{k=1}^L\log z_k
+ =\log X\sum_{k=1}^L\alpha^{-k}
+ \leq\frac{\log X}{\alpha-1}.
+\end{equation}
+Summing \eqref{eq:Tao-main-local-harmonic-bound} proves
+\eqref{eq:Tao-main-alt-odd}.  If \(X\leq N_0\), its left side is zero.
+
+For the all-integer assertion, write every \(N\) uniquely as
+\(N=2^aM\), with \(a\in\mathbb N\) and \(M\) odd.  The exact minimum
+identity proved again below gives
+\begin{equation}
+\label{eq:Tao-main-fixed-dyadic-sum}
+ \sum_{\substack{N\leq X\\
+       \operatorname{Col}_{\min}(N)>N_0}}\frac1N
+ =\sum_{a\geq0}2^{-a}
+  \sum_{\substack{M\leq X/2^a,\ M\ {\rm odd}\\
+       \operatorname{Syr}_{\min}(M)>N_0}}\frac1M.
+\end{equation}
+When \(X/2^a<2\), the inner bad sum vanishes because \(N_0\geq2\).
+For the remaining terms, \eqref{eq:Tao-main-alt-odd} and the truncated,
+termwise nonnegative estimate
+\[
+ \sum_{\substack{a\geq0\\X/2^a\geq2}}
+     2^{-a}\log(X/2^a)
+ \leq \log X\sum_{a\geq0}2^{-a}
+ \leq2\log X
+\]
+prove \eqref{eq:Tao-main-alt-collatz}.  The probability statements follow
+from \eqref{eq:Tao-main-harmonic-asymptotics}; no identity of unnormalised
+and normalised harmonic mass is being asserted.
+\end{proof}
+
+\begin{theorem}[repaired exact form of Tao's Theorem~1.6]
+\label{thm:Tao-main-syr-repaired}
+Let \(f:2\mathbb N+1\to\mathbb R\) satisfy
+\(f(M)\to+\infty\).  Then
+\begin{equation}
+\label{eq:Tao-main-syr-strict}
+ \operatorname{Syr}_{\min}(M)<f(M)
+\end{equation}
+for a set of odd positive integers of relative odd logarithmic density one.
+Equivalently, the set of odd \(M\) on which
+\(\operatorname{Syr}_{\min}(M)\geq f(M)\) has relative odd logarithmic
+density zero.
+\end{theorem}
+
+\begin{proof}
+Fix an integer \(K\geq2\).  Since \(f(M)\to+\infty\), there is a finite
+cutoff \(Y_K\) such that
+\[
+ f(M)>K\qquad(M\geq Y_K,\ M\ {\rm odd}).
+\]
+Let
+\(D_f=\{M\ {\rm odd}:\operatorname{Syr}_{\min}(M)\geq f(M)\}\).
+For every \(X\), the exact tail inclusion gives
+\begin{align}
+ \sum_{\substack{M\leq X\\M\in D_f}}\frac1M
+ &\leq H_{\rm odd}(Y_K)
+ +\sum_{\substack{M\leq X,\ M\ {\rm odd}\\
+          \operatorname{Syr}_{\min}(M)>K}}\frac1M\notag\\
+ &\leq H_{\rm odd}(Y_K)
+ +C\frac{\log X}{(\log K)^c}.
+\label{eq:Tao-main-fixed-K-tail}
+\end{align}
+Divide first by \(H_{\rm odd}(X)\), let \(X\to+\infty\) with \(K\)
+fixed, and only then let \(K\to+\infty\).  Equation
+\eqref{eq:Tao-main-harmonic-asymptotics} gives
+\[
+ \limsup_{X\to\infty}
+ \frac{\sum_{M\leq X,\ M\in D_f}1/M}{H_{\rm odd}(X)}
+ \leq\frac{2C}{(\log K)^c}\longrightarrow0.
+\]
+This proves the strict inequality in \eqref{eq:Tao-main-syr-strict}, includes
+the equality part of its complement, permits arbitrary nonmonotone real
+\(f\), and confines every negative or otherwise exceptional value of \(f\)
+to the finite prefix.  No tail lower envelope is used.
+\end{proof}
+
+\begin{proposition}[the exact dyadic stratum morphism]
+\label{prop:Tao-main-dyadic-morphism}
+Let
+\[
+ \mathcal O=2\mathbb N+1,
+ \qquad
+ \mathcal S_a=\{N\in\mathbb N+1:\nu_2(N)=a\}.
+\]
+For each \(a\in\mathbb N\), the maps
+\[
+ \iota_a:\mathcal O\longrightarrow\mathcal S_a,
+ \quad \iota_a(M)=2^aM,
+ \qquad
+ \pi_a:\mathcal S_a\longrightarrow\mathcal O,
+ \quad \pi_a(N)=N/2^a
+\]
+are two-sided inverses.  Their fibres are singletons, their equality kernels
+are diagonal, and they lose no starting-number coordinate information.
+Globally,
+\begin{equation}
+\label{eq:Tao-main-global-dyadic-bijection}
+ \mathbb N+1\longleftrightarrow
+ \coprod_{a\in\mathbb N}\{a\}\times\mathcal O,
+ \qquad
+ N\longmapsto(\nu_2(N),N/2^{\nu_2(N)})
+\end{equation}
+is a bijection with inverse \((a,M)\mapsto2^aM\).
+
+For every \(A\subseteq\mathcal O\) and real \(X\geq1\), the cutoff and
+harmonic weight transport exactly as
+\begin{equation}
+\label{eq:Tao-main-dyadic-weight}
+ \sum_{\substack{N\in\iota_a(A)\\N\leq X}}\frac1N
+ =2^{-a}\sum_{\substack{M\in A\\M\leq X/2^a}}\frac1M.
+\end{equation}
+In particular,
+\begin{equation}
+\label{eq:Tao-main-dyadic-density}
+ \sum_{\substack{N\leq X\\\nu_2(N)=a}}\frac1N
+ =2^{-a}H_{\rm odd}(X/2^a)
+ =2^{-(a+1)}\log X+O_a(1).
+\end{equation}
+Finally,
+\begin{equation}
+\label{eq:Tao-main-minimum-identity}
+ \operatorname{Col}_{\min}(2^aM)
+ =\operatorname{Syr}_{\min}(M).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The defining condition \(\nu_2(N)=a\) says uniquely that \(N=2^aM\)
+with \(M\) odd, which proves every bijection and fibre assertion.  Replacing
+\(N\) by \(2^aM\) in the finite sum proves
+\eqref{eq:Tao-main-dyadic-weight}; then
+\eqref{eq:Tao-main-harmonic-asymptotics} proves
+\eqref{eq:Tao-main-dyadic-density}.
+
+It remains to prove the minimum identity rather than infer it from notation.
+The first \(a\) Collatz steps starting at \(2^aM\) are divisions by two and
+terminate at \(M\); every value on that initial segment is at least \(M\).
+If \(M_j\) is an odd Syracuse state and
+\(q_j=\nu_2(3M_j+1)\), then the corresponding Collatz segment is
+\[
+ M_j,\ 2^{q_j}M_{j+1},\ 2^{q_j-1}M_{j+1},\ldots,
+ 2M_{j+1},\ M_{j+1},
+ \qquad M_{j+1}=\operatorname{Syr}(M_j).
+\]
+Every suppressed intermediate value is at least its terminal odd value.
+Thus the minimum over the complete Collatz orbit is exactly the minimum over
+the odd Syracuse states, proving \eqref{eq:Tao-main-minimum-identity}.
+The map is not time-preserving.  The full Collatz time coordinate is
+reconstructed by expanding each Syracuse step using
+\(q_j=\nu_2(3M_j+1)\), which is determined by its odd source state \(M_j\).
+\end{proof}
+
+\begin{theorem}[repaired exact form of Tao's Theorem~1.3]
+\label{thm:Tao-main-repaired}
+Let \(f:\mathbb N+1\to\mathbb R\) satisfy \(f(N)\to+\infty\).  Then
+\begin{equation}
+\label{eq:Tao-main-collatz-strict}
+ \operatorname{Col}_{\min}(N)<f(N)
+\end{equation}
+for a set of positive integers of logarithmic density one.
+\end{theorem}
+
+\begin{proof}
+For each fixed \(a\in\mathbb N\), define
+\[
+ g_a(M)=f(2^aM)\qquad(M\in\mathcal O).
+\]
+Then \(g_a(M)\to+\infty\), so
+Theorem~\ref{thm:Tao-main-syr-repaired} says that
+\[
+ B_a=\{M\in\mathcal O:
+       \operatorname{Syr}_{\min}(M)\geq g_a(M)\}
+\]
+has harmonic mass \(o(\log T)\) below \(T\).  By
+Proposition~\ref{prop:Tao-main-dyadic-morphism}, the bad set for
+\eqref{eq:Tao-main-collatz-strict} in \(\mathcal S_a\) is exactly
+\(\iota_a(B_a)\), and its mass below \(X\) is
+\[
+ 2^{-a}\sum_{\substack{M\in B_a\\M\leq X/2^a}}\frac1M=o(\log X)
+\]
+for this fixed \(a\).
+
+Fix \(A\in\mathbb N\).  Splitting the global bad mass into the first
+\(A+1\) strata and the remaining tail gives
+\begin{align}
+ \sum_{\substack{N\leq X\\
+   \operatorname{Col}_{\min}(N)\geq f(N)}}\frac1N
+ &\leq\sum_{a=0}^A2^{-a}
+   \sum_{\substack{M\in B_a\\M\leq X/2^a}}\frac1M
+ +\sum_{\substack{N\leq X\\\nu_2(N)>A}}\frac1N,\notag\\
+ \sum_{\substack{N\leq X\\\nu_2(N)>A}}\frac1N
+ &=2^{-(A+1)}H(X/2^{A+1}).
+\label{eq:Tao-main-dyadic-tail-limit}
+\end{align}
+The second identity follows from the unique formula
+\(N=2^{A+1}Q\), with \(Q\) now an arbitrary positive integer.  Divide by
+\(H(X)\) and let \(X\to+\infty\) at fixed \(A\).  The finite first sum
+vanishes in the limit and
+\eqref{eq:Tao-main-harmonic-asymptotics} gives
+\[
+ \limsup_{X\to\infty}
+ \frac{\sum_{N\leq X,\ \operatorname{Col}_{\min}(N)\geq f(N)}1/N}
+      {H(X)}
+ \leq2^{-(A+1)}.
+\]
+Only now send \(A\to\infty\).  The bad logarithmic density is zero, which
+proves the strict inequality \eqref{eq:Tao-main-collatz-strict}.  No
+uniformity in \(a\), and no interchange of the two limits, has been used.
+\end{proof}
+
+As an independent cross-check, one may apply the fixed-\(K\) argument in
+\eqref{eq:Tao-main-fixed-K-tail} directly to the Collatz estimate
+\eqref{eq:Tao-main-alt-collatz}.  This gives
+Theorem~\ref{thm:Tao-main-repaired} without passing through the dyadic
+strata, and yields the same strict bad-set complement.
+
+\begin{nonclaim}
+Theorems~\ref{thm:Tao-main-alt-repaired},
+\ref{thm:Tao-main-syr-repaired}, and~\ref{thm:Tao-main-repaired} prove the
+exact repaired chain
+\[
+ \text{Proposition~1.11}\Longrightarrow\text{Theorem~3.1}
+ \Longrightarrow\text{Theorem~1.6}
+ \Longrightarrow\text{Theorem~1.3}.
+\]
+They prove logarithmic-density statements, not natural-density statements;
+they do not give an absolute bound valid for almost all starting values,
+force an individual orbit through a threshold, exclude divergent or
+periodic exceptional orbits, prove convergence to one, construct an
+ invariant logarithmic measure, or produce a coupling.  The dyadic bijection
+preserves all starting-number information---it is a bijection on the
+displayed starting coordinates---and preserves the orbit minimum at the
+displayed scope.  It is not itself a time-preserving conjugacy; Collatz time
+is recovered by the explicit valuation expansion above.
+This closes the main-theorem reduction, not the durable whole-paper,
+whole-corpus, formalisation, or release gates.
+\end{nonclaim}

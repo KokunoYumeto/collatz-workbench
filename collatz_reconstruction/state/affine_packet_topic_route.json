@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "topic_id": "TOPIC-COL-AFFINE-PACKETS-0005",
+  "topic": "Odd-step affine packets, parity groupoids, synchronized CRT multiplicities, marginal kernels, and reduced-denominator cycles",
+  "workspace": "C:/Users/LOCAL_USER/Documents/Erdos Strauss and related/collatz_reconstruction",
+  "corpus_entrypoint": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/Zeta-Function-Foundation/config/literature_index_entrypoint.json",
+  "updated_utc": "2026-09-04T16:08:43.3858019Z",
+  "mathematical_objects": [
+    "positive exponent compositions",
+    "odd-denominator rational cycles",
+    "shortened and full parity words",
+    "finite rotation action groupoids",
+    "residue count vectors and rational formal series",
+    "synchronized CRT product transitions and common-word multiplicities",
+    "row/column marginal projection and its integer rectangle kernel",
+    "reduced-denominator rational/integer cycle conjugacy",
+    "pointed periodic-word identity and the exact one-letter multiplication-operator domain"
+  ],
+  "queries": [
+    {
+      "query": "Collatz rational",
+      "layer": "all",
+      "index_level": "canonical",
+      "executed_utc": "2026-09-04T13:46:00Z",
+      "reason": "Recheck the clock convention and rational-cycle/parity comparison in published and modern local sources; time rounded to minute.",
+      "result_unit_ids": [
+        "PUBUNIT-68BAB8443C053C8266594E1B",
+        "PUBUNIT-C7E6EA0C9F27C9698D0D64E0",
+        "PUBUNIT-004F3DB5D12B4A71C77EDE18",
+        "PUBUNIT-438CC647B15CADA2BEB230B6"
+      ]
+    },
+    {
+      "query": "Wirth automata",
+      "layer": "all",
+      "index_level": "canonical",
+      "time_precision": "Direct UTC timestamps captured immediately before and after the single bounded query recheck.",
+      "reason": "A missing executed_utc field was reported by the root validator. Re-ran this one local canonical two-layer query once; observed Wirth publication unit directly. Only the relevant Wirth hit is retained here; other hits remain unread routing data.",
+      "result_unit_ids": [
+        "PUBUNIT-E9DBF60FE52B1BAE6474025C"
+      ],
+      "executed_utc": "2026-09-04T16:08:43.2795403Z",
+      "completed_utc": "2026-09-04T16:08:43.3858019Z",
+      "exit_code": 0
+    }
+  ],
+  "sources": [
+    {
+      "source_class": "research_literature",
+      "publication_unit_or_source_id": "PUBUNIT-E9DBF60FE52B1BAE6474025C",
+      "exact_locators": [
+        "C:/Users/LOCAL_USER/Documents/Papors/OS/Weighted Automata, Formal Power Series and Weighted Logic.pdf; physical pp.94,112-113, printed pp.88,106-107"
+      ],
+      "relevance_edge": "Hadamard product and synchronized common-letter product automata; compare the two residue coordinates before summing packet words.",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-04T15:13:19Z",
+        "relevant_sections": [
+          "Contents physical p.9: chapters 3-4",
+          "Definition4.1.4",
+          "Proposition4.3.10 and Remark4.3.11"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "Native text physical pp.1,5,9,94,112,113; formula construction visually checked p.112"
+      ],
+      "dependencies": [],
+      "notes": "Laura Wirth, 2022; DOI10.1007/978-3-658-39323-6; SHA256 074daf377f68aff0ac18ce76d29ae94ae2dfd6a6c2b7cb2aece89133a62fa9e0. Copyrighted book is read and cited, never included in the upload.",
+      "registered_source_id": "SRC-COL-000050",
+      "claim_or_proof_crosswalk_ids": [
+        "CLM-COL-000189"
+      ],
+      "registration_recheck": {
+        "audit": "qa/AFFINE-CRT-REGISTRY-PROPAGATION-20260904.json",
+        "source_sha256_rechecked": true,
+        "math_pages_directly_reinspected": "physical 94,112,113 / printed 88,106,107",
+        "whole_book_read": false
+      }
+    },
+    {
+      "source_class": "local_unpublished_work",
+      "publication_unit_or_source_id": "PUBUNIT-CF4FD708E6C6DE523385FD85",
+      "exact_locators": [
+        "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/automata/V5/odd_step_collatz_orbit_packets_note.tex:2359-2481,3647-3677,1307-1461",
+        "ES-Fable-C123-support/external_sources/combined_live_theorem_package_dependencies/odd_step_collatz_orbit_packets_note.pdf:36,37,55"
+      ],
+      "relevance_edge": "Source already proves affine cyclic transport; pointed-word converse and exact operator-domain wording require correction in the reader.",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-04T15:13:19Z",
+        "relevant_sections": [
+          "Theorems10.1,10.3",
+          "Theorem6.10",
+          "One-letter Hamiltonian and Theorem19.1"
+        ]
+      },
+      "reading_status": "partially_content_read",
+      "content_loci_read": [
+        "TeX2359-2481,3647-3677,1307-1461; controlling PDF36,37,55 visually rechecked"
+      ],
+      "dependencies": [],
+      "notes": "Exact source hashes and bounded twelve-block collation in research_companion/audit/affine_antecedent_version_comparison_20260904.md. Different PDFs are not asserted identical outside checked blocks. Folder V5 is a local affine-note locator, unrelated to the Tao version discussion.",
+      "claim_or_proof_crosswalk_ids": [
+        "CLM-COL-000183",
+        "CLM-COL-000193",
+        "CLM-COL-000194",
+        "CLM-COL-000195"
+      ],
+      "registration_recheck": {
+        "audit": "qa/AFFINE-CRT-REGISTRY-PROPAGATION-20260904.json",
+        "direct_TeX_windows": [
+          "1233-1250",
+          "1307-1344",
+          "2434-2481",
+          "3647-3677"
+        ],
+        "all_three_manifestation_hashes_rechecked": true,
+        "full_text_identity_claimed": false
+      }
+    },
+    {
+      "source_class": "research_literature",
+      "publication_unit_or_source_id": "PUBUNIT-68BAB8443C053C8266594E1B",
+      "exact_locators": [
+        "C:/Users/LOCAL_USER/Documents/arxiv_latex/library/collatz_reconstruction/latex/1209.3495v1/main.tex:76-110,271-335"
+      ],
+      "relevance_edge": "Explicit shortened map and rational parity necklaces; nearby scaling comparison to 3n+b.",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-04T13:49:13Z",
+        "relevant_sections": [
+          "binary modular Collatz graphs",
+          "cyclic components and Lyndon words"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "lines 66-120 and 261-335"
+      ],
+      "dependencies": [],
+      "notes": "Only the explicit clock and coordinate comparison are used here; printed necklace-count defects are not adopted.",
+      "claim_or_proof_crosswalk_ids": [
+        "CLM-COL-000182",
+        "CLM-COL-000183",
+        "CLM-COL-000184"
+      ]
+    },
+    {
+      "source_class": "research_literature",
+      "publication_unit_or_source_id": "SRC-COL-000013",
+      "exact_locators": [
+        "collatz_reconstruction/external_literature/dependency_gate_2026-08-25/lagarias_1990_impan.pdf; physical pp. 1,3,4; printed pp.33,36-39"
+      ],
+      "relevance_edge": "Definition (1.1), Theorem 2.1 and proof, irreducibility and cyclic rotation, numerator formula (2.7b).",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-04T13:49:13Z",
+        "relevant_sections": [
+          "1 Introduction",
+          "2 Rational 3x+1 cycles",
+          "3 Primitive 3x+c cycles"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "Visual reading of printed pp.33,36-39 (two-page scans)."
+      ],
+      "dependencies": [],
+      "notes": "Source SHA256 7dc39db8d59c141b19eebfbd76e48c4e7d3906f97d0c7187739d2a7561399005; inherited source pin to be rechecked by wrapper.",
+      "claim_or_proof_crosswalk_ids": [
+        "CLM-COL-000182",
+        "CLM-COL-000183",
+        "CLM-COL-000184"
+      ]
+    },
+    {
+      "source_class": "research_literature",
+      "publication_unit_or_source_id": "SRC-COL-000009",
+      "exact_locators": [
+        "collatz_reconstruction/external_literature/urata_2003_official_aichi.pdf; printed pp.5-11, Propositions 5-6 p.10"
+      ],
+      "relevance_edge": "Odd-type rational domain, exponent return formula and periodic-orbit correspondence.",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-04T13:49:13Z",
+        "relevant_sections": [
+          "1 The Collatz problem",
+          "2 Collatz function defined on Z2",
+          "3 Orbits",
+          "4 Periodic orbits"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "Native text read on all seven physical pages; formula/proof visually checked on physical p.6 (printed p.10)."
+      ],
+      "dependencies": [],
+      "notes": "Some native formulas are incomplete; no full-formula coverage claim is made for pages not visually inspected.",
+      "claim_or_proof_crosswalk_ids": [
+        "CLM-COL-000182",
+        "CLM-COL-000183",
+        "CLM-COL-000184"
+      ]
+    },
+    {
+      "source_class": "local_unpublished_work",
+      "publication_unit_or_source_id": "CHATINT-COL-000002",
+      "exact_locators": [
+        "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/more col thread/ChatGPT-Implications of Affine Formula.md:921-1040,2679-2828"
+      ],
+      "relevance_edge": "Actual cyclic transport proof and residue recursion with multiplicities underlying the companion chapter.",
+      "toc_or_section_check": {
+        "status": "not_available",
+        "checked_utc": "2026-09-04T13:49:13Z",
+        "relevant_sections": [],
+        "reason": "Raw chronological conversation export."
+      },
+      "reading_status": "partially_content_read",
+      "content_loci_read": [
+        "921-1040",
+        "2679-2828"
+      ],
+      "dependencies": [],
+      "notes": "This turn records these direct windows only, not a new claim of full 3021-line coverage. Raw source SHA256 abb1abbb948dc140394de3d35f0efbde9b3facdf718c24b065b8d0adb951366e.",
+      "claim_or_proof_crosswalk_ids": [
+        "CLM-COL-000182",
+        "CLM-COL-000183",
+        "CLM-COL-000184",
+        "CLM-COL-000185"
+      ]
+    },
+    {
+      "source_class": "research_literature",
+      "publication_unit_or_source_id": "SRC-COL-000051",
+      "exact_locators": [
+        "https://www.researchgate.net/publication/2459588_Cyclic_Structure_of_Dynamical_Systems_Associated_with_3xd_Extensions_of_Collatz_Problem; Sections 2,4,6,7,8 and Example 8.5(1), printed page markers 7-8,12-13,23-24,27-36"
+      ],
+      "relevance_edge": "Positive aperiodic configuration-to-coprime-membership correspondence and already reported 456 cycles for parameter 6487.",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-04T15:16:12Z",
+        "relevant_sections": [
+          "Map and primitive-cycle definitions",
+          "Configurations and forward/inverse constructions",
+          "Example 8.5(1)"
+        ],
+        "evidence": "Bounded source audit records the primary online transcription reading; no acquired PDF."
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "Source reviewer: Section 2, Lemma-Definition 4.2, Definition 4.3, Definition 6.1, Lemma 6.2, Definition 7.1, Lemma 7.2, Theorems 8.1/8.3, Definition 8.2, Corollary 8.4 and Example 8.5; this registry task independently read the full audit and current TeX proofs."
+      ],
+      "dependencies": [],
+      "claim_or_proof_crosswalk_ids": [
+        "CLM-COL-000191",
+        "CLM-COL-000192"
+      ],
+      "notes": "Author-uploaded online full-text transcription only. No primary PDF/source hash, physical PDF page verification, full census, or full-source coverage. Possible transcription/source defects in the audit remain unverified candidates, not admitted corrections. Word primitivity and coprime-cycle primitivity are distinct."
+    }
+  ],
+  "unresolved_dependencies": [
+    {
+      "dependency": "Full raw affine chronological coverage and unexamined antecedent passages",
+      "reason_unresolved": "Twelve antecedent blocks have been collated, but full direct coverage is not reconciled with the historical agent intake.",
+      "next_bounded_query_or_read": "Read and record remaining direct chronological windows of CHATINT-COL-000002; no full-note identity inferred from the twelve-block comparison."
+    },
+    {
+      "dependency": "Belaga-Mignotte primary-PDF witness and transcription-sensitive candidate defects",
+      "reason_unresolved": "No primary PDF acquired; the current source audit used author-uploaded transcription. No source-error candidate is promoted to a verified printed correction.",
+      "next_bounded_query_or_read": "If a candidate source correction is pursued, obtain and inspect the exact source witness first; no candidate is a premise of the admitted CRT/scaling/count results."
+    }
+  ],
+  "refresh_reason": "Bounded affine CRT propagation: register the directly proved synchronized transition map, marginal kernel, reduced-denominator orbit conjugacy, exact (10,16) table, and three local-antecedent proof repairs. Preserve classical attribution and all reading limits.",
+  "anti_loop_note": "Existing canonical index used for routes; no index rebuild. Claim admission is based on content/proofs/receipts, not query hits. Raw 3021-line root coverage remains unresolved; twelve collated antecedent blocks do not identify whole texts. No full-corpus or fresh-context pass claimed.",
+  "latest_registry_propagation": {
+    "audit": "qa/AFFINE-CRT-REGISTRY-PROPAGATION-20260904.json",
+    "sources": [
+      "SRC-COL-000050",
+      "SRC-COL-000051"
+    ],
+    "claims": [
+      "CLM-COL-000189",
+      "CLM-COL-000190",
+      "CLM-COL-000191",
+      "CLM-COL-000192",
+      "CLM-COL-000193",
+      "CLM-COL-000194",
+      "CLM-COL-000195"
+    ],
+    "morphisms": [
+      "MOR-COL-000068",
+      "MOR-COL-000069",
+      "MOR-COL-000070"
+    ]
+  }
+}

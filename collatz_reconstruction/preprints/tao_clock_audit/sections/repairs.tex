@@ -1,0 +1,243 @@
+\section{Endpoint margins and uniform coefficient estimates}\label{sec:repairs}
+
+Two estimates in the proof of Tao's Proposition~5.2 control the location
+of the first-passage time and the effect of fine-scale mixing on the
+first-entry distribution.  Retain his parameters
+\begin{equation}\label{eq:local-parameters}
+ L=\log x,\quad \alpha=1.001,\quad \beta=\log(4/3),\quad
+ n_0=\left\lfloor\frac{L}{10\log2}\right\rfloor,\quad
+ m_0=\left\lfloor\frac{L}{100000}\right\rfloor.
+\end{equation}
+Here $x$ is sufficiently large; in particular $m_0\geq1$.
+
+\subsection{A buffer in time is multiplicative in the initial value}
+
+In the proof of Proposition~5.2, Tao obtains an event $G_x$ with
+$\Prob(G_x^c)=O(L^{-10})$ on which, for
+$\mathbf N_y\sim\mu_y$ and $y\in\{x^\alpha,x^{\alpha^2}\}$,
+\begin{equation}\label{eq:orbit-log}
+ \left|\log\frac{\Syr^j(\mathbf N_y)}{\mathbf N_y}
+          +j\beta\right|\leq C_0L^{3/5}
+ \quad(0\leq j\leq n_0).
+\end{equation}
+The desired time interval is
+\[
+ I_y=\left[\frac{\log(y/x)}\beta+L^{4/5},\quad
+             \frac{\log(y^\alpha/x)}\beta-L^{4/5}\right].
+\]
+The input restriction printed at this point in v7 adds and subtracts
+$2L^{4/5}$ at the endpoints $y,y^\alpha$.
+An additive displacement of that size produces logarithmic displacement
+$O(L^{4/5}/y)$ at the lower endpoint, not the required time margin.
+A multiplicative restriction supplies the required margin.
+
+\begin{proposition}[Multiplicative endpoint estimate]\label{prop:buffer}
+Set
+\[
+ J_y=[y\exp(L^{4/5}),\ y^\alpha\exp(-L^{4/5})].
+\]
+For all sufficiently large $x$ this is nonempty,
+\[
+ G_x\cap\{\mathbf N_y\in J_y\}\subseteq\{t_x(\mathbf N_y)\in I_y\},
+ \qquad
+ \Prob(t_x(\mathbf N_y)\in I_y)=1-O(L^{-1/5}),
+\]
+uniformly for the two indicated values of $y$.
+\end{proposition}
+\begin{proof}
+Since $\mathbf N_y\leq x^{\alpha^3}$, \eqref{eq:orbit-log} gives
+\[
+ \log\frac{\Syr^{n_0}(\mathbf N_y)}x
+ \leq(\alpha^3-1)L-\beta n_0+C_0L^{3/5}<0
+\]
+for large $x$.  For example $\alpha^3-1<1/300$ and
+$\beta/(10\log2)>1/40$, whereas the floor costs only a constant.
+Since $\mathbf N_y>x$, the first crossing is therefore at an integer
+$1\leq t\leq n_0$.  Applying \eqref{eq:orbit-log} at $t$ and $t-1$
+gives
+\begin{equation}\label{eq:time-log}
+ \left|t-\frac{\log(\mathbf N_y/x)}\beta\right|
+ \leq C_1L^{3/5}.
+\end{equation}
+Indeed the inequalities $\Syr^t(\mathbf N_y)\leq x$
+and $\Syr^{t-1}(\mathbf N_y)>x$ bound $t$ from below and above;
+the additional one-step term is absorbed into $C_1$.
+
+If $\mathbf N_y\in J_y$, the central expression in
+\eqref{eq:time-log} lies inside $I_y$ with extra margin
+$(\beta^{-1}-1)L^{4/5}$ on both sides.  Since $0<\beta<1$, this
+dominates $C_1L^{3/5}$.  This proves the event inclusion.
+
+For $1\leq a<b$, integral comparison along the odd progression gives
+\[
+ \sum_{\substack{a\leq m\leq b\\m\text{ odd}}}\frac1m
+ =\frac12\log(b/a)+O(1/a),
+\]
+uniformly in the real endpoints.  Thus the block denominator is
+$\frac12(\alpha-1)\log y+O(1/y)$, whereas the two excluded pieces have
+total harmonic mass $L^{4/5}+O(1/y)$.  Their probability is
+$O(L^{-1/5})$.  The logarithmic width of $J_y$ is
+$(\alpha-1)\log y-2L^{4/5}>0$.  Finally add
+$\Prob(G_x^c)=O(L^{-10})$.
+\end{proof}
+
+Thus the multiplicative buffer gives the same interval $I_y$ and
+exceptional probability $O(L^{-1/5})$ required in the subsequent argument.
+
+\subsection{A uniform coefficient bound over valuation words}
+
+For a positive tuple $\mathbf a=(a_1,\ldots,a_m)$ put
+\[
+ A=a_1+\cdots+a_m,\qquad b=a_m,\qquad
+ F_m(\mathbf a)=\sum_{i=1}^m3^{m-i}2^{-(a_i+\cdots+a_m)},
+ \quad F_0=0.
+\]
+Composition of the maps $z\mapsto(3z+1)/2^{a_i}$ gives
+\begin{equation}\label{eq:affine}
+ \Syr^m(M)=3^m2^{-A}M+F_m(\mathbf a)
+\end{equation}
+when $\mathbf a$ is the actual valuation tuple of $M$.
+Induction proves the formula: the next map multiplies every existing term
+by $3/2^{a_{m+1}}$ and adds $2^{-a_{m+1}}$.
+In particular $0\leq F_m\leq3^m$, a bound uniform in the tuple.
+For the latter bound, replace every negative power of two by at most
+$1/2$ and sum the finite geometric series.
+
+For an arbitrary $E\subseteq\Opos\cap[1,x]$ set
+\[
+ E'=\left\{M\in\Opos:\begin{array}{l}
+ t_x(M)=m_0,\quad p_x(M)\in E,\\
+ e^{-L^{7/10}}(4/3)^{m_0}x\leq M
+       \leq e^{L^{7/10}}(4/3)^{m_0}x
+ \end{array}\right\}.
+\]
+This is the same set as in the approximate formula of
+\cite[Proposition 5.2]{Tao7}; successful passage makes its meaning
+independent of the failure convention.  For $n\in I_y\cap\Z$ write
+$m=m_0$, $r=n-m\geq0$, and define on $\Z/3^r\Z$
+\begin{equation}\label{eq:cn}
+ c_n(z)=3^r\sum_{\substack{M\in E'\\M\equiv z\pmod{3^r}}}\frac1M.
+\end{equation}
+The source parameters ensure $m\leq n\leq n_0$ for sufficiently large
+$x$.  The case $r=0$ is allowed in the estimate below, with modulus one.
+
+\begin{proposition}[Uniform coefficient bound]\label{prop:cn}
+There is an absolute constant $C$ such that $0\leq c_n(z)\leq C$
+for all sufficiently large $x$, both choices of $y$, all
+$n\in I_y\cap\Z$, all residue classes $z$, and every set $E$ above.
+\end{proposition}
+\begin{proof}
+Partition \eqref{eq:cn} by the unique length-$m$ valuation tuple of $M$,
+and call a tuple's contribution $c_{n,\mathbf a}(z)$.  At its first
+crossing, the exact affine formulas give
+\[
+ 3^m2^{-A}M+F_m\leq x
+ <3^{m-1}2^{-(A-b)}M+F_{m-1}.
+\]
+The coefficient $3^{m-1}$ corresponds to the preceding $m-1$ iterates.
+Uniformly $F_{m-1}\leq3^{m-1}=o(x)$, so every such $M$ lies between
+\begin{equation}\label{eq:M-bounds}
+ M_0=3^{-m}2^{A-b}x\quad\hbox{and}\quad M_1=3^{-m}2^A x
+\end{equation}
+for large $x$.  Indeed the upper bound follows by discarding $F_m\geq0$,
+and the lower follows from $x-F_{m-1}>x/3$.
+
+The integer $B_{\mathbf a}=2^A F_m$ is odd: its first term is
+$3^{m-1}$ and all its later terms are even.  The terminal value in
+\eqref{eq:affine} is odd, hence
+\[
+ 3^mM+B_{\mathbf a}\equiv2^A\pmod{2^{A+1}}.
+\]
+Since $3^m$ is a unit modulo $2^{A+1}$, this requires a single class of
+$M$ modulo $2^{A+1}$.  Combining it with $M\equiv z\pmod{3^r}$ gives
+a single class modulo $q=2^{A+1}3^r$ by the Chinese remainder theorem.
+Only this necessary restriction is needed for the upper bound.
+
+For any progression and $1\leq U\leq V$,
+\begin{equation}\label{eq:progression}
+ \sum_{\substack{U\leq M\leq V\\M\equiv z\pmod q}}\frac1M
+ \leq\frac1U+\frac1q\log(V/U).
+\end{equation}
+To prove it, keep the first progression term separately; for each
+subsequent term at $t$, use $1/t\leq q^{-1}\int_{t-q}^{t}du/u$.
+The integration intervals are disjoint and lie inside $[U,V]$.
+If there are no progression terms, the bound is immediate.
+
+If $2^A\leq x^{1/2}$, then
+\[
+ \frac q{M_0}=\frac{2^{b+1}3^n}{x}\leq2x^{-17/50}\leq1
+\]
+for large $x$.  Here $b\leq A$ and $3^n\leq x^{4/25}$, since
+$n\leq L/(10\log2)$ and $3^5<2^8$.
+Because $M_1/M_0=2^b$ and $b\geq1$, \eqref{eq:progression} gives
+\begin{equation}\label{eq:low}
+ c_{n,\mathbf a}(z)\leq C_2 b2^{-A}.
+\end{equation}
+
+If $2^A>x^{1/2}$, set $V_*=3^{m-1}2^{-(A-b)}M$.
+The previous crossing inequality gives $V_*>x-F_{m-1}$, and therefore
+$F_{m-1}=o(V_*)$ uniformly.  The last valuation is
+\[
+ b=\vnu(3(V_*+F_{m-1})+1).
+\]
+The positive integer inside the valuation is divisible by $2^b$, so
+$2^b\leq3(V_*+F_{m-1})+1\leq5V_*$ for large $x$.
+Consequently $M\geq(3/5)3^{-m}2^A$.  Apply
+\eqref{eq:progression} with lower endpoint
+$\max(M_0,(3/5)3^{-m}2^A)$ and upper endpoint $M_1$.
+If they are out of order the contribution is zero; otherwise their ratio
+is at most $2^b$.  We obtain
+\begin{equation}\label{eq:high}
+ c_{n,\mathbf a}(z)\leq C_3(3^n2^{-A}+b2^{-A}).
+\end{equation}
+
+The weights must now be summed before weakening them.  Exactly,
+\[
+ \sum_{a_1,\ldots,a_m\geq1}b2^{-A}
+ =\left(\sum_{a\geq1}2^{-a}\right)^{m-1}
+    \sum_{b\geq1}b2^{-b}=2.
+\]
+For the additional term in \eqref{eq:high},
+\begin{align*}
+ 3^n\sum_{2^A>x^{1/2}}2^{-A}
+ &\leq3^nx^{-1/4}\sum_{a_1,\ldots,a_m\geq1}2^{-A/2}\\
+ &=3^nx^{-1/4}(1+\sqrt2)^m
+ \leq x^{4/25-1/4+1/100000}
+ =x^{-8999/100000}.
+\end{align*}
+The last step uses $1+\sqrt2<e$ and $m\leq L/100000$.
+All summands are nonnegative, so enlarging the actual finite tuple range
+to all positive tuples is valid.  Summing \eqref{eq:low} and
+\eqref{eq:high} proves $c_n(z)\leq C_4(2+x^{-8999/100000})$, uniformly
+in every stated variable.
+\end{proof}
+
+The last displayed majorant in the printed proof of Lemma~5.3 is instead
+$\sum_{a_1,\ldots,a_m\geq1}2^{-A/2}=(1+\sqrt2)^m$.
+It is finite for a fixed $m$ but is not uniformly bounded when
+$m=\lfloor L/100000\rfloor$ grows.  Keeping the sharper weights already
+available in the preceding estimates proves exactly the uniform result
+needed by that lemma.
+
+To apply the uniform bound, first observe that the source range gives
+$r=n-m\geq m$: the lower endpoint gives
+$n\geq(\alpha-1)L/\beta+L^{4/5}$, whereas
+$2m\leq(\alpha-1)L/50$ and $\beta<1$.
+If $p_r$ is the law of Tao's
+$r$-Syracuse random variable on $\Z/3^r\Z$, define the uniform lift of
+its reduction to $\Z/3^m\Z$ by
+\[
+ (L_{m\to r}p_m)(z)=3^{m-r}p_m(z\bmod3^m)\quad(0\leq m\leq r).
+\]
+Reduction has fibres of size $3^{r-m}$, so this lift preserves mass.
+Tao's projective identity says that reducing $p_r$ gives $p_m$.
+His fine-scale mixing estimate controls
+$\normone{p_r-L_{m\to r}p_m}$.  Proposition~\ref{prop:cn} now gives
+the precise dual estimate
+\[
+ \left|\sum_{z\bmod3^r}c_n(z)
+       \bigl(p_r(z)-(L_{m\to r}p_m)(z)\bigr)\right|
+ \leq C\normone{p_r-L_{m\to r}p_m}.
+\]
+The coefficient therefore transfers the fine-scale mixing error with
+a constant independent of $x$, $n$, and $E$.

@@ -1,0 +1,72 @@
+{
+  "schema": "collatz-finite-interface/1",
+  "id": "COL-SZ-HISTORY-20260913",
+  "date": "2026-09-13",
+  "request": {"file": "REQUEST.md", "sha256": "4969F1814D6990744807B32DE2EDA7E9CD59CD74C21045CDA477C25A34A58D71", "locator": "Latest raw user message in current Collatz task; individual message ID not exposed"},
+  "live_tex": "note.tex",
+  "sources": [
+    {
+      "id": "SZ-COLLATZ-SUPPORT-APR2026",
+      "path": "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/Globalization idempotent Collatz'/support_idempotent_homogenization_note.tex",
+      "sha256": "A4D425BBA2BAD0360A3715340C7D6B55523FA8FC5E65C8629E7A6E544BFF7152",
+      "locators_used": "Sections 1, 4, 5, 7; G(R), finite branch matrices, prefix formula, finite specialization",
+      "coverage": "Primary finite definitions and proofs read; does not certify every theorem in the source"
+    },
+    {
+      "id": "SZ-HURWITZ-H1-H13",
+      "path": "C:/Users/LOCAL_USER/Documents/math/output/split_zero_rh_tandem_2026-09-12/tex/historical_hurwitz_jets.tex",
+      "sha256": "4BCC72299DAAAC98EC41C40B38E31A763FEDAB86AA4C457E8E847E5ECB43BD7C",
+      "locators_used": "Lines 23-301, H1-H13; multiple-zero cluster inverse H10-H13",
+      "public_url": "https://github.com/KokunoYumeto/zeta-function-research-reader/blob/16fc4dbb817b82023c6126e636f1c6df28d4cecd/workbenches/splitzero-tandem/continuations/20260913-toda/tex/historical_hurwitz_jets.tex",
+      "public_verification": "HTTP 200; entire 41591-character public source equals local source after CRLF/LF comparison",
+      "coverage": "All H1-H13 definitions and proofs read by root and independent reviewer; later Laurent section not used"
+    },
+    {
+      "id": "COL-ODD-CYLINDER-COMPANION",
+      "path": "C:/Users/LOCAL_USER/Documents/Erdos Strauss and related/collatz_reconstruction/research_companion/chapters/02_two_adic_survivor_coding_and_exact_interface_boundaries.tex",
+      "sha256": "41F185BA53AF531EB8BFA96B7AC45ACA34307276BDA45521BD05D049A4BA8D50",
+      "locators_used": "Lemma exact 2-adic prefix cylinders, eq:two-adic-terminal-congruence",
+      "coverage": "Actual cylinder definition, induction proof and survivor coding read; note re-proves finite positive-integer part"
+    },
+    {
+      "id": "LIT-DLMF-25-11-10",
+      "url": "https://dlmf.nist.gov/25.11.E10",
+      "locators_used": "Hurwitz Taylor expansion with |a-1|<1",
+      "coverage": "Primary reference checked online; convergence and nonzero coefficients proved in note"
+    }
+  ],
+  "claims": [
+    {"id":"COL-SZ-01","type":"proved_reconstruction","locator":"note.tex Proposition 2.1","statement":"(N,P_w) bijects finite parity words with the explicitly described polynomial image; parity realization is one residue modulo 2^N","dependencies":["SZ-COLLATZ-SUPPORT-APR2026"],"proof":"induction and explicit coefficient inverse","formal_status":"written proof plus finite exact certificate; no Lean"},
+    {"id":"COL-SZ-02","type":"proved_fibres","locator":"note.tex Section 2.1","statement":"Support reflection, q=3 specialization, and branch-matrix eigenvalues have the displayed information-loss fibres and witnesses","dependencies":["COL-SZ-01"],"proof":"homomorphism kernels and explicit word pair"},
+    {"id":"COL-SZ-03","type":"proved_reconstruction","locator":"note.tex Lemma 3.1","statement":"Fixed (m,A) words have distinct exact odd residue coordinates r_w","dependencies":["COL-ODD-CYLINDER-COMPANION"],"proof":"exact-valuation induction"},
+    {"id":"COL-SZ-04","type":"sourced_theorem_reproved","locator":"note.tex Lemma 4.1","statement":"Full zero-cluster t-jet through J is equivalent to input moments through J at any nontrivial zeta zero with multiplicity retained","dependencies":["SZ-HURWITZ-H1-H13","LIT-DLMF-25-11-10"],"proof":"contour power sums, Newton identities, analytic division, triangular inverse"},
+    {"id":"COL-SZ-05","type":"derived_theorem","locator":"note.tex Theorem 4.2","statement":"K-1 zero-cluster jet reconstructs all weights on a known K-word packet; sharp for K>=2","dependencies":["COL-SZ-03","COL-SZ-04"],"proof":"Lagrange inverse and explicit Vandermonde null vector"},
+    {"id":"COL-SZ-06","type":"derived_arithmetic_map","locator":"note.tex Section 5, equations 9-10","statement":"Any joint word predicate is a recovered moment functional; for (m,A)=(2,4), integral mass is (M2-48M1+551)/504","dependencies":["COL-SZ-05"],"proof":"interpolation, exact rotation/divisibility identity, rational example"},
+    {"id":"COL-SZ-07","type":"proved_pushforward_and_fibres","locator":"note.tex Section 5.1","statement":"Prefix pushforward kernels are fibrewise zero-sum vectors; a zero-weight support label is separate from the probability measure","dependencies":["COL-SZ-05"],"proof":"explicit fibre sums and description of all support supersets"}
+  ],
+  "checks": {"certificate":"python -B check_history.py","exit_code":0,"binary_words":2047,"integer_lifts":6141,"odd_return_packets":45,"odd_return_words":511,"probability_reconstructions":90,"positive_lower_jet_ambiguity_pairs":28,"latex":"pdflatex twice, exit 0, no undefined references or overfull/underfull warnings","pdf_pages":7,"visual_qa":"all seven rendered pages inspected","independent_review":"AUDIT.md; actual note.tex read end to end; singleton sharpness qualification added to Reddit"},
+  "artifacts": [
+    {"path":"note.tex","sha256":"D855CFC1B2D51C398ED8EF3681F04D8B5DC947BE77225AE43F1F5A012BF124A7"},
+    {"path":"note.pdf","sha256":"DB981E928C21AA07723D340BB5945825245D541AAD367E625152E367104DCE70"},
+    {"path":"check_history.py","sha256":"007EFBA1840E0C805E11C02ED29D93FEB2BB8B0F868B655955DC6946C15E11FE"},
+    {"path":"reddit_before.txt","sha256":"84C400E9767335D65C2DADFFA4EC5786EE9CCBF90436A16A83F677623AB08848"},
+    {"path":"reddit_after.md","sha256":"6444CB410B7B81361729C84B764B5E73A9B584CE8E44048CD71FC898C4C91F48"},
+    {"path":"AUDIT.md","sha256":"5F3E2FCEC22B80ACBF503B4E4A744360663BD0222F46102A51F61FDA7B088083"}
+  ],
+  "publication": {
+    "reddit_url":"https://www.reddit.com/r/wildwestllmmath/comments/1w58h4m/notes_on_the_colletz_conjecture_by_codex_sol_56/",
+    "action":"edited existing body, no new post",
+    "status":"saved and rendered text checked",
+    "editor_exact_match":true,
+    "markdown_characters":9522,
+    "rendered_characters":9082,
+    "rendered_entire_text_equals_intended_plain_text":true,
+    "repair":"Reddit parsed carets as superscripts and product-index brackets as a link. Escaped every caret and replaced product-index brackets with braces; saved and rechecked entire rendered text exactly.",
+    "old_title_preserved":true,
+    "backup":"reddit_before.txt contains pre-edit rendered text; original links are the workbench, PolyClank and Tao URLs retained in reddit_after.md",
+    "note_overleaf_upload":"not performed in this action",
+    "note_github_upload":"not performed in this action"
+  },
+  "nonclaims":["No Collatz descent bound or convergence proof","No RH assumption, proof, or asserted equivalence with Collatz","No numerical stability theorem","No discovery of unknown history weights without input","No universal priority claim","No formal complex-analysis certificate","No current global corpus completion claim"],
+  "recovery":"Read REQUEST.md, verify hashes with validate_state.py, then read note.tex and the exact source portions. AUDIT.md is a review record, not a substitute for the proofs. The broader task remains unfinished."
+}

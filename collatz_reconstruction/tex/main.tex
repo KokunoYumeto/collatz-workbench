@@ -1,0 +1,72 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  pdftitle={The Collatz Conjecture and Its Local Mathematical Corpus: A Literature-First Reconstruction},
+  pdfauthor={Working critical reconstruction},
+  pdfsubject={Collatz conjecture, arithmetic dynamics, exact source and proof audit}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{calculation}[theorem]{Calculation}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{nonclaim}[theorem]{Explicit nonclaim}
+\newtheorem{sourceissue}[theorem]{Source issue}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Ztwo}{\mathbb{Z}_{2}}
+\newcommand{\Npos}{\mathbb{N}_{>0}}
+\newcommand{\Opos}{\mathbb{N}_{>0}^{\mathrm{odd}}}
+\newcommand{\Nzero}{\mathbb{N}_{0}}
+\newcommand{\vtwo}{\nu_{2}}
+
+\title{The Collatz Conjecture and Its Local Mathematical Corpus\\
+\large A Literature-First Reconstruction}
+\author{Working critical reconstruction}
+\date{Live edition -- not a completion claim}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+This live edition reconstructs Collatz and adjacent mathematics from primary
+literature and an authorized local corpus.  It separates sourced theorems,
+independent deductions, finite calculations, definitions, choices, analogies,
+conjectures, missing arrows, contradictions, retractions, and nonclaims.  The
+document remains incomplete until its external coverage, claim, dependency,
+morphism, proof, formalization, and recovery ledgers all pass their release
+gates.
+\end{abstract}
+
+\tableofcontents
+
+\input{chapters/00_scope_and_method}
+\input{chapters/01_literature_spine}
+\input{chapters/02_chatnotes_coefficient_algebra}
+\input{chapters/03_chatnotes_weighted_path_algebra}
+\input{chapters/03a_chatnotes_arctangent_relations}
+\input{chapters/04_symbolic_completion_and_geometric_boundaries}
+\input{chapters/05_chatnotes_groupoid_and_motivic_interfaces}
+\input{chapters/06_affine_packet_source_audit}
+\input{chapters/99_source_register}
+
+\end{document}

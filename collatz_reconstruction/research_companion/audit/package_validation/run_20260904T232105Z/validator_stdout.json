@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\Users\LOCAL_USER\Documents\Erdos Strauss and related\collatz_reconstruction\research_companion\validate_package.py", line 550, in <module>
+    print(json.dumps(run(), indent=2, sort_keys=True))
+                     ~~~^^
+  File "C:\Users\LOCAL_USER\Documents\Erdos Strauss and related\collatz_reconstruction\research_companion\validate_package.py", line 508, in run
+    validate_source_to_pdf(manifest["output_pdf"])
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LOCAL_USER\Documents\Erdos Strauss and related\collatz_reconstruction\research_companion\validate_package.py", line 486, in validate_source_to_pdf
+    fail("canonical source rebuild does not match the declared output PDF")
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LOCAL_USER\Documents\Erdos Strauss and related\collatz_reconstruction\research_companion\validate_package.py", line 46, in fail
+    raise AssertionError(message)
+AssertionError: canonical source rebuild does not match the declared output PDF

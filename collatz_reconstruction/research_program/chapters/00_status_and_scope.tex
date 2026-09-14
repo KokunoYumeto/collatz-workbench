@@ -1,0 +1,42 @@
+\section{Status, authorship, and separation from the reader}
+
+The accompanying critical reader asks what a named source proves, what it
+does not prove, and which repairs are required to state its mathematics
+correctly.  This document asks a different question: what exact mathematics
+can be proved after the source conventions and implementation coordinates have
+been reconstructed?  Results proved here are therefore not silently
+attributed to Barina, Oliveira e Silva, Roosendaal, Hercher, or the authors of
+the public code.
+
+The status vocabulary is literal.
+
+\begin{description}[leftmargin=3.4cm,style=nextline]
+\item[Proved.] The displayed hypotheses imply the conclusion by the proof
+printed here.
+\item[Finite certificate.] A proved reduction leaves a finite set, and the
+identified deterministic program exhausts exactly that set.  The bound and
+the items not certified are stated explicitly.
+\item[Source report.] A source says that a historical computation occurred.
+The statement is evidence about the reported run, not a reproduction of it.
+\item[Open.] No proof or counterexample has been established in this project.
+An open item is never used downstream as though it were a lemma.
+\end{description}
+
+Two map conventions recur.  The unshortened and shortened Collatz maps are
+\[
+ U(n)=\begin{cases}3n+1,&n\text{ odd},\\n/2,&n\text{ even},\end{cases}
+ \qquad
+ T(n)=\begin{cases}(3n+1)/2,&n\text{ odd},\\n/2,&n\text{ even}.
+ \end{cases}
+\]
+They have different clocks.  One odd $T$-step is two $U$-steps; one even
+$T$-step is one $U$-step.  No statement below identifies their iterate
+indices.
+
+\begin{nonclaim}
+Nothing in this document proves that every positive Collatz orbit reaches
+$1$.  A dead sieve bit means that one of the stated finite certificates
+applies; a live bit means only that the implemented certificate family did not
+eliminate it.
+\end{nonclaim}
+

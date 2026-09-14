@@ -1,0 +1,402 @@
+\subsection{Finite De Bruijn relations and the projective parity map}
+\label{subsec:finite-debruijn-relations}
+
+Laarhoven--de Weger's finite objects must first be typed as relations.  For
+$k\geq1$ put
+\[
+ V_k=\Z/2^k\Z,
+ \qquad
+ \mathcal P(V_k)=\{A:A\subseteq V_k\}.
+\]
+Their modular Collatz graph has an edge $[a]_k\to[b]_k$ precisely when
+integer lifts $a_1,b_1$ exist with $T(a_1)=b_1$.  Its forward relation is
+therefore
+\begin{equation}
+\label{eq:LDW-finite-Collatz-relation}
+ \mathcal T_k([a]_k)
+ =\bigl\{[T(a)]_k,[T(a)+2^{k-1}]_k\bigr\}
+ \quad:V_k\longrightarrow\mathcal P(V_k).
+\end{equation}
+Here $a$ may be any integer representative.  All representatives have the
+same parity, and changing $a$ by $2^k$ changes its branch value by an odd
+multiple of $2^{k-1}$.  Thus the two displayed residues are exactly all
+possible outputs and are distinct.
+
+Write a binary word least-significant digit first and identify
+$b_0\cdots b_{k-1}$ with $\sum_{i<k}b_i2^i\in V_k$.  The binary De Bruijn
+forward relation is
+\begin{equation}
+\label{eq:LDW-finite-shift-relation}
+ \sigma_{2,k}(b_0\cdots b_{k-1})
+ =\{b_1\cdots b_{k-1}c:c\in\{0,1\}\}.
+\end{equation}
+Numerically, this is the right shift together with that value plus
+$2^{k-1}$.  Neither \eqref{eq:LDW-finite-Collatz-relation} nor
+\eqref{eq:LDW-finite-shift-relation} is a deterministic self-map.
+
+The source calls its finite encoder $\Phi_k$.  To prevent its dimension
+subscript from colliding with Bernstein--Lagarias's multiplier subscript in
+$\Phi_3=Q_3^{-1}$, this edition writes the same map as
+\begin{equation}
+\label{eq:LDW-finite-parity-map}
+ \overline Q_{3,k}:V_k\longrightarrow V_k,
+ \qquad
+ \overline Q_{3,k}([a]_k)
+ =\sum_{i=0}^{k-1}(T^i(a)\bmod2)2^i.
+\end{equation}
+Thus $\overline Q_{3,k}$ is source $\Phi_k$ without a normalization or a
+change of orientation.  The symbol $3$ in $Q_3$ and $\Phi_3$ denotes the
+$3x+1$ multiplier; it is not the graph dimension.
+
+Everett's earlier Theorem~1 is exactly the bijectivity of this same finite
+chronological map on the representatives $0\leq a<2^k$, together with the
+stronger integer-fibre coordinates in
+Theorem~\ref{thm:Everett-finite-fibres}.  Laarhoven--de Weger's later theorem
+adds the two-successor graph relation; that relation is not retroactively
+attributed to Everett.
+
+For a point map $f:V_k\to V_k$ and $A\subseteq V_k$, write
+$f[A]=\{f(a):a\in A\}$.  This elementwise extension is required in the next
+statement.
+
+\begin{theorem}[Laarhoven--de Weger finite graph theorem, reconstructed]
+\label{thm:LDW-finite-debruijn}
+For every $k\geq1$, $\overline Q_{3,k}$ is a bijection and
+\begin{equation}
+\label{eq:LDW-finite-relation-conjugacy}
+ \overline Q_{3,k}[\mathcal T_k(a)]
+ =\sigma_{2,k}(\overline Q_{3,k}(a))
+ \qquad(a\in V_k).
+\end{equation}
+Consequently it is a directed-graph isomorphism from the binary modular
+Collatz graph to $B(2,k)$.  Its inverse is the reduction modulo $2^k$ of
+Bernstein--Lagarias's $\Phi_3=Q_3^{-1}$.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:BL-Q} gives the exact congruence equivalence
+\[
+ x\equiv y\pmod{2^k}
+ \quad\Longleftrightarrow\quad
+ Q_3(x)\equiv Q_3(y)\pmod{2^k}.
+\]
+It proves that \eqref{eq:LDW-finite-parity-map} is well-defined and injective;
+finiteness makes it bijective.  It also identifies it pointwise as the
+reduction of $Q_3$, so reduction of $\Phi_3$ supplies the inverse.
+
+Let $a_0$ and $a_0+2^k$ represent the two lift classes modulo $2^{k+1}$.
+Their first $k$ parity digits agree, while their next parity digits differ,
+again by the exact isometry.  Applying $T$ deletes the common first digit.
+The two resulting length-$k$ itinerary words therefore have common first
+$k-1$ digits and both possible terminal digits.  They are precisely
+$\sigma_{2,k}(\overline Q_{3,k}([a_0]_k))$.  On the state side their residues
+are exactly the two values in
+\eqref{eq:LDW-finite-Collatz-relation}.  This proves
+\eqref{eq:LDW-finite-relation-conjugacy} as equality of two-element subsets.
+\end{proof}
+
+The active source theorem has no proof environment.  Its preceding prose
+depends on an earlier Lagarias congruence, and source line 131 names the next
+digit as $x_{k+1}$ although the definitions force $x_k$.  A proof at source
+lines 160--166 is commented out; its first sentence reverses the image edge,
+although its following equivalence has the orientation used above.  These are
+source defects, not alternative graph conventions
+\cite[Sec.~2]{LaarhovenDeWeger2012}.
+
+\begin{proposition}[exact path multiplicities]
+\label{prop:LDW-path-counts}
+Let $A_k$ be the adjacency matrix of either graph in
+Theorem~\ref{thm:LDW-finite-debruijn}, and let $J$ be the $2^k$-by-$2^k$
+all-ones matrix.  Then
+\begin{equation}
+\label{eq:LDW-path-counts}
+ A_k^k=J,
+ \qquad
+ A_k^\ell=2^{\ell-k}J\quad(\ell\geq k).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+After $k$ De Bruijn steps all $k$ initial digits have been discarded.  For a
+specified terminal word, exactly one ordered choice of the $k$ appended
+digits reaches it.  After $\ell\geq k$ steps the first $\ell-k$ appended
+digits are discarded and arbitrary, while the last $k$ are forced by the
+terminal word.  This gives respectively $1$ and $2^{\ell-k}$ directed paths.
+The graph isomorphism transports the count to the modular Collatz graph.
+\end{proof}
+
+\begin{nonclaim}
+Equation \eqref{eq:LDW-path-counts} yields a uniform endpoint modulo $2^k$
+only after a probability model is specified---for example, independent
+uniform choices of the two outgoing finite-graph edges, equivalently uniform
+unresolved higher input bits.  It does not make the deterministic integer
+$T^k(n)$ random, and it does not prove that the known low bits are
+statistically independent of an integer iterate.  The source's phrase that
+they tell us ``absolutely nothing'' is not used without this qualification.
+\end{nonclaim}
+
+\subsection{Edge projections, the inverse limit, and literal integer edges}
+
+Let $\rho_{k+1,k}:V_{k+1}\to V_k$ be reduction.  Directly from itinerary
+prefixes,
+\begin{equation}
+\label{eq:LDW-projective-encoder}
+ \rho_{k+1,k}\circ\overline Q_{3,k+1}
+ =\overline Q_{3,k}\circ\rho_{k+1,k}.
+\end{equation}
+Let $E_k\subseteq V_k\times V_k$ be the edge relation of $\mathcal T_k$.
+Division by two loses exactly one congruence digit, so
+\begin{equation}
+\label{eq:LDW-edge-lower-precision}
+ ([a]_k,[b]_k)\in E_k
+ \quad\Longleftrightarrow\quad
+ b\equiv T(a)\pmod{2^{k-1}}.
+\end{equation}
+The right side is independent of the representative $a$ because its parity
+and branch value modulo $2^{k-1}$ are fixed by $[a]_k$.
+
+\begin{proposition}[exact graph inverse limit and natural-edge recovery]
+\label{prop:LDW-edge-inverse-limit}
+Reduction of both endpoints maps $E_{k+1}$ onto $E_k$.  The inverse limit of
+the vertex systems is $\Ztwo$, and its compatible edge relation is exactly
+the graph of the deterministic map $T:\Ztwo\to\Ztwo$.  Under
+\eqref{eq:LDW-projective-encoder}, the inverse-limit graph isomorphism is
+$Q_3$, and the target relation is the graph of the deterministic digit shift
+$S$.
+
+Moreover, for fixed literal $a,b\in\Nzero$, once both lie in
+$\{0,\ldots,2^k-1\}$,
+\begin{equation}
+\label{eq:LDW-eventual-natural-edge}
+ \begin{aligned}
+ b=T(a)
+ &\quad\Longleftrightarrow\quad
+ ([a]_k,[b]_k)\in E_k\text{ for all sufficiently large }k,\\
+ &\quad\Longleftrightarrow\quad
+ ([a]_k,[b]_k)\in E_k\text{ for infinitely many }k.
+ \end{aligned}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:LDW-edge-lower-precision} shows that every higher edge
+reduces to a lower edge.  Conversely, either lift of the initial vertex fixes
+one more input bit and hence selects one of the two lower successors; choosing
+that lift and either next higher bit supplies a higher edge.  Thus edge
+projection is onto.  Notice that for one fixed higher vertex its two
+successors reduce to a singleton, not to the entire lower successor set.
+
+Suppose compatible $x,y\in\Ztwo$ form an edge at every level.  Then
+\eqref{eq:LDW-edge-lower-precision} gives
+$y\equiv T(x)\pmod{2^{k-1}}$ for every $k$, so $y=T(x)$.  The converse follows
+by reduction of an actual edge.  The same argument for suffixes gives the
+graph of $S$, while \eqref{eq:LDW-projective-encoder} and
+Proposition~\ref{prop:BL-Q} identify the limiting map as $Q_3$.
+
+If $b=T(a)$, every sufficiently large literal pair is an edge.  Conversely,
+an occurrence in $E_k$ gives $b\equiv T(a)\pmod{2^{k-1}}$.  Infinitely many
+occurrences include one with $2^{k-1}>|b-T(a)|$, when the congruence forces
+equality in $\Z$.  This proves \eqref{eq:LDW-eventual-natural-edge}.
+\end{proof}
+
+This is the typed repair of the source phrase ``edges that appear in
+infinitely many'' changing finite graphs.  It distinguishes the common
+ambient pair $(a,b)\in\Nzero^2$ from compatible residue vertices and does not
+call the set-valued $\mathcal T_k$ a deterministic quotient map.
+
+\subsection{Periodic components, predecessor fibres, and source corrections}
+
+\begin{proposition}[exact binary cycle count]
+\label{prop:LDW-cycle-count}
+Let $M_k$ be the number of components of $C(\Ztwo)$ containing a cycle of
+least length $k$.  Then
+\begin{equation}
+\label{eq:LDW-cycle-count}
+ 2^k=\sum_{d\mid k}dM_d,
+ \qquad
+ M_k=\frac1k\sum_{d\mid k}\mu(d)2^{k/d}
+ =\frac{2^k}{k}+O(2^{k/2}).
+\end{equation}
+In particular,
+\[
+ (M_k)_{k\geq1}=(2,1,2,3,6,9,\ldots).
+\]
+\end{proposition}
+
+\begin{proof}
+The $Q_3$ conjugacy identifies $T$-cycles with shift orbits of purely
+periodic binary sequences.  The infinite periodic repetition of every
+length-$k$ block has a unique least shift period $d\mid k$.  A shift orbit of
+least period $d$ contains exactly $d$ distinct phases, so counting all
+length-$k$ blocks gives the first identity.
+M\"obius inversion gives the second.  In the error sum every proper divisor
+contributes at most $2^{k/2}$, and the number of divisors is at most $k$, which
+gives the displayed asymptotic.  Direct substitution gives the listed values.
+\end{proof}
+
+The source prints the correct divisor identity and M\"obius formula, but its
+asymptotic changes the bound variable from $k$ to an unbound $n$.  Its printed
+sequence $(1,2,1,2,3,6,\ldots)$ contradicts both the formula and its own two
+fixed-point components; Proposition~\ref{prop:LDW-cycle-count} records the
+forced correction.  Likewise, a cyclic De Bruijn sequence gives a Hamiltonian
+cycle.  The source calls it a path while its parenthesized wrap-around digits
+supply the closing edge \cite[Secs.~2 and 4]{LaarhovenDeWeger2012}.
+
+\begin{proposition}[exact predecessor fibres]
+\label{prop:LDW-predecessor-fibres}
+For every $y\in\Ztwo$,
+\begin{equation}
+\label{eq:LDW-predecessor-fibres}
+ T^{-1}(y)=\left\{2y,\frac{2y-1}{3}\right\},
+ \qquad
+ S^{-1}(y)=\{2y,2y+1\}.
+\end{equation}
+Both fibres have two distinct elements.  In particular, the forward Collatz
+map is not a function automorphism on any weak component.
+\end{proposition}
+
+\begin{proof}
+The point $2y$ is even and maps to $y$.  Since $3$ is a unit in $\Ztwo$,
+$(2y-1)/3$ is a $2$-adic integer; it is odd and its odd branch also maps to
+$y$.  The two branch equations give no other preimages.  Equality of the two
+would imply $4y=-1$, impossible in $\Ztwo$.  The shift formula is immediate
+from its deleted first digit.  Both predecessors of a point lie in its weak
+component, proving the final assertion.
+\end{proof}
+
+Source line 241 says the forward mapping on an aperiodic component is an
+automorphism.  Equation \eqref{eq:LDW-predecessor-fibres} contradicts that
+sentence under the ordinary meaning of function automorphism.  The separate
+source assertion that all aperiodic components are pairwise isomorphic is not
+used downstream.
+
+\subsection{Generalized maps: exact unit gate and scaling quotient}
+
+For odd $a,b$, Laarhoven--de Weger define
+\[
+ T^{(a,b)}(n)=
+ \begin{cases}
+  n/2,&n\equiv0\pmod2,\\
+  (an+b)/2,&n\equiv1\pmod2.
+ \end{cases}
+\]
+At retained modulus $2$, this is precisely the Matthews presentation
+\[
+ (m_0,r_0)=(1,0),
+ \qquad
+ (m_1,r_1)=(a,-b).
+\]
+Oddness of $a,b$ supplies the branch congruence and makes both multipliers
+units.  Hence the finite and infinite parity encoders in source Section~5.1
+are the $d=2$ specialization of
+Theorem~\ref{thm:general-d-itinerary-conjugacy}; their orientation is
+$\operatorname{It}_{T^{(a,b)}}$, not its inverse.  Only at
+$(a,b)=(3,1)$ does this encoder specialize to $Q_3$.
+
+For a retained base $d\geq2$, consider instead
+\begin{equation}
+\label{eq:LDW-general-p-branch}
+ F(n)=\frac{a_i n+b_i}{d}
+ \qquad(n\equiv i\pmod d).
+\end{equation}
+The exact hypotheses for the full digit-shift conclusion are
+\begin{equation}
+\label{eq:LDW-general-p-gate}
+ a_i i+b_i\equiv0\pmod d,
+ \qquad
+ \gcd(a_i,d)=1
+ \quad(0\leq i<d).
+\end{equation}
+The first is branch integrality.  For $n=i+dt$, the next digit is
+\begin{equation}
+\label{eq:LDW-next-digit-affine}
+ F(i+dt)\equiv \frac{a_i i+b_i}{d}+a_it\pmod d.
+\end{equation}
+The second condition makes this an affine permutation of all $d$ next digits
+with singleton fibres.  With $m_i=a_i$ and $r_i=-b_i$, conditions
+\eqref{eq:LDW-general-p-gate} are exactly the retained Matthews congruence and
+unit gate.  Theorem~\ref{thm:general-d-itinerary-conjugacy} therefore proves
+the full finite and $d$-adic De Bruijn conclusions.  If a multiplier is not a
+unit, Proposition~\ref{prop:nonunit-itinerary-obstruction} gives the missing
+digits and non-singleton fibres explicitly.
+
+The source's Section~5.2 says only ``appropriately chosen'' coefficients and
+does not print \eqref{eq:LDW-general-p-gate}.  If that phrase means merely
+integer-valued branches, choose $a_i=d,b_i=0$ for every $i$.  Then
+$F=\operatorname{id}_{\Z}$, whose finite graph is not a De Bruijn graph.  The
+source also leaves $x_i^{(f)}$ undefined and does not say that $p$ is prime
+despite writing $\Z_p$.  The edition admits the claim only at the exact scope
+above; for prime $d=p$ it is the usual $p$-adic statement.  The source's
+ternary example has multipliers $2,4,4$, all units modulo $3$, and lies inside
+the repaired scope.
+
+\begin{proposition}[rational cycles and primitive $3n+b$ data]
+\label{prop:LDW-rational-cycle-scaling}
+Let $(x_0,\ldots,x_{L-1})$ be a rational $T$-cycle in $\Ztwo$, with cyclic
+indices, and let $b>0$ be a common odd denominator.  Put $n_j=bx_j$.  Then
+$(n_j)$ is an integer cycle of $T^{(3,b)}$, and
+\begin{equation}
+\label{eq:LDW-rational-scaling}
+ T(x_j)=\frac1bT^{(3,b)}(n_j).
+\end{equation}
+Conversely every such integer cycle scales to a rational $T$-cycle.  The
+resulting bijection is between rational cycles and the equivalence classes
+generated by the scalings
+\begin{equation}
+\label{eq:LDW-scaling-equivalence}
+ (b,(n_j))\sim(cb,(cn_j))
+ \qquad(c\in\Npos\text{ odd}),
+\end{equation}
+or, equivalently, their unique representatives with $b>0$ and
+$\gcd(b,n_0,\ldots,n_{L-1})=1$.  For a rational $T$-cycle this primitive
+$b$ is automatically coprime to $3$.
+\end{proposition}
+
+\begin{proof}
+Multiplication by odd $b$ preserves parity in $\Ztwo$.  On an even phase,
+$bT(x_j)=n_j/2$.  On an odd phase,
+$bT(x_j)=(3n_j+b)/2$.  This proves
+\eqref{eq:LDW-rational-scaling} and both cycle directions.  Scaling numerator
+and denominator by a common odd positive integer leaves every $x_j$ fixed.
+Dividing by the common gcd terminates at a primitive representative, and any
+two primitive positive-denominator representatives of the same rational
+tuple are equal.  If the cycle has return length $L$ and contains $m$ odd
+steps, the fixed-return equation shows that the reduced denominator of every
+phase divides $2^L-3^m$.  Hence their primitive common denominator also
+divides $2^L-3^m$.  If $m\geq1$, this integer is coprime to $3$.  If $m=0$,
+every phase uses $x\mapsto x/2$, so periodicity forces the zero cycle and the
+primitive common denominator is $1$.  Thus it is coprime to $3$ in both
+cases.
+\end{proof}
+
+The source's first, unqualified ``one-to-one'' sentence requires
+\eqref{eq:LDW-scaling-equivalence}: for every odd $b$, the integer cycle
+$\{b,2b\}$ of $T^{(3,b)}$ scales to the same rational cycle $\{1,2\}$.
+Its subsequent phrase ``having denominator $b$'' can instead be read as the
+exact reduced common denominator; on that reading it already selects the
+primitive representative and is correct.  Lagarias's primary treatment
+explicitly retains the raw gcd strata and then defines this primitive layer
+\cite[pp.~39--40]{Lagarias1990}.  The proposition makes both scopes explicit
+without weakening the scaling identity or suppressing the raw scaling
+fibres.
+
+\begin{sourceissue}[remaining prose and hypothesis boundaries]
+\label{issue:LDW-source-boundaries}
+The source introduction describes absence of divergent paths by
+$\lim_kT^k(n)<\infty$, although the $1\leftrightarrow2$ orbit has no limit;
+the boundedness condition is $\sup_kT^k(n)<\infty$.  Source line 79 says
+``for all $n$'' where its fixed-input argument requires ``for all $k$''.
+The rational-periodicity statement in Sections~4 is explicitly a conjecture.
+The average-multiplier discussion and the predicted $5n+1$ components are
+heuristics; no theorem is attributed to either discussion.  Finally, the source's positive-integer
+reformulation through $\frac13\Z\setminus\Z$ depends on earlier cited
+literature and is not enlarged here before that exact dependency is checked.
+\end{sourceissue}
+
+\begin{nonclaim}
+The finite graph theorem, exact path counts, inverse limit, cycle enumeration,
+and generalized unit-gated conjugacy do not characterize
+$Q_3(\Npos)\subset\Ztwo$.  They therefore do not prove that a positive
+integer reaches $1$.  The arithmetic difficulty lies in the embedded subset
+and its labels, not in the existence of the ambient De Bruijn isomorphism.
+\end{nonclaim}

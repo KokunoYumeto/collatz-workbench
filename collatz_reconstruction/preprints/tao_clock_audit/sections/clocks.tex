@@ -1,0 +1,142 @@
+\section{Three clocks and one orbit minimum}\label{sec:clocks}
+
+Write $\N_0=\{0,1,\ldots\}$, $\N_+=\{1,2,\ldots\}$, and
+$\Opos=\{1,3,5,\ldots\}$.  Throughout, logarithms are natural.
+The three maps are
+\[
+ \Col(n)=\begin{cases}3n+1&n\text{ odd},\\ n/2&n\text{ even},\end{cases}
+ \qquad
+ \Short(n)=\begin{cases}(3n+1)/2&n\text{ odd},\\ n/2&n\text{ even},\end{cases}
+\]
+and $\Syr(m)=(3m+1)/2^{\vnu(3m+1)}$ for $m\in\Opos$.
+The first two maps have domain and codomain $\N_+$, and the third has
+domain and codomain $\Opos$.  The map $\Short$ counts one division by two
+per step.  The map $\Syr$ counts one multiplication by three per step.
+Tao makes this distinction in Section~1.2 of \cite{Tao7}; the shortened
+clock also occurs explicitly in Terras and Korec \cite{Terras,Korec}.
+
+For $N=2^a m$ with $m$ odd, define
+\[
+ m_j=\Syr^j(m),\qquad q_j=\vnu(3m_j+1),\qquad
+ Q_0=0,\qquad Q_j=\sum_{i=0}^{j-1}q_i\quad(j\geq1).
+\]
+Every $q_j$ is a positive integer.  For a map $F$ on positive integers,
+write $F_{\min}(n)=\min_{k\geq0}F^k(n)$; the minimum exists by
+well-ordering, regardless of whether the orbit is bounded.
+
+\begin{proposition}[Exact clock conversion]\label{prop:clocks}
+For every $j\in\N_0$,
+\begin{equation}\label{eq:clock}
+ \Short^{a+Q_j}(N)=m_j=\Col^{a+j+Q_j}(N).
+\end{equation}
+The maps $j\mapsto a+Q_j$ and $j\mapsto a+j+Q_j$ are strictly
+increasing bijections onto the respective sets of odd-visit times.
+On these images the inverse maps assign to each odd-visit time its unique
+index $j$ in the displayed equalities.
+Furthermore,
+\begin{equation}\label{eq:min}
+ \Col_{\min}(2^a m)=\Short_{\min}(2^a m)=\Syr_{\min}(m).
+\end{equation}
+\end{proposition}
+\begin{proof}
+The first $a$ iterates under either full-domain map divide by two, reaching
+$m$.  Starting at the full-clock time $a+j+Q_j$, the subsequent segment is
+\[
+ \Col^{a+j+Q_j+r}(N)=2^{q_j-r+1}m_{j+1}
+ \quad(1\leq r\leq q_j+1).
+\]
+It has $q_j+1$ steps.  The shortened segment omits the first even value
+$2^{q_j}m_{j+1}$ and has $q_j$ steps.  All intervening values are even,
+and the terminal value is odd.  Induction proves \eqref{eq:clock} and
+identifies exactly, with no additional visits, the odd-visit times.
+Every deleted value is at least the following odd value, and the initial
+segment is at least $m$.  Deletion therefore preserves the minimum.
+The full sequence can be recovered from $a$ and the indexed odd orbit:
+each $q_j$ is determined by $m_j$ and the displayed segments fill every
+omitted time.  Repeated values on a periodic orbit do not affect this
+indexed reconstruction.
+\end{proof}
+
+For example, the odd orbit beginning at $3$ is $3,5,1,1,\ldots$ with
+initial valuations $1,4,2,\ldots$.  The shortened orbit visits these
+states at times $0,1,5,7,\ldots$, whereas the full orbit visits them at
+$0,2,7,10,\ldots$.  Thus a horizon of $j$ odd returns corresponds to
+$Q_j$ shortened steps and $j+Q_j$ full steps.
+
+The corresponding change of starting coordinates also changes weights.
+Set
+\[
+ H(X)=\sum_{1\leq n\leq X}\frac1n,\qquad
+ H_o(X)=\sum_{\substack{1\leq m\leq X\\m\text{ odd}}}\frac1m,
+\]
+with either sum zero when its range is empty.  Integral comparison gives
+$H(X)=\log X+O(1)$ and $H_o(X)=\frac12\log X+O(1)$ as $X\to\infty$.
+
+\begin{proposition}[Dyadic weight transport]\label{prop:dyadic}
+The map $(a,m)\mapsto2^a m$ is a bijection
+$\N_0\times\Opos\to\N_+$ with inverse
+$n\mapsto(\vnu(n),n/2^{\vnu(n)})$.
+For every $A\subseteq\Opos$, $a\in\N_0$, and $X\geq1$,
+\begin{equation}\label{eq:weight}
+ \sum_{\substack{n\leq X\\n\in2^aA}}\frac1n
+ =2^{-a}\sum_{\substack{m\leq X/2^a\\m\in A}}\frac1m.
+\end{equation}
+Consequently the stratum $\vnu(n)=a$ has logarithmic density
+$2^{-a-1}$, while
+\begin{equation}\label{eq:dyadic-tail}
+ \sum_{\substack{n\leq X\\\vnu(n)>A_0}}\frac1n
+ =2^{-A_0-1}H(X/2^{A_0+1})\qquad(A_0\in\N_0).
+\end{equation}
+\end{proposition}
+\begin{proof}
+Unique factorization by the largest power of two gives the bijection,
+whose fibres are singletons.  Substitution in the finite sum proves
+\eqref{eq:weight}.  For fixed $a$ its right-hand side with $A=\Opos$ is
+$2^{-a-1}\log X+O_a(1)$.  Division by $H(X)$ proves the density claim.
+The tail consists exactly of multiples of $2^{A_0+1}$; substituting
+$n=2^{A_0+1}r$ proves \eqref{eq:dyadic-tail}.
+\end{proof}
+
+The odd-part projection $\pi(n)=n/2^{\vnu(n)}$ has fibre
+$\{2^a m:a\geq0\}$ over $m$.  Retaining $a$ recovers the starting
+integer; \eqref{eq:clock} supplies the corresponding time change.
+This time change is essential: for example, $\pi(\Col(6))=3$, whereas
+$\Syr(\pi(6))=5$.
+
+There is also a useful comparison at a fixed cutoff.  For an integer
+$X\geq1$, let $\rho_X(n)=1/(nH(X))$ on $1\leq n\leq X$ and let
+$\rho_X^o(m)=1/(mH_o(X))$ on odd $m\leq X$.
+
+\begin{proposition}[Finite-cutoff sampling comparison]\label{prop:sampling}
+The odd-part pushforward obeys
+\[
+ \sup_{E\subseteq\Opos}|(\pi_*\rho_X)(E)-\rho_X^o(E)|
+ \leq\frac{H(X)-H(\lfloor X/2\rfloor)}{H(X)}.
+\]
+In particular its $\ell^1$ distance from $\rho_X^o$ is $O(1/\log X)$
+as $X\to\infty$.  Upper and lower logarithmic densities of
+$\pi^{-1}(E)$ therefore equal the respective relative odd logarithmic
+densities of $E$, whether or not either density exists as a limit.
+\end{proposition}
+\begin{proof}
+For odd $m\leq X$, let $r_m$ be the unique integer with
+$2^{r_m}m\leq X<2^{r_m+1}m$.  The fibre mass is exactly
+$(2-2^{-r_m})/(mH(X))$.  Put
+\[
+ B_E=\sum_{\substack{m\leq X\\m\in E}}\frac1m,
+ \qquad D_E=\sum_{\substack{m\leq X\\m\in E}}\frac{2^{-r_m}}m,
+ \qquad D=D_{\Opos}.
+\]
+The fibre partition gives $H(X)=2H_o(X)-D$; separating the even terms
+also gives $D=H(X)-H(\lfloor X/2\rfloor)$, with $H(0)=0$.
+Writing $q=B_E/H_o(X)$, direct subtraction yields
+\[
+ (\pi_*\rho_X)(E)-\rho_X^o(E)=\frac{qD-D_E}{H(X)}.
+\]
+Since $0\leq q\leq1$ and $0\leq D_E\leq D$, this proves the event
+bound.  The $\ell^1$ distance of probability measures is twice the
+supremum event difference: the positive and negative parts of their
+difference have equal mass.  Finally $D\to\log2$ and $H(X)\sim\log X$.
+The assertions about upper and lower densities follow by taking limsups
+and liminfs in the finite bound.
+\end{proof}

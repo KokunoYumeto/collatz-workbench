@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "record_type": "local_build_package_and_visual_QA_receipt",
+  "id": "AFFINE-SIGNED-NECKLACE-PACKAGE-VISUAL-20260905",
+  "recorded_utc": "2026-09-04T23:47:05Z",
+  "status": "PASS",
+  "scope": "Local companion and critical-reader closure for the signed fixed-content necklace reconstruction, before canonical Overleaf synchronization.",
+  "source_revision": {
+    "companion_chapter": {
+      "path": "research_companion/chapters/04_affine_packets_parity_necklaces_and_residue_automata.tex",
+      "bytes": 36741,
+      "sha256": "f5a25459b6f0088d14158426b6ca6085c021b5722c972a495bcd2ece7887663e"
+    },
+    "critical_chapter": {
+      "path": "tex/chapters/06_affine_packet_source_audit.tex",
+      "bytes": 24084,
+      "sha256": "8a4de14fddc13259bb6144866a9924ec9fa58b37477786e0f0a0b789188d91db"
+    },
+    "finite_certificate": {
+      "path": "research_companion/certificates/affine_signed_necklace_checks.py",
+      "bytes": 8159,
+      "sha256": "8e51437eb64c5c9cee6601d6fe654383302a3ee3d1430c52981ec9b773c29c97",
+      "status": "PASS",
+      "Lean_launched": false
+    },
+    "certificate_execution_receipt": {
+      "path": "research_companion/audit/affine_signed_necklace_checks_20260905.json",
+      "bytes": 3958,
+      "sha256": "2518cb91702a3ea91f8e3e519d9b69d8c31e0bb79c94170a920dbd06cf1e1a94"
+    },
+    "content_reconciliation_audit": {
+      "path": "research_companion/audit/affine_signed_necklace_reconstruction_20260905.json",
+      "bytes": 6768,
+      "sha256": "0ff92a85fe32277c73baad82ee0b381a4a0f52f903d1efa0e491d5e19bcfcb61"
+    }
+  },
+  "builds": {
+    "research_companion": {
+      "root": "research_companion/main.tex",
+      "pdf": "research_companion/output/pdf/collatz_research_companion.pdf",
+      "bytes": 761019,
+      "sha256": "074dcc1be3c5a66f28a8568a725d0a0093583faabff888bac177d24c6360119b",
+      "pages": 59,
+      "page_size": "612 x 792 pt",
+      "log": "tmp/pdfs/act50_reflow_companion/auxiliary/main.log",
+      "log_sha256": "8a909a3b24b4afde7fe86cbbb9c34ab9b9e904825166a2b40d726403c1480597",
+      "errors": 0,
+      "fatal_or_emergency_stops": 0,
+      "undefined_references_or_citations": 0,
+      "overfull_boxes": 0,
+      "underfull_boxes": 2,
+      "font_rows": 24,
+      "all_fonts_embedded_subset_and_unicode": true,
+      "full_MuPDF_parse": "PASS"
+    },
+    "critical_reader": {
+      "root": "tex/main.tex",
+      "pdf": "output/pdf/collatz_working_corpus.pdf",
+      "bytes": 1679876,
+      "sha256": "24fa733fa1ba7a39a371b64d6d679912c2af15f4fc014ff8eadc9ad4aa209899",
+      "pages": 185,
+      "page_size": "612 x 792 pt",
+      "log": "tmp/pdfs/act50_reflow_critical/auxiliary/main.log",
+      "log_sha256": "89cab5a050d7e765495eb0b662964e612b06380ee1639be1ef3a586c29182c0a",
+      "errors": 0,
+      "fatal_or_emergency_stops": 0,
+      "undefined_references_or_citations": 0,
+      "overfull_boxes": 0,
+      "underfull_boxes": 6,
+      "font_rows": 29,
+      "all_fonts_embedded_subset_and_unicode": true,
+      "full_MuPDF_parse": "PASS"
+    }
+  },
+  "portable_package": {
+    "manifest": {
+      "path": "research_companion/MANIFEST.json",
+      "bytes": 3235,
+      "sha256": "bc1ab3bb5ec00432623cb259281c2b25cd6565df10072cf4ef602bb156144828",
+      "manifested_source_files": 18
+    },
+    "validator_stdout": {
+      "path": "research_companion/audit/package_validation/run_20260904T233943Z/validator_stdout.json",
+      "bytes": 8928,
+      "sha256": "d49975c27e2f02d25bbc35f71093881ff61bbaf65b9a3e25925bd13035917de1",
+      "status": "PASS",
+      "tex_files": 7,
+      "labels": 176,
+      "references": 94,
+      "citations": 23,
+      "portable_certificates": 7,
+      "isolated_reproducible_builds": 2
+    },
+    "bounded_runner_receipt": {
+      "path": "research_companion/audit/package_validation/run_20260904T233943Z/watch_receipt.json",
+      "bytes": 10839,
+      "sha256": "8f257f43fd2f706f5fc12028e8f83026612cf5e0357928c2e374955eb10b8da5",
+      "returncode": 0,
+      "termination_reason": null,
+      "process_tree_clear": true,
+      "peak_aggregate_rss_bytes": 228900864,
+      "peak_aggregate_private_bytes": 283963392,
+      "cap_bytes": 5000000000
+    }
+  },
+  "visual_QA": {
+    "method": "The listed pages were rendered at 144 dpi and inspected at original image detail. Every final raster is byte-identical to the corresponding inspected raster.",
+    "research_companion_pages": [2, 44, 45, 46, 57, 58],
+    "critical_reader_pages": [3, 171, 172, 174, 176, 177, 178],
+    "rendered_pages": [
+      {"path": "tmp/pdfs/act50_visual_qa/final/companion/p2.png", "sha256": "8be94706a28fca49ff6de4da7b5f73eaa02efb2cd31a0d9d33418a887cb83664"},
+      {"path": "tmp/pdfs/act50_visual_qa/final/companion/p44.png", "sha256": "54d40d3bfff4aceee785673985553f82e388cc71755d9881549da1818878f586"},
+      {"path": "tmp/pdfs/act50_visual_qa/final/companion/p45.png", "sha256": "00712f5d98b1f802ee366e85e60740882e20dcf3a17acd0a9f59f16b24190617"},
+      {"path": "tmp/pdfs/act50_visual_qa/final/companion/p46.png", "sha256": "c085857b70b47f8743e5717dd40ac4b486496d63cf21cf9fb3815494697ddace"},
+      {"path": "tmp/pdfs/act50_visual_qa/final/companion/p57.png", "sha256": "1518da0bc69e7573fcaad6da1112279af9cedbf8eb83d3e23f7e9723e8c8c386"},
+      {"path": "tmp/pdfs/act50_visual_qa/final/companion/p58.png", "sha256": "1420e237b3e3a70f2875cc99d3431b6a92567f3bd47d005bc42b479b4b16aa0c"},
+      {"path": "tmp/pdfs/act50_visual_qa/final/critical/p3.png", "sha256": "be389c63e85986c4202fcb7a082f7391db4b21d4ac1e8cb600ed8231ddefd46d"},
+      {"path": "tmp/pdfs/act50_visual_qa/final/critical/p171.png", "sha256": "d0d6356f422dbef6c2c8a5d1d3f89d1b66580fdd344001e1d0e79cd57c377456"},
+      {"path": "tmp/pdfs/act50_visual_qa/final/critical/p172.png", "sha256": "f1c101d1849fe52f401a9aa968bc3ba8e51c2bb2dd9e71a93e43271c1acb363d"},
+      {"path": "tmp/pdfs/act50_visual_qa/final/critical/p174.png", "sha256": "6e3e191aa876540ce8cf99225502a521bf81184f1d741fb9f0512b093269cd51"},
+      {"path": "tmp/pdfs/act50_visual_qa/final/critical/p176.png", "sha256": "7d1ff7968fde61864d3281ba70be4ca234e2d8181ea0545b22c7e40084efa3c1"},
+      {"path": "tmp/pdfs/act50_visual_qa/final/critical/p177.png", "sha256": "95177fc35f51fb3d6fc7139850e78dc14c5c847dd51ddb7df701828bba80c3d8"},
+      {"path": "tmp/pdfs/act50_visual_qa/final/critical/p178.png", "sha256": "6f90666cdecf785f73b3aabaca559b45498884cc2a70d33cb82942440870d739"}
+    ],
+    "repairs_from_visual_inspection": [
+      "The finite-strip table was reordered so its left half ends at m=9 and its right half continues monotonically through m=17.",
+      "The signed-necklace certificate locator was split at a directory boundary rather than inside the word certificates."
+    ],
+    "result": "No clipped mathematics, colliding text, malformed formula, incorrect table order, bad path wrap, or page-number/TOC defect remains on the inspected closure."
+  },
+  "remote_sync_complete": false,
+  "canonical_project_id": "6a91f06e408dd545780c660f",
+  "new_project_created": false,
+  "Lean_launched": false,
+  "AGENTS_edits": false
+}

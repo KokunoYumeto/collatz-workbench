@@ -1,0 +1,316 @@
+\section{Exact branch cylinders at a retained presentation modulus}
+
+Piecewise-affine iteration carries three different moduli: the retained
+presentation modulus, a sufficient word-stability modulus, and the least
+period of the actual word cylinder.  They need not coincide.  Keeping all
+three visible gives both the coarse coordinate used in computation and the
+smallest coordinate justified by a selected word.
+
+\begin{definition}[periodic affine branch system]
+\label{def:residue-affine-system}
+Fix $M\ge2$.  Let
+\[
+ \mathbb Z=\coprod_{b\in\mathcal B}X_b
+\]
+be a finite partition in which every $X_b$ is a union of classes modulo
+$M$.  Write $m_b$ for the least positive translation period of $X_b$; thus
+$m_b\mid M$.  Choose $a_b,c_b\in\mathbb Z$ and $d_b\in\mathbb N$ with
+$d_b\mid m_b$, and suppose that
+\[
+ F(x)=\frac{a_bx+c_b}{d_b}\in\mathbb Z\qquad(x\in X_b)
+ \tag{1.1}\label{eq:branch-system}
+\]
+defines a map $F:\mathbb Z\to\mathbb Z$.  Zero slopes are allowed.
+\end{definition}
+
+For a word $w=(b_0,\ldots,b_{\ell-1})$, retain the unreduced integers
+\[
+ A_0=D_0=1,\qquad B_0=0,
+\]
+and define
+\begin{equation}
+ A_{j+1}=a_{b_j}A_j,\qquad
+ D_{j+1}=d_{b_j}D_j,\qquad
+ B_{j+1}=a_{b_j}B_j+c_{b_j}D_j.
+ \label{eq:affine-word-recurrence}
+\end{equation}
+The length-$\ell$ word cylinder is
+\[
+ \mathcal C_w=
+ \{x\in\mathbb Z:F^j(x)\in X_{b_j}\text{ for }0\le j<\ell\}.
+\]
+For $0\le j<\ell$, put
+\begin{equation}
+ \lambda_{j,w}=
+ \frac{m_{b_j}D_j}{\gcd(|A_j|,m_{b_j}D_j)},
+ \qquad
+ \Lambda_w=\operatorname{lcm}_{0\le j<\ell}\lambda_{j,w}.
+ \label{eq:coefficient-stability-modulus}
+\end{equation}
+
+\begin{theorem}[sufficient and least branch-cylinder coordinates]
+\label{thm:general-branch-cylinder}
+For every $x\in\mathcal C_w$ and $0\le j\le\ell$,
+\begin{equation}
+ F^j(x)=\frac{A_jx+B_j}{D_j}.
+ \label{eq:general-affine-word}
+\end{equation}
+The set $\mathcal C_w$ is invariant under translation by $\Lambda_w$, and
+\begin{equation}
+ \Lambda_w\mid\prod_{j=0}^{\ell-1}m_{b_j}\mid M^\ell.
+ \label{eq:stability-divisibility}
+\end{equation}
+
+Let $Q=M^\ell$ and let $R_w\subseteq\mathbb Z/Q\mathbb Z$ be the exact set
+of residues whose lifts lie in $\mathcal C_w$.  Its translation stabilizer
+has the unique form
+\[
+ \{u\in\mathbb Z/Q\mathbb Z:R_w+u=R_w\}
+   =\pi_w\mathbb Z/Q\mathbb Z
+\]
+for a unique divisor $\pi_w\mid Q$.  This $\pi_w$ is the least positive
+translation period of the cylinder, and
+\begin{equation}
+ \pi_w\mid\Lambda_w.
+ \label{eq:least-period-divides-stability}
+\end{equation}
+If $\mathcal C_w\ne\varnothing$, then also
+\begin{equation}
+ \frac{D_\ell}{\gcd(|A_\ell|,D_\ell)}\mid\pi_w.
+ \label{eq:integrality-lower-period}
+\end{equation}
+
+For every occupied component $r+\pi_w\mathbb Z\subseteq\mathcal C_w$,
+\begin{equation}
+ F^\ell(r+\pi_wq)=F^\ell(r)+\kappa_wq,
+ \qquad
+ \kappa_w=\frac{A_\ell\pi_w}{D_\ell}\in\mathbb Z.
+ \label{eq:least-cylinder-coordinate}
+\end{equation}
+If $A_\ell\ne0$, this restriction is a bijection onto
+$F^\ell(r)+\kappa_w\mathbb Z$, with inverse
+\begin{equation}
+ z\longmapsto
+ r+\pi_w\frac{z-F^\ell(r)}{\kappa_w},
+ \label{eq:component-inverse}
+\end{equation}
+defined exactly when $\kappa_w\mid z-F^\ell(r)$.  If $A_\ell=0$, the
+restriction is constant.  Full fibres of $F^\ell$ are unions of these
+component fibres; different components are not presumed disjoint in the
+image.
+\end{theorem}
+
+\begin{proof}
+Induction in \eqref{eq:branch-system} gives
+\eqref{eq:general-affine-word} with the unreduced recurrence
+\eqref{eq:affine-word-recurrence}.  Suppose $x\in\mathcal C_w$ and
+$y-x\in\Lambda_w\mathbb Z$.  If the two inputs have followed $w$ through
+time $j$, then
+\[
+ F^j(y)-F^j(x)=\frac{A_j(y-x)}{D_j}.
+\]
+The definition of $\lambda_{j,w}$ is exactly the divisibility condition
+$m_{b_j}D_j\mid A_j(y-x)$.  Hence the last difference is a multiple of
+$m_{b_j}$, so $F^j(y)$ lies in the same branch $X_{b_j}$.  Induction proves
+that $y\in\mathcal C_w$ and also proves the difference formula at every
+stage.
+
+Since $d_{b_u}\mid m_{b_u}$,
+\[
+ \lambda_{j,w}\mid m_{b_j}D_j
+ \mid\prod_{u=0}^{j}m_{b_u}
+ \mid\prod_{u=0}^{\ell-1}m_{b_u}.
+\]
+Taking the least common multiple proves the first divisibility in
+\eqref{eq:stability-divisibility}; the second follows from $m_b\mid M$.
+Thus both $Q$ and $\Lambda_w$ are periods of $\mathcal C_w$.
+
+Every subgroup of the cyclic group $\mathbb Z/Q\mathbb Z$ is uniquely
+$\pi\mathbb Z/Q\mathbb Z$ for a divisor $\pi$ of $Q$.  Applying this to the
+translation stabilizer defines $\pi_w$.  Since the class of $\Lambda_w$
+belongs to that stabilizer and $\Lambda_w\mid Q$, one has
+$\pi_w\mid\Lambda_w$.  If the cylinder is nonempty, choose
+$x\in\mathcal C_w$.  Both $x$ and $x+\pi_w$ follow $w$, and their integral
+endpoints differ by $A_\ell\pi_w/D_\ell$.  Consequently
+$D_\ell\mid A_\ell\pi_w$, which is equivalent to
+\eqref{eq:integrality-lower-period}.  The same subtraction proves
+\eqref{eq:least-cylinder-coordinate}.  The inverse and fibre statements are
+then the literal solution of the displayed affine equation.
+\end{proof}
+
+\begin{corollary}[the retained $M^\ell$ coordinate]
+\label{cor:retained-cylinder-coordinate}
+If $x\equiv y\pmod{M^\ell}$, then their first $\ell$ branch symbols agree and
+\begin{equation}
+ F^\ell(x)-F^\ell(y)=\frac{A_\ell}{D_\ell}(x-y).
+ \label{eq:general-cylinder-difference}
+\end{equation}
+In particular, for $n\ge0$, $r=n\bmod M^\ell$, and
+$q=(n-r)/M^\ell$,
+\begin{equation}
+ F^\ell(n)=F^\ell(r)+A_\ell\frac{M^\ell}{D_\ell}q.
+ \label{eq:general-cylinder-coordinate}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:general-branch-cylinder} gives
+$\Lambda_w\mid M^\ell$ for the word of either input, so congruence modulo
+$M^\ell$ preserves that word.  Subtraction of
+\eqref{eq:general-affine-word} gives both formulas.
+\end{proof}
+
+\subsection{Exact relation to the generalized-map literature}
+
+When all branch slopes are nonzero, the retained presentation above embeds
+directly into Matthews's common-denominator formalism.  Refine each $X_b$
+into its individual classes $i\pmod M$ and, on a class contained in $X_b$,
+put
+\begin{equation}
+ \mu_i=\frac{M}{d_b}a_b,
+ \qquad
+ \rho_i=-\frac{M}{d_b}c_b.
+ \label{eq:matthews-embedding}
+\end{equation}
+Then $\rho_i\equiv i\mu_i\pmod M$ and
+\[
+ \frac{\mu_i x-\rho_i}{M}=\frac{a_bx+c_b}{d_b}.
+\]
+This is an exact retained-modulus change of presentation, not a minimization
+of the modulus.  Matthews's general affine-iterate formula therefore contains
+the same raw word algebra
+\cite[author-form pp.~2--4, Eq.~(3), Theorems~2.1--2.2]{Matthews2010}.
+Kohl's residue-class-wise affine maps give the corresponding reduced-triple
+language \cite[Definition~1.1 and Remark~1.2]{Kohl2008}.
+
+The stronger literature conclusion that each length-$\ell$ word is one class
+modulo $M^\ell$ requires the unit hypotheses on every retained multiplier.
+The same gate controls Haar preservation and mixing
+\cite[pp.~172--174, Lemmas~3--5 and Corollary~1]{MatthewsWatts1984}.
+Theorem~\ref{thm:general-branch-cylinder} makes no such inference when a
+multiplier is a nonunit.
+
+\subsection{The generalized \texorpdfstring{$5x+1$}{5x+1} map}
+
+Consider Oliveira e Silva's one-branch-per-iterate map
+\begin{equation}
+ C(n)=
+ \begin{cases}
+ n/2,&n\equiv0\pmod2,\\
+ n/3,&n\not\equiv0\pmod2,\ n\equiv0\pmod3,\\
+ 5n+1,&\gcd(n,6)=1.
+ \end{cases}
+ \label{eq:generalized-five-map}
+\end{equation}
+Its three branch sets have least periods $2,6,6$ and branch triples
+$(a,c,d)=(1,0,2),(1,0,3),(5,1,1)$.  At retained modulus $6$, the exact
+Matthews pairs $(\mu_i,\rho_i)$ are
+\begin{equation}
+ (3,0)\ (i=0,2,4),\qquad
+ (2,0)\ (i=3),\qquad
+ (30,-6)\ (i=1,5).
+ \label{eq:five-map-matthews-data}
+\end{equation}
+All retained multipliers are nonunits modulo $6$.
+
+\begin{corollary}[optimal and universal coordinates for a fixed word]
+\label{cor:corrected-six-cylinder}
+Let $w$ be a nonempty length-$\ell$ word for $C$, containing $k_2,k_3,k_5$
+branches of the three respective types, and suppose $\mathcal C_w$ is
+nonempty.  Put
+\[
+ D_w=2^{k_2}3^{k_3},\qquad A_w=5^{k_5}.
+\]
+Then
+\begin{equation}
+ D_w\mid\pi_w\mid\Lambda_w
+ \mid 2^{k_2}6^{k_3+k_5}\mid6^\ell.
+ \label{eq:five-map-period-chain}
+\end{equation}
+On every occupied class $r+\pi_w\mathbb Z$,
+\begin{equation}
+ C^\ell(r+\pi_wq)=C^\ell(r)
+       +5^{k_5}\frac{\pi_w}{D_w}q.
+ \label{eq:optimal-five-map-coordinate}
+\end{equation}
+The universal retained coordinate is obtained by writing
+$n=r_6+6^\ell q$, where $0\le r_6<6^\ell$:
+\begin{equation}
+ C^\ell(n)=C^\ell(r_6)
+       +5^{k_5}\frac{6^\ell}{D_w}q.
+ \label{eq:corrected-six-cylinder}
+\end{equation}
+The representative $r_6$ is canonical modulo $6^\ell$; it need not be the
+canonical remainder modulo $D_w$.
+\end{corollary}
+
+\begin{proof}
+The product of the least branch periods is
+$2^{k_2}6^{k_3+k_5}$, so the upper divisibilities follow from
+Theorem~\ref{thm:general-branch-cylinder}.  Since
+$\gcd(5^{k_5},D_w)=1$, the lower divisibility
+\eqref{eq:integrality-lower-period} is $D_w\mid\pi_w$.  The two coordinate
+formulas are \eqref{eq:least-cylinder-coordinate} and
+\eqref{eq:general-cylinder-coordinate}.
+\end{proof}
+
+\begin{corollary}[inverse enumeration, densities, and coalescence]
+\label{cor:five-map-enumeration}
+Let $r_1,\ldots,r_s$ be the occupied residues modulo $\pi_w$.  Put
+\[
+ z_u=C^\ell(r_u),\qquad
+ \kappa_w=5^{k_5}\pi_w/D_w>0.
+\]
+For $z\in\mathbb Z$, all inputs in $\mathcal C_w$ with endpoint $z$ are
+exactly
+\[
+ r_u+\pi_w\frac{z-z_u}{\kappa_w}
+ \quad(1\le u\le s,\ \kappa_w\mid z-z_u).
+ \tag{1.14}\label{eq:five-map-full-fibre}
+\]
+Each positive input ray has natural density $1/\pi_w$ and each positive
+image ray has natural density $1/\kappa_w$.  These image densities may be
+added only after their intersections have been checked.
+
+More generally, image progressions $z+\kappa\mathbb Z$ and
+$z'+\kappa'\mathbb Z$ meet if and only if
+\begin{equation}
+ \gcd(\kappa,\kappa')\mid z'-z.
+ \label{eq:two-cylinder-crt}
+\end{equation}
+When they meet, the Chinese remainder theorem gives one class modulo
+$\operatorname{lcm}(\kappa,\kappa')$.  Finally, a positive integer $h$ is a
+translation period of the word cylinder if and only if $\pi_w\mid h$.
+\end{corollary}
+
+\begin{proof}
+Formula \eqref{eq:five-map-full-fibre} is the union of the exact component
+inverses \eqref{eq:component-inverse}.  The density assertions are the usual
+counts for one arithmetic progression; no disjointness has been assumed.
+Condition \eqref{eq:two-cylinder-crt} is the exact solvability criterion for
+$z+\kappa q=z'+\kappa'q'$.  The final assertion is the definition of the
+least positive generator of the translation stabilizer.
+\end{proof}
+
+\begin{proposition}[obstruction to denominator-only reduction]
+\label{prop:denominator-obstruction}
+For the map \eqref{eq:generalized-five-map}, no one-step coordinate can choose
+the branch from the canonical remainder modulo the post-selected denominator
+alone.
+\end{proposition}
+
+\begin{proof}
+Take $n=1$.  Its first branch is $5n+1$, whose denominator product is
+$D_1=1$.  The canonical remainder of $1$ modulo $1$ is $0$, but $0$ takes
+the division-by-$2$ branch.  Thus reduction modulo the denominator erases the
+branch symbol in the smallest possible case.  Equivalently, branch selection
+cannot factor through the one-point quotient $\mathbb Z/1\mathbb Z$.
+\end{proof}
+
+\begin{nonclaim}
+The coordinate theorems prove affine transport, exact component fibres, and
+the displayed density facts.  They do not imply boundedness, periodicity, or
+convergence of integer orbits.  In particular, the nonunit data
+\eqref{eq:five-map-matthews-data} do not inherit the singleton-cylinder or
+Haar-mixing conclusions of the Matthews unit theory.
+\end{nonclaim}

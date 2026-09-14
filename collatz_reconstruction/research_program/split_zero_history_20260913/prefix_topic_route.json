@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "topic_id": "COL-SZ-PREFIX-SPECTRAL-20260913",
+  "topic": "Exact fixed-sum Collatz prefix fibres, conditioned geometric laws, and observable-dependent spectral jet order",
+  "workspace": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\research_program\\split_zero_history_20260913",
+  "corpus_entrypoint": "C:\\Users\\LOCAL_USER\\Documents\\Papors\\Chatnotes\\Zeta-Function-Foundation\\config\\literature_index_entrypoint.json",
+  "updated_utc": "2026-09-13T20:22:16.035268+00:00",
+  "mathematical_objects": [
+    "positive compositions",
+    "odd 2-adic cylinders",
+    "finite pushforward kernels",
+    "full Hurwitz zero-cluster jets",
+    "moment functionals"
+  ],
+  "queries": [
+    {
+      "query": "Tao Syracuse geometric",
+      "layer": "all",
+      "index_level": "canonical",
+      "executed_utc": "2026-09-13T20:22:15.835185+00:00",
+      "reason": "Bounded source route for fixed-sum Syracuse paths, support histories, and moment interpolation; returned items remain unread unless specified below.",
+      "result_unit_ids": [
+        "PUBUNIT-808654374124DFA4A51601F4",
+        "PUBUNIT-7B52CC4A159765C800B92B6B",
+        "PUBUNIT-847E4E7212BFCD7A613CA573",
+        "PUBUNIT-004F3DB5D12B4A71C77EDE18",
+        "PUBUNIT-CF4FD708E6C6DE523385FD85",
+        "PUBUNIT-97D73189026FA23112EF826A"
+      ]
+    },
+    {
+      "query": "support idempotent Collatz",
+      "layer": "all",
+      "index_level": "canonical",
+      "executed_utc": "2026-09-13T20:22:15.932514+00:00",
+      "reason": "Bounded source route for fixed-sum Syracuse paths, support histories, and moment interpolation; returned items remain unread unless specified below.",
+      "result_unit_ids": [
+        "PUBUNIT-EA645EF9D91525773AE734E7",
+        "PUBUNIT-FCB50451862A8187FF224479",
+        "PUBUNIT-345EE1E989E76BB083EBDC77",
+        "PUBUNIT-8A00E7C0015143702B5E3DEF",
+        "PUBUNIT-51763BE38221E8D3F8C38CDA",
+        "PUBUNIT-18374D385050E65BC493AC53"
+      ]
+    },
+    {
+      "query": "finite moments interpolation",
+      "layer": "all",
+      "index_level": "canonical",
+      "executed_utc": "2026-09-13T20:22:16.035258+00:00",
+      "reason": "Bounded source route for fixed-sum Syracuse paths, support histories, and moment interpolation; returned items remain unread unless specified below.",
+      "result_unit_ids": [
+        "PUBUNIT-885918C60B785915511C3CB4",
+        "PUBUNIT-F7C70BC416446CDE9C313C02",
+        "PUBUNIT-BAE3FCB2683D9343048D7E02",
+        "PUBUNIT-D7A365B74D8E7FFC9D79765B",
+        "PUBUNIT-13EA4BE3DB262AC361CB979C",
+        "PUBUNIT-E0661231942E50E8501710AC"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_class": "research_literature",
+      "publication_unit_or_source_id": "PUBUNIT-847E4E7212BFCD7A613CA573",
+      "exact_locators": [
+        "C:/Users/LOCAL_USER/Documents/arxiv_latex/library/collatz_reconstruction/latex/1909.03562v7/collatz.tex:225-278"
+      ],
+      "relevance_edge": "Exact product geometric law and affine valuation convention. The conditioned finite-packet law is proved directly; no stronger orbit theorem is attributed to Tao.",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-13T20:22:16.035268+00:00",
+        "relevant_sections": [
+          "Syracuse formulation; geometric random variable; distribution of n-Syracuse valuation"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "225-278"
+      ],
+      "dependencies": [],
+      "notes": "SHA256 bfbc39432d4084a276416cb019a592003c868fa32f18e2f90028ac325ae5c19d"
+    },
+    {
+      "source_class": "local_unpublished_work",
+      "publication_unit_or_source_id": "PUBUNIT-004F3DB5D12B4A71C77EDE18",
+      "exact_locators": [
+        "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/automata/v4/collatz_dyadic_dilation_note.tex:526-559",
+        "C:/Users/LOCAL_USER/Documents/Papors/Chatnotes/automata/v4/collatz_dyadic_dilation_note.tex:1149-1181"
+      ],
+      "relevance_edge": "Local notes already contain the composition count and geometric one-letter Gibbs law. Conditioning on length and exponent sum is checked without importing broader BCM interpretations.",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-13T20:22:16.035268+00:00",
+        "relevant_sections": [
+          "Packet cardinalities",
+          "Exact Gibbs law"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "526-559",
+        "1149-1181"
+      ],
+      "dependencies": [],
+      "notes": "SHA256 e50dd23d85c7f5b2e6c434d9035bc5d0f29360a048965865d228f87939b290fa"
+    },
+    {
+      "source_class": "local_unpublished_work",
+      "publication_unit_or_source_id": "SZ-HURWITZ-H1-H13",
+      "exact_locators": [
+        "C:/Users/LOCAL_USER/Documents/math/output/split_zero_rh_tandem_2026-09-12/tex/historical_hurwitz_jets.tex:23-61",
+        "C:/Users/LOCAL_USER/Documents/math/output/split_zero_rh_tandem_2026-09-12/tex/historical_hurwitz_jets.tex:231-301"
+      ],
+      "relevance_edge": "Equality of actual full-cluster jets is equivalent to equality of input moments at any nontrivial zero, with multiplicity retained. Current continuation source postdates the frozen index.",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-13T20:22:16.035268+00:00",
+        "relevant_sections": [
+          "Compact Hurwitz inputs",
+          "Complete zero cluster"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "23-61",
+        "231-301"
+      ],
+      "dependencies": [],
+      "notes": "SHA256 4bcc72299daaac98ec41c40b38e31a763fedab86aa4c457e8e847e5ecb43bd7c"
+    },
+    {
+      "source_class": "local_unpublished_work",
+      "publication_unit_or_source_id": "COL-ODD-CYLINDER-COMPANION",
+      "exact_locators": [
+        "C:/Users/LOCAL_USER/Documents/Erdos Strauss and related/collatz_reconstruction/research_companion/chapters/02_two_adic_survivor_coding_and_exact_interface_boundaries.tex:24-182"
+      ],
+      "relevance_edge": "Exact odd 2-adic cylinders, prefix inclusions, exceptional countable set. Supplies arithmetic residue coordinates and Haar cylinder weights.",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-13T20:22:16.035268+00:00",
+        "relevant_sections": [
+          "Partial odd map",
+          "Exact residue cylinders"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "24-182"
+      ],
+      "dependencies": [],
+      "notes": "SHA256 41f185ba53af531eb8bfa96b7ac45aca34307276bda45521bd05d049a4ba8d50"
+    },
+    {
+      "source_class": "research_literature",
+      "publication_unit_or_source_id": "DLMF-3-3-I",
+      "exact_locators": [
+        "https://dlmf.nist.gov/3.3.E1",
+        "https://dlmf.nist.gov/3.3.E2",
+        "https://dlmf.nist.gov/3.3.E3_1"
+      ],
+      "relevance_edge": "Classical Lagrange and barycentric formulas used to prove exact observable-dependent jet order.",
+      "toc_or_section_check": {
+        "status": "checked",
+        "checked_utc": "2026-09-13T20:22:16.035268+00:00",
+        "relevant_sections": [
+          "3.3(i) Lagrange interpolation"
+        ]
+      },
+      "reading_status": "fully_content_read_for_current_dependency",
+      "content_loci_read": [
+        "3.3.1-3.3.3_2"
+      ],
+      "dependencies": []
+    }
+  ],
+  "unresolved_dependencies": [],
+  "refresh_reason": "Continue the user-requested Split Zero application: replace a generic prefix-map example by exact fixed-sum fibres and prove the minimal jet order for individual arithmetic observables.",
+  "anti_loop_note": "No index rebuild or whole-library sweep. No priority claim. Generic query hits are not admitted as source theorems."
+}

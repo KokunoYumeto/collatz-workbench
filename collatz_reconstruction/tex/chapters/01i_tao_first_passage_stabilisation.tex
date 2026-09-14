@@ -1,0 +1,598 @@
+\subsection{The first-passage gate: Tao's Proposition~1.11}
+
+The controlling statement is Proposition~1.11 at v7 source
+lines~316--335, and the deduction from Propositions~1.9 and~1.14 occupies
+v7 lines~649--925 \cite{Tao2026v7}.  The corresponding comparison loci are
+v5 lines~643--919 and journal physical pages~18--27.  The three
+manifestations have the same substantive modular, logarithmic-mass, and
+integer-window calculations.  ArXiv v7 corrects the v5/journal interchange
+of passage time and passage location in the converse implication (v5
+lines~789--791; journal physical page~23; v7 lines~795--797).  No conclusion
+below is transferred silently between versions.
+
+\begin{sourceissue}[local defects at the Proposition~1.11 edge]
+\label{sourceissue:Tao-Prop111-edge}
+The opening heuristic at v7 lines~651--652 writes
+\(\operatorname{Pass}_x\) where the quantity being approximated is the time
+\(T_x\), and its numerator requires \(\log(N_y/x)\).  Line~689 has
+\(1.9n\) where the fixed descent time is \(1.9n_0\).  The periodic-orbit
+aside at line~699 requires a representative of \(-\mathbf m\) modulo the
+least positive period, or a period multiple at least \(\mathbf m\); that
+aside is not used here.
+
+The additive endpoint deletion printed at lines~759--762 does not produce a
+time margin of order \((\log x)^{0.8}\).  It has already been replaced by the
+multiplicative deletion in
+Proposition~\ref{prop:Tao-v7-endpoint-buffer}.  The unsigned lower comparison,
+the event equality, the undefined \(m\) in the tuple length, the fixed-
+\(M\) affine equality, the two previous-iterate coefficients, the malformed
+progression estimate, the nonuniform weakened \(c_n\)-majorant, and the
+iid-versus-actual Chernoff citation have already been repaired in
+Proposition~\ref{prop:Tao-v7-Prop52-cn-repair}.  This subsection supplies the
+remaining modular law, descent exponent, affine inverse, integer count,
+normalization cancellation, and arbitrary-event-to-total-variation arrows.
+\end{sourceissue}
+
+Throughout this subsection retain the source constants and floors
+\begin{equation}
+\label{eq:Tao-Prop111-parameters}
+ \alpha=\frac{1001}{1000},\qquad
+ L=\log x,\qquad \lambda=\log(4/3),\qquad
+ n_0=\left\lfloor\frac{L}{10\log2}\right\rfloor,
+ \qquad m_0=\left\lfloor\frac{\alpha-1}{100}L\right\rfloor.
+\end{equation}
+For \(j\in\{1,2\}\), put \(y_j=x^{\alpha^j}\) and
+\begin{equation}
+\label{eq:Tao-Prop111-support-normalizer}
+ \mathcal R_{y_j}=(2\mathbb N+1)\cap[y_j,y_j^\alpha],
+ \qquad
+ H_{y_j}=\sum_{N\in\mathcal R_{y_j}}\frac1N,
+ \qquad
+ \mathbb P(\mathbf N_{y_j}=N)=\frac{1}{H_{y_j}N}.
+\end{equation}
+Real endpoints cause no ambiguity: the intersection is with the integer set
+\(2\mathbb N+1\).
+
+\begin{lemma}[progression mass with real endpoints]
+\label{lem:Tao-Prop111-progression-mass}
+Let \(1\le A<B\), let \(q\ge2\) be even, put
+\(J=\log(B/A)\), and fix an odd residue \(r\pmod q\).  Then
+\begin{equation}
+\label{eq:Tao-Prop111-one-progression}
+ \left|
+  \sum_{\substack{A\le N\le B\\N\equiv r\ (\mathrm{mod}\ q)}}\frac1N
+  -\frac Jq
+ \right|\le\frac1A.
+\end{equation}
+If \(W_r\) denotes the sum in
+\eqref{eq:Tao-Prop111-one-progression} and
+\(H=\sum_{r\ {\rm odd}\ (q)}W_r\), then
+\begin{equation}
+\label{eq:Tao-Prop111-total-progression-error}
+ \sum_{r\ {\rm odd}\ (q)}\left|W_r-\frac Jq\right|
+ \le\frac q{2A},
+ \qquad
+ \left|H-\frac J2\right|\le\frac q{2A}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If the progression contributes points
+\(t_0<t_1<\cdots<t_s\), consecutive points differ by \(q\).  Monotonicity
+of \(1/t\) gives
+\[
+ \sum_{i=0}^s\frac1{t_i}
+ \le \frac1{t_0}+\frac1q\int_{t_0}^{t_s}\frac{dt}{t}
+ \le \frac1A+\frac Jq.
+\]
+It also gives
+\[
+ \sum_{i=0}^s\frac1{t_i}
+ \ge \frac1q\int_{t_0}^{t_s+q}\frac{dt}{t}
+ \ge \frac Jq-\frac1q\log\frac{t_0}{A}
+ \ge \frac Jq-\frac1A,
+\]
+because \(0\le t_0-A<q\) and
+\(\log(t_0/A)\le(t_0-A)/A\).  If the progression contributes no point,
+then \(B-A<q\), whence \(J/q<(B-A)/(qA)<1/A\).  This proves
+\eqref{eq:Tao-Prop111-one-progression}.  There are exactly \(q/2\) odd
+residue classes.  Summing and using the triangle inequality proves
+\eqref{eq:Tao-Prop111-total-progression-error}.
+\end{proof}
+
+\begin{proposition}[exact modular input to Proposition~1.9]
+\label{prop:Tao-Prop111-modular-input}
+Let \(q=2^{3n_0}\).  Uniformly for \(j=1,2\),
+\begin{equation}
+\label{eq:Tao-Prop111-modular-law}
+ d_{\mathrm{TV}}\!\left(
+  \mathbf N_{y_j}\bmod q,
+  \operatorname{Unif}((2\mathbb Z+1)/q\mathbb Z)
+ \right)\ll q^{-1}=2^{-3n_0},
+\end{equation}
+where total variation is the source's unhalved \(\ell^1\) distance.  Hence
+Proposition~\ref{prop:Tao-v7-Prop19-valuation-law}, with
+\[
+ n=n_0,\qquad n'=3n_0,\qquad c_0=1,
+\]
+gives
+\begin{equation}
+\label{eq:Tao-Prop111-valuations}
+ d_{\mathrm{TV}}\!\left(
+  \vec a^{(n_0)}(\mathbf N_{y_j}),
+  \operatorname{Geom}(2)^{n_0}
+ \right)\ll x^{-c_2}
+\end{equation}
+for one absolute \(c_2>0\).
+\end{proposition}
+
+\begin{proof}
+Set \(A=y_j\), \(B=y_j^\alpha\), and
+\(J=(\alpha-1)\log y_j\).  For every odd \(r\pmod q\), let \(W_r\) be
+the sum in Lemma~\ref{lem:Tao-Prop111-progression-mass}.  For sufficiently
+large \(x\), \(AJ\ge2q\), and therefore
+\(H_{y_j}\ge J/4\).  Since uniform measure assigns mass \(2/q\), not
+\(1/q\), to each of the \(q/2\) odd classes,
+\begin{align}
+ d_{\mathrm{TV}}
+ &=\sum_{r\ {\rm odd}\ (q)}
+   \left|\frac{W_r}{H_{y_j}}-\frac2q\right| \notag\\
+ &\le \frac1{H_{y_j}}
+ \left(
+  \sum_{r\ {\rm odd}\ (q)}\left|W_r-\frac Jq\right|
+  +\left|H_{y_j}-\frac J2\right|
+ \right)
+ \le\frac{2q}{AJ-q}\le\frac{4q}{AJ}.
+\label{eq:Tao-Prop111-modular-L1-bound}
+\end{align}
+The floor in \(n_0\) is retained exactly:
+\[
+ \frac{x^{3/10}}8\le q\le x^{3/10}.
+\]
+Consequently
+\[
+ \frac{4q}{AJ}
+ \le q^{-1}
+ \frac{4x^{0.6-\alpha}}
+      {(\alpha-1)\alpha L}
+ =o(q^{-1}),
+\]
+uniformly for \(j=1,2\).  This proves
+\eqref{eq:Tao-Prop111-modular-law} with room to spare.  The size hypothesis
+in Proposition~\ref{prop:Tao-v7-Prop19-valuation-law} is the exact equality
+\(3n_0=(2+c_0)n_0\).  Finally,
+\[
+ 2^{-c_1n_0}\le2^{c_1}x^{-c_1/10},
+\]
+so its conclusion has the form \eqref{eq:Tao-Prop111-valuations} despite the
+floor.
+\end{proof}
+
+\begin{proposition}[the finite-time descent estimate]
+\label{prop:Tao-Prop111-finite-descent}
+There is an absolute \(c_3>0\) such that, uniformly for \(j=1,2\),
+\begin{equation}
+\label{eq:Tao-Prop111-failure}
+ \mathbb P\bigl(T_x(\mathbf N_{y_j})=+\infty\bigr)\ll x^{-c_3}.
+\end{equation}
+More precisely, outside an event of probability \(O(x^{-c_3})\),
+\(T_x(\mathbf N_{y_j})\le n_0\).
+\end{proposition}
+
+\begin{proof}
+For iid \(G_1,\ldots,G_{n_0}\sim\operatorname{Geom}(2)\), the lower-tail
+Chernoff bound applied to
+\[
+ \mathbb E e^{-tG_1}=\frac{e^{-t}}{2-e^{-t}}
+\]
+gives
+\(\mathbb P(G_1+\cdots+G_{n_0}\le1.9n_0)\le e^{-\gamma n_0}\)
+for an absolute \(\gamma>0\).  For example, take
+\(e^{-t}=18/19\); the base is
+\(0.9(19/18)^{1.9}<1\).  Combining this with
+\eqref{eq:Tao-Prop111-valuations} gives
+\begin{equation}
+\label{eq:Tao-Prop111-low-sum}
+ \mathbb P\!\left(
+  |\vec a^{(n_0)}(\mathbf N_{y_j})|\le1.9n_0
+ \right)\ll x^{-c_3}
+\end{equation}
+after decreasing \(c_3\) if necessary.
+
+On the complementary event, the exact affine formula and
+\(0\le F_{n_0}\le3^{n_0}\) give
+\begin{equation}
+\label{eq:Tao-Prop111-descent-bound}
+ \operatorname{Syr}^{n_0}(\mathbf N_{y_j})
+ \le 3^{n_0}2^{-1.9n_0}x^{\alpha^3}+3^{n_0}.
+\end{equation}
+The numerical exponent check is strict, not heuristic.  Put
+\[
+ \beta_1=\alpha^3+
+  \frac{\log3-1.9\log2}{10\log2},
+ \qquad
+ \beta_2=\frac{\log3}{10\log2}.
+\]
+Rational interval arithmetic gives
+\begin{equation}
+\label{eq:Tao-Prop111-exponents}
+ \beta_1<0.972<1,
+ \qquad \beta_2<0.159<1.
+\end{equation}
+One elementary certificate for these decimal inequalities uses
+\[
+ \log u=2\sum_{k=0}^{M}\frac{z^{2k+1}}{2k+1}+R_M,
+ \quad z=\frac{u-1}{u+1},
+ \quad 0<R_M<\frac{2z^{2M+3}}{(2M+3)(1-z^2)},
+\]
+with \(u=2,3\), \(z=1/3,1/2\), and \(M=20\); every endpoint is rational.
+Since
+\(n_0\ge L/(10\log2)-1\) and
+\(\log3-1.9\log2<0\), the first term on the right side of
+\eqref{eq:Tao-Prop111-descent-bound} is at most
+\[
+ e^{1.9\log2-\log3}x^{\beta_1}.
+\]
+The positive coefficient in the second term instead uses
+\(n_0\le L/(10\log2)\), and that term is at most \(x^{\beta_2}\).
+Thus
+\(e^{1.9\log2-\log3}x^{\beta_1}+x^{\beta_2}<x\) for all sufficiently
+large \(x\).
+Thus passage occurs by time \(n_0\), and
+\eqref{eq:Tao-Prop111-low-sum} proves the claim.
+\end{proof}
+
+For the passage-location part, let \(E\subseteq(2\mathbb N+1)\cap[1,x]\).
+For either choice of \(y=y_j\), retain the source interval
+\begin{equation}
+\label{eq:Tao-Prop111-Iy}
+ I_y=\left[
+  \frac{\log(y/x)}\lambda+L^{4/5},
+  \frac{\log(y^\alpha/x)}\lambda-L^{4/5}
+ \right]
+\end{equation}
+and the source set, independent of \(y\),
+\begin{equation}
+\label{eq:Tao-Prop111-Eprime}
+\begin{split}
+ E'=\{M\in2\mathbb N+1:\;&T_x(M)=m_0,
+ \ \operatorname{Pass}_x(M)\in E,\\
+ &e^{-L^{7/10}}(4/3)^{m_0}x
+ \le M\le
+ e^{L^{7/10}}(4/3)^{m_0}x\}.
+\end{split}
+\end{equation}
+For an integer \(n\in I_y\), put \(r=n-m_0\).  For sufficiently large
+\(x\), every such \(n\) satisfies
+\begin{equation}
+\label{eq:Tao-Prop111-range}
+ m_0\le r\le n_0-m_0,
+ \qquad 1\le m_0\le r.
+\end{equation}
+
+\begin{proposition}[the singleton affine inverse]
+\label{prop:Tao-Prop111-affine-inverse}
+Let \(n\in I_y\cap\mathbb Z\), \(r=n-m_0\), and
+\(\vec a=(a_1,\ldots,a_r)\in\mathcal A^{(r)}\).  Put
+\[
+ A_0=0,
+ \qquad A_k=a_1+\cdots+a_k,
+ \qquad A=A_r,
+ \qquad
+ C_r(\vec a)=\sum_{i=1}^r3^{r-i}2^{A_{i-1}},
+ \qquad F_r(\vec a)=2^{-A}C_r(\vec a).
+\]
+For \(M\in E'\), the equation
+\(\operatorname{Aff}_{\vec a}(N)=M\) has at most one solution, namely
+\begin{equation}
+\label{eq:Tao-Prop111-Phi}
+ \Phi_{r}(\vec a,M)
+ =\frac{2^AM-C_r(\vec a)}{3^r}
+ =2^A\frac{M-F_r(\vec a)}{3^r}.
+\end{equation}
+It has a solution in \(\mathcal R_y\) if and only if
+\begin{equation}
+\label{eq:Tao-Prop111-congruence}
+ M\equiv F_r(\vec a)\pmod{3^r}
+\end{equation}
+in \(\mathbb Z[1/2]/3^r\mathbb Z[1/2]\).  When this congruence holds,
+\(\Phi_r(\vec a,M)\) is a positive odd integer in \([y,y^\alpha]\),
+\[
+ \vec a^{(r)}(\Phi_r(\vec a,M))=\vec a,
+ \qquad
+ \operatorname{Syr}^r(\Phi_r(\vec a,M))=M,
+\]
+and its logarithmic point mass is
+\begin{equation}
+\label{eq:Tao-Prop111-point-mass}
+ \mathbb P\!\left(
+  \operatorname{Aff}_{\vec a}(\mathbf N_y)=M
+ \right)
+ =\frac{1+O(x^{-c_4})}{\frac{\alpha-1}{2}\log y}
+  \frac{2^{-A}3^r}{M}
+\end{equation}
+for one absolute \(c_4>0\), uniformly in all displayed data.
+\end{proposition}
+
+\begin{proof}
+The affine identity
+\[
+ \operatorname{Aff}_{\vec a}(N)=\frac{3^rN+C_r(\vec a)}{2^A}
+\]
+proves uniqueness and forces \eqref{eq:Tao-Prop111-Phi}.  Congruence
+\eqref{eq:Tao-Prop111-congruence} is necessary.  Conversely, it makes
+\eqref{eq:Tao-Prop111-Phi} an integer: \(M-F_r(\vec a)\) belongs to
+\(3^r\mathbb Z[1/2]\), and its denominator divides \(2^A\).  The integer is
+odd because \(C_r(\vec a)\) is odd, \(2^AM\) is even, and \(3^r\) is odd.
+
+It remains to prove positivity and the interval bounds, rather than infer
+them from presentation.  Since \(r\le n_0\),
+\[
+ 0\le F_r(\vec a)\le3^r\le x^{0.159}
+\]
+by \eqref{eq:Tao-Prop111-exponents}.  From \eqref{eq:Tao-Prop111-Eprime},
+\(M\ge e^{-L^{7/10}}x\).  Since
+\(L^{7/10}\le(141/1000)L\) for all sufficiently large \(L\), the preceding
+two bounds give
+\begin{equation}
+\label{eq:Tao-Prop111-offset-ratio}
+ 0\le\frac{F_r(\vec a)}M\le x^{-7/10}<\frac12.
+\end{equation}
+Write \(A=2r+\delta\) and
+\(M=x(4/3)^{m_0}e^\eta\).  Membership in
+\(\mathcal A^{(r)}\) and \(E'\) gives
+\(|\delta|<L^{3/5}\) and \(|\eta|\le L^{7/10}\).  Hence
+\begin{equation}
+\label{eq:Tao-Prop111-Phi-log}
+ \log\Phi_r(\vec a,M)
+ =L+n\lambda+\delta\log2+\eta+
+   \log\left(1-\frac{F_r(\vec a)}M\right).
+\end{equation}
+The final three terms have absolute value at most \(2L^{7/10}\) for all
+sufficiently large \(x\).  The endpoints of \(I_y\) give margins
+\(\lambda L^{4/5}\), and
+\(2L^{7/10}<\lambda L^{4/5}\) eventually.  Thus
+\(\log y\le\log\Phi_r\le\log y^\alpha\), proving both positivity and the
+claimed range.  Substitution proves
+\(\operatorname{Aff}_{\vec a}(\Phi_r)=M\); the exact valuation-prefix lemma,
+Lemma~\ref{lem:Tao-Prop19-residue-fibre}, then proves the valuation and
+iterate identities.
+
+Finally, Lemma~\ref{lem:Tao-Prop111-progression-mass} with modulus \(2\)
+gives
+\begin{equation}
+\label{eq:Tao-Prop111-harmonic-normalizer}
+ \left|H_y-\frac{\alpha-1}{2}\log y\right|\le\frac1y,
+ \qquad
+ H_y=\frac{\alpha-1}{2}\log y\,(1+O(x^{-1})).
+\end{equation}
+Using \eqref{eq:Tao-Prop111-Phi} exactly,
+\[
+ \frac1{\Phi_r(\vec a,M)}
+ =\frac{2^{-A}3^r}{M-F_r(\vec a)}.
+\]
+Equations~\eqref{eq:Tao-Prop111-offset-ratio} and
+\eqref{eq:Tao-Prop111-harmonic-normalizer} now give
+\eqref{eq:Tao-Prop111-point-mass}.
+\end{proof}
+
+The last proposition is an exact morphism, not merely a pointwise formula.
+Define
+\[
+ \mathcal D_{r,y}=
+ \{(\vec a,M)\in\mathcal A^{(r)}\times E':
+       M\equiv F_r(\vec a)\pmod{3^r}\}
+\]
+and
+\[
+ \mathcal X_{r,y}=
+ \{N\in\mathcal R_y:
+   \vec a^{(r)}(N)\in\mathcal A^{(r)},\
+   \operatorname{Syr}^r(N)\in E'\}.
+\]
+Then
+\begin{equation}
+\label{eq:Tao-Prop111-bijection}
+ \Theta_{r,y}:\mathcal X_{r,y}\longrightarrow\mathcal D_{r,y},
+ \qquad
+ N\longmapsto
+ \bigl(\vec a^{(r)}(N),\operatorname{Syr}^r(N)\bigr)
+\end{equation}
+is a bijection with inverse \(\Phi_r\).  Both compositions are identities;
+every fibre is a singleton; its set-theoretic kernel pair is the diagonal;
+and no coordinate or higher binary digit is discarded.  This is the exact
+map underlying source lines~808--827.
+
+\begin{lemma}[the exact integer time-window count]
+\label{lem:Tao-Prop111-window-count}
+For \(y_j=x^{\alpha^j}\), let the endpoints of \(I_{y_j}\) be
+\[
+ a_j=\frac{\alpha^j-1}{\lambda}L+L^{4/5},
+ \qquad
+ b_j=\frac{\alpha^{j+1}-1}{\lambda}L-L^{4/5}.
+\]
+For sufficiently large \(x\), the interval is nonempty and
+\begin{equation}
+\label{eq:Tao-Prop111-exact-count}
+\begin{split}
+ \#(I_{y_j}\cap\mathbb Z)
+ &=\lfloor b_j\rfloor-\lceil a_j\rceil+1\\
+ &=\frac{\alpha-1}{\lambda}\log y_j-2L^{4/5}+\varepsilon_j,
+ \qquad -1<\varepsilon_j\le1.
+\end{split}
+\end{equation}
+Consequently
+\begin{equation}
+\label{eq:Tao-Prop111-normalization-cancellation}
+ \frac{\#(I_{y_j}\cap\mathbb Z)}
+      {\frac{\alpha-1}{2}\log y_j}
+ =\frac2\lambda
+  -\frac4{(\alpha-1)\alpha^j}L^{-1/5}
+  +O(L^{-1})
+ =\frac2\lambda+O(L^{-1/5}).
+\end{equation}
+The leading term is independent of \(j\); the displayed finite-
+\(x\) buffer correction is not.
+\end{lemma}
+
+\begin{proof}
+The first line is the exact count of integer points in a closed real
+interval.  Subtracting the endpoints gives the second line with
+\[
+ \varepsilon_j=(\lfloor b_j\rfloor-b_j)
+ +(a_j-\lceil a_j\rceil)+1,
+ \qquad -1<\varepsilon_j\le1.
+\]
+Since \(\log y_j=\alpha^jL\), division proves
+\eqref{eq:Tao-Prop111-normalization-cancellation}.  It also shows why the
+source's variable exponent \(c\) must be decreased to at most \(1/5\) at
+this step.  The lower endpoint satisfies \(a_j\ge2m_0\), and
+\[
+ \frac{\alpha^3-1}{\lambda}<0.010439
+ <0.144269<\frac1{10\log2};
+\]
+therefore \(I_y\subseteq[2m_0,n_0]\) for all sufficiently large \(x\),
+which also proves \eqref{eq:Tao-Prop111-range} with every floor retained.
+\end{proof}
+
+\begin{theorem}[Tao Proposition~1.11, exact reconstructed edge]
+\label{thm:Tao-v7-Prop111-first-passage}
+Let \(\alpha=1.001\), and let \(\mathbf N_y\) have the logarithmic law on
+the odd integers in \([y,y^\alpha]\).  There is an absolute \(c>0\) such
+that, for all sufficiently large \(x\),
+\begin{equation}
+\label{eq:Tao-Prop111-theorem-failure}
+ \mathbb P\bigl(T_x(\mathbf N_y)=+\infty\bigr)\ll x^{-c}
+ \qquad (y=x^\alpha,x^{\alpha^2})
+\end{equation}
+and
+\begin{equation}
+\label{eq:Tao-Prop111-theorem-TV}
+ d_{\mathrm{TV}}\!\left(
+  \operatorname{Pass}_x(\mathbf N_{x^\alpha}),
+  \operatorname{Pass}_x(\mathbf N_{x^{\alpha^2}})
+ \right)\ll L^{-c}
+\end{equation}
+in the source's unhalved convention.
+\end{theorem}
+
+\begin{proof}
+Equation~\eqref{eq:Tao-Prop111-theorem-failure} is
+Proposition~\ref{prop:Tao-Prop111-finite-descent}.  Fix an arbitrary
+\(E\subseteq(2\mathbb N+1)\cap[1,x]\), form \(E'\) by
+\eqref{eq:Tao-Prop111-Eprime}, and define
+\begin{equation}
+\label{eq:Tao-Prop111-ZE}
+ Z_E=\sum_{M\in E'}\frac{3^{m_0}}M
+ \mathbb P\!\left(
+  \operatorname{Syrac}(\mathbb Z/3^{m_0}\mathbb Z)
+  \equiv M\pmod{3^{m_0}}
+ \right).
+\end{equation}
+This quantity depends on \(x\) and \(E\), but not on whether
+\(y=x^\alpha\) or \(y=x^{\alpha^2}\).
+
+Proposition~\ref{prop:Tao-v7-endpoint-buffer} places the first-passage time
+in \(I_y\) outside an \(O(L^{-1/5})\) event.  The exact event equality and
+signed pre-passage estimate in
+Proposition~\ref{prop:Tao-v7-Prop52-cn-repair}, together with the bijection
+\eqref{eq:Tao-Prop111-bijection} and point mass
+\eqref{eq:Tao-Prop111-point-mass}, give
+\begin{equation}
+\label{eq:Tao-Prop111-pre-mixing}
+\begin{split}
+ \mathbb P(\operatorname{Pass}_x(\mathbf N_y)\in E)
+ ={}&\frac{1+O(x^{-c_4})}
+          {\frac{\alpha-1}{2}\log y}
+ \sum_{n\in I_y\cap\mathbb Z} A_{n,E}
+ +O(L^{-c_5}),
+\end{split}
+\end{equation}
+where, with \(r=n-m_0\),
+\[
+ A_{n,E}=3^r
+ \sum_{\vec a\in\mathcal A^{(r)}}2^{-|\vec a|}
+ \sum_{\substack{M\in E'\\M\equiv F_r(\vec a)\ (3^r)}}\frac1M.
+\]
+All sums are over their displayed discrete sets; no conditional law or
+coupling is being inserted.
+
+The uniform \(c_n\)-bound in
+Proposition~\ref{prop:Tao-v7-Prop52-cn-repair} permits deletion of the bad
+iid path tube.  Proposition~\ref{prop:Tao-v7-Fourier-to-mixing}, whose
+dependency branch is closed in
+Corollary~\ref{cor:Tao-v7-fine-scale-branch}, then replaces the law at level
+\(r\) by the exact uniform lift of its level-\(m_0\) projection.  The finite
+pairing is
+\begin{equation}
+\label{eq:Tao-Prop111-exact-collapse}
+\begin{split}
+ &\sum_{X\bmod3^r}
+ \left(3^r\!\sum_{\substack{M\in E'\\M\equiv X\ (3^r)}}\frac1M\right)
+ 3^{m_0-r}
+ \mathbb P\!\left(
+  \operatorname{Syrac}(\mathbb Z/3^{m_0}\mathbb Z)
+  \equiv X\pmod{3^{m_0}}
+ \right)\\
+ &\hspace{35mm}=Z_E.
+\end{split}
+\end{equation}
+Indeed, for each \(M\) there is exactly one residue
+\(X=M\pmod{3^r}\), and \(3^r3^{m_0-r}=3^{m_0}\).  Thus, choosing the
+arbitrary mixing exponent large enough before summing over the
+\(O(L)\) possible times,
+\begin{equation}
+\label{eq:Tao-Prop111-uniform-An}
+ A_{n,E}=Z_E+O(L^{-c_6})
+\end{equation}
+uniformly for both \(y\)'s and all \(n\in I_y\cap\mathbb Z\).  Moreover
+\(A_{n,E}=O(1)\) by the uniform \(c_n\)-bound, so
+\eqref{eq:Tao-Prop111-uniform-An} gives \(Z_E=O(1)\) without circular use
+of the probability conclusion.
+
+Substitute \eqref{eq:Tao-Prop111-uniform-An} into
+\eqref{eq:Tao-Prop111-pre-mixing}.  The \(O(L)\) summation factor is
+cancelled by the denominator of size \(L\); after decreasing the common
+positive exponent,
+\[
+ \mathbb P(\operatorname{Pass}_x(\mathbf N_y)\in E)
+ =\frac{\#(I_y\cap\mathbb Z)}
+        {\frac{\alpha-1}{2}\log y}Z_E+O(L^{-c}).
+\]
+Lemma~\ref{lem:Tao-Prop111-window-count} therefore yields the uniform,
+\(y\)-independent main term
+\begin{equation}
+\label{eq:Tao-Prop111-arbitrary-event}
+ \mathbb P(\operatorname{Pass}_x(\mathbf N_y)\in E)
+ =\frac{2}{\lambda}Z_E+O(L^{-c}).
+\end{equation}
+Taking the difference of \eqref{eq:Tao-Prop111-arbitrary-event} for the two
+values of \(y\), and then the supremum over all subsets \(E\) of the common
+state space \((2\mathbb N+1)\cap[1,x]\), gives an \(O(L^{-c})\) event
+distance.  The convention \(\operatorname{Pass}_x(N)=1\) when
+\(T_x(N)=+\infty\) keeps both laws in this same state space.  Finally the
+source inequality
+\[
+ d_{\mathrm{TV}}(P,Q)
+ \le2\sup_E|P(E)-Q(E)|
+\]
+proves \eqref{eq:Tao-Prop111-theorem-TV} in the unhalved convention.
+\end{proof}
+
+\begin{nonclaim}
+Theorem~\ref{thm:Tao-v7-Prop111-first-passage} proves exactly the
+first-passage stabilisation proposition and closes the edge
+\[
+ \text{Proposition~1.9}+\text{Proposition~1.14}
+ \Longrightarrow\text{Proposition~1.11}.
+\]
+It does not assert exact residue uniformity, independence of actual valuation
+coordinates, arbitrary-\(y\) uniformity, natural-density transport, a coupling
+of the two passage locations, convergence to \(1\), exclusion of divergent or
+periodic orbits, or a fixed universal orbit bound.  The finite-
+\(x\) time-window correction depends on \(y\), even though its leading
+normalization does not.  The exact later implications to Theorem~3.1,
+Theorem~1.6, and Theorem~1.3, including their source defects and repaired
+morphisms, are proved in the next subsection; they had not yet been proved at
+the checkpoint represented by this subsection.
+\end{nonclaim}

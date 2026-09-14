@@ -1,0 +1,528 @@
+\section{Dirichlet series, Perron inversion, and the contour programme}
+\label{sec:contour-mellin}
+
+The paper designated Part I.5 moves the fixed-point numerator
+\[
+ (1-M_q(n))x-\chi_q(n)
+\]
+into the coefficients of a Dirichlet series.  Perron inversion can then
+recover that numerator by a vertical contour integral.  The coefficient
+extraction is sound; the advertised equivalence with every periodic point
+inherits the shortest-word defect isolated in
+\cref{eq:padded-cycle-code}.
+
+\subsection{The three Dirichlet series}
+
+Let $q$ be an odd prime and $x\in\C$.  With $M_q(n)$ defined using the
+shortest binary word of $n\geq1$, put
+\begin{align}
+ \zeta_{M_q}(s)&=\sum_{n=1}^{\infty}\frac{M_q(n)}{n^s},
+ \label{eq:zeta-Mq}\\
+ \zeta_{\chi_q}(s)&=\sum_{n=1}^{\infty}\frac{\chi_q(n)}{n^s},
+ \label{eq:zeta-chiq}\\
+ F_q(s,x)&=\sum_{n=1}^{\infty}
+ \frac{(1-M_q(n))x-\chi_q(n)}{n^s}\notag\\
+ &=\bigl(\zeta(s)-\zeta_{M_q}(s)\bigr)x-
+   \zeta_{\chi_q}(s).
+ \label{eq:Fq}
+\end{align}
+The source writes
+\begin{equation}
+\label{eq:sigma-q}
+ \sigma_q=\log_2\left(\frac{q+1}{2}\right)
+\end{equation}
+for the common absolute-convergence threshold obtained from its summatory
+estimates.  All contour identities below are first asserted on a line
+$\Re s=c>\sigma_q$.
+
+\subsection{Dyadic summation}
+
+The digit recursions imply exact block sums.  Write
+\[
+ A_N=\sum_{0\leq n<2^N}\chi_q(n),
+ \qquad
+ B_N=\sum_{0\leq n<2^N}M_q(n),
+\]
+with $M_q(0)=1$.  Separating even and odd indices gives
+\begin{align}
+ A_{N+1}&=\frac{q+1}{2}A_N+2^{N-1},\label{eq:A-recurrence}\\
+ B_{N+1}&=\frac{q+1}{2}B_N+\frac12.
+ \label{eq:B-recurrence}
+\end{align}
+Solving these recurrences yields
+\begin{align}
+ A_N&=
+ \begin{cases}
+ N2^N/4,&q=3,\\[2mm]
+ \displaystyle\frac{2^N}{q-3}
+ \left[\left(\frac{q+1}{4}\right)^N-1\right],&q\ne3,
+ \end{cases}
+ \label{eq:chi-block-sum}\\
+ B_N&=\frac{q\left(\frac{q+1}{2}\right)^N-1}{q-1}.
+ \label{eq:M-block-sum}
+\end{align}
+
+\begin{proof}
+For \cref{eq:A-recurrence}, use
+\[
+ \chi_q(2m)+\chi_q(2m+1)
+ =\frac{q+1}{2}\chi_q(m)+\frac12
+\]
+and sum over $0\leq m<2^N$.  For \cref{eq:B-recurrence}, the usual
+$M_q(2m)=M_q(m)/2$ fails only at $m=0$, because the shortest-word convention
+sets $M_q(0)=1$.  Hence the even sum is
+$1+\frac12(B_N-1)$ and the odd sum is $qB_N/2$.  The initial values are
+$A_0=0$ and $B_0=1$; elementary solution of the recurrences gives the two
+closed forms.
+\end{proof}
+
+These identities explain the appearance of $\sigma_q$.  A guaranteed
+absolute-convergence half-plane for a linear combination is the intersection
+of the component half-planes and therefore uses the maximum of their
+abscissae, not the source's printed ``minimum.''  The exact abscissa of a
+particular linear combination can be smaller when leading terms cancel, so
+no equality of abscissae is inferred for arbitrary complex $x$.
+
+\subsection{Perron extraction of one coefficient}
+
+Let
+\[
+ a_n(x)=(1-M_q(n))x-\chi_q(n).
+\]
+For $0<a<1$, $n\geq3$, and $c>\sigma_q$, the Perron difference kernel
+isolates $a_n(x)$:
+\begin{theorem}[coefficient contour identity]
+\label{thm:coefficient-contour}
+Under the preceding hypotheses,
+\begin{equation}
+\label{eq:coefficient-contour}
+ a_n(x)=\operatorname{PV}\left\{
+ \frac1{2\pi i}\int_{c-i\infty}^{c+i\infty}
+ \frac{(n+a)^s-(n+a-1)^s}{s}F_q(s,x)\,ds
+ \right\}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For a Dirichlet series $F(s)=\sum_{m\geq1}a_mm^{-s}$ absolutely convergent
+on $\Re s=c$, Perron's formula gives
+\[
+ \operatorname{PV}\frac1{2\pi i}
+ \int_{c-i\infty}^{c+i\infty}F(s)X^s\frac{ds}{s}
+ =\sum_{m<X}a_m
+\]
+when $X$ is not an integer.  Apply this with $X=n+a$ and with
+$X=n+a-1$.  Since $0<a<1$, the two index sets differ only by $m=n$.
+Subtracting gives \cref{eq:coefficient-contour}.
+\end{proof}
+
+Consequently the integral vanishes exactly when
+\begin{equation}
+\label{eq:contour-fixed-numerator}
+ (1-M_q(n))x=\chi_q(n).
+\end{equation}
+This is a coefficient theorem.  Its dynamical content is precisely whatever
+fixed-point correspondence is valid for the shortest word representing
+$n$.
+
+\begin{status}[the printed contour ``weak Collatz'' theorem]
+The source states that periodicity is equivalent to the vanishing of
+\cref{eq:coefficient-contour} for some $n\geq3$, with separate exclusions:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item for $q=3$, $x\in\Z\setminus\{-1,0,1\}$;
+\item for $q=5$, $x\in\Z\setminus\{-1,0\}$;
+\item for $q\geq7$, apparently $x\in\Z\setminus\{0\}$, although the
+      printed set is malformed.
+\end{enumerate}
+Each part needs its own contour line $c>\sigma_3$, $c>\sigma_5$, or
+$c>\sigma_q$; the outer quantifiers in the printed theorem do not state
+this correctly.
+\end{status}
+
+\begin{sourceissue}[the contour equivalence misses padded cycle words]
+The claimed biconditional is not valid for every listed periodic phase.
+For example, $2$ is a periodic point of $T_3$ and is not among the source's
+exclusions.  If a shortest word fixed $2$, branch correctness would force it
+to be a whole number of repetitions of the reversed itinerary $(1,0)$.
+Every such word has a high terminal zero and therefore is not shortest.
+Equivalently, $2=\chi_3(B_{2,2}(1))$ uses the padded length-two block, while
+no shortest positive block yields \cref{eq:contour-fixed-numerator} with
+$x=2$.  Thus \cref{thm:coefficient-contour} is canonical, but the full
+periodicity equivalence is retained only as a source claim.  A repaired
+phase-sensitive contour formulation must index the block length separately
+from its ordinary digit sum.
+\end{sourceissue}
+
+\subsection{Corrected functional equations for \texorpdfstring{$f_q$ and
+$F_q$}{fq and Fq}}
+
+Extend the coefficient sequence by $a_0(x)=0$, and set
+\begin{equation}
+ \label{eq:Fq-C}
+ C_q(x)=\frac{(q-2)x+1}{2}.
+\end{equation}
+The digit recursions determine both the ordinary and Dirichlet generating
+functions without an analytic-continuation premise.
+
+\begin{proposition}[coefficient and ordinary generating-function recursions]
+\label{prop:Fq-coefficient-recursion}
+For $n\geq1$ and $n\geq0$, respectively,
+\begin{equation}
+ \label{eq:Fq-coefficient-recursion}
+ a_{2n}(x)=\frac{a_n(x)+x}{2},
+ \qquad
+ a_{2n+1}(x)=\frac q2a_n(x)-C_q(x).
+\end{equation}
+Consequently, in the formal power-series ring $\C[[z]]$, and analytically
+for $|z|<1$,
+\begin{equation}
+ \label{eq:fq-corrected-functional-equation}
+ f_q(z,x):=\sum_{n=1}^{\infty}a_n(x)z^n
+ =\frac{qz+1}{2}f_q(z^2,x)
+  +\frac{xz^2-((q-2)x+1)z}{2(1-z^2)}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $n\geq1$, the shortest-word convention and
+\cref{eq:chi-even,eq:chi-odd} give
+\[
+ M_q(2n)=\frac12M_q(n),\qquad
+ M_q(2n+1)=\frac q2M_q(n),
+\]
+and the odd identities remain valid at $n=0$ because $M_q(0)=1$ and
+$\chi_q(0)=a_0(x)=0$.  Substitution in
+$a_n(x)=(1-M_q(n))x-\chi_q(n)$ proves
+\cref{eq:Fq-coefficient-recursion}.  Splitting the formal series into its
+positive even indices and its nonnegative odd indices gives
+\begin{align*}
+ \sum_{n\geq1}a_{2n}(x)z^{2n}
+ &=\frac12f_q(z^2,x)+\frac{xz^2}{2(1-z^2)},\\
+ \sum_{n\geq0}a_{2n+1}(x)z^{2n+1}
+ &=\frac{qz}{2}f_q(z^2,x)-\frac{C_q(x)z}{1-z^2}.
+\end{align*}
+Their sum is \cref{eq:fq-corrected-functional-equation}.  If the shortest
+word of $n$ has length $L$, then
+$M_q(n)\leq(q/2)^L$ and
+$\chi_q(n)\leq\frac12\sum_{j=0}^{L-1}(q/2)^j$.
+Thus $a_n(x)$ has polynomial growth in $n$, so the formal identity
+converges absolutely for $|z|<1$.
+\end{proof}
+
+\begin{theorem}[corrected Dirichlet functional equation]
+\label{thm:Fq-corrected-functional-equation}
+Let $q$ be an odd prime, $x\in\C$, and
+$\Re s>\sigma_q$.  Then every series below is absolutely convergent and
+\begin{equation}
+\label{eq:Fq-functional-equation}
+\begin{split}
+ F_q(s,x)={}&
+ \frac{((q-1)x+1)-2^s((q-2)x+1)}
+      {2(2^s-2^{\sigma_q})}\,\zeta(s)\\
+ &+\frac{q/2}{2^s-2^{\sigma_q}}
+ \sum_{m=1}^{\infty}\left(-\frac12\right)^m
+ \binom{s+m-1}{m}F_q(s+m,x).
+\end{split}
+\end{equation}
+The series over $m$ converges locally uniformly in that half-plane.
+\end{theorem}
+
+\begin{proof}
+Put $\alpha=(q+1)/2=2^{\sigma_q}$.  Positivity of $M_q(n)$ and
+$\chi_q(n)$, together with \cref{eq:chi-block-sum,eq:M-block-sum}, gives
+\[
+ \sum_{1\leq n<2^N}|a_n(x)|
+ \leq |x|\bigl(2^N+B_N\bigr)+A_N.
+\]
+For $q>3$ the right side is $O_{q,x}(\alpha^N)$; for $q=3$ it is
+$O_x(N2^N)$.  Dyadic subdivision therefore proves absolute convergence of
+$F_q(s,x)$ for $\Re s>\sigma_q$.
+
+Split the Dirichlet series by parity.  The even recursion gives
+\[
+ \sum_{n\geq1}\frac{a_{2n}(x)}{(2n)^s}
+ =2^{-s-1}\bigl(F_q(s,x)+x\zeta(s)\bigr).
+\]
+For the odd part, the binomial series at $1/(2n)$ gives
+\begin{equation}
+ \label{eq:Fq-odd-shift-expansion}
+ \sum_{n\geq1}\frac{a_n(x)}{(2n+1)^s}
+ =2^{-s}\sum_{m=0}^{\infty}\left(-\frac12\right)^m
+   \binom{s+m-1}{m}F_q(s+m,x).
+\end{equation}
+To justify the interchange exactly, let $K$ be a compact subset of
+$\Re s>\sigma_q$, put
+$u=\inf_{s\in K}\Re s$, and choose
+$R\geq\max(1,\sup_{s\in K}|s|)$.  From the product formula,
+\begin{align*}
+ \left|\binom{s+m-1}{m}\right|
+ &\leq R\prod_{j=1}^{m-1}\left(1+\frac{R-1}{j+1}\right)\\
+ &\leq Re^{R-1}(m+1)^{R-1}.
+\end{align*}
+Consequently the absolute value of the double series is bounded uniformly
+on $K$ by
+\[
+ Re^{R-1}\left(\sum_{m\geq0}2^{-m}(m+1)^{R-1}\right)
+ \left(\sum_{n\geq1}|a_n(x)|n^{-u}\right)<\infty.
+\]
+This proves both interchanges and local uniformity.  Since
+\[
+ \sum_{n\geq0}(2n+1)^{-s}=(1-2^{-s})\zeta(s)
+\]
+the odd recursion in \cref{eq:Fq-coefficient-recursion} and
+\cref{eq:Fq-odd-shift-expansion} yield
+\begin{align*}
+ F_q(s,x)={}&2^{-s-1}\bigl(F_q(s,x)+x\zeta(s)\bigr)\\
+ &+\frac q2\,2^{-s}\sum_{m=0}^{\infty}
+ \left(-\frac12\right)^m\binom{s+m-1}{m}F_q(s+m,x)\\
+ &-C_q(x)(1-2^{-s})\zeta(s).
+\end{align*}
+Move the $m=0$ and even copies of $F_q(s,x)$ to the left, multiply by
+$2^s$, and use
+$x/2+C_q(x)=((q-1)x+1)/2$.  This is
+\cref{eq:Fq-functional-equation}.
+\end{proof}
+
+\begin{sourceissue}[the printed functional equation is false for
+\texorpdfstring{$x\ne0$}{x not equal to zero}]
+The source substitutes $z/(1-z)$ where the first even correction in
+$f_q(z^2,x)$ is $z^2/(1-z^2)$.  Its resulting Dirichlet equation has
+zeta coefficient
+\[
+ -\frac{2^s((q-1)x+1)-1}{2(2^s-2^{\sigma_q})}.
+\]
+As real $s\to+\infty$, the left side tends to
+$a_1(x)=-((q-2)x+1)/2$.  The shifted series is bounded in this limit:
+the binomial identity and the estimate
+$F_q(s+m,x)=a_1(x)+O(2^{-s-m})$ give
+\[
+ \sum_{m\geq1}\left(-\frac12\right)^m
+ \binom{s+m-1}{m}F_q(s+m,x)
+ =a_1(x)\bigl((2/3)^s-1\bigr)+O((2/3)^s).
+\]
+The printed right side therefore tends to $-((q-1)x+1)/2$.  Thus the
+printed identity fails for every $x\ne0$;
+\cref{eq:Fq-functional-equation} is the corrected identity.  No
+continuation or singularity claim is inherited from the false equation.
+A fresh continuation proof from the corrected equation is given below.
+The denominator lattice alone still does not establish an actual pole,
+because the numerator can vanish.
+The coefficient contour identity is unaffected: it uses only the original
+absolutely convergent Dirichlet series on $\Re s>\sigma_q$.
+\end{sourceissue}
+
+\subsection{Meromorphic continuation from the corrected equation}
+
+Part I.5 uses its shift equation to continue $F_q$, and the public Web II
+exposition also reports a meromorphic continuation with a leftward
+half-lattice of singularities
+\cite{SiegelPartIHalf,SiegelWebII}.  Because the printed equation is false,
+the conclusion must be rebuilt from \cref{eq:Fq-functional-equation}.
+Put
+\begin{align}
+ b_m(s)&=\left(-\frac12\right)^m\binom{s+m-1}{m},\label{eq:Fq-bm}\\
+ A_q(s,x)&=\frac{((q-1)x+1)-2^s((q-2)x+1)}2,\label{eq:Fq-Aqx}\\
+ S_q(s,x)&=\sum_{m=1}^{\infty}b_m(s)F_q(s+m,x).
+ \label{eq:Fq-Sqx}
+\end{align}
+
+\begin{lemma}[normal convergence of the shifted tail]
+\label{lem:Fq-normal-shifted-tail}
+For every compact $K\subset\C$, there are constants $C_K,A_K>0$ such
+that
+\[
+ |b_m(s)|\leq C_K2^{-m}(m+1)^{A_K}
+ \qquad(s\in K,\ m\geq1).
+\]
+If $m$ is large enough that $s+m$ lies in the original
+absolute-convergence half-plane for every $s\in K$, then
+\[
+ F_q(s+m,x)=a_1(x)+O_K(2^{-m}).
+\]
+Hence the tail of \cref{eq:Fq-Sqx} converges normally on $K$.
+\end{lemma}
+
+\begin{proof}
+Take $R\geq\max(1,\sup_{s\in K}|s|)$.  The product estimate used in the
+proof of \cref{thm:Fq-corrected-functional-equation} gives
+\[
+ \left|\binom{s+m-1}{m}\right|
+ \leq Re^{R-1}(m+1)^{R-1},
+\]
+which proves the first assertion.  Choose $r>\sigma_q$ and put
+$D_r=\sum_{n\geq1}|a_n(x)|n^{-r}<\infty$.  If
+$u=\inf_{s\in K}\Re s$ and $m+u\geq r$, then
+\begin{align*}
+ |F_q(s+m,x)-a_1(x)|
+ &\leq\sum_{n\geq2}|a_n(x)|n^{-\Re s-m}\\
+ &\leq D_r2^{r-u-m}.
+\end{align*}
+Multiplication by the first bound leaves a convergent exponential--
+polynomial majorant, uniformly on $K$.
+\end{proof}
+
+\begin{theorem}[global meromorphic continuation]
+\label{thm:Fq-global-meromorphic-continuation}
+For every odd prime $q$ and every $x\in\C$, the Dirichlet series
+$F_q(\,\cdot\,,x)$ has a unique meromorphic continuation to $\C$.
+If
+\[
+ \Lambda_q=\left\{\sigma_q+\frac{2\pi i k}{\log 2}:k\in\Z\right\},
+\]
+then its poles are contained in the explicitly generated candidate set
+\begin{equation}
+ \label{eq:Fq-candidate-poles}
+ \operatorname{Poles}F_q(\,\cdot\,,x)\subseteq\mathcal P_q,
+ \qquad
+ \mathcal P_q=
+ \{\lambda-n:\lambda\in\Lambda_q,\ n\in\N_0\}
+ \cup\{1-n:n\in\N_0\}.
+\end{equation}
+The inclusion need not be equality: cancellation can make a candidate
+singularity removable.
+\end{theorem}
+
+\begin{proof}
+For $r\in\N_0$, set
+\[
+ H_r=\{s\in\C:\Re s>\sigma_q-r\}.
+\]
+The defining series is holomorphic on $H_0$.  Suppose inductively that it
+has been continued meromorphically to $H_r$.  If $s\in H_{r+1}$, then
+$s+m\in H_r$ for every $m\geq1$.  On a compact subset of $H_{r+1}$,
+only finitely many low-shift terms in \cref{eq:Fq-Sqx} can meet poles of
+the existing continuation; by
+\cref{lem:Fq-normal-shifted-tail}, the remaining holomorphic tail
+converges normally.  Thus $S_q(\,\cdot\,,x)$ is meromorphic on
+$H_{r+1}$, and
+\begin{equation}
+ \label{eq:Fq-continuation-recursion}
+ F_q(s,x)=\frac{A_q(s,x)\zeta(s)+(q/2)S_q(s,x)}
+                  {2^s-2^{\sigma_q}}
+\end{equation}
+defines a meromorphic extension to $H_{r+1}$.  It agrees with the existing
+function on $H_r$, so the identity theorem gives uniqueness on the overlap.
+Since $\bigcup_{r\geq0}H_r=\C$, induction proves the continuation.
+
+At the first step, new candidates can occur only at the pole $1$ of
+$\zeta$ and at the zero set $\Lambda_q$ of the denominator.  Each later
+shifted term replaces an existing candidate $p$ by $p-m$, $m\geq1$,
+while division introduces $\Lambda_q$ again.  Induction therefore gives
+the containing set in \cref{eq:Fq-candidate-poles}; it does not supply
+nonvanishing of the corresponding numerators.
+\end{proof}
+
+\subsection{Corrected principal parts for \texorpdfstring{$q=3$}{q=3}}
+
+Write $L=\log 2$ and use $S_3$ as in \cref{eq:Fq-Sqx}.  Then
+\begin{equation}
+ \label{eq:F3-corrected-continuation}
+ F_3(s,x)=\frac{
+ \frac12\bigl((2x+1)-2^s(x+1)\bigr)\zeta(s)
+ +(3/2)S_3(s,x)}{2^s-2}.
+\end{equation}
+
+\begin{proposition}[the corrected $q=3$ principal parts]
+\label{prop:F3-corrected-principal-parts}
+Let $x\in\C$ and let $\gamma$ be Euler's constant.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item At $s=1$, $F_3$ has the genuine double-pole expansion
+\begin{equation}
+ \label{eq:F3-principal-part-one}
+ F_3(s,x)=-\frac1{4L}(s-1)^{-2}
+ +\left(
+   \frac{3S_3(1,x)}{4L}-\frac x2-\frac38-\frac{\gamma}{4L}
+  \right)(s-1)^{-1}+O(1).
+\end{equation}
+\item If $s_k=1+2\pi ik/L$ with $k\in\Z\setminus\{0\}$, then
+$s_k$ is at most a simple pole and
+\begin{equation}
+ \label{eq:F3-nonreal-lattice-residue}
+ \operatorname{Res}_{s=s_k}F_3(s,x)
+ =\frac{3S_3(s_k,x)-\zeta(s_k)}{4L}.
+\end{equation}
+It is removable precisely when $3S_3(s_k,x)=\zeta(s_k)$.
+\item The point $s=0$ is a genuine simple pole and
+\begin{equation}
+ \label{eq:F3-zero-residue}
+ \operatorname{Res}_{s=0}F_3(s,x)=-\frac3{16L}.
+\end{equation}
+\item Every $-k$, $k\in\N_0$, is at most a simple pole.  With
+$R_k=\operatorname{Res}_{s=-k}F_3(s,x)$, where $R_k=0$ for a removable
+candidate,
+\begin{equation}
+ \label{eq:F3-negative-residue-recurrence}
+ R_k=\frac{3}{16L(1-2^{k+1})(k+1)}
+ +\frac{3}{2(1-2^{k+1})}
+  \sum_{j=0}^{k-1}2^j\binom{k}{j}R_j.
+\end{equation}
+The sum is empty for $k=0$.  In particular, every $R_k$ is independent
+of $x$; the recurrence alone does not prove $R_k\ne0$ for all $k$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Near $s=1$, put $t=s-1$.  Since $S_3$ is holomorphic there,
+\begin{align*}
+ \frac{(2x+1)-2^s(x+1)}2
+   &=-\frac12-(x+1)Lt+O(t^2),\\
+ 2^s-2&=2Lt+L^2t^2+O(t^3),\\
+ \zeta(s)&=t^{-1}+\gamma+O(t).
+\end{align*}
+Division gives \cref{eq:F3-principal-part-one}; its nonzero
+$(s-1)^{-2}$ coefficient proves that the pole is genuinely double.
+
+At $s_k$ with $k\ne0$, both $S_3$ and $\zeta$ are holomorphic,
+the denominator has derivative $2L$, and the coefficient of $\zeta$ in
+the numerator equals $-1/2$.  This proves
+\cref{eq:F3-nonreal-lattice-residue} and the stated removability
+criterion.
+
+At $s=0$, only the $m=1$ term of $S_3$ can inherit the double pole at
+$1$ to order one:
+\[
+ -\frac{s}{2}F_3(s+1,x)=\frac1{8L}s^{-1}+O(1).
+\]
+All $m\geq2$ terms are holomorphic there.  Since $2^0-2=-1$,
+\cref{eq:F3-zero-residue} follows.
+
+Finally, fix $k\geq0$ and put $s=-k+t$.  Inductively assume the
+candidates $0,-1,\ldots,-(k-1)$ are at most simple.  For
+$1\leq m\leq k$,
+\[
+ \left(-\frac12\right)^m\binom{-k+m-1}{m}
+ =2^{-m}\binom{k}{m};
+\]
+these terms contribute
+$\sum_{j=0}^{k-1}2^{-(k-j)}\binom{k}{j}R_j$ to the residue of $S_3$.
+For $m=k+1$,
+\[
+ \left(-\frac12\right)^{k+1}\binom{s+k}{k+1}
+ =-\frac{t}{2^{k+1}(k+1)}+O(t^2),
+\]
+and \cref{eq:F3-principal-part-one} shows that its contribution is
+$1/(2^{k+3}(k+1)L)$.  Terms $m\geq k+2$ are holomorphic.  Therefore
+\[
+ \operatorname{Res}_{s=-k}S_3(s,x)
+ =\frac1{2^{k+3}(k+1)L}
+  +\sum_{j=0}^{k-1}2^{-(k-j)}\binom{k}{j}R_j.
+\]
+The zeta term in \cref{eq:F3-corrected-continuation} is holomorphic at
+$-k$, and
+$2^{-k}-2=(1-2^{k+1})/2^k$.  Multiplication by
+$(3/2)/(2^{-k}-2)$ yields
+\cref{eq:F3-negative-residue-recurrence} and completes the induction.
+\end{proof}
+
+\begin{sourceissue}[the printed $q=3$ pole claims and recurrence]
+The source's $q=3$ residues inherit the false $x$-term and therefore
+contain spurious factors depending on $4x+1$.  Its headline assertion that
+every nonreal lattice point and every nonpositive integer is an actual pole
+does not prove noncancellation.  Moreover, the recurrence displayed in the
+corollary is undefined at its stated initial index and conflicts with the
+formula reached in its proof.  This edition retains the genuine double pole
+at $1$, the genuine simple pole at $0$, the exact Laurent coefficients, the
+candidate-pole containment, and the corrected recurrence
+\cref{eq:F3-negative-residue-recurrence}; it does not turn unproved
+noncancellation into a pole classification.
+\end{sourceissue}

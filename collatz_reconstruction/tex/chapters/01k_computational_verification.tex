@@ -1,0 +1,637 @@
+\subsection{Computational verification: exact coordinates, certificates, and chronology}
+\label{subsec:computational-verification}
+
+The computational literature does not use one unnamed Collatz map.  In this
+subsection
+\[
+ U(n)=
+ \begin{cases}
+  3n+1,&n\text{ odd},\\
+  n/2,&n\text{ even},
+ \end{cases}
+ \qquad
+ T(n)=
+ \begin{cases}
+  (3n+1)/2,&n\text{ odd},\\
+  n/2,&n\text{ even}
+ \end{cases}
+\]
+denote respectively the unshortened and shortened maps.  One odd $T$-step is
+two $U$-steps and one even $T$-step is one $U$-step.  Barina also uses the
+auxiliary chart
+\[
+ T_1(n)=
+ \begin{cases}
+  (n+1)/2,&n\text{ odd},\\
+  3n/2,&n\text{ even}.
+ \end{cases}
+\]
+Its exact branchwise bridges are
+\[
+ T(n)=
+ \begin{cases}T_1(n+1)-1,&n\text{ odd},\\ n/2,&n\text{ even},\end{cases}
+ \quad
+ T_1(n)=
+ \begin{cases}T(n-1)+1,&n\text{ odd},\\3n/2,&n\text{ even}.
+ \end{cases}
+\]
+They move the additive term between coordinate charts; they do not identify
+the maps or their clocks.  In particular, the 2025 paper's page-4
+\emph{trajectory on $n+1$}, $(7,4,6,9,5,3,2)$, is the shifted-coordinate
+presentation associated with the trajectory from $12$, not the $T$-orbit
+of $13$ \cite[pp.~2, 4]{Barina2025}.
+
+\begin{proposition}[Barina's block map, with fibres]
+\label{prop:Barina-block-map}
+For $x\in\Npos$, put
+\[
+ \alpha=\nu_2(x+1),\qquad u=\frac{x+1}{2^\alpha},\qquad
+ y=3^\alpha u-1,\qquad \beta=\nu_2(y),
+\]
+and $B(x)=y/2^\beta$.  Then $B(x)$ is a positive odd integer and
+\begin{equation}
+\stepcounter{equation}
+\label{eq:Barina-block}
+ B(x)=T^{\alpha+\beta}(x).
+\tag{CV.1}
+\end{equation}
+For every odd $z>0$, the fibre $B^{-1}(z)$ is exactly the set of
+\begin{equation}
+\stepcounter{equation}
+\label{eq:Barina-fibre}
+ x=2^\alpha\frac{2^\beta z+1}{3^\alpha}-1
+\tag{CV.2}
+\end{equation}
+over integers $\alpha\geq0,\beta\geq1$ satisfying
+$3^\alpha\mid2^\beta z+1$.  Hence $B$ is surjective, has infinite fibres,
+and has no left or two-sided inverse after the block boundary and elapsed
+clock have been discarded.
+\end{proposition}
+
+\begin{proof}
+The integer $u$ is odd.  For $0\leq j\leq\alpha$, direct induction gives
+\[
+ T^j(x)=3^j\frac{x+1}{2^j}-1.
+\]
+The state at $j=\alpha$ is $y$; the following $\beta$ steps divide it by
+two, proving \eqref{eq:Barina-block}.  Conversely,
+\eqref{eq:Barina-fibre} gives $x+1=2^\alpha u$, with
+$u=(2^\beta z+1)/3^\alpha$ odd, and
+$3^\alpha u-1=2^\beta z$.  Thus the two valuations are exactly
+$\alpha,\beta$ and $B(x)=z$.  The section $z\mapsto2z$ proves
+surjectivity.  Taking $\alpha=0$ in \eqref{eq:Barina-fibre} gives the
+distinct points $2^\beta z$, $\beta\geq1$, in the same fibre.
+\end{proof}
+
+On the odd $2$-adic integers with normalized Haar measure,
+$\Pr(\alpha=a)=2^{-a}$ and
+$\Pr(\beta=b\mid\alpha=a)=2^{-b}$ for $a,b\geq1$.  Multiplication by the
+odd unit $3^a$ proves the conditional statement, so the two valuations are
+independent and
+\[
+ \mathbb E(\alpha+\beta)=4.
+\]
+This is the exact measure-theoretic content of the articles' phrase
+\emph{average four iterations}; it is not an assertion that every finite
+interval has raw arithmetic mean four \cite[pp.~3--5]{Barina2021}.
+
+\begin{sourceissue}[the exceptional start $1$ in the printed algorithms]
+\label{sourceissue:Barina-one-endpoints}
+Equation~\eqref{eq:Barina-block} has $B(1)=1$, representing the shortened
+cycle $1\mapsto2\mapsto1$.  The printed endpoints differ by version.  The
+2021 Algorithm~1 uses strict \texttt{until n<n0} and loops at $n_0=1$.
+Its Algorithm~2 uses \texttt{until n=1}: it terminates after one complete
+$1\mapsto1$ macro, but a literal delay accumulator gives $2$ rather than
+the conventional stopping time $0$.  Both 2025 Algorithms~1 and~2 use the
+strict endpoint and loop at $1$ \cite[pp.~4--5]{Barina2021}
+\cite[pp.~4--5]{Barina2025}.  The exact repairs are a separate base case, or
+the domain $n_0>1$ where only descent is required.  The production inner
+loop tests starts $3\bmod4$, so this exceptional input is not encountered
+there.
+\end{sourceissue}
+
+\begin{proposition}[the dyadic affine-prefix coordinate]
+\label{prop:computational-dyadic-prefix}
+Fix $k\geq0$, $h\geq0$, and $0\leq r<2^k$, and let
+\[
+ a_j(r)=\#\{0\leq i<j:T^i(r)\text{ is odd}\}.
+\]
+For every $0\leq j\leq k$,
+\begin{equation}
+\stepcounter{equation}
+\label{eq:computational-dyadic-prefix}
+ T^j(2^kh+r)=3^{a_j(r)}2^{k-j}h+T^j(r).
+\tag{CV.3}
+\end{equation}
+In particular,
+\begin{equation}
+\stepcounter{equation}
+\label{eq:computational-dyadic-endpoint}
+ T^k(2^kh+r)=3^{a_k(r)}h+T^k(r).
+\tag{CV.4}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $j<k$, the high term in \eqref{eq:computational-dyadic-prefix} is even.
+The full state and the low state $T^j(r)$ therefore have the same parity and
+take the same next branch.  Applying that branch proves the induction.  This
+is simultaneously Oliveira e Silva's Proposition~1 and Barina's equation~(6),
+after their maps and variables have been typed rather than identified
+\cite[p.~191]{OliveiraSilva2010}\cite[p.~5]{Barina2021}.
+\end{proof}
+
+Write $a=a_k(r)$, $d=T^k(r)$, $L=3^a-2^k$, and $R=r-d$.  The exact
+necessary-and-sufficient condition for
+\[
+ T^k(2^kh+r)<2^kh+r\qquad(h=1,2,\ldots)
+\]
+is
+\begin{equation}
+\stepcounter{equation}
+\label{eq:computational-uniform-descent}
+ (L<0\text{ and }L<R)\quad\text{or}\quad(L=0\text{ and }R>0).
+\tag{CV.5}
+\end{equation}
+Indeed the inequality is $Lh<R$, whose most restrictive positive $h$ is
+$h=1$ when $L<0$; it is constant when $L=0$, and eventually fails when
+$L>0$.  The generator's \texttt{is\_convergent} implements only the first
+disjunct.  It is conservative in the equality case; it does not falsely
+certify it.
+
+If $r'<r$ and
+\[
+ a_k(r')=a_k(r),\qquad T^k(r')=T^k(r),
+\]
+then \eqref{eq:computational-dyadic-endpoint} proves, for every $h$,
+\begin{equation}
+\stepcounter{equation}
+\label{eq:computational-endpoint-coalescence}
+ T^k(2^kh+r')=T^k(2^kh+r),\qquad2^kh+r'<2^kh+r.
+\tag{CV.6}
+\end{equation}
+Thus a dead sieve bit has a finite descent, coalescence, inherited-prefix, or
+restricted-predecessor certificate.  A live bit is merely the complement of
+the implemented certificates.  It is not a residue class proved not to
+converge; the 2025 page-6 wording \emph{do not converge} must be read at this
+finite algorithmic scope \cite{Barina2025}.
+
+\begin{sourceissue}[cardinality and generator-history defects]
+\label{sourceissue:Barina-sieve-cardinality}
+Within one half-open work unit of width $2^{40}$, a fixed class modulo
+$2^k$ contains $2^{40-k}$ starts, while there are $2^k$ classes.  The 2025
+Section~3.4 reverses these quantities twice.  The 2021 page-6 example and
+\path{src/worker/worker.c:336--369} use the correct $2^{40-34}$.
+
+The separate \texttt{collatz-sieve} history has a dated implementation
+  defect.  Commit
+  \nolinkurl{49c5524d8d42867c866e863030a8e5d86237bf17}
+(10 April 2020) passed the odd-step count \texttt{c\_} as both the third and
+fourth arguments of \texttt{is\_convergent}; the fourth argument had to be
+the endpoint \texttt{d\_}.  Commit
+  \nolinkurl{b3d2f61d89eec55008d61c32577a9e8c8b3874ab}
+(6 April 2023) repaired it.  The baseline committed maps predate the faulty
+interval, while the \texttt{hesieve} and \texttt{h2esieve} maps postdate the
+repair.  The defect governs regeneration from intermediate source history;
+it is not silently attributed to blobs outside that interval.
+\end{sourceissue}
+
+The first exact lower-start reductions are
+\[
+ T(2q+1)=3q+2,
+\]
+and
+\begin{equation}
+\label{eq:computational-four-transports}
+ T^3(8q+3)=9q+4,\qquad
+ T^6(64q+7)=81q+10,\qquad
+ T^7(128q+95)=243q+182.
+\end{equation}
+Their odd-step counts are respectively $1,2,4,5$.  Every source on the left
+is strictly smaller than its target.  The first three families omit $37$ of
+$81$ initial residues: the first two give
+$\{2,4,5,8\}\bmod9$, their lifts modulo $27$ are
+\[
+ \{2,4,5,8,11,13,14,17,20,22,23,26\},
+\]
+and the $81q+10$ class is disjoint from them.  The fourth target is already
+$2\bmod3$ as an initial residue, but is not redundant when it occurs as an
+intermediate low-coordinate state.
+
+\begin{proposition}[the Hercher coalescence lift]
+\label{prop:Hercher-computational-coalescence}
+Let $x$ be odd and put
+\[
+ \alpha=\nu_2(x+1),\quad u=(x+1)/2^\alpha,
+ \quad y=3^\alpha u-1,\quad\beta=\nu_2(y).
+\]
+If $\beta\geq2$ and $m=(x-1)/2$, then
+\begin{equation}
+\stepcounter{equation}
+\label{eq:Hercher-local-coalescence}
+ T^{\alpha+\beta-1}(m)=T^{\alpha+\beta}(x)=y/2^\beta.
+\tag{CV.7}
+\end{equation}
+If $x=T^s(r)$, the prefix contains $c$ odd steps, and $m<r$, then for every
+$N=2^kh+r$ the lower lifted start
+\[
+ Q=3^c2^{k-s-1}h+m
+\]
+satisfies $Q<N$ and its trajectory coalesces with that of $N$.
+\end{proposition}
+
+\begin{proof}
+Since $y\equiv0\pmod4$, direct iteration of $m$ gives
+\eqref{eq:Hercher-local-coalescence}.  The affine prefix has nonnegative
+intercept, positive when $c>0$.  From $m<r$ one has $x<2r$, hence
+$3^c/2^s<2$.  This is exactly the strict high-coefficient comparison for
+$Q<N$; \eqref{eq:computational-dyadic-prefix} and
+\eqref{eq:Hercher-local-coalescence} then prove coalescence.
+\end{proof}
+
+The additional Oliveira--Roosendaal example is likewise an identity:
+\begin{equation}
+\stepcounter{equation}
+\label{eq:Oliveira-Roosendaal-coalescence}
+ T^6(64q+15)=T^6(64q+14)=T^5(32q+7)=81q+20.
+\tag{CV.8}
+\end{equation}
+
+\begin{theorem}[finite closure of the recursive high-coefficient check]
+\label{thm:Barina-recursive-k34}
+Consider \texttt{collatz-sieve}'s restricted recursive closure generated by
+the four inverse transports above.  For every invocation arising in its
+packed implementation domain $k\leq34$, a returned lower representative
+$P<r$ has a uniformly lower full-width lift.  This assertion is finite in
+$k$; it does not prove an unbounded recursive invariant.
+\end{theorem}
+
+\begin{proof}
+A recursive word with $d$ odd steps and $t$ total shortened steps gives
+\[
+ T^t(P)=L.
+\]
+For the four primitive words, $(d,t,H)$ is
+\[
+ (1,1,1),\ (2,3,5),\ (4,6,73),\ (5,7,211),
+\]
+and the inverse is the exact floor map
+\[
+ \phi(L)=\frac{2^tL-H}{3^d}
+         =\left\lfloor\frac{2^tL}{3^d}\right\rfloor.
+\]
+A nonempty composite word has
+\begin{equation}
+\stepcounter{equation}
+\label{eq:recursive-rounded-word}
+ P=\frac{2^tL-H_w}{3^d}=\frac{2^t}{3^d}L-h_w,
+ \qquad0<h_w<\ell(w)\leq d.
+\tag{CV.9}
+\end{equation}
+
+Suppose $L=T^s(r)$ after $c$ odd steps.  Substitution in
+\eqref{eq:computational-dyadic-prefix} shows that the unique
+coefficient-correct full lift is
+\[
+ Q=3^{c-d}2^{k-s+t}h+P,
+\]
+and $Q<2^kh+r$ for every $h>0$ precisely when $P<r$ and
+\begin{equation}
+\stepcounter{equation}
+\label{eq:recursive-current-coefficient}
+ 2^t3^{c-d}\leq2^s.
+\tag{CV.10}
+\end{equation}
+For the recursive branch applied after
+Proposition~\ref{prop:Hercher-computational-coalescence}, the corresponding
+condition, at the preceding prefix $(s_0,c_0)$, is
+\begin{equation}
+\stepcounter{equation}
+\label{eq:recursive-coalescence-coefficient}
+ 2^t3^{c_0-d}\leq2^{s_0+1}.
+\tag{CV.11}
+\end{equation}
+The C function returns only $P$, retains neither $d$ nor $t$, and tests
+neither inequality.
+
+An exact finite reduction supplies the missing check.  In the relevant
+exponent boxes the smallest coefficient strictly above one is
+\begin{equation}
+\stepcounter{equation}
+\label{eq:recursive-minimum-unsafe}
+ C_{\min}=\frac{3^{12}}{2^{19}}
+ =\frac{531441}{524288},
+ \qquad C_{\min}-1=\frac{7153}{524288}.
+\tag{CV.12}
+\end{equation}
+If \eqref{eq:recursive-current-coefficient} failed while $P<r$,
+equation~\eqref{eq:recursive-rounded-word} and the affine prefix imply
+$P(C-1)<h_w<34$ and $r-P\leq33$; hence $P\leq2492$.  For
+\eqref{eq:recursive-coalescence-coefficient}, the extra half-step contributes
+less than $1/2$, so an unsafe witness has $P\leq2528$ and $r-P\leq34$.
+
+The deterministic certificate exhausts these proved supersets.  In the
+current-state branch it checks $7105$ restricted word states, $1557$
+identity endpoint pairs, $2983$ nonidentity common-endpoint pairs, and all
+$2585$ budget-admissible pairs.  In the coalescence branch it checks $7216$
+word states, $1003$ common-endpoint pairs, including $480$ identity and $523$
+nonidentity pairs, and all $487$ budget-admissible nonidentity pairs.  Every
+required comparison satisfies \eqref{eq:recursive-current-coefficient} or
+\eqref{eq:recursive-coalescence-coefficient}.  The finite minimum
+\eqref{eq:recursive-minimum-unsafe}, rather than an asymptotic claim, is what
+closes the implementation domain.
+\end{proof}
+
+\begin{sourceissue}[remaining code and witness boundaries]
+\label{sourceissue:Barina-code-boundaries}
+The name \texttt{smallest\_predecessor} means the minimum only in the
+four-map recursive closure, not among all Collatz predecessors.  At residue
+zero, the unsigned expression $(L_{\rm last}-1)/2$ wraps; it does not clear
+zero but has no positive-integer predecessor meaning.  The effective
+$k\leq34$ domain is the packed-field assertion $b<2^{34}$, not a function
+precondition; disabling assertions outside it permits the 34-bit residue
+field to alias.  The \texttt{ctzu64} helper assumes that
+\texttt{unsigned long} has 64 bits and traps on LLP64.  Finally, a dead-map
+bit stores no predecessor word, step counts, or elimination-reason witness,
+so the bit alone cannot reconstruct its v3 certificate.
+\end{sourceissue}
+
+\begin{proposition}[finite convergence from certified descent]
+\label{prop:finite-descent-induction}
+If, for every $2\leq n\leq X$, a computation exhibits a finite iterate
+$T^{j(n)}(n)<n$, then every positive start through $X$ reaches $1$.
+\end{proposition}
+
+\begin{proof}
+Strong induction on $n$.  The displayed iterate is a smaller positive start,
+so its orbit reaches $1$ by the induction hypothesis; concatenate the two
+finite orbit segments.  The base $n=1$ is immediate.
+\end{proof}
+
+This proposition explains why sieve elimination and stopping-time descent
+can establish a finite range without individually iterating every start to
+one.  It does not establish that a reported machine run occurred.
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Source & exact reported range & status in this edition\\
+\midrule
+Oliveira e Silva (2010) & $n\leq20\cdot2^{58}$ & sourced finite result\\
+Barina (2021) & $n<2^{68}$ & sourced finite result\\
+Barina (2025) & $n<2^{71}$, 15 Jan.\ 2025 & sourced finite result\\
+Project API, 28 Aug.\ 2026 & $2075\cdot2^{60}$ & later dynamic assertion\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Oliveira e Silva's printed inclusive endpoint is
+\[
+ 20\cdot2^{58}=5764607523034234880.
+\]
+The twenty directly processed intervals are naturally half-open, but the
+boundary itself is even and maps to the already covered $10\cdot2^{58}$;
+hence the inclusive theorem follows.  The chapter reports a depth-46 pruned
+parity tree with $269949796982$ surviving leaves, $2^{12}$-start blocks,
+variable-step tables with $\Delta=14$ and tolerance $\tau=10$, two
+independent workers per item, and exact agreement of candidate data and a
+cyclic-redundancy checksum.  One mismatch in about 81 CPU-years was
+invalidated and recomputed \cite[pp.~189--198]{OliveiraSilva2010}.  The
+underlying worker source, completed-work ledger, and duplicate outputs were
+not acquired, so the range is not relabelled an F031 reproduction.
+
+The 2021 article reports the $2^{68}$ run from September 2019 to May 2020
+\cite[p.~7]{Barina2021}.  The 2025 Table~10 records the strict boundary
+$n<2^{71}$ and completion date; its surrounding phrase \emph{up to} does not
+change the half-open work units
+\[
+ [j2^{40},(j+1)2^{40}).
+\]
+The boundary $2^{71}$ itself is a power of two and independently descends,
+but was not in the first $2^{31}$ units.  Reported CPU/GPU years, throughput,
+and speedups are measurements on named configurations, not
+hardware-independent complexity theorems.  The page-2 throughput convention
+also counts starts eliminated by sieve certificates whose trajectories were
+not individually run to one \cite{Barina2025}.
+
+The dated API snapshot reports
+\[
+ 2075\cdot2^{60}=2392312122059207475200
+ \approx2^{71.0188956211},
+\]
+with the first incomplete unit beginning at
+\[
+ 2175975546\cdot2^{40}=2392510414583230365696.
+\]
+It is later than the paper, is not a completed-work ledger, and is not
+backdated into the 2025 theorem \cite{BarinaStatus2026}.
+
+\begin{sourceissue}[the public-code validation boundary]
+\label{sourceissue:Barina-public-code-validation}
+The 2025 paper pins the repository \nolinkurl{xbarin02/collatz} at commit
+\linebreak[3]\nolinkurl{53c2a0608075d6fe3f10cc6eeeaf50e400c86338}.
+It does not pin the
+separate \texttt{collatz-sieve} dependency.  The bootstrap performs unpinned
+clone-or-pull operations.  The edition's sieve commit and map hashes are
+therefore separately attributed reconstruction pins, not historical facts
+invented for the run \cite{BarinaCode2025}.
+
+The default GPU kernel is the Git symlink \texttt{kernel.cl} to
+\texttt{kernel32.cl}.  A GPU overflow zeroes a checksum lane; the host aborts
+the unit and mclient attempts a CPU rerun.  GMP continuation exists only when
+that CPU worker was compiled with \texttt{\_USE\_GMP}.  The generic bootstrap
+does so, whereas the Lumi and Meta GPU-only scripts build no CPU worker.
+Thus GPU--CPU--GMP is a conditional deployment chain, not GPU
+multiprecision or a universal local fallback.
+
+The optional/test \texttt{kernel32-precalc.cl} has a sieve-dependent
+\texttt{continue} immediately before a work-group barrier.  A multi-lane
+group with differing sieve bits violates barrier convergence.  This defect
+is scoped to that variant and is not transferred to the default kernel.
+
+The server first rejects stale returns with the wrong stored client ID and
+rejects zero or non-whitelisted checksum prefixes.  For an accepted current
+return, however, it marks the unit complete before comparing a previous
+checksum, then logs and overwrites a mismatch; maximum offsets are handled in
+the same order.  Mclient transmits the $\alpha$-sum and discards the
+$\beta$-sum.  The verification utility recomputes only the trajectory maximum
+at the stored offset, not the work unit.  These are consistency signals, not
+Oliveira e Silva's independent duplicate-run protocol or a cryptographic
+certificate.
+
+No acquired immutable ledger binds every unit to its code tree, map hash,
+binary, compiler, OpenCL environment, and return value.  Selected regression
+tests and public source permit code-level audit; they do not independently
+authenticate the full historical $2^{71}$ computation.
+\end{sourceissue}
+
+\begin{proposition}[shortened and unshortened maximum excursions]
+\label{prop:shortened-unshortened-maxima}
+For an odd $n>1$, if the orbit maxima are finite, then
+\begin{equation}
+\stepcounter{equation}
+\label{eq:shortened-unshortened-maxima}
+ M_U(n)=2M_T(n).
+\tag{CV.13}
+\end{equation}
+The nontrivial record-start sequence is the same under both conventions,
+although its maximum values differ by the factor two.
+\end{proposition}
+
+\begin{proof}
+An odd shortened state $x>1$ cannot be the shortened maximum because
+$(3x+1)/2>x$.  A maximal shortened state cannot have an even predecessor,
+which would be twice as large.  It is therefore the output $y=(3x+1)/2$ of
+an odd predecessor, and the unshortened orbit contains the intermediate
+state $2y$.  Every state omitted by shortening is twice a shortened state,
+proving \eqref{eq:shortened-unshortened-maxima}.  No even $n>2$ begins a new
+unshortened record, because the lower odd start $n-1$ has first image
+$3n-2>n$.  Thus record starts are odd and multiplication of every maximum by
+two preserves their order.
+\end{proof}
+
+The 2025 abstract says four new records, while Section~6 lists five and calls
+them new.  The first listed start, $274133054632352106267$, already appears
+in the 2021 paper.  The exact reconciliation is four records new after 2021
+and five cumulative project records; Section~6's phrase \emph{five new} is
+imprecise rather than an unexplained numerical contradiction
+\cite[p.~7]{Barina2021}\cite[pp.~12--13]{Barina2025}.  Finite record data are
+consistent with the Lagarias--Weiss prediction but do not prove its
+asymptotic form.
+
+\begin{proposition}[Roosendaal's modular maximum theorem]
+\label{prop:Roosendaal-mod36}
+Let $N>2$ be odd.  If its unshortened maximum $q=M_U(N)$ is finite and
+$q>3N+1$, then
+\[
+ q\equiv16\pmod{36}.
+\]
+\end{proposition}
+
+\begin{proof}
+The maximum $q$ is even and cannot be $2\bmod4$, since then the next two
+states $q/2$ and $3q/2+1$ exceed it.  Because $q>3N+1$, it is neither the
+start nor its first odd output; halving cannot create a maximum, so
+$q=3p+1$ for an odd predecessor and $q\equiv1\bmod3$.  The remaining classes
+modulo $36$ are $4,16,28$.  If $q=36a+4$, its forced preceding states include
+$48a+4>q$.  If $q=36a+28$, they include $48a+36>q$.  Only $16\bmod36$
+remains \cite{Roosendaal2026}.
+\end{proof}
+
+The page's following sentence applies this congruence to $P_i$, but the
+theorem concerns $M_U(P_i)$, not the starting values.  Its Conjecture~3 also
+prints $N<1$ against the surrounding $N>1$ domain.  Neither defect is
+silently normalized.  Theorems~2--3 each begin with a residue-bound
+hypothesis that is not proved on the page; this edition does not establish
+that hypothesis and therefore does not import either conclusion.
+
+Oliveira e Silva additionally studies the one-branch-per-iterate map
+\begin{equation}
+\stepcounter{equation}
+\label{eq:Oliveira-generalized-five}
+ C(n)=
+ \begin{cases}
+  n/2,&n\equiv0\pmod2,\\
+  n/3,&n\not\equiv0\pmod2,\ n\equiv0\pmod3,\\
+  5n+1,&\gcd(n,6)=1.
+ \end{cases}
+\tag{CV.14}
+\end{equation}
+Its clock is not the $T$- or $U$-clock.
+
+\begin{sourceissue}[Oliveira e Silva's Proposition~2 is false as printed]
+\label{sourceissue:Oliveira-proposition-two}
+The proposition asks the first $i$ iterates of $m_i$ to determine counts
+$k_2,k_3,k_5$, puts
+\[
+ r_i=2^{k_2}3^{k_3},\qquad
+ m_i=n_0\bmod r_i,\qquad n_i=[n_0/r_i],
+\]
+and asserts
+\[
+ C^i(n_0)=5^{k_5}n_i+C^i(m_i).
+\]
+At $i=1,n_0=1$, $r_i=1$ forces $m_i=0$, whose division-by-two branch demands
+$r_i=2$; $r_i=2$ or $3$ forces $m_i=1$, whose $5n+1$ branch demands
+$r_i=1$.  Thus the circular definition has no fixed point.  If one instead
+takes the branch of $n_0$ first, then $r_i=1,m_i=0,n_i=1$ and the asserted
+equation reads $6=5$.  No domain qualification repairs it
+\cite[p.~200]{OliveiraSilva2010}.
+
+The chapter defines $[x]$ as the largest integer not smaller than $x$, which
+is ceiling language.  Proposition~1's unique dyadic decomposition requires
+$\lfloor n_0/2^i\rfloor$.  Replacing the bracket by a floor repairs that use;
+it does not repair Proposition~2.
+\end{sourceissue}
+
+\begin{proposition}[the corrected $6^i$ branch-cylinder coordinate]
+\label{prop:Oliveira-branch-cylinder}
+For $i\geq0$, put
+\[
+ a_i=n_0\bmod6^i,\qquad
+ Q_i=\left\lfloor\frac{n_0}{6^i}\right\rfloor.
+\]
+Let $k_2,k_3,k_5$ be the branch counts in the first $i$ iterates of $a_i$,
+set $R_i=2^{k_2}3^{k_3}$, and
+\[
+ N_i=\frac{n_0-a_i}{R_i}=\frac{6^i}{R_i}Q_i.
+\]
+Then $N_i$ is an integer, $n_0$ and $a_i$ have the same first $i$ branches,
+and
+\begin{equation}
+\stepcounter{equation}
+\label{eq:Oliveira-branch-cylinder}
+ C^i(n_0)=5^{k_5}N_i+C^i(a_i).
+\tag{CV.15}
+\end{equation}
+The representative $a_i$ is a branch-cylinder representative, generally not
+the canonical remainder modulo $R_i$.
+\end{proposition}
+
+\begin{proof}
+If $x\equiv y\pmod{6^j}$, the two points take the same branch.  After
+division by two their difference is divisible by $2^{j-1}3^j$, after
+division by three by $2^j3^{j-1}$, and after $5x+1$ by $6^j$; every image
+pair is congruent modulo $6^{j-1}$.  Induction gives the common length-$i$
+branch word.
+
+For a fixed word $w$, induction on its branches gives an integer $B_w$ with
+\[
+ C^i(x)=\frac{5^{k_5}x+B_w}{R_i}
+\]
+throughout its cylinder.  A division branch multiplies $R_i$ by two or
+three, while a $5x+1$ branch replaces $B_w$ by $5B_w+R_i$.  Since
+$R_i\mid6^i$, subtracting the formula at $n_0$ and $a_i$ proves
+\eqref{eq:Oliveira-branch-cylinder}.  Reducing $a_i$ modulo $R_i$ is valid
+only after a separate proof that the reduced point retains the same branch
+word.
+\end{proof}
+
+The source reports exhaustive computations through $10^{16}$ for
+\eqref{eq:Oliveira-generalized-five} and $10^{14}$ for the analogous
+$C_{7,\{2,3,5\}}$, taking about five and two CPU-months respectively on one
+450 MHz Pentium~III \cite[pp.~200--204]{OliveiraSilva2010}.  It does not say
+that the replicated-worker protocol of the $3x+1$ run was used here.  Its
+finite pruning counts, affine tables, transition matrix, and stationary
+vector are reproducible finite calculations.  Section~4 expressly calls the
+passage from a Chernoff upper bound to an asymptotic equality non-rigorous;
+the printed values
+\[
+ \rho_5\approx1.442762198279,\qquad
+ \rho_7\approx2.215508001593
+\]
+remain conjectured record-growth exponents, not proved rates.
+
+\begin{nonclaim}
+The deterministic F031 certificate pins the exact manifestations, code
+trees, bundles, selected maps, and route artifacts; reproduces the basic
+$2^{16}$ sieve byte for byte; proves
+Theorem~\ref{thm:Barina-recursive-k34}; and checks the map, fibre, affine,
+transport, maximum, modular, and corrected branch-cylinder identities above.
+It does not reproduce a historical distributed run, authenticate a
+completed-work database, independently regenerate the full $2^{24}$ or
+$2^{34}$ maps, certify hardware or compilers, justify the Markov asymptotics,
+or prove universal convergence. The eight legacy unresolved-dependency records
+are audit-schema records rather than mathematical claims; this section does not
+use them to preserve or conditionalize an unproved conclusion.
+\end{nonclaim}

@@ -1,0 +1,560 @@
+\section{Hydra maps and their affine word calculus}
+\label{sec:hydra-maps}
+
+The 2026 manual is the controlling source for the word \emph{Hydra}.  Earlier
+papers use related residue-class maps, but not always the same formal data.
+We first type the current object, then isolate an internal inconsistency in
+the source definition and state the convention used in the rest of the
+edition.
+
+\subsection{Global-field data}
+
+Let $\F$ be either $\Q$ or a rational function field $\F_q(T)$, and let $K$
+be a finite extension of $\F$.  Write $\OK$ for the corresponding ring of
+integers and $d=[K:\F]$.  If $\ell$ is a place of $K$, let $K_\ell$ be the
+completion and $|\cdot|_\ell$ a fixed representative absolute value.  For
+$A\in\End_\F(K)$ put
+\begin{equation}
+\label{eq:place-operator-seminorm}
+ \|A\|_\ell=\sup_{x\in K,\,x\ne0}\frac{|Ax|_\ell}{|x|_\ell}
+ \in[0,\infty].
+\end{equation}
+This quantity is finite exactly when $A$ is continuous for the $\ell$-adic
+topology, in which case $A$ extends uniquely to a bounded operator on
+$K_\ell$.  All placewise operator statements below include this finiteness
+hypothesis.  A general $\F$-linear endomorphism need not be continuous at a
+chosen single place: for example, a field automorphism can interchange two
+places over the same place of $\F$.  Continuity is automatic when the map is
+already typed on the selected local factor, as for scalar multiplication.
+
+Let $\Lambda\subsetneq\OK$ be a nonzero ideal.  Its quotient is finite; set
+\[
+ p=|\OK/\Lambda|\geq2.
+\]
+Choose an enumeration of the cosets, with the zero coset indexed by $0$:
+\[
+ \OK/\Lambda=\{\Lambda_0,\ldots,\Lambda_{p-1}\},\qquad
+ \Lambda_0=\Lambda.
+\]
+This enumeration is additional data.  It supplies a bijection from residue
+classes to the digit alphabet $\mathcal A_p=\{0,\ldots,p-1\}$; there is no
+canonical digit order for a general ideal quotient.
+
+\begin{definition}[affine $\F$-automorphism]
+The affine group used by Siegel is the group of affine $\F$-linear
+automorphisms of the affine space underlying $K$:
+\[
+ \Aff_\F(K)=\operatorname{GL}_\F(K)\ltimes K
+            =\End_\F(K)^\times\ltimes K.
+\]
+An element $(r,c)$ acts by $x\mapsto rx+c$, where
+$r\in\End_\F(K)^\times$ and $c\in K$.  Its multiplication law is
+\begin{equation}
+\label{eq:affine-product}
+ (r,c)(s,d)=(r\circ s,\;r(d)+c),
+\end{equation}
+and its inverse is $(r,c)^{-1}=(r^{-1},-r^{-1}c)$.
+\end{definition}
+
+The use of $\End_\F(K)$ rather than scalar multiplication by elements of $K$
+is essential.  When $[K:\F]>1$, an $\F$-linear map need not be $K$-linear.
+The controlling source calls these maps ``affine lattice morphisms.''  That
+name is not used as a type assertion here: an arbitrary element of
+$\Aff_\F(K)$ need not preserve $\OK$, $\Lambda$, or any lattice in $K$.
+Lattice preservation is always stated separately when it is needed.
+
+\begin{definition}[pre-Hydra]
+A \emph{pre-Hydra} is a tuple
+\[
+ \mathcal H=(K,\Lambda,(H_j)_{j\in\mathcal A_p}),
+ \qquad H_j=(r_j,c_j)\in\Aff_\F(K).
+\]
+The $H_j$ are its branches.  The associated piecewise expression, whenever
+it is integer-valued on the selected residue classes, is
+\begin{equation}
+\label{eq:piecewise-hydra}
+ H(x)=\sum_{j=0}^{p-1}\ind{x\in\Lambda_j}\bigl(r_jx+c_j\bigr),
+ \qquad x\in\OK.
+\end{equation}
+\end{definition}
+
+\begin{definition}[admissible and exact-integral]
+A pre-Hydra is \emph{admissible} when
+\begin{equation}
+\label{eq:branch-admissibility}
+ H_j(\Lambda_j)\subseteq\OK
+ \qquad(0\leq j<p).
+\end{equation}
+It is \emph{exact-integral} when, more strongly,
+\begin{equation}
+\label{eq:exact-integrality}
+ H_j(x)\in\OK\quad\Longleftrightarrow\quad x\in\Lambda_j
+ \qquad(x\in\OK,\ 0\leq j<p).
+\end{equation}
+This is the domain used in Definition 4.5 of the controlling source.  No
+field-wide predicate over $x\in K$ is substituted for it.  An admissible
+pre-Hydra defines a map $H:\OK\to\OK$ by
+\cref{eq:piecewise-hydra}; this is the Hydra map used below.
+\end{definition}
+
+\begin{sourceissue}[the two integrality clauses in the manual]
+In Definition 4.3 of arXiv:2601.17030v3, the displayed Hydra is required to
+satisfy $r_jz+c_j\in\OK$ for every $z\in\OK$ and every $j$.  Definition 4.5
+then calls a Hydra integral when $H_j(z)\in\OK$ \emph{if and only if}
+$z\in\Lambda_j$, with $z\in\OK$.  For $p\geq2$ these conditions cannot both
+hold: after fixing $j$, choose $z\in\OK\setminus\Lambda_j$.  The first clause
+puts $H_j(z)$ in $\OK$, while the second forbids it.  The first clause also
+fails for the manual's own principal example $T_3$, whose half-integral
+branch formulas are integer-valued only on their assigned parity classes.
+The minimal condition needed to define $H:\OK\to\OK$ is
+\cref{eq:branch-admissibility}; the iff condition
+\cref{eq:exact-integrality} is the stronger branch-correctness property used
+in the Correspondence Principle.  These two source clauses and their common
+integral domain are preserved rather than replaced by a field-wide
+predicate.
+\end{sourceissue}
+
+\begin{definition}[proper and centered]
+A Hydra is
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item \emph{proper} if $I-r_0\in\End_\F(K)$ is invertible;
+\item \emph{centered} if $H_0(0)=0$, equivalently $c_0=0$.
+\end{enumerate}
+\end{definition}
+
+Properness gives a unique fixed point for the affine branch labelled $0$,
+namely $(I-r_0)^{-1}c_0$, but neither makes that point zero nor makes a
+translation by it preserve the branch labelled $0$.  The residue-class
+permutation must also be tracked.
+
+\begin{proposition}[translation conjugacy and the zero-class branch]
+\label{prop:translation-conjugacy-cosets}
+Let $a\in\OK$, let $\tau_a(x)=x+a$, and define
+$H^{(a)}=\tau_a^{-1}\circ H\circ\tau_a:\OK\to\OK$.  Translation induces the
+permutation $\pi_a$ of $\mathcal A_p$ determined uniquely by
+\begin{equation}
+\label{eq:translation-coset-permutation}
+ \Lambda_{\pi_a(j)}=\Lambda_j+a.
+\end{equation}
+For $x\in\Lambda_j$, the branch of $H^{(a)}$ on $\Lambda_j$ is
+\begin{equation}
+\label{eq:translated-Hydra-branch}
+ H^{(a)}_j(x)
+ =\tau_a^{-1}H_{\pi_a(j)}\tau_a(x)
+ =r_{\pi_a(j)}x+
+   \bigl(r_{\pi_a(j)}a+c_{\pi_a(j)}-a\bigr).
+\end{equation}
+Admissibility is preserved by this conjugacy, and exact-integrality is
+preserved when $H$ is exact-integral.  In the label-dependent terminology of
+the definition, $H^{(a)}$ is proper if and only if
+$I-r_{\pi_a(0)}$ is invertible.  The branch of $H^{(a)}$ on the zero class
+$\Lambda$ is
+centered if and only if
+\begin{equation}
+\label{eq:translation-centering-condition}
+ H_{\pi_a(0)}(a)=a.
+\end{equation}
+In particular, if $H$ is proper and
+$a_0=(I-r_0)^{-1}c_0\in\OK$, then conjugation by $\tau_{a_0}$ is guaranteed
+to center the zero-class branch when $a_0\in\Lambda$.  If
+$a_0\notin\Lambda$, the equation $H_0(a_0)=a_0$ alone gives no such
+conclusion; the exact additional condition is
+$H_{\pi_{a_0}(0)}(a_0)=a_0$.
+\end{proposition}
+
+\begin{proof}
+Addition by $a$ is a bijection of $\OK$ carrying each coset
+$\Lambda_j$ onto the coset $\Lambda_j+a$.  Since the displayed enumeration
+contains every coset exactly once, \cref{eq:translation-coset-permutation}
+defines a permutation, with inverse $\pi_{-a}$.  If $x\in\Lambda_j$, then
+$x+a\in\Lambda_{\pi_a(j)}$, so the piecewise definition of $H$ selects
+$H_{\pi_a(j)}$.  Applying $\tau_a^{-1}$ and expanding the affine map proves
+\cref{eq:translated-Hydra-branch}.  If $x\in\Lambda_j$, admissibility of $H$
+puts $H_{\pi_a(j)}(x+a)$ in $\OK$, so subtracting $a\in\OK$ proves
+admissibility of $H^{(a)}$.  If $H$ is exact-integral, then, for $x\in\OK$,
+\[
+ H^{(a)}_j(x)\in\OK
+ \Longleftrightarrow H_{\pi_a(j)}(x+a)\in\OK
+ \Longleftrightarrow x+a\in\Lambda_{\pi_a(j)}
+ \Longleftrightarrow x\in\Lambda_j,
+\]
+which proves exact-integrality.  At $j=0$, centeredness means precisely
+$H^{(a)}_0(0)=0$; by \cref{eq:translated-Hydra-branch}, this is equivalent to
+$r_{\pi_a(0)}a+c_{\pi_a(0)}-a=0$, which is
+\cref{eq:translation-centering-condition}.  The linear part of that same
+zero-class branch is $r_{\pi_a(0)}$, proving the properness criterion.  Finally,
+$\pi_{a_0}(0)=0$ exactly when $\Lambda+a_0=\Lambda$, equivalently
+$a_0\in\Lambda$; in that case the fixed-point equation for $H_0$ supplies
+the required equality.
+\end{proof}
+
+\subsection{Exact scalar prior-art boundary}
+
+The scalar integer specialization is not a new class of maps under a new
+name.  Matthews's generalized Collatz maps already have exactly the same
+fixed-modulus residue-class presentation, while Kohl's residue-class-wise
+affine maps give the ambient mapping monoid
+\cite[Sec.~2]{MatthewsGeneralized}\cite[Defs.~1.1 and~1.4]{KohlRCWA}.
+The extra global-field data, non-scalar endomorphisms, centeredness, and
+properness in Siegel's formalism remain additional structure.  In scalar
+coordinates, exact-integrality is a predicate of the displayed presentation,
+whereas Matthews attaches \emph{relatively prime type} to the map at its least
+modulus.  The following comparison proves the exact relation without
+identifying those two levels prematurely.
+
+\begin{proposition}[fixed-modulus scalar Hydra--Matthews equivalence]
+\label{prop:scalar-hydra-matthews}
+Fix $D\in\Z_{\geq2}$, put $K=\F=\Q$, $\OK=\Z$, $\Lambda=D\Z$, and use the standard
+classes $\Lambda_i=i+D\Z$ for $0\leq i<D$.  Let
+\[
+ H_i(x)=\alpha_i x+\beta_i,
+ \qquad \alpha_i\in\Q^\times,\quad \beta_i\in\Q.
+\]
+Let $H:\Z\to\Q$ be the associated piecewise function
+\[
+ H(x)=H_i(x)\quad\text{for }x\in i+D\Z.
+\]
+Then the following are equivalent for each $i$.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $H_i(i+D\Z)\subseteq\Z$.
+\item There are unique integers
+      $m_i\ne0$ and $\rho_i$ such that
+      \begin{equation}
+      \label{eq:matthews-scalar-branch}
+       \rho_i\equiv i m_i\pmod D,
+       \qquad
+       H_i(x)=\frac{m_i x-\rho_i}{D}
+       \quad(x\in\Q).
+      \end{equation}
+\end{enumerate}
+Consequently an admissible scalar Hydra with this fixed standard modulus is
+exactly a Matthews generalized Collatz presentation with the same displayed
+modulus, and its associated map has type $H:\Z\to\Z$.  Write
+$d_{\mathrm{Mat}}(H)$ for Matthews's least affine residue modulus, and put
+$g_i=\gcd(D,m_i)$.  The full integral locus of the $i$th formal
+branch is
+\[
+ \bigl\{x\in\Z:H_i(x)\in\Z\bigr\}
+ =i+\frac{D}{g_i}\Z.
+\]
+Therefore
+\begin{equation}
+\label{eq:scalar-exact-integral-relatively-prime}
+ \begin{aligned}
+ &\text{the scalar Hydra is exact-integral}\\
+ &\quad\Longleftrightarrow\quad
+   \gcd(D,m_i)=1\ \text{for every }i\\
+ &\quad\Longleftrightarrow\quad
+   \gcd(m_0\cdots m_{D-1},D)=1.
+ \end{aligned}
+\end{equation}
+The last condition is the relatively-prime numerical condition for this
+displayed $D$-presentation.  Matthews assigns the name
+\emph{relatively prime type} using the least modulus
+$d_{\mathrm{Mat}}(H)$ \cite[Sec.~2]{MatthewsGeneralized}; consequently it is
+the same map-level condition only when $D=d_{\mathrm{Mat}}(H)$.
+
+The qualifier is necessary.  The shortened $3x+1$ map has least-modulus
+presentation $D=2$ with multipliers $(1,3)$, hence is of Matthews relatively
+prime type.  Refining the same map to $D=4$ gives multipliers
+$(2,6,2,6)$ and remainder parameters $(0,-2,0,-2)$ in
+\cref{eq:matthews-scalar-branch}.  Each formal branch is then integral on a
+whole parity class, not on only its assigned class modulo $4$; the refined
+$D=4$ presentation is not exact-integral.
+\end{proposition}
+
+\begin{proof}
+Assume (i).  Since both $i$ and $i+D$ belong to the assigned class,
+\[
+ m_i:=D\alpha_i=H_i(i+D)-H_i(i)\in\Z.
+\]
+The branch is an affine automorphism of $\Q$, so $m_i\ne0$.  Put
+\[
+ \rho_i:=m_i i-DH_i(i)=-D\beta_i.
+\]
+This is an integer and satisfies
+$\rho_i\equiv m_i i\pmod D$; expanding the definition gives
+\cref{eq:matthews-scalar-branch}.  The coefficients of an affine function
+make $m_i=D\alpha_i$ and $\rho_i=-D\beta_i$ unique.
+
+Conversely, if (ii) holds and $x=i+Dt$, then
+\[
+ H_i(x)=\frac{m_i i-\rho_i}{D}+m_it\in\Z,
+\]
+  so (i) holds.  Applying the equivalence independently to all $D$ classes
+identifies the two fixed-modulus presentations.
+
+For $x\in\Z$, the congruence in
+\cref{eq:matthews-scalar-branch} gives
+\begin{align*}
+ H_i(x)\in\Z
+ &\Longleftrightarrow D\mid m_i x-\rho_i\\
+ &\Longleftrightarrow D\mid m_i(x-i)\\
+ &\Longleftrightarrow \frac{D}{g_i}\mid x-i.
+\end{align*}
+This proves the displayed integral locus.  It equals the assigned class
+$i+D\Z$ exactly when $g_i=1$.  Requiring this for all $i$ is equivalent to
+$\gcd(m_0\cdots m_{D-1},D)=1$, which proves
+\cref{eq:scalar-exact-integral-relatively-prime} and the source-term
+identification.
+\end{proof}
+
+\begin{proposition}[typed inclusion in the rcwa mapping monoid]
+\label{prop:scalar-hydra-rcwa}
+Inherit $D\in\Z_{\geq2}$ and the branch data from
+\cref{prop:scalar-hydra-matthews}, assume its equivalent conditions hold for
+every $0\leq i<D$, and define the piecewise map
+\[
+ H:\Z\longrightarrow\Z,
+ \qquad H(x)=H_i(x)\quad\text{when }x\equiv i\pmod D.
+\]
+Then $H$ is a residue-class-wise affine (rcwa) mapping in Kohl's sense.  If
+$d_{\mathrm{Mat}}(H)$ is Matthews's least affine residue modulus and
+$\operatorname{Mod}(H)$ is Kohl's least rcwa modulus, then
+\begin{equation}
+\label{eq:rcwa-modulus-divides-hydra-modulus}
+ d_{\mathrm{Mat}}(H)=\operatorname{Mod}(H)\mid D.
+\end{equation}
+If the displayed scalar Hydra is exact-integral, then
+\begin{equation}
+\label{eq:exact-integral-minimal-modulus}
+ d_{\mathrm{Mat}}(H)=\operatorname{Mod}(H)=D.
+\end{equation}
+More precisely,
+\begin{equation}
+\label{eq:scalar-exact-integral-minimal-relative-type}
+ \text{the displayed $D$-presentation is exact-integral}
+ \quad\Longleftrightarrow\quad
+ \left\{
+ \begin{array}{l}
+  D=d_{\mathrm{Mat}}(H),\\
+  H\text{ is of Matthews relatively prime type}.
+ \end{array}
+ \right.
+\end{equation}
+Finally,
+\[
+ H\in\operatorname{RCWA}(\Z)
+ \quad\Longleftrightarrow\quad
+ H:\Z\to\Z\text{ is bijective},
+\]
+because $\operatorname{RCWA}(\Z)$ denotes Kohl's group of rcwa
+\emph{permutations}, not the full rcwa mapping monoid.
+\end{proposition}
+
+\begin{proof}
+On the class $i+D\Z$, formula
+\cref{eq:matthews-scalar-branch} has Kohl's integer-coefficient form
+$(a_i x+b_i)/c_i$ with $(a_i,b_i,c_i)=(m_i,-\rho_i,D)$; hence $D$ is an
+rcwa presentation modulus.
+
+Matthews and Kohl minimize over the same positive integers in this scalar
+setting.  Matthews asks that the restriction to each residue class be affine;
+Kohl writes the same rational-affine restriction as $(ax+b)/c$ with integer
+coefficients, which is possible after clearing denominators.  Thus
+$d_{\mathrm{Mat}}(H)=\operatorname{Mod}(H)$.
+
+For completeness, let $m=\operatorname{Mod}(H)$ and
+$g=\gcd(m,D)$.  Fix a class modulo $g$.  Every class modulo $m$ and every
+class modulo $D$ lying above it have a nonempty infinite intersection by the
+Chinese remainder theorem.  The affine formulas from the two presentations
+agree with $H$ on that intersection, hence agree as rational affine functions.
+It follows that all formulas above the fixed class modulo $g$ are identical;
+therefore $g$ is also an rcwa presentation modulus.  Minimality of $m$ and
+$g\leq m$ force $g=m$, proving $m\mid D$.  The last equivalence is precisely
+Kohl's definition of the group $\operatorname{RCWA}(\Z)$.
+
+Now assume exact-integrality.  If $m<D$, then $m\mid D$ and the two distinct
+$D$-classes $D\Z$ and $m+D\Z$ lie in the single class $m\Z$.  Let $A$ be the
+rational-affine formula of a modulus-$m$ presentation on $m\Z$.  It agrees
+with $H_0$ on the infinite set $D\Z$ and with $H_m$ on the infinite set
+$m+D\Z$; equality on an infinite subset forces equality of rational-affine
+functions, so $H_0=A=H_m$.  Exact-integrality says that the integral locus of
+$H_0$ is $D\Z$ and that of $H_m$ is $m+D\Z$.  One function cannot have these
+two distinct integral loci, a contradiction.  Hence $m=D$, proving
+\cref{eq:exact-integral-minimal-modulus}.  Together with
+\cref{eq:scalar-exact-integral-relatively-prime}, this proves the forward
+implication in
+\cref{eq:scalar-exact-integral-minimal-relative-type}: the displayed modulus
+is now the least modulus, and its multipliers satisfy Matthews's defining
+coprimality condition.  Conversely, if $D=d_{\mathrm{Mat}}(H)$ and $H$ is of
+Matthews relatively prime type, its unique least-$D$ multipliers satisfy
+$\gcd(m_0\cdots m_{D-1},D)=1$; the earlier equivalence then proves that the
+displayed presentation is exact-integral.
+\end{proof}
+
+Thus neither ``Hydra'' nor ``rcwa group element'' may be used as an
+unqualified synonym for the other.  The shortened Collatz map itself is an
+rcwa mapping which is surjective but not injective
+\cite[Rem.~1.2]{KohlRCWA}; it therefore lies outside
+$\operatorname{RCWA}(\Z)$.  Conversely, rcwa membership alone supplies no
+centeredness, properness, exact-integrality, branch-correctness, or
+global-field structure.  The scalar equivalence between exact-integrality and
+Matthews's relatively-prime condition also requires that the displayed
+modulus be the least one, as proved above; it is not a consequence of rcwa
+membership alone.
+
+\subsection{The shortened \texorpdfstring{$qx+1$}{qx+1} Hydra}
+
+For odd $q$, \cref{eq:Tq} is a $2$-Hydra over $K=\F=\Q$ with
+$\Lambda=2\Z$ and branches
+\begin{equation}
+\label{eq:Tq-branches}
+ H_0(x)=\frac{x}{2},
+ \qquad
+ H_1(x)=\frac{qx+1}{2}.
+\end{equation}
+It is centered and proper because $c_0=0$ and $1-r_0=1/2$.  On integral
+inputs it has the exact branch-correctness property
+\[
+ H_0(x)\in\Z\Longleftrightarrow x\in2\Z,
+ \qquad
+ H_1(x)\in\Z\Longleftrightarrow x\in1+2\Z
+ \quad(x\in\Z).
+\]
+The unshortened Collatz map is not exact-integral in this sense because its
+odd branch $3x+1$ is integer-valued on both parity classes.
+
+\subsection{Words and order}
+
+Let $\Sigma_p^*$ be the free monoid of finite words in $\mathcal A_p$,
+including the empty word $\varnothing$.  Concatenation is denoted by
+$\mathbf i\wedge\mathbf j$.  For
+$\mathbf j=(j_0,\ldots,j_{m-1})$, set
+\begin{equation}
+\label{eq:word-composition}
+ H_{\mathbf j}=H_{j_0}\circ H_{j_1}\circ\cdots\circ H_{j_{m-1}},
+ \qquad H_\varnothing=\operatorname{id}_K.
+\end{equation}
+Thus
+\begin{equation}
+\label{eq:concat-composition}
+ H_{\mathbf i\wedge\mathbf j}=H_{\mathbf i}\circ H_{\mathbf j}.
+\end{equation}
+There are unique maps
+\[
+ M_H:\Sigma_p^*\to\End_\F(K)^\times,
+ \qquad X_H:\Sigma_p^*\to K
+\]
+such that
+\begin{equation}
+\label{eq:affine-word-decomposition}
+ H_{\mathbf j}(x)=M_H(\mathbf j)x+X_H(\mathbf j).
+\end{equation}
+The second component is Siegel's \emph{numen}; equivalently,
+$X_H(\mathbf j)=H_{\mathbf j}(0)$.
+
+\begin{proposition}[affine concatenation identities]
+\label{prop:affine-concatenation}
+For all $\mathbf i,\mathbf j\in\Sigma_p^*$,
+\begin{align}
+ M_H(\mathbf i\wedge\mathbf j)
+   &=M_H(\mathbf i)M_H(\mathbf j),\label{eq:M-concat}\\
+ X_H(\mathbf i\wedge\mathbf j)
+   &=M_H(\mathbf i)X_H(\mathbf j)+X_H(\mathbf i)
+     =H_{\mathbf i}\bigl(X_H(\mathbf j)\bigr).
+     \label{eq:X-cocycle}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Substitute \cref{eq:affine-word-decomposition} twice into
+\cref{eq:concat-composition}:
+\[
+ H_{\mathbf i}(H_{\mathbf j}(x))
+ =M_H(\mathbf i)M_H(\mathbf j)x
+  +M_H(\mathbf i)X_H(\mathbf j)+X_H(\mathbf i).
+\]
+Uniqueness of the linear and translation parts gives both identities.
+\end{proof}
+
+\begin{corollary}[closed word formulas]
+\label{cor:closed-word-formulas}
+For $\mathbf j=(j_0,\ldots,j_{m-1})$,
+\begin{align}
+ M_H(\mathbf j)
+   &=r_{j_0}r_{j_1}\cdots r_{j_{m-1}},\label{eq:M-word}\\
+ X_H(\mathbf j)
+   &=\sum_{a=0}^{m-1}
+       \bigl(r_{j_0}r_{j_1}\cdots r_{j_{a-1}}\bigr)c_{j_a},
+       \label{eq:X-word}
+\end{align}
+where an empty product is $I$ and products mean composition in the displayed
+order.
+\end{corollary}
+
+\begin{proof}
+Induct on $m$.  Appending the last letter and applying
+\cref{eq:X-cocycle} gives the new summand after the existing left prefix;
+\cref{eq:M-concat} gives the product formula.
+\end{proof}
+
+When the $r_j$ do not commute, the product order in
+\cref{eq:M-word,eq:X-word} is indispensable.  Expressions such as
+$(1-M_H(\mathbf j))^{-1}$ mean the inverse of an endomorphism of $K$, not
+scalar division.
+
+\subsection{Repeated words and affine fixed points}
+
+For a word $\mathbf j$, write $\mathbf j^{\wedge n}$ for its $n$-fold
+concatenation, and abbreviate $M=M_H(\mathbf j)$ and $X=X_H(\mathbf j)$.
+
+\begin{proposition}[geometric sum in the endomorphism algebra]
+\label{prop:repeated-word}
+For $n\geq1$,
+\begin{align}
+ M_H(\mathbf j^{\wedge n})&=M^n,\\
+ X_H(\mathbf j^{\wedge n})&=(I+M+\cdots+M^{n-1})X.\label{eq:operator-geometric}
+\end{align}
+If $I-M$ is invertible, then
+\begin{equation}
+\label{eq:operator-geometric-inverse}
+ X_H(\mathbf j^{\wedge n})=(I-M^n)(I-M)^{-1}X.
+\end{equation}
+The affine map $H_{\mathbf j}$ has a unique fixed point precisely when
+$I-M$ is invertible, in which case
+\begin{equation}
+\label{eq:word-fixed-point}
+ \operatorname{Fix}(H_{\mathbf j})=\{(I-M)^{-1}X\}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The first two identities follow by induction from
+\cref{prop:affine-concatenation}.  Because $M$ commutes with every polynomial
+in $M$,
+\[
+ (I-M)(I+M+\cdots+M^{n-1})=I-M^n,
+\]
+which gives \cref{eq:operator-geometric-inverse}.  Finally,
+$H_{\mathbf j}(z)=z$ is exactly $(I-M)z=X$.
+\end{proof}
+
+\begin{remark}
+Properness requires $I-r_0$ to be invertible.  It does not imply that
+$I-M_H(\mathbf j)$ is invertible for every nonempty word.  The latter is a
+separate hypothesis whenever \cref{eq:word-fixed-point} is used.
+\end{remark}
+
+\subsection{Correct words versus formal words}
+
+Every word defines an affine map on $K$, but it need not describe a genuine
+orbit segment of the piecewise map $H$.  A chronological branch word
+$\boldsymbol\varepsilon=(\varepsilon_0,\ldots,\varepsilon_{m-1})$ is
+\emph{correct at $z\in\OK$} if
+\[
+ H^{\circ k}(z)\in\Lambda_{\varepsilon_k}
+ \qquad(0\leq k<m).
+\]
+Then
+\begin{equation}
+\label{eq:chronological-composition}
+ H^{\circ m}(z)
+ =H_{\varepsilon_{m-1}}\circ\cdots\circ H_{\varepsilon_0}(z)
+ =H_{\operatorname{rev}(\boldsymbol\varepsilon)}(z).
+\end{equation}
+Exact-integrality is designed to recover correctness from integrality of
+successive branch values.  The passage from a formal fixed point of
+$H_{\mathbf j}$ to a periodic point of $H$ therefore requires more than the
+affine equation alone; the needed arithmetic step is isolated in
+\cref{sec:correspondence}.

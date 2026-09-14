@@ -1,0 +1,376 @@
+{
+  "recorded_utc": "2026-09-04T15:13:35.761059+00:00",
+  "command": [
+    "C:\\Users\\LOCAL_USER\\miniconda3\\python.exe",
+    "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\research_companion\\certificates\\affine_crt_synchronization_checks.py",
+    "--receipt",
+    "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\research_companion\\audit\\affine_crt_watched_review_20260904T151335Z_0212cc90\\certificate_receipt.json"
+  ],
+  "cwd": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\research_companion",
+  "worker_exit_code": 0,
+  "cap_bytes": 5000000000,
+  "guard_poll_interval_ms": 25,
+  "cap_metric": "Sum over watcher plus its entire descendant tree of max(RSS, private bytes), with kill at >=cap",
+  "guard_timeout_seconds": 30,
+  "terminated_reason": null,
+  "sampled_peak_enforced_aggregate_bytes": 63406080,
+  "samples": [
+    {
+      "elapsed_ms": 24,
+      "aggregate_rss_bytes": 33292288,
+      "aggregate_private_bytes": 15245312,
+      "enforced_aggregate_bytes": 33292288,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 65,
+      "aggregate_rss_bytes": 44879872,
+      "aggregate_private_bytes": 22028288,
+      "enforced_aggregate_bytes": 44879872,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 106,
+      "aggregate_rss_bytes": 52006912,
+      "aggregate_private_bytes": 25903104,
+      "enforced_aggregate_bytes": 52006912,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 150,
+      "aggregate_rss_bytes": 52543488,
+      "aggregate_private_bytes": 26652672,
+      "enforced_aggregate_bytes": 52543488,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 194,
+      "aggregate_rss_bytes": 52871168,
+      "aggregate_private_bytes": 27701248,
+      "enforced_aggregate_bytes": 52871168,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 243,
+      "aggregate_rss_bytes": 57450496,
+      "aggregate_private_bytes": 31510528,
+      "enforced_aggregate_bytes": 57450496,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 285,
+      "aggregate_rss_bytes": 57450496,
+      "aggregate_private_bytes": 31510528,
+      "enforced_aggregate_bytes": 57450496,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 333,
+      "aggregate_rss_bytes": 57454592,
+      "aggregate_private_bytes": 31510528,
+      "enforced_aggregate_bytes": 57454592,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 378,
+      "aggregate_rss_bytes": 57454592,
+      "aggregate_private_bytes": 31510528,
+      "enforced_aggregate_bytes": 57454592,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 422,
+      "aggregate_rss_bytes": 57458688,
+      "aggregate_private_bytes": 31510528,
+      "enforced_aggregate_bytes": 57458688,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 466,
+      "aggregate_rss_bytes": 57458688,
+      "aggregate_private_bytes": 31510528,
+      "enforced_aggregate_bytes": 57458688,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 511,
+      "aggregate_rss_bytes": 58327040,
+      "aggregate_private_bytes": 32579584,
+      "enforced_aggregate_bytes": 58327040,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 556,
+      "aggregate_rss_bytes": 63135744,
+      "aggregate_private_bytes": 33087488,
+      "enforced_aggregate_bytes": 63135744,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 608,
+      "aggregate_rss_bytes": 62955520,
+      "aggregate_private_bytes": 33034240,
+      "enforced_aggregate_bytes": 62955520,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 656,
+      "aggregate_rss_bytes": 63406080,
+      "aggregate_private_bytes": 33087488,
+      "enforced_aggregate_bytes": 63406080,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        },
+        {
+          "pid": 54508,
+          "created": 1788534815.0607853
+        },
+        {
+          "pid": 53460,
+          "created": 1788534815.068896
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 701,
+      "aggregate_rss_bytes": 22630400,
+      "aggregate_private_bytes": 12242944,
+      "enforced_aggregate_bytes": 22630400,
+      "processes": [
+        {
+          "pid": 39912,
+          "created": 1788534814.9618127
+        }
+      ]
+    }
+  ],
+  "certificate_receipt": "C:\\Users\\LOCAL_USER\\Documents\\Erdos Strauss and related\\collatz_reconstruction\\research_companion\\audit\\affine_crt_watched_review_20260904T151335Z_0212cc90\\certificate_receipt.json",
+  "existing_final_receipt_sha256": "d6e5476ba30318a0048aa0e7f99c6dbf06064056041b1a35f015219283daadce",
+  "input_hashes_before": {
+    "DIRECTIVES.md": "899fd9edf7316cf1140fc74adf77be9ed0ac49c2440a3e429b556c099dfbc711",
+    "state\\affine_packet_topic_route.json": "47de59d556ea1a38dd82e35ba02379a7c650ad549fd55cd1a25e4429b8d60b53",
+    "research_companion\\chapters\\04_affine_packets_parity_necklaces_and_residue_automata.tex": "27b74b3813f4ba5d73776dff3c0a33f545b9c380cab743d3877c3140913ca95a",
+    "research_companion\\certificates\\affine_crt_synchronization_checks.py": "ee0340744c8886ff55a7246ae0141576eac3ec60d262b7431bc3579c0198d71e",
+    "research_companion\\audit\\affine_crt_synchronization_checks_20260904_final.json": "d6e5476ba30318a0048aa0e7f99c6dbf06064056041b1a35f015219283daadce"
+  },
+  "old_receipt_complete_table_validation": {
+    "cells_checked": 6487,
+    "entries": 5005,
+    "support": 3473,
+    "gcd_strata_recomputed_from_table": {
+      "1": 4560,
+      "13": 410,
+      "499": 35,
+      "6487": 0
+    },
+    "table_sha256": "c96f9a23ccf99710306d4188d737826fc3d03818e0fd80680fa3d9bd3ce626d3"
+  },
+  "new_receipt_complete_table_validation": {
+    "cells_checked": 6487,
+    "entries": 5005,
+    "support": 3473,
+    "gcd_strata_recomputed_from_table": {
+      "1": 4560,
+      "13": 410,
+      "499": 35,
+      "6487": 0
+    },
+    "table_sha256": "c96f9a23ccf99710306d4188d737826fc3d03818e0fd80680fa3d9bd3ce626d3"
+  },
+  "all_mathematical_fields_equal_prior_receipt": true,
+  "new_certificate_receipt_sha256": "b521986a58f0c613ef882e0c22e23c3d06624b0f8ab71df38af3d96421f8670d",
+  "new_certificate_process_reported_peak_bytes": 28225536,
+  "input_hashes_after": {
+    "DIRECTIVES.md": "899fd9edf7316cf1140fc74adf77be9ed0ac49c2440a3e429b556c099dfbc711",
+    "state\\affine_packet_topic_route.json": "47de59d556ea1a38dd82e35ba02379a7c650ad549fd55cd1a25e4429b8d60b53",
+    "research_companion\\chapters\\04_affine_packets_parity_necklaces_and_residue_automata.tex": "27b74b3813f4ba5d73776dff3c0a33f545b9c380cab743d3877c3140913ca95a",
+    "research_companion\\certificates\\affine_crt_synchronization_checks.py": "ee0340744c8886ff55a7246ae0141576eac3ec60d262b7431bc3579c0198d71e",
+    "research_companion\\audit\\affine_crt_synchronization_checks_20260904_final.json": "d6e5476ba30318a0048aa0e7f99c6dbf06064056041b1a35f015219283daadce"
+  },
+  "inputs_unchanged": true,
+  "status": "pass"
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "scope": "Source identities and bounded reading loci for the separate preprint; not a whole-corpus completion claim",
+  "sources": [
+    {
+      "id": "TAO-V7",
+      "canonical_unit": "PUBUNIT-847E4E7212BFCD7A613CA573",
+      "author": "Terence Tao",
+      "title": "Almost all orbits of the Collatz map attain almost bounded values",
+      "edition": "arXiv:1909.03562v7, 16 July 2026",
+      "url": "https://arxiv.org/abs/1909.03562v7",
+      "source_member": "collatz.tex",
+      "sha256": "bfbc39432d4084a276416cb019a592003c868fa32f18e2f90028ac325ae5c19d",
+      "read_scope": [
+        "Section 1 definitions, theorem statements, accelerations and first-passage proposition",
+        "Section 3 in full",
+        "Section 5 endpoint and coefficient arguments in their local context",
+        "Section 6 stopping reserve and offset separation",
+        "bibliographic identities"
+      ],
+      "dependency_boundary": "Proposition 1.11 is cited as an analytic theorem. This draft does not independently reprove the complete Sections 6-7 Fourier-renewal chain."
+    },
+    {
+      "id": "TERRAS-1976",
+      "canonical_unit": "PUBUNIT-1DD2C3376CB6FD02D8AF3761",
+      "author": "Riho Terras",
+      "title": "A stopping time problem on the positive integers",
+      "edition": "Acta Arithmetica 30 (1976), 241-252",
+      "sha256": "2b9c296a05541c5b52f63482a09982519546eba36f581bddd853af6ca014bf89",
+      "read_scope": [
+        "Printed pages 241-243: shortened clock, stopping-time definitions and opening results, independently checked by historical-source reviewer"
+      ],
+      "dependency_boundary": "Historical and coordinate context; not an independently reproved tail theorem in this draft."
+    },
+    {
+      "id": "ALLOUCHE-1979",
+      "canonical_unit": "PUBUNIT-137B5746B9EDEC4CFC0D6F2B",
+      "author": "Jean-Paul Allouche",
+      "title": "Sur la conjecture de Syracuse-Kakutani-Collatz",
+      "sha256": "96f959368e5417dcc6d432e4831f3cf957e7b0db687b916a6aed0262102a01b6",
+      "read_scope": [
+        "Printed 9-01 and 9-04 through 9-08: map and affine/binomial counting lemmas, independently checked by historical-source reviewer"
+      ],
+      "dependency_boundary": "Historical context, not a claimed full independent audit of the paper."
+    },
+    {
+      "id": "KOREC-1994",
+      "canonical_unit": "PUBUNIT-8DD31103A7429CACB4085CF8",
+      "author": "Ivan Korec",
+      "title": "A density estimate for the 3x+1 problem",
+      "sha256": "3111bcc638a563fa4395d8a090a4b563116f1ffe30aee136f6e24a76d4d97c77",
+      "read_scope": [
+        "Printed pages 85-86: shortened map, Theorem 1, historical threshold and parity fibres"
+      ],
+      "dependency_boundary": "Historical context; main preprint proof does not invoke the full Korec argument."
+    },
+    {
+      "id": "EVERETT-1977",
+      "author": "C. J. Everett",
+      "edition": "Advances in Mathematics 25 (1977), 42-45",
+      "read_scope": [],
+      "dependency_boundary": "Historical role and bibliography reported by Tao Section 1.1; not independently reread in this preprint audit."
+    },
+    {
+      "id": "TAO-JOURNAL",
+      "canonical_unit": "PUBUNIT-808654374124DFA4A51601F4",
+      "edition": "Forum of Mathematics, Pi 10 (2022), e12, 56 pages",
+      "read_scope": [],
+      "dependency_boundary": "Bibliographic manifestation identified by official arXiv record. No fresh journal-versus-TeX identity claim is made by this draft."
+    }
+  ],
+  "rights": "No original article or book bulk text is included in the portable package.",
+  "baseline": "TAO-V7; historical comparison sources retained in local audit only"
+}

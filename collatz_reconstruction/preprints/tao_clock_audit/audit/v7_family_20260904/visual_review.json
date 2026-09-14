@@ -1,0 +1,119 @@
+{
+  "audit_id": "QA-TAO-V7-FAMILY-VISUAL-20260904-0001",
+  "receipt_created_utc": "2026-09-04T14:49:04Z",
+  "review_type": "read_only_visual_qa",
+  "pdf": {
+    "path_relative_to_preprint": "output/pdf/tao_clock_audit.pdf",
+    "sha256": "cfb0c07de2952f4c9e4ce44cf5828398601dd6c6ae09d77a60a332771052f919",
+    "page_count": 16,
+    "expected_hash_matched": true
+  },
+  "method": {
+    "applicable_skill": "pdf:pdf",
+    "skill_read_in_full_before_visual_work": true,
+    "inspection": "Direct view_image inspection of every existing full-page PNG, in four batches of four pages.",
+    "rendered_page_directory_relative_to_preprint": "audit/v7_family_20260904/pages",
+    "rendered_page_pattern": "page_XX.png",
+    "pages_reviewed": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "coverage": "all 16 rendered pages",
+    "new_rendering_or_build_performed": false
+  },
+  "overall_status": "PASS",
+  "defects": [],
+  "general_checks": {
+    "text_and_equations_inside_margins": "PASS",
+    "overlap_and_clipping": "none observed",
+    "missing_glyph_boxes": "none observed",
+    "visibly_unresolved_references": "none observed",
+    "page_number_sequence": "1 through 16",
+    "legibility": "PASS"
+  },
+  "page_reviews": [
+    {
+      "page": 1,
+      "status": "PASS",
+      "checks": "Title, authorship, date, abstract and beginning of introduction are clear. The abstract's common starting-scale sequence, compatible limits and finite joint distributions are legible. No title or paragraph overlap."
+    },
+    {
+      "page": 2,
+      "status": "PASS",
+      "checks": "Introduction ends cleanly, including attribution of the orbit-minimum theorem to Tao. Three-clock definitions, Proposition 2.1 and equations (1)-(2) fit within margins."
+    },
+    {
+      "page": 3,
+      "status": "PASS",
+      "checks": "Clock proof, example, harmonic sums, dyadic transport and finite-cutoff sampling are readable. Equations (3)-(4) and proposition headings are well placed."
+    },
+    {
+      "page": 4,
+      "status": "PASS",
+      "checks": "Sampling proof, first-passage definitions and nested-passage lemma are readable. Dagger symbols and equation (5) render correctly."
+    },
+    {
+      "page": 5,
+      "status": "PASS",
+      "checks": "Kernel identities, telescoping estimate and tightness theorem are clear. The final displayed equation remains above the footer without collision."
+    },
+    {
+      "page": 6,
+      "status": "PASS",
+      "checks": "Tightness proof, power-error estimate, Tao input and unmerged first-passage law are readable. Equations (10)-(13) fit correctly."
+    },
+    {
+      "page": 7,
+      "status": "PASS",
+      "checks": "New Section 4.1 and Corollary 4.2 fit cleanly on the page: common base, all-threshold laws, quantitative convergence, compatibility, failure bound and proof. Superscripts in the limiting-law notation render correctly. The common-base caveat at the bottom is legible and unobstructed."
+    },
+    {
+      "page": 8,
+      "status": "PASS",
+      "checks": "New Corollary 4.3, compatible tuple space, definition of J and its bijection/isometry proof are legible. The bound independent of the number of thresholds is visible. Section 4.2 and its fixed-threshold equations fit without overlap."
+    },
+    {
+      "page": 9,
+      "status": "PASS",
+      "checks": "Fixed-threshold proof and diverging-threshold corollary are readable. Proposition 4.6 begins cleanly; its enumerated list continues normally onto the following page."
+    },
+    {
+      "page": 10,
+      "status": "PASS",
+      "checks": "Continuation of the enumerated proposition and its proof is clear. Endpoint/coefficient section, parameters, first subsection and multiplicative-buffer proposition have sound spacing."
+    },
+    {
+      "page": 11,
+      "status": "PASS",
+      "checks": "Buffer proof and affine-coefficient expansion are clear. Equations (23)-(25), including the bottom display, remain inside the text area."
+    },
+    {
+      "page": 12,
+      "status": "PASS",
+      "checks": "Uniform coefficient bound and proof are dense but legible. Equations (26)-(28) remain within margins and have adequate separation."
+    },
+    {
+      "page": 13,
+      "status": "PASS",
+      "checks": "Proof continuation, sums, finite-modulus lift explanation and beginning of Section 6 are readable, with no page-break collision."
+    },
+    {
+      "page": 14,
+      "status": "PASS",
+      "checks": "Reserve proposition, equation (30) and proof fit clearly. The discussion visibly uses the phrase 'exactly the retained reserve' and attributes the source reserve to Tao."
+    },
+    {
+      "page": 15,
+      "status": "PASS",
+      "checks": "Dyadic/threshold discussion, five-row source-locator table, computational/authorship paragraphs and first two bibliography entries are readable. Table columns fit. The wrapped Allouche URL is not clipped."
+    },
+    {
+      "page": 16,
+      "status": "PASS",
+      "checks": "Remaining bibliography entries (3)-(6), URLs and page number render clearly. The short final bibliography page is a normal ending, not a layout defect."
+    }
+  ],
+  "scope_limitations": [
+    "This receipt is visual QA, not a new mathematical proof audit or a claim of literature priority.",
+    "The PDF hash was checked directly. Source-to-PDF derivation, build diagnostics and render provenance were not independently regenerated in this task.",
+    "No Overleaf state or remote upload was inspected or changed.",
+    "No TeX, manifest, source, bibliography or PDF was edited; the only saved output of this task is this receipt."
+  ]
+}

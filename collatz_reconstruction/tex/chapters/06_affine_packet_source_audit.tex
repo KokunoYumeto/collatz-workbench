@@ -1,0 +1,527 @@
+\section{The affine-packet programme: source reconstruction and exact repairs}
+\label{sec:affine-packet-source-audit}
+
+This chapter reconstructs the affine-packet mathematics in the 3,021-line modern
+Chatnotes export \emph{Implications of Affine Formula} and of its immediate
+61-page local antecedent, the OpenAI technical note \emph{Affine Packets,
+Cyclic Orbit Packets, Dyadic Dilation, Lambert--Mahler Series, Hydra/Numen
+Structure, and Exact Rational Periodic Orbit Enumeration in the Odd-Step
+Collatz Algebra}.  Neither local item is used as a substitute for published
+literature.  The purpose of the reconstruction is to identify exactly which
+coordinates are classical, which maps have now been proved, which finite
+calculations reproduce, and which statements in the antecedent require
+repair.
+
+The raw export has SHA-256
+\begin{center}
+\texttt{abb1abbb948dc140394de3d35f0efbde9b3facdf718c24b065b8d0adb951366e}
+\end{center}
+and 3,021 physical lines.  The local technical note has SHA-256
+\begin{center}
+\texttt{13f49961a60b870fa7a6f0f646758b4d72c1a4e4267f347606cc8a3238d552f1}.
+\end{center}
+All page and line locators below refer to those exact manifestations.
+
+\subsection{The local sources}
+
+The raw export has the following chronological organization.  Physical line
+numbers refer to the export itself, not its generated attachment labels.
+\begin{center}
+\begin{tabular}{p{0.16\textwidth}p{0.72\textwidth}}
+\toprule
+Physical lines & source content\\
+\midrule
+1--613 & First synthesis of the attached local technical note; source names
+and theorem numbers here are routing prompts, not independent evidence.\\
+614--1373 & Recheck of the fixed-return algebra, cyclic-shift bridge,
+primitive necklaces, signed rational counts, packet envelopes, and the
+length-four argument.\\
+1375--2001 & Length-five argument; cycle product identity; exact
+minimum-point strip; reduction of period eight to $(m,A)=(8,13)$.\\
+2003--2679 & Further derivation of the strip and candidate packet list.\\
+2680--3020 & First-letter residue recursion, the claimed
+$R_{8,13}(233)$ calculation, the 99 cyclic classes, and exhaustive candidate
+packet scans through $m=16$.\\
+3021 & Exporter footer; no mathematical content.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The export refers to attached CSV, Markdown, and summary tables, but those
+objects are not embedded in the 3,021-line file.  Accordingly no calculation
+was admitted from a link label.  The 99-class table was independently
+recreated as
+\path{research_companion/data/period_8_A_13_classes.csv}, and every row is
+checked by the portable certificate.
+
+The antecedent develops affine blocks, translations, cyclic transport,
+necklace counting, and several analytic constructions.  Its Theorems~10.1
+and 10.3 supply the cyclic-transport and primitive-necklace arguments examined
+below.  The indexed source TeX and a second, 62-page PDF agree with the
+controlling PDF in the twelve statement/proof blocks collated for this
+chapter; the observed differences there are populated cross-references and
+repagination.  This is a passage-level correspondence, not an identification
+of every unexamined statement or of the exact producing builds.
+
+\subsection{Published antecedents and the exact coordinate bridge}
+
+The core return formula predates the local corpus.
+
+\begin{itemize}[leftmargin=2em]
+\item B\"ohm--Sontacchi, printed pp.~263--264, give the formal affine
+composition and fixed-return candidate for a prescribed parity pattern
+\cite{BohmSontacchi1978}.
+
+\item Crandall, printed pp.~1287--1290, gives the accelerated affine cycle
+formula, the minimum-orbit estimate, and a cycle-length exclusion based on the
+then-current verification range \cite{Crandall1978}.  Thus the product/minimum
+strip in raw lines 1581--1620 and 1829--1908 is a direct form of a classical
+cycle inequality, not a new structural principle.
+
+\item Lagarias, printed pp.~34--39, proves that every binary parity word gives
+a unique rational periodic point, displays its numerator and denominator,
+defines irreducibility by cyclic rotation, and counts irreducible binary
+necklaces \cite{Lagarias1990}.  In particular, a new vocabulary for the same
+numerator cannot enlarge the theorem.
+
+\item Urata, printed pp.~8--11, writes the odd-step exponent numerator,
+proves the periodic-exponent/periodic-orbit correspondence, and asks exactly
+when
+\[
+ \frac{C(p)}{2^{a_1+\cdots+a_m}-3^m}
+\]
+is an integer \cite{Urata2003}.
+
+\item Laarhoven--de Weger, source lines 303--321, relate rational cycles to
+binary necklaces/Lyndon words and to primitive $3n+b$ cycles
+\cite{LaarhovenDeWeger2012}.  Their statements retain the source defects and
+scope boundaries recorded in Chapter~\ref{sec:literature-spine}; they are not
+used to erase the primitive-denominator conditions in Lagarias.
+\end{itemize}
+
+For a positive exponent packet $p=(a_1,\ldots,a_m)$, $m\ge1$, of
+total $A\ge m$, define
+\[
+ E(p)=1,0^{a_1-1}\cdots1,0^{a_m-1}.
+\]
+This word uses Lagarias's shortened map $T$, whose odd branch is
+$(3x+1)/2$ and whose even branch is $x/2$, on the rationals with odd
+denominator.  It is a bijection from compositions of $A$ into $m$ positive parts to
+binary words of length $A$, weight $m$, and initial bit one.  If
+$S_j=a_1+\cdots+a_j$, the ones occur at positions
+$S_0,\ldots,S_{m-1}$, so Lagarias's numerator is exactly
+\[
+ N(E(p))=\sum_{j=0}^{m-1}3^{m-1-j}2^{S_j}=C(p).
+\]
+Packet rotation by $j$ letters is not one-bit rotation: it is binary rotation
+by the prefix length $S_j$.  The rotation comparison is the groupoid isomorphism
+\[
+ (p,j)\longmapsto(E(p),S_j(p)),
+ \qquad E(\sigma^jp)=\rho^{S_j(p)}E(p),
+\]
+with inverse given by cyclic gaps between successive ones.  The composition
+identity
+\[
+ S_{j+k\bmod m}(p)
+ \equiv S_j(p)+S_k(\sigma^jp)\pmod A
+\]
+proves functoriality.  It also proves that primitive exponent packets and
+primitive binary parity words are the same periodic objects in different
+coordinates.  The complete domain, codomain, inverse, fibres, and stabilizers
+are proved in the companion's theorems \emph{Packet--parity coordinate
+isomorphism} and \emph{Exact cyclic groupoid morphism}, in its section
+\emph{Affine packets, parity necklaces, and exact residue automata}.
+Here the acting groups are $\mathbb Z/m\mathbb Z$ and
+$\mathbb Z/A\mathbb Z$; rotation arrows with equal targets remain distinct.
+For $p=u^r$, with $u$ primitive of length $d$ and sum $B$, the stabilizer
+map is $kd\bmod m\mapsto kB\bmod A$ for $0\le k<r$.
+
+For the full map $F$, with odd branch $3x+1$ and even branch $x/2$, the
+corresponding word is instead
+\[
+ E_F(p)=1,0^{a_1}\cdots1,0^{a_m}.
+\]
+It has length $A+m$.  Inserting a zero after each one of $E(p)$, or deleting
+that zero from $E_F(p)$, gives mutually inverse pointed-word maps.
+The exact odd-return times are
+\[
+ T^{S_j}(x_p)=\Phi^j(x_p)=F^{S_j+j}(x_p).
+\]
+For the primitive root $u$, the exact periods are $d$ odd returns, $B$
+shortened steps, and $B+d$ full steps.  The companion's theorem
+\emph{Exact comparison of three clocks} proves the intermediate values
+and minimal periods, rather than identifying the clocks by terminology.
+
+\subsection{Cyclic affine transport and exact valuations}
+
+The antecedent already proves the affine arrow explicitly in
+Theorem~10.1, physical p.~36: $g_{a_1}(x_p)$ is fixed by $g_{\sigma p}$,
+whose fixed point is unique.  Raw lines 959--1003 give the corresponding
+numerator calculation.  The additional check needed to identify the actual
+odd-return branch is its exact valuation.  With
+\[
+ D=2^A-3^m,
+ \qquad x_p=\frac{C(p)}D,
+ \qquad \sigma p=(a_2,\ldots,a_m,a_1),
+\]
+the first-letter recurrences, with $C(\varnothing)=0$ for the $m=1$
+tail, give
+\[
+ 3C(p)+D=2^{a_1}C(\sigma p),
+ \qquad 3x_p+1=2^{a_1}x_{\sigma p}.
+\]
+Because $C(\sigma p)$ and $D$ are odd,
+\[
+ \nu_2(3x_p+1)=a_1,
+ \qquad \Phi(x_p)=x_{\sigma p}.
+\]
+This proves an actual odd-step morphism; it is not merely equality of two
+formal affine expressions.  Since $\gcd(D,6)=1$, both $2$ and $3$ are
+units modulo $D$.  The first identity therefore gives
+$D\mid C(p)$ if and only if $D\mid C(\sigma p)$, proving invariance
+under cyclic rotation.
+
+The exact positive-cycle criterion is therefore:
+\[
+ \left.
+ \begin{array}{c}
+ p\text{ primitive},\\
+ 2^A>3^m,\\
+ 2^A-3^m\mid C(p)
+ \end{array}
+ \right\}
+ \quad\Longleftrightarrow\quad
+ \text{a positive odd integral orbit of exact odd-step period }m
+\]
+with exponent necklace $[p]$.  If $p$ is imprimitive, the same rational point
+belongs to the orbit of its primitive root; a length-$m$ return is not thereby
+an exact period-$m$ orbit.
+
+\subsection{Exact repairs to the 61-page local antecedent}
+
+The following are mathematical repairs, not stylistic preferences.
+
+\begin{sourceissue}[Periodic-tail calculation, physical p.~30]
+\label{issue:affine-periodic-tail-expansion}
+Theorem~9.2 asserts that an integral orbit with an eventually repeated
+exponent block $p$ is already fixed under the block map from the beginning
+of that exponent tail.  This assertion is correct.  Write
+$D=2^A-3^m$, $C=C(p)$, and $z_j=Dy_j-C$ for the integral block samples
+$y_{j+1}=(3^my_j+C)/2^A$.  The required calculation is
+\[
+ z_{j+1}
+ =\frac{3^mDy_j+DC-2^AC}{2^A}
+ =\frac{3^m(Dy_j-C)}{2^A}
+ =\frac{3^m}{2^A}z_j.
+\]
+The printed intermediate numerator replaces $DC$ by $3^mC$; the
+following line already gives the correct result.  For $p=(2)$ and
+$y_j=1$, the incorrect line equals $1/2$, whereas $z_{j+1}=0$.
+
+After the displayed repair, $2^{jA}z_j=3^{jm}z_0$ and
+$\gcd(2^{jA},3^{jm})=1$ give $2^{jA}\mid z_0$ for every $j$.
+Since $A\ge1$, a nonzero integer $z_0$ cannot have this divisibility:
+choose $j$ with $2^{jA}>|z_0|$.  Hence $z_0=0$ and $y_j=C/D$ for
+all $j$.  The intermediate odd states repeat because the map is
+deterministic.  This proves exact repetition, not only convergence.
+The hypothesis that the exponent tail repeats is retained; no eventual
+periodicity of an arbitrary orbit is inferred.
+
+The same intermediate error occurs in the indexed 62-page PDF, p.~31,
+and in the indexed TeX at line~1977.  These particular passages were
+collated directly; no whole-version identity is needed.
+\end{sourceissue}
+
+\begin{sourceissue}[Complex Abel coordinate, physical pp.~11--12]
+On a simply connected invariant domain, arbitrary choices of a holomorphic
+logarithm need not satisfy
+$\operatorname{Log}(\chi w)=\log\chi+\operatorname{Log}(w)$ literally; the
+two sides can differ by $2\pi i k$.  The transport statement requires a
+branch-compatible choice, or an explicit domain argument forcing $k=0$.
+Later portions of the note impose compatibility, but Theorem~4.2 as printed
+does not.
+\end{sourceissue}
+
+\begin{sourceissue}[Concentration calculation, physical p.~18]
+For $f(t)=t^2\log^22$ and $x\ge y\ge2$,
+\[
+ f(x+1)+f(y-1)-f(x)-f(y)
+ =2\log^22\,(x-y+1)>0.
+\]
+The stated concentration conclusion is correct, but the displayed
+application in Corollary~6.5 reverses the sign in its rearrangement.  The
+identity above is the repaired proof.
+\end{sourceissue}
+
+\begin{sourceissue}[Maximizer multiplicity, physical p.~19]
+At the boundary $A=m$ there is only the all-ones packet, so the maximizing
+word has multiplicity one.  More generally, the multiplicity is one when
+$m=1$ or $A=m$, and is $m$ when $m\ge2$ and $A>m$, when the unique large
+entry can occupy any of the $m$ positions.
+Corollary~6.7 omits this boundary case.
+\end{sourceissue}
+
+\begin{sourceissue}[The $m=1$ proof boundary, physical pp.~21--23]
+\label{issue:affine-singleton-average}
+The displayed formula in Theorem~6.10 remains correct for $m=1$, but the
+printed proof sets $r=m-2$, whereas its auxiliary lemma on p.~20 assumes
+$r\ge0$.  For $m=1$ there is exactly one packet, $(A)$, and hence
+\[
+ \mathbb E[a_1^2]=A^2=\frac{A(2A-1+1)}{1(1+1)},\qquad
+ \mathbb E[Q]=(A\log2-\log3)^2.
+\]
+These are precisely the displayed formulas at $m=1$, completing that case.
+\end{sourceissue}
+
+\begin{sourceissue}[Pointed periodic words, physical p.~37]
+\label{issue:affine-pointed-words}
+The last sentence of the proof of Theorem~10.3 incorrectly makes equality
+of infinite pointed periodic words equivalent to cyclic conjugacy of their
+primitive roots.  For example, $(1,2)^\infty\ne(2,1)^\infty$.
+The correct statement is equality of their primitive roots as pointed words.
+Indeed, extend a common periodic sequence to all integer indices.  Its
+periods form a subgroup of $\mathbb Z$, so their least positive element
+divides every period; each word is a power of that common initial block.
+Primitive words therefore equal that block.  In the source proof the base
+points have already been aligned, so this stronger conclusion supplies the
+needed implication.  Passing back to unpointed orbits gives cyclic conjugacy,
+as stated in the theorem.
+\end{sourceissue}
+
+\begin{sourceissue}[One-letter Hamiltonian domain, physical p.~55]
+\label{issue:affine-H1-domain}
+The source Hilbert space is $\ell^2(\mathbb N_{\ge1})$, and the multiplier
+is $u(a)=a\log2-\log3$.  The self-adjoint operator is
+\[
+ \begin{split}
+ \mathcal D(H_1)&=\left\{\xi\in\ell^2(\mathbb N_{\ge1}):
+       \sum_{a\ge1}|u(a)|^2|\xi_a|^2<\infty\right\},\\
+ (H_1\xi)_a&=u(a)\xi_a.
+ \end{split}
+\]
+To verify self-adjointness, test the adjoint identity on each basis vector:
+an adjoint-domain vector $\eta$ must have adjoint image
+$(u(a)\eta_a)_a\in\ell^2$, and hence belongs to the displayed domain.
+Conversely this condition suffices by the Cauchy--Schwarz inequality.
+Thus the adjoint has exactly the same domain and action.  Truncating at
+$a\le N$ converges both in $\ell^2$ and after application of $H_1$;
+finite-support vectors form a core, giving an essentially self-adjoint
+restriction, not a second unspecified self-adjoint operator.
+
+The resolvent at $i$ is the diagonal operator with entries
+$(u(a)-i)^{-1}$.  Since $|u(a)/(u(a)-i)|\le1$, this inverse maps
+$\ell^2$ into the stated operator domain.  Its entries tend to zero, and
+its truncations converge in operator
+norm, so the resolvent is compact.  Finally, for every $\beta>0$,
+\[
+ \operatorname{Tr}(e^{-\beta H_1})
+ =\sum_{a\ge1}3^\beta2^{-\beta a}
+ =\frac{3^\beta}{2^\beta-1},
+\]
+as in Theorem~19.1.  Specifying the domain completes this operator statement
+without changing its spectrum or partition function.
+\end{sourceissue}
+
+The note also contains unresolved bibliography/cross-reference markers and
+named analogies that are not accompanied by typed maps.  Those analogies are
+not mathematical identifications and are not propagated.  No theorem is
+discarded merely because it uses local vocabulary; each formula is instead
+crosswalked through its explicit coordinates.
+
+\subsection{What reproduces from the raw Chatnotes}
+
+\subsubsection{Signed fixed-content necklace counts}
+
+Raw lines~1041--1083 give a valid fixed-label refinement of the classical
+primitive-necklace count.  For $m\geq1$, $A\geq m$, let $W(m,A)$ count the
+primitive words in $\Pi_{m,A}$.  Unique primitive-root decomposition and
+M\"obius inversion give
+\[
+ W(m,A)=\sum_{d\mid\gcd(m,A)}\mu(d)
+          \binom{A/d-1}{m/d-1}.
+\]
+The cyclic action is free on primitive words, so the number of rational
+$\Phi$-orbits of exact odd-return period $m$ at this packet label is
+\[
+ N_{\mathrm{orb}}(m,A)
+ =\frac{W(m,A)}m
+ =\frac1A\sum_{d\mid\gcd(m,A)}\mu(d)
+          \binom{A/d}{m/d}.
+\]
+The second equality is the fixed-Hamming-weight binary-necklace formula.
+Stanley's multivariate Lyndon series enumerates primitive necklaces by their
+colour multiplicities; coefficient extraction at binary content $(m,A-m)$
+gives exactly this expression
+\cite[Exercise~7.89(a), equations~(7.149)--(7.150), and the solution on
+printed p.~555]{Stanley2024}.  Lagarias gives the unrestricted primitive
+binary-necklace and rational-cycle coordinates, and Laarhoven--de Weger
+restate the unrestricted count in Lyndon-word language
+\cite[pp.~38--39]{Lagarias1990}\cite{LaarhovenDeWeger2012}.  The new step in
+the present reconstruction is not the enumeration formula: it is the exact
+transport through the packet--parity groupoid followed by the
+Collatz-denominator sign partition.
+
+Every point belonging to the label $(m,A)$ is
+$C(\sigma^jp)/(2^A-3^m)$ with positive numerator.  Hence the whole orbit is
+positive when $2^A>3^m$ and negative when $2^A<3^m$; equality is impossible.
+Multiplication by the relevant sign indicator gives the two signed orbit
+counts, and multiplication by $m$ gives the two point counts.  The companion
+states and proves all three typed counts separately.  Raw line~1083 instead
+calls every word a periodic point.  The exact statement is that a primitive
+word determines a distinguished point, while its $m$ rotations determine the
+$m$ distinct points of one exact-period orbit.  When $\gcd(m,A)=1$, every
+word is primitive and the orbit and point counts are respectively
+$m^{-1}\binom{A-1}{m-1}$ and $\binom{A-1}{m-1}$.
+
+\subsubsection{The analytic packet family}
+
+The raw series at lines~432--475 are substantive content, not merely
+motivation.  In the source coordinates $c(p)=C(p)/2^A$, put
+\[
+ S_m(A)=\sum_{p\in\Pi_{m,A}}c(p),\qquad
+ X_m(A)=\sum_{p\in\Pi_{m,A}}\frac{C(p)}{2^A-3^m},\qquad
+ F_m(q)=\sum_{A\ge m}S_m(A)q^A.
+\]
+The source's Theorems~16.2--16.5 give, with
+$u=q/(1-q)$ and $v=q/(2-q)$,
+\[
+ F_{m+1}=v(3F_m+u^m),\quad F_1=v,\qquad
+ F_m=\sum_{k=0}^{m-1}3^{m-1-k}u^kv^{m-k}.
+\]
+These identities follow by appending a letter, using
+$c(p,a)=2^{-a}(3c(p)+1)$, and summing a finite convolution at every
+coefficient.  They supply the stated two-state linear representation.
+The companion section \emph{Packet fixed-point series and their dyadic
+poles} reconstructs this family with its full proofs.
+
+\begin{sourceissue}[Generalized dilation equation, physical p.~51]
+\label{issue:affine-mahler-domain}
+Theorem~17.1 proves the coefficientwise identity
+\[
+ X_m(2q)-3^mX_m(q)=F_m(2q),\qquad
+ X_m(q)=\sum_{A\ge m}X_m(A)q^A,
+\]
+and its uniqueness, because $2^A-3^m\ne0$.  The additional claim that
+the defining series therefore give this identity throughout $|q|<1$
+fails when $m\ge2$.  Already for $m=2$,
+\[
+ X_2(A)=\frac{2^A+3A-5}{2^A-9}\longrightarrow1,
+\]
+so $X_2(2q)$ diverges at $q=3/4$.  The phrase also occurs in the
+indexed PDF, p.~52, and in the indexed TeX at line~3376; it is not
+present in the raw Chatnotes statement.
+
+The exact common Taylor-series domain is $|q|<1/2$ for $m\ge2$;
+for $m=1$ it is $|q|<1$.  Indeed, for large $A$ the total $X_m(A)$
+is positive and bounded above by a constant times
+$\binom{A-1}{m-1}$.  If $m\ge2$, a word ending in $1$ contributes
+at least $1/2$, so the radius of $X_m$ is exactly one.  For $m=1$,
+$X_1(A)=(2^A-3)^{-1}$ has radius two.  The companion gives the
+coefficient bounds and the inverse of the formal dilation map explicitly.
+\end{sourceissue}
+
+The source already continues $X_1$ meromorphically with simple poles at
+$2,4,8,\ldots$.  The companion extends this calculation to the whole
+packet family: for $m\ge2$, $X_m$ has a pole of order $m-1$ at $1$
+and a pole of order $m$ at every $2^j$, $j\ge1$, with no others.
+The construction subtracts a finite coefficient prefix and sums scaled
+copies of the remaining rational function with a uniform geometric tail
+bound.  It proves a meromorphic identity, not convergence of the original
+series outside its radius.  No claim of priority over the broader
+literature accompanies this extension of the local source calculation.
+
+\subsubsection{The finite cycle calculations}
+
+The length-four and length-five arguments at raw lines 1209--1365 and
+1567--1825 are arithmetically correct after the classical lineage above is
+made explicit.  For length five the strip forces $A=8$; the denominator is
+$13$; and the seven cyclic representatives have numerator residues
+\[
+ 3,6,12,4,10,6,7\pmod{13}.
+\]
+None is integral.
+
+The packet residue recurrence at raw lines 2683--2790 is also exact.  For a
+positive odd modulus $q$,
+\[
+ R_{m,A}(q)=\{C(p)\bmod q:p\in\Pi_{m,A}\}
+\]
+satisfies
+\[
+ R_{m,A}(q)=
+ \bigcup_{a=1}^{A-m+1}
+ \left(3^{m-1}+2^aR_{m-1,A-a}(q)\right),
+ \qquad R_{1,A}(q)=\{\bar1\}\quad(A\ge1).
+\]
+The recurrence is for $m\ge2$, $A\ge m$; $R_{m,A}(q)=\varnothing$
+when $A<m$.  For column count vectors the transition matrix is explicitly
+$M_{m,a}e_r=e_{3^{m-1}+2^ar}$, with inverse
+$M_{m,a}^{-1}e_s=e_{2^{-a}(s-3^{m-1})}$.  Its dependence on $a$ is
+periodic modulo $\lambda=\operatorname{ord}_q(2)$, taking $\lambda=1$
+for $q=1$.  Summing the periodic matrix blocks proves the rational generating
+function in the companion, with every coefficient a finite sum.
+
+For $(m,A)=(8,13)$, direct enumeration and the independent recursion agree:
+\[
+ R_{8,13}(233)=\mathbb Z/233\mathbb Z\setminus\{0,138\}.
+\]
+The $792$ packets form $99$ free cyclic classes.  Exactly $15$ minimal
+representatives have numerator divisible by $7$, none has numerator divisible
+by $233$, and none is integral.  The reproduced exhaustive table through
+$m=16$ contains $4{,}734{,}620$ packets and zero integral packets in the eight
+strip-selected labels
+\[
+ (5,8),(8,13),(10,16),(11,18),(13,21),(14,23),(15,24),(16,26).
+\]
+The resulting exclusion of nontrivial exact odd-step periods $2\le m\le16$
+is valid, but it is a finite certificate rather than a novelty claim; the
+published literature already contains much stronger cycle-length exclusions.
+
+\subsection{Reproducibility and admission boundary}
+
+The companion additionally retains the common exponent word when comparing
+residues modulo coprime factors.  Its \emph{Synchronized CRT transport}
+theorem gives the explicit isomorphism and transition identity, and
+\emph{Information discarded by the marginals} computes the kernel of the
+marginal map.  At $(m,A)=(10,16)$ the complete joint table has $3473$
+occupied cells modulo $(13,499)$ but no occupied $(0,0)$ cell, although both
+marginal supports are full.  All $35$ words with numerator divisible by
+$499$ are squares of packets in $\Pi_{5,8}$.  Thus $499$ already rules out
+an integral periodic point for every primitive word at this label.
+These are independently reproduced
+finite calculations, not a failure of the Chinese remainder theorem.
+
+The root certificate
+\path{certificates/affine_packet_source_and_cycle_checks.py} pins the raw
+export, local antecedent, and exact primary manifestations of
+B\"ohm--Sontacchi, Crandall, Lagarias, Urata, and Laarhoven--de Weger.  It
+then executes the portable companion certificate
+\path{research_companion/certificates/affine_packet_residue_checks.py}.
+The latter uses integer and exact rational arithmetic only, checks the
+packet--parity morphism on 12,089 packets, including 155,047 shortened steps,
+233,525 full steps, and 78,478 odd returns.  It checks exact periods for
+primitive and repeated packets, groupoid inverses and composition,
+702 residue multiplicity vectors and 546 rational-series coefficient vectors,
+verifies the 99-row CSV, and runs two independent full packet scans.
+Within the portable \path{research_companion/} tree, the separate certificate
+\path{certificates/affine_signed_necklace_checks.py} checks the two signed
+fixed-content formulas on 100 parameter pairs containing
+39,202 words and 39,022 primitive words, together with the cyclic freeness,
+packet--binary necklace bijection, point/orbit distinction, coprime case, and
+recovery of the unrestricted Moreau sum.  All three scripts reject optimized
+Python.
+
+The admitted mathematical content is therefore separated as follows.
+\begin{itemize}[leftmargin=2em]
+\item The rational fixed-return and parity-necklace theorems are attributed to
+their published sources.
+\item The packet--parity groupoid isomorphism, its fixed-content signed count,
+and the displayed residue recursion are direct deductions proved in the
+companion, with classical necklace lineage retained explicitly.
+\item The period-five, period-eight, and through-period-sixteen statements are
+finite exact calculations with pinned reproducible certificates.
+\item The local technical note remains a local antecedent, not a publication
+and not an authority for enlarging any published theorem.
+\item No statement here proves global termination, excludes all nontrivial
+cycles, or assigns a result to an author who did not state it.
+\end{itemize}

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "TAO-V5",
+    "canonical_unit": "PUBUNIT-7B52CC4A159765C800B92B6B",
+    "author": "Terence Tao",
+    "edition": "arXiv:1909.03562v5, 15 February 2022",
+    "url": "https://arxiv.org/abs/1909.03562v5",
+    "source_member": "collatz.tex",
+    "sha256": "c676b362b30807aa6690d0d4f16b8c8e84324732f5c0eb72ccfd875000276ae0",
+    "read_scope": [
+      "Section 6 half-reserve windows and exponential estimate, source lines 976-997 and 1039-1089"
+    ],
+    "dependency_boundary": "Comparison witness, not silently identified with the journal or v7."
+  }
+]

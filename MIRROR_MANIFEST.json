@@ -1,0 +1,2221 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "collatz_reconstruction/tex/chapters/00_scope_and_method.tex",
+      "source": "collatz_reconstruction/tex/chapters/00_scope_and_method.tex",
+      "source_sha256": "dbfa286bebfb83e219e9dc8c15f1a43bc1e30a2223f93dd0302637e8022176ef",
+      "sha256": "dbfa286bebfb83e219e9dc8c15f1a43bc1e30a2223f93dd0302637e8022176ef",
+      "bytes": 2604,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/01_literature_spine.tex",
+      "source": "collatz_reconstruction/tex/chapters/01_literature_spine.tex",
+      "source_sha256": "4168d99ee777a47a2bdf285cc64808b91c9d1695bf997408b650cf4ae371e163",
+      "sha256": "4168d99ee777a47a2bdf285cc64808b91c9d1695bf997408b650cf4ae371e163",
+      "bytes": 110712,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/01a_crandall_1978.tex",
+      "source": "collatz_reconstruction/tex/chapters/01a_crandall_1978.tex",
+      "source_sha256": "c1b333613405eab1bdfa512969e6b4c52b48868d83cf5843036e87a93225e9a1",
+      "sha256": "c1b333613405eab1bdfa512969e6b4c52b48868d83cf5843036e87a93225e9a1",
+      "bytes": 64619,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/01b_siegel_hydra_numen.tex",
+      "source": "collatz_reconstruction/tex/chapters/01b_siegel_hydra_numen.tex",
+      "source_sha256": "9c216cb02213d021e6c0d8bf6f43d4773b0df0b5c3ab82f7237222d69a4fde40",
+      "sha256": "9c216cb02213d021e6c0d8bf6f43d4773b0df0b5c3ab82f7237222d69a4fde40",
+      "bytes": 24497,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/01c_debruijn_graphs.tex",
+      "source": "collatz_reconstruction/tex/chapters/01c_debruijn_graphs.tex",
+      "source_sha256": "d4af1f465d272d7505854a550a645d50cd15490f4ff3ba72de9bb0e7844cdf00",
+      "sha256": "d4af1f465d272d7505854a550a645d50cd15490f4ff3ba72de9bb0e7844cdf00",
+      "bytes": 17648,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/01d_primary_parity_dependencies.tex",
+      "source": "collatz_reconstruction/tex/chapters/01d_primary_parity_dependencies.tex",
+      "source_sha256": "91e51d5602d84ce1ccea224145073233acc88a1f7e1490df9379c11575df1f90",
+      "sha256": "91e51d5602d84ce1ccea224145073233acc88a1f7e1490df9379c11575df1f90",
+      "bytes": 12112,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/01e_steuding_continued_fraction.tex",
+      "source": "collatz_reconstruction/tex/chapters/01e_steuding_continued_fraction.tex",
+      "source_sha256": "0e3dbd510403cd5a0729a194548841b22cba9e6b4002f0fef6b90114de709fc9",
+      "sha256": "0e3dbd510403cd5a0729a194548841b22cba9e6b4002f0fef6b90114de709fc9",
+      "bytes": 10477,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/01f_everett_1977.tex",
+      "source": "collatz_reconstruction/tex/chapters/01f_everett_1977.tex",
+      "source_sha256": "5f762e23e391652678209d6e05f4347d64d7224107c767aad8a129c4689b26af",
+      "sha256": "5f762e23e391652678209d6e05f4347d64d7224107c767aad8a129c4689b26af",
+      "bytes": 12899,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/01g_tao_fourier_renewal.tex",
+      "source": "collatz_reconstruction/tex/chapters/01g_tao_fourier_renewal.tex",
+      "source_sha256": "2dee848b3686a6b1a5c7827f76b8040b46f0ac5f6456a33797ab6753bb4b3bbd",
+      "sha256": "2dee848b3686a6b1a5c7827f76b8040b46f0ac5f6456a33797ab6753bb4b3bbd",
+      "bytes": 48821,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/01h_tao_valuation_law.tex",
+      "source": "collatz_reconstruction/tex/chapters/01h_tao_valuation_law.tex",
+      "source_sha256": "f4d06663f534e29d41a66bcd0dd49f0329178fea5c1765a2e5836b0285cc0250",
+      "sha256": "f4d06663f534e29d41a66bcd0dd49f0329178fea5c1765a2e5836b0285cc0250",
+      "bytes": 13017,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/01i_tao_first_passage_stabilisation.tex",
+      "source": "collatz_reconstruction/tex/chapters/01i_tao_first_passage_stabilisation.tex",
+      "source_sha256": "5c3c5e54b3d6ff82b6c0b60e1b2cb4123079813ce6ec6d647e572b91bafa4d07",
+      "sha256": "5c3c5e54b3d6ff82b6c0b60e1b2cb4123079813ce6ec6d647e572b91bafa4d07",
+      "bytes": 20535,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/01j_tao_main_theorem_reduction.tex",
+      "source": "collatz_reconstruction/tex/chapters/01j_tao_main_theorem_reduction.tex",
+      "source_sha256": "53d97d24d201fe90f97fde3a4e3afbf4e21949f4fa40be559562cc995375cffa",
+      "sha256": "53d97d24d201fe90f97fde3a4e3afbf4e21949f4fa40be559562cc995375cffa",
+      "bytes": 19796,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/01k_computational_verification.tex",
+      "source": "collatz_reconstruction/tex/chapters/01k_computational_verification.tex",
+      "source_sha256": "8fd387bcc3a6587fbe819954d688673b6f87633d7e3452d5ecd3466387946ee9",
+      "sha256": "8fd387bcc3a6587fbe819954d688673b6f87633d7e3452d5ecd3466387946ee9",
+      "bytes": 25587,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/02_chatnotes_coefficient_algebra.tex",
+      "source": "collatz_reconstruction/tex/chapters/02_chatnotes_coefficient_algebra.tex",
+      "source_sha256": "2e0d8483a1a9e0feb06228b1650dff6b3986ef8abba4c55d6221d00491ae7c10",
+      "sha256": "2e0d8483a1a9e0feb06228b1650dff6b3986ef8abba4c55d6221d00491ae7c10",
+      "bytes": 11971,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/03_chatnotes_weighted_path_algebra.tex",
+      "source": "collatz_reconstruction/tex/chapters/03_chatnotes_weighted_path_algebra.tex",
+      "source_sha256": "f981024709db42427e4f587eca9d03dfc378730725e9616e8bdab6a2f5752ac4",
+      "sha256": "f981024709db42427e4f587eca9d03dfc378730725e9616e8bdab6a2f5752ac4",
+      "bytes": 45582,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/03a_chatnotes_arctangent_relations.tex",
+      "source": "collatz_reconstruction/tex/chapters/03a_chatnotes_arctangent_relations.tex",
+      "source_sha256": "26c7f171d5f2bdd64fa85bda92e67b9dfb455c65b72c169393bd9f385ed2b9ed",
+      "sha256": "26c7f171d5f2bdd64fa85bda92e67b9dfb455c65b72c169393bd9f385ed2b9ed",
+      "bytes": 6859,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/04_symbolic_completion_and_geometric_boundaries.tex",
+      "source": "collatz_reconstruction/tex/chapters/04_symbolic_completion_and_geometric_boundaries.tex",
+      "source_sha256": "c41c59be4589d60e9b1e488da69656f9f5adb687c2333822d1a031222f303617",
+      "sha256": "c41c59be4589d60e9b1e488da69656f9f5adb687c2333822d1a031222f303617",
+      "bytes": 34784,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/05_chatnotes_groupoid_and_motivic_interfaces.tex",
+      "source": "collatz_reconstruction/tex/chapters/05_chatnotes_groupoid_and_motivic_interfaces.tex",
+      "source_sha256": "687ed7a0ac753d82f05c74b8ef570202a8791ec170eb0f9ffb95886c83e92e21",
+      "sha256": "687ed7a0ac753d82f05c74b8ef570202a8791ec170eb0f9ffb95886c83e92e21",
+      "bytes": 17776,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/06_affine_packet_source_audit.tex",
+      "source": "collatz_reconstruction/tex/chapters/06_affine_packet_source_audit.tex",
+      "source_sha256": "8a4de14fddc13259bb6144866a9924ec9fa58b37477786e0f0a0b789188d91db",
+      "sha256": "8a4de14fddc13259bb6144866a9924ec9fa58b37477786e0f0a0b789188d91db",
+      "bytes": 24084,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/chapters/99_source_register.tex",
+      "source": "collatz_reconstruction/tex/chapters/99_source_register.tex",
+      "source_sha256": "791a8c4bd83e11c3987d6d432ac5c7db0e25c063499159b92df6f1d04a02ba1c",
+      "sha256": "791a8c4bd83e11c3987d6d432ac5c7db0e25c063499159b92df6f1d04a02ba1c",
+      "bytes": 43038,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/main.tex",
+      "source": "collatz_reconstruction/tex/main.tex",
+      "source_sha256": "69d954e1f941901a9fb245527deb49e689d80c3b0c7254333c9457a45fab637a",
+      "sha256": "69d954e1f941901a9fb245527deb49e689d80c3b0c7254333c9457a45fab637a",
+      "bytes": 2565,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/tex/README.md",
+      "source": "collatz_reconstruction/tex/README.md",
+      "source_sha256": "423d72593982a28232285e32800191f7f8679029ef747bf621bc62035c57dce6",
+      "sha256": "423d72593982a28232285e32800191f7f8679029ef747bf621bc62035c57dce6",
+      "bytes": 678,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_antecedent_version_compare_20260904.json",
+      "source": "collatz_reconstruction/research_companion/audit/affine_antecedent_version_compare_20260904.json",
+      "source_sha256": "f9edc11b1b8c03da937772b30e9fa075517931e30a67e5727550102c3fb4d073",
+      "sha256": "b651e988148ccabcd86f4f59a36f693f2a95afa5725c71769621e72562354496",
+      "bytes": 14832,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_antecedent_version_compare_20260904.py",
+      "source": "collatz_reconstruction/research_companion/audit/affine_antecedent_version_compare_20260904.py",
+      "source_sha256": "37dd3698cadf638a9eb5c442c9071ec8e67c87bee6966f948638697dd1dad081",
+      "sha256": "ed6280d7b0910639918a02532fedb5410bcd0691c48ac4ef0f8abdf863e832c4",
+      "bytes": 6404,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_antecedent_version_comparison_20260904.md",
+      "source": "collatz_reconstruction/research_companion/audit/affine_antecedent_version_comparison_20260904.md",
+      "source_sha256": "c44638d221c355374cd6f7cea5c0ed14a6d97b3e94a34e2d50c83725823533de",
+      "sha256": "20a97148dca1ccec3d41f8f2c8e2fa834886132daa3abd62cafd68c795796ac9",
+      "bytes": 10634,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_crt_independent_review_20260904.md",
+      "source": "collatz_reconstruction/research_companion/audit/affine_crt_independent_review_20260904.md",
+      "source_sha256": "b72b2aeaab9d7ac27684fcb4e3302ed091a72d2ded5ac83c56b56ee7f5e56818",
+      "sha256": "b72b2aeaab9d7ac27684fcb4e3302ed091a72d2ded5ac83c56b56ee7f5e56818",
+      "bytes": 6174,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_crt_synchronization_checks_20260904.json",
+      "source": "collatz_reconstruction/research_companion/audit/affine_crt_synchronization_checks_20260904.json",
+      "source_sha256": "6e9f347b4c1f65356a372d964a5bcf0891784253fc1261ba4731ce4ac621661d",
+      "sha256": "6e9f347b4c1f65356a372d964a5bcf0891784253fc1261ba4731ce4ac621661d",
+      "bytes": 67242,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_crt_synchronization_checks_20260904_final.json",
+      "source": "collatz_reconstruction/research_companion/audit/affine_crt_synchronization_checks_20260904_final.json",
+      "source_sha256": "d6e5476ba30318a0048aa0e7f99c6dbf06064056041b1a35f015219283daadce",
+      "sha256": "d6e5476ba30318a0048aa0e7f99c6dbf06064056041b1a35f015219283daadce",
+      "bytes": 67314,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_crt_synchronization_notes_20260904.md",
+      "source": "collatz_reconstruction/research_companion/audit/affine_crt_synchronization_notes_20260904.md",
+      "source_sha256": "fd24c8fe311f70acf2d371b886300091544128e0d1193e8da6066a51e3f1bad2",
+      "sha256": "bb72c8c955da8a4d64d8e020228b4b40f470aa5c27cb7899c22d5f302441ee63",
+      "bytes": 7361,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_crt_watched_review_20260904T151335Z_0212cc90/certificate_receipt.json",
+      "source": "collatz_reconstruction/research_companion/audit/affine_crt_watched_review_20260904T151335Z_0212cc90/certificate_receipt.json",
+      "source_sha256": "b521986a58f0c613ef882e0c22e23c3d06624b0f8ab71df38af3d96421f8670d",
+      "sha256": "f9c6653b8e522f02151510016ea200ffa73b4ee1ba08a52b5624928110a5e1ed",
+      "bytes": 67550,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_crt_watched_review_20260904T151335Z_0212cc90/stderr.txt",
+      "source": "collatz_reconstruction/research_companion/audit/affine_crt_watched_review_20260904T151335Z_0212cc90/stderr.txt",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_crt_watched_review_20260904T151335Z_0212cc90/stdout.json",
+      "source": "collatz_reconstruction/research_companion/audit/affine_crt_watched_review_20260904T151335Z_0212cc90/stdout.json",
+      "source_sha256": "9165270798bbd04df0fc3a70ff0ff6930f57af3ce26e82b515e1d43557594455",
+      "sha256": "6cb46f685d29fdebd9c63c874eff3908dfcfd00c5517ebaa4c9019ebbbef02fb",
+      "bytes": 5234,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_crt_watched_review_20260904T151335Z_0212cc90/watcher_receipt.json",
+      "source": "collatz_reconstruction/research_companion/audit/affine_crt_watched_review_20260904T151335Z_0212cc90/watcher_receipt.json",
+      "source_sha256": "9c3c4ff0e525607d97089817f2e4e4f8285a376a26d06b536177d7bfeb5b8830",
+      "sha256": "ad4b44f64eda72291efd619a9637771818dec2c99d02fb7006ecf588988eeda5",
+      "bytes": 10548,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_mahler_analytic_reconstruction_20260904.md",
+      "source": "collatz_reconstruction/research_companion/audit/affine_mahler_analytic_reconstruction_20260904.md",
+      "source_sha256": "31ac2e0f0d9501a1605e4b77d4d7030ada2471b890cc150b3dbcce80542999ab",
+      "sha256": "a0364cd607c11ce412eb0105991cd8d06474c0af93727702f1553e421e232869",
+      "bytes": 20882,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_packet_general_theorem_audit_20260904.md",
+      "source": "collatz_reconstruction/research_companion/audit/affine_packet_general_theorem_audit_20260904.md",
+      "source_sha256": "8c7a20c3557eaa881de0cd2e80782f91e4353b5f14b4d425eca331741db86122",
+      "sha256": "e30b9a12a4fcc0c0a0b16dc5c90b30f83e7ed993b2ad8d9aae51796bc31871b2",
+      "bytes": 15468,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_signed_necklace_checks_20260905.json",
+      "source": "collatz_reconstruction/research_companion/audit/affine_signed_necklace_checks_20260905.json",
+      "source_sha256": "2518cb91702a3ea91f8e3e519d9b69d8c31e0bb79c94170a920dbd06cf1e1a94",
+      "sha256": "06b8be01f84450cd45da7cdb3811b6c4d50ca769c3598accca5ee9fdd8989df8",
+      "bytes": 3974,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_signed_necklace_package_visual_20260905.json",
+      "source": "collatz_reconstruction/research_companion/audit/affine_signed_necklace_package_visual_20260905.json",
+      "source_sha256": "9ea79f1eb40a41e125d570b663f68af64a7cc46dba3cc20d3f391714008a53fe",
+      "sha256": "9ea79f1eb40a41e125d570b663f68af64a7cc46dba3cc20d3f391714008a53fe",
+      "bytes": 7074,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_signed_necklace_reconstruction_20260905.json",
+      "source": "collatz_reconstruction/research_companion/audit/affine_signed_necklace_reconstruction_20260905.json",
+      "source_sha256": "0ff92a85fe32277c73baad82ee0b381a4a0f52f903d1efa0e491d5e19bcfcb61",
+      "sha256": "7fae2fc4ae31e1089aae0bb26d19b0db29f571846eec19116b83391766ae4681",
+      "bytes": 6784,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/affine_tail_mahler_witness_collation_20260904.json",
+      "source": "collatz_reconstruction/research_companion/audit/affine_tail_mahler_witness_collation_20260904.json",
+      "source_sha256": "02cdc84b244cb31a68cb9ff8561f0db56f0d5c343a72480557af5309b9bd57bc",
+      "sha256": "4dcc3301735ca536e3de218a7dedaa3b0074a07fbb921751eb3cde3e98a35797",
+      "bytes": 7587,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/belaga_mignotte_2000_018_packet_crosswalk_20260904.md",
+      "source": "collatz_reconstruction/research_companion/audit/belaga_mignotte_2000_018_packet_crosswalk_20260904.md",
+      "source_sha256": "b6d140123cb5ccde0463e460b9a12f014bfc85fc1e5871bea097c2c81decfa7d",
+      "sha256": "c903e85efe678bddbe602d43222a615cd174108734fb64c3120945f7aaad78dd",
+      "bytes": 13930,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T221258Z/validator_stdout.json",
+      "source": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T221258Z/validator_stdout.json",
+      "source_sha256": "a784affdc60740f970db9b3d13ac282e6f7e62f1dd538ed50ee5134a9440fc5a",
+      "sha256": "a784affdc60740f970db9b3d13ac282e6f7e62f1dd538ed50ee5134a9440fc5a",
+      "bytes": 8536,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T221258Z/watch_receipt.json",
+      "source": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T221258Z/watch_receipt.json",
+      "source_sha256": "a6d602adc79c9b2e1a607f0085f6c661369f0b230b61861f970142fcb5792cbd",
+      "sha256": "55ac710725b13b35399e0f23cbecd17cda65b53f162f322ff3c40e9cb5076c0e",
+      "bytes": 10399,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T232105Z/validator_stdout.json",
+      "source": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T232105Z/validator_stdout.json",
+      "source_sha256": "9e746806e7abae7bde1a0fb490166c5c5c3686fd6e2e6b3ba42154e858498309",
+      "sha256": "62d3666a3901d487c4668d9f76661fa81b81c8b0f418f07b265503e343a32aad",
+      "bytes": 1102,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T232105Z/watch_receipt.json",
+      "source": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T232105Z/watch_receipt.json",
+      "source_sha256": "9804d97f0f1faa51ef1c86f487ca2b8529be8a9d50b94c4341e4efec7613edf9",
+      "sha256": "ab1c8901f019e0b786c8fd25c43b37b9cd8085d4dcdb4f98dc5cb66f161206ca",
+      "bytes": 1331,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T232512Z/validator_stdout.json",
+      "source": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T232512Z/validator_stdout.json",
+      "source_sha256": "3e8ebc42a37506acaefc6447a940e3a0f93ecf23c4d00c7f7a93a88308205fa9",
+      "sha256": "3e8ebc42a37506acaefc6447a940e3a0f93ecf23c4d00c7f7a93a88308205fa9",
+      "bytes": 8928,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T232512Z/watch_receipt.json",
+      "source": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T232512Z/watch_receipt.json",
+      "source_sha256": "e617c1a9d26a5e9344c6428fb048657c63cbbd5b2a86c01c2c8050196f5b8403",
+      "sha256": "99780e2f6a4b87b5ca5222cec9981528bc024b63d55baa81e5573ec76e728465",
+      "bytes": 10837,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T233943Z/validator_stdout.json",
+      "source": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T233943Z/validator_stdout.json",
+      "source_sha256": "d49975c27e2f02d25bbc35f71093881ff61bbaf65b9a3e25925bd13035917de1",
+      "sha256": "d49975c27e2f02d25bbc35f71093881ff61bbaf65b9a3e25925bd13035917de1",
+      "bytes": 8928,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T233943Z/watch_receipt.json",
+      "source": "collatz_reconstruction/research_companion/audit/package_validation/run_20260904T233943Z/watch_receipt.json",
+      "source_sha256": "8f257f43fd2f706f5fc12028e8f83026612cf5e0357928c2e374955eb10b8da5",
+      "sha256": "0ed26717977adfca6ef6b2059f3ac03d5cb931f856c1005e513016d06313db4a",
+      "bytes": 10851,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/audit/run_affine_crt_watched_review_20260904.py",
+      "source": "collatz_reconstruction/research_companion/audit/run_affine_crt_watched_review_20260904.py",
+      "source_sha256": "a491a00d079d26d4c6ac0197649e1131479cedf9cae9bcf8c9ce396b795717a7",
+      "sha256": "a491a00d079d26d4c6ac0197649e1131479cedf9cae9bcf8c9ce396b795717a7",
+      "bytes": 6981,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/bibliography.tex",
+      "source": "collatz_reconstruction/research_companion/bibliography.tex",
+      "source_sha256": "5c2737630d5e8e1c597c78bdfb12b26b7fdd424ea1d9f0e1e6f0004859518ad1",
+      "sha256": "5c2737630d5e8e1c597c78bdfb12b26b7fdd424ea1d9f0e1e6f0004859518ad1",
+      "bytes": 8771,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/certificates/affine_crt_synchronization_checks.py",
+      "source": "collatz_reconstruction/research_companion/certificates/affine_crt_synchronization_checks.py",
+      "source_sha256": "ee0340744c8886ff55a7246ae0141576eac3ec60d262b7431bc3579c0198d71e",
+      "sha256": "ee0340744c8886ff55a7246ae0141576eac3ec60d262b7431bc3579c0198d71e",
+      "bytes": 13678,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/certificates/affine_packet_residue_checks.py",
+      "source": "collatz_reconstruction/research_companion/certificates/affine_packet_residue_checks.py",
+      "source_sha256": "3684832af599c1f761cb61665e0d907406a67135b0c595c6acce3731b05bfb60",
+      "sha256": "3684832af599c1f761cb61665e0d907406a67135b0c595c6acce3731b05bfb60",
+      "bytes": 34101,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/certificates/affine_packet_series_checks.py",
+      "source": "collatz_reconstruction/research_companion/certificates/affine_packet_series_checks.py",
+      "source_sha256": "c8fef8e6a24ff190db39def342dcc1a863d77d1ce33b818024b6d60d75f2251a",
+      "sha256": "c8fef8e6a24ff190db39def342dcc1a863d77d1ce33b818024b6d60d75f2251a",
+      "bytes": 4465,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/certificates/affine_signed_necklace_checks.py",
+      "source": "collatz_reconstruction/research_companion/certificates/affine_signed_necklace_checks.py",
+      "source_sha256": "8e51437eb64c5c9cee6601d6fe654383302a3ee3d1430c52981ec9b773c29c97",
+      "sha256": "8e51437eb64c5c9cee6601d6fe654383302a3ee3d1430c52981ec9b773c29c97",
+      "bytes": 8159,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/certificates/arctangent_relation_lattice_checks.py",
+      "source": "collatz_reconstruction/research_companion/certificates/arctangent_relation_lattice_checks.py",
+      "source_sha256": "3b324c5ff1862bdef17d5cc2ab413e85d4a3dd011012fcdde9797dccab08df26",
+      "sha256": "3b324c5ff1862bdef17d5cc2ab413e85d4a3dd011012fcdde9797dccab08df26",
+      "bytes": 19204,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/certificates/finite_actions_checks.py",
+      "source": "collatz_reconstruction/research_companion/certificates/finite_actions_checks.py",
+      "source_sha256": "3d3fdad968fcc89fe415854ef8edd9c7342575726dada89138f0d05e2e14f776",
+      "sha256": "3d3fdad968fcc89fe415854ef8edd9c7342575726dada89138f0d05e2e14f776",
+      "bytes": 26755,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/certificates/groupoid_motivic_interface_checks.py",
+      "source": "collatz_reconstruction/research_companion/certificates/groupoid_motivic_interface_checks.py",
+      "source_sha256": "ca460277a54e016a6ef84377cde5cc2e670f08c6cf3f57073f2a3c62d6400916",
+      "sha256": "ca460277a54e016a6ef84377cde5cc2e670f08c6cf3f57073f2a3c62d6400916",
+      "bytes": 17495,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/chapters/01_weighted_path_and_finite_residue_actions.tex",
+      "source": "collatz_reconstruction/research_companion/chapters/01_weighted_path_and_finite_residue_actions.tex",
+      "source_sha256": "2b85cb503f2dc53e2eddba9a10e8d0a9980fb3c81c13087b0e3899daab7517e5",
+      "sha256": "2b85cb503f2dc53e2eddba9a10e8d0a9980fb3c81c13087b0e3899daab7517e5",
+      "bytes": 59385,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/chapters/02_two_adic_survivor_coding_and_exact_interface_boundaries.tex",
+      "source": "collatz_reconstruction/research_companion/chapters/02_two_adic_survivor_coding_and_exact_interface_boundaries.tex",
+      "source_sha256": "41f185ba53af531eb8bfa96b7ac45aca34307276bda45521bd05d049a4ba8d50",
+      "sha256": "41f185ba53af531eb8bfa96b7ac45aca34307276bda45521bd05d049a4ba8d50",
+      "bytes": 29632,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/chapters/03_arithmetic_groupoids_and_toric_period_morphisms.tex",
+      "source": "collatz_reconstruction/research_companion/chapters/03_arithmetic_groupoids_and_toric_period_morphisms.tex",
+      "source_sha256": "aad14427358e569931071abbaa14a1d0a05da3644702ce2aa5a7f2077c99dcd4",
+      "sha256": "aad14427358e569931071abbaa14a1d0a05da3644702ce2aa5a7f2077c99dcd4",
+      "bytes": 22563,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/chapters/04_affine_packets_parity_necklaces_and_residue_automata.tex",
+      "source": "collatz_reconstruction/research_companion/chapters/04_affine_packets_parity_necklaces_and_residue_automata.tex",
+      "source_sha256": "f5a25459b6f0088d14158426b6ca6085c021b5722c972a495bcd2ece7887663e",
+      "sha256": "f5a25459b6f0088d14158426b6ca6085c021b5722c972a495bcd2ece7887663e",
+      "bytes": 36741,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/chapters/05_packet_fixed_point_series.tex",
+      "source": "collatz_reconstruction/research_companion/chapters/05_packet_fixed_point_series.tex",
+      "source_sha256": "ca9fe654da657b32a07641e2d18ab6bef41d73a93851302448ba9510702537d4",
+      "sha256": "ca9fe654da657b32a07641e2d18ab6bef41d73a93851302448ba9510702537d4",
+      "bytes": 9948,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/data/period_8_A_13_classes.csv",
+      "source": "collatz_reconstruction/research_companion/data/period_8_A_13_classes.csv",
+      "source_sha256": "13bd2d5451530fc7ab674720b5f142b489d0a1111161730a6d013f8fab69025b",
+      "sha256": "13bd2d5451530fc7ab674720b5f142b489d0a1111161730a6d013f8fab69025b",
+      "bytes": 3358,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/main.tex",
+      "source": "collatz_reconstruction/research_companion/main.tex",
+      "source_sha256": "619baaa26a7494de3e37dad7d34f808ad375c452f06d3ab8ec32068bb4b1a205",
+      "sha256": "619baaa26a7494de3e37dad7d34f808ad375c452f06d3ab8ec32068bb4b1a205",
+      "bytes": 6033,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/MANIFEST.json",
+      "source": "collatz_reconstruction/research_companion/MANIFEST.json",
+      "source_sha256": "bc1ab3bb5ec00432623cb259281c2b25cd6565df10072cf4ef602bb156144828",
+      "sha256": "bc1ab3bb5ec00432623cb259281c2b25cd6565df10072cf4ef602bb156144828",
+      "bytes": 3235,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/provenance.json",
+      "source": "collatz_reconstruction/research_companion/provenance.json",
+      "source_sha256": "00c075e3b3f767851b746de61363ebd31ad855ebc7022d58e11049760ed53ef5",
+      "sha256": "00c075e3b3f767851b746de61363ebd31ad855ebc7022d58e11049760ed53ef5",
+      "bytes": 6265,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/README.md",
+      "source": "collatz_reconstruction/research_companion/README.md",
+      "source_sha256": "508a3acbea6bebc18f7fa741efea73b1dac67a55da2c6d6402de2ff3ba4b7976",
+      "sha256": "508a3acbea6bebc18f7fa741efea73b1dac67a55da2c6d6402de2ff3ba4b7976",
+      "bytes": 6163,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/validate_package.py",
+      "source": "collatz_reconstruction/research_companion/validate_package.py",
+      "source_sha256": "734d2e95e4ce2596886e3194e3b1e90ee6fb8bc85983efbe406a1099cec7ad9a",
+      "sha256": "734d2e95e4ce2596886e3194e3b1e90ee6fb8bc85983efbe406a1099cec7ad9a",
+      "bytes": 21593,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/all_threshold_and_joint_entry_implementation_review_20260904.md",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/all_threshold_and_joint_entry_implementation_review_20260904.md",
+      "source_sha256": "a076a717b6bb3f6493166e79fef6aed86337ad67cd54f7b01884d59c333d0677",
+      "sha256": "a076a717b6bb3f6493166e79fef6aed86337ad67cd54f7b01884d59c333d0677",
+      "bytes": 5951,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/all_threshold_entrance_family_v7_review_20260904.md",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/all_threshold_entrance_family_v7_review_20260904.md",
+      "source_sha256": "c27b8a6cc91ce459cd7fdf78aab091fe80e42c0d711ded3569ae5cf3d13d6a2b",
+      "sha256": "4225bf30ecba3f3fa78396abf48bb0430f616ee8f79fe866b841f19d10ad81f3",
+      "bytes": 8779,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/build_release.py",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/build_release.py",
+      "source_sha256": "5ef2f79f0934393470827d5c013a89dbba2453c2d741ca30c2fd1aa36f4c7d1b",
+      "sha256": "5ef2f79f0934393470827d5c013a89dbba2453c2d741ca30c2fd1aa36f4c7d1b",
+      "bytes": 5619,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/check_portability.py",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/check_portability.py",
+      "source_sha256": "23c240d6603c6a410b384a054318c53f3e63a17bbafb1c4acefdf7689ad9203f",
+      "sha256": "7d2c5c94a125a92d47ce737b359dc0963f843e750a1bed70dc5512a997b2d4ae",
+      "bytes": 9086,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/clock_history_review.md",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/clock_history_review.md",
+      "source_sha256": "7e6d1c248346c1959bc32202fb667d3231490258a7ffc7af707320cc44e256a0",
+      "sha256": "2f85038aa13b5aa356518d30eef9613e26c29da51bd9d291d845ab380f7246c0",
+      "bytes": 17201,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/FINAL_REVIEW.md",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/FINAL_REVIEW.md",
+      "source_sha256": "999b144e5c1cf6dc901f9d661b7f75b2dfcff92fe644d095f74557b8f99ac58d",
+      "sha256": "999b144e5c1cf6dc901f9d661b7f75b2dfcff92fe644d095f74557b8f99ac58d",
+      "bytes": 11483,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/joint_entry_finite_checks_20260904.json",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/joint_entry_finite_checks_20260904.json",
+      "source_sha256": "b555865fa876c80314cccf63a7cb5983842692ff2316debcf0c56274829b32a5",
+      "sha256": "eb9aeb6cd81d4a63ece7c36c8752f14a030f771b23d28f55fbbf368ebd50fd74",
+      "bytes": 3960,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/portability_receipt.json",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/portability_receipt.json",
+      "source_sha256": "1acbcc6cf93e7991841734d6af9a000132a057fe15bf735bc01b643cb40c4855",
+      "sha256": "d5b86fd034fe745eb4f17e6ae73f61cdf51fa769536e35a242f0ff5066ef912e",
+      "bytes": 9168,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/reader_style_revision.md",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/reader_style_revision.md",
+      "source_sha256": "bee9a88cb3a76d89652bfbe56da1e20528aee5f718b7956ead3aa5a551a7a9de",
+      "sha256": "bee9a88cb3a76d89652bfbe56da1e20528aee5f718b7956ead3aa5a551a7a9de",
+      "bytes": 4189,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/reduction_review.md",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/reduction_review.md",
+      "source_sha256": "516cd94449f908e5ada11777d9447ab05ebb492c612871fb223d618e974085d6",
+      "sha256": "0ca7f3bf9e6f0f19adc44f6d757663360e1ca8d236cd6ad238cb5a3399b8726e",
+      "bytes": 15817,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/refresh_readme_package.py",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/refresh_readme_package.py",
+      "source_sha256": "60039cf6f8b6b43d40e4fd50a63316516e897943fe19b924914ddb99db54cddc",
+      "sha256": "60039cf6f8b6b43d40e4fd50a63316516e897943fe19b924914ddb99db54cddc",
+      "bytes": 3444,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/refresh_routes.py",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/refresh_routes.py",
+      "source_sha256": "9326e829719b9daae4b4734e18d7f0c711bf6576d759bb9e04a1d3da65439f7e",
+      "sha256": "f457bd54f09991ab06727ab48d64bc081da52c2b7d8c8df9eed76f1544a536ba",
+      "bytes": 3845,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/release_receipt.json",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/release_receipt.json",
+      "source_sha256": "8b7e9d5df1c01dd9ac23a656a0796b474610191cce81025d3d45fecb18610dfe",
+      "sha256": "8b7e9d5df1c01dd9ac23a656a0796b474610191cce81025d3d45fecb18610dfe",
+      "bytes": 1581,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/rendered_text.txt",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/rendered_text.txt",
+      "source_sha256": "cd8e66de664b14a2ae4fb086852bc2cb66a2babda0fb4a5b413295aa135d161a",
+      "sha256": "cd8e66de664b14a2ae4fb086852bc2cb66a2babda0fb4a5b413295aa135d161a",
+      "bytes": 35475,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/source_review.md",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/source_review.md",
+      "source_sha256": "ee4d893c7a43ed6a86a877ad7221ae3c920936abbd28b25f8971d95e54a371b3",
+      "sha256": "752d57fafc9eb7ce7b128dc7fadc5765a554cf17d545420dedbbad82a20a4e08",
+      "bytes": 11925,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/topic_route.json",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/topic_route.json",
+      "source_sha256": "f95548ac465372cf38ec0bf6b3bd91f442db15f369cafceadc50da5116817298",
+      "sha256": "61f1ac1cf1d469f4b9c0a7d67c1c59d2372d366a05060ececce7d02b6d93714d",
+      "bytes": 4698,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_baseline_revision.md",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_baseline_revision.md",
+      "source_sha256": "8d7c23132701337ea860f03491c806ebe1968771c4780ce0cea592bc5cebc72b",
+      "sha256": "8d7c23132701337ea860f03491c806ebe1968771c4780ce0cea592bc5cebc72b",
+      "bytes": 2393,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/historical_comparison_source.json",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/historical_comparison_source.json",
+      "source_sha256": "4d8bf4054d8f73851ee0e18a3418048e98335a734378df38f4c45d5c92c5452c",
+      "sha256": "4d8bf4054d8f73851ee0e18a3418048e98335a734378df38f4c45d5c92c5452c",
+      "bytes": 580,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/local_receipt.json",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/local_receipt.json",
+      "source_sha256": "1fe7418bd451a55bfb06d14186804f5a637ce5df3425b4cc464b1f2e571a64cf",
+      "sha256": "0b59e270d84952eaf8341100ed0df96ab3fe533cbf53b66b4d628a5ce731e11b",
+      "bytes": 5694,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/pdflatex_1.txt",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/pdflatex_1.txt",
+      "source_sha256": "d5b2d055f9f32e3e03359482dea7581bd1b613e212ab2d1099aa7bc91f0d9fda",
+      "sha256": "d3278566f73f079b9b464db9ea07ed61e6d116096a5923f0e0b7878d2e1ad1b0",
+      "bytes": 10040,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/pdflatex_2.txt",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/pdflatex_2.txt",
+      "source_sha256": "6f3edb92c021179d93e9dacefac36cf5510358faaa40bc02e92f03b400fcd2c8",
+      "sha256": "9d13097f812cf3093f006b103d82e505a7a399961cf5ed331a00ba71b6cb63fb",
+      "bytes": 9604,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/pdflatex_3.txt",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/pdflatex_3.txt",
+      "source_sha256": "6f3edb92c021179d93e9dacefac36cf5510358faaa40bc02e92f03b400fcd2c8",
+      "sha256": "9d13097f812cf3093f006b103d82e505a7a399961cf5ed331a00ba71b6cb63fb",
+      "bytes": 9604,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/portable_verify.txt",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/portable_verify.txt",
+      "source_sha256": "1812cc9fbd781c0edadf5b8d3f16e396aeefcdcd62daf145f84103818c0757d7",
+      "sha256": "1812cc9fbd781c0edadf5b8d3f16e396aeefcdcd62daf145f84103818c0757d7",
+      "bytes": 2074,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/visual_review.json",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/audit/v7_family_20260904/visual_review.json",
+      "source_sha256": "1e5c27b4914e38c106fbc2a5dc832b11b32be1fa10b396a63f55ee0ad0f3b140",
+      "sha256": "1e5c27b4914e38c106fbc2a5dc832b11b32be1fa10b396a63f55ee0ad0f3b140",
+      "bytes": 5611,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/bibliography.tex",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/bibliography.tex",
+      "source_sha256": "08f6272e840a336ba3428b9e7c9c95769236fcf123a5d02de377919c5014d224",
+      "sha256": "08f6272e840a336ba3428b9e7c9c95769236fcf123a5d02de377919c5014d224",
+      "bytes": 1180,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/certificates/check_finite.py",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/certificates/check_finite.py",
+      "source_sha256": "a0124b3de952e2ff77f2b2dc842370b0ec333c94c1fbd526ad5d5ca976562295",
+      "sha256": "a0124b3de952e2ff77f2b2dc842370b0ec333c94c1fbd526ad5d5ca976562295",
+      "bytes": 14234,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/main.tex",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/main.tex",
+      "source_sha256": "c4423fcf4d9be9db296d6db0ee4d922a4be04667cafeb30c7a81d167d90284a5",
+      "sha256": "c4423fcf4d9be9db296d6db0ee4d922a4be04667cafeb30c7a81d167d90284a5",
+      "bytes": 6567,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/MANIFEST.json",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/MANIFEST.json",
+      "source_sha256": "1eb36dfa584dc49797c511b011c461828443ca2594dc5f063fd2b07d4e33f664",
+      "sha256": "1eb36dfa584dc49797c511b011c461828443ca2594dc5f063fd2b07d4e33f664",
+      "bytes": 2045,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/proof_registry.json",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/proof_registry.json",
+      "source_sha256": "288e87d56c4f17092d726c0d640d20f6e0c4cf3a709ea5b207a40ba517598c82",
+      "sha256": "288e87d56c4f17092d726c0d640d20f6e0c4cf3a709ea5b207a40ba517598c82",
+      "bytes": 3730,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/README.md",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/README.md",
+      "source_sha256": "8540c818fc7aae5c401926374b954ddbcd7c2dded7f31e45591854012adf3d2f",
+      "sha256": "8540c818fc7aae5c401926374b954ddbcd7c2dded7f31e45591854012adf3d2f",
+      "bytes": 2607,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/sections/clocks.tex",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/sections/clocks.tex",
+      "source_sha256": "8ea1cbbdc0706946d4cda0c8f9724ca49acdd1a77ce6e041f7212a49ffe06357",
+      "sha256": "8ea1cbbdc0706946d4cda0c8f9724ca49acdd1a77ce6e041f7212a49ffe06357",
+      "bytes": 6142,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/sections/consequences.tex",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/sections/consequences.tex",
+      "source_sha256": "853f19899655f2fd1605a12d7dc819513410c09e812d5dc70210c5b60e2d7ea5",
+      "sha256": "853f19899655f2fd1605a12d7dc819513410c09e812d5dc70210c5b60e2d7ea5",
+      "bytes": 12361,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/sections/repairs.tex",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/sections/repairs.tex",
+      "source_sha256": "d562ab491da485526ee71dde391a8c2ffbd66a14d862b9294b5080c972d8c5f7",
+      "sha256": "d562ab491da485526ee71dde391a8c2ffbd66a14d862b9294b5080c972d8c5f7",
+      "bytes": 9525,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/sections/transport.tex",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/sections/transport.tex",
+      "source_sha256": "b3233b2b79614e1279a9d880eb7e82c21d5822873085bdaadf49332c2cd88678",
+      "sha256": "b3233b2b79614e1279a9d880eb7e82c21d5822873085bdaadf49332c2cd88678",
+      "bytes": 5794,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/sections/versions.tex",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/sections/versions.tex",
+      "source_sha256": "9d72c924273f49dd4bc97c17b740967b4b69acdf0a434cf732427baa20ab6ef5",
+      "sha256": "9d72c924273f49dd4bc97c17b740967b4b69acdf0a434cf732427baa20ab6ef5",
+      "bytes": 5802,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/source_manifest.json",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/source_manifest.json",
+      "source_sha256": "5cf1abe5efeb4d2489d72cafc92aca2f09ef3033967657924db1c2b408e83d9a",
+      "sha256": "5cf1abe5efeb4d2489d72cafc92aca2f09ef3033967657924db1c2b408e83d9a",
+      "bytes": 3723,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/verify.py",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/verify.py",
+      "source_sha256": "b02738f76a85d8aef0f35eb4883ef6a110ef5230d342284bf55e34f1d8fe79d8",
+      "sha256": "b02738f76a85d8aef0f35eb4883ef6a110ef5230d342284bf55e34f1d8fe79d8",
+      "bytes": 2879,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/certificates/record_tail_covariance_checks.py",
+      "source": "collatz_reconstruction/research_program/certificates/record_tail_covariance_checks.py",
+      "source_sha256": "d7a786355cc0a67e1c7dfeedfdf3005a9ab5602bb5cb1d7a557a600c236a5fca",
+      "sha256": "d7a786355cc0a67e1c7dfeedfdf3005a9ab5602bb5cb1d7a557a600c236a5fca",
+      "bytes": 3421,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/chapters/00_status_and_scope.tex",
+      "source": "collatz_reconstruction/research_program/chapters/00_status_and_scope.tex",
+      "source_sha256": "b3af6bc6e77f0561a547e9dd1aef1e1740e6c98ce1f9030de7eb1ce3b91aaeca",
+      "sha256": "b3af6bc6e77f0561a547e9dd1aef1e1740e6c98ce1f9030de7eb1ce3b91aaeca",
+      "bytes": 1878,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/chapters/01_residue_cylinders.tex",
+      "source": "collatz_reconstruction/research_program/chapters/01_residue_cylinders.tex",
+      "source_sha256": "1cf1d5c444d38d78d0f4ca8341f2bffdaf6338efefaeb43f2a41c9ee499fb4be",
+      "sha256": "1cf1d5c444d38d78d0f4ca8341f2bffdaf6338efefaeb43f2a41c9ee499fb4be",
+      "bytes": 11630,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/chapters/02_dyadic_uniformity.tex",
+      "source": "collatz_reconstruction/research_program/chapters/02_dyadic_uniformity.tex",
+      "source_sha256": "a28a404d9aeaef225edd26eaefc33165a6068391e3ab1154219f0d88a67be156",
+      "sha256": "a28a404d9aeaef225edd26eaefc33165a6068391e3ab1154219f0d88a67be156",
+      "bytes": 3905,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/chapters/03_recursive_sieve_semigroup.tex",
+      "source": "collatz_reconstruction/research_program/chapters/03_recursive_sieve_semigroup.tex",
+      "source_sha256": "1330318d54e611ab298a66b84f630860c39d8494e3cc5b9eb81bd571dc872efe",
+      "sha256": "1330318d54e611ab298a66b84f630860c39d8494e3cc5b9eb81bd571dc872efe",
+      "bytes": 4945,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/chapters/04_record_tail_observable.tex",
+      "source": "collatz_reconstruction/research_program/chapters/04_record_tail_observable.tex",
+      "source_sha256": "b86d64b11e874958bbe9c1cf6f263c7a0d73ca52971a8fb1c10731c7f60973cd",
+      "sha256": "b86d64b11e874958bbe9c1cf6f263c7a0d73ca52971a8fb1c10731c7f60973cd",
+      "bytes": 8074,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/chapters/04_research_programme.tex",
+      "source": "collatz_reconstruction/research_program/chapters/04_research_programme.tex",
+      "source_sha256": "5cf808f7ac66218c0c99e43890ffcd72b88211137911f8e7c22bc0525f522a16",
+      "sha256": "5cf808f7ac66218c0c99e43890ffcd72b88211137911f8e7c22bc0525f522a16",
+      "bytes": 1417,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/chapters/99_references.tex",
+      "source": "collatz_reconstruction/research_program/chapters/99_references.tex",
+      "source_sha256": "4d3d02fa42332e22fce2a962423270e5eb58514ec525a2a09c618def57800392",
+      "sha256": "4d3d02fa42332e22fce2a962423270e5eb58514ec525a2a09c618def57800392",
+      "bytes": 2658,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/main.tex",
+      "source": "collatz_reconstruction/research_program/main.tex",
+      "source_sha256": "fc872f886b1dbea5adaed0897ecc8499fdb14e1cd0a691c8154c42a9519ad356",
+      "sha256": "fc872f886b1dbea5adaed0897ecc8499fdb14e1cd0a691c8154c42a9519ad356",
+      "bytes": 2542,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/QUARANTINED.md",
+      "source": "collatz_reconstruction/research_program/QUARANTINED.md",
+      "source_sha256": "4250f25b42a89f1b54dd2a2dee214c5543cf108151d8fe66990206801d1e8b0a",
+      "sha256": "4250f25b42a89f1b54dd2a2dee214c5543cf108151d8fe66990206801d1e8b0a",
+      "bytes": 918,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/README.md",
+      "source": "collatz_reconstruction/research_program/README.md",
+      "source_sha256": "389722e1c55a5dc0b52dda95d630e6be8251587f9f6b61e566d85592f10ee8e7",
+      "sha256": "389722e1c55a5dc0b52dda95d630e6be8251587f9f6b61e566d85592f10ee8e7",
+      "bytes": 1862,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/split_zero_history_20260913/AUDIT.md",
+      "source": "collatz_reconstruction/research_program/split_zero_history_20260913/AUDIT.md",
+      "source_sha256": "5f3e2fcec22b80acbf503b4e4a744360663bd0222f46102a51f61fda7b088083",
+      "sha256": "a3a0b51153a064346e50ac7520ab3d3f20c5d0ae6034f065a154ae93cf44fb28",
+      "bytes": 12353,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_program/split_zero_history_20260913/build_prefix_route.py",
+      "source": "collatz_reconstruction/research_program/split_zero_history_20260913/build_prefix_route.py",
+      "source_sha256": "5feff254e8f0f70ac83e01073e65d69f104d32dce5233addb50a7b3570112659",
+      "sha256": "4dc96bba7d82fceb9d221b3d4b8ef47f809de55f3a446d7e54d794baa6dbf1cc",
+      "bytes": 5609,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_program/split_zero_history_20260913/check_history.py",
+      "source": "collatz_reconstruction/research_program/split_zero_history_20260913/check_history.py",
+      "source_sha256": "007efba1840e0c805e11c02ed29d93feb2bb8b0f868b655955dc6946c15e11fe",
+      "sha256": "007efba1840e0c805e11c02ed29d93feb2bb8b0f868b655955dc6946c15e11fe",
+      "bytes": 12408,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/split_zero_history_20260913/note.tex",
+      "source": "collatz_reconstruction/research_program/split_zero_history_20260913/note.tex",
+      "source_sha256": "d855cfc1b2d51c398ed8ef3681f04d8b5dc947be77225ae43f1f5a012bf124a7",
+      "sha256": "d855cfc1b2d51c398ed8ef3681f04d8b5dc947be77225ae43f1f5a012bf124a7",
+      "bytes": 21262,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/split_zero_history_20260913/prefix_topic_route.json",
+      "source": "collatz_reconstruction/research_program/split_zero_history_20260913/prefix_topic_route.json",
+      "source_sha256": "1166755141c45f4c146b87aeb9c9e0fedbcf8a1a6a967d77b08f6c20a62bd2fa",
+      "sha256": "d7d51d1cf139a42b2fa6b985ff88b18291cc9b92c535a7d9fd7a1ff816ea6683",
+      "bytes": 8199,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_program/split_zero_history_20260913/README.md",
+      "source": "collatz_reconstruction/research_program/split_zero_history_20260913/README.md",
+      "source_sha256": "c03300a76beb06807dd586a02e78c87f18ddfc5704ec0ec2f60c64bc7e41f85d",
+      "sha256": "c03300a76beb06807dd586a02e78c87f18ddfc5704ec0ec2f60c64bc7e41f85d",
+      "bytes": 1650,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/split_zero_history_20260913/state.json",
+      "source": "collatz_reconstruction/research_program/split_zero_history_20260913/state.json",
+      "source_sha256": "a653097596a379f042582e62c0df908bbb7b82c720de3dda57791e4253a658f2",
+      "sha256": "b7efd8042c5606292334869dad3dadec95023ed3c370dd21368228b5a99a1c34",
+      "bytes": 7424,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/research_program/split_zero_history_20260913/validate_state.py",
+      "source": "collatz_reconstruction/research_program/split_zero_history_20260913/validate_state.py",
+      "source_sha256": "05cb236a7d6277d0c63691dc616b57c3326dd100fd3d879fcbc034ad6e8702b0",
+      "sha256": "05cb236a7d6277d0c63691dc616b57c3326dd100fd3d879fcbc034ad6e8702b0",
+      "bytes": 1597,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/certificates/affine_packet_source_and_cycle_checks.py",
+      "source": "collatz_reconstruction/certificates/affine_packet_source_and_cycle_checks.py",
+      "source_sha256": "e96f87c679c814f2749544836c5ce8641dc5d07c0d0e0b45e455d5bd44b096ac",
+      "sha256": "bb5272f765d1704c6db95a9cb2ee92e71f7cd3da6d40708cd6401203d93be8ca",
+      "bytes": 5713,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/chatnotes_color_coefficient_checks.py",
+      "source": "collatz_reconstruction/certificates/chatnotes_color_coefficient_checks.py",
+      "source_sha256": "a531ecbf54532208c95d67e63971f16a4530b4b8ec6f6247414f3281fcafcce4",
+      "sha256": "5cf8ff8979751e2b467617f84951e3678fa817c6a63d98520757180608819c6e",
+      "bytes": 11719,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/chatnotes_symbolic_completion_checks.py",
+      "source": "collatz_reconstruction/certificates/chatnotes_symbolic_completion_checks.py",
+      "source_sha256": "f6130edbabd04602a7d686943416d6adb715d94bb3d44c959a0d1c8f07d4cbd0",
+      "sha256": "72cdf470ab724ae5aefb266797642cf3cb5544007173200b4c100680c51ff727",
+      "bytes": 15567,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/chatnotes_weighted_path_finite_actions.py",
+      "source": "collatz_reconstruction/certificates/chatnotes_weighted_path_finite_actions.py",
+      "source_sha256": "bec5327bcec769fae4333827b566bd631941ec38b657c1205da2bf18502667e4",
+      "sha256": "99aeea7abaee978d71f9e766971cccfd8a11095c6d73b5e0dec945e8c19e7889",
+      "bytes": 21968,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/computational_verification_chronology_checks.py",
+      "source": "collatz_reconstruction/certificates/computational_verification_chronology_checks.py",
+      "source_sha256": "da77853581871d050f4f172990233223d4e9651a8032a6edb04d7f290f49a40b",
+      "sha256": "e287333261d516a0cc31339b7d65b9700b112431477cfc6caeb6a8d53737ff53",
+      "bytes": 45613,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/continued_fraction_dependency_checks.py",
+      "source": "collatz_reconstruction/certificates/continued_fraction_dependency_checks.py",
+      "source_sha256": "39ce45ad6870cee56ace3e295e27f81e725f63af6b7074293541cb18d352b620",
+      "sha256": "b0d98a4934068c36e5d72743c06235ec7d4e81f792541712fc0bee61018df4f0",
+      "bytes": 8618,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/crandall_1978_checks.py",
+      "source": "collatz_reconstruction/certificates/crandall_1978_checks.py",
+      "source_sha256": "6d44a614147b8de15e3627a8dd369b466d23509c1df77a8f3f49666301fe37af",
+      "sha256": "c41b1081e8373283297a03091c1d2e395588520428e0384ff09168d682a4c87b",
+      "bytes": 8455,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/everett_1977_checks.py",
+      "source": "collatz_reconstruction/certificates/everett_1977_checks.py",
+      "source_sha256": "d93235101e9a40dcca7741c78af816524dd1d144f8077a9c6aacb6626d5575b5",
+      "sha256": "d93235101e9a40dcca7741c78af816524dd1d144f8077a9c6aacb6626d5575b5",
+      "bytes": 10468,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/certificates/herschfeld_1936_checks.py",
+      "source": "collatz_reconstruction/certificates/herschfeld_1936_checks.py",
+      "source_sha256": "2018ccd0c28946872004bf1ef22c823b5ebc93b18baed9d0b582b87ef5510fc0",
+      "sha256": "2018ccd0c28946872004bf1ef22c823b5ebc93b18baed9d0b582b87ef5510fc0",
+      "bytes": 8492,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/certificates/krasikov_lagarias_2003_checks.py",
+      "source": "collatz_reconstruction/certificates/krasikov_lagarias_2003_checks.py",
+      "source_sha256": "3f4ccc7256f026fa65ce7660b47823969c6c605e2a4c45da5b4b6d48961315fa",
+      "sha256": "77c9402d49c4e69182e8c043cfd00ce7304c0bd3ee7176014593801e82af4a3c",
+      "bytes": 9445,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/lagarias_dependency_checks.py",
+      "source": "collatz_reconstruction/certificates/lagarias_dependency_checks.py",
+      "source_sha256": "970795c6000362e0d8d660a0795aafc31714263e1e3ac516157a8c9e8443800b",
+      "sha256": "970795c6000362e0d8d660a0795aafc31714263e1e3ac516157a8c9e8443800b",
+      "bytes": 8159,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/certificates/pillai_fixed_difference_checks.py",
+      "source": "collatz_reconstruction/certificates/pillai_fixed_difference_checks.py",
+      "source_sha256": "d4b6aa579142f22d3e35c8ca3aad4de2df7c785a51ad2ad3f453da0ef463a49d",
+      "sha256": "d4b6aa579142f22d3e35c8ca3aad4de2df7c785a51ad2ad3f453da0ef463a49d",
+      "bytes": 7990,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/certificates/primitive_root_return_checks.py",
+      "source": "collatz_reconstruction/certificates/primitive_root_return_checks.py",
+      "source_sha256": "48ee450a6b6d6c1eb483dabfe4825749100801b97fc6a5ea4caafb06c6adf265",
+      "sha256": "bb009c410f96f64d4efde8a301cd223f07503473c3bfc4d4bce6e91e42dcd2f2",
+      "bytes": 6088,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/siegel_v1_tao_syracuse_crosswalk_checks.py",
+      "source": "collatz_reconstruction/certificates/siegel_v1_tao_syracuse_crosswalk_checks.py",
+      "source_sha256": "001327d5d355fed298a8e58c311dee51a5cba9645b6e0aa82e69bb2b40613ea6",
+      "sha256": "9481977fe6cc4c66aa66ed2444e155888852ea407b19790d14d8d6b8930f1498",
+      "bytes": 8592,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/steuding_522_checks.py",
+      "source": "collatz_reconstruction/certificates/steuding_522_checks.py",
+      "source_sha256": "0d08bd24b7a27f61271c47297ac1a917e5af73b4b52c1fbcd93bb20050294902",
+      "sha256": "bebac9ad03c73b8d3f96ca7101845d05fca3f87f88fd028b876e78d6a065ea9b",
+      "bytes": 4921,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/tao_main_reduction_checks.py",
+      "source": "collatz_reconstruction/certificates/tao_main_reduction_checks.py",
+      "source_sha256": "feab839198920b58469694605cc604b128bac78e0d032258e325b3d9b173c795",
+      "sha256": "69ced473a93640cd5fe94f20f7b85d7856b3665f76a7a309278c18650c064c5e",
+      "bytes": 17684,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/tao_prop111_transport_checks.py",
+      "source": "collatz_reconstruction/certificates/tao_prop111_transport_checks.py",
+      "source_sha256": "70ca21065cb5af036044617250f5682d90ca223299918a32379feaef0f9dfc31",
+      "sha256": "0ed9c035c9b0bec6b353ae099d9cb018f01a72e045586099a329ac2377a6c000",
+      "bytes": 39432,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/tao_prop19_valuation_checks.py",
+      "source": "collatz_reconstruction/certificates/tao_prop19_valuation_checks.py",
+      "source_sha256": "92a603632d9142a53cfa6e0b4c84da087dce98a3be957262541a0d5af4bee2a7",
+      "sha256": "e7e460a30c66348e9bd15bccc6f2ffd4320d7af88052d29604b655cf09411c58",
+      "bytes": 13587,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/tao_v7_endpoint_buffer_checks.py",
+      "source": "collatz_reconstruction/certificates/tao_v7_endpoint_buffer_checks.py",
+      "source_sha256": "382bca45afcf0f7e484e8c60dcaae49a3ad217cfa95306d940535c0e3a34a7b6",
+      "sha256": "1a906bd3db993cee5f0c5a05bd904f37861e7bd2ffbd599229c2e18c8cd263fc",
+      "bytes": 6691,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/tao_v7_fourier_renewal_checks.py",
+      "source": "collatz_reconstruction/certificates/tao_v7_fourier_renewal_checks.py",
+      "source_sha256": "de0f78477d44e744ab22aee0feaaeb2507da8333e216307c5299b9741927f8de",
+      "sha256": "549d60b8e85814b1c1b783ebb3bc337301196ccdf2e252d95146494ef254e82f",
+      "bytes": 18286,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/tao_v7_prop52_cn_checks.py",
+      "source": "collatz_reconstruction/certificates/tao_v7_prop52_cn_checks.py",
+      "source_sha256": "c0d02d08d4ef4ea808b2c7cddc458abadb82bd4207a0248b14e20877548ea67e",
+      "sha256": "f6ecfc49844f42bcc15ccb40015f47d441a64043755f9430db61bc51302257f5",
+      "bytes": 6821,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/tao_whole_version_checks.py",
+      "source": "collatz_reconstruction/certificates/tao_whole_version_checks.py",
+      "source_sha256": "c13f10f397c3abcd562a99702705b6e6a6d76731b78d2fe0aeb0a0a36f54d26f",
+      "sha256": "e575f685caa60b3e89ce49265554ca79867e4d409da9f80e880b1d31d1d03e21",
+      "bytes": 12622,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/certificates/terras_allouche_korec_checks.py",
+      "source": "collatz_reconstruction/certificates/terras_allouche_korec_checks.py",
+      "source_sha256": "0c098c6a70073b5b8ddd4e460c35491c28db5363c910c9127c6644b513ec25aa",
+      "sha256": "bc81616fe5f7657efb815e13261fc40c70c6e9696ac13f94a796f18e4a44bc92",
+      "bytes": 23455,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/formal/GeneralizedResidueItinerary.lean",
+      "source": "collatz_reconstruction/formal/GeneralizedResidueItinerary.lean",
+      "source_sha256": "aa68773009b18d1f1310025f885028d360c80df38b24a19249e2d2f560b1a8f5",
+      "sha256": "aa68773009b18d1f1310025f885028d360c80df38b24a19249e2d2f560b1a8f5",
+      "bytes": 12642,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/formal/lake-manifest.json",
+      "source": "collatz_reconstruction/formal/lake-manifest.json",
+      "source_sha256": "b823492ef2bf035c8c771f8edb8dc58812948f00dd617729708bd6cf4a9f4a98",
+      "sha256": "b823492ef2bf035c8c771f8edb8dc58812948f00dd617729708bd6cf4a9f4a98",
+      "bytes": 3137,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/formal/lakefile.toml",
+      "source": "collatz_reconstruction/formal/lakefile.toml",
+      "source_sha256": "f1e564f2a2df2b78ad3109b4561ab2fdd04f559d9e49280804823c42139d866b",
+      "sha256": "f1e564f2a2df2b78ad3109b4561ab2fdd04f559d9e49280804823c42139d866b",
+      "bytes": 236,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/formal/lean-toolchain",
+      "source": "collatz_reconstruction/formal/lean-toolchain",
+      "source_sha256": "efac0b94923b2d8b6840cd35be9177ad0fc5ab2332f4f4311c98712cee92fdee",
+      "sha256": "efac0b94923b2d8b6840cd35be9177ad0fc5ab2332f4f4311c98712cee92fdee",
+      "bytes": 25,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/formal/README.md",
+      "source": "collatz_reconstruction/formal/README.md",
+      "source_sha256": "b2bbca77acbef6dbfe259f38ea38b5e44913e0764c621fa72f4b034df071d30c",
+      "sha256": "b2bbca77acbef6dbfe259f38ea38b5e44913e0764c621fa72f4b034df071d30c",
+      "bytes": 1157,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/acquire_arxiv_sources.py",
+      "source": "collatz_reconstruction/scripts/acquire_arxiv_sources.py",
+      "source_sha256": "ca57ba1f0c336be141a95350685ac6b55aa01b161bfce415a8d223c4cdb1db59",
+      "sha256": "144145f158a89bad0559e23d52266a4d86f9461a80bb0e8a6dbf7c15c166e25c",
+      "bytes": 17386,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/scripts/act33_admit_krasikov_lagarias_2003.py",
+      "source": "collatz_reconstruction/scripts/act33_admit_krasikov_lagarias_2003.py",
+      "source_sha256": "93c575efdbfa22352cd0c5c8424af85bc40f553718c22dd772f7fb630a7fa442",
+      "sha256": "ae21f611f678518158d630c2376f78b3bf296ebf88eeb680447ecf9645e54208",
+      "bytes": 30543,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/scripts/act33_propagate_f028_state.mjs",
+      "source": "collatz_reconstruction/scripts/act33_propagate_f028_state.mjs",
+      "source_sha256": "f6a699f3701e00e0fa62c1cf4d69fb9e7030d48f0c478c6445e54e82ded3ae11",
+      "sha256": "f6a699f3701e00e0fa62c1cf4d69fb9e7030d48f0c478c6445e54e82ded3ae11",
+      "bytes": 28608,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/admit_chatnotes_coefficient_algebra_act39.py",
+      "source": "collatz_reconstruction/scripts/admit_chatnotes_coefficient_algebra_act39.py",
+      "source_sha256": "69f0e22a76f64d0ee3226d64e66ad04a731380cbad851eddc9d0eeb8b067645f",
+      "sha256": "d845af0f66f5c54387fd2b8b8e5ed9ee6869c1d29d57f292bbadc5281370ad1d",
+      "bytes": 27751,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/scripts/append_act31_receipt.py",
+      "source": "collatz_reconstruction/scripts/append_act31_receipt.py",
+      "source_sha256": "4b63f3c35ca415c89aa046f23cc3de28e0653242a2ce2c4e15caa56ce86163b0",
+      "sha256": "17daf1c3e2c2d56bad8bb512eec01f13ae9ddf8e92f6b51cffe9300125d5b46f",
+      "bytes": 18005,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/scripts/append_act32_receipt.py",
+      "source": "collatz_reconstruction/scripts/append_act32_receipt.py",
+      "source_sha256": "bad2ca783c58a05bcecafe141a98dd9f2b582517c02bda9dc3661bf253e6a559",
+      "sha256": "c684a76b15f20f80b35ec0c1355dc216859cdcd24c602a9d066efa3bf06d349e",
+      "bytes": 23556,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/scripts/bootstrap_routes.py",
+      "source": "collatz_reconstruction/scripts/bootstrap_routes.py",
+      "source_sha256": "eb96f5b97dc643bd98c816bb5c4bf5e51752711528d4366dd4d9ae4497341b42",
+      "sha256": "eb96f5b97dc643bd98c816bb5c4bf5e51752711528d4366dd4d9ae4497341b42",
+      "bytes": 7064,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/finalize_affine_analytic_checkpoint.py",
+      "source": "collatz_reconstruction/scripts/finalize_affine_analytic_checkpoint.py",
+      "source_sha256": "02692674a8e18a2e7d68cfe72bfa8ae32c7fab1691ede315f706274be4c6f1a4",
+      "sha256": "02692674a8e18a2e7d68cfe72bfa8ae32c7fab1691ede315f706274be4c6f1a4",
+      "bytes": 20115,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/finalize_affine_remote_sync_act49.py",
+      "source": "collatz_reconstruction/scripts/finalize_affine_remote_sync_act49.py",
+      "source_sha256": "03e8e806a147ff6ff01994161a9f9bb5985dda26e269e5663c27c1318ecc4144",
+      "sha256": "03e8e806a147ff6ff01994161a9f9bb5985dda26e269e5663c27c1318ecc4144",
+      "bytes": 32668,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/finalize_tao_main_reduction_act32.py",
+      "source": "collatz_reconstruction/scripts/finalize_tao_main_reduction_act32.py",
+      "source_sha256": "f9cd825cc2cbc982ad1c4569b60af01f46280b98bc3a20dab1bc804a2937ffa0",
+      "sha256": "f9cd825cc2cbc982ad1c4569b60af01f46280b98bc3a20dab1bc804a2937ffa0",
+      "bytes": 3739,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/harden_act43_certificate_fail_closed.py",
+      "source": "collatz_reconstruction/scripts/harden_act43_certificate_fail_closed.py",
+      "source_sha256": "618a141444106451667fbf077049fb3c8dcd7fe84bac6c450986c5c8f67d6726",
+      "sha256": "618a141444106451667fbf077049fb3c8dcd7fe84bac6c450986c5c8f67d6726",
+      "bytes": 2774,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/make_pdf_contact_sheets.py",
+      "source": "collatz_reconstruction/scripts/make_pdf_contact_sheets.py",
+      "source_sha256": "20b576796beb628d48b80b8b96d6be671c8e820456d4185f69b86c2844bad9bc",
+      "sha256": "20b576796beb628d48b80b8b96d6be671c8e820456d4185f69b86c2844bad9bc",
+      "bytes": 2705,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/measure_render_margins.py",
+      "source": "collatz_reconstruction/scripts/measure_render_margins.py",
+      "source_sha256": "973bc17eb714cc29467e67e32278cca0f93c6d57ed14fc52d20942b6c4df268c",
+      "sha256": "973bc17eb714cc29467e67e32278cca0f93c6d57ed14fc52d20942b6c4df268c",
+      "bytes": 1734,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/migrate_legacy_status_schema_act39.py",
+      "source": "collatz_reconstruction/scripts/migrate_legacy_status_schema_act39.py",
+      "source_sha256": "f0c801d19449d2dff2978a79a15cf706dc010e58beb1565f9e4c872b2fe622e6",
+      "sha256": "f0c801d19449d2dff2978a79a15cf706dc010e58beb1565f9e4c872b2fe622e6",
+      "bytes": 3528,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/prepare_signed_necklace_overleaf_act52.py",
+      "source": "collatz_reconstruction/scripts/prepare_signed_necklace_overleaf_act52.py",
+      "source_sha256": "69c4532c9f6779897b7b82aa5793719a5b77f8b2137ae889d0abc528c3a23a9a",
+      "sha256": "69c4532c9f6779897b7b82aa5793719a5b77f8b2137ae889d0abc528c3a23a9a",
+      "bytes": 25663,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/propagate_act43_groupoid_motivic_state.py",
+      "source": "collatz_reconstruction/scripts/propagate_act43_groupoid_motivic_state.py",
+      "source_sha256": "72a03566725cba18f8a0e01f2192fa16cfbedc584887b62058420a53795be01f",
+      "sha256": "8754301d5e7edb0f5a96266a41c2646f39a38b29125f8ab1043cc06932a11757",
+      "bytes": 56573,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/scripts/propagate_affine_exactness_20260904.py",
+      "source": "collatz_reconstruction/scripts/propagate_affine_exactness_20260904.py",
+      "source_sha256": "d9e9633dace5ef8c266119658364611f0e441f7f00ee627efd5e71b5c97595b4",
+      "sha256": "d9e9633dace5ef8c266119658364611f0e441f7f00ee627efd5e71b5c97595b4",
+      "bytes": 12754,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/propagate_affine_signed_necklace_act50.py",
+      "source": "collatz_reconstruction/scripts/propagate_affine_signed_necklace_act50.py",
+      "source_sha256": "824251ba9659207f935293d10ed447959ca1995e7e950173fa3e75c7d71213aa",
+      "sha256": "794d1da33dc19421f1503f8bc8cb5c15d7bc416894a604429e0b9d5fc954f3ef",
+      "bytes": 31429,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/scripts/propagate_affine_signed_necklace_act51.py",
+      "source": "collatz_reconstruction/scripts/propagate_affine_signed_necklace_act51.py",
+      "source_sha256": "d6d77892ebdd601d9d94ce670a768816a7cd01facf7555ac34c0590287b55068",
+      "sha256": "d6d77892ebdd601d9d94ce670a768816a7cd01facf7555ac34c0590287b55068",
+      "bytes": 19465,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/propagate_arctangent_act42_state.py",
+      "source": "collatz_reconstruction/scripts/propagate_arctangent_act42_state.py",
+      "source_sha256": "510bcabfa4ec9164bfeeed9e6bde94bc9d015068bb1712961187abf7f1c199b4",
+      "sha256": "43ff9c27244297cf454350df80e91cf4db851953292cbaed32992c930712c994",
+      "bytes": 49188,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/scripts/propagate_prop111_checkpoint.py",
+      "source": "collatz_reconstruction/scripts/propagate_prop111_checkpoint.py",
+      "source_sha256": "d1cc488ba583fac212d75ce27386c31a3f5e9ac6d85e7ea8f6b74b5605982143",
+      "sha256": "d1cc488ba583fac212d75ce27386c31a3f5e9ac6d85e7ea8f6b74b5605982143",
+      "bytes": 17415,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/propagate_tao_main_reduction_act32.py",
+      "source": "collatz_reconstruction/scripts/propagate_tao_main_reduction_act32.py",
+      "source_sha256": "309e94bb479b6b0de43094425061f048fe0eb470295edfad97f26b8e1eb8404f",
+      "sha256": "309e94bb479b6b0de43094425061f048fe0eb470295edfad97f26b8e1eb8404f",
+      "bytes": 38397,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/record_affine_remote_20260904.py",
+      "source": "collatz_reconstruction/scripts/record_affine_remote_20260904.py",
+      "source_sha256": "ec2cbeb42e8feabaaa13b876bc2ad51bbf8e93876319de4b12799f401e8dc18e",
+      "sha256": "ec2cbeb42e8feabaaa13b876bc2ad51bbf8e93876319de4b12799f401e8dc18e",
+      "bytes": 7769,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/recover_conway_manifestations_20260904.py",
+      "source": "collatz_reconstruction/scripts/recover_conway_manifestations_20260904.py",
+      "source_sha256": "bd04728e6c22d82cc9d256d0b6c0c3bf406983dbf2bca63de3fb299e0d53cccb",
+      "sha256": "bd04728e6c22d82cc9d256d0b6c0c3bf406983dbf2bca63de3fb299e0d53cccb",
+      "bytes": 7075,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/repair_act31_stale_boundaries.py",
+      "source": "collatz_reconstruction/scripts/repair_act31_stale_boundaries.py",
+      "source_sha256": "2374f21c821a21ff343f28d9f314f57dc0a45e51b51f77e9365f4536abe88386",
+      "sha256": "2374f21c821a21ff343f28d9f314f57dc0a45e51b51f77e9365f4536abe88386",
+      "bytes": 3972,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/repair_act32_first_passage_boundary_hash.py",
+      "source": "collatz_reconstruction/scripts/repair_act32_first_passage_boundary_hash.py",
+      "source_sha256": "93b7bc189dabbffc8f50e0441daace84e8dd4a422e751be1f826e061f838cb4c",
+      "sha256": "93b7bc189dabbffc8f50e0441daace84e8dd4a422e751be1f826e061f838cb4c",
+      "bytes": 3808,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/repair_act42_audited_state.py",
+      "source": "collatz_reconstruction/scripts/repair_act42_audited_state.py",
+      "source_sha256": "04cb43073f88999d84937ccdeb87a4e1cf857579adb74043fc8798739aea2ab4",
+      "sha256": "41fb0e858f7dd185b6c989c3dde7a35fdad61db38d4f9be827f4ff35d93a1e82",
+      "bytes": 33687,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/scripts/repair_act42_symbolic_state.py",
+      "source": "collatz_reconstruction/scripts/repair_act42_symbolic_state.py",
+      "source_sha256": "832247ad2cb616e6484b182b3884233bf440b106c2ef9e4a4f5f4ae951a7045c",
+      "sha256": "832247ad2cb616e6484b182b3884233bf440b106c2ef9e4a4f5f4ae951a7045c",
+      "bytes": 12671,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/run_bounded_companion_validation.py",
+      "source": "collatz_reconstruction/scripts/run_bounded_companion_validation.py",
+      "source_sha256": "6190ec34f0f068892f60f4cea5c4383709e65cf12dab491e326cfd630fe3d334",
+      "sha256": "6190ec34f0f068892f60f4cea5c4383709e65cf12dab491e326cfd630fe3d334",
+      "bytes": 6640,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/seal_act33_f030_checkpoint.py",
+      "source": "collatz_reconstruction/scripts/seal_act33_f030_checkpoint.py",
+      "source_sha256": "113228514c3e4e2e2330782deb54e5b5b36579fe4403c909cd3fb8f63da7da1f",
+      "sha256": "c3527c3c21d44900eb6849ddcd98d0d91b80c0230374eb3ee9290b00c1b6739b",
+      "bytes": 35588,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/scripts/seal_act42_symbolic_arctangent.py",
+      "source": "collatz_reconstruction/scripts/seal_act42_symbolic_arctangent.py",
+      "source_sha256": "9f949bc5b41a13a630f0faff3aace963de79ea78b7c16cb4acf4ab75cfe98c6d",
+      "sha256": "9f949bc5b41a13a630f0faff3aace963de79ea78b7c16cb4acf4ab75cfe98c6d",
+      "bytes": 38892,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/seal_act43_groupoid_motivic.py",
+      "source": "collatz_reconstruction/scripts/seal_act43_groupoid_motivic.py",
+      "source_sha256": "1c98732d1e6f4a5ba3e38938f638080c3524e93aefa80493817c92a47bed3ad5",
+      "sha256": "1c98732d1e6f4a5ba3e38938f638080c3524e93aefa80493817c92a47bed3ad5",
+      "bytes": 45289,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/seal_prop111_act31.py",
+      "source": "collatz_reconstruction/scripts/seal_prop111_act31.py",
+      "source_sha256": "fe0c7c5921dedaa6f1435bd2e438d1f814a6b0dc417578ca21661236d3640146",
+      "sha256": "fe0c7c5921dedaa6f1435bd2e438d1f814a6b0dc417578ca21661236d3640146",
+      "bytes": 7607,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/seal_research_companion_package_act48.py",
+      "source": "collatz_reconstruction/scripts/seal_research_companion_package_act48.py",
+      "source_sha256": "ec90df13a919e084fe369d82386919675f61351cf3bfd7777d51faf228d89f79",
+      "sha256": "ec90df13a919e084fe369d82386919675f61351cf3bfd7777d51faf228d89f79",
+      "bytes": 21471,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/seal_tao_main_reduction_act32.py",
+      "source": "collatz_reconstruction/scripts/seal_tao_main_reduction_act32.py",
+      "source_sha256": "958451cc0f90c7f11d505fb326c025bc38f52ab994246a0b2fd4af7656ede55f",
+      "sha256": "958451cc0f90c7f11d505fb326c025bc38f52ab994246a0b2fd4af7656ede55f",
+      "bytes": 7117,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/update_companion_manifest_act42.py",
+      "source": "collatz_reconstruction/scripts/update_companion_manifest_act42.py",
+      "source_sha256": "b07d403b8448e24f7038d27c3586617bf0743ceed00f9c82257ce70badbf29ea",
+      "sha256": "b07d403b8448e24f7038d27c3586617bf0743ceed00f9c82257ce70badbf29ea",
+      "bytes": 2422,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/update_companion_manifest_act43.py",
+      "source": "collatz_reconstruction/scripts/update_companion_manifest_act43.py",
+      "source_sha256": "eaf6ed046fd30e7903e5ef5fec9037a346bb78c4bc9c7280d3b883bd8733b3a1",
+      "sha256": "eaf6ed046fd30e7903e5ef5fec9037a346bb78c4bc9c7280d3b883bd8733b3a1",
+      "bytes": 2515,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/update_research_companion_manifest_act47.py",
+      "source": "collatz_reconstruction/scripts/update_research_companion_manifest_act47.py",
+      "source_sha256": "aee2d3b714e9f03883a7eed38aa8bdfcccb4f9e284f82000ba5b5fbc086e5c85",
+      "sha256": "aee2d3b714e9f03883a7eed38aa8bdfcccb4f9e284f82000ba5b5fbc086e5c85",
+      "bytes": 1495,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/update_tao_v7_family_20260904.py",
+      "source": "collatz_reconstruction/scripts/update_tao_v7_family_20260904.py",
+      "source_sha256": "0976b1b438462bea5efbbc9909206b57db7afa3a1a7d50336c723523bc4b8d32",
+      "sha256": "1cfece258fc3b6ffc0d2ade15d40dca860c96bf975463b5cd9d8158db47689cc",
+      "bytes": 11046,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/scripts/validate_act42_recovery.py",
+      "source": "collatz_reconstruction/scripts/validate_act42_recovery.py",
+      "source_sha256": "67c74f40cde31dea97524815a77f3fd08301c5df49e381728c3959977a06205b",
+      "sha256": "67c74f40cde31dea97524815a77f3fd08301c5df49e381728c3959977a06205b",
+      "bytes": 13431,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/validate_act43_recovery.py",
+      "source": "collatz_reconstruction/scripts/validate_act43_recovery.py",
+      "source_sha256": "ca3d0f7173c5e2f5f20af0699841ac44db044419facf4c1d3cc7f4cf721d4ebc",
+      "sha256": "ca3d0f7173c5e2f5f20af0699841ac44db044419facf4c1d3cc7f4cf721d4ebc",
+      "bytes": 15046,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/validate_affine_crt_checkpoint.py",
+      "source": "collatz_reconstruction/scripts/validate_affine_crt_checkpoint.py",
+      "source_sha256": "7496bedba019a45ba14d93e52faa3161eb653740e36bab179d476c555a0df5c2",
+      "sha256": "7496bedba019a45ba14d93e52faa3161eb653740e36bab179d476c555a0df5c2",
+      "bytes": 11060,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/validate_chatnotes_intake.py",
+      "source": "collatz_reconstruction/scripts/validate_chatnotes_intake.py",
+      "source_sha256": "cb55e08c891525b94bc63f7accb5863e51007c8210ab25b1b846e01202a9f862",
+      "sha256": "cb55e08c891525b94bc63f7accb5863e51007c8210ab25b1b846e01202a9f862",
+      "bytes": 8426,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/scripts/validate_state.py",
+      "source": "collatz_reconstruction/scripts/validate_state.py",
+      "source_sha256": "d45b67b71e54acbd68d73a5046ab42fddd6e30c9e89aeffb2cf5361da77f8e4e",
+      "sha256": "143aca6de670bad936520c3b6e386f3cd3bf12ece4676779a86785022833f22f",
+      "bytes": 35457,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/scripts/validate_tao_v7_checkpoint.py",
+      "source": "collatz_reconstruction/scripts/validate_tao_v7_checkpoint.py",
+      "source_sha256": "183807d1502026c90cec0a342992891b9de100aa53b3d2687245076c5a28c706",
+      "sha256": "183807d1502026c90cec0a342992891b9de100aa53b3d2687245076c5a28c706",
+      "bytes": 4193,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/state/claims.jsonl",
+      "source": "collatz_reconstruction/state/claims.jsonl",
+      "source_sha256": "166a604cfd79f4d2abeb8575e9c6e8bd26350909e59376e89b4b855f6e28d58a",
+      "sha256": "e11416b0646e0939c932640e2fafc6215e473ee30985a73a4e83be4db5643248",
+      "bytes": 267779,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/state/morphisms.jsonl",
+      "source": "collatz_reconstruction/state/morphisms.jsonl",
+      "source_sha256": "8fbb5c71ff68632af72cdec23a587c443aba594e58c0a78acf32dc883f104bc2",
+      "sha256": "8fbb5c71ff68632af72cdec23a587c443aba594e58c0a78acf32dc883f104bc2",
+      "bytes": 123029,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/state/source_registry.jsonl",
+      "source": "collatz_reconstruction/state/source_registry.jsonl",
+      "source_sha256": "3cdeb6f17fd6d2aa93d8399517036daab24ba32f242f78e834295e771159926c",
+      "sha256": "b07e0420929791eef411d6454382397ac621dbde393893194ab7d780f03ac67b",
+      "bytes": 186703,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/state/programmes.jsonl",
+      "source": "collatz_reconstruction/state/programmes.jsonl",
+      "source_sha256": "c1e0582424ff69f651b2c864cc1e09bc64e81985cd26d81b26e068378ccb5f1e",
+      "sha256": "c1e0582424ff69f651b2c864cc1e09bc64e81985cd26d81b26e068378ccb5f1e",
+      "bytes": 18059,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/state/topic_routes.jsonl",
+      "source": "collatz_reconstruction/state/topic_routes.jsonl",
+      "source_sha256": "875aeb0638c0ef670f3e7c660e26e7d95e4c16ebd111a5fbe9f11f03d8ba76f3",
+      "sha256": "c412b3ad7d072efbc60c11e4858476b8e8a4b76eeb448a321fbe68480922f10a",
+      "bytes": 44208,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/state/coverage.json",
+      "source": "collatz_reconstruction/state/coverage.json",
+      "source_sha256": "40e298c516890a5e51fbf09296e6a8972046aaca5fb37b2977cb4fc209dc7929",
+      "sha256": "40e298c516890a5e51fbf09296e6a8972046aaca5fb37b2977cb4fc209dc7929",
+      "bytes": 23289,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/state/unresolved_dependencies.jsonl",
+      "source": "collatz_reconstruction/state/unresolved_dependencies.jsonl",
+      "source_sha256": "eef6351f3c578289704e876201f77ffd4cf73ebc916f54b709b64d0fa024289f",
+      "sha256": "eef6351f3c578289704e876201f77ffd4cf73ebc916f54b709b64d0fa024289f",
+      "bytes": 5558,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/state/affine_analytic_topic_route.json",
+      "source": "collatz_reconstruction/state/affine_analytic_topic_route.json",
+      "source_sha256": "acaa4e4789b6da7f64ba81f5414db8d39f7a05ce0617e99deaa0d30efb64d283",
+      "sha256": "8d8a34603061b815cbb6e877b77a747eb635e8c1493c11a68f7c477afe637ebd",
+      "bytes": 5760,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/state/affine_packet_topic_route.json",
+      "source": "collatz_reconstruction/state/affine_packet_topic_route.json",
+      "source_sha256": "2d18b870bdfa1e128a575b40f168835119a661708ee84b4fb01cf07f84875de5",
+      "sha256": "407925cb1f18fa62f03019bbd9c301c0614ef1ec9dfcef582119013e69ee25e5",
+      "bytes": 14128,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/state/tao_v7_topic_route.json",
+      "source": "collatz_reconstruction/state/tao_v7_topic_route.json",
+      "source_sha256": "8f1736f32a2fef4bed3533ccecb6bc2999e50144c8434d796e6a3695bf16af15",
+      "sha256": "7993ef3e19a51af0508c16c362ac0f8092fd6bc400c1888149c30b066816a513",
+      "bytes": 3597,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/ABRAMOWITZ-STEGUN-1964-F013-poisson-audit.md",
+      "source": "collatz_reconstruction/qa/ABRAMOWITZ-STEGUN-1964-F013-poisson-audit.md",
+      "source_sha256": "21b55c394924339d2ba65eb265fc579d605ec0865350b9e787bdf81715cc37d5",
+      "sha256": "21b55c394924339d2ba65eb265fc579d605ec0865350b9e787bdf81715cc37d5",
+      "bytes": 8590,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/ACT33-FRESH-CONTEXT-RECOVERY-TEST.md",
+      "source": "collatz_reconstruction/qa/ACT33-FRESH-CONTEXT-RECOVERY-TEST.md",
+      "source_sha256": "80f7553721f23088b097fa040393a6c8d85f2023a9c37a525f0618176707d63c",
+      "sha256": "80f7553721f23088b097fa040393a6c8d85f2023a9c37a525f0618176707d63c",
+      "bytes": 6097,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/ACT41-FRESH-CONTEXT-RECOVERY.md",
+      "source": "collatz_reconstruction/qa/ACT41-FRESH-CONTEXT-RECOVERY.md",
+      "source_sha256": "8939332e0c7957c2dbf5ef276bf346f9b87049a7d5a6925417299165917c72b0",
+      "sha256": "8939332e0c7957c2dbf5ef276bf346f9b87049a7d5a6925417299165917c72b0",
+      "bytes": 1709,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/ACT41-WEIGHTED-PATH-COMPANION-RELEASE-AUDIT.md",
+      "source": "collatz_reconstruction/qa/ACT41-WEIGHTED-PATH-COMPANION-RELEASE-AUDIT.md",
+      "source_sha256": "812fa9c6d75b72a3bca4265d75564ebd70ef9a7b22c6db2c6cad2e4edaea79a3",
+      "sha256": "812fa9c6d75b72a3bca4265d75564ebd70ef9a7b22c6db2c6cad2e4edaea79a3",
+      "bytes": 6095,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/ACT42-FRESH-CONTEXT-RECOVERY.md",
+      "source": "collatz_reconstruction/qa/ACT42-FRESH-CONTEXT-RECOVERY.md",
+      "source_sha256": "9fcf286aaeceede13a35febd1a2417e420a5ac013c0659d2e4d1e59990899490",
+      "sha256": "9fcf286aaeceede13a35febd1a2417e420a5ac013c0659d2e4d1e59990899490",
+      "bytes": 2073,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/ACT42-SYMBOLIC-ARCTANGENT-RELEASE-AUDIT.md",
+      "source": "collatz_reconstruction/qa/ACT42-SYMBOLIC-ARCTANGENT-RELEASE-AUDIT.md",
+      "source_sha256": "1a06c6f2f13d415f68fde69278a913406c5e77e9dfb0fa5d9b9b6d9597d40043",
+      "sha256": "1a06c6f2f13d415f68fde69278a913406c5e77e9dfb0fa5d9b9b6d9597d40043",
+      "bytes": 5753,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/ACT43-FRESH-CONTEXT-RECOVERY.md",
+      "source": "collatz_reconstruction/qa/ACT43-FRESH-CONTEXT-RECOVERY.md",
+      "source_sha256": "b7c29b4a0d92dfcc6612b515063fed3a785c0168adbd87787bea7127cae44c78",
+      "sha256": "b7c29b4a0d92dfcc6612b515063fed3a785c0168adbd87787bea7127cae44c78",
+      "bytes": 2055,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/ACT43-GROUPOID-MOTIVIC-RELEASE-AUDIT.md",
+      "source": "collatz_reconstruction/qa/ACT43-GROUPOID-MOTIVIC-RELEASE-AUDIT.md",
+      "source_sha256": "d1f9e8bb8d7e8ac2775977c173b6c84fef24774527ee8562fb51ccfaa22da7e1",
+      "sha256": "d1f9e8bb8d7e8ac2775977c173b6c84fef24774527ee8562fb51ccfaa22da7e1",
+      "bytes": 5071,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/ACT45-TAO-FRESH-CONTEXT-RECOVERY.json",
+      "source": "collatz_reconstruction/qa/ACT45-TAO-FRESH-CONTEXT-RECOVERY.json",
+      "source_sha256": "3c0c68a2a91e4fd5ce403e2ec6035887e5bb6f37e4aeea1f2a28f8cc18ebd687",
+      "sha256": "8ef86b8a7af79c2116f7c3a8a49365de2ac66ba786ec5f5c57eb0f84d01a0a79",
+      "bytes": 17594,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/ACT46-AFFINE-FRESH-CONTEXT-RECOVERY.json",
+      "source": "collatz_reconstruction/qa/ACT46-AFFINE-FRESH-CONTEXT-RECOVERY.json",
+      "source_sha256": "6193d761a0b40bbe8c2ecbaaa406ccad1d8548531f696bab951d777bbe144cf0",
+      "sha256": "25a1f9c2f8eecda3062786649e316c2ca719096edbf1a6941e113408297ecf17",
+      "bytes": 39650,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/AIZAWA-ISAAC-SEGAR-2018-F032-color-coefficient-crosswalk.md",
+      "source": "collatz_reconstruction/qa/AIZAWA-ISAAC-SEGAR-2018-F032-color-coefficient-crosswalk.md",
+      "source_sha256": "39e03ed2ee0d8434894a1527f8bff4480b2eca8872cfdf363a362b987435847a",
+      "sha256": "39e03ed2ee0d8434894a1527f8bff4480b2eca8872cfdf363a362b987435847a",
+      "bytes": 4983,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/BARINA-OLIVEIRA-ROOSENDAAL-F031-computational-verification-audit.md",
+      "source": "collatz_reconstruction/qa/BARINA-OLIVEIRA-ROOSENDAAL-F031-computational-verification-audit.md",
+      "source_sha256": "835b4a4a760a80dbee2af4c4c13ae2e44f6f86686b2d04ea5ea87e0a3df5c891",
+      "sha256": "861ba3fb54faab18e0e2ee0dec20bf41e5e0276ffc5db2581be61b599ad25229",
+      "bytes": 47015,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/BERNSTEIN-1994-F007-noniterative-adic-audit.md",
+      "source": "collatz_reconstruction/qa/BERNSTEIN-1994-F007-noniterative-adic-audit.md",
+      "source_sha256": "d9a735bab09e7d608995cd723af06310728a803e572b8cc73de0816dab51408d",
+      "sha256": "d9a735bab09e7d608995cd723af06310728a803e572b8cc73de0816dab51408d",
+      "bytes": 5536,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/CONWAY-1972-F022-historical-verification-audit.md",
+      "source": "collatz_reconstruction/qa/CONWAY-1972-F022-historical-verification-audit.md",
+      "source_sha256": "64ea59937126565aca1115ddf07946dbe80433393c02041b0bc89f8539e85445",
+      "sha256": "64ea59937126565aca1115ddf07946dbe80433393c02041b0bc89f8539e85445",
+      "bytes": 5523,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/CRANDALL-1978-F010-full-paper-audit.md",
+      "source": "collatz_reconstruction/qa/CRANDALL-1978-F010-full-paper-audit.md",
+      "source_sha256": "d4c0cda47fd079b3914ad79ff1f7b002a26794cb622df3cea71a5324478b973e",
+      "sha256": "9b80daabac7ab4d3581ed033c5ef97f94c2cc038bc36d036869ee56fdb35cc53",
+      "bytes": 25871,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/CRANDALL-1978-F020-primitive-root-audit.md",
+      "source": "collatz_reconstruction/qa/CRANDALL-1978-F020-primitive-root-audit.md",
+      "source_sha256": "a2b3888b1d96aeac7f67e15f6920bc3423e827d766c22865409815a10d430dcd",
+      "sha256": "e8be92e6f474c539013571e9e57014a66bd69633e9faa652d5d2694b537dda4e",
+      "bytes": 5377,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/EVERETT-1977-F012-density-audit.md",
+      "source": "collatz_reconstruction/qa/EVERETT-1977-F012-density-audit.md",
+      "source_sha256": "cb00c2ea4aacbed97b9c0ac560b5c56102c5ed576169f4d74939e966ffb4398e",
+      "sha256": "cb00c2ea4aacbed97b9c0ac560b5c56102c5ed576169f4d74939e966ffb4398e",
+      "bytes": 10363,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/HERSCHFELD-1936-F018-eventual-uniqueness-audit.md",
+      "source": "collatz_reconstruction/qa/HERSCHFELD-1936-F018-eventual-uniqueness-audit.md",
+      "source_sha256": "9efe74a88be1a41c41056ce07bd07099cd4cded9fea99d3aa56904cdf5fa0a89",
+      "sha256": "9efe74a88be1a41c41056ce07bd07099cd4cded9fea99d3aa56904cdf5fa0a89",
+      "bytes": 8163,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/KOHL-F003-rcwa-crosswalk-and-density-audit.md",
+      "source": "collatz_reconstruction/qa/KOHL-F003-rcwa-crosswalk-and-density-audit.md",
+      "source_sha256": "082ede426b4557e599067516df592b26d7c058c9ab6a7f152671d41f9fb5af49",
+      "sha256": "46650e88a732e3cf7f72294d316f9d5c8c2a1ad48178bf91f8bb939765be53ba",
+      "bytes": 6917,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/KRASIKOV-LAGARIAS-2003-F029-difference-inequality-audit.md",
+      "source": "collatz_reconstruction/qa/KRASIKOV-LAGARIAS-2003-F029-difference-inequality-audit.md",
+      "source_sha256": "7bc00b095f99f55ae94f226a5b865223ecc2de030501536e1d26d2f71f01d187",
+      "sha256": "11b7533b14d3e270487e5c1967385270fa5d3dece89d719ad264545219334492",
+      "bytes": 18273,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/LAARHOVEN-DEWEGER-1209-F006-debruijn-audit.md",
+      "source": "collatz_reconstruction/qa/LAARHOVEN-DEWEGER-1209-F006-debruijn-audit.md",
+      "source_sha256": "31b73fd68f4fabce9188b3595b98afd2218bc35c6daa691dc8f041147f3720cc",
+      "sha256": "29e1caf8cc690c9cf97ee3c3b4f61b1a8258efa6d6fd49cdc30d13dc99270c93",
+      "bytes": 17785,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/LAGARIAS-1985-F008-parity-periodicity-audit.md",
+      "source": "collatz_reconstruction/qa/LAGARIAS-1985-F008-parity-periodicity-audit.md",
+      "source_sha256": "821bec59515d414c6c7faf88865fd0e6280c4499c34cde55291aed90834ecd2c",
+      "sha256": "821bec59515d414c6c7faf88865fd0e6280c4499c34cde55291aed90834ecd2c",
+      "bytes": 8046,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/LAGARIAS-1990-F009-rational-cycles-audit.md",
+      "source": "collatz_reconstruction/qa/LAGARIAS-1990-F009-rational-cycles-audit.md",
+      "source_sha256": "38b238f116164cfa3185dce174b9efcce883eff0f911c9a77fb9313e6f0d9fac",
+      "sha256": "38b238f116164cfa3185dce174b9efcce883eff0f911c9a77fb9313e6f0d9fac",
+      "bytes": 8694,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/MATTHEWS-F002-dadic-conjugacy-audit.md",
+      "source": "collatz_reconstruction/qa/MATTHEWS-F002-dadic-conjugacy-audit.md",
+      "source_sha256": "1d71ab49eb812d842e2ab530f84c7fedd28c78336cc2bf3d7799d68383c53491",
+      "sha256": "0cfe79078f3f3866ba9cbe6e6c21e70deeecac186ddd84f7e0e67d63c123766a",
+      "bytes": 9629,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/PILLAI-1931-F014-fixed-difference-audit.md",
+      "source": "collatz_reconstruction/qa/PILLAI-1931-F014-fixed-difference-audit.md",
+      "source_sha256": "454779194943f2f99aef263444a2f06922f5aa5fd420d8cc04fa54eb6cbe082b",
+      "sha256": "454779194943f2f99aef263444a2f06922f5aa5fd420d8cc04fa54eb6cbe082b",
+      "bytes": 7995,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/POLYA-1918-F015-smooth-gap-audit.md",
+      "source": "collatz_reconstruction/qa/POLYA-1918-F015-smooth-gap-audit.md",
+      "source_sha256": "37d67aa35b7c140b43e5c694b13b029ec284aed3189195ddc44040e641726347",
+      "sha256": "37d67aa35b7c140b43e5c694b13b029ec284aed3189195ddc44040e641726347",
+      "bytes": 4518,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/SIEGEL-1921-F016-approximation-audit.md",
+      "source": "collatz_reconstruction/qa/SIEGEL-1921-F016-approximation-audit.md",
+      "source_sha256": "4af55b9417b93698b0a56ae80194d8a9fcec3caf74008525a88f1467a890935c",
+      "sha256": "4af55b9417b93698b0a56ae80194d8a9fcec3caf74008525a88f1467a890935c",
+      "bytes": 4264,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/SIEGEL-2007-V1-V3-F023-syracuse-crosswalk-audit.md",
+      "source": "collatz_reconstruction/qa/SIEGEL-2007-V1-V3-F023-syracuse-crosswalk-audit.md",
+      "source_sha256": "92ad396e0162f176b2ac272b139001e22474c827d9e8a0390925af177b5f660f",
+      "sha256": "92ad396e0162f176b2ac272b139001e22474c827d9e8a0390925af177b5f660f",
+      "bytes": 6841,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/SIEGEL-2601-V3-F005-hydra-numen-foundations-audit.md",
+      "source": "collatz_reconstruction/qa/SIEGEL-2601-V3-F005-hydra-numen-foundations-audit.md",
+      "source_sha256": "6fe57e1dd413b1da141571956673817c6e74f80ea1cec2b8f41d25c86e57c094",
+      "sha256": "f637e0ba83f8da59d3106560e164999172d4c87cc6ee685b6a03c6ef60aeef81",
+      "bytes": 24775,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/STEUDING-2005-F011-exercise-522-audit.md",
+      "source": "collatz_reconstruction/qa/STEUDING-2005-F011-exercise-522-audit.md",
+      "source_sha256": "b04eefeb90b023c258fc7dbc689db59f26b5f04ac8fe7d74ddd6ec6577564c4b",
+      "sha256": "5a40ddebe992cb3cc11263c92a4c8ba7ae0b62bbd6465756754dd8479441395c",
+      "bytes": 10258,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/STEUDING-2005-F021-crandall-continued-fraction-audit.md",
+      "source": "collatz_reconstruction/qa/STEUDING-2005-F021-crandall-continued-fraction-audit.md",
+      "source_sha256": "ada3dcd07233e4d192a4c0f0defec91eee31f09ae3c61e4a090da47bc13de627",
+      "sha256": "212efcc627a0623247b64ac93b1e6c1e28c2edb3fe2f5de432fd8c75eb9046fa",
+      "bytes": 7337,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/TAO-V5-V7-JOURNAL-F024-fourier-renewal-audit.md",
+      "source": "collatz_reconstruction/qa/TAO-V5-V7-JOURNAL-F024-fourier-renewal-audit.md",
+      "source_sha256": "92159774002cafc6ba0ed77c1fac12e80d083f46cebc5ed0c72eb581f72f4d20",
+      "sha256": "92159774002cafc6ba0ed77c1fac12e80d083f46cebc5ed0c72eb581f72f4d20",
+      "bytes": 38034,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/TAO-V5-V7-JOURNAL-F025-prop19-valuation-audit.md",
+      "source": "collatz_reconstruction/qa/TAO-V5-V7-JOURNAL-F025-prop19-valuation-audit.md",
+      "source_sha256": "5a05c2e775072d936775c36d4e94896523f73f02a9bfc7e0ece689d52e35a4aa",
+      "sha256": "5069695ab1c65f7c6a79e754320c185e6456cf8efc25ea428c168ef173c5f803",
+      "bytes": 13380,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/TAO-V5-V7-JOURNAL-F026-prop111-first-passage-audit.md",
+      "source": "collatz_reconstruction/qa/TAO-V5-V7-JOURNAL-F026-prop111-first-passage-audit.md",
+      "source_sha256": "37334a91b9fee6cbcba5cb8c6d8d368981d1d96b254495af3f3454b8e828e320",
+      "sha256": "2d142206a178b103f124d05c3a3d4815652651f4deac14e47574e8ff3977e890",
+      "bytes": 15080,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/TAO-V5-V7-JOURNAL-F027-main-theorem-reduction-audit.md",
+      "source": "collatz_reconstruction/qa/TAO-V5-V7-JOURNAL-F027-main-theorem-reduction-audit.md",
+      "source_sha256": "7ab39a57a00e5c753fdd895ec07cab7f3c672a2b479c80b1369db6cd9ae3bd37",
+      "sha256": "57b6632f2b9dbf6d97b3f8bed889bdbaf1f3b61ad3a788668a6240eaea147533",
+      "bytes": 13619,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/TAO-V5-V7-JOURNAL-F028-whole-version-citation-audit.md",
+      "source": "collatz_reconstruction/qa/TAO-V5-V7-JOURNAL-F028-whole-version-citation-audit.md",
+      "source_sha256": "bf00a90d3acd819435a7ef2da0ebeae032d752b8c921c1f97ff23ddff2a0b095",
+      "sha256": "e266ceab7643e132872283af3e85bc801d67b26b9149cb87f02d56a31978d2f4",
+      "bytes": 17267,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/TAO-V7-F001-proof-text-audit.md",
+      "source": "collatz_reconstruction/qa/TAO-V7-F001-proof-text-audit.md",
+      "source_sha256": "540a43f4cf103062326d0e45bb2f90b15d20e7f40e627d6230d77c3e22420104",
+      "sha256": "a7849763c9557dadbd4c8c693b4e5a607dac532c54ebd227cf55da251dd4b579",
+      "bytes": 18967,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/TERRAS-ALLOUCHE-KOREC-F030-density-lineage-audit.md",
+      "source": "collatz_reconstruction/qa/TERRAS-ALLOUCHE-KOREC-F030-density-lineage-audit.md",
+      "source_sha256": "3765a2ef9a98ed101ad387f64e9f707fe714e0a64c8479ea012bc1ef846ec6ba",
+      "sha256": "c6236c33a740454ce34e897f77b67fcbe14439ff60723028e7c69bfcbb05ecc9",
+      "bytes": 28965,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/THUE-1908-1909-F017-binary-form-audit.md",
+      "source": "collatz_reconstruction/qa/THUE-1908-1909-F017-binary-form-audit.md",
+      "source_sha256": "81bb37e95ff5de180079daa1b52b9539cf67c594e3a82e0086323fc2f2f50b9c",
+      "sha256": "81bb37e95ff5de180079daa1b52b9539cf67c594e3a82e0086323fc2f2f50b9c",
+      "bytes": 8379,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/qa/URATA-F004-official-symbolic-dynamics-audit.md",
+      "source": "collatz_reconstruction/qa/URATA-F004-official-symbolic-dynamics-audit.md",
+      "source_sha256": "1262d4747e9b1c5893e5d14f1ac16c0a51408946c2abe198ed9ef459cf64852c",
+      "sha256": "4b9b7624726307bb6791952e2b4d0499f150044d120bf8ec43c1d6f316fe3376",
+      "bytes": 9102,
+      "privacy_substitution": true
+    },
+    {
+      "path": "collatz_reconstruction/qa/WEIGHTED-PATH-AUTOMATA-F033-crosswalk.md",
+      "source": "collatz_reconstruction/qa/WEIGHTED-PATH-AUTOMATA-F033-crosswalk.md",
+      "source_sha256": "20a60a808351afb2a6a78955fd5a47188e9b6ac43ff74a2902bec201182cbfcc",
+      "sha256": "20a60a808351afb2a6a78955fd5a47188e9b6ac43ff74a2902bec201182cbfcc",
+      "bytes": 4411,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/output/pdf/collatz_working_corpus.pdf",
+      "source": "collatz_reconstruction/output/pdf/collatz_working_corpus.pdf",
+      "source_sha256": "24fa733fa1ba7a39a371b64d6d679912c2af15f4fc014ff8eadc9ad4aa209899",
+      "sha256": "24fa733fa1ba7a39a371b64d6d679912c2af15f4fc014ff8eadc9ad4aa209899",
+      "bytes": 1679876,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_companion/output/pdf/collatz_research_companion.pdf",
+      "source": "collatz_reconstruction/research_companion/output/pdf/collatz_research_companion.pdf",
+      "source_sha256": "074dcc1be3c5a66f28a8568a725d0a0093583faabff888bac177d24c6360119b",
+      "sha256": "074dcc1be3c5a66f28a8568a725d0a0093583faabff888bac177d24c6360119b",
+      "bytes": 761019,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/preprints/tao_clock_audit/output/pdf/tao_clock_audit.pdf",
+      "source": "collatz_reconstruction/preprints/tao_clock_audit/output/pdf/tao_clock_audit.pdf",
+      "source_sha256": "cfb0c07de2952f4c9e4ce44cf5828398601dd6c6ae09d77a60a332771052f919",
+      "sha256": "cfb0c07de2952f4c9e4ce44cf5828398601dd6c6ae09d77a60a332771052f919",
+      "bytes": 462716,
+      "privacy_substitution": false
+    },
+    {
+      "path": "collatz_reconstruction/research_program/split_zero_history_20260913/note.pdf",
+      "source": "collatz_reconstruction/research_program/split_zero_history_20260913/note.pdf",
+      "source_sha256": "db981e928c21aa07723d340bb5945825245d541aad367e625152e367104dce70",
+      "sha256": "db981e928c21aa07723d340bb5945825245d541aad367e625152e367104dce70",
+      "bytes": 383526,
+      "privacy_substitution": false
+    },
+    {
+      "path": "maxwell_siegel_research/output/pdf/maxwell_siegel_critical_expository_edition.pdf",
+      "source": "maxwell_siegel_research/output/pdf/maxwell_siegel_critical_expository_edition.pdf",
+      "source_sha256": "3e89313b9d47e27390bdfe79dfc3d87ae204dc39de9f451dd136241107810061",
+      "sha256": "3e89313b9d47e27390bdfe79dfc3d87ae204dc39de9f451dd136241107810061",
+      "bytes": 1198545,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/MANIFEST.sha256",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/MANIFEST.sha256",
+      "source_sha256": "4ad49612ac951969bcb95c51b2eec1b9124222c23db168ce00a4d38857d56a30",
+      "sha256": "4ad49612ac951969bcb95c51b2eec1b9124222c23db168ce00a4d38857d56a30",
+      "bytes": 2446,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/README.md",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/README.md",
+      "source_sha256": "669be6c773e97bf493989486890eaa4bbbefdfb7666a2817045d80c70368efa2",
+      "sha256": "669be6c773e97bf493989486890eaa4bbbefdfb7666a2817045d80c70368efa2",
+      "bytes": 3814,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/RELEASE_METADATA.json",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/RELEASE_METADATA.json",
+      "source_sha256": "c9bd7e87556b370df5d79c9d7eada28d27328964325fbf436a6dcefb2d296450",
+      "sha256": "c9bd7e87556b370df5d79c9d7eada28d27328964325fbf436a6dcefb2d296450",
+      "bytes": 1532,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/apparatus/CLAIM_LEDGER.jsonl",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/apparatus/CLAIM_LEDGER.jsonl",
+      "source_sha256": "e9ba4255f50c99b1763c136d6307b27ee554146eccfa283e3bd711e5577a2b8c",
+      "sha256": "e9ba4255f50c99b1763c136d6307b27ee554146eccfa283e3bd711e5577a2b8c",
+      "bytes": 172403,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/apparatus/claim_ledger.schema.json",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/apparatus/claim_ledger.schema.json",
+      "source_sha256": "694062452cec1e603cc2cd89cb3d926d5e0c4c3906f6b2fd9d1c2dc0e6c33e55",
+      "sha256": "694062452cec1e603cc2cd89cb3d926d5e0c4c3906f6b2fd9d1c2dc0e6c33e55",
+      "bytes": 3608,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/apparatus/release_document_index.jsonl",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/apparatus/release_document_index.jsonl",
+      "source_sha256": "98a9aafe9e05f35055922de2124f141276d63a0ed6a5cc48c1db6f3972f226a9",
+      "sha256": "98a9aafe9e05f35055922de2124f141276d63a0ed6a5cc48c1db6f3972f226a9",
+      "bytes": 27342,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/apparatus/release_document_index.schema.json",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/apparatus/release_document_index.schema.json",
+      "source_sha256": "b8e3c3bc0b029e93facf1356c376be6aad025042ea82f19447c24aecf05af696",
+      "sha256": "b8e3c3bc0b029e93facf1356c376be6aad025042ea82f19447c24aecf05af696",
+      "bytes": 7218,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/00_editorial_method.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/00_editorial_method.tex",
+      "source_sha256": "4ca84b090da44dcffa6ca5eed1269fe2a3481f5bd5b682bee273f7127fe26ec7",
+      "sha256": "4ca84b090da44dcffa6ca5eed1269fe2a3481f5bd5b682bee273f7127fe26ec7",
+      "bytes": 7430,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/01_canonical_corpus.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/01_canonical_corpus.tex",
+      "source_sha256": "e49e95b0d839bcb5473a3323e0fed6510d8b27de399d11e04cbdbcf8d2c309c8",
+      "sha256": "e49e95b0d839bcb5473a3323e0fed6510d8b27de399d11e04cbdbcf8d2c309c8",
+      "bytes": 7347,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/02_arithmetic_dynamics.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/02_arithmetic_dynamics.tex",
+      "source_sha256": "24cb982e9e76ad734d692fc453fd420b157c7b1107760640c05b4d2cfb7e99bc",
+      "sha256": "24cb982e9e76ad734d692fc453fd420b157c7b1107760640c05b4d2cfb7e99bc",
+      "bytes": 7971,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/03_hydra_maps.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/03_hydra_maps.tex",
+      "source_sha256": "eadfef26af338fb748c6b9184426ea50b4d1b3735c062065148a9e5cadc5a2c5",
+      "sha256": "eadfef26af338fb748c6b9184426ea50b4d1b3735c062065148a9e5cadc5a2c5",
+      "bytes": 22241,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/04_numen.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/04_numen.tex",
+      "source_sha256": "98eb08b29df3058e829d6b816c158b839c5fd8a64815f32f9473abe848f6fc20",
+      "sha256": "98eb08b29df3058e829d6b816c158b839c5fd8a64815f32f9473abe848f6fc20",
+      "bytes": 15613,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/05_correspondence.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/05_correspondence.tex",
+      "source_sha256": "17e312123afe89d1aa87ec3069b140d29522b79691be86314da8e261bcee1aa5",
+      "sha256": "17e312123afe89d1aa87ec3069b140d29522b79691be86314da8e261bcee1aa5",
+      "bytes": 27530,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/06_dreamcatchers.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/06_dreamcatchers.tex",
+      "source_sha256": "c3ad85155b5f34cce34d14a6e61e2aa0e578f467e4f7f8cc0bd1e8db06cf4ff6",
+      "sha256": "c3ad85155b5f34cce34d14a6e61e2aa0e578f467e4f7f8cc0bd1e8db06cf4ff6",
+      "bytes": 17480,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/07_contour_mellin.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/07_contour_mellin.tex",
+      "source_sha256": "097d7ab21b0860fc6580160114296843a1503c0d409551564b7d8418dee5628e",
+      "sha256": "097d7ab21b0860fc6580160114296843a1503c0d409551564b7d8418dee5628e",
+      "bytes": 18888,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/08_pq_fourier.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/08_pq_fourier.tex",
+      "source_sha256": "b0c0563c5f5de95241dcc539e5b1c4bfe92a75b75ee1e81b32a6fd0b176abc6e",
+      "sha256": "b0c0563c5f5de95241dcc539e5b1c4bfe92a75b75ee1e81b32a6fd0b176abc6e",
+      "bytes": 21345,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/09_rising_fseries.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/09_rising_fseries.tex",
+      "source_sha256": "ed85f1ee73a6f10d135cf7cb4460fc3c913502088376e6fc411cfda0ca56fcc2",
+      "sha256": "ed85f1ee73a6f10d135cf7cb4460fc3c913502088376e6fc411cfda0ca56fcc2",
+      "bytes": 26193,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/10_synthesis.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/10_synthesis.tex",
+      "source_sha256": "037d657bb5b613438248b10bf6fc6c03755231f7fdf214d6a28cbcea2c99ce35",
+      "sha256": "037d657bb5b613438248b10bf6fc6c03755231f7fdf214d6a28cbcea2c99ce35",
+      "bytes": 51615,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/11_source_register.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/chapters/11_source_register.tex",
+      "source_sha256": "b75e22d5ae0b2c423e6d63d68a8b6d265d76f2da04c90d1094b9f987d022c7e8",
+      "sha256": "b75e22d5ae0b2c423e6d63d68a8b6d265d76f2da04c90d1094b9f987d022c7e8",
+      "bytes": 33069,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/main.tex",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/critical_expository_edition/main.tex",
+      "source_sha256": "815333a15e63a9b7f39ac8e277cd20007dd886457c9d7a4d35e8d5c1201ec71c",
+      "sha256": "815333a15e63a9b7f39ac8e277cd20007dd886457c9d7a4d35e8d5c1201ec71c",
+      "bytes": 4237,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/qa/claim_ledger_closure.json",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/qa/claim_ledger_closure.json",
+      "source_sha256": "8700bbee35994fd4eb4e8d369612a32a4de6f5332e02e0547847e90a1eac6e3d",
+      "sha256": "8700bbee35994fd4eb4e8d369612a32a4de6f5332e02e0547847e90a1eac6e3d",
+      "bytes": 2016,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/qa/release_verification.md",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/qa/release_verification.md",
+      "source_sha256": "c08400f513bd6627e9194722bc68bbfc2955bb7a2bf56e1b91667e6169b04935",
+      "sha256": "c08400f513bd6627e9194722bc68bbfc2955bb7a2bf56e1b91667e6169b04935",
+      "bytes": 4690,
+      "privacy_substitution": false
+    },
+    {
+      "path": "siegel_edition/maxwell_siegel_critical_expository_edition_source/scripts/verify_release.py",
+      "source": "maxwell_siegel_research/output/source/maxwell_siegel_critical_expository_edition_source.zip!/maxwell_siegel_critical_expository_edition_source/scripts/verify_release.py",
+      "source_sha256": "92484f837e64cda65210d609be568a54821aa3a68370acbe65a971b816c8d897",
+      "sha256": "92484f837e64cda65210d609be568a54821aa3a68370acbe65a971b816c8d897",
+      "bytes": 74237,
+      "privacy_substitution": false
+    }
+  ],
+  "excluded_categories": [
+    "private raw intake and transcripts",
+    "third-party bulk literature",
+    "browser/authentication material",
+    "temporary builds, caches and duplicate renders",
+    "operational user and coordination logs"
+  ],
+  "note": "Generated repository navigation is listed in repository_inventory.json; source records here retain original and public hashes."
+}

@@ -1,0 +1,678 @@
+\section{Periodic codes and the Correspondence Principle}
+\label{sec:correspondence}
+
+The algebraic heart of the Correspondence Principle is a fixed-point
+identity for a repeated word.  Its dynamical heart is branch correctness.
+Those are independent steps: the first takes place in an affine group, while
+the second identifies a formal composition with an iterate of a piecewise
+map.
+
+\subsection{Purely periodic digit strings}
+
+Let $\mathbf j=(j_0,\ldots,j_{L-1})$ be a word of length $L\geq1$, and put
+\[
+ n=\Dig(\mathbf j)=\sum_{a=0}^{L-1}j_ap^a.
+\]
+Its infinite repetition represents the base-$p$ digit-ring element
+\begin{equation}
+\label{eq:Bp}
+ B_p(\mathbf j)=B_{p,L}(n)
+ =n(1+p^L+p^{2L}+\cdots)=\frac{n}{1-p^L}.
+\end{equation}
+The length $L$ is part of this expression.  When $\mathbf j$ is the shortest
+word for $n>0$, write $\lambda_p(n)=L$ and
+$B_p(n)=n/(1-p^{\lambda_p(n)})$.
+
+\begin{theorem}[repeated-code fixed-point identity]
+\label{thm:repeated-code-fixed-point}
+Let $H$ be centered, let $\ell$ be a place of $K$, and set
+$M=M_H(\mathbf j)$ and $X=X_H(\mathbf j)$.  Suppose
+$\|M\|_\ell<1$.  Then $I-M$ is invertible on $K_\ell$, the rising numen
+converges at $B_p(\mathbf j)$, and
+\begin{equation}
+\label{eq:repeated-code-value}
+ X_{H,\ell}(B_p(\mathbf j))=(I-M)^{-1}X.
+\end{equation}
+This value is the unique fixed point of $H_{\mathbf j}$ in $K_\ell$.
+\end{theorem}
+
+\begin{proof}
+The $mL$-digit truncation of $B_p(\mathbf j)$ is represented by
+$\mathbf j^{\wedge m}$.  By \cref{prop:repeated-word},
+\[
+ X_H(\mathbf j^{\wedge m})
+ =(I+M+\cdots+M^{m-1})X.
+\]
+The operator series converges in the complete endomorphism algebra because
+$\|M\|_\ell<1$, and its sum is $(I-M)^{-1}$.  Truncations ending inside the
+next block have the same limit because the remaining finite prefix is
+multiplied by $M^m$.  This proves the rising limit.  The fixed-point assertion
+is \cref{eq:word-fixed-point}.
+\end{proof}
+
+\begin{remark}
+In a scalar one-dimensional setting \cref{eq:repeated-code-value} is often
+written $X/(1-M)$.  For a general Hydra, $M$ is an endomorphism and the typed
+formula is $(I-M)^{-1}X$.
+\end{remark}
+
+\begin{proposition}[rational points are the eventually periodic digit strings]
+\label{prop:rational-eventually-periodic}
+Under the diagonal embedding into the completions at the primes dividing
+$p$,
+\[
+ \Q\cap\Z_p^{\mathrm{dig}}
+ =\Z_{(p)}:=\left\{\frac ab\in\Q:\gcd(b,p)=1
+                   \text{ after reducing }a/b\right\}.
+\]
+An element of $\Z_p^{\mathrm{dig}}$ lies in this subring if and only if its
+base-$p$ digit sequence is eventually periodic.
+\end{proposition}
+
+\begin{proof}
+Write $p=\prod_{\substack{\ell\mid p\\ \ell\ {\mathrm{prime}}}}\ell^{e_\ell}$.
+The compatible Chinese-remainder
+isomorphisms give
+\[
+ \Z_p^{\mathrm{dig}}
+ =\varprojlim_N\Z/p^N\Z
+ \xrightarrow{\sim}
+ \prod_{\ell\mid p}\varprojlim_N\Z/\ell^{e_\ell N}\Z
+ \xrightarrow{\sim}\prod_{\ell\mid p}\Z_\ell.
+\]
+The subsequence $(e_\ell N)_{N\geq1}$ is cofinal, which proves the second
+isomorphism.  Under the resulting diagonal embedding of $\Q$ into
+$\prod_{\ell\mid p}\Q_\ell$, a reduced rational belongs to the displayed
+product of integer rings exactly when no prime $\ell\mid p$ divides its
+denominator.  Hence
+$\Q\cap\Z_p^{\mathrm{dig}}=\Z_{(p)}$ with the meaning stated above.
+
+If a digit string has a prefix of length $R$ with value $u$ and thereafter
+repeats a block of length $L$ with value
+$v=\sum_{h=0}^{L-1}e_hp^h$, then its value in the inverse limit is
+\[
+ u+p^R v(1+p^L+p^{2L}+\cdots)
+ =u+\frac{p^Rv}{1-p^L}.
+\]
+Because $1-p^L\equiv1\pmod p$, its denominator is coprime to $p$.
+
+Conversely, let $x=a/b$ with $a,b\in\Z$ and $\gcd(b,p)=1$.  For every
+$N\geq0$ there is a unique compatible residue
+$A_N\in\{0,\ldots,p^N-1\}$ satisfying
+$bA_N\equiv a\pmod{p^N}$; these residues define the digit expansion of $x$.
+Here $A_0=0$.  Put
+\[
+ u_N=\frac{a-bA_N}{p^N}\in\Z.
+\]
+If $d_N$ is the next digit, then
+\begin{equation}
+\label{eq:rational-digit-state}
+ u_{N+1}=\frac{u_N-bd_N}{p},
+ \qquad
+ d_N\in\mathcal A_p,\qquad bd_N\equiv u_N\pmod p.
+\end{equation}
+The congruence determines $d_N$ uniquely from $u_N$ because $b$ is a unit
+modulo $p$.  Iterating
+$|u_{N+1}|\leq(|u_N|+|b|(p-1))/p$ gives
+\[
+ |u_N|\leq p^{-N}|u_0|+|b|(1-p^{-N})
+ \leq |u_0|+|b|.
+\]
+Thus the integer sequence $(u_N)$ takes values in a finite set, and the
+deterministic transition
+\cref{eq:rational-digit-state} must eventually repeat.  Its associated
+digits are therefore eventually periodic.
+\end{proof}
+
+Let $H$ be centered, fix a place $\ell$ at which all branches are bounded,
+and suppose $\|M_H(\mathbf j)\|_\ell<1$.  If $\mathfrak z$ has a finite
+prefix $\mathbf i$ followed by the infinite repetition of $\mathbf j$, then
+\begin{equation}
+\label{eq:eventually-periodic-numen}
+ X_{H,\ell}(\mathfrak z)
+ =H_{\mathbf i}\bigl((I-M_H(\mathbf j))^{-1}X_H(\mathbf j)\bigr).
+\end{equation}
+This is an affine image of a formal periodic fixed point.  It becomes a
+statement about the actual Hydra only after correctness is proved.
+
+\subsection{Classical \texorpdfstring{$2$}{2}-adic conjugacy and the exact
+periodic overlap}
+
+The parity-vector conjugacy predates the numen.  Its digit order is
+chronological, whereas Siegel's displayed affine word acts from right to
+left.  The difference is not cosmetic: it forces a word reversal in the
+precise locus where the two constructions have a common rational value.
+
+Let $q$ be any odd integer and extend $T_q$ to $\Z_2$ using the parity
+branches in \cref{eq:Tq-branches}.  Let
+\[
+ S=\vartheta_2:\Z_2\longrightarrow\Z_2,
+ \qquad S(z)=\frac{z-[z]_2}{2},
+\]
+be the binary digit shift.
+For every prime $\ell$, write
+$\iota_\ell:\Q\hookrightarrow\Q_\ell$ for the canonical field embedding.
+
+\begin{proposition}[the Bernstein--Lagarias conjugacy, with maps typed]
+\label{prop:BL-conjugacy-typed}
+Define
+\begin{equation}
+\label{eq:BL-parity-encoder}
+ Q_q(x)=\sum_{i=0}^{\infty}\bigl[T_q^{\circ i}(x)\bigr]_2\,2^i
+ \qquad(x\in\Z_2).
+\end{equation}
+If $z\in\Z_2\setminus\{0\}$, let either $I=\{1,\ldots,r\}$ for some $r\geq1$ or
+$I=\Z_{\geq1}$, according as the set of one positions is finite or infinite,
+and write
+\[
+ z=\sum_{\ell\in I}2^{d_\ell},
+ \qquad d_1\geq0,
+ \qquad d_\ell<d_{\ell+1}\quad(\ell,\ell+1\in I).
+\]
+Define
+\begin{equation}
+\label{eq:BL-inverse-formula}
+ \Phi_q(z)=-\sum_{\ell\in I}q^{-\ell}2^{d_\ell},
+ \qquad \Phi_q(0)=0.
+\end{equation}
+Then $Q_q,\Phi_q:\Z_2\to\Z_2$ are mutually inverse $2$-adic
+isometries, hence solenoidal homeomorphisms, and
+\begin{equation}
+\label{eq:BL-conjugacy-oriented}
+ Q_q\circ T_q=S\circ Q_q,
+ \qquad
+ T_q=\Phi_q\circ S\circ\Phi_q^{-1}.
+\end{equation}
+Thus $Q_q$ is the chronological parity encoder and
+$\Phi_q=Q_q^{-1}$ is the conjugacy.  This is the odd-$(a,b)=(q,1)$
+specialization of Bernstein--Lagarias, not a prime-$q$ statement
+\cite[Eqs.~(1.3), (1.5), (1.6), (4.1), and~(4.2)]{BernsteinLagarias}.
+\end{proposition}
+
+\begin{proof}
+For odd $q$, $H_0$ maps $2\Z_2$ to $\Z_2$ and $H_1$ maps
+$1+2\Z_2$ to $\Z_2$.  Thus the branch selected by the current parity is
+defined at every iterate, every digit in \cref{eq:BL-parity-encoder} lies in
+$\{0,1\}$, and the displayed binary series converges.  If
+$x\equiv y\pmod{2^N}$, induction through their common parity
+branches gives
+\[
+ T_q^{\circ i}(x)\equiv T_q^{\circ i}(y)
+ \pmod{2^{N-i}}
+ \qquad(0\leq i\leq N),
+\]
+so the first $N$ digits of $Q_q(x)$ and $Q_q(y)$ agree.  Conversely, if
+those $N$ digits agree and contain $m$ ones, the same-branch affine
+calculation gives
+\[
+ T_q^{\circ N}(x)-T_q^{\circ N}(y)
+ =\frac{q^m}{2^N}(x-y).
+\]
+The left side lies in $\Z_2$ and $q$ is a $2$-adic unit, hence
+$x\equiv y\pmod{2^N}$.  Therefore
+\begin{equation}
+\label{eq:BL-isometry-congruences}
+ x\equiv y\pmod{2^N}
+ \quad\Longleftrightarrow\quad
+ Q_q(x)\equiv Q_q(y)\pmod{2^N},
+\end{equation}
+which proves that $Q_q$ is an isometry onto its image.
+
+The finite sum in \cref{eq:BL-inverse-formula} is immediate; in the infinite
+case the series converges because
+$|q^{-\ell}2^{d_\ell}|_2=2^{-d_\ell}\to0$.  Writing
+$z=\delta+2w$ with $\delta\in\{0,1\}$ and separating the first one when
+$\delta=1$ gives the exact recursions
+\begin{equation}
+\label{eq:BL-Phi-recursion}
+ \Phi_q(2w)=2\Phi_q(w),
+ \qquad
+ \Phi_q(1+2w)=\frac{2\Phi_q(w)-1}{q}.
+\end{equation}
+The first value is even and the second is odd.  Applying the corresponding
+branch of $T_q$ therefore gives
+\[
+ T_q(\Phi_q(z))=\Phi_q(Sz).
+\]
+Iterating shows that the parity digits of $\Phi_q(z)$ are exactly the digits
+of $z$, so $Q_q\Phi_q=\operatorname{id}_{\Z_2}$.  Hence $Q_q$ is
+surjective; together with \cref{eq:BL-isometry-congruences}, it is bijective
+and $\Phi_q=Q_q^{-1}$.  Dropping the first parity digit in
+\cref{eq:BL-parity-encoder} proves $Q_qT_q=SQ_q$, and substitution of the
+inverse gives the second conjugacy formula.  The congruence equivalence for
+every $N$ proves that both inverse maps are solenoidal isometries and hence
+homeomorphisms.
+\end{proof}
+
+Bernstein--Lagarias Appendix B is broader still.  Given arbitrary solenoidal
+bijections $V_0,V_1:\Z_2\to\Z_2$, it treats
+\[
+ U_{V_0,V_1}(x)=
+ \begin{cases}
+ V_0(x/2),&x\equiv0\pmod2,\\
+ V_1((x-1)/2),&x\equiv1\pmod2,
+ \end{cases}
+\]
+and proves that its chronological parity encoder is solenoidal bijective and
+$U=Q^{-1}SQ$, with a converse classification
+\cite[App.~B, Thms.~B.1--B.2]{BernsteinLagarias}.  The shortened $T_q$
+has $V_0(y)=y$ and $V_1(y)=qy+(q+1)/2$; the latter is an affine isometry of
+$\Z_2$ for every odd $q$, with inverse
+$y\mapsto q^{-1}(y-(q+1)/2)$.  This proves the exact inclusion in that
+class; it does not identify Appendix B's full class with general Hydras.
+
+\begin{theorem}[reversed purely periodic overlap]
+\label{thm:BL-numen-periodic-overlap}
+Let $q$ be odd, let $L\geq1$, and let
+$\boldsymbol\varepsilon=(\varepsilon_0,\ldots,\varepsilon_{L-1})$ be a
+chronological binary block.  If $m\geq1$, write the positions of its $m$ ones
+as
+\[
+ 0\leq v_0<\cdots<v_{m-1}<L;
+\]
+when $m=0$, every position list and sum below is empty.  Set
+\begin{equation}
+\label{eq:chronological-and-reversed-codes}
+ e=\sum_{i=0}^{L-1}\varepsilon_i2^i,
+ \qquad
+ \operatorname{rev}_L(e)
+   =\sum_{i=0}^{L-1}\varepsilon_i2^{L-1-i}.
+\end{equation}
+Put
+\begin{equation}
+\label{eq:BL-periodic-rational}
+ R_{q,\boldsymbol\varepsilon}
+ :=\frac{\displaystyle
+         \sum_{k=0}^{m-1}q^{m-k-1}2^{v_k}}
+        {2^L-q^m}\in\Q.
+\end{equation}
+Then
+\[
+ \Phi_q\!\left(\frac{e}{1-2^L}\right)
+ =\iota_2\!\left(R_{q,\boldsymbol\varepsilon}\right)\in\Z_2.
+\]
+If, in addition, $q$ is an odd prime, so that the edition's global
+$\chi_q:\Z_2\to\Z_q$ is available, then
+\begin{equation}
+\label{eq:BL-numen-overlap}
+ \chi_q\!\left(
+       \frac{\operatorname{rev}_L(e)}{1-2^L}\right)
+ =\iota_q\!\left(R_{q,\boldsymbol\varepsilon}\right)\in\Z_q.
+\end{equation}
+Thus the two values have the same rational representative
+$R_{q,\boldsymbol\varepsilon}$ after reversal.  The reversal in
+\cref{eq:BL-numen-overlap} is mandatory.
+\end{theorem}
+
+\begin{proof}
+If $m=0$, every displayed value is zero, so assume first that $m\geq1$.
+The one positions of the purely periodic $2$-adic integer
+$e/(1-2^L)$ are
+\[
+ d_{rm+k+1}=v_k+rL
+ \qquad(r\geq0,\ 0\leq k<m).
+\]
+Substitution into \cref{eq:BL-inverse-formula} and a $2$-adically
+convergent geometric sum give
+\begin{align*}
+ \Phi_q\!\left(\frac{e}{1-2^L}\right)
+ &=-\sum_{r\geq0}\sum_{k=0}^{m-1}
+       q^{-(rm+k+1)}2^{v_k+rL}\\
+ &=-\left(\sum_{k=0}^{m-1}q^{-(k+1)}2^{v_k}\right)
+       \sum_{r\geq0}\left(\frac{2^L}{q^m}\right)^r\\
+ &=\iota_2\!\left(\frac{\displaystyle
+         \sum_{k=0}^{m-1}q^{m-k-1}2^{v_k}}
+        {2^L-q^m}\right),
+\end{align*}
+because $|2^L/q^m|_2=2^{-L}<1$.  This proves
+the asserted $\Phi_q$ evaluation with the rational representative defined in
+\cref{eq:BL-periodic-rational}.
+
+Now put $h_0(x)=x/2$ and $h_1(x)=(qx+1)/2$.  Induction on the chronological
+block gives
+\begin{equation}
+\label{eq:chronological-affine-return}
+ h_{\varepsilon_{L-1}}\circ\cdots\circ h_{\varepsilon_0}(x)
+ =\frac{q^m x+
+        \displaystyle\sum_{k=0}^{m-1}q^{m-k-1}2^{v_k}}
+       {2^L}.
+\end{equation}
+To see the induction with every index fixed, for $0\leq h\leq L$ put
+\[
+ m_h=\sum_{i=0}^{h-1}\varepsilon_i,
+ \qquad
+ C_h=\sum_{\substack{0\leq k<m\\v_k<h}}
+       q^{m_h-k-1}2^{v_k}.
+\]
+The claim after the first $h$ chronological branches is
+\[
+ h_{\varepsilon_{h-1}}\circ\cdots\circ h_{\varepsilon_0}(x)
+ =\frac{q^{m_h}x+C_h}{2^h}.
+\]
+At $h=0$ the left side denotes the empty composite
+$\operatorname{id}_{\Q}$, so the claim is the identity.  For
+$0\leq h<L$, assume the claim at level $h$.  If $\varepsilon_h=0$, applying
+$h_0$ changes
+only the denominator from $2^h$ to $2^{h+1}$, while
+$m_{h+1}=m_h$ and $C_{h+1}=C_h$.  If $\varepsilon_h=1$, then
+\[
+ h_1\!\left(\frac{q^{m_h}x+C_h}{2^h}\right)
+ =\frac{q^{m_h+1}x+qC_h+2^h}{2^{h+1}}.
+\]
+Here $m_{h+1}=m_h+1$; multiplication of $C_h$ by $q$ raises every old
+exponent by one, and the new odd position $v_{m_h}=h$ contributes the term
+$q^0 2^h$.  Thus the new numerator is exactly $q^{m_{h+1}}x+C_{h+1}$.
+At $h=L$ this is \cref{eq:chronological-affine-return}.  Solving its affine
+fixed-point equation gives $R_{q,\boldsymbol\varepsilon}$; its denominator is
+nonzero because an odd
+integer power cannot equal $2^L$.
+
+Under Siegel's convention, the displayed word
+$H_{j_0}\circ\cdots\circ H_{j_{L-1}}$ applies $j_{L-1}$ first.  It realizes
+the chronological block precisely when
+\[
+ (j_0,\ldots,j_{L-1})
+ =(\varepsilon_{L-1},\ldots,\varepsilon_0),
+\]
+whose little-endian code is exactly $\operatorname{rev}_L(e)$.  For prime
+$q$ and $m\geq1$, its linear part is $q^m/2^L$, of $q$-adic norm $q^{-m}<1$.
+The repeated-code theorem therefore evaluates its rising numen at its unique
+fixed point, namely $\iota_q(R_{q,\boldsymbol\varepsilon})$.  The $m=0$ case
+is again the centered
+zero word.  This proves \cref{eq:BL-numen-overlap}.
+
+The reversal is genuinely necessary in the universal formula, not merely a
+different way to name the same argument.  Take $q=3$, $L=2$, and
+$\boldsymbol\varepsilon=(0,1)$.  Then $e=2$ and
+$\operatorname{rev}_2(e)=1$, while the formulas already proved give
+\[
+ \Phi_3\!\left(\frac{2}{1-4}\right)=\iota_2(2),
+ \qquad
+ \chi_3\!\left(\frac{1}{1-4}\right)=\iota_3(2),
+ \qquad
+ \chi_3\!\left(\frac{2}{1-4}\right)=\iota_3(1).
+\]
+Indeed, $h_1\circ h_0$ is $x\mapsto(3x+2)/4$ with fixed point $2$, whereas
+$h_0\circ h_1$ is $x\mapsto(3x+1)/4$ with fixed point $1$.
+Thus deleting $\operatorname{rev}_L$ makes the asserted identity false.
+\end{proof}
+
+\begin{sourceissue}[the unrestricted B\"ohm--Sontacchi Proposition 4 iterate
+identity is false]
+\label{status:Bohm-Sontacchi-Proposition-4}
+For $q=3$, the right side of \cref{eq:chronological-affine-return} is the
+formal branch-composition expression obtained by specializing
+B\"ohm--Sontacchi Proposition~1.  Their printed Proposition~4 displays this
+expression as $u^n(x)$ while quantifying over every $x\in\Z$ and every run
+tuple $(n_0,\ldots,n_m)$.  That unrestricted left side is false.  Take
+$x=0$, $m=1$, and $n_0=n_1=1$.  Then $n=3$ and $v_0=1$, so the printed right
+side is $1/4$, whereas $u^3(0)=0$.  The same right side is correctly the
+formal value
+\[
+ f\circ g\circ f(0)=\frac14,
+ \qquad f(x)=\frac{x}{2},\quad g(x)=\frac{3x+1}{2}.
+\]
+Consequently this edition uses the formal-composition identity and identifies
+it with $u^n(x)$ only after proving that the word is the actual parity
+itinerary, as in \cref{prop:Tq-correct-fixed-point}.
+\end{sourceissue}
+
+The fixed point $R_{3,\boldsymbol\varepsilon}$ of that correct formal
+composition is the candidate printed in B\"ohm--Sontacchi Proposition~5
+\cite[p.~263]{BohmSontacchi}.  Their statement literally prints $v_m=n$;
+after the explicit edition renaming $n=L$, it prints
+$v_{i-1}<v_i$ for $1\leq i<m$ and $v_m=L$, but does not visibly print
+$v_{m-1}<v_m$.  For $m\geq1$, the last inequality follows from the formal run
+construction, where $v_m-v_{m-1}=1+n_m>0$; it is a reconstruction, not a
+silent correction of Proposition~5.  The unnumbered paragraph immediately
+after its proof explicitly says the candidate may lie on a cycle of length
+$L$ or a proper divisor of $L$ \cite[p.~264]{BohmSontacchi}.  Thus the
+independently recovered historical formula is a return-time identity, not an
+exact-period classification.
+
+\begin{corollary}[global nonidentity]
+\label{cor:BL-numen-global-nonidentity}
+For every odd prime $q$, the paired values with common rational representatives
+in
+\cref{thm:BL-numen-periodic-overlap} do not identify the global maps
+$\Phi_q$ and $\chi_q$.  They have types
+\[
+ \Phi_q:\Z_2\to\Z_2,
+ \qquad
+ \chi_q:\Z_2\to\Z_q,
+\]
+The two values have distinct rational representatives:
+\begin{equation}
+\label{eq:BL-numen-value-separation}
+ \Phi_q(1)=\iota_2\!\left(-\frac1q\right),
+ \qquad
+ \chi_q(1)=\iota_q\!\left(\frac12\right),
+ \qquad
+ -\frac1q\ne\frac12\quad\text{in }\Q.
+\end{equation}
+The map $Q_q$ must likewise retain its role as the inverse chronological
+parity encoder in \cref{eq:BL-conjugacy-oriented}; it cannot be substituted
+for $\Phi_q$ by a notation change.
+\end{corollary}
+
+\begin{proof}
+Formula \cref{eq:BL-inverse-formula} at the single one position $d_1=0$
+gives the first embedded value.  The one-letter numen is
+$\chi_q(1)=H_1(0)=\iota_q(1/2)$.  Equality of the rational representatives
+would force $q=-2$, contrary to oddness.  The displayed domains, codomains,
+and inverse relation prove the remaining typing assertions.
+\end{proof}
+
+Laarhoven--de Weger give a graph-theoretic presentation of the same classical
+conjugacy.  Their symbol $\Phi$ is the chronological graph isomorphism
+satisfying $T=\Phi^{-1}\sigma\Phi$, so in the notation fixed here it plays
+the role of $Q_3$, not $\Phi_3$.  Their odd-$an+b$ analogue is exact, whereas
+their $p$-ary discussion uses ``appropriately chosen'' coefficients and does
+not cover arbitrary Hydras
+\cite[Thms.~3.1 and~5.1 and Sec.~5.2]{LaarhovenDeWeger}.
+
+\subsection{Branch correctness for \texorpdfstring{$T_q$}{Tq}}
+
+The shortened map admits a particularly clean correctness argument in
+$\Q_2$.  Extend the two affine formulas in \cref{eq:Tq-branches} to all of
+$\Q_2$.
+
+\begin{lemma}[one correct branch]
+\label{lem:one-correct-Tq-branch}
+Let $q$ be odd and $x\in\Z_2$.  Exactly one of $H_0(x),H_1(x)$ belongs to
+$\Z_2$, namely $H_{[x]_2}(x)$.  If a wrong branch is applied, the result has
+$2$-adic valuation $-1$.  If $v_2(y)<0$, then
+\[
+ v_2(H_0(y))=v_2(H_1(y))=v_2(y)-1.
+\]
+\end{lemma}
+
+\begin{proof}
+If $x$ is even, $x/2\in\Z_2$ and $qx+1$ is odd, so
+$(qx+1)/2\notin\Z_2$.  If $x$ is odd, $x/2\notin\Z_2$ and $qx+1$ is even,
+so $(qx+1)/2\in\Z_2$.  This proves the first two assertions.  If
+$v_2(y)<0$, then $v_2(qy)=v_2(y)<0=v_2(1)$; the ultrametric inequality with
+unequal valuations gives $v_2(qy+1)=v_2(y)$.  Division by $2$ lowers either
+valuation by one.
+\end{proof}
+
+\begin{proposition}[formal fixed points in $\Z_2$ are genuine]
+\label{prop:Tq-correct-fixed-point}
+Let $\mathbf j$ be a finite binary word.  If $z\in\Z_2$ and
+$H_{\mathbf j}(z)=z$, then every branch in the right-to-left evaluation of
+$H_{\mathbf j}(z)$ is correct.  Consequently
+\[
+ T_q^{\circ|\mathbf j|}(z)=z.
+\]
+\end{proposition}
+
+\begin{proof}
+Start with $z\in\Z_2$ and evaluate the rightmost branch first.  If any branch
+is wrong, \cref{lem:one-correct-Tq-branch} says the intermediate value leaves
+$\Z_2$ with negative valuation; every later branch decreases that valuation
+further.  The final value then cannot equal $z\in\Z_2$.  Hence no branch was
+wrong, and the formal composition is the genuine iterate with the reversed
+chronological itinerary, as in \cref{eq:chronological-composition}.
+\end{proof}
+
+\subsection{The checked \texorpdfstring{$T_q$}{Tq}
+periodic-point correspondence}
+
+Assume now that $q$ is an odd prime, so that the numen
+$\chi_q:\Z_2\to\Z_q$ is defined everywhere by
+\cref{eq:chi-q-adic-series}.
+
+\begin{theorem}[Siegel's periodic-word correspondence for $T_q$]
+\label{thm:Tq-periodic-word-CP}
+Let $n\geq1$, let $L=\lambda_2(n)$, and let $\mathbf j$ be the shortest
+least-significant-digit-first binary word for $n$.  Then
+\begin{equation}
+\label{eq:chi-B2}
+ \chi_q(B_2(n))
+ =\frac{\chi_q(n)}{1-M_q(n)},
+ \qquad
+ M_q(n)=\frac{q^{\#_1(n)}}{2^L}.
+\end{equation}
+The right side is a rational number.  If it belongs to $\Z_2$, it is a
+periodic point of the $2$-adic extension of $T_q$; if it belongs to $\Z$, it
+is a periodic integer point of $T_q$.
+
+Conversely, let $x$ be a nonzero periodic integer point of exact period $L$.
+If $\mathbf j$ is the length-$L$ word obtained by reversing one complete
+chronological itinerary of $x$ and $n=\Dig(\mathbf j)$, then
+\begin{equation}
+\label{eq:padded-cycle-code}
+ x=\chi_q\bigl(B_{2,L}(n)\bigr),
+ \qquad B_{2,L}(n)=\frac{n}{1-2^L}.
+\end{equation}
+At least one cyclic phase of the cycle has a reversed word whose final digit
+is $1$; for that phase $L=\lambda_2(n)$ and
+$B_{2,L}(n)=B_2(n)$.  Other phases may require the padded length-$L$ code.
+\end{theorem}
+
+\begin{proof}
+The word contains at least one $1$, hence
+$|M_q(n)|_q=q^{-\#_1(n)}<1$.  Apply
+\cref{thm:repeated-code-fixed-point}; in the scalar case it gives exactly
+\cref{eq:chi-B2}.  If the fixed point lies in $\Z_2$,
+\cref{prop:Tq-correct-fixed-point} turns the formal fixed-point equation into
+a genuine periodicity equation.
+
+Conversely, let $x\ne0$ have period $L$ and let
+$(\varepsilon_0,\ldots,\varepsilon_{L-1})$ be its chronological parity
+itinerary.  Put
+$\mathbf j=(\varepsilon_{L-1},\ldots,\varepsilon_0)$, so
+$H_{\mathbf j}(x)=T_q^{\circ L}(x)=x$.  The word contains a $1$, since an
+all-zero cycle would satisfy $x/2^L=x$ and hence $x=0$.  The affine fixed
+point is unique because
+$M_q(\mathbf j)=q^{\#_1(\mathbf j)}/2^L\ne1$: an odd power of the odd
+integer $q$ cannot equal a positive power of $2$.  Therefore
+$x=(1-M_q(\mathbf j))^{-1}\chi_q(\mathbf j)$, which is
+$\chi_q(B_{2,L}(n))$ by \cref{thm:repeated-code-fixed-point}.  Rotating the
+chronological starting point rotates the word.  One can choose a rotation
+whose high digit is nonzero and thereby use the shortest-word abbreviation
+$B_2(n)$, but that rotation generally changes $x$ to another point of its
+cycle.
+\end{proof}
+
+\begin{sourceissue}[shortest words do not encode every cycle phase]
+The stronger version in the 2007 source overclaims that every point in the
+numen image of a cycle is represented by $B_2(n)$ for the shortest positive
+word of $n$.  For $T_3$, the point $2$ on the cycle $1\leftrightarrow2$ is
+encoded by the length-two word $(1,0)$; its high zero is part of the repeated
+block, even though the ordinary integer represented by that word is $1$.
+The synchronized code is $B_{2,2}(1)=1/(1-4)=-1/3$, not
+$B_2(1)=1/(1-2)=-1$.  The padded formula
+\cref{eq:padded-cycle-code} preserves the phase.  The source also writes a
+truncation modulus $2^m$ for $m$ repeated length-$L$ blocks where the typed
+modulus is $2^{mL}$; taking the correct subsequence repairs the limit.
+\end{sourceissue}
+
+\begin{sourceissue}[the centered zero orbit]
+The 2026 Correspondence Principle is displayed for every periodic
+$z\in\OK$ but requires a preimage in
+$(\Z_p\setminus\N_0)\cap\Q$.  A centered Hydra has the periodic point $0$,
+encoded by the all-zero word, whose digit-ring element is $0\in\N_0$.
+No general argument in the source produces a non-eventually-zero rational
+code with numen value $0$.  The earlier $T_q$ theorem correctly treats
+nonzero periodic points.  The general statement therefore needs either an
+explicit exception for $0$, inclusion of the code $0$, or an additional
+surjectivity assertion about the zero fibre.
+\end{sourceissue}
+
+\subsection{The general 2026 Correspondence Principle}
+
+We now record the latest source theorem without upgrading its proof status.
+Let $H:\OK\to\OK$ be a proper, centered, exact-integral $\Lambda$-Hydra and
+$p=|\OK/\Lambda|$.  Normalize a finite-place additive valuation by
+$v(K^\times)=\Z$ and write
+\[
+ v(\Lambda)=\min\{v(\lambda):0\ne\lambda\in\Lambda\}.
+\]
+The source assumes:
+\begin{enumerate}[label=\textup{(H\arabic*)}]
+\item for each integer $n\geq1$ there is a place $\ell_n$ of $K$ such that
+      $\|M_H(n)\|_{\ell_n}<1$;
+\item there is a nontrivial nonarchimedean place $v$ such that
+      $\|r_j\|_v>1$ for every branch and $v(\Lambda)\geq1$.
+\end{enumerate}
+
+\begin{status}[General CP (source)]
+Under (H1)--(H2), arXiv:2601.17030v3 asserts:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item an integral point is periodic if and only if it is the value of $X_H$
+      at a rational, non-eventually-zero base-$p$ digit input;
+\item if $K$ is a number field and an irrational digit input has numen value
+      $x\in\OK$, then
+      $|H^{\circ m}(x)|_w\to\infty$ as $m\to\infty$ for every nontrivial
+      archimedean absolute value $|\cdot|_w$.
+\end{enumerate}
+The source labels its proof ``Sketch.''  The repeated-word affine calculation
+needed for the forward direction is proved in full in
+\cref{thm:repeated-code-fixed-point}.  The converse still depends on the
+source's completion-level ``correctness'' argument, and the divergence clause
+depends on an identification of fibres not established by the displayed
+hypotheses.  Accordingly, this edition records (i)--(ii) as source claims,
+not as reconstructed theorems.
+\end{status}
+
+\begin{sourceissue}[defects inside the 2026 proof sketch]
+The sketch contains five points which matter mathematically.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item It writes $M_q$ in a theorem about a general $H$; the typed symbol is
+      $M_H$.
+\item It writes a quotient $(1-M_H^m)/(1-M_H)$ although $M_H$ is generally
+      an endomorphism.  The typed expression is
+      $(I-M_H^m)(I-M_H)^{-1}$, and invertibility must be proved.
+\item The proof of the divergence clause invokes a hypothesis ``(iii)'', but
+      the theorem lists only (i) and (ii).
+\item From the periodic-point correspondence, existence of a rational code
+      for a periodic value does not imply that every code in the same numen
+      fibre is rational.  Such an inference requires injectivity or a precise
+      fibre theorem, neither of which is part of the displayed statement.
+\item In dimension greater than one, $\|r_j\|_v>1$ is only a statement about
+      the \emph{largest} expansion of $r_j$.  It does not imply
+      $|r_jx|_v>|x|_v$ for every nonzero $x$, which is the kind of
+      branch-detection estimate used by the sketch.  A sufficient typed
+      replacement is a lower expansion bound
+      $\inf_{x\ne0}|r_jx|_v/|x|_v>1$, equivalently
+      $\|r_j^{-1}\|_v<1$ for invertible $r_j$, together with the required
+      translation/integrality control.  In one scalar dimension the upper
+      and lower factors coincide, but the general endomorphism statement
+      cannot use the operator supremum alone.
+\end{enumerate}
+These are not stylistic complaints; they delimit what has and has not been
+proved by the sketch.
+\end{sourceissue}
+
+\subsection{Weak Collatz versus full Collatz}
+
+For $T_3$, the \emph{weak Collatz conjecture} in Siegel's contour paper is a
+periodic-orbit assertion: the only integer cycles are the known ones (with
+the sign and state-space convention stated in that paper).  The full Collatz
+conjecture additionally requires every positive integer orbit to enter the
+positive $1\leftrightarrow2$ cycle.  A characterization of periodic points,
+even a complete one, does not rule out divergent positive trajectories.
+The contour equivalence in \cref{sec:contour-mellin} is therefore kept under
+the name \emph{weak}; it is not promoted to an equivalence with the full
+conjecture.

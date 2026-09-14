@@ -1,0 +1,371 @@
+\section{Modern Chatnotes: the four-label coefficient algebra}
+\label{sec:chatnotes-coefficient-algebra}
+
+This section is an editorial reconstruction of raw Chatnotes, not an
+attribution to the authors of the external literature.  The controlling local
+witness is the raw export \emph{Z\_n Symmetries of Collatz}, physical
+lines~5712--6220.  The external source actually cited in that interval is
+Aizawa--Isaac--Segar's construction of
+$\mathbb Z_2\times\mathbb Z_2$ color superalgebras inside universal
+enveloping algebras \cite{AizawaIsaacSegar2019}.  The elementary coefficient
+results below are proved directly.  The cited paper controls only the color
+definition and its own enveloping-algebra example.
+
+\subsection{Four affine labels and the state-dependent evaluator}
+
+Put
+\[
+ V=\mathbb F_2^2,
+ \qquad
+ F_{a,b}(X)=\frac{(1+2a)X+b}{2}
+ \quad ((a,b)\in V).
+\]
+Thus the four labels give
+\[
+ F_{00}(X)=\frac X2,
+ \quad F_{01}(X)=\frac{X+1}{2},
+ \quad F_{10}(X)=\frac{3X}{2},
+ \quad F_{11}(X)=\frac{3X+1}{2}.
+\]
+Let $\operatorname{Aff}_{\mathbb Q}^{\times}$ denote the group of affine
+maps $X\mapsto mX+c$ with $m\in\mathbb Q^\times$, represented by
+coordinates $(m,c)$ and composition
+\[
+ (m,c)(m',c')=(mm',mc'+c).
+\]
+
+\begin{proposition}[exact type of the four-label map]
+\label{prop:chatnotes-affine-label-map}
+The map of sets
+\[
+ \lambda:V\longrightarrow \operatorname{Aff}_{\mathbb Q}^{\times},
+ \qquad
+ \lambda(a,b)=\left(\frac{1+2a}{2},\frac b2\right),
+\]
+is injective.  It is not a homomorphism from the additive group $V$ to the
+affine group under composition.  For every $n\in\mathbb Z$,
+\[
+ F_{a,b}(n)\in\mathbb Z
+ \quad\Longleftrightarrow\quad
+ n\equiv b\pmod 2.
+\]
+\end{proposition}
+
+\begin{proof}
+Equality of two affine maps gives equality of their intercepts, hence
+$b=b'$, and equality of their slopes, hence $a=a'$.  This proves
+injectivity.  The identity of the affine group is $(1,0)$, whereas the zero
+of $V$ is sent to $(1/2,0)$.  A group homomorphism must preserve the identity,
+so $\lambda$ is not one.  Finally, $1+2a$ is odd, and therefore
+\[
+ (1+2a)n+b\equiv n+b\pmod2.
+\]
+Division by two is integral exactly when this numerator is even, equivalently
+$n\equiv b\pmod2$.
+\end{proof}
+
+Define
+\[
+ \partial:V\longrightarrow\mathbb F_2,
+ \qquad \partial(a,b)=a+b,
+ \qquad
+ \Delta=\ker\partial=\{00,11\}.
+\]
+For $n\in\mathbb Z$, let $\overline n$ be its class in $\mathbb F_2$ and set
+\[
+ \iota(n)=(\overline n,\overline n)\in\Delta.
+\]
+The map $\iota:\mathbb Z\to\Delta$ is a surjective group homomorphism with
+kernel $2\mathbb Z$ and fibres
+\[
+ \iota^{-1}(00)=2\mathbb Z,
+ \qquad
+ \iota^{-1}(11)=2\mathbb Z+1.
+\]
+
+\begin{proposition}[typed diagonal evaluation]
+\label{prop:chatnotes-diagonal-evaluator}
+Let
+\[
+ D=\{(n,v)\in\mathbb Z\times\Delta:v=\iota(n)\},
+ \qquad
+ \eta:\mathbb Z\longrightarrow D,
+ \quad \eta(n)=(n,\iota(n)).
+\]
+Then $\eta$ is a bijection with inverse the first projection.  The formula
+\[
+ E:D\longrightarrow\mathbb Z,
+ \qquad E(n,v)=F_v(n),
+\]
+is well-defined, and the shortened Collatz map is exactly
+\[
+ H=E\circ\eta,
+ \qquad
+ H(n)=
+ \begin{cases}
+ n/2,&n\equiv0\pmod2,\\
+ (3n+1)/2,&n\equiv1\pmod2.
+ \end{cases}
+\]
+\end{proposition}
+
+\begin{proof}
+The definition of $D$ makes the two inverse identities for $\eta$ and the
+first projection immediate.  If $(n,v)\in D$, then
+$v=(\overline n,\overline n)$, so Proposition~\ref{prop:chatnotes-affine-label-map}
+proves $F_v(n)\in\mathbb Z$.  Substitution of $v=00$ on the even fibre and
+$v=11$ on the odd fibre gives the displayed formula for $H$.
+\end{proof}
+
+The last proposition is a coefficient-label encoding with an exact evaluator.
+It does not make $\lambda$ an action, and it does not turn iteration of $H$
+into addition in $V$.
+
+\subsection{Function algebra and group algebra without conflation}
+
+There are two four-dimensional algebras in the raw passage.  Write
+\[
+ A=\operatorname{Map}(V,\mathbb C)
+\]
+with pointwise multiplication, and let $\delta_u$ be the point mass at
+$u\in V$.  Then
+\[
+ \delta_u\delta_w=\mathbf 1_{u=w}\delta_u,
+ \qquad
+ 1_A=\sum_{u\in V}\delta_u.
+\]
+Write
+\[
+ B=\mathbb C[V]
+\]
+for the group algebra, with group-element basis $g_v$.  Its multiplication is
+\[
+ g_vg_w=g_{v+w},
+ \qquad 1_B=g_{00}.
+\]
+The point masses are therefore not the group-element basis.
+
+Use the symmetric bilinear form
+\[
+ \langle u,v\rangle=u_1v_1+u_2v_2\in\mathbb F_2
+\]
+and define the Fourier idempotents
+\[
+ p_u=\frac14\sum_{v\in V}(-1)^{\langle u,v\rangle}g_v.
+\]
+
+\begin{theorem}[exact Fourier algebra isomorphism]
+\label{thm:chatnotes-fourier-algebra-isomorphism}
+The linear map
+\[
+ \mathcal F:A\longrightarrow B,
+ \qquad \mathcal F(\delta_u)=p_u,
+\]
+is a unital algebra isomorphism.  Its inverse is fixed on the group basis by
+\[
+ \mathcal F^{-1}(g_v)
+ =\sum_{u\in V}(-1)^{\langle u,v\rangle}\delta_u.
+\]
+Equivalently,
+\[
+ p_up_w=\mathbf 1_{u=w}p_u,
+ \qquad
+ \sum_{u\in V}p_u=g_{00},
+ \qquad
+ g_v=\sum_{u\in V}(-1)^{\langle u,v\rangle}p_u.
+\]
+\end{theorem}
+
+\begin{proof}
+For $z\in V$, the coefficient of $g_z$ in $p_up_w$ is
+\[
+ \frac1{16}\sum_{v\in V}
+ (-1)^{\langle u,v\rangle+\langle w,z-v\rangle}
+ =\frac{(-1)^{\langle w,z\rangle}}{16}
+   \sum_{v\in V}(-1)^{\langle u-w,v\rangle}.
+\]
+Character orthogonality makes the last sum equal to $4$ when $u=w$ and
+$0$ otherwise.  This proves $p_up_w=\mathbf 1_{u=w}p_u$.
+Applying the same orthogonality relation to $\sum_up_u$ leaves only $g_{00}$.
+It also gives the displayed expansion of every $g_v$ in the $p_u$ basis.
+Thus the four $p_u$ form a basis, the proposed inverse identities hold, and
+$\mathcal F$ preserves multiplication and the unit.
+\end{proof}
+
+This isomorphism loses no algebraic information, but it does not preserve the
+natural $V$-grading
+\[
+ B=\bigoplus_{v\in V}\mathbb Cg_v,
+ \qquad \deg g_v=v.
+\]
+Every $p_u$ has a nonzero component in all four homogeneous summands.
+There is also a basis-independent obstruction to declaring the point masses
+homogeneous in their labels.  If a nonzero idempotent $e$ in a direct
+$V$-graded algebra had degree $u\ne00$, then $e^2$ would have degree
+$u+u=00$, while $e^2=e$ would have degree $u$.  Directness of the grading
+would force $e=0$, a contradiction.
+
+\subsection{What the diagonal projector actually returns}
+
+In $A\otimes_{\mathbb C}\mathbb C[X]$, define
+\[
+ \mathfrak F(X)=\sum_{v\in V}\delta_v\otimes F_v(X),
+ \qquad
+ P_\Delta=\delta_{00}+\delta_{11}.
+\]
+Pointwise multiplication gives
+\begin{equation}
+\label{eq:chatnotes-diagonal-projection}
+ P_\Delta\mathfrak F(X)P_\Delta
+ =\delta_{00}\otimes\frac X2
+  +\delta_{11}\otimes\frac{3X+1}{2}.
+\end{equation}
+The right-hand side is a two-component labelled polynomial; it is not a
+scalar map $\mathbb Z\to\mathbb Z$.  If
+$\operatorname{ev}_v:A\to\mathbb C$ denotes evaluation at $v$ and
+$\operatorname{ev}_{X=n}:\mathbb C[X]\to\mathbb C$ denotes substitution,
+then the exact scalar recovery is
+\begin{equation}
+\label{eq:chatnotes-state-dependent-evaluation}
+ H(n)=
+ \bigl(\operatorname{ev}_{\iota(n)}\otimes
+       \operatorname{ev}_{X=n}\bigr)
+ \bigl(P_\Delta\mathfrak F(X)P_\Delta\bigr).
+\end{equation}
+The state-dependent evaluator in~\eqref{eq:chatnotes-state-dependent-evaluation}
+cannot be omitted: projection removes the two off-diagonal labels but does
+not choose between $00$ and $11$.
+
+Under Theorem~\ref{thm:chatnotes-fourier-algebra-isomorphism}, the same
+projector is
+\begin{equation}
+\label{eq:chatnotes-fourier-diagonal-projector}
+ \mathcal F(P_\Delta)=p_{00}+p_{11}
+ =\frac12(g_{00}+g_{11}).
+\end{equation}
+This is a proved change of basis, not an identification of the two basis
+multiplications or gradings.
+
+\subsection{The exact color-algebra consequence of the cited paper}
+
+Aizawa--Isaac--Segar define a color superalgebra
+$\mathfrak g=\bigoplus_{v\in V}\mathfrak g_v$ with bracket
+\[
+ \mathopen{[\![}X_v,Y_w\mathclose{]\!]}
+ =X_vY_w-(-1)^{\langle v,w\rangle}Y_wX_v
+\]
+inside an enveloping algebra \cite{AizawaIsaacSegar2019}.  Starting from an
+$\mathcal N=1$ superconformal Galilei algebra, they introduce
+\[
+ P_{nm}=\{P_n,P_m\},
+ \qquad
+ \Lambda_{nm}=\{P_n,X_m\},
+ \qquad
+ X_{nm}=[X_n,X_m]
+\]
+and assign degrees
+\[
+\begin{array}{c|l}
+00&H,D,K,P_{nm},X_{nm},\\
+01&P_n,\\
+10&Q,S,\Lambda_{nm},\\
+11&X_n.
+\end{array}
+\]
+Their relation tables and Jacobi check establish closure for that specific
+enveloping-algebra construction.
+
+\begin{lemma}[totally isotropic diagonal restriction]
+\label{lem:chatnotes-isotropic-diagonal}
+Let $C=\bigoplus_{v\in V}C_v$ be an associative $V$-graded algebra.  Then
+\[
+ C_\Delta=C_{00}\oplus C_{11}
+\]
+is closed under multiplication.  On $C_\Delta$, the color commutator defined
+by the displayed pairing is the ordinary commutator.
+\end{lemma}
+
+\begin{proof}
+The set $\Delta$ is a subgroup, so $C_uC_v\subseteq C_{u+v}\subseteq
+C_\Delta$ for $u,v\in\Delta$.  Moreover
+$\langle00,00\rangle=\langle00,11\rangle=
+\langle11,00\rangle=\langle11,11\rangle=0$ in $\mathbb F_2$.
+Hence the color sign is $+1$ on every pair of diagonal homogeneous elements,
+and the bracket is $XY-YX$.
+\end{proof}
+
+The lemma explains a valid formal feature of the repeated degree group.  It
+does not supply a Collatz color superalgebra.  The raw passage defines no
+graded algebra of Collatz states or paths, no bracket on such an algebra, no
+degree-preserving bracket morphism to either algebra in the cited paper, and
+no action of those algebras on Collatz states or observables.  The coefficient
+algebra $A$ also cannot be given the asserted grading merely by declaring its
+nonzero point idempotents to have their index degrees.
+
+\subsection{The two involutions and the chosen orthogonal block}
+
+Coordinate swap
+\[
+ s:V\longrightarrow V,
+ \qquad s(a,b)=(b,a),
+\]
+fixes the diagonal pointwise.  In contrast, translation by $11$,
+\[
+ \tau(v)=v+11,
+\]
+exchanges $00$ and $11$.  Translation is an involution of the underlying
+two-point diagonal set, but it is not a group automorphism because
+$\tau(00)=11$.
+
+On the real vector space
+$W_\Delta=\mathbb R\delta_{00}\oplus\mathbb R\delta_{11}$, one may choose
+\[
+ S=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+ \qquad
+ J=\begin{pmatrix}0&-1\\1&0\end{pmatrix}.
+\]
+Direct multiplication gives
+\[
+ S^2=I,
+ \qquad J^2=-I,
+ \qquad SJS^{-1}=-J,
+ \qquad \det S=-1,
+ \qquad \det J=1.
+\]
+Consequently $\{e^{\theta J}:\theta\in\mathbb R\}\cong SO(2)$ and adjoining
+$S$ produces the standard semidirect product $SO(2)\rtimes\langle S\rangle
+\cong O(2)$.
+
+This matrix calculation is exact, but $J$ is additional structure.  Neither
+$s$ nor the Collatz branch evaluator selects it; indeed $s$ fixes the two
+diagonal labels rather than exchanging them.  No universal property,
+dynamical action, lifting problem, or determinant anomaly is constructed by
+the raw passage.  More precisely, the raw passage supplies neither a
+homomorphism between the two ambient group systems nor a commutative diagram
+relating the quotient map
+\[
+ q:\operatorname{Spin}(4)\times SU(2)
+   \longrightarrow
+   \bigl(\operatorname{Spin}(4)\times SU(2)\bigr)/\langle(-1,-1)\rangle
+\]
+to the coefficient homomorphism
+\[
+ \partial:V\longrightarrow\mathbb F_2,
+ \qquad \partial(a,b)=a+b,
+ \qquad \Delta=\ker\partial.
+\]
+The occurrence of order-two data in both constructions is therefore not, by
+itself, a defined comparison arrow.  No identification or theorem transfer is
+admitted without those arrows and their compatibility identities.
+
+\begin{nonclaim}
+The results of this section do not construct a
+$\mathbb Z_2\times\mathbb Z_2$ action on Collatz dynamics, a Collatz color
+superalgebra, an intrinsic $O(2)$ action or anomaly, a Spin--$SU(2)$ quotient
+for Collatz, or a reformulation of the Collatz conjecture.  They establish the
+exact coefficient encoding, the Fourier algebra isomorphism, the required
+state-dependent evaluator, the isotropic-diagonal lemma, and the stated
+obstructions at those scopes only.  The raw continuation turns to weighted
+paths; its composition algebra must be read before the natural local programme
+boundary is fixed.
+\end{nonclaim}

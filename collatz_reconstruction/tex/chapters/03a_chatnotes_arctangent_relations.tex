@@ -1,0 +1,156 @@
+\section{The Chatnotes arctangent programme: Gaussian torsion and its boundary}
+\label{sec:chatnotes-arctangent-torsion}
+
+This section reconstructs the arctangent programme in the directly read raw
+chronology at physical lines 9597--11087 of the same 17,437-line Chatnotes
+export used in Sections~\ref{sec:chatnotes-coefficient-algebra} and
+\ref{sec:chatnotes-weighted-path-algebra}.  The controlling file has 538,005
+bytes and SHA-256
+\nolinkurl{9a80f53764a9da42c0f8e0b6d19ce61f978980a448a683b9c45f04038716160d}.
+The direct-locator audit is
+\path{intake/chatnotes/ZN-SYMMETRIES-ARCTANGENT-DIRECT-LOCATOR-AUDIT-05.md}.
+The passage is read chronologically: its initial exploratory rhetoric is not
+used to infer a theorem, and its later correction controls its earlier
+terminology.
+
+At physical lines 9597--9602 the user proposed testing the rational Collatz
+prefix pieces against Heegner-field and Machin/arctangent constructions.  The
+response then fixed a finite positive exponent word
+\[
+ w=(a_1,\ldots,a_n),\qquad
+ A_k(w)=a_1+\cdots+a_k,
+\]
+and, at lines 9611--9621, isolated the rational quantities
+\begin{equation}
+\label{eq:chatnotes-arctangent-prefix-pieces}
+ r_k(w)=3^{k-1}2^{-A_k(w)}.
+\end{equation}
+These are the summands of the prefix coordinate
+\(\rho(w)\) in \eqref{eq:weighted-prefix-cocycle}; they are not the terms of
+an Euler product.
+
+\subsection{The exact multiplicative torsion test}
+
+At lines 9649--9685 and again at lines 10181--10246, the passage introduced
+principal arctangent angles and their Cayley transforms.  With notation chosen
+to avoid the existing action \(\theta_{(m,A)}\) and integer \(R(w)\), put
+\begin{equation}
+\label{eq:chatnotes-arctangent-cayley-data}
+ \vartheta_k(w)=\arctan r_k(w),\qquad
+ z_k(w)=2^{A_k(w)}+i3^{k-1},\qquad
+ u_k(w)=\frac{z_k(w)}{\overline{z_k(w)}}
+       =\frac{1+i r_k(w)}{1-i r_k(w)}.
+\end{equation}
+The arctangent is the principal value, so
+\(0<\vartheta_k(w)<\pi/2\) and
+\begin{equation}
+\label{eq:chatnotes-arctangent-cayley-exponential}
+ u_k(w)=e^{2i\vartheta_k(w)}\in\Q(i)^\times.
+\end{equation}
+
+\begin{proposition}[repaired torsion formulation]
+\label{prop:chatnotes-arctangent-torsion-criterion}
+For every \(m=(m_1,\ldots,m_n)\in\Z^n\),
+\begin{equation}
+\label{eq:chatnotes-arctangent-relation-lattice}
+ \sum_{k=1}^n m_k\vartheta_k(w)\in\pi\Q
+ \quad\Longleftrightarrow\quad
+ \prod_{k=1}^n u_k(w)^{m_k}\in\mu_4,
+ \qquad \mu_4=\{1,-1,i,-i\}.
+\end{equation}
+Consequently the raw question defines the exact lattice
+\[
+ \operatorname{Rel}_{\pi}(w)=
+ \left\{m\in\Z^n:
+ \sum_{k=1}^n m_k\vartheta_k(w)\in\pi\Q\right\}.
+\]
+It is the kernel of the homomorphism
+\[
+ \Z^n\longrightarrow
+ \{x\in\Q(i)^\times:x\overline{x}=1\}/\mu_4,\qquad
+ m\longmapsto\left[\prod_{k=1}^n u_k(w)^{m_k}\right].
+\]
+\end{proposition}
+
+\begin{proof}
+Equation~\eqref{eq:chatnotes-arctangent-cayley-exponential} gives
+\[
+ \prod_k u_k(w)^{m_k}
+ =\exp\!\left(2i\sum_km_k\vartheta_k(w)\right).
+\]
+If the sum is in \(\pi\Q\), the product is a root of unity.  It also lies in
+\(\Q(i)^\times\), whose complete root-of-unity group is \(\mu_4\).  Conversely,
+if the product is \(i^j\), then
+\(2\sum_km_k\vartheta_k(w)\equiv j\pi/2\pmod{2\pi}\); hence the sum lies in
+\((\pi/4)\Z\).  Multiplication of the \(u_k\)'s proves the homomorphism and
+kernel statements.  Every \(u_k\overline{u_k}=1\), so the displayed codomain
+is exact.
+\end{proof}
+
+The raw versions wrote \(\mu_\infty\).  The replacement by \(\mu_4\) is not a
+change of mathematical object: it records the exact torsion subgroup of the
+already printed field \(\Q(i)\).  Calcut's Main Lemma and Corollary~3 give the
+same \((\pi/4)\Z\) restriction for rational arctangent sums
+\cite{Calcut2009}.
+
+\subsection{The correction internal to the chronology}
+
+The passage initially called the product condition a ``finite logarithmic
+unit equation.''  At physical lines 10866--10936 it explicitly corrected that
+phrase: a classical unit equation is additive, whereas
+\eqref{eq:chatnotes-arctangent-relation-lattice} is a multiplicative torsion
+test in \(\Q(i)^\times\).  The same correction says that Baker's theorem may
+be applied after a particular logarithmic linear form has been proved
+nonzero, but supplies no universal nonvanishing theorem for the arctangent
+family.  The critical edition therefore retains the exact criterion and does
+not turn its kernel into a theorem of triviality.
+
+This distinction matters already for the legal word \(w=(1,1)\).  Its first
+two angles satisfy
+\begin{equation}
+\label{eq:chatnotes-arctangent-exceptional-seed}
+ 2\arctan(1/2)+\arctan(3/4)=\frac{\pi}{2}.
+\end{equation}
+The identity follows from
+\((2+i)^2(4+3i)=25i\), and it appears, after division by two, in the
+two-term classification of Gasull, Luca, and Varona
+\cite[Theorem~1]{GasullLucaVarona2023}.  Thus the strongest possible blanket
+independence assertion is false; the exact question is classification of the
+relation lattice.
+
+\subsection{Published fixed-instance machinery and the remaining uniform question}
+
+Conway, Radin, and Sadun reconstruct St\o rmer's \(d=1\) theory by unique
+factorization in \(\Z[i]\): the arguments of one oriented Gaussian prime above
+each rational prime \(p\equiv1\pmod4\), together with \(\pi/4\), give
+independent coordinates for rational-tangent angles
+\cite[Theorems~1--2 and Section~2]{ConwayRadinSadun1999}.  Hence every fixed
+finite instance of \eqref{eq:chatnotes-arctangent-relation-lattice} is
+algorithmically decidable by factoring the finitely many Gaussian integers
+\(z_k(w)\).  Calcut proves the exact root-of-unity restriction and the
+single-angle non-torsion criterion \cite[Main Lemma and
+Corollaries~1--3]{Calcut2009}.  Gasull, Luca, and Varona classify their stated
+two-term, nonzero-right-hand-side formulas with \(2\)-integer arguments and
+derive the relevant zero double-angle family
+\cite[Section~2]{GasullLucaVarona2023}.
+
+These sources do not state a uniform rank theorem for the parametric Gaussian
+integers
+\[
+ 2^{A_k(w)}+i3^{k-1}\qquad(k=1,\ldots,n).
+\]
+Exact index and web searches did not locate that formulation.  This negative
+search result is not a priority certificate.  It identifies the precise point
+at which the source-faithful reconstruction ends and separately authored
+research begins.
+
+\begin{nonclaim}
+The raw chronology proves neither universal non-torsion nor a Collatz endpoint
+statement.  Its initial references to zeta, Heegner fields, modular forms,
+monster symmetry, CM arithmetic, transfer operators, and period theory do not
+establish a map from any of those structures to the lattice
+\(\operatorname{Rel}_{\pi}(w)\).  The fixed-word Gaussian valuation theorem,
+the modular non-torsion proof, the exact bounded lattice calculation, and the
+all-length rigidity conjecture belong to the separately authored research
+companion and are not silently attributed to the raw response.
+\end{nonclaim}
