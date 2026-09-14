@@ -1,0 +1,110 @@
+{
+  "file_count": 21,
+  "files": [
+    {
+      "bytes": 1075,
+      "path": ".github/workflows/collatz-stopped-cycle-cohomology.yml",
+      "sha256": "f7e84050c0a33a5ea1387605303c9b45c193068abc384680eefc14ba16b2bf83"
+    },
+    {
+      "bytes": 1242,
+      "path": "collatz_reconstruction/research_program/CONTINUATION_STOPPED_CYCLES_20260914.md",
+      "sha256": "fba5546768165d80758b2ac58e56852ace4b7854b1c1189980d13328c2eddba7"
+    },
+    {
+      "bytes": 3246,
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/EXECUTION_RECEIPT.json",
+      "sha256": "fff91dd903101486d0f55b6444832330f274d548a24d0c21e1598aaf7e82e438"
+    },
+    {
+      "bytes": 643,
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/MANIFEST.sha256",
+      "sha256": "4a1079ac8e0cbd0240ad6886944e3d893960d622a8f919cee6656bdb1e01681d"
+    },
+    {
+      "bytes": 4194,
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/README.md",
+      "sha256": "05b0ac2fcb5106dcfd6a930fa3ba3bc03f5a222a9913894dc596bbd45015fcd6"
+    },
+    {
+      "bytes": 3950,
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/TASK_STATE.md",
+      "sha256": "6278bdae2b8e39c0452c4cfd30e8a3b9c3bae8fb3c8b4168501dcc0c629565d7"
+    },
+    {
+      "bytes": 20600,
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/cycle_detector.py",
+      "sha256": "a7450a730a16d61f43a260d0ad0f57780546e6663ff9596c36ba1a41017b3f2e"
+    },
+    {
+      "bytes": 42237,
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/note.md",
+      "sha256": "5cfe64388682a5982d5c765bd0028c36287b68bea0a420e5808d7c2571f50df2"
+    },
+    {
+      "bytes": 2212,
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/replay_all.py",
+      "sha256": "b8a8298a3949536a21fc6e4b50b63ff58b77efd9b4a966a1eeb4f7afce44bb4f"
+    },
+    {
+      "bytes": 37410,
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/verification.json",
+      "sha256": "a100eb559307d32915360d371a89918f1bc05684d58428dcf596b6e90379972d"
+    },
+    {
+      "bytes": 19532,
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/verify.py",
+      "sha256": "4f609a6195b80266f9ded93785824bd4f8a72e6f8e118f3a5ffd20e079e65b49"
+    },
+    {
+      "bytes": 2626,
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/EXECUTION_RECEIPT.json",
+      "sha256": "0b737224b0c5799f1d1bb0ca487e4b5d08c0768165b8b4eab51906607e2aeb2f"
+    },
+    {
+      "bytes": 3792,
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/HANDOFF.md",
+      "sha256": "3451c7a054bccba95485fdc98b8be47f29fe424a28abf0188b256cf32fcedc94"
+    },
+    {
+      "bytes": 733,
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/MANIFEST.sha256",
+      "sha256": "5adce17643bd09364695b0a71d45ba78a7d5489de4a0146bc899217586e828b6"
+    },
+    {
+      "bytes": 2929,
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/PROVENANCE.md",
+      "sha256": "22af01894de33d8eed6bd445acb74835756bef6e434d3e79bbb375dd6741463a"
+    },
+    {
+      "bytes": 4845,
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/README.md",
+      "sha256": "c1c48cb1d2f75144ee1bf88368852b888df187582436350fc622e12774ed1edb"
+    },
+    {
+      "bytes": 56089,
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/example_certificate.json",
+      "sha256": "a3019ae167ae79788d2abc20f23e9419651f6393611d4ebb9e4ade06e7687847"
+    },
+    {
+      "bytes": 8902,
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/make_certificate.py",
+      "sha256": "cdbd26250ef7a59deea1f7437f7e4dc88d98c8b5ad037dc0a67cd4a6515afe6e"
+    },
+    {
+      "bytes": 57957,
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/note.md",
+      "sha256": "b04ceb79cb47e8c61999a2cb3131e08988a920ec3b22c89dae9f1f694f384953"
+    },
+    {
+      "bytes": 42851,
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/verification.json",
+      "sha256": "f83800b7839c9753acf8b4e62cb9539e56e1da1c6a7c1ad1fa856d47b2de4e34"
+    },
+    {
+      "bytes": 35692,
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/verify.py",
+      "sha256": "4181d895d61b3bab236530263c78fe34c7d935eb3f42f4786d91a41f88c696af"
+    }
+  ]
+}
