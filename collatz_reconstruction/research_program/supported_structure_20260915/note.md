@@ -328,7 +328,7 @@ The following equivalences are proved by (3), (4), (9), (11), and (13):
  \end{gathered}} \tag{17}
 \]
 
-Each line is read together with its original labelled source and maps. In particular a zero relative module does not erase the base basin's vectors, their merger kernels, clocks, or finite primitives. The first equality in (13) says that the only recurrent module in the absolute object is the actual fixed-loop module. Lines (11) separate periodic polynomial torsion from generic nonperiodic persistence, without discarding either.
+Each line is read together with its original labelled source and maps. In particular a zero relative module does not erase the base basin's vectors, their merger kernels, clocks, or finite primitives. The isomorphism assertion in (17), applied to the exact sequence (13), says that the only recurrent module in the absolute object is the actual fixed-loop module. The exact sequence alone does not assert that its final quotient Q vanishes. Lines (11) separate periodic polynomial torsion from generic nonperiodic persistence, without discarding either.
 
 There is no common finite N with S^N=0. For N>=1, the original source \(n_N=2^{N+1}-1\) has \(T^j(n_N)=3^j2^{N+1-j}-1\) for 0<=j<=N, so \(S^NV_{n_N}=V_{2\cdot3^N-1}\ne0\). The sources vary with N. This proves why the correct exhaustion in (17) is local rather than one finite global clock. The proof is Proposition 1 specialized to t=1.
 
@@ -372,7 +372,7 @@ This target addresses every nonbase component: its least integer belongs to all 
 
 ### P4. Assemble a finite-column, positive contraction
 
-Target: construct for each original n a finite polynomial column h(V_n), with nonnegative monomial path coefficients, satisfying dh=I and hd=I on original finite-support modules. The exact predecessor splice identities permit an accepted actual descent to attach at an old retained root, with the old terminal clock multiplied into the new path. The extra homotopy lies in the old projected edge module and closed cycle chains are fixed literally. Thus new descent coverage cannot accidentally delete a genuine counterexample.
+Target: construct for each original n a finite polynomial column h(V_n), with nonnegative monomial path coefficients, satisfying dh=I and hd=I on original finite-support modules. The exact predecessor splice identities permit an accepted actual descent to attach at an old retained root, with the old terminal clock multiplied into the new path. The extra homotopy lies in the old projected edge module. At the explicit coefficient specialization u=v=1, the original unweighted closed cycle chains are fixed literally. Before that specialization the weighted cohomology and its cycle relation are retained by the actual chain-homotopy equivalence; a weighted period has boundary (1-W_C)V_c and is not being called a zero-boundary chain. Thus new descent coverage cannot accidentally delete a genuine counterexample.
 
 The original source number itself is a well-founded ranking for strict-descent splices. One must prove applicability on every residual source, or supply another explicitly defined well-founded ranking with a proved transition decrease. Calling the stopping time a ranking does not prove that it is finite. This is the still-missing global applicability assertion, not an unrecorded premise.
 
