@@ -1,0 +1,35 @@
+name: Collatz residual-source splicing and integral blocks
+
+'on':
+  pull_request:
+    paths:
+      - 'collatz_reconstruction/research_program/residual_splice_20260914/**'
+      - 'collatz_reconstruction/research_program/stopped_affine_transport_20260914/**'
+      - 'collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/**'
+      - 'collatz_reconstruction/research_program/stopped_cycle_integration_20260914/**'
+      - '.github/workflows/collatz-residual-splice.yml'
+  push:
+    paths:
+      - 'collatz_reconstruction/research_program/residual_splice_20260914/**'
+      - 'collatz_reconstruction/research_program/stopped_affine_transport_20260914/**'
+      - 'collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/**'
+      - 'collatz_reconstruction/research_program/stopped_cycle_integration_20260914/**'
+      - '.github/workflows/collatz-residual-splice.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - name: Verify retained sources, new maps, and all eight exact replays
+        run: python -B collatz_reconstruction/research_program/residual_splice_20260914/replay.py

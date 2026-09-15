@@ -1,0 +1,26 @@
+{
+  "Lean_replay": false,
+  "base_commit": "63407034387466870f9e092dcdf39fb5a1ec0399",
+  "final_review_status": "See the pull request and checks; this receipt identifies the completed materialization checkpoint.",
+  "frozen_payload_bytes": 352757,
+  "frozen_payload_files": 21,
+  "full_independent_mathematical_review": false,
+  "generated_result_blob_identities": {
+    "cycle_relative_cohomology_20260914/verification.json": "3d0e1cd5872ef403ca4c27a70827a2b5fe988c47",
+    "stopped_affine_transport_20260914/example_certificate.json": "d88c3f07cca190a3e3041d97334ceb9b854db3c6",
+    "stopped_affine_transport_20260914/verification.json": "f4568597f2ce2b724c2c29bc5c7e6c510218b870"
+  },
+  "generated_results_commit": "05d572e4ba40307e06c5e3ba67d1bec97aabd49e",
+  "main_modified": false,
+  "materialization_and_six_replays": "success",
+  "materialization_job": 104086952240,
+  "materialization_run": 34877116817,
+  "old_records_rewritten": false,
+  "pr_1_modified": false,
+  "repository": "KokunoYumeto/collatz-workbench",
+  "review_branch": "research/stopped-cycle-cohomology-20260914",
+  "scope": "Authenticated integration checkpoint; historical payload remains unchanged.",
+  "source_import_commit": "da9a8e6ef7beaf974eead9f432181d040185b3e8",
+  "temporary_materialization_tools_in_final_tree": false,
+  "zeta_files_written": false
+}

@@ -1,0 +1,31 @@
+name: Collatz stopped transport and cycle cohomology
+
+'on':
+  pull_request:
+    paths:
+      - 'collatz_reconstruction/research_program/stopped_affine_transport_20260914/**'
+      - 'collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/**'
+      - '.github/workflows/collatz-stopped-cycle-cohomology.yml'
+  push:
+    paths:
+      - 'collatz_reconstruction/research_program/stopped_affine_transport_20260914/**'
+      - 'collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/**'
+      - '.github/workflows/collatz-stopped-cycle-cohomology.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Verify source manifests and all ordinary/optimized results
+        run: python collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/replay_all.py

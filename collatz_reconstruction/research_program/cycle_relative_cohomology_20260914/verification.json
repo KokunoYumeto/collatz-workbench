@@ -1,0 +1,2334 @@
+{
+  "bounded_word_scan": {
+    "all_words_visited": true,
+    "asymptotic_claim": false,
+    "counts": {
+      "integral_words": 49,
+      "negative_rational_words": 206702,
+      "positive_rational_words": 841873,
+      "words": 1048575
+    },
+    "negative_integral_sample": [
+      {
+        "fixed_value": -91,
+        "word": [
+          4,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "fixed_value": -7,
+        "word": [
+          2,
+          1
+        ]
+      },
+      {
+        "fixed_value": -7,
+        "word": [
+          2,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "fixed_value": -7,
+        "word": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "fixed_value": -7,
+        "word": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "fixed_value": -7,
+        "word": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "fixed_value": -7,
+        "word": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "fixed_value": -55,
+        "word": [
+          2,
+          1,
+          1,
+          4,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "fixed_value": -1,
+        "word": [
+          1
+        ]
+      },
+      {
+        "fixed_value": -61,
+        "word": [
+          1,
+          4,
+          1,
+          1,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "fixed_value": -5,
+        "word": [
+          1,
+          2
+        ]
+      },
+      {
+        "fixed_value": -5,
+        "word": [
+          1,
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "fixed_value": -5,
+        "word": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "fixed_value": -5,
+        "word": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "fixed_value": -5,
+        "word": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "fixed_value": -5,
+        "word": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "fixed_value": -37,
+        "word": [
+          1,
+          2,
+          1,
+          1,
+          4,
+          1,
+          1
+        ]
+      },
+      {
+        "fixed_value": -1,
+        "word": [
+          1,
+          1
+        ]
+      },
+      {
+        "fixed_value": -41,
+        "word": [
+          1,
+          1,
+          4,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "fixed_value": -25,
+        "word": [
+          1,
+          1,
+          2,
+          1,
+          1,
+          4,
+          1
+        ]
+      },
+      {
+        "fixed_value": -1,
+        "word": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "fixed_value": -17,
+        "word": [
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          4
+        ]
+      },
+      {
+        "fixed_value": -1,
+        "word": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "fixed_value": -1,
+        "word": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "fixed_value": -1,
+        "word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "fixed_value": -1,
+        "word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "fixed_value": -1,
+        "word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "fixed_value": -1,
+        "word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "fixed_value": -1,
+        "word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "fixed_value": -1,
+        "word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "positive_integral_words": [
+      {
+        "fixed_value": 1,
+        "word": [
+          2
+        ]
+      },
+      {
+        "fixed_value": 1,
+        "word": [
+          2,
+          2
+        ]
+      },
+      {
+        "fixed_value": 1,
+        "word": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "fixed_value": 1,
+        "word": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "fixed_value": 1,
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "fixed_value": 1,
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "fixed_value": 1,
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "fixed_value": 1,
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "fixed_value": 1,
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "fixed_value": 1,
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    ],
+    "sum_bound": 20
+  },
+  "check_counts": {
+    "Bezout identity": 684,
+    "actual block bridge": 1,
+    "actual cycle period pairing": 4,
+    "actual integer residue tower": 174,
+    "actual relative cycle closed": 4,
+    "all-one noninteger tower": 100,
+    "anchored affine primitive": 344,
+    "arbitrary length one-spike identity fixture": 100,
+    "bounded word search only trivial cycles": 1,
+    "chain section retraction": 344,
+    "completed ascent affine descent": 512,
+    "completed ascent exact exit": 512,
+    "compression chain map": 255,
+    "compression degree one homotopy": 255,
+    "compression degree zero homotopy": 255,
+    "compression edge idempotence": 255,
+    "compression homotopy vanishes on roots": 255,
+    "compression input has actual descent": 127,
+    "compression vertex idempotence": 255,
+    "control descends to surviving root": 1,
+    "control edge exposes actual cycle": 1,
+    "control tree direction contracts": 1,
+    "cutoff compression preserves positive order": 4096,
+    "cycle to predecessor chart": 1,
+    "degree one actual path contraction": 127,
+    "degree one chain homotopy": 344,
+    "degree zero chain homotopy": 344,
+    "deliberately corrupted input rejected": 10,
+    "exhaustive modular solution count": 468,
+    "finite contraction source covered": 127,
+    "finite positive source reaches basepoint": 2048,
+    "finite source column boundary": 2048,
+    "frontier killed by actual edge": 1,
+    "functional primitive": 340,
+    "independent determinant": 344,
+    "independent graph H0 rank": 12,
+    "independent graph H1 rank": 12,
+    "independent rational solve": 344,
+    "integer tower stabilization": 159,
+    "integral chain comparison": 344,
+    "joint incidence to parallel chain map": 1376,
+    "lifting obstruction pairing": 1,
+    "literal return displacement": 1376,
+    "maximal initial ascent actual exponent": 511,
+    "maximal initial ascent original value": 511,
+    "nested cutoff edge retractions first order": 889,
+    "nested cutoff edge retractions reverse order": 889,
+    "nested cutoff path extension identity": 896,
+    "nested cutoff root maps commute": 896,
+    "nontrivial cycle preserved literally": 1,
+    "nonzero rational pivot": 1274,
+    "original cylinder chart": 1376,
+    "original telescoping row": 344,
+    "parallel cokernel section": 344,
+    "parallel lattice primitive": 344,
+    "parallel to image cohomology map": 344,
+    "parallel to return cohomology map": 344,
+    "positive control cycle detected": 1,
+    "positive residual witness at every finite cutoff": 8,
+    "predecessor actual image retained": 1,
+    "predecessor unchanged coefficient convention": 5,
+    "prime versus prime-power obstruction": 1,
+    "prime-power lifting residual": 1,
+    "retain unresolved frontier": 1,
+    "retained repetition map": 1032,
+    "same rational cycle under repetition": 1032,
+    "signed control conjugacy": 128,
+    "stopped block plus tail contraction": 1,
+    "trivial fixed tower": 100,
+    "unlisted compression roots retained": 255,
+    "weighted to ordinary cycle operator identity": 344,
+    "whole-source cutoff chain map": 4088,
+    "whole-source cutoff edge projection": 4088,
+    "whole-source cutoff vertex projection": 4096
+  },
+  "checker_does_not_attest_Lean_or_remote_CI": true,
+  "control_graph": {
+    "basepoint": 1,
+    "cycle_components": [
+      {
+        "cycle_chain": {
+          "5": 1,
+          "7": 1
+        },
+        "cycle_vertices": [
+          5,
+          7
+        ],
+        "detecting_cochain_edge": 5,
+        "pairing": 1,
+        "vertices": [
+          5,
+          7
+        ]
+      }
+    ],
+    "edges": [
+      [
+        5,
+        7
+      ],
+      [
+        7,
+        5
+      ]
+    ],
+    "forcing_c": -1,
+    "frontier": [],
+    "frontier_collapsed": false,
+    "open_components": [],
+    "relative_H0_rank": 1,
+    "relative_H1_rank": 1,
+    "sources": [
+      5,
+      7
+    ],
+    "unobserved_edges_added": false,
+    "vertices": [
+      1,
+      5,
+      7
+    ]
+  },
+  "cycle_examples": [
+    {
+      "A": 2,
+      "C": 1,
+      "D": 1,
+      "H1_cycle_group_modulus": 1,
+      "L": 3,
+      "U": 4,
+      "actual_relative_cycle_contribution": false,
+      "anchored_displacement": [
+        "0"
+      ],
+      "anchored_forcing": [
+        0
+      ],
+      "cycle_matrix": [
+        [
+          1
+        ]
+      ],
+      "cylinder_source_anchor": 1,
+      "cylinder_source_step": 8,
+      "forcing_c": 1,
+      "forcing_class": 0,
+      "forcing_class_order": 1,
+      "image_anchor": 1,
+      "image_complex_modulus": 3,
+      "image_step": 6,
+      "integral": true,
+      "original_word_retained": true,
+      "positive": true,
+      "primitive_word": [
+        2
+      ],
+      "rational_orbit": [
+        "1"
+      ],
+      "repetition_factor": 1,
+      "repetitions": 1,
+      "return_mark": 0,
+      "return_mark_class": 0,
+      "return_parameter": "0",
+      "status": "trivial_positive_collatz_cycle",
+      "telescoping_row": [
+        1
+      ],
+      "word": [
+        2
+      ]
+    },
+    {
+      "A": 4,
+      "C": 7,
+      "D": 7,
+      "H1_cycle_group_modulus": 7,
+      "L": 9,
+      "U": 16,
+      "actual_relative_cycle_contribution": false,
+      "anchored_displacement": [
+        "0",
+        "0"
+      ],
+      "anchored_forcing": [
+        0,
+        0
+      ],
+      "cycle_matrix": [
+        [
+          -3,
+          4
+        ],
+        [
+          4,
+          -3
+        ]
+      ],
+      "cylinder_source_anchor": 1,
+      "cylinder_source_step": 32,
+      "forcing_c": 1,
+      "forcing_class": 0,
+      "forcing_class_order": 1,
+      "image_anchor": 1,
+      "image_complex_modulus": 9,
+      "image_step": 18,
+      "integral": true,
+      "original_word_retained": true,
+      "positive": true,
+      "primitive_word": [
+        2
+      ],
+      "rational_orbit": [
+        "1",
+        "1"
+      ],
+      "repetition_factor": 7,
+      "repetitions": 2,
+      "return_mark": 0,
+      "return_mark_class": 0,
+      "return_parameter": "0",
+      "status": "trivial_positive_collatz_cycle",
+      "telescoping_row": [
+        3,
+        4
+      ],
+      "word": [
+        2,
+        2
+      ]
+    },
+    {
+      "A": 4,
+      "C": 5,
+      "D": 7,
+      "H1_cycle_group_modulus": 7,
+      "L": 9,
+      "U": 16,
+      "actual_relative_cycle_contribution": false,
+      "anchored_displacement": [
+        "-2/7",
+        "4/7"
+      ],
+      "anchored_forcing": [
+        2,
+        -4
+      ],
+      "cycle_matrix": [
+        [
+          -3,
+          2
+        ],
+        [
+          8,
+          -3
+        ]
+      ],
+      "cylinder_source_anchor": 19,
+      "cylinder_source_step": 32,
+      "forcing_c": 1,
+      "forcing_class": 5,
+      "forcing_class_order": 7,
+      "image_anchor": 11,
+      "image_complex_modulus": 9,
+      "image_step": 18,
+      "integral": false,
+      "original_word_retained": true,
+      "positive": true,
+      "primitive_word": [
+        1,
+        3
+      ],
+      "rational_orbit": [
+        "5/7",
+        "11/7"
+      ],
+      "repetition_factor": 1,
+      "repetitions": 1,
+      "return_mark": -4,
+      "return_mark_class": 3,
+      "return_parameter": "-4/7",
+      "status": "rational_cycle_not_integral",
+      "telescoping_row": [
+        3,
+        2
+      ],
+      "word": [
+        1,
+        3
+      ]
+    },
+    {
+      "A": 11,
+      "C": 475,
+      "D": 1805,
+      "H1_cycle_group_modulus": 1805,
+      "L": 243,
+      "U": 2048,
+      "actual_relative_cycle_contribution": false,
+      "anchored_displacement": [
+        "-14/19",
+        "-2/19",
+        "16/19",
+        "12/19",
+        "-12/19"
+      ],
+      "anchored_forcing": [
+        2,
+        2,
+        0,
+        -12,
+        -4
+      ],
+      "cycle_matrix": [
+        [
+          -3,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -3,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -3,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -3,
+          16
+        ],
+        [
+          8,
+          0,
+          0,
+          0,
+          -3
+        ]
+      ],
+      "cylinder_source_anchor": 647,
+      "cylinder_source_step": 4096,
+      "forcing_c": 1,
+      "forcing_class": 475,
+      "forcing_class_order": 19,
+      "image_anchor": 77,
+      "image_complex_modulus": 243,
+      "image_step": 486,
+      "integral": false,
+      "original_word_retained": true,
+      "positive": true,
+      "primitive_word": [
+        1,
+        1,
+        2,
+        4,
+        3
+      ],
+      "rational_orbit": [
+        "5/19",
+        "17/19",
+        "35/19",
+        "31/19",
+        "7/19"
+      ],
+      "repetition_factor": 1,
+      "repetitions": 1,
+      "return_mark": -285,
+      "return_mark_class": 1520,
+      "return_parameter": "-3/19",
+      "status": "rational_cycle_not_integral",
+      "telescoping_row": [
+        81,
+        54,
+        36,
+        48,
+        256
+      ],
+      "word": [
+        1,
+        1,
+        2,
+        4,
+        3
+      ]
+    },
+    {
+      "A": 3,
+      "C": 5,
+      "D": -1,
+      "H1_cycle_group_modulus": 1,
+      "L": 9,
+      "U": 8,
+      "actual_relative_cycle_contribution": false,
+      "anchored_displacement": [
+        "-6",
+        "-8"
+      ],
+      "anchored_forcing": [
+        2,
+        0
+      ],
+      "cycle_matrix": [
+        [
+          -3,
+          2
+        ],
+        [
+          4,
+          -3
+        ]
+      ],
+      "cylinder_source_anchor": 11,
+      "cylinder_source_step": 16,
+      "forcing_c": 1,
+      "forcing_class": 0,
+      "forcing_class_order": 1,
+      "image_anchor": 13,
+      "image_complex_modulus": 9,
+      "image_step": 18,
+      "integral": true,
+      "original_word_retained": true,
+      "positive": false,
+      "primitive_word": [
+        1,
+        2
+      ],
+      "rational_orbit": [
+        "-5",
+        "-7"
+      ],
+      "repetition_factor": 1,
+      "repetitions": 1,
+      "return_mark": 1,
+      "return_mark_class": 0,
+      "return_parameter": "-1",
+      "status": "integral_cycle_outside_positive_source",
+      "telescoping_row": [
+        3,
+        2
+      ],
+      "word": [
+        1,
+        2
+      ]
+    },
+    {
+      "A": 3,
+      "C": 5,
+      "D": -1,
+      "H1_cycle_group_modulus": 1,
+      "L": 9,
+      "U": 8,
+      "actual_relative_cycle_contribution": false,
+      "anchored_displacement": [
+        "4",
+        "6"
+      ],
+      "anchored_forcing": [
+        0,
+        -2
+      ],
+      "cycle_matrix": [
+        [
+          -3,
+          2
+        ],
+        [
+          4,
+          -3
+        ]
+      ],
+      "cylinder_source_anchor": 5,
+      "cylinder_source_step": 16,
+      "forcing_c": -1,
+      "forcing_class": 0,
+      "forcing_class_order": 1,
+      "image_anchor": 5,
+      "image_complex_modulus": 9,
+      "image_step": 18,
+      "integral": true,
+      "original_word_retained": true,
+      "positive": true,
+      "primitive_word": [
+        1,
+        2
+      ],
+      "rational_orbit": [
+        "5",
+        "7"
+      ],
+      "repetition_factor": 1,
+      "repetitions": 1,
+      "return_mark": 0,
+      "return_mark_class": 0,
+      "return_parameter": "0",
+      "status": "positive_control_cycle",
+      "telescoping_row": [
+        3,
+        2
+      ],
+      "word": [
+        1,
+        2
+      ]
+    },
+    {
+      "A": 7,
+      "C": 89,
+      "D": 47,
+      "H1_cycle_group_modulus": 47,
+      "L": 81,
+      "U": 128,
+      "actual_relative_cycle_contribution": false,
+      "anchored_displacement": [
+        "42/47",
+        "110/47",
+        "212/47",
+        "56/47"
+      ],
+      "anchored_forcing": [
+        2,
+        2,
+        -4,
+        0
+      ],
+      "cycle_matrix": [
+        [
+          -3,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          -3,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          -3,
+          8
+        ],
+        [
+          4,
+          0,
+          0,
+          -3
+        ]
+      ],
+      "cylinder_source_anchor": 247,
+      "cylinder_source_step": 256,
+      "forcing_c": 1,
+      "forcing_class": 42,
+      "forcing_class_order": 47,
+      "image_anchor": 157,
+      "image_complex_modulus": 81,
+      "image_step": 162,
+      "integral": false,
+      "original_word_retained": true,
+      "positive": true,
+      "primitive_word": [
+        1,
+        1,
+        3,
+        2
+      ],
+      "rational_orbit": [
+        "89/47",
+        "157/47",
+        "259/47",
+        "103/47"
+      ],
+      "repetition_factor": 1,
+      "repetitions": 1,
+      "return_mark": -45,
+      "return_mark_class": 2,
+      "return_parameter": "-45/47",
+      "status": "rational_cycle_not_integral",
+      "telescoping_row": [
+        27,
+        18,
+        12,
+        32
+      ],
+      "word": [
+        1,
+        1,
+        3,
+        2
+      ]
+    }
+  ],
+  "descent_compression": {
+    "control_c": -1,
+    "control_cycle_preserved": true,
+    "control_projected_edge_5": {
+      "5": 1,
+      "7": 1
+    },
+    "control_vertex_7_root": 5,
+    "control_words": {
+      "7": [
+        2
+      ]
+    },
+    "original_descent_words": {
+      "101": [
+        4
+      ],
+      "103": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4
+      ],
+      "105": [
+        2
+      ],
+      "107": [
+        1,
+        2,
+        2
+      ],
+      "109": [
+        3
+      ],
+      "11": [
+        1,
+        2,
+        3
+      ],
+      "111": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4
+      ],
+      "113": [
+        2
+      ],
+      "115": [
+        1,
+        3
+      ],
+      "117": [
+        5
+      ],
+      "119": [
+        1,
+        1,
+        3
+      ],
+      "121": [
+        2
+      ],
+      "123": [
+        1,
+        2,
+        1,
+        2,
+        3
+      ],
+      "125": [
+        3
+      ],
+      "127": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        3
+      ],
+      "129": [
+        2
+      ],
+      "13": [
+        3
+      ],
+      "131": [
+        1,
+        4
+      ],
+      "133": [
+        4
+      ],
+      "135": [
+        1,
+        1,
+        2,
+        4
+      ],
+      "137": [
+        2
+      ],
+      "139": [
+        1,
+        2,
+        3
+      ],
+      "141": [
+        3
+      ],
+      "143": [
+        1,
+        1,
+        1,
+        4
+      ],
+      "145": [
+        2
+      ],
+      "147": [
+        1,
+        3
+      ],
+      "149": [
+        6
+      ],
+      "15": [
+        1,
+        1,
+        1,
+        5
+      ],
+      "151": [
+        1,
+        1,
+        10
+      ],
+      "153": [
+        2
+      ],
+      "155": [
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4
+      ],
+      "157": [
+        3
+      ],
+      "159": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4
+      ],
+      "161": [
+        2
+      ],
+      "163": [
+        1,
+        5
+      ],
+      "165": [
+        4
+      ],
+      "167": [
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4
+      ],
+      "169": [
+        2
+      ],
+      "17": [
+        2
+      ],
+      "171": [
+        1,
+        2,
+        2
+      ],
+      "173": [
+        3
+      ],
+      "175": [
+        1,
+        1,
+        1,
+        2,
+        3
+      ],
+      "177": [
+        2
+      ],
+      "179": [
+        1,
+        3
+      ],
+      "181": [
+        5
+      ],
+      "183": [
+        1,
+        1,
+        3
+      ],
+      "185": [
+        2
+      ],
+      "187": [
+        1,
+        2,
+        1,
+        3
+      ],
+      "189": [
+        3
+      ],
+      "19": [
+        1,
+        3
+      ],
+      "191": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        3
+      ],
+      "193": [
+        2
+      ],
+      "195": [
+        1,
+        4
+      ],
+      "197": [
+        4
+      ],
+      "199": [
+        1,
+        1,
+        2,
+        2,
+        3
+      ],
+      "201": [
+        2
+      ],
+      "203": [
+        1,
+        2,
+        4
+      ],
+      "205": [
+        3
+      ],
+      "207": [
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        2,
+        3
+      ],
+      "209": [
+        2
+      ],
+      "21": [
+        6
+      ],
+      "211": [
+        1,
+        3
+      ],
+      "213": [
+        7
+      ],
+      "215": [
+        1,
+        1,
+        4
+      ],
+      "217": [
+        2
+      ],
+      "219": [
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "221": [
+        3
+      ],
+      "223": [
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4
+      ],
+      "225": [
+        2
+      ],
+      "227": [
+        1,
+        10
+      ],
+      "229": [
+        4
+      ],
+      "23": [
+        1,
+        1,
+        5
+      ],
+      "231": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        6
+      ],
+      "233": [
+        2
+      ],
+      "235": [
+        1,
+        2,
+        2
+      ],
+      "237": [
+        3
+      ],
+      "239": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4
+      ],
+      "241": [
+        2
+      ],
+      "243": [
+        1,
+        3
+      ],
+      "245": [
+        5
+      ],
+      "247": [
+        1,
+        1,
+        3
+      ],
+      "249": [
+        2
+      ],
+      "25": [
+        2
+      ],
+      "251": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4
+      ],
+      "253": [
+        3
+      ],
+      "255": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        6
+      ],
+      "27": [
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4,
+        3
+      ],
+      "29": [
+        3
+      ],
+      "3": [
+        1,
+        4
+      ],
+      "31": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4,
+        3
+      ],
+      "33": [
+        2
+      ],
+      "35": [
+        1,
+        5
+      ],
+      "37": [
+        4
+      ],
+      "39": [
+        1,
+        1,
+        2,
+        1,
+        4
+      ],
+      "41": [
+        2
+      ],
+      "43": [
+        1,
+        2,
+        2
+      ],
+      "45": [
+        3
+      ],
+      "47": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4,
+        3
+      ],
+      "49": [
+        2
+      ],
+      "5": [
+        4
+      ],
+      "51": [
+        1,
+        3
+      ],
+      "53": [
+        5
+      ],
+      "55": [
+        1,
+        1,
+        3
+      ],
+      "57": [
+        2
+      ],
+      "59": [
+        1,
+        2,
+        1,
+        4
+      ],
+      "61": [
+        3
+      ],
+      "63": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4
+      ],
+      "65": [
+        2
+      ],
+      "67": [
+        1,
+        4
+      ],
+      "69": [
+        4
+      ],
+      "7": [
+        1,
+        1,
+        2,
+        3
+      ],
+      "71": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4
+      ],
+      "73": [
+        2
+      ],
+      "75": [
+        1,
+        2,
+        8
+      ],
+      "77": [
+        3
+      ],
+      "79": [
+        1,
+        1,
+        1,
+        3,
+        4
+      ],
+      "81": [
+        2
+      ],
+      "83": [
+        1,
+        3
+      ],
+      "85": [
+        8
+      ],
+      "87": [
+        1,
+        1,
+        4
+      ],
+      "89": [
+        2
+      ],
+      "9": [
+        2
+      ],
+      "91": [
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4
+      ],
+      "93": [
+        3
+      ],
+      "95": [
+        1,
+        1,
+        1,
+        1,
+        4
+      ],
+      "97": [
+        2
+      ],
+      "99": [
+        1,
+        6
+      ]
+    },
+    "root_policy": "Every unlisted vertex remains itself, except basepoint 1 is relative zero."
+  },
+  "exact_checks": 42507,
+  "exhaustive_modular_fixtures": 468,
+  "finite_source_scan": {
+    "canonical_path_records_sha256": "b7ee61465ee06239e3db0ef8b9089b5fd0f47cea6847d8c56820f72c3939faf2",
+    "first_seed_at_maximum": 3711,
+    "largest_start": 4095,
+    "maximum_observed_odd_value": 425645,
+    "maximum_odd_returns": 87,
+    "positive_odd_starts_checked": 2048
+  },
+  "graph_fixtures": [
+    {
+      "H0_rank": 1,
+      "H1_rank": 0,
+      "forcing_c": 1,
+      "frontier": [
+        5
+      ],
+      "source_count": 1
+    },
+    {
+      "H0_rank": 0,
+      "H1_rank": 0,
+      "forcing_c": 1,
+      "frontier": [],
+      "source_count": 2
+    },
+    {
+      "H0_rank": 1,
+      "H1_rank": 0,
+      "forcing_c": 1,
+      "frontier": [
+        11
+      ],
+      "source_count": 2
+    },
+    {
+      "H0_rank": 1,
+      "H1_rank": 0,
+      "forcing_c": 1,
+      "frontier": [
+        11
+      ],
+      "source_count": 4
+    },
+    {
+      "H0_rank": 3,
+      "H1_rank": 0,
+      "forcing_c": 1,
+      "frontier": [
+        35,
+        41,
+        47
+      ],
+      "source_count": 15
+    },
+    {
+      "H0_rank": 6,
+      "H1_rank": 0,
+      "forcing_c": 1,
+      "frontier": [
+        65,
+        71,
+        77,
+        83,
+        89,
+        95
+      ],
+      "source_count": 31
+    },
+    {
+      "H0_rank": 0,
+      "H1_rank": 0,
+      "forcing_c": -1,
+      "frontier": [],
+      "source_count": 1
+    },
+    {
+      "H0_rank": 1,
+      "H1_rank": 0,
+      "forcing_c": -1,
+      "frontier": [
+        7
+      ],
+      "source_count": 2
+    },
+    {
+      "H0_rank": 1,
+      "H1_rank": 1,
+      "forcing_c": -1,
+      "frontier": [],
+      "source_count": 2
+    },
+    {
+      "H0_rank": 2,
+      "H1_rank": 1,
+      "forcing_c": -1,
+      "frontier": [
+        13
+      ],
+      "source_count": 4
+    },
+    {
+      "H0_rank": 3,
+      "H1_rank": 1,
+      "forcing_c": -1,
+      "frontier": [
+        37,
+        43
+      ],
+      "source_count": 15
+    },
+    {
+      "H0_rank": 6,
+      "H1_rank": 1,
+      "forcing_c": -1,
+      "frontier": [
+        67,
+        73,
+        79,
+        85,
+        91
+      ],
+      "source_count": 31
+    }
+  ],
+  "matrix_fixtures": 344,
+  "negative_controls_rejected": [
+    "empty cycle",
+    "zero exponent",
+    "even source",
+    "unlabelled forcing change",
+    "rational cycle labelled integral",
+    "trivial repetition labelled counterexample",
+    "open boundary labelled convergence",
+    "wrong actual word",
+    "fixed point called strict descent",
+    "increasing block called descent"
+  ],
+  "predecessor_bridge": {
+    "block": {
+      "boundary": {
+        "157": -1,
+        "247": 1
+      },
+      "relative_chain": {
+        "209": 1,
+        "247": 1,
+        "371": 1,
+        "557": 1
+      },
+      "source": 247,
+      "strict_descent": true,
+      "terminal": 157,
+      "word": [
+        1,
+        1,
+        3,
+        2
+      ]
+    },
+    "predecessor_verify_sha256": "4181d895d61b3bab236530263c78fe34c7d935eb3f42f4786d91a41f88c696af",
+    "tail": {
+      "boundary": {
+        "157": 1
+      },
+      "chain": {
+        "101": 1,
+        "11": 1,
+        "13": 1,
+        "157": 1,
+        "17": 1,
+        "19": 1,
+        "29": 1,
+        "5": 1,
+        "59": 1,
+        "67": 1,
+        "89": 1
+      },
+      "cycle_vertices": [],
+      "exponents": [
+        3,
+        1,
+        2,
+        1,
+        4,
+        1,
+        3,
+        1,
+        2,
+        3,
+        4
+      ],
+      "forcing_c": 1,
+      "returns_recorded": 11,
+      "start": 157,
+      "status": "reaches_basepoint",
+      "terminal": 1,
+      "values": [
+        157,
+        59,
+        89,
+        67,
+        101,
+        19,
+        29,
+        11,
+        17,
+        13,
+        5
+      ]
+    }
+  },
+  "proof_scope": "Finite replay. Infinite claims have separate written proofs.",
+  "remote_publication_verified_by_this_checker": false,
+  "status": "PASS",
+  "whole_source_cutoff_compression": {
+    "cutoffs": [
+      {
+        "H": 0,
+        "absorbed_at_1": 1,
+        "distinct_unresolved_roots": 511,
+        "retained_all_one_witness": 3,
+        "source_count": 512
+      },
+      {
+        "H": 4,
+        "absorbed_at_1": 6,
+        "distinct_unresolved_roots": 256,
+        "retained_all_one_witness": 31,
+        "source_count": 512
+      },
+      {
+        "H": 8,
+        "absorbed_at_1": 159,
+        "distinct_unresolved_roots": 138,
+        "retained_all_one_witness": 511,
+        "source_count": 512
+      },
+      {
+        "H": 12,
+        "absorbed_at_1": 259,
+        "distinct_unresolved_roots": 88,
+        "retained_all_one_witness": 8191,
+        "source_count": 512
+      },
+      {
+        "H": 16,
+        "absorbed_at_1": 287,
+        "distinct_unresolved_roots": 61,
+        "retained_all_one_witness": 131071,
+        "source_count": 512
+      },
+      {
+        "H": 32,
+        "absorbed_at_1": 342,
+        "distinct_unresolved_roots": 23,
+        "retained_all_one_witness": 8589934591,
+        "source_count": 512
+      },
+      {
+        "H": 64,
+        "absorbed_at_1": 509,
+        "distinct_unresolved_roots": 2,
+        "retained_all_one_witness": 36893488147419103231,
+        "source_count": 512
+      },
+      {
+        "H": 128,
+        "absorbed_at_1": 512,
+        "distinct_unresolved_roots": 0,
+        "retained_all_one_witness": 680564733841876926926749214863536422911,
+        "source_count": 512
+      }
+    ],
+    "source_27_by_cutoff": [
+      {
+        "boundary": {},
+        "chain": {},
+        "exponent_cutoff": 0,
+        "retained_predecessor_observer": true,
+        "root": 27,
+        "root_status": "unresolved_at_exponent_cutoff",
+        "source": 27
+      },
+      {
+        "boundary": {},
+        "chain": {},
+        "exponent_cutoff": 4,
+        "retained_predecessor_observer": true,
+        "root": 27,
+        "root_status": "unresolved_at_exponent_cutoff",
+        "source": 27
+      },
+      {
+        "boundary": {},
+        "chain": {},
+        "exponent_cutoff": 8,
+        "retained_predecessor_observer": true,
+        "root": 27,
+        "root_status": "unresolved_at_exponent_cutoff",
+        "source": 27
+      },
+      {
+        "boundary": {},
+        "chain": {},
+        "exponent_cutoff": 12,
+        "retained_predecessor_observer": true,
+        "root": 27,
+        "root_status": "unresolved_at_exponent_cutoff",
+        "source": 27
+      },
+      {
+        "boundary": {},
+        "chain": {},
+        "exponent_cutoff": 16,
+        "retained_predecessor_observer": true,
+        "root": 27,
+        "root_status": "unresolved_at_exponent_cutoff",
+        "source": 27
+      },
+      {
+        "boundary": {},
+        "chain": {},
+        "exponent_cutoff": 32,
+        "retained_predecessor_observer": true,
+        "root": 27,
+        "root_status": "unresolved_at_exponent_cutoff",
+        "source": 27
+      },
+      {
+        "boundary": {},
+        "chain": {},
+        "exponent_cutoff": 64,
+        "retained_predecessor_observer": true,
+        "root": 27,
+        "root_status": "unresolved_at_exponent_cutoff",
+        "source": 27
+      },
+      {
+        "boundary": {
+          "27": 1
+        },
+        "chain": {
+          "103": 1,
+          "107": 1,
+          "1079": 1,
+          "121": 1,
+          "1367": 1,
+          "137": 1,
+          "155": 1,
+          "161": 1,
+          "1619": 1,
+          "167": 1,
+          "175": 1,
+          "2051": 1,
+          "23": 1,
+          "233": 1,
+          "2429": 1,
+          "251": 1,
+          "263": 1,
+          "27": 1,
+          "283": 1,
+          "3077": 1,
+          "31": 1,
+          "319": 1,
+          "325": 1,
+          "35": 1,
+          "377": 1,
+          "395": 1,
+          "41": 1,
+          "425": 1,
+          "433": 1,
+          "445": 1,
+          "47": 1,
+          "479": 1,
+          "5": 1,
+          "53": 1,
+          "577": 1,
+          "593": 1,
+          "61": 1,
+          "71": 1,
+          "719": 1,
+          "91": 1,
+          "911": 1
+        },
+        "exponent_cutoff": 128,
+        "retained_predecessor_observer": true,
+        "root": 1,
+        "root_status": "basepoint",
+        "source": 27
+      }
+    ]
+  }
+}
