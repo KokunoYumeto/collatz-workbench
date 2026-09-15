@@ -1,0 +1,871 @@
+{
+  "abstract_cycle_controls": [
+    {
+      "beta": -1,
+      "defect_modulus": 1,
+      "label": "abstract_position_circle",
+      "period": 1
+    },
+    {
+      "beta": -2,
+      "defect_modulus": 2,
+      "label": "abstract_position_circle",
+      "period": 2
+    },
+    {
+      "beta": -3,
+      "defect_modulus": 3,
+      "label": "abstract_position_circle",
+      "period": 3
+    },
+    {
+      "beta": -4,
+      "defect_modulus": 4,
+      "label": "abstract_position_circle",
+      "period": 4
+    },
+    {
+      "beta": -5,
+      "defect_modulus": 5,
+      "label": "abstract_position_circle",
+      "period": 5
+    },
+    {
+      "beta": -6,
+      "defect_modulus": 6,
+      "label": "abstract_position_circle",
+      "period": 6
+    },
+    {
+      "beta": -7,
+      "defect_modulus": 7,
+      "label": "abstract_position_circle",
+      "period": 7
+    },
+    {
+      "beta": -8,
+      "defect_modulus": 8,
+      "label": "abstract_position_circle",
+      "period": 8
+    },
+    {
+      "beta": -9,
+      "defect_modulus": 9,
+      "label": "abstract_position_circle",
+      "period": 9
+    },
+    {
+      "beta": -10,
+      "defect_modulus": 10,
+      "label": "abstract_position_circle",
+      "period": 10
+    },
+    {
+      "beta": -11,
+      "defect_modulus": 11,
+      "label": "abstract_position_circle",
+      "period": 11
+    },
+    {
+      "beta": -12,
+      "defect_modulus": 12,
+      "label": "abstract_position_circle",
+      "period": 12
+    },
+    {
+      "beta": -13,
+      "defect_modulus": 13,
+      "label": "abstract_position_circle",
+      "period": 13
+    },
+    {
+      "beta": -14,
+      "defect_modulus": 14,
+      "label": "abstract_position_circle",
+      "period": 14
+    },
+    {
+      "beta": -15,
+      "defect_modulus": 15,
+      "label": "abstract_position_circle",
+      "period": 15
+    },
+    {
+      "beta": -16,
+      "defect_modulus": 16,
+      "label": "abstract_position_circle",
+      "period": 16
+    },
+    {
+      "beta": -17,
+      "defect_modulus": 17,
+      "label": "abstract_position_circle",
+      "period": 17
+    },
+    {
+      "beta": -18,
+      "defect_modulus": 18,
+      "label": "abstract_position_circle",
+      "period": 18
+    },
+    {
+      "beta": -19,
+      "defect_modulus": 19,
+      "label": "abstract_position_circle",
+      "period": 19
+    },
+    {
+      "beta": -20,
+      "defect_modulus": 20,
+      "label": "abstract_position_circle",
+      "period": 20
+    },
+    {
+      "beta": -21,
+      "defect_modulus": 21,
+      "label": "abstract_position_circle",
+      "period": 21
+    },
+    {
+      "beta": -22,
+      "defect_modulus": 22,
+      "label": "abstract_position_circle",
+      "period": 22
+    },
+    {
+      "beta": -23,
+      "defect_modulus": 23,
+      "label": "abstract_position_circle",
+      "period": 23
+    },
+    {
+      "beta": -24,
+      "defect_modulus": 24,
+      "label": "abstract_position_circle",
+      "period": 24
+    },
+    {
+      "beta": -25,
+      "defect_modulus": 25,
+      "label": "abstract_position_circle",
+      "period": 25
+    },
+    {
+      "beta": -26,
+      "defect_modulus": 26,
+      "label": "abstract_position_circle",
+      "period": 26
+    },
+    {
+      "beta": -27,
+      "defect_modulus": 27,
+      "label": "abstract_position_circle",
+      "period": 27
+    },
+    {
+      "beta": -28,
+      "defect_modulus": 28,
+      "label": "abstract_position_circle",
+      "period": 28
+    },
+    {
+      "beta": -29,
+      "defect_modulus": 29,
+      "label": "abstract_position_circle",
+      "period": 29
+    },
+    {
+      "beta": -30,
+      "defect_modulus": 30,
+      "label": "abstract_position_circle",
+      "period": 30
+    },
+    {
+      "beta": -31,
+      "defect_modulus": 31,
+      "label": "abstract_position_circle",
+      "period": 31
+    },
+    {
+      "beta": -32,
+      "defect_modulus": 32,
+      "label": "abstract_position_circle",
+      "period": 32
+    }
+  ],
+  "actual_finite_equation_supports": 128,
+  "checks": {
+    "control.actual_minus_cycle": 1,
+    "control.minus_defect.UAV": 1,
+    "control.minus_defect.diagonal": 1,
+    "control.minus_defect.divisibility": 1,
+    "control.minus_defect.free_rank": 1,
+    "control.minus_defect.mod_prime": 4,
+    "control.minus_defect.torsion": 1,
+    "control.minus_defect.unimodular": 1,
+    "control.minus_jet.UAV": 1,
+    "control.minus_jet.diagonal": 1,
+    "control.minus_jet.divisibility": 1,
+    "control.minus_jet.free_rank": 1,
+    "control.minus_jet.mod_prime": 4,
+    "control.minus_jet.torsion": 1,
+    "control.minus_jet.unimodular": 1,
+    "control.two_times_supported_class_boundary": 1,
+    "elementary.jet_expansion": 257,
+    "elementary.original_block": 257,
+    "family.exact_boundary": 6,
+    "family.literal_equation": 6,
+    "graph.defect.UAV": 128,
+    "graph.defect.diagonal": 128,
+    "graph.defect.divisibility": 128,
+    "graph.defect.free_rank": 128,
+    "graph.defect.mod_prime": 512,
+    "graph.defect.torsion": 128,
+    "graph.defect.unimodular": 128,
+    "graph.jet.UAV": 128,
+    "graph.jet.diagonal": 128,
+    "graph.jet.divisibility": 128,
+    "graph.jet.free_rank": 128,
+    "graph.jet.mod_prime": 512,
+    "graph.jet.torsion": 128,
+    "graph.jet.unimodular": 128,
+    "graph.original_equation": 448,
+    "graph.original_relation": 448,
+    "position.repeated_fixed_loop_map": 8,
+    "reject.malformed": 12,
+    "split.absent_absorber": 10,
+    "split.add_associates": 1000,
+    "split.add_commutes": 100,
+    "split.coordinate_inverse": 10,
+    "split.distributes": 1000,
+    "split.mul_commutes": 100,
+    "split.nilpotent_to_supported_zero": 1,
+    "split.reduction_zero_fibre": 25,
+    "support.composition": 1024,
+    "support.transition_retains_component": 3726,
+    "symbolic.beta_exact": 32,
+    "symbolic.defect.UAV": 32,
+    "symbolic.defect.diagonal": 32,
+    "symbolic.defect.divisibility": 32,
+    "symbolic.defect.free_rank": 32,
+    "symbolic.defect.mod_prime": 128,
+    "symbolic.defect.torsion": 32,
+    "symbolic.defect.unimodular": 32,
+    "symbolic.first_jet_period": 32,
+    "symbolic.jet.UAV": 32,
+    "symbolic.jet.diagonal": 32,
+    "symbolic.jet.divisibility": 32,
+    "symbolic.jet.free_rank": 32,
+    "symbolic.jet.mod_prime": 128,
+    "symbolic.jet.torsion": 32,
+    "symbolic.jet.unimodular": 32,
+    "witness.extracted_target": 1024,
+    "witness.finite_cutoff_retained": 1,
+    "witness.finite_identity": 1024,
+    "witness.independent_return": 25437,
+    "witness.twenty_seven_path": 1
+  },
+  "examples": {
+    "actual_minus_one_cycle": {
+      "H0_rank": 1,
+      "H1_rank": 1,
+      "component_of": {
+        "5": 0,
+        "7": 0
+      },
+      "components": [
+        {
+          "beta_coordinate": -2,
+          "cycle": [
+            5,
+            7
+          ],
+          "even_clock": 1,
+          "frontier": [],
+          "kind": "retained_cycle",
+          "modulus": 2,
+          "period": 2,
+          "root_label": 5,
+          "vertices": [
+            5,
+            7
+          ],
+          "zero_defect_with_retained_support": false
+        }
+      ],
+      "d_matrix": [
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "defect_cycle_moduli": [
+        2
+      ],
+      "defect_free_rank": 0,
+      "fixed_loop_removed": false,
+      "forcing": -1,
+      "frontier_is_infinite_orbit_certificate": false,
+      "original_edges": [
+        [
+          5,
+          7,
+          1
+        ],
+        [
+          7,
+          5,
+          2
+        ]
+      ],
+      "source_label": [
+        5,
+        7
+      ],
+      "target_matrix": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "vertex_labels": [
+        5,
+        7
+      ]
+    },
+    "complete_retained_base_component": {
+      "H0_rank": 1,
+      "H1_rank": 1,
+      "component_of": {
+        "1": 0,
+        "3": 0,
+        "5": 0,
+        "13": 0
+      },
+      "components": [
+        {
+          "beta_coordinate": -1,
+          "cycle": [
+            1
+          ],
+          "even_clock": 1,
+          "frontier": [],
+          "kind": "fixed_cycle",
+          "modulus": 1,
+          "period": 1,
+          "root_label": 1,
+          "vertices": [
+            1,
+            3,
+            5,
+            13
+          ],
+          "zero_defect_with_retained_support": true
+        }
+      ],
+      "d_matrix": [
+        [
+          0,
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "defect_cycle_moduli": [],
+      "defect_free_rank": 0,
+      "fixed_loop_removed": false,
+      "forcing": 1,
+      "frontier_is_infinite_orbit_certificate": false,
+      "original_edges": [
+        [
+          1,
+          1,
+          2
+        ],
+        [
+          3,
+          5,
+          1
+        ],
+        [
+          5,
+          1,
+          4
+        ],
+        [
+          13,
+          5,
+          3
+        ]
+      ],
+      "source_label": [
+        1,
+        3,
+        5,
+        13
+      ],
+      "target_matrix": [
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "vertex_labels": [
+        1,
+        3,
+        5,
+        13
+      ]
+    },
+    "edge_to_one_but_fixed_relation_not_yet_added": {
+      "H0_rank": 0,
+      "H1_rank": 1,
+      "component_of": {
+        "1": 0,
+        "3": 0,
+        "5": 0,
+        "13": 0
+      },
+      "components": [
+        {
+          "beta_coordinate": null,
+          "cycle": [],
+          "even_clock": null,
+          "frontier": [
+            1
+          ],
+          "kind": "open_frontier",
+          "modulus": 0,
+          "period": 0,
+          "root_label": 1,
+          "vertices": [
+            1,
+            3,
+            5,
+            13
+          ],
+          "zero_defect_with_retained_support": false
+        }
+      ],
+      "d_matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          -1,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "defect_cycle_moduli": [],
+      "defect_free_rank": 1,
+      "fixed_loop_removed": false,
+      "forcing": 1,
+      "frontier_is_infinite_orbit_certificate": false,
+      "original_edges": [
+        [
+          3,
+          5,
+          1
+        ],
+        [
+          5,
+          1,
+          4
+        ],
+        [
+          13,
+          5,
+          3
+        ]
+      ],
+      "source_label": [
+        3,
+        5,
+        13
+      ],
+      "target_matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "vertex_labels": [
+        1,
+        3,
+        5,
+        13
+      ]
+    },
+    "first_order_source_27": {
+      "boundary_constant": {},
+      "boundary_linear": {
+        "27": 1
+      },
+      "constant_cycle": {
+        "1": -1
+      },
+      "exponents": [
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4,
+        3,
+        1,
+        1,
+        5,
+        4
+      ],
+      "forcing": 1,
+      "linear_chain": {
+        "5": 1,
+        "23": 1,
+        "27": 1,
+        "31": 1,
+        "35": 1,
+        "41": 1,
+        "47": 1,
+        "53": 1,
+        "61": 1,
+        "71": 1,
+        "91": 1,
+        "103": 1,
+        "107": 1,
+        "121": 1,
+        "137": 1,
+        "155": 1,
+        "161": 1,
+        "167": 1,
+        "175": 1,
+        "233": 1,
+        "251": 1,
+        "263": 1,
+        "283": 1,
+        "319": 1,
+        "325": 1,
+        "377": 1,
+        "395": 1,
+        "425": 1,
+        "433": 1,
+        "445": 1,
+        "479": 1,
+        "577": 1,
+        "593": 1,
+        "719": 1,
+        "911": 1,
+        "1079": 1,
+        "1367": 1,
+        "1619": 1,
+        "2051": 1,
+        "2429": 1,
+        "3077": 1
+      },
+      "returns": 41,
+      "source": 27,
+      "status": "verified_finite_first_order_boundary",
+      "values": [
+        27,
+        41,
+        31,
+        47,
+        71,
+        107,
+        161,
+        121,
+        91,
+        137,
+        103,
+        155,
+        233,
+        175,
+        263,
+        395,
+        593,
+        445,
+        167,
+        251,
+        377,
+        283,
+        425,
+        319,
+        479,
+        719,
+        1079,
+        1619,
+        2429,
+        911,
+        1367,
+        2051,
+        3077,
+        577,
+        433,
+        325,
+        61,
+        23,
+        35,
+        53,
+        5,
+        1
+      ]
+    },
+    "first_order_source_3": {
+      "boundary_constant": {},
+      "boundary_linear": {
+        "3": 1
+      },
+      "constant_cycle": {
+        "1": -1
+      },
+      "exponents": [
+        1,
+        4
+      ],
+      "forcing": 1,
+      "linear_chain": {
+        "3": 1,
+        "5": 1
+      },
+      "returns": 2,
+      "source": 3,
+      "status": "verified_finite_first_order_boundary",
+      "values": [
+        3,
+        5,
+        1
+      ]
+    },
+    "open_merger": {
+      "H0_rank": 0,
+      "H1_rank": 1,
+      "component_of": {
+        "3": 0,
+        "5": 0,
+        "13": 0
+      },
+      "components": [
+        {
+          "beta_coordinate": null,
+          "cycle": [],
+          "even_clock": null,
+          "frontier": [
+            5
+          ],
+          "kind": "open_frontier",
+          "modulus": 0,
+          "period": 0,
+          "root_label": 3,
+          "vertices": [
+            3,
+            5,
+            13
+          ],
+          "zero_defect_with_retained_support": false
+        }
+      ],
+      "d_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "defect_cycle_moduli": [],
+      "defect_free_rank": 1,
+      "fixed_loop_removed": false,
+      "forcing": 1,
+      "frontier_is_infinite_orbit_certificate": false,
+      "original_edges": [
+        [
+          3,
+          5,
+          1
+        ],
+        [
+          13,
+          5,
+          3
+        ]
+      ],
+      "source_label": [
+        3,
+        13
+      ],
+      "target_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "vertex_labels": [
+        3,
+        5,
+        13
+      ]
+    },
+    "scalar_nilpotent": {
+      "absent": null,
+      "epsilon": [
+        0,
+        1
+      ],
+      "epsilon_square_supported_zero": [
+        0,
+        0
+      ]
+    },
+    "unresolved_source_27_at_10": {
+      "finite_boundary_claim": false,
+      "forcing": 1,
+      "returns": 10,
+      "source": 27,
+      "status": "unresolved_at_cap",
+      "terminal": 103
+    }
+  },
+  "global_Collatz_claim": false,
+  "independent_return_equations": 25437,
+  "nested_support_pairs": 2187,
+  "new_Lean_execution": false,
+  "no_new_numerical_cycle_bound": true,
+  "original_singleton_witnesses": 1024,
+  "positive_nontrivial_cycle_claim": false,
+  "rejected_cases": [
+    "even_source",
+    "bool_source",
+    "false_forcing",
+    "false_support_coordinates",
+    "wrong_singleton",
+    "empty_cycle",
+    "false_cycle",
+    "fractional_witness",
+    "noninteger_witness",
+    "changed_forcing",
+    "not_an_inclusion",
+    "negative_cap"
+  ],
+  "status": "PASS",
+  "support_composition_triples": 1024,
+  "total_checks": 39211,
+  "witness_sha256": "309cfa6448ab7599ef23004388d59420f6b80293953b56af23e2151476cf31dc"
+}
