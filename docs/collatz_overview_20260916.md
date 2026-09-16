@@ -46,7 +46,7 @@ K_xλ_y^(∞,b)=λ_x^(∞,b)                           (1≤x≤y),
 λ_x^(∞,b)({†}) ≤ Bx^(−c/α)+L_cα^c(log x)^(−c)   (x≥b).
 ```
 
-Thus approximate stabilization at successive starting scales yields an exactly compatible limiting family at **all** thresholds, using one common sequence of input measures. The proof sums the adjacent-scale errors: Σ[i≥j](log t_i)^(−c)=(log t_j)^(−c)/(1−α^(−c)). Replacing b by b^(α^k), for a nonnegative integer k, leaves this family unchanged; equality for arbitrary different bases is not established.
+Thus approximate stabilization at successive starting scales yields an exactly compatible limiting family at **all** thresholds, using one common sequence of input measures. The proof sums the adjacent-scale errors: `Σ[i≥j](log t_i)^(−c)=(log t_j)^(−c)/(1−α^(−c))`. Replacing b by b^(α^k), for a nonnegative integer k, leaves this family unchanged; equality for arbitrary different bases is not established.
 
 **Joint-law theorem.** For any integer r≥1 and finite list 1≤x₁≤⋯≤x_r, sample N_j with law μ_(t_(j+1)). The joint law of
 
@@ -313,7 +313,7 @@ Both versions have at most
 K_*(n)=((n−1)/2)max{24,k(n)+floor(log₃n)+6}
 ```
 
-uncollected edge terms. The sums of absolute constant and ε coefficients are at most K_*(n) and K_*(n)² respectively. Set R_*(1)=1 and K_*(1)=0. These bounds concern the constructed chain columns. [Proofs, §6](https://github.com/KokunoYumeto/collatz-workbench/blob/main/collatz_reconstruction/research_program/all_even_join_extension_20260916/note.md), [predecessor bound](https://github.com/KokunoYumeto/collatz-workbench/blob/main/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/note.md).
+uncollected edge terms. The sums of absolute constant and ε coefficients are at most `K_*(n)` and `K_*(n)²` respectively. Set `R_*(1)=1` and `K_*(1)=0`. These bounds concern the constructed chain columns. [Proofs, §6](https://github.com/KokunoYumeto/collatz-workbench/blob/main/collatz_reconstruction/research_program/all_even_join_extension_20260916/note.md), [predecessor bound](https://github.com/KokunoYumeto/collatz-workbench/blob/main/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/note.md).
 
 The remaining global assertion is B=0, equivalently the vanishing of every ξ_n; the stated reductions do not establish it.
 
