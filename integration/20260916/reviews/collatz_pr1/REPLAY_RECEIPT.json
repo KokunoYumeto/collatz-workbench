@@ -1,0 +1,33 @@
+﻿{
+    "repository":  "KokunoYumeto/collatz-workbench",
+    "pull_request":  1,
+    "head":  "6521481204342b7430f651491852a6b80d4230a5",
+    "python":  "3.13.9",
+    "code_sha256":  "101914ebe50d5da54da6f3958b247d7d1a43f358f4c965736e3e161f11167ab7",
+    "run_records":  [
+                        {
+                            "mode":  "normal",
+                            "started_utc":  "2026-09-16T20:07:37.4448865+00:00",
+                            "runtime_seconds":  3.966948,
+                            "exit_code":  0,
+                            "peak_sampled_working_set_bytes":  88010752,
+                            "memory_cap_bytes":  5000000000,
+                            "timeout_seconds":  180,
+                            "stdout_sha256":  "848575341dba3a1e8c6b8b15edab86ec13b72f622041b08e7b46313e3efa138a",
+                            "identical_to_record_after_crlf_to_lf":  true
+                        },
+                        {
+                            "mode":  "optimized",
+                            "started_utc":  "2026-09-16T20:07:41.5222532+00:00",
+                            "runtime_seconds":  3.6241138999999998,
+                            "exit_code":  0,
+                            "peak_sampled_working_set_bytes":  88297472,
+                            "memory_cap_bytes":  5000000000,
+                            "timeout_seconds":  180,
+                            "stdout_sha256":  "848575341dba3a1e8c6b8b15edab86ec13b72f622041b08e7b46313e3efa138a",
+                            "identical_to_record_after_crlf_to_lf":  true
+                        }
+                    ],
+    "no_child_processes":  "Reviewed checker imports stdlib only and launches no child process",
+    "scope":  "Replays exactly the finite checks of PR1; not a numerical verification of the Gaussian limit."
+}

@@ -1,5 +1,10 @@
 # Collatz research workbench
 
+## September 16 research update
+
+[Read the new contributions, full source lineage and integration checks](integration/20260916/README.md).
+
+
 A PolyClank-style home for sustained human–LLM work on Collatz dynamics: the literature, the constructions it suggests, the proofs that survive checking, and the history needed to continue them. The aim is useful mathematics on Collatz, not a claim that the conjecture has been solved.
 
 ## Read the mathematics

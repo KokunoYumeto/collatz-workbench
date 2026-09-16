@@ -1,0 +1,81 @@
+{
+  "branch": "research/stopped-cycle-cohomology-20260914",
+  "date": "2026-09-16",
+  "entry_point": "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/README.md",
+  "execution": {
+    "compatible_original_families": 24107,
+    "complete_pair_ledger_uncompressed_sha256": "0e4883a19de2296846d5cbf72fbc4f9a568a2cb8408adc18d20f2357f3f8d858",
+    "complete_pair_rows": 112050,
+    "complete_source_rows": 4064632,
+    "full_applied_replay_exit_code": 0,
+    "incompatible_declared_faces": 87943,
+    "independent_all_rows_source_audit_passed": true,
+    "independent_auditor_invalid_controls_rejected": 9,
+    "independent_family_affine_equations": 332467,
+    "independent_family_divisions": 463999,
+    "independent_original_divisions": 28378002,
+    "independent_original_return_equations": 14186680,
+    "named_checks_each_structural_run": 1905007,
+    "ordinary_optimized_source_bytes_identical": true,
+    "ordinary_optimized_structural_bytes_identical": true,
+    "original_source_upper_odd": 8129265,
+    "source_ledger_uncompressed_sha256": "87e6e08b9028b53f0ff6642a68777c68f8c0d3d7db436d39cfdb37af8021853b",
+    "structural_invalid_controls_rejected": 17,
+    "structural_result_sha256": "2560770274e1bf779f91e43f07906a4117a0857b0655e8c196192e02437767c4",
+    "unchanged_firstjet_predecessor_pair_passed": true
+  },
+  "execution_scope_notes": [
+    "The launch tool transport timed out after starting the applied full replay; the retained process subsequently completed. Its actual complete log and exit code zero were read before making any full-replay claim.",
+    "Earlier exploratory and download attempts are not represented as successful publication or proof checks.",
+    "The applied fixture contained the eight recovered original first-jet dependencies and unrelated tracked/untracked files; it was not a full remote repository clone.",
+    "Written proofs cover all-depth families and support bounds. Finite catalogue and source domains are fully enumerated computer-assisted components. Point fixtures are regression evidence.",
+    "No new Lean run, independent external proof review, global Collatz proof, or positive counterexample is claimed."
+  ],
+  "files_deleted": 0,
+  "full_replay_command": "python -B collatz_reconstruction/research_program/bilateral_root_bounds_20260916/replay.py --full --predecessor",
+  "inherited_files_modified": 0,
+  "integration_fixture": {
+    "actual_patch_applied": true,
+    "existing_tracked_and_untracked_files_preserved": true,
+    "fixture_is_full_remote_checkout": false,
+    "inherited_dependency_files": 8,
+    "new_added_files": 17,
+    "patch_sha256": "dbc686701a58db533dd0fdfa6394c39e3720263232f4efc43702582af225ad4a",
+    "status": "PASS"
+  },
+  "integrator_tests": {
+    "conflict_rejected_before_write": true,
+    "idempotent_identical_file_skip": true,
+    "new_files": 17,
+    "partial_installation_tested": true,
+    "status": "PASS",
+    "unrelated_content_preserved": true
+  },
+  "last_authenticated_head": "b2dac4c2cc4a5eedde0af36d6749390c77fa4a62",
+  "new_payload_files": 17,
+  "new_remote_commit": null,
+  "pr": 2,
+  "pr_draft": true,
+  "proofs": {
+    "all_positive_ternary_layers": true,
+    "asymptotic_support_bound_n_at_least_27": "64*n^(log_3 4)+21",
+    "bound_is_global_Collatz_stopping_time_bound": false,
+    "first_crossing_horizon_odd_steps": 11610,
+    "maximal_original_leading_run_strata_all_depths": true,
+    "old_new_layer_disjointness_proved_modulo_nine": true,
+    "original_support_bound": "max(130*(n+1), floor(64*n*4^floor_log3(n)/3^floor_log3(n))+21)",
+    "unbounded_start_horizon_claim_uses_proved_envelope": true
+  },
+  "publication": {
+    "create_commit_discovery_exposed_read_functions_only": true,
+    "create_tree_discovery_returned_no_action": true,
+    "new_GitHub_CI_claimed": false,
+    "plugin_search_found_existing_enabled_github": true,
+    "prior_ternary_increment_found_already_published": true,
+    "read_connection_worked": true,
+    "remote_write_attempted": false,
+    "write_action_exposed": false
+  },
+  "repository": "KokunoYumeto/collatz-workbench",
+  "status": "CHECKED_LOCAL_ADDITIVE_CONTINUATION"
+}

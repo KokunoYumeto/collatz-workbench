@@ -1,0 +1,1 @@
+{"count": 9, "rejected_ledger_controls": ["missing_all_families", "duplicated_family", "lost_declared_support", "altered_affine_numerator", "invalid_original_word", "missing_source", "duplicate_source", "false_endpoint", "false_valuation"], "small_valid_source_control_passed": true, "status": "PASS"}

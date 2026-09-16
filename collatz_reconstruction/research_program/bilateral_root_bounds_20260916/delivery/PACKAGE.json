@@ -1,0 +1,169 @@
+{
+  "files": {
+    "ADDITIONS.json": {
+      "bytes": 3628,
+      "sha256": "579446a332010582294cc3ab37213ac7d123cde740f024da75175f49f2497840"
+    },
+    "Collatz_Bilateral_Root_Bounds_20260916.patch": {
+      "bytes": 229411,
+      "sha256": "dbc686701a58db533dd0fdfa6394c39e3720263232f4efc43702582af225ad4a"
+    },
+    "DELIVERY_RECEIPT.json": {
+      "bytes": 4149,
+      "sha256": "512327b1c4edfd82b5aa1ee2694045d6060dae5fab0942df899ba48c910e257b"
+    },
+    "README.md": {
+      "bytes": 2236,
+      "sha256": "5b7a4ea5485a362d8db245a94fc564b70a385776e905c2632185f600b91fd234"
+    },
+    "apply_additions.py": {
+      "bytes": 2192,
+      "sha256": "bd820522a620505fa6bcf067505a24b3cce436a3af6296da4d13454231f26065"
+    },
+    "checkout/.github/workflows/collatz-bilateral-root-bounds.yml": {
+      "bytes": 963,
+      "sha256": "70aecfd5fc5a99ff055924665e74a04b8cb1e700b05f9eceb8a14b78bb11cc5c"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/MANIFEST.json": {
+      "bytes": 1627,
+      "sha256": "c8e016099dfa9827e81f629e18cc502bac4a799664ff7a81c5b9c5b810ff4bd0"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/README.md": {
+      "bytes": 4136,
+      "sha256": "3234d9f839bdf58d215754d3c5059c32fc24af37f81daf4fdd84e37824c98f5c"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/SOURCE_INTAKE.json": {
+      "bytes": 2219,
+      "sha256": "0943ec11833a047cd5f53c5c6ef25aa50f1dd4e8a95d350741f4e23215f02b33"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/TASK_STATE.md": {
+      "bytes": 2694,
+      "sha256": "cb504ae4a5faf10b0291d61809bd6317663a8a107d5bef60a1cb3989be164a23"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/audit_families.py": {
+      "bytes": 7823,
+      "sha256": "08171aeae06a8725552231e0e0c65fd53bffe0aebf9b7faa153ec0a591f9d3de"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/audit_sources.py": {
+      "bytes": 6077,
+      "sha256": "29d073824333d429add981b90f0252415f322a6bbc06d9ff3ea0facc40a6b69a"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/bilateral_control.py": {
+      "bytes": 23004,
+      "sha256": "83288427125083f723d011915db9456843072eff10c15c0b71f3e56c31975358"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/envelope_records.json": {
+      "bytes": 1524,
+      "sha256": "563f95f57134b605dbba4f5cee0c692297c8def525489c0c6f825f7653e90f43"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/family_audit.json": {
+      "bytes": 1568,
+      "sha256": "3c9a1ccfe3ee51561a54482fd6b6bcd38ca57c8d263b31190cce60981faafaeb"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/note.md": {
+      "bytes": 35350,
+      "sha256": "8eb0d91adcfff7c29efcea0270398f9bc18f484fb665d154be1a4a32b5458eaf"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/replay.py": {
+      "bytes": 4200,
+      "sha256": "18883d8a810397c0f8c624eb5cdc82ff897fa25f2c5208adaea8560a7ec4de34"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/scan_sources.py": {
+      "bytes": 4864,
+      "sha256": "2a03e24e3fcbf56ffa966b9604d47ee433293b099e1977eb3f6e46d77e417391"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/test_audits.py": {
+      "bytes": 2344,
+      "sha256": "2c00d82cb8d936daa6f534e40a60a8c403ab2592ff564d2d8006a00fa5f683e5"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/verification.json": {
+      "bytes": 87572,
+      "sha256": "2560770274e1bf779f91e43f07906a4117a0857b0655e8c196192e02437767c4"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/verify.py": {
+      "bytes": 15313,
+      "sha256": "c414843cc1f1d3dfff2cf635a79fc9e7ba955a76e68d1f77d3c24d5a0c514184"
+    },
+    "checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/window_certificate.json": {
+      "bytes": 13372,
+      "sha256": "8735c5e75283bcd7ed43ae5cdd304120b68ab09832682833ca6b65918cabf6d4"
+    },
+    "checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/MANIFEST.sha256": {
+      "bytes": 549,
+      "sha256": "8a4a155f81d119c202cc315042a6cbbe0abc1af5b2aef19d8738850a1e1b908f"
+    },
+    "checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/README.md": {
+      "bytes": 3837,
+      "sha256": "2f7208b7a175aa384e67d26d6b8a633035b54e9095789b9be4780af40ac6ca5a"
+    },
+    "checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/SOURCE_INTAKE.json": {
+      "bytes": 1823,
+      "sha256": "b45d785e0e114e6b8982620a78e8543384dd5fbce85b6f738b819754235d0e8a"
+    },
+    "checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/firstjet.py": {
+      "bytes": 11587,
+      "sha256": "a53cef65109285f377e2c1344ae662c4a74574a30c1c40dfffebc9ed6cca06b0"
+    },
+    "checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md": {
+      "bytes": 32001,
+      "sha256": "1c232720d5de7331abec3be0effff8fc774d048f190c43bb79c9f69f806f765c"
+    },
+    "checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/replay.py": {
+      "bytes": 1139,
+      "sha256": "43c3ae2aaa92c005ce22a27ef4385645d68e9988db87052e9f8995c9c5b8824f"
+    },
+    "checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/verification.json": {
+      "bytes": 16353,
+      "sha256": "01203cd57c0fbad41c7d767467109ee93aaf0e4046bc164e605e3e817554fa83"
+    },
+    "checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/verify.py": {
+      "bytes": 13531,
+      "sha256": "e69b5a7f2972369981867ab570dd522e289cebf57e3e678ef8e90e2f36122ab4"
+    },
+    "evidence/all_join_pairs.jsonl.gz": {
+      "bytes": 2630177,
+      "sha256": "310ae90708384cbfbe4b42970e05afcc1ac49663669caa683367837674c1e797"
+    },
+    "evidence/applied_full_replay.log": {
+      "bytes": 2273,
+      "sha256": "2abe091b992b82cdaad5aaaf9625bb9c26f2242b59b107df9feaf83211dd50db"
+    },
+    "evidence/audit11610.json": {
+      "bytes": 4978,
+      "sha256": "829aa4edaa88c9142a2b7aae20cd9838362c9172f6f3ee2204fe2966f2820a7c"
+    },
+    "evidence/audit_controls.json": {
+      "bytes": 302,
+      "sha256": "f82542bbcabaedcc2cbcd29e4a60b5b33d60ddcc66ce9d40aaaa98a308e7c0be"
+    },
+    "evidence/envelope11610.json": {
+      "bytes": 266273,
+      "sha256": "6f0321d6ac54332515d05ddd1f20775c420246f9cb988d4e20a1138b1beec378"
+    },
+    "evidence/family_audit.json": {
+      "bytes": 1568,
+      "sha256": "3c9a1ccfe3ee51561a54482fd6b6bcd38ca57c8d263b31190cce60981faafaeb"
+    },
+    "evidence/integrator_validation.json": {
+      "bytes": 204,
+      "sha256": "21292fcae9574fd3bd5646a0578ba48f1a246488ad526bbaabc5ac4bf02b6fd3"
+    },
+    "evidence/patch_application.json": {
+      "bytes": 303,
+      "sha256": "b789ee0330e9809c6d6904bf043c1449f69edcb6e26f050cc2e136e10eeae29d"
+    },
+    "evidence/scan11610.json": {
+      "bytes": 6660,
+      "sha256": "377d013f3d70efaf0eace63896c82ae9b0a746a6db51efc24d1e8c7fd18eb1c1"
+    },
+    "evidence/sources11610.jsonl.gz": {
+      "bytes": 30541262,
+      "sha256": "080768c9f95fefec9e91fe2fcec368a557056c374192d361ea9480491b0b9fe9"
+    },
+    "evidence/structural.json": {
+      "bytes": 87572,
+      "sha256": "2560770274e1bf779f91e43f07906a4117a0857b0655e8c196192e02437767c4"
+    }
+  },
+  "scope": "Complete new addition, independent evidence and separately identified original dependencies; not a full clone"
+}

@@ -1,0 +1,11 @@
+{"original_singleton_witnesses": 1024, "sha256": "01203cd57c0fbad41c7d767467109ee93aaf0e4046bc164e605e3e817554fa83", "status": "PASS", "total_checks": 39211}
+{"original_singleton_witnesses": 1024, "sha256": "01203cd57c0fbad41c7d767467109ee93aaf0e4046bc164e605e3e817554fa83", "status": "PASS", "total_checks": 39211}
+{"exact_checks_per_run": 39211, "ordinary_optimized_byte_identical": true, "status": "PASS"}
+{"pair_rows": 112050, "sha256": "2560770274e1bf779f91e43f07906a4117a0857b0655e8c196192e02437767c4", "status": "PASS", "total_exact_checks": 1905007}
+{"pair_rows": 112050, "sha256": "2560770274e1bf779f91e43f07906a4117a0857b0655e8c196192e02437767c4", "status": "PASS", "total_exact_checks": 1905007}
+{"compatible_pair_rows": 24107, "complete_pair_rows": 112050, "new_mask_sha256": "79d3aa7224bfc98c209a0c658951ed17e3aea22774dde19e997e952da9d58eb6", "original_affine_equations_replayed": 332467, "status": "PASS"}
+{"count": 9, "rejected_ledger_controls": ["missing_all_families", "duplicated_family", "lost_declared_support", "altered_affine_numerator", "invalid_original_word", "missing_source", "duplicate_source", "false_endpoint", "false_valuation"], "small_valid_source_control_passed": true, "status": "PASS"}
+{"horizon": 11610, "independently_replayable_original_edges": 14186680, "maximum_first_crossing_returns": 155, "source_ledger_uncompressed_sha256": "87e6e08b9028b53f0ff6642a68777c68f8c0d3d7db436d39cfdb37af8021853b", "source_rows": 4064632, "source_upper_odd": 8129265, "status": "PASS"}
+{"horizon": 11610, "independently_replayable_original_edges": 14186680, "maximum_first_crossing_returns": 155, "source_ledger_uncompressed_sha256": "87e6e08b9028b53f0ff6642a68777c68f8c0d3d7db436d39cfdb37af8021853b", "source_rows": 4064632, "source_upper_odd": 8129265, "status": "PASS"}
+{"horizon": 11610, "original_divisions_replayed": 28378002, "original_return_equations_replayed": 14186680, "source_ledger_uncompressed_sha256": "87e6e08b9028b53f0ff6642a68777c68f8c0d3d7db436d39cfdb37af8021853b", "source_rows": 4064632, "status": "PASS"}
+{"complete_pair_rows": 112050, "full_source_scan": true, "ordinary_optimized_byte_identical": true, "predecessor_pair": true, "source_rows_when_full": 4064632, "status": "PASS", "structural_exact_checks_per_run": 1905007}

@@ -1,0 +1,8 @@
+{
+  "conflict_rejected_before_write": true,
+  "idempotent_identical_file_skip": true,
+  "new_files": 17,
+  "partial_installation_tested": true,
+  "status": "PASS",
+  "unrelated_content_preserved": true
+}

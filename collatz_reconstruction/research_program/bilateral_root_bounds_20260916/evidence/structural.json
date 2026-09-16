@@ -1,0 +1,5447 @@
+{
+  "all_layer_fixture_sha256": "8660556c9f1a429404747cefea255e1189c46939836403807de3eb742d2718b7",
+  "all_layer_fixtures": 256,
+  "complete_catalogue": {
+    "all_compatible_selection_records_sha256": "8fde7668f555d42c60881d213c5c2cb74b004abfcbff6d095369a04f6d5cee9e",
+    "all_pair_records_sha256": "0e4883a19de2296846d5cbf72fbc4f9a568a2cb8408adc18d20f2357f3f8d858",
+    "compatible_pairs": 24107,
+    "new_mask_sha256": "79d3aa7224bfc98c209a0c658951ed17e3aea22774dde19e997e952da9d58eb6",
+    "new_period": 5668704,
+    "new_removed_residues": 4430,
+    "new_root_residues": 739770,
+    "new_selected_families": 67,
+    "old_candidate_status_sha256": "e6ef3ca06ac8831035c567bdb295c54836fd849843e8df1166d0390e3626bbb3",
+    "old_candidate_words": 20397,
+    "old_lifted_roots": 744200,
+    "old_mask_sha256": "c25b565f57c51ae9c42faee609f09a5bde57d14d407d721a26413ebff20fff35",
+    "old_root_residues": 93025,
+    "old_selected_families": 370,
+    "old_start_roots": 98091,
+    "ordered_pairs": 112050
+  },
+  "complete_pair_ledger_sha256": "0e4883a19de2296846d5cbf72fbc4f9a568a2cb8408adc18d20f2357f3f8d858",
+  "complete_pair_rows": 112050,
+  "counts": {
+    "adjacent_minimal_run_increment": 254,
+    "all_candidate_faces_digest": 1,
+    "all_depth_stratum_inverse": 936,
+    "all_high_layers_single_retained_residue": 1,
+    "all_layer_complete_positive_height": 256,
+    "all_layer_explicit_length_bound": 256,
+    "all_layer_height_equation": 256,
+    "all_layer_left_divisibility": 768,
+    "all_layer_left_input": 256,
+    "all_layer_left_odd_endpoint": 768,
+    "all_layer_left_terminal": 256,
+    "all_layer_right_divisibility": 30435,
+    "all_layer_right_input": 256,
+    "all_layer_right_odd_endpoint": 30435,
+    "all_layer_right_terminal": 256,
+    "all_layer_subquadratic_support": 768,
+    "all_pairs_union_equals_selected_cover": 1,
+    "complete_low_layer_residue_cover": 20,
+    "complete_pair_domain_counts": 1,
+    "empty_comparison_face_retained": 87943,
+    "entire_canonical_positive_family": 24107,
+    "exact_layer_and_unit": 256,
+    "exact_old_new_overlap_obstruction": 256,
+    "exact_saturation_depth": 936,
+    "finite_pair_complete_positive_height": 24107,
+    "finite_pair_height_equation": 24107,
+    "finite_pair_left_divisibility": 59163,
+    "finite_pair_left_input": 24107,
+    "finite_pair_left_odd_endpoint": 59163,
+    "finite_pair_left_terminal": 24107,
+    "finite_pair_right_divisibility": 273304,
+    "finite_pair_right_input": 24107,
+    "finite_pair_right_odd_endpoint": 273304,
+    "finite_pair_right_terminal": 24107,
+    "global_FH_identity": 459,
+    "global_F_projection_and_chain_map": 459,
+    "global_Q_projection_and_HQ": 459,
+    "global_dH_identity": 459,
+    "independent_complete_composition_count": 1,
+    "independent_original_join_parameters": 24107,
+    "independent_packet_and_lift": 112050,
+    "independent_target_compatibility": 112050,
+    "integral_join_witness_path_extraction": 4,
+    "large_height_bound_exact_form": 4973,
+    "layer_original_congruences": 256,
+    "layer_original_lattices": 256,
+    "maximal_layer_move": 768,
+    "maximal_minimal_chain_identity": 768,
+    "maximal_original_word_recovery": 768,
+    "maximal_run_logarithmic_length_bound": 768,
+    "maximal_to_minimal_original_path": 768,
+    "minimal_leading_run": 256,
+    "negative_height_translation": 256,
+    "new_correction_in_old_image": 459,
+    "new_cover_counts": 1,
+    "next_crossing_record": 1,
+    "old_new_layer_disjoint_original_points": 768,
+    "original_lower_point_certificate": 4,
+    "overlap_precision_at_least_two": 256,
+    "published_catalogue_counts": 1,
+    "published_pair_complete_positive_height": 20397,
+    "published_pair_height_equation": 20397,
+    "published_pair_left_divisibility": 20397,
+    "published_pair_left_input": 20397,
+    "published_pair_left_odd_endpoint": 20397,
+    "published_pair_left_terminal": 20397,
+    "published_pair_right_divisibility": 233141,
+    "published_pair_right_input": 20397,
+    "published_pair_right_odd_endpoint": 233141,
+    "published_pair_right_terminal": 20397,
+    "published_root_count": 1,
+    "rejected_invalid_controls": 1,
+    "root_formula_equals_original_rule": 459,
+    "saturation_complete_positive_height": 312,
+    "saturation_height_equation": 312,
+    "saturation_left_divisibility": 936,
+    "saturation_left_input": 312,
+    "saturation_left_odd_endpoint": 936,
+    "saturation_left_terminal": 312,
+    "saturation_right_divisibility": 9386,
+    "saturation_right_input": 312,
+    "saturation_right_odd_endpoint": 9386,
+    "saturation_right_terminal": 312,
+    "two_projection_compositions": 459,
+    "two_root_projection_compositions": 459,
+    "unchanged_firstjet_source": 1,
+    "whole_original_root_membership": 1024
+  },
+  "firstjet_source_git_blob": "97f9ef5ad535f7ec18259d41fab6a3557be17d98",
+  "independently_extracted_point_witnesses": [
+    {
+      "boundary_constant": {},
+      "boundary_linear": {
+        "1275": 1
+      },
+      "constant_cycle": {
+        "1": -1
+      },
+      "exponents": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        3,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        7,
+        3,
+        2,
+        2,
+        4,
+        1,
+        1,
+        2,
+        3,
+        4
+      ],
+      "forcing": 1,
+      "linear_chain": {
+        "5": 1,
+        "7": 1,
+        "11": 1,
+        "13": 1,
+        "17": 1,
+        "37": 1,
+        "49": 1,
+        "65": 1,
+        "173": 1,
+        "767": 1,
+        "1151": 1,
+        "1275": 1,
+        "1435": 1,
+        "1615": 1,
+        "1727": 1,
+        "1913": 1,
+        "2045": 1,
+        "2153": 1,
+        "2423": 1,
+        "2591": 1,
+        "3635": 1,
+        "3887": 1,
+        "5453": 1,
+        "5831": 1,
+        "7381": 1,
+        "8747": 1,
+        "9841": 1,
+        "13121": 1
+      },
+      "returns": 28,
+      "source": 1275,
+      "status": "verified_finite_first_order_boundary",
+      "values": [
+        1275,
+        1913,
+        1435,
+        2153,
+        1615,
+        2423,
+        3635,
+        5453,
+        2045,
+        767,
+        1151,
+        1727,
+        2591,
+        3887,
+        5831,
+        8747,
+        13121,
+        9841,
+        7381,
+        173,
+        65,
+        49,
+        37,
+        7,
+        11,
+        17,
+        13,
+        5,
+        1
+      ]
+    },
+    {
+      "boundary_constant": {},
+      "boundary_linear": {
+        "8808219": 1
+      },
+      "constant_cycle": {
+        "1": -1
+      },
+      "exponents": [
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        6,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        3,
+        2,
+        3,
+        1,
+        2,
+        2,
+        2,
+        1,
+        3,
+        4,
+        2,
+        6,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        2,
+        4,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        5,
+        2,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        3,
+        4,
+        4,
+        6,
+        3,
+        4
+      ],
+      "forcing": 1,
+      "linear_chain": {
+        "5": 1,
+        "13": 1,
+        "277": 1,
+        "1477": 1,
+        "6811": 1,
+        "7375": 1,
+        "7663": 1,
+        "7877": 1,
+        "9335": 1,
+        "9833": 1,
+        "10217": 1,
+        "11063": 1,
+        "11495": 1,
+        "14003": 1,
+        "16595": 1,
+        "17243": 1,
+        "18415": 1,
+        "19399": 1,
+        "21005": 1,
+        "24553": 1,
+        "24893": 1,
+        "25865": 1,
+        "27623": 1,
+        "29099": 1,
+        "32737": 1,
+        "34015": 1,
+        "36325": 1,
+        "41435": 1,
+        "43649": 1,
+        "46615": 1,
+        "48433": 1,
+        "51023": 1,
+        "62153": 1,
+        "64577": 1,
+        "69923": 1,
+        "76535": 1,
+        "104885": 1,
+        "114803": 1,
+        "172205": 1,
+        "725653": 1,
+        "967537": 1,
+        "5160197": 1,
+        "6696295": 1,
+        "8808219": 1,
+        "9173683": 1,
+        "9909247": 1,
+        "10044443": 1,
+        "11299999": 1,
+        "12231577": 1,
+        "13212329": 1,
+        "13760525": 1,
+        "14496683": 1,
+        "14863871": 1,
+        "15066665": 1,
+        "16308769": 1,
+        "16949999": 1,
+        "21745025": 1,
+        "22295807": 1,
+        "25424999": 1,
+        "33443711": 1,
+        "38137499": 1,
+        "38657821": 1,
+        "42904687": 1,
+        "50165567": 1,
+        "51543761": 1,
+        "57206249": 1,
+        "64357031": 1,
+        "75248351": 1,
+        "96535547": 1,
+        "108602491": 1,
+        "112872527": 1,
+        "122177803": 1,
+        "137450029": 1,
+        "142854293": 1,
+        "144803321": 1,
+        "162903737": 1,
+        "169308791": 1,
+        "183266705": 1,
+        "253963187": 1,
+        "380944781": 1
+      },
+      "returns": 80,
+      "source": 8808219,
+      "status": "verified_finite_first_order_boundary",
+      "values": [
+        8808219,
+        13212329,
+        9909247,
+        14863871,
+        22295807,
+        33443711,
+        50165567,
+        75248351,
+        112872527,
+        169308791,
+        253963187,
+        380944781,
+        142854293,
+        6696295,
+        10044443,
+        15066665,
+        11299999,
+        16949999,
+        25424999,
+        38137499,
+        57206249,
+        42904687,
+        64357031,
+        96535547,
+        144803321,
+        108602491,
+        162903737,
+        122177803,
+        183266705,
+        137450029,
+        51543761,
+        38657821,
+        14496683,
+        21745025,
+        16308769,
+        12231577,
+        9173683,
+        13760525,
+        5160197,
+        967537,
+        725653,
+        34015,
+        51023,
+        76535,
+        114803,
+        172205,
+        64577,
+        48433,
+        36325,
+        6811,
+        10217,
+        7663,
+        11495,
+        17243,
+        25865,
+        19399,
+        29099,
+        43649,
+        32737,
+        24553,
+        18415,
+        27623,
+        41435,
+        62153,
+        46615,
+        69923,
+        104885,
+        9833,
+        7375,
+        11063,
+        16595,
+        24893,
+        9335,
+        14003,
+        21005,
+        7877,
+        1477,
+        277,
+        13,
+        5,
+        1
+      ]
+    },
+    {
+      "boundary_constant": {},
+      "boundary_linear": {
+        "4313979": 1
+      },
+      "constant_cycle": {
+        "1": -1
+      },
+      "exponents": [
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        4,
+        1,
+        3,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        2,
+        1,
+        6,
+        3,
+        3,
+        3,
+        3,
+        1,
+        2,
+        3,
+        1,
+        1,
+        3,
+        1,
+        3,
+        1,
+        1,
+        3,
+        1,
+        2,
+        6,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4,
+        3,
+        1,
+        1,
+        5,
+        4
+      ],
+      "forcing": 1,
+      "linear_chain": {
+        "5": 1,
+        "23": 1,
+        "31": 1,
+        "35": 1,
+        "47": 1,
+        "53": 1,
+        "61": 1,
+        "71": 1,
+        "91": 1,
+        "103": 1,
+        "107": 1,
+        "121": 1,
+        "137": 1,
+        "155": 1,
+        "161": 1,
+        "167": 1,
+        "175": 1,
+        "233": 1,
+        "251": 1,
+        "263": 1,
+        "283": 1,
+        "319": 1,
+        "325": 1,
+        "377": 1,
+        "395": 1,
+        "425": 1,
+        "433": 1,
+        "445": 1,
+        "479": 1,
+        "577": 1,
+        "587": 1,
+        "593": 1,
+        "661": 1,
+        "695": 1,
+        "719": 1,
+        "881": 1,
+        "911": 1,
+        "1043": 1,
+        "1079": 1,
+        "1235": 1,
+        "1367": 1,
+        "1463": 1,
+        "1565": 1,
+        "1619": 1,
+        "1853": 1,
+        "2051": 1,
+        "2195": 1,
+        "2429": 1,
+        "3077": 1,
+        "3293": 1,
+        "3467": 1,
+        "3901": 1,
+        "5201": 1,
+        "9245": 1,
+        "24653": 1,
+        "65741": 1,
+        "175309": 1,
+        "1556543": 1,
+        "2216251": 1,
+        "2334815": 1,
+        "2493283": 1,
+        "2767187": 1,
+        "3324377": 1,
+        "3502223": 1,
+        "3739925": 1,
+        "4094911": 1,
+        "4150781": 1,
+        "4313979": 1,
+        "4853227": 1,
+        "4919443": 1,
+        "5253335": 1,
+        "5459881": 1,
+        "6142367": 1,
+        "6470969": 1,
+        "7279841": 1,
+        "7379165": 1,
+        "7880003": 1,
+        "9213551": 1,
+        "11820005": 1,
+        "13820327": 1,
+        "20730491": 1,
+        "23321803": 1,
+        "26237029": 1,
+        "31095737": 1,
+        "34982705": 1
+      },
+      "returns": 85,
+      "source": 4313979,
+      "status": "verified_finite_first_order_boundary",
+      "values": [
+        4313979,
+        6470969,
+        4853227,
+        7279841,
+        5459881,
+        4094911,
+        6142367,
+        9213551,
+        13820327,
+        20730491,
+        31095737,
+        23321803,
+        34982705,
+        26237029,
+        4919443,
+        7379165,
+        2767187,
+        4150781,
+        1556543,
+        2334815,
+        3502223,
+        5253335,
+        7880003,
+        11820005,
+        2216251,
+        3324377,
+        2493283,
+        3739925,
+        175309,
+        65741,
+        24653,
+        9245,
+        3467,
+        5201,
+        3901,
+        1463,
+        2195,
+        3293,
+        1235,
+        1853,
+        695,
+        1043,
+        1565,
+        587,
+        881,
+        661,
+        31,
+        47,
+        71,
+        107,
+        161,
+        121,
+        91,
+        137,
+        103,
+        155,
+        233,
+        175,
+        263,
+        395,
+        593,
+        445,
+        167,
+        251,
+        377,
+        283,
+        425,
+        319,
+        479,
+        719,
+        1079,
+        1619,
+        2429,
+        911,
+        1367,
+        2051,
+        3077,
+        577,
+        433,
+        325,
+        61,
+        23,
+        35,
+        53,
+        5,
+        1
+      ]
+    },
+    {
+      "boundary_constant": {},
+      "boundary_linear": {
+        "118607355": 1
+      },
+      "constant_cycle": {
+        "1": -1
+      },
+      "exponents": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        3,
+        4,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        7,
+        1,
+        1,
+        1,
+        3,
+        1,
+        4,
+        2,
+        2,
+        1,
+        2,
+        1,
+        10,
+        1,
+        2,
+        3,
+        3,
+        1,
+        3,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        4,
+        3,
+        1,
+        1,
+        5,
+        4
+      ],
+      "forcing": 1,
+      "linear_chain": {
+        "5": 1,
+        "23": 1,
+        "35": 1,
+        "47": 1,
+        "53": 1,
+        "61": 1,
+        "71": 1,
+        "83": 1,
+        "91": 1,
+        "103": 1,
+        "107": 1,
+        "121": 1,
+        "125": 1,
+        "137": 1,
+        "155": 1,
+        "161": 1,
+        "167": 1,
+        "175": 1,
+        "221": 1,
+        "233": 1,
+        "251": 1,
+        "263": 1,
+        "283": 1,
+        "319": 1,
+        "325": 1,
+        "377": 1,
+        "395": 1,
+        "425": 1,
+        "433": 1,
+        "445": 1,
+        "479": 1,
+        "523": 1,
+        "577": 1,
+        "589": 1,
+        "593": 1,
+        "719": 1,
+        "785": 1,
+        "911": 1,
+        "1079": 1,
+        "1367": 1,
+        "1619": 1,
+        "2051": 1,
+        "2429": 1,
+        "3077": 1,
+        "105787": 1,
+        "119011": 1,
+        "141049": 1,
+        "158681": 1,
+        "178517": 1,
+        "188065": 1,
+        "528335": 1,
+        "668675": 1,
+        "792503": 1,
+        "1003013": 1,
+        "1188755": 1,
+        "1783133": 1,
+        "13358395": 1,
+        "15028195": 1,
+        "15832171": 1,
+        "17811193": 1,
+        "20037593": 1,
+        "22542293": 1,
+        "23748257": 1,
+        "84438245": 1,
+        "118607355": 1,
+        "133433275": 1,
+        "150112435": 1,
+        "177911033": 1,
+        "200149913": 1,
+        "225168653": 1
+      },
+      "returns": 70,
+      "source": 118607355,
+      "status": "verified_finite_first_order_boundary",
+      "values": [
+        118607355,
+        177911033,
+        133433275,
+        200149913,
+        150112435,
+        225168653,
+        84438245,
+        15832171,
+        23748257,
+        17811193,
+        13358395,
+        20037593,
+        15028195,
+        22542293,
+        528335,
+        792503,
+        1188755,
+        1783133,
+        668675,
+        1003013,
+        188065,
+        141049,
+        105787,
+        158681,
+        119011,
+        178517,
+        523,
+        785,
+        589,
+        221,
+        83,
+        125,
+        47,
+        71,
+        107,
+        161,
+        121,
+        91,
+        137,
+        103,
+        155,
+        233,
+        175,
+        263,
+        395,
+        593,
+        445,
+        167,
+        251,
+        377,
+        283,
+        425,
+        319,
+        479,
+        719,
+        1079,
+        1619,
+        2429,
+        911,
+        1367,
+        2051,
+        3077,
+        577,
+        433,
+        325,
+        61,
+        23,
+        35,
+        53,
+        5,
+        1
+      ]
+    }
+  ],
+  "low_layer_cover_rows": [
+    [
+      1,
+      2,
+      3,
+      0,
+      2187
+    ],
+    [
+      1,
+      6,
+      10,
+      0,
+      1
+    ],
+    [
+      2,
+      2,
+      4,
+      0,
+      243
+    ],
+    [
+      2,
+      6,
+      10,
+      1,
+      1
+    ],
+    [
+      3,
+      2,
+      4,
+      0,
+      81
+    ],
+    [
+      3,
+      6,
+      11,
+      1,
+      1
+    ],
+    [
+      4,
+      2,
+      5,
+      0,
+      9
+    ],
+    [
+      4,
+      6,
+      12,
+      1,
+      1
+    ],
+    [
+      5,
+      2,
+      6,
+      1,
+      1
+    ],
+    [
+      5,
+      6,
+      13,
+      1,
+      1
+    ],
+    [
+      6,
+      2,
+      6,
+      1,
+      1
+    ],
+    [
+      6,
+      6,
+      13,
+      1,
+      1
+    ],
+    [
+      7,
+      2,
+      7,
+      1,
+      1
+    ],
+    [
+      7,
+      6,
+      14,
+      1,
+      1
+    ],
+    [
+      8,
+      2,
+      8,
+      1,
+      1
+    ],
+    [
+      8,
+      6,
+      15,
+      1,
+      1
+    ],
+    [
+      9,
+      2,
+      9,
+      1,
+      1
+    ],
+    [
+      9,
+      6,
+      15,
+      1,
+      1
+    ],
+    [
+      10,
+      2,
+      9,
+      1,
+      1
+    ],
+    [
+      10,
+      6,
+      16,
+      1,
+      1
+    ]
+  ],
+  "new_selected_families": [
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 268,
+      "height_slope": 544,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        39,
+        81
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 1007,
+      "mstep": 2048,
+      "n0": 1275,
+      "nstep": 2592,
+      "right_data": [
+        2187,
+        1024,
+        2363,
+        1007,
+        2153
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -4,
+      "y0": 2153,
+      "ystep": 4374
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 5524,
+      "height_slope": 6944,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        579,
+        729
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 13031,
+      "mstep": 16384,
+      "n0": 18555,
+      "nstep": 23328,
+      "right_data": [
+        19683,
+        8192,
+        26923,
+        13031,
+        31313
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -6,
+      "y0": 31313,
+      "ystep": 39366
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 6124,
+      "height_slope": 6944,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        642,
+        729
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 14447,
+      "mstep": 16384,
+      "n0": 20571,
+      "nstep": 23328,
+      "right_data": [
+        19683,
+        8192,
+        24979,
+        14447,
+        34715
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -6,
+      "y0": 34715,
+      "ystep": 39366
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 6524,
+      "height_slope": 6944,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        684,
+        729
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 15391,
+      "mstep": 16384,
+      "n0": 21915,
+      "nstep": 23328,
+      "right_data": [
+        19683,
+        8192,
+        23683,
+        15391,
+        36983
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -6,
+      "y0": 36983,
+      "ystep": 39366
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 192,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        93,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 2811,
+      "mstep": 65536,
+      "n0": 3003,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        114253,
+        2811,
+        5069
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 5069,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 320,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        156,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 4699,
+      "mstep": 65536,
+      "n0": 5019,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        106477,
+        4699,
+        8471
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 8471,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 460,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        225,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 6767,
+      "mstep": 65536,
+      "n0": 7227,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        86713,
+        6767,
+        12197
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 12197,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 1436,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        705,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 21151,
+      "mstep": 65536,
+      "n0": 22587,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        72457,
+        21151,
+        38117
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 38117,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 1888,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        927,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 27803,
+      "mstep": 65536,
+      "n0": 29691,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        101293,
+        27803,
+        50105
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 50105,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 2004,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        984,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 29511,
+      "mstep": 65536,
+      "n0": 31515,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        105505,
+        29511,
+        53183
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 53183,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 2132,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        1047,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 31399,
+      "mstep": 65536,
+      "n0": 33531,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        97729,
+        31399,
+        56585
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 56585,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 2748,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        1350,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 40479,
+      "mstep": 65536,
+      "n0": 43227,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        82825,
+        40479,
+        72947
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 72947,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 3340,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        1641,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 49199,
+      "mstep": 65536,
+      "n0": 52539,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        91897,
+        49199,
+        88661
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 88661,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 3484,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        1712,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 51327,
+      "mstep": 65536,
+      "n0": 54811,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        68137,
+        51327,
+        92495
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 92495,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 3596,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        1767,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 52975,
+      "mstep": 65536,
+      "n0": 56571,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        76345,
+        52975,
+        95465
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 95465,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 3700,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        1818,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 54503,
+      "mstep": 65536,
+      "n0": 58203,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        92545,
+        54503,
+        98219
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 98219,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 4444,
+      "height_slope": 4448,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        2184,
+        2187
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 65471,
+      "mstep": 65536,
+      "n0": 69915,
+      "nstep": 69984,
+      "right_data": [
+        59049,
+        32768,
+        69865,
+        65471,
+        117983
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -7,
+      "y0": 117983,
+      "ystep": 118098
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 23712,
+      "height_slope": 26392,
+      "left_data": [
+        9,
+        4,
+        5,
+        7,
+        17
+      ],
+      "left_parameter": [
+        17683,
+        19683
+      ],
+      "left_word": [
+        1,
+        1
+      ],
+      "m0": 117759,
+      "mstep": 131072,
+      "n0": 141471,
+      "nstep": 157464,
+      "right_data": [
+        177147,
+        65536,
+        176123,
+        117759,
+        318311
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        5
+      ],
+      "signed_clock": -9,
+      "y0": 318311,
+      "ystep": 354294
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 36908,
+      "height_slope": 52784,
+      "left_data": [
+        9,
+        8,
+        5,
+        11,
+        13
+      ],
+      "left_parameter": [
+        13762,
+        19683
+      ],
+      "left_word": [
+        1,
+        2
+      ],
+      "m0": 183295,
+      "mstep": 262144,
+      "n0": 220203,
+      "nstep": 314928,
+      "right_data": [
+        177147,
+        131072,
+        176123,
+        183295,
+        247729
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        6
+      ],
+      "signed_clock": -9,
+      "y0": 247729,
+      "ystep": 354294
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 3980,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        741,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 19759,
+      "mstep": 524288,
+      "n0": 23739,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        1008065,
+        19759,
+        40061
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 40061,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 4028,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        750,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 19999,
+      "mstep": 524288,
+      "n0": 24027,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        864209,
+        19999,
+        40547
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 40547,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 4060,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        756,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 20159,
+      "mstep": 524288,
+      "n0": 24219,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        768305,
+        20159,
+        40871
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 40871,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 6940,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        1293,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 34463,
+      "mstep": 524288,
+      "n0": 41403,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        687953,
+        34463,
+        69869
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 69869,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 7884,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        1469,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 39151,
+      "mstep": 524288,
+      "n0": 47035,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        709121,
+        39151,
+        79373
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 79373,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 11156,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        2079,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 55399,
+      "mstep": 524288,
+      "n0": 66555,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        879113,
+        55399,
+        112313
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 112313,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 16852,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        3141,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 83687,
+      "mstep": 524288,
+      "n0": 100539,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        910217,
+        83687,
+        169661
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 169661,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 24060,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        4485,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 119487,
+      "mstep": 524288,
+      "n0": 143547,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        685361,
+        119487,
+        242237
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 242237,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 25396,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        4734,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 126119,
+      "mstep": 524288,
+      "n0": 151515,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        956873,
+        126119,
+        255683
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 255683,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 27868,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        5195,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 138399,
+      "mstep": 524288,
+      "n0": 166267,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        674129,
+        138399,
+        280577
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 280577,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 28212,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        5259,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 140103,
+      "mstep": 524288,
+      "n0": 168315,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        1068329,
+        140103,
+        284033
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 284033,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 29740,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        5544,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 147695,
+      "mstep": 524288,
+      "n0": 177435,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        764417,
+        147695,
+        299423
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 299423,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 31156,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        5808,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 154727,
+      "mstep": 524288,
+      "n0": 185883,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        796169,
+        154727,
+        313679
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 313679,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 32604,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        6078,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 161919,
+      "mstep": 524288,
+      "n0": 194523,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        732017,
+        161919,
+        328259
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 328259,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 35452,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        6609,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 176063,
+      "mstep": 524288,
+      "n0": 211515,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        747569,
+        176063,
+        356933
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        3,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 356933,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 36852,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        6870,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 183015,
+      "mstep": 524288,
+      "n0": 219867,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        827273,
+        183015,
+        371027
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 371027,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 39604,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        7383,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 196679,
+      "mstep": 524288,
+      "n0": 236283,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        1130537,
+        196679,
+        398729
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 398729,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 41132,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        7668,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 204271,
+      "mstep": 524288,
+      "n0": 245403,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        826625,
+        204271,
+        414119
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 414119,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 46828,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        8730,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 232559,
+      "mstep": 524288,
+      "n0": 279387,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        857729,
+        232559,
+        471467
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 471467,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 46844,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        8733,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 232639,
+      "mstep": 524288,
+      "n0": 279483,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        809777,
+        232639,
+        471629
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 471629,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 49724,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        9270,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 246943,
+      "mstep": 524288,
+      "n0": 296667,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        729425,
+        246943,
+        500627
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 500627,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 52604,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        9807,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 261247,
+      "mstep": 524288,
+      "n0": 313851,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        649073,
+        261247,
+        529625
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 529625,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 55372,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        10323,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 274991,
+      "mstep": 524288,
+      "n0": 330363,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        904385,
+        274991,
+        557489
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 557489,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 55452,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        10338,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 275391,
+      "mstep": 524288,
+      "n0": 330843,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        664625,
+        275391,
+        558299
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 558299,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 58300,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        10869,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 289535,
+      "mstep": 524288,
+      "n0": 347835,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        680177,
+        289535,
+        586973
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 586973,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 59636,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        11118,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 296167,
+      "mstep": 524288,
+      "n0": 355803,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        951689,
+        296167,
+        600419
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 600419,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 61116,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        11394,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 303519,
+      "mstep": 524288,
+      "n0": 364635,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        791633,
+        303519,
+        615323
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 615323,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 61132,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        11397,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 303599,
+      "mstep": 524288,
+      "n0": 364731,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        743681,
+        303599,
+        615485
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 615485,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 62548,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        11661,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 310631,
+      "mstep": 524288,
+      "n0": 373179,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        775433,
+        310631,
+        629741
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 629741,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 66812,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        12456,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 331807,
+      "mstep": 524288,
+      "n0": 398619,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        822737,
+        331807,
+        672671
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 672671,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 66828,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        12459,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 331887,
+      "mstep": 524288,
+      "n0": 398715,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        774785,
+        331887,
+        672833
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 672833,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 68180,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        12711,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 338599,
+      "mstep": 524288,
+      "n0": 406779,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        998345,
+        338599,
+        686441
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 686441,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 72524,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        13521,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 360175,
+      "mstep": 524288,
+      "n0": 432699,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        805889,
+        360175,
+        730181
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        3,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 730181,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 73532,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        13709,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 365183,
+      "mstep": 524288,
+      "n0": 438715,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        635249,
+        365183,
+        740333
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 740333,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 76380,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        14240,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 379327,
+      "mstep": 524288,
+      "n0": 455707,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        650801,
+        379327,
+        769007
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 769007,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 79572,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        14835,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 395175,
+      "mstep": 524288,
+      "n0": 474747,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        1060553,
+        395175,
+        801137
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 801137,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 81116,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        15123,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 402847,
+      "mstep": 524288,
+      "n0": 483963,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        708689,
+        402847,
+        816689
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 816689,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 83476,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        15563,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 414567,
+      "mstep": 524288,
+      "n0": 498043,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        761609,
+        414567,
+        840449
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 840449,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 83916,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        15645,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 416751,
+      "mstep": 524288,
+      "n0": 500667,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        868097,
+        416751,
+        844877
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 844877,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 86812,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        16185,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 431135,
+      "mstep": 524288,
+      "n0": 517947,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        739793,
+        431135,
+        874037
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 874037,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 89612,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        16707,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 445039,
+      "mstep": 524288,
+      "n0": 534651,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        899201,
+        445039,
+        902225
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 902225,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 90996,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        16965,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 451911,
+      "mstep": 524288,
+      "n0": 542907,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        1026857,
+        451911,
+        916157
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 916157,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 92508,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        17247,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 459423,
+      "mstep": 524288,
+      "n0": 551931,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        770897,
+        459423,
+        931385
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 931385,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 92524,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        17250,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 459503,
+      "mstep": 524288,
+      "n0": 552027,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        722945,
+        459503,
+        931547
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 931547,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 95388,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        17784,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 473727,
+      "mstep": 524288,
+      "n0": 569115,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        690545,
+        473727,
+        960383
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        4,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 960383,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 98156,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        18300,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 487471,
+      "mstep": 524288,
+      "n0": 585627,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        945857,
+        487471,
+        988247
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 988247,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 98236,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        18315,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 487871,
+      "mstep": 524288,
+      "n0": 586107,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        706097,
+        487871,
+        989057
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        4,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 989057,
+      "ystep": 1062882
+    },
+    {
+      "compatible": true,
+      "declared_comparison_retained": true,
+      "domain": [
+        0,
+        null
+      ],
+      "height_constant": 103900,
+      "height_slope": 105568,
+      "left_data": [
+        27,
+        16,
+        23,
+        27,
+        47
+      ],
+      "left_parameter": [
+        19371,
+        19683
+      ],
+      "left_word": [
+        1,
+        2,
+        1
+      ],
+      "m0": 515999,
+      "mstep": 524288,
+      "n0": 619899,
+      "nstep": 629856,
+      "right_data": [
+        531441,
+        262144,
+        833105,
+        515999,
+        1046081
+      ],
+      "right_parameter": [
+        0,
+        1
+      ],
+      "right_word": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        3,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "signed_clock": -9,
+      "y0": 1046081,
+      "ystep": 1062882
+    }
+  ],
+  "next_record": [
+    11611,
+    18403,
+    9966964
+  ],
+  "original_maximal_layer_point_checks": 768,
+  "original_saturation_point_checks": 936,
+  "rejected_controls": [
+    "zero source",
+    "even source",
+    "zero exponent",
+    "boolean exponent",
+    "invalid layer",
+    "unsupported middle exponent",
+    "invalid depth",
+    "zero ternary unit",
+    "incompatible CRT",
+    "false original path",
+    "nondecreasing move",
+    "false joined endpoints",
+    "rational original witness",
+    "false singleton boundary",
+    "bad stage",
+    "invalid height",
+    "altered source lattice"
+  ],
+  "retraction_certificates": [
+    {
+      "moves": [],
+      "original_chain": {},
+      "original_odd_vertex_peak": 27,
+      "proved_support_bound": 4117,
+      "proved_term_bound": 299,
+      "root": 27,
+      "signed_clock": 0,
+      "source": 27,
+      "stage": 2,
+      "status": "retained_original_root",
+      "uncollected_terms": 0
+    },
+    {
+      "moves": [
+        {
+          "left_path": [
+            1275,
+            1913,
+            1435,
+            2153
+          ],
+          "left_word": [
+            1,
+            2,
+            1
+          ],
+          "right_path": [
+            1007,
+            1511,
+            2267,
+            3401,
+            2551,
+            3827,
+            5741,
+            2153
+          ],
+          "right_word": [
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            3
+          ],
+          "rule": "bilateral_catalogue",
+          "signed_clock": -4,
+          "smaller_source": 1007,
+          "source": 1275
+        },
+        {
+          "left_path": [
+            1007
+          ],
+          "left_word": [],
+          "right_path": [
+            671,
+            1007
+          ],
+          "right_word": [
+            1
+          ],
+          "rule": "inverse",
+          "signed_clock": -1,
+          "smaller_source": 671,
+          "source": 1007
+        },
+        {
+          "left_path": [
+            671
+          ],
+          "left_word": [],
+          "right_path": [
+            447,
+            671
+          ],
+          "right_word": [
+            1
+          ],
+          "rule": "inverse",
+          "signed_clock": -1,
+          "smaller_source": 447,
+          "source": 671
+        }
+      ],
+      "original_chain": {
+        "1007": [
+          -1,
+          4
+        ],
+        "1275": [
+          1,
+          0
+        ],
+        "1435": [
+          1,
+          2
+        ],
+        "1511": [
+          -1,
+          3
+        ],
+        "1913": [
+          1,
+          1
+        ],
+        "2267": [
+          -1,
+          2
+        ],
+        "2551": [
+          -1,
+          0
+        ],
+        "3401": [
+          -1,
+          1
+        ],
+        "3827": [
+          -1,
+          -1
+        ],
+        "447": [
+          -1,
+          6
+        ],
+        "5741": [
+          -1,
+          -2
+        ],
+        "671": [
+          -1,
+          5
+        ]
+      },
+      "original_odd_vertex_peak": 5741,
+      "proved_support_bound": 458503,
+      "proved_term_bound": 20384,
+      "root": 447,
+      "signed_clock": -6,
+      "source": 1275,
+      "stage": 2,
+      "status": "retained_original_root",
+      "uncollected_terms": 12
+    },
+    {
+      "moves": [
+        {
+          "left_path": [
+            4313979,
+            6470969,
+            4853227,
+            7279841
+          ],
+          "left_word": [
+            1,
+            2,
+            1
+          ],
+          "right_path": [
+            3191935,
+            4787903,
+            7181855,
+            10772783,
+            16159175,
+            24238763,
+            36358145,
+            27268609,
+            20451457,
+            15338593,
+            11503945,
+            8627959,
+            12941939,
+            19412909,
+            7279841
+          ],
+          "right_word": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            3
+          ],
+          "rule": "bilateral_layer_maximal",
+          "signed_clock": -11,
+          "smaller_source": 3191935,
+          "source": 4313979
+        },
+        {
+          "left_path": [
+            3191935
+          ],
+          "left_word": [],
+          "right_path": [
+            2837275,
+            4255913,
+            3191935
+          ],
+          "right_word": [
+            1,
+            2
+          ],
+          "rule": "inverse",
+          "signed_clock": -2,
+          "smaller_source": 2837275,
+          "source": 3191935
+        }
+      ],
+      "original_chain": {
+        "10772783": [
+          -1,
+          8
+        ],
+        "11503945": [
+          -1,
+          1
+        ],
+        "12941939": [
+          -1,
+          -1
+        ],
+        "15338593": [
+          -1,
+          2
+        ],
+        "16159175": [
+          -1,
+          7
+        ],
+        "19412909": [
+          -1,
+          -2
+        ],
+        "20451457": [
+          -1,
+          3
+        ],
+        "24238763": [
+          -1,
+          6
+        ],
+        "27268609": [
+          -1,
+          4
+        ],
+        "2837275": [
+          -1,
+          13
+        ],
+        "3191935": [
+          -1,
+          11
+        ],
+        "36358145": [
+          -1,
+          5
+        ],
+        "4255913": [
+          -1,
+          12
+        ],
+        "4313979": [
+          1,
+          0
+        ],
+        "4787903": [
+          -1,
+          10
+        ],
+        "4853227": [
+          1,
+          2
+        ],
+        "6470969": [
+          1,
+          1
+        ],
+        "7181855": [
+          -1,
+          9
+        ],
+        "8627959": [
+          -1,
+          0
+        ]
+      },
+      "original_odd_vertex_peak": 36358145,
+      "proved_support_bound": 11621483698,
+      "proved_term_bound": 114320417,
+      "root": 2837275,
+      "signed_clock": -13,
+      "source": 4313979,
+      "stage": 2,
+      "status": "retained_original_root",
+      "uncollected_terms": 19
+    },
+    {
+      "moves": [
+        {
+          "left_path": [
+            8808219,
+            13212329,
+            9909247,
+            14863871
+          ],
+          "left_word": [
+            1,
+            2,
+            1
+          ],
+          "right_path": [
+            8689663,
+            13034495,
+            19551743,
+            29327615,
+            43991423,
+            65987135,
+            98980703,
+            148471055,
+            222706583,
+            334059875,
+            501089813,
+            23488585,
+            17616439,
+            26424659,
+            39636989,
+            14863871
+          ],
+          "right_word": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            6,
+            2,
+            1,
+            1,
+            3
+          ],
+          "rule": "bilateral_layer_maximal",
+          "signed_clock": -12,
+          "smaller_source": 8689663,
+          "source": 8808219
+        }
+      ],
+      "original_chain": {
+        "13034495": [
+          -1,
+          11
+        ],
+        "13212329": [
+          1,
+          1
+        ],
+        "148471055": [
+          -1,
+          5
+        ],
+        "17616439": [
+          -1,
+          0
+        ],
+        "19551743": [
+          -1,
+          10
+        ],
+        "222706583": [
+          -1,
+          4
+        ],
+        "23488585": [
+          -1,
+          1
+        ],
+        "26424659": [
+          -1,
+          -1
+        ],
+        "29327615": [
+          -1,
+          9
+        ],
+        "334059875": [
+          -1,
+          3
+        ],
+        "39636989": [
+          -1,
+          -2
+        ],
+        "43991423": [
+          -1,
+          8
+        ],
+        "501089813": [
+          -1,
+          2
+        ],
+        "65987135": [
+          -1,
+          7
+        ],
+        "8689663": [
+          -1,
+          12
+        ],
+        "8808219": [
+          1,
+          0
+        ],
+        "98980703": [
+          -1,
+          6
+        ],
+        "9909247": [
+          1,
+          2
+        ]
+      },
+      "original_odd_vertex_peak": 501089813,
+      "proved_support_bound": 31638099737,
+      "proved_term_bound": 246630104,
+      "root": 8689663,
+      "signed_clock": -12,
+      "source": 8808219,
+      "stage": 2,
+      "status": "retained_original_root",
+      "uncollected_terms": 18
+    }
+  ],
+  "scope": "general proofs in note.md; complete finite pair domain; bounded regression; no universal Collatz claim",
+  "status": "PASS",
+  "total_exact_checks": 1905007
+}

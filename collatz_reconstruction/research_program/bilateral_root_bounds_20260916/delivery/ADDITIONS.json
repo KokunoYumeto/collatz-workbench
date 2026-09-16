@@ -1,0 +1,75 @@
+{
+  "base_read": "b2dac4c2cc4a5eedde0af36d6749390c77fa4a62",
+  "dependency_copies_are_additions": false,
+  "files": {
+    ".github/workflows/collatz-bilateral-root-bounds.yml": {
+      "bytes": 963,
+      "sha256": "70aecfd5fc5a99ff055924665e74a04b8cb1e700b05f9eceb8a14b78bb11cc5c"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/MANIFEST.json": {
+      "bytes": 1627,
+      "sha256": "c8e016099dfa9827e81f629e18cc502bac4a799664ff7a81c5b9c5b810ff4bd0"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/README.md": {
+      "bytes": 4136,
+      "sha256": "3234d9f839bdf58d215754d3c5059c32fc24af37f81daf4fdd84e37824c98f5c"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/SOURCE_INTAKE.json": {
+      "bytes": 2219,
+      "sha256": "0943ec11833a047cd5f53c5c6ef25aa50f1dd4e8a95d350741f4e23215f02b33"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/TASK_STATE.md": {
+      "bytes": 2694,
+      "sha256": "cb504ae4a5faf10b0291d61809bd6317663a8a107d5bef60a1cb3989be164a23"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/audit_families.py": {
+      "bytes": 7823,
+      "sha256": "08171aeae06a8725552231e0e0c65fd53bffe0aebf9b7faa153ec0a591f9d3de"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/audit_sources.py": {
+      "bytes": 6077,
+      "sha256": "29d073824333d429add981b90f0252415f322a6bbc06d9ff3ea0facc40a6b69a"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/bilateral_control.py": {
+      "bytes": 23004,
+      "sha256": "83288427125083f723d011915db9456843072eff10c15c0b71f3e56c31975358"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/envelope_records.json": {
+      "bytes": 1524,
+      "sha256": "563f95f57134b605dbba4f5cee0c692297c8def525489c0c6f825f7653e90f43"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/family_audit.json": {
+      "bytes": 1568,
+      "sha256": "3c9a1ccfe3ee51561a54482fd6b6bcd38ca57c8d263b31190cce60981faafaeb"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/note.md": {
+      "bytes": 35350,
+      "sha256": "8eb0d91adcfff7c29efcea0270398f9bc18f484fb665d154be1a4a32b5458eaf"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/replay.py": {
+      "bytes": 4200,
+      "sha256": "18883d8a810397c0f8c624eb5cdc82ff897fa25f2c5208adaea8560a7ec4de34"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/scan_sources.py": {
+      "bytes": 4864,
+      "sha256": "2a03e24e3fcbf56ffa966b9604d47ee433293b099e1977eb3f6e46d77e417391"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/test_audits.py": {
+      "bytes": 2344,
+      "sha256": "2c00d82cb8d936daa6f534e40a60a8c403ab2592ff564d2d8006a00fa5f683e5"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/verification.json": {
+      "bytes": 87572,
+      "sha256": "2560770274e1bf779f91e43f07906a4117a0857b0655e8c196192e02437767c4"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/verify.py": {
+      "bytes": 15313,
+      "sha256": "c414843cc1f1d3dfff2cf635a79fc9e7ba955a76e68d1f77d3c24d5a0c514184"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/window_certificate.json": {
+      "bytes": 13372,
+      "sha256": "8735c5e75283bcd7ed43ae5cdd304120b68ab09832682833ca6b65918cabf6d4"
+    }
+  },
+  "new_files": 17
+}

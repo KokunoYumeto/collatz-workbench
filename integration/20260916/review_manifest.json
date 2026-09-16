@@ -1,0 +1,26 @@
+[
+  {
+    "path": "integration/20260916/reviews/collatz/REVIEW.md",
+    "original_sha256": "f5536a96a4b276f2d242e9a49766a704bc17b0f7a95d4d61492cc9f239e8a62c",
+    "public_sha256": "f5536a96a4b276f2d242e9a49766a704bc17b0f7a95d4d61492cc9f239e8a62c",
+    "privacy_substitution": false
+  },
+  {
+    "path": "integration/20260916/reviews/collatz/package_integrity.json",
+    "original_sha256": "6988c74330e1e6bef4dfe864ff3fc47e9278f2a55d43d6721904264f79d4bcc5",
+    "public_sha256": "6988c74330e1e6bef4dfe864ff3fc47e9278f2a55d43d6721904264f79d4bcc5",
+    "privacy_substitution": false
+  },
+  {
+    "path": "integration/20260916/reviews/collatz_pr1/REVIEW.md",
+    "original_sha256": "3cce02beef6c1996a34bf3b85f682eef0ce3e5be0739914a045d1736a779d09d",
+    "public_sha256": "3cce02beef6c1996a34bf3b85f682eef0ce3e5be0739914a045d1736a779d09d",
+    "privacy_substitution": false
+  },
+  {
+    "path": "integration/20260916/reviews/collatz_pr1/REPLAY_RECEIPT.json",
+    "original_sha256": "98349a726273a6ebc2220e62a75bffa6302623707a46ef3b03008d89d76d8465",
+    "public_sha256": "98349a726273a6ebc2220e62a75bffa6302623707a46ef3b03008d89d76d8465",
+    "privacy_substitution": false
+  }
+]

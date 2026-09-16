@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "source": "User-supplied delivery and reviewed PR integration, 2026-09-16",
+  "files": {
+    ".github/workflows/collatz-bilateral-root-bounds.yml": {
+      "sha256": "70aecfd5fc5a99ff055924665e74a04b8cb1e700b05f9eceb8a14b78bb11cc5c",
+      "bytes": 963
+    },
+    "README.md": {
+      "sha256": "c576b861d4e4d5049d20a033a46ed28590d1dfe7bb497a78c35173858a06ef92",
+      "bytes": 5197
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/MANIFEST.json": {
+      "sha256": "c8e016099dfa9827e81f629e18cc502bac4a799664ff7a81c5b9c5b810ff4bd0",
+      "bytes": 1627
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/README.md": {
+      "sha256": "3234d9f839bdf58d215754d3c5059c32fc24af37f81daf4fdd84e37824c98f5c",
+      "bytes": 4136
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/SOURCE_INTAKE.json": {
+      "sha256": "0943ec11833a047cd5f53c5c6ef25aa50f1dd4e8a95d350741f4e23215f02b33",
+      "bytes": 2219
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/TASK_STATE.md": {
+      "sha256": "cb504ae4a5faf10b0291d61809bd6317663a8a107d5bef60a1cb3989be164a23",
+      "bytes": 2694
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/audit_families.py": {
+      "sha256": "08171aeae06a8725552231e0e0c65fd53bffe0aebf9b7faa153ec0a591f9d3de",
+      "bytes": 7823
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/audit_sources.py": {
+      "sha256": "29d073824333d429add981b90f0252415f322a6bbc06d9ff3ea0facc40a6b69a",
+      "bytes": 6077
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/bilateral_control.py": {
+      "sha256": "83288427125083f723d011915db9456843072eff10c15c0b71f3e56c31975358",
+      "bytes": 23004
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/delivery/ADDITIONS.json": {
+      "sha256": "579446a332010582294cc3ab37213ac7d123cde740f024da75175f49f2497840",
+      "bytes": 3628
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/delivery/DELIVERY_RECEIPT.json": {
+      "sha256": "512327b1c4edfd82b5aa1ee2694045d6060dae5fab0942df899ba48c910e257b",
+      "bytes": 4149
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/delivery/PACKAGE.json": {
+      "sha256": "632c9c108af3f5b51447d9b13546174130750052303bc8ec00f889ee62dc6f9f",
+      "bytes": 7868
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/envelope_records.json": {
+      "sha256": "563f95f57134b605dbba4f5cee0c692297c8def525489c0c6f825f7653e90f43",
+      "bytes": 1524
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/evidence/all_join_pairs.jsonl.gz": {
+      "sha256": "310ae90708384cbfbe4b42970e05afcc1ac49663669caa683367837674c1e797",
+      "bytes": 2630177
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/evidence/applied_full_replay.log": {
+      "sha256": "2abe091b992b82cdaad5aaaf9625bb9c26f2242b59b107df9feaf83211dd50db",
+      "bytes": 2273
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/evidence/audit11610.json": {
+      "sha256": "829aa4edaa88c9142a2b7aae20cd9838362c9172f6f3ee2204fe2966f2820a7c",
+      "bytes": 4978
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/evidence/audit_controls.json": {
+      "sha256": "f82542bbcabaedcc2cbcd29e4a60b5b33d60ddcc66ce9d40aaaa98a308e7c0be",
+      "bytes": 302
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/evidence/envelope11610.json": {
+      "sha256": "6f0321d6ac54332515d05ddd1f20775c420246f9cb988d4e20a1138b1beec378",
+      "bytes": 266273
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/evidence/family_audit.json": {
+      "sha256": "3c9a1ccfe3ee51561a54482fd6b6bcd38ca57c8d263b31190cce60981faafaeb",
+      "bytes": 1568
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/evidence/integrator_validation.json": {
+      "sha256": "21292fcae9574fd3bd5646a0578ba48f1a246488ad526bbaabc5ac4bf02b6fd3",
+      "bytes": 204
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/evidence/patch_application.json": {
+      "sha256": "b789ee0330e9809c6d6904bf043c1449f69edcb6e26f050cc2e136e10eeae29d",
+      "bytes": 303
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/evidence/scan11610.json": {
+      "sha256": "377d013f3d70efaf0eace63896c82ae9b0a746a6db51efc24d1e8c7fd18eb1c1",
+      "bytes": 6660
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/evidence/sources11610.jsonl.gz": {
+      "sha256": "080768c9f95fefec9e91fe2fcec368a557056c374192d361ea9480491b0b9fe9",
+      "bytes": 30541262
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/evidence/structural.json": {
+      "sha256": "2560770274e1bf779f91e43f07906a4117a0857b0655e8c196192e02437767c4",
+      "bytes": 87572
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/family_audit.json": {
+      "sha256": "3c9a1ccfe3ee51561a54482fd6b6bcd38ca57c8d263b31190cce60981faafaeb",
+      "bytes": 1568
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/note.md": {
+      "sha256": "8eb0d91adcfff7c29efcea0270398f9bc18f484fb665d154be1a4a32b5458eaf",
+      "bytes": 35350
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/replay.py": {
+      "sha256": "18883d8a810397c0f8c624eb5cdc82ff897fa25f2c5208adaea8560a7ec4de34",
+      "bytes": 4200
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/scan_sources.py": {
+      "sha256": "2a03e24e3fcbf56ffa966b9604d47ee433293b099e1977eb3f6e46d77e417391",
+      "bytes": 4864
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/test_audits.py": {
+      "sha256": "2c00d82cb8d936daa6f534e40a60a8c403ab2592ff564d2d8006a00fa5f683e5",
+      "bytes": 2344
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/verification.json": {
+      "sha256": "2560770274e1bf779f91e43f07906a4117a0857b0655e8c196192e02437767c4",
+      "bytes": 87572
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/verify.py": {
+      "sha256": "c414843cc1f1d3dfff2cf635a79fc9e7ba955a76e68d1f77d3c24d5a0c514184",
+      "bytes": 15313
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/window_certificate.json": {
+      "sha256": "8735c5e75283bcd7ed43ae5cdd304120b68ab09832682833ca6b65918cabf6d4",
+      "bytes": 13372
+    },
+    "integration/20260916/README.md": {
+      "sha256": "c8ef22c043599ad660e3546720233fb3f1db856dd7d487a660a09703cbfaa930",
+      "bytes": 1966
+    },
+    "integration/20260916/REPLAY_PLATFORM.md": {
+      "sha256": "c4ce31de5a16dff50128f25928a357409103ab19c59b07f698c070c181d748cb",
+      "bytes": 645
+    },
+    "integration/20260916/review_manifest.json": {
+      "sha256": "7b4cdb43588b7f1a3a9b6c4b0d2afe397ff457fd2acb62120c9d704177e82572",
+      "bytes": 1174
+    },
+    "integration/20260916/reviews/collatz/REVIEW.md": {
+      "sha256": "f5536a96a4b276f2d242e9a49766a704bc17b0f7a95d4d61492cc9f239e8a62c",
+      "bytes": 11210
+    },
+    "integration/20260916/reviews/collatz/package_integrity.json": {
+      "sha256": "6988c74330e1e6bef4dfe864ff3fc47e9278f2a55d43d6721904264f79d4bcc5",
+      "bytes": 126
+    },
+    "integration/20260916/reviews/collatz_pr1/REPLAY_RECEIPT.json": {
+      "sha256": "98349a726273a6ebc2220e62a75bffa6302623707a46ef3b03008d89d76d8465",
+      "bytes": 1869
+    },
+    "integration/20260916/reviews/collatz_pr1/REVIEW.md": {
+      "sha256": "3cce02beef6c1996a34bf3b85f682eef0ce3e5be0739914a045d1736a779d09d",
+      "bytes": 8008
+    }
+  },
+  "scope": "This is a publication-byte inventory, not a blanket proof audit. Exact review scopes are in integration/20260916."
+}

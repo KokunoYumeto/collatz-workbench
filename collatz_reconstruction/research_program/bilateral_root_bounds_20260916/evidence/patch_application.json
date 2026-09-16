@@ -1,0 +1,9 @@
+{
+  "actual_patch_applied": true,
+  "existing_tracked_and_untracked_files_preserved": true,
+  "fixture_is_full_remote_checkout": false,
+  "inherited_dependency_files": 8,
+  "new_added_files": 17,
+  "patch_sha256": "dbc686701a58db533dd0fdfa6394c39e3720263232f4efc43702582af225ad4a",
+  "status": "PASS"
+}

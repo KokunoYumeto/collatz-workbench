@@ -1,0 +1,45 @@
+{
+  "branch": "research/stopped-cycle-cohomology-20260914",
+  "external_primary_attribution": [
+    {
+      "title": "Paradoxical behavior in Collatz sequences",
+      "url": "https://arxiv.org/html/2502.00948v5",
+      "used_as_proof_premise": false
+    },
+    {
+      "title": "Strongly sufficient sets and the distribution of arithmetic sequences in the 3x+1 graph",
+      "url": "https://arxiv.org/abs/1204.3904",
+      "used_as_proof_premise": false
+    }
+  ],
+  "local_predecessor": "Previously delivered height_window_reduction_20260916; definitions and two standalone source producer/auditor scripts reused with explicit new horizon and import map.",
+  "new_RH_estimate_imported": false,
+  "new_files_additive": true,
+  "prior_pending_packages_silently_imported": false,
+  "read_ref": "b2dac4c2cc4a5eedde0af36d6749390c77fa4a62",
+  "read_scope": "Complete relevant arithmetic, catalogue, operator and support-bound definitions; implementation rule priority; no claim of full repository checkout or replay.",
+  "repository": "KokunoYumeto/collatz-workbench",
+  "sources": [
+    {
+      "git_blob": "9a852a3602de5e0a57c8efe0240c47d4df3c3355",
+      "path": "collatz_reconstruction/research_program/ternary_join_reduction_20260916/note.md",
+      "use": "Old layer congruences, finite catalogue, exact staged retraction, coarse support bound and sharp crossing envelope."
+    },
+    {
+      "git_blob": "1f73ca46d103525f568343055467a012e7c1001d",
+      "path": "collatz_reconstruction/research_program/ternary_join_reduction_20260916/join_control.py",
+      "use": "Published original rule ordering; independently reconstructed in the new module."
+    },
+    {
+      "git_blob": "38e0ff63c9a25805890f3d2f36daa8ce166c41c6",
+      "path": "collatz_reconstruction/research_program/ternary_join_reduction_20260916/TASK_STATE.md",
+      "use": "Current remaining root and source-window targets."
+    },
+    {
+      "git_blob": "97f9ef5ad535f7ec18259d41fab6a3557be17d98",
+      "path": "collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/firstjet.py",
+      "use": "Only executable predecessor import, checked before importing; original integral path extraction."
+    }
+  ],
+  "zeta_write": false
+}
