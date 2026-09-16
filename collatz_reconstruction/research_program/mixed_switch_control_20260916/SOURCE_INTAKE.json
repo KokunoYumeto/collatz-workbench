@@ -1,0 +1,50 @@
+{
+  "collatz_base": "d0c987b12c20be5978f496ab1ef2a60018caa5e5",
+  "date": "2026-09-16",
+  "formal_proof_assistant_execution": false,
+  "local_predecessors": [
+    {
+      "file": "Collatz_Positive_Shadow_Continuation_20260916.zip",
+      "scope": "Pending arithmetic and single-packet shadow sources inspected; none of their numerical certificates is assumed by this proof",
+      "sha256": "c72595283cbd7caab6da07f0aaae49a253527e6f7204dde0d6c77af6f1bf17ef"
+    }
+  ],
+  "read_sources": [
+    {
+      "blob": "bbbe177d24b8af964698396761292f528b07baca",
+      "path": "CURRENT_RESEARCH.md",
+      "repository": "KokunoYumeto/zeta-function-research-reader",
+      "scope": "Current guide, not a full audit of its 549-page paper"
+    },
+    {
+      "path": "workbenches/splitzero-tandem/continuations/20260915-primitive-band-continuation/00_CONTINUE_HERE.md",
+      "repository": "KokunoYumeto/zeta-function-research-reader",
+      "scope": "Current original mixed allocation guide; no numerical bound imported"
+    },
+    {
+      "blob": "a8b1300ea8b842ab1340d67e44cd6da2f71e8e62",
+      "path": "workbenches/splitzero-tandem/continuations/20260913-accepted-followups/deligne-mixed-control/sources/MCF.tex",
+      "repository": "KokunoYumeto/zeta-function-research-reader",
+      "scope": "Original coefficient faces MCF6-10 and displayed source definitions"
+    },
+    {
+      "blob": "e50623727112e925961ca9e7ad9accbe78758cf1",
+      "path": "workbenches/splitzero-tandem/continuations/20260913-accepted-followups/deligne-mixed-control/sources/MRE.tex",
+      "repository": "KokunoYumeto/zeta-function-research-reader",
+      "scope": "Complete extension/control fragment MRE1-33, especially original section defect"
+    },
+    {
+      "blob": "97f9ef5ad535f7ec18259d41fab6a3557be17d98",
+      "path": "collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/firstjet.py",
+      "repository": "KokunoYumeto/collatz-workbench",
+      "scope": "Unchanged local bytes checked against authenticated Git blob; original integral witness validator"
+    },
+    {
+      "external": "10.1007/s12188-025-00293-9",
+      "scope": "Publisher primary HTML Theorem 2.1; exact rational two-log specialization"
+    }
+  ],
+  "unpublished_local_codex_state_accessed": false,
+  "zeta_files_modified": false,
+  "zeta_read_only_pin": "1efd53337561d8f67cf0ac1d119acdaa222644c3"
+}

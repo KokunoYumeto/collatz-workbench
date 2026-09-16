@@ -1,0 +1,31 @@
+name: Collatz mixed-support switch control
+
+'on':
+  pull_request:
+    paths:
+      - 'collatz_reconstruction/research_program/**'
+      - '.github/workflows/collatz-mixed-switch-control.yml'
+  push:
+    paths:
+      - 'collatz_reconstruction/research_program/mixed_switch_control_20260916/**'
+      - '.github/workflows/collatz-mixed-switch-control.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - name: Replay the unchanged original first-jet pair
+        run: python -B collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/replay.py
+      - name: Verify the complete mixed-order arithmetic and both executions
+        run: python -B collatz_reconstruction/research_program/mixed_switch_control_20260916/replay.py
