@@ -1,0 +1,57 @@
+name: Collatz cumulative source export
+
+'on':
+  push:
+    branches: ['research/packet-lifts-and-cumulative-20260916']
+    paths: ['.github/workflows/collatz-cumulative-source-export.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: '9453b5306b3a897389dece309f9c119dffbcc489'
+          persist-credentials: false
+      - name: Export the pinned research sources and explicit file identities
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib, json, subprocess, zipfile
+          base = '9453b5306b3a897389dece309f9c119dffbcc489'
+          actual = subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip()
+          if actual != base:
+              raise SystemExit('Unexpected source revision')
+          roots = ('collatz_reconstruction/research_program/', 'integration/20260916/')
+          guides = {'README.md','CONTRIBUTING.md','PUBLICATION_SCOPE.md','RESEARCH_MAP.json'}
+          rows = []
+          output = Path('cumulative-export'); output.mkdir()
+          with zipfile.ZipFile(output/'research-sources.zip','w',zipfile.ZIP_DEFLATED,compresslevel=6) as archive:
+              for line in subprocess.check_output(['git','ls-tree','-r',base],text=True).splitlines():
+                  meta, name = line.split('\t',1)
+                  mode, kind, blob = meta.split()
+                  if kind != 'blob' or not (name.startswith(roots) or name in guides):
+                      continue
+                  data = Path(name).read_bytes()
+                  calculated = hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+                  if calculated != blob:
+                      raise SystemExit('Source identity mismatch: '+name)
+                  include = Path(name).suffix.lower() not in {'.pdf','.zip','.png','.jpg','.jpeg','.webp'}
+                  rows.append({'path':name,'git_blob':blob,'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data),'included':include})
+                  if include:
+                      archive.writestr(name,data)
+              receipt = {'source_commit':base,'scope':list(roots)+sorted(guides),'binary_preview_exclusions':['.pdf','.zip','.png','.jpg','.jpeg','.webp'],'files':rows}
+              archive.writestr('REMOTE_SOURCE_MANIFEST.json',json.dumps(receipt,indent=2)+'\n')
+          print(json.dumps({'source_commit':base,'included_files':sum(r['included'] for r in rows),'recorded_files':len(rows),'archive_sha256':hashlib.sha256((output/'research-sources.zip').read_bytes()).hexdigest()},sort_keys=True))
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: collatz-pinned-research-sources
+          path: cumulative-export/research-sources.zip
+          compression-level: 0
+          if-no-files-found: error
+          retention-days: 14
