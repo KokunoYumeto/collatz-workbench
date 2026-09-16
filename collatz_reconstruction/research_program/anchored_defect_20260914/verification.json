@@ -1,0 +1,865 @@
+{
+  "algebra": {
+    "edge_examples": [
+      {
+        "a": 2,
+        "anchored_forcing": {
+          "present": true,
+          "value": "0"
+        },
+        "ratio": null,
+        "ratio_domain": "basepoint_relation_0_equals_0",
+        "source": 1,
+        "source_displacement": 0,
+        "target": 1,
+        "target_displacement": 0
+      },
+      {
+        "a": 1,
+        "anchored_forcing": {
+          "present": true,
+          "value": "2"
+        },
+        "ratio": {
+          "present": true,
+          "value": "4/3"
+        },
+        "ratio_domain": "positive",
+        "source": 3,
+        "source_displacement": 2,
+        "target": 5,
+        "target_displacement": 4
+      },
+      {
+        "a": 4,
+        "anchored_forcing": {
+          "present": true,
+          "value": "-12"
+        },
+        "ratio": {
+          "present": true,
+          "value": "0"
+        },
+        "ratio_domain": "present_zero_at_entry",
+        "source": 5,
+        "source_displacement": 4,
+        "target": 1,
+        "target_displacement": 0
+      },
+      {
+        "a": 2,
+        "anchored_forcing": {
+          "present": true,
+          "value": "0"
+        },
+        "ratio": {
+          "present": true,
+          "value": "1"
+        },
+        "ratio_domain": "positive",
+        "source": 9,
+        "source_displacement": 8,
+        "target": 7,
+        "target_displacement": 6
+      },
+      {
+        "a": 3,
+        "anchored_forcing": {
+          "present": true,
+          "value": "-4"
+        },
+        "ratio": {
+          "present": true,
+          "value": "8/9"
+        },
+        "ratio_domain": "positive",
+        "source": 13,
+        "source_displacement": 12,
+        "target": 5,
+        "target_displacement": 4
+      }
+    ],
+    "positive_rational_period_fixtures": 111,
+    "word_fixtures": 1364
+  },
+  "all_inherited_files_unchanged": true,
+  "checks": {
+    "404-rise sector has exactly one excess after previous exclusion": 1,
+    "CRT image and inverse exact": 35195,
+    "actual descent contradicts a cycle minimum": 8131,
+    "actual excess exit not convergence": 35632,
+    "all larger lengths excluded": 1,
+    "all-length 403-rise period ceiling": 1,
+    "anchored exact minimum ceiling": 1,
+    "anchored marked numerator": 1364,
+    "basepoint zero relation retained without division": 1,
+    "ceiling retained": 1,
+    "closed anchored period with original clocks": 111,
+    "complete 403-sector exclusion": 1,
+    "complete cover explicitly certified": 3,
+    "complete root cardinality": 3,
+    "complete two-residue 404 minimum count": 1,
+    "empty and occupied labels stay present": 126612,
+    "entire high-exponent tail predicate": 35632,
+    "entry zero is supported": 1,
+    "every possible minimum covered exactly once": 3,
+    "every retained original exponent is exact": 177567,
+    "exact adjacent-turn period factor": 65,
+    "exact anchored affine translation": 1364,
+    "exact minimum CRT restriction with inverse predecessor": 1023,
+    "exit original source-image parameter": 35632,
+    "exit uses only the justified single-traversal prefix": 2,
+    "exponent two forcing zero retained": 1,
+    "exponent two period factor is one": 1,
+    "external zero and multiplicative identity": 8,
+    "forcing class unchanged by boundary": 1364,
+    "incoming-three exact endpoint comparisons": 2,
+    "independent complete classification counts": 3,
+    "independent complete period-window scan": 971,
+    "independent disjoint node partition": 13081,
+    "independent fiber first": 126612,
+    "independent fiber last": 126612,
+    "independent interpreter matches full leaf word and kind": 43763,
+    "independent original edge": 13524,
+    "independent original-fiber count": 126612,
+    "malformed and false proof controls rejected": 1,
+    "next integer excluded": 1,
+    "no earlier descent on a terminal fiber": 177567,
+    "no overlapping terminal fibers": 43763,
+    "ordered-turn-aware cycle inequality": 111,
+    "original finite-path period with endpoint": 13524,
+    "original full affine endpoint retained": 43763,
+    "original matrix on anchored rational primitive": 1364,
+    "original parameter retained": 35195,
+    "positive anchored period bound": 111,
+    "present zero not external absence": 1,
+    "reflection preserves addition": 64,
+    "reflection preserves multiplication": 64,
+    "retained prefix excess and tail bound": 35632,
+    "support preserves addition": 64,
+    "support preserves multiplication": 64,
+    "supported associativity": 512,
+    "supported distributivity": 512,
+    "trivial anchored primitive": 1364,
+    "two 404-sector minimum ceilings": 1,
+    "unique admissible exponent": 1,
+    "unique period and exponent sector": 1,
+    "unquotiented original path boundary": 43763
+  },
+  "cover": {
+    "complete": true,
+    "example_leaves": [
+      {
+        "fiber": {
+          "anchor": 19,
+          "compatible": true,
+          "count": 3641,
+          "first": 99811,
+          "gcd": 4,
+          "high": 274546,
+          "label_present": true,
+          "last": 274531,
+          "low": 99781,
+          "lower_parameter": 2079,
+          "modulus": 12,
+          "parameter_offset": 1,
+          "q": 16,
+          "r": 3,
+          "residue": 7,
+          "residue_defect": 0,
+          "step": 48,
+          "upper_parameter": 5719
+        },
+        "kind": "exit",
+        "next_exponent_lower_bound": 3,
+        "prefix_image_anchor": 5,
+        "prefix_image_step": 6,
+        "prefix_source_anchor": 3,
+        "prefix_source_step": 4,
+        "remaining_excess": 0,
+        "tail_parameter_offset": 0,
+        "word": [
+          1
+        ]
+      },
+      {
+        "C": 23,
+        "D": 5,
+        "L": 27,
+        "U": 32,
+        "fiber": {
+          "anchor": 43,
+          "compatible": true,
+          "count": 910,
+          "first": 99883,
+          "gcd": 4,
+          "high": 274546,
+          "label_present": true,
+          "last": 274411,
+          "low": 99781,
+          "lower_parameter": 520,
+          "modulus": 12,
+          "parameter_offset": 0,
+          "q": 64,
+          "r": 43,
+          "residue": 7,
+          "residue_defect": 0,
+          "step": 192,
+          "upper_parameter": 1429
+        },
+        "image_anchor": 37,
+        "image_step": 54,
+        "kind": "descent",
+        "word": [
+          1,
+          2,
+          2
+        ]
+      }
+    ],
+    "full_tree_sha256": "fcdfb96dcd0308046d95318e5685db0e0b09cb33c3daea09cf1b59399abca7d3",
+    "incompatible_leaf_labels": 2,
+    "leaf_labels": 8871,
+    "max_nonempty_prefix": 32,
+    "node_count": 2957,
+    "occupied_leaf_kinds": {
+      "descent": 17,
+      "exit": 1133
+    },
+    "occupied_leaf_labels": 1150,
+    "parameters": {
+      "depth_cap": 64,
+      "excess_budget": 0,
+      "high": 274546,
+      "low": 99781,
+      "modulus": 12,
+      "residue": 7
+    },
+    "point_counts": {
+      "descent": 1165,
+      "exit": 13399
+    },
+    "present_empty_leaf_labels": 7721,
+    "root": {
+      "anchor": 7,
+      "compatible": true,
+      "count": 14564,
+      "first": 99787,
+      "gcd": 2,
+      "high": 274546,
+      "label_present": true,
+      "last": 274543,
+      "low": 99781,
+      "lower_parameter": 8315,
+      "modulus": 12,
+      "parameter_offset": 3,
+      "q": 2,
+      "r": 1,
+      "residue": 7,
+      "residue_defect": 0,
+      "step": 12,
+      "upper_parameter": 22878
+    }
+  },
+  "exact_checks": 1308345,
+  "independent": {
+    "counts": {
+      "descent": 1165,
+      "exit": 13399
+    },
+    "example_witnesses": [
+      {
+        "chain": [
+          99787,
+          149681
+        ],
+        "excess_used": 0,
+        "kind": "exit",
+        "next_exponent": 4,
+        "source": 99787,
+        "terminal": 112261,
+        "word": [
+          1,
+          2
+        ]
+      },
+      {
+        "chain": [
+          99799,
+          149699
+        ],
+        "excess_used": 0,
+        "kind": "exit",
+        "next_exponent": 4,
+        "source": 99799,
+        "terminal": 224549,
+        "word": [
+          1,
+          1
+        ]
+      },
+      {
+        "chain": [
+          187171
+        ],
+        "excess_used": 0,
+        "kind": "exit",
+        "next_exponent": 5,
+        "source": 187171,
+        "terminal": 280757,
+        "word": [
+          1
+        ]
+      },
+      {
+        "chain": [
+          274543,
+          411815,
+          617723,
+          926585,
+          694939,
+          1042409,
+          781807,
+          1172711,
+          1759067,
+          2638601,
+          1978951,
+          2968427,
+          4452641,
+          3339481,
+          2504611
+        ],
+        "excess_used": 0,
+        "kind": "exit",
+        "next_exponent": 5,
+        "source": 274543,
+        "terminal": 3756917,
+        "word": [
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1
+        ]
+      }
+    ],
+    "first_source": 99787,
+    "independent_rows_sha256": "c7b6c48c8dcfe732429250868e12dc39a4edc660fdfb393cb544f91d41e7c27c",
+    "largest_observed_exit_exponent": 20,
+    "last_source": 274543,
+    "max_allowed_path_length": 32,
+    "sources": 14564
+  },
+  "rejected_controls": [
+    "absent nonzero",
+    "zero source",
+    "even source",
+    "negative depth",
+    "reversed source interval",
+    "zero modulus",
+    "noncontracting period",
+    "zero rise count",
+    "missing occupied label",
+    "forged original word",
+    "empty support erased",
+    "alphabet exit promoted to descent",
+    "depth cap mistaken for proof"
+  ],
+  "scope": "anchored product and finite full minimum-sector exclusion, not global convergence",
+  "sector": {
+    "all_cycles_with_at_most_403_rises_excluded_by_this_certificate": true,
+    "anchored_minimum_ceiling": 274546,
+    "common_verified_odd_source_bound_unchanged": 99779,
+    "minimum_modulus": 12,
+    "minimum_residue": 7,
+    "next_404_rise_window": {
+      "cutoff_witness_length": 974,
+      "inequalities_checked_over_integers": true,
+      "minimum_lower_bound": 99781,
+      "period_ceiling": 973,
+      "rise_budget": 404,
+      "windows": [
+        {
+          "A": 1539,
+          "k_budget": 404,
+          "least_rises": 403,
+          "m": 971,
+          "maximum_excess": 1
+        }
+      ]
+    },
+    "previous_unanchored_ceiling": 330749,
+    "reduction": {
+      "cutoff_witness_length": 972,
+      "inequalities_checked_over_integers": true,
+      "minimum_lower_bound": 99781,
+      "period_ceiling": 971,
+      "rise_budget": 403,
+      "windows": [
+        {
+          "A": 1539,
+          "k_budget": 403,
+          "least_rises": 403,
+          "m": 971,
+          "maximum_excess": 0
+        }
+      ]
+    }
+  },
+  "source_checkpoint": "6a30f1dc23110fae0abbe3b3bd5e60072a842385",
+  "status": "PASS",
+  "unit_excess_sector": {
+    "A": 1539,
+    "all_at_most_404_rises_excluded": true,
+    "common_source_bound_unchanged": 99779,
+    "m": 971,
+    "next_405_rise_window": {
+      "cutoff_witness_length": 976,
+      "inequalities_checked_over_integers": true,
+      "minimum_lower_bound": 99781,
+      "period_ceiling": 975,
+      "rise_budget": 405,
+      "windows": [
+        {
+          "A": 1539,
+          "k_budget": 405,
+          "least_rises": 403,
+          "m": 971,
+          "maximum_excess": 2
+        }
+      ]
+    },
+    "ones": 404,
+    "records": [
+      {
+        "budget_on_tested_prefix": 1,
+        "cover": {
+          "complete": true,
+          "example_leaves": [
+            {
+              "fiber": {
+                "anchor": 67,
+                "compatible": true,
+                "count": 1828,
+                "first": 99811,
+                "gcd": 4,
+                "high": 275227,
+                "label_present": true,
+                "last": 275203,
+                "low": 99781,
+                "lower_parameter": 1039,
+                "modulus": 12,
+                "parameter_offset": 2,
+                "q": 32,
+                "r": 3,
+                "residue": 7,
+                "residue_defect": 0,
+                "step": 96,
+                "upper_parameter": 2866
+              },
+              "kind": "exit",
+              "next_exponent_lower_bound": 4,
+              "prefix_image_anchor": 5,
+              "prefix_image_step": 6,
+              "prefix_source_anchor": 3,
+              "prefix_source_step": 4,
+              "remaining_excess": 1,
+              "tail_parameter_offset": 0,
+              "word": [
+                1
+              ]
+            },
+            {
+              "C": 5,
+              "D": 7,
+              "L": 9,
+              "U": 16,
+              "fiber": {
+                "anchor": 19,
+                "compatible": true,
+                "count": 1827,
+                "first": 99859,
+                "gcd": 4,
+                "high": 275227,
+                "label_present": true,
+                "last": 275155,
+                "low": 99781,
+                "lower_parameter": 1040,
+                "modulus": 12,
+                "parameter_offset": 0,
+                "q": 32,
+                "r": 19,
+                "residue": 7,
+                "residue_defect": 0,
+                "step": 96,
+                "upper_parameter": 2866
+              },
+              "image_anchor": 11,
+              "image_step": 18,
+              "kind": "descent",
+              "word": [
+                1,
+                3
+              ]
+            }
+          ],
+          "full_tree_sha256": "df6ce4ffbbcb81eea66938cf4f1b71c49d55bea38a89b7a096b73e12eb711bc9",
+          "incompatible_leaf_labels": 3,
+          "leaf_labels": 24762,
+          "max_nonempty_prefix": 39,
+          "node_count": 7267,
+          "occupied_leaf_kinds": {
+            "descent": 181,
+            "exit": 2060
+          },
+          "occupied_leaf_labels": 2241,
+          "parameters": {
+            "depth_cap": 64,
+            "excess_budget": 1,
+            "high": 275227,
+            "low": 99781,
+            "modulus": 12,
+            "residue": 7
+          },
+          "point_counts": {
+            "descent": 5798,
+            "exit": 8823
+          },
+          "present_empty_leaf_labels": 22521,
+          "root": {
+            "anchor": 7,
+            "compatible": true,
+            "count": 14621,
+            "first": 99787,
+            "gcd": 2,
+            "high": 275227,
+            "label_present": true,
+            "last": 275227,
+            "low": 99781,
+            "lower_parameter": 8315,
+            "modulus": 12,
+            "parameter_offset": 3,
+            "q": 2,
+            "r": 1,
+            "residue": 7,
+            "residue_defect": 0,
+            "step": 12,
+            "upper_parameter": 22935
+          }
+        },
+        "independent": {
+          "counts": {
+            "descent": 5798,
+            "exit": 8823
+          },
+          "example_witnesses": [
+            {
+              "chain": [
+                99787,
+                149681
+              ],
+              "excess_used": 0,
+              "kind": "exit",
+              "next_exponent": 4,
+              "source": 99787,
+              "terminal": 112261,
+              "word": [
+                1,
+                2
+              ]
+            },
+            {
+              "chain": [
+                99799,
+                149699
+              ],
+              "excess_used": 0,
+              "kind": "exit",
+              "next_exponent": 4,
+              "source": 99799,
+              "terminal": 224549,
+              "word": [
+                1,
+                1
+              ]
+            },
+            {
+              "chain": [
+                187507,
+                281261
+              ],
+              "kind": "descent",
+              "source": 187507,
+              "terminal": 105473,
+              "word": [
+                1,
+                3
+              ]
+            },
+            {
+              "chain": [
+                275227,
+                412841,
+                309631,
+                464447,
+                696671,
+                1045007,
+                1567511,
+                2351267
+              ],
+              "excess_used": 0,
+              "kind": "exit",
+              "next_exponent": 5,
+              "source": 275227,
+              "terminal": 3526901,
+              "word": [
+                1,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            }
+          ],
+          "first_source": 99787,
+          "independent_rows_sha256": "712859445e4fada68770a97407dad045df622d639e95370b8700614e0f89c4ea",
+          "largest_observed_exit_exponent": 20,
+          "last_source": 275227,
+          "max_allowed_path_length": 39,
+          "sources": 14621
+        },
+        "justified_prefix_horizon": 971,
+        "minimum_residue": 7
+      },
+      {
+        "budget_on_tested_prefix": 0,
+        "cover": {
+          "complete": true,
+          "example_leaves": [
+            {
+              "fiber": {
+                "anchor": 35,
+                "compatible": true,
+                "count": 3644,
+                "first": 99827,
+                "gcd": 4,
+                "high": 274717,
+                "label_present": true,
+                "last": 274691,
+                "low": 99781,
+                "lower_parameter": 2079,
+                "modulus": 12,
+                "parameter_offset": 2,
+                "q": 16,
+                "r": 3,
+                "residue": 11,
+                "residue_defect": 0,
+                "step": 48,
+                "upper_parameter": 5722
+              },
+              "kind": "exit",
+              "next_exponent_lower_bound": 3,
+              "prefix_image_anchor": 5,
+              "prefix_image_step": 6,
+              "prefix_source_anchor": 3,
+              "prefix_source_step": 4,
+              "remaining_excess": 0,
+              "tail_parameter_offset": 0,
+              "word": [
+                1
+              ]
+            },
+            {
+              "C": 23,
+              "D": 5,
+              "L": 27,
+              "U": 32,
+              "fiber": {
+                "anchor": 107,
+                "compatible": true,
+                "count": 911,
+                "first": 99947,
+                "gcd": 4,
+                "high": 274717,
+                "label_present": true,
+                "last": 274667,
+                "low": 99781,
+                "lower_parameter": 520,
+                "modulus": 12,
+                "parameter_offset": 1,
+                "q": 64,
+                "r": 43,
+                "residue": 11,
+                "residue_defect": 0,
+                "step": 192,
+                "upper_parameter": 1430
+              },
+              "image_anchor": 37,
+              "image_step": 54,
+              "kind": "descent",
+              "word": [
+                1,
+                2,
+                2
+              ]
+            }
+          ],
+          "full_tree_sha256": "3b345641b0afcb1aa597e8220ffef4bec87cab991595a668397169650ab49b80",
+          "incompatible_leaf_labels": 2,
+          "leaf_labels": 8571,
+          "max_nonempty_prefix": 32,
+          "node_count": 2857,
+          "occupied_leaf_kinds": {
+            "descent": 20,
+            "exit": 1107
+          },
+          "occupied_leaf_labels": 1127,
+          "parameters": {
+            "depth_cap": 64,
+            "excess_budget": 0,
+            "high": 274717,
+            "low": 99781,
+            "modulus": 12,
+            "residue": 11
+          },
+          "point_counts": {
+            "descent": 1168,
+            "exit": 13410
+          },
+          "present_empty_leaf_labels": 7444,
+          "root": {
+            "anchor": 11,
+            "compatible": true,
+            "count": 14578,
+            "first": 99791,
+            "gcd": 2,
+            "high": 274717,
+            "label_present": true,
+            "last": 274715,
+            "low": 99781,
+            "lower_parameter": 8315,
+            "modulus": 12,
+            "parameter_offset": 5,
+            "q": 2,
+            "r": 1,
+            "residue": 11,
+            "residue_defect": 0,
+            "step": 12,
+            "upper_parameter": 22892
+          }
+        },
+        "independent": {
+          "counts": {
+            "descent": 1168,
+            "exit": 13410
+          },
+          "example_witnesses": [
+            {
+              "chain": [
+                99791,
+                149687,
+                224531
+              ],
+              "excess_used": 0,
+              "kind": "exit",
+              "next_exponent": 3,
+              "source": 99791,
+              "terminal": 336797,
+              "word": [
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "chain": [
+                99803,
+                149705,
+                112279,
+                168419
+              ],
+              "excess_used": 0,
+              "kind": "exit",
+              "next_exponent": 7,
+              "source": 99803,
+              "terminal": 252629,
+              "word": [
+                1,
+                2,
+                1,
+                1
+              ]
+            },
+            {
+              "chain": [
+                187259,
+                280889,
+                210667,
+                316001,
+                237001
+              ],
+              "kind": "descent",
+              "source": 187259,
+              "terminal": 177751,
+              "word": [
+                1,
+                2,
+                1,
+                2,
+                2
+              ]
+            },
+            {
+              "chain": [
+                274715,
+                412073,
+                309055,
+                463583,
+                695375,
+                1043063,
+                1564595
+              ],
+              "excess_used": 0,
+              "kind": "exit",
+              "next_exponent": 3,
+              "source": 274715,
+              "terminal": 2346893,
+              "word": [
+                1,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            }
+          ],
+          "first_source": 99791,
+          "independent_rows_sha256": "bed9dfeaef9e9d51442a78e35cc8e96be4227f372a29d143e8d718ac0accf801",
+          "largest_observed_exit_exponent": 15,
+          "last_source": 274715,
+          "max_allowed_path_length": 32,
+          "sources": 14578
+        },
+        "justified_prefix_horizon": 970,
+        "minimum_residue": 11
+      }
+    ],
+    "threes": 1,
+    "twos": 566
+  }
+}

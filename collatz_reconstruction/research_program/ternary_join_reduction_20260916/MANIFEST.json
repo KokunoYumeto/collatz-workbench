@@ -1,0 +1,49 @@
+{
+  "files": {
+    "README.md": {
+      "algorithm": "sha256",
+      "digest": "55da833fe2e0ae3db41b909e83439f3bf419d9978dbc231e6d1e90995d7249d8"
+    },
+    "SOURCE_INTAKE.json": {
+      "algorithm": "sha256",
+      "digest": "cbb9beafc4d12b5436dc119c901275334f618d420b27113f97040b7c31971c5d"
+    },
+    "TASK_STATE.md": {
+      "algorithm": "sha256",
+      "digest": "79130a8945fd1e712cc7ca35b6cebc1ddd538964c6e269f3b12dd03e07bb0952"
+    },
+    "audit_sources.py": {
+      "algorithm": "sha256",
+      "digest": "261fbe3cf0fea724aad8e23eaa13eed83bd21ac494ade2ad4c72cc1cce67bfc2"
+    },
+    "join_control.py": {
+      "algorithm": "sha256",
+      "digest": "2cfbb9be46d406d92a009a934601659550fe82574c70cce3fbc66e3100ab324d"
+    },
+    "note.md": {
+      "algorithm": "git-blob-sha1",
+      "digest": "9a852a3602de5e0a57c8efe0240c47d4df3c3355"
+    },
+    "replay.py": {
+      "algorithm": "sha256",
+      "digest": "7212d68358a4a05b98535d73ccd0b47939d9bf25172d20d00bf5c49088078f4d"
+    },
+    "scan_sources.py": {
+      "algorithm": "sha256",
+      "digest": "ba060324bc4d8034e61395c143f31e545b6c6cd5bfba02415e153d46ce5a8817"
+    },
+    "verification.json": {
+      "algorithm": "sha256",
+      "digest": "fad16e5239b0dcafce1a655832596988bc22ccaa1001afd2c223c728a3f83d0e"
+    },
+    "verify.py": {
+      "algorithm": "sha256",
+      "digest": "78dfeacc5cc0a82e5d215ffba0d1538b81311bde4a4c5fdde49c7a89de874de9"
+    },
+    "window_certificate.json": {
+      "algorithm": "sha256",
+      "digest": "b7da8053319c7f7e7b46c66a741292dbd09b4be2039b13e429977c759f900839"
+    }
+  },
+  "format": "collatz-exact-source-manifest-v1"
+}

@@ -1,0 +1,98 @@
+{
+  "external_proof_dependency": "Matveev rational two-log bound, as specified in note.md",
+  "family_fixtures": {
+    "accepted": 3149,
+    "fixtures": 4914,
+    "retained": 1765
+  },
+  "full_result_bytes": 32573,
+  "full_result_sha256": "0ce86e1f386210c7dd36e73bf03715e32adee34060ccf2ee42b9745c34d2059d",
+  "gap_scan": {
+    "canonical_rows_sha256": "46177008ca271ac454e6af5a465061a820e9a3e7c2bdb8c965fa740046bd7393",
+    "domain": "alpha,beta>=1; r>=2; 18<=M=r*(2alpha+7beta)<256; 1<=s<M; B first crossing >=2s",
+    "minimum_margin_row": [
+      1,
+      1,
+      2,
+      18,
+      2,
+      4,
+      808182895,
+      801844969
+    ],
+    "rows": 210527,
+    "triples": 1197
+  },
+  "logarithm": {
+    "denominator_sum": 273818166287419,
+    "exact_interval_sha256": "05dfc9f395f24d6beadadb1eb5ec80b799802cd53b75e4f21b6f6c02cf9fafac",
+    "farey_determinant": 1,
+    "gap_width": "1/2^128",
+    "large_size_bound": 1000000000000,
+    "left": "83130157078217/52449289519716",
+    "log_terms": 160,
+    "matveev_majorant": "628689600",
+    "right": "350861368503572/221368876767703",
+    "size_cutoff": 256
+  },
+  "original_return_equations": 449723,
+  "point_examples": [
+    {
+      "endpoint": 1527868265,
+      "point_witness_sha256": "c24bc8aee0691faa537d27c6632eadb774003a21210b6ce2b5ab45e0c6218f39",
+      "repetitions": 2,
+      "returns_to_one": 93,
+      "source": 2823006875,
+      "symbols": "PQ",
+      "tail": [
+        3
+      ]
+    },
+    {
+      "endpoint": 5396745598079,
+      "point_witness_sha256": "6aab497cf1e1fcf809fec6a59af4d06bdbc3d4975a5eb2a0d84327b96c6899d0",
+      "repetitions": 3,
+      "returns_to_one": 128,
+      "source": 8300162951835,
+      "symbols": "PQ",
+      "tail": [
+        3
+      ]
+    },
+    {
+      "endpoint": 9070365730002260119033546999,
+      "point_witness_sha256": "00453644afb62f4710fd10d97d94b2f73e4cc66830dd10a51b7b0ff3c61fbb0d",
+      "repetitions": 2,
+      "returns_to_one": 256,
+      "source": 9535679069403344498661387515,
+      "symbols": "PPQQPQ",
+      "tail": [
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "rejected_controls": [
+    "missing_Q",
+    "missing_P",
+    "unknown_packet",
+    "negative_phase",
+    "outside_phase",
+    "single_repeat",
+    "nonfalling_tail",
+    "empty_tail",
+    "fractional_repeat",
+    "conductor_false_pair",
+    "fake_affine_word",
+    "mutated_C",
+    "mutated_source_anchor",
+    "mutated_target_step",
+    "mutated_mixed_displacement_numerator",
+    "mutated_count_uniform_gap_margin"
+  ],
+  "scope": "Exact written proof plus complete finite gap certificate and bounded regression; no global convergence claim",
+  "status": "PASS",
+  "total_exact_checks": 1106639
+}

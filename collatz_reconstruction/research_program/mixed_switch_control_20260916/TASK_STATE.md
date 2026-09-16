@@ -1,0 +1,13 @@
+# Continuation state: mixed switches, 16 September 2026
+
+The usable result is the all-order mixed-core descent theorem in note.md Sections 4-7. Every finite P/Q core containing both symbols, at every exponent-level phase, repeated r>=2, descends after any falling tail that reaches the original coefficient crossing. Its denominator lattice, raw numerator, all original sources and first-jet descent relations remain attached.
+
+The exact mixed overlap quotient is Z/12Z, with induced filtration defect of order gcd(12,2^k). The sequential switch is not a simultaneous independent pair: P^r -> Q^s has 9^r*t+6=2048^s*z; reverse switching has cross-term -6. The source parameter and both inverses are retained. Those equations have arbitrarily deep positive reset fibres, so a bounded conductor index is not a proof of uniformly bounded reset depth.
+
+The complete ordering dependence survives: adjacent PQ/QP exchange changes C by -1668 times the original prefix-U and suffix-L. The positive-average bound is a bound on that exact coefficient, not its replacement. The common universal triangular extension gives the actual comparison with the inspected Zeta extension-control source. No current Gamma or mixed-metric inequality is transferred without a further source map.
+
+Next arithmetic calculation: operate on positive sources whose original switching word has not supplied an admitted repeated mixed core and contracting falling tail. Retain the exact parameter recursion at every +6/-6 switch; test complete families, not only word frequencies. A finite nonrepeating switch list is an unresolved cylinder, not an infinite source witness. Extend the denominator-aware section calculation to varying blocks with a proved decrease or a complete finite exception description. A claimed infinite obstruction must retain one ordinary positive source, not merely nonempty finite dyadic cylinders.
+
+An actual strict descent supplies epsilon*(original path) in the unchanged first-jet complex. At a lower endpoint use its original integral witness and splice; never divide by a cycle period or silently rationalize its torsion. The three delivered point examples have independent complete arrival certificates, but their entire variable-endpoint families are certified for descent, not automatically for arrival.
+
+The current theorem excludes its complete positive-cycle ordering families and possible nonbase component minima. It does not cover all positive sources. The standing full-source target remains the vanishing of the original integral first-jet comparison kernel, with its source and original relation module retained.

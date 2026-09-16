@@ -1,0 +1,539 @@
+# Mixed-support section control and arbitrary mixed-core Collatz descent
+
+16 September 2026. Additive continuation in `KokunoYumeto/collatz-workbench`.
+Authenticated Collatz base: `d0c987b12c20be5978f496ab1ef2a60018caa5e5`.
+Read-only Zeta source pin: `1efd53337561d8f67cf0ac1d119acdaa222644c3`.
+
+This note proves a new arithmetic descent result for every ordering of two specified packet types, every exponent-level phase, every repetition count at least two, and every contracting falling tail. It also computes the exact mixed coordinate compatibility and order-dependent affine correction. The proof does not identify Split-Zero support with the weighted-automata term “history.” It retains the original integral source, masks, maps, affine numerators and first-jet witnesses. The full quantitative Zeta estimates are not premises.
+
+## 1. Source intake and the mathematical arrow from mixed extension control
+
+The current Zeta guide describes original source/target quotient metrics, simultaneous mixed rows, and a retained boundary quotient. Its remaining native long-return allocation is not imported as a Collatz estimate. The specific source read and used structurally is the earlier complete mixed-control fragment `MRE.tex`, equations MRE7–12 and MRE30–33. It retains a rank-two extension, its original action, and the actual section defect even when an auxiliary diagonal action admits a section. `MCF.tex`, MCF6–10, retains all independent coefficient masks and their zero-insertion maps. The current guide and these exact source identities are recorded in `SOURCE_INTAKE.json`.
+
+Here is a common typed construction, rather than a claim based on the word “mixed.” Set
+
+\[
+ R_0=\mathbb Z[\lambda,\mu,\kappa],\quad
+ E_0=R_0e_1\oplus R_0e_2,\quad
+ t\bigm|E_0=\begin{pmatrix}\lambda&\kappa\\0&\mu\end{pmatrix}.
+\]
+
+The maps \(a\mapsto ae_1\) and \(ae_1+be_2\mapsto b\) give the exact sequence of \(R_0[t]\)-modules
+
+\[
+0\longrightarrow R_{0,\lambda}\longrightarrow E_0
+\longrightarrow R_{0,\mu}\longrightarrow0. \tag{1}
+\]
+
+Each term is free over \(R_0\). Every coefficient evaluation below therefore preserves the displayed underlying split exact sequence, and the matrices prove the intertwining equations. For the section \(s_z(1)=e_2+ze_1\),
+
+\[
+(ts_z-s_z\mu)(1)=(\kappa+(\lambda-\mu)z)e_1. \tag{2}
+\]
+
+In MRE, interchange its fixed basis order from \((1,u)\) to \((u,1)\), with inverse the same permutation. The arithmetic operator becomes upper triangular. Evaluation
+
+\[
+(\lambda,\mu,\kappa)\mapsto
+(a^\rho,a^\rho,a^\rho\log a)
+\]
+
+gives exactly MRE10–11 and MRE32, including the original parameters and coefficient of the nilpotent map. For an original Collatz packet, evaluation
+
+\[
+(\lambda,\mu,\kappa)\mapsto(L,U,C)
+\]
+
+gives its original integral extension, and (2) gives \(C-(U-L)z\). These are specified base changes of the same free extension presentation. They are not an asserted isomorphism between the two evaluated representations, or a transport of a Zeta numerical bound.
+
+For two present packet slots, chronological composition is the actual polynomial matrix map
+
+\[
+ M_qM_p=
+ \begin{pmatrix}L_qL_p&L_qC_p+U_pC_q\\0&U_pU_q\end{pmatrix}. \tag{3}
+\]
+
+The mixed coefficient in (3) remains. Taking a face of the two-slot diagram keeps its own label and coefficients; inserting a slot with supported zero is the original zero-insertion arrow, not an assertion that a missing packet has been supplied. All source records below keep the full ordered word in addition to its composite matrix.
+
+## 2. The two original packets and their interaction
+
+Use the original odd-return map on positive odd integers
+
+\[
+ T(n)=\frac{3n+1}{2^{a(n)}},\qquad a(n)=\nu_2(3n+1).
+\]
+
+For a word \(w=(a_1,\ldots,a_m)\), set
+
+\[
+ A_j=\sum_{i\le j}a_i,\quad A_0=0,\quad
+ L=3^m,\quad U=2^{A_m},\quad
+ C=\sum_{j=0}^{m-1}3^{m-1-j}2^{A_j}. \tag{4}
+\]
+
+Its affine map is \((Lx+C)/U\). Its complete positive source is
+
+\[
+ n=\rho+2Uz,\quad z\ge0,\qquad
+ \rho\equiv(U-C)L^{-1}\pmod{2U},\quad0<\rho<2U. \tag{5}
+\]
+
+The unchanged target is \((L\rho+C)/U+2Lz\). The inverse parameters are the original differences divided by \(2U\) or \(2L\), on those images only. Formula (5) is the workbench's original exact valuation cylinder: composing the original equations gives the terminal odd congruence, and reversing the congruences successively recovers every intermediate odd state and prescribed valuation.
+
+Retain
+
+\[
+ P=(1,2),\quad (L_P,U_P,C_P)=(9,8,5),
+\]
+\[
+ Q=(1,1,1,2,1,1,4),\quad (L_Q,U_Q,C_Q)=(2187,2048,2363).
+\]
+
+Their signed integer fixed points are \(-5\) and \(-17\). Direct substitution verifies the complete signed cycles
+
+\[
+ -5\to-7\to-5,
+\quad -17\to-25\to-37\to-55\to-41\to-61\to-91\to-17.
+\]
+
+They are used as coefficient identities for the original +1 maps; they are not positive-integer counterexamples. The earlier local positive-shadow contribution used each anchored packet separately. This continuation allows arbitrary mixtures of the two original packet types.
+
+Order already changes the result at the first mixed pair:
+
+\[
+ C_{PQ}=29839,\qquad C_{QP}=31507,\qquad
+ L_{PQ}=L_{QP}=19683,\quad U_{PQ}=U_{QP}=16384,
+\]
+\[
+ C_{PQ}-C_{QP}=-1668. \tag{6}
+\]
+
+Inside a larger original word, replacing an adjacent \(PQ\) by \(QP\) changes the complete numerator by
+
+\[
+ C_{\mathrm{prefix}\,PQ\,\mathrm{suffix}}
+ -C_{\mathrm{prefix}\,QP\,\mathrm{suffix}}
+ =-1668\,U_{\mathrm{prefix}}L_{\mathrm{suffix}}. \tag{7}
+\]
+
+Apply (3) before and after the change; the common outer multipliers give (7). Thus diagonal data or packet counts alone do not determine this mixed coefficient. In this proof counts are used for an upper bound; the exact original numerator is still used in every source and endpoint map.
+
+The full affine record even has a word inverse. For \(m>1\),
+
+\[
+ a_1=\nu_2(C-3^{m-1}),\qquad
+ C_{\mathrm{tail}}=(C-3^{m-1})/2^{a_1}. \tag{8}
+\]
+
+The parenthesized tail sum is odd, which proves the valuation. Iteration recovers all but the last exponent, and the retained total \(A_m\) recovers the last. The last numerator is one. These tests give the exact image conditions; recomposition proves both inverse identities. The P/Q symbol parsing is also unique, since P starts with (1,2) and Q with (1,1).
+
+## 3. A complete mixed overlap calculation and exact switch fibres
+
+The two integral anchor coordinates at one original integer are \(x+5\) and \(x+17\). Their full compatibility is not two independent smallness statements. At the level of polynomial evaluations there is the exact sequence
+
+\[
+0\to\mathbb Z[X]/((X+5)(X+17))
+ \xrightarrow{\operatorname{ev}}\mathbb Z\oplus\mathbb Z
+ \xrightarrow{(a,b)\mapsto b-a\bmod12}\mathbb Z/12\mathbb Z\to0,
+\tag{9}
+\]
+
+where \(\operatorname{ev}(f)=(f(-5),f(-17))\). The product equals the intersection of the two principal ideals: dividing a polynomial in the intersection by \(X+5\), then evaluating at -17, shows its quotient is divisible by \(X+17\), because multiplication by 12 is injective in Z. The image consists precisely of pairs with \(12\mid b-a\). Its inverse representative of degree below two is
+
+\[
+ f(X)=a+\frac{a-b}{12}(X+5). \tag{10}
+\]
+
+Both evaluations and both inverse compositions are direct. The supported-zero fibre of the last map is this complete rank-two image lattice. The actual source diagonal is the stronger affine slice \((a,b)=(x+5,x+17)\), corresponding to \(f(X)=x-X\); that additional original condition is retained. Equation (9) is proved here over the integers, not identified with an unread particular Zeta conductor complex.
+
+### The induced filtration, including the non-strictness defect
+
+Write \(\Lambda=\operatorname{im}(\operatorname{ev})\subset\mathbb Z^2\).
+The image of the original coefficient filtration is \(2^k\Lambda\); the
+induced target filtration is \(I_k=\Lambda\cap2^k\mathbb Z^2\).
+Put \(g_k=\gcd(12,2^k)=2^{\min(k,2)}\). There is the exact isomorphism
+
+\[
+ I_k/2^k\Lambda\longrightarrow\mathbb Z/g_k\mathbb Z,
+ \quad [(a,b)]\longmapsto
+ \frac{b/2^k-a/2^k}{12/g_k}\pmod{g_k}.
+\tag{10a}
+\]
+
+Its inverse sends j to the class of \(2^k(0,(12/g_k)j)\). Indeed
+12 divides b-a precisely when 12/g_k divides b/2^k-a/2^k. The
+kernel of the displayed residue is exactly 2^k Lambda. These facts
+prove both inverse identities. The original image basis is
+\(2^k(1,1),2^k(0,12)\); the induced basis is
+\(2^k(1,1),2^k(0,12/g_k)\). Thus the quotient has exact order
+1,2,4,4,... as k=0,1,2,3,... . This computes the failure of strictness;
+assigning the two independent target depths to the source without this
+quotient would lose actual integral classes. The repair is to retain the
+induced lattice I_k and its displayed original-image sublattice together.
+No inverse of 2 or 3 was used in (10a).
+
+All four coefficient masks (empty, P only, Q only, both) are retained in
+the implementation. Zero insertion means an actual labelled coordinate
+with value zero. Applying the compatibility map to a single-slot face
+has kernel 12Z; on the joint face its kernel is Lambda. The computed
+kernels, rather than every arbitrary single-slot amplitude, pass into
+the compatible joint face by zero insertion. This identifies the exact
+restriction introduced by synchronization.
+
+In particular
+
+\[
+ \min\{\nu_2(x+5),\nu_2(x+17)\}\le2. \tag{11}
+\]
+
+Otherwise their difference 12 would have valuation at least three. This is an induced compatibility constraint; it does not bound a later coordinate after divisions.
+
+For a switch from \(P^r\) to \(Q^s\), retain all three original stages:
+
+\[
+ n=2\,8^r t-5,\quad y=2\,9^r t-5,
+\quad 9^rt+6=2048^s z,\quad y'=2\,2187^s z-17. \tag{12}
+\]
+
+Its entire parameter fibre is
+
+\[
+ t=t_0+2048^s v,\quad
+ t_0\equiv-6(9^r)^{-1}\pmod{2048^s},\quad0<t_0<2048^s,
+\]
+\[
+ z=z_0+9^r v,\qquad z_0=(9^rt_0+6)/2048^s,\qquad v\ge0. \tag{13}
+\]
+
+Both inverse parameters follow by subtraction and division on the displayed images. The full source step is \(2\,8^r2048^s\); the full target step is \(2\,9^r2187^s\). They agree with (5). For the reverse switch replace the cross-term +6 by -6 and exchange the original packet data. All quantities remain integral.
+
+Equation (12) forces
+
+\[
+ \nu_2(t)=1,\qquad \nu_2(n+5)=3r+2,\qquad \nu_2(y+5)=2.
+\tag{14}
+\]
+
+The reverse switch gives \(\nu_2(n+17)=11r+2\). Thus the old dyadic depth must be transported through the actual packet, not recentered independently at its endpoint. For fixed r, every s has nonempty original source fibre (13); the new depth is unbounded across those sources.
+
+More generally, at the endpoint of the h=5 packet, the exact stratum
+
+\[
+ \nu_2(9^rt+6)=k
+\]
+
+is the single residue class
+
+\[
+ t\equiv(2^k-6)(9^r)^{-1}\pmod{2^{k+1}}. \tag{15}
+\]
+
+This retains every reset stratum without a finite cutoff on k. It also shows why a bare claim of uniform switch-depth decay is unavailable: arbitrarily large k have positive original representatives. The construction that works on the repeated mixed source is given next.
+
+## 4. A uniform bound on every ordered mixed core, with its primitive retained
+
+Let s be ANY finite symbol string in P and Q, containing alpha>=1 P's and beta>=1 Q's. Expand it to its original exponent word, then allow ANY cyclic rotation at an original exponent position. Call the retained resulting word p. Set
+
+\[
+ m=2\alpha+7\beta,\quad A=3\alpha+11\beta,\quad
+ L=3^m,\quad U=2^A,\quad \delta=L-U>0.
+\]
+
+Its exact numerator C depends on the complete ordering and rotation. Put
+
+\[
+ g=\gcd(C,\delta),\qquad c=C/g,\quad d=\delta/g,
+\quad H=C/\delta=c/d. \tag{16}
+\]
+
+### Lemma 1. Every such original phase has 0<H<=91.
+
+At a packet boundary write each packet map as \(f_j(x)=a_jx+h_j(a_j-1)\), with \(a_j=L_j/U_j>1\) and \(h_j\in\{5,17\}\). The composite translation is
+
+\[
+ \sum_j h_j(a_j-1)\prod_{k>j}a_k,
+\]
+
+and the same sum with every h_j=1 is \(\prod_ja_j-1\). Hence H at that boundary is the explicitly weighted average of 5 and 17 with positive weights
+
+\[
+ \omega_j=\frac{(a_j-1)\prod_{k>j}a_k}{\prod_ja_j-1},\qquad\sum_j\omega_j=1.
+\tag{17}
+\]
+
+This gives 5<=H<=17 at every packet boundary, by rotating the symbol string. Inside a P packet, the intermediate magnitude is (3H-1)/2<=25. Inside a Q packet, each affine prefix is increasing as a function of H, so its value at H<=17 is at most the corresponding magnitude in the explicitly verified -17 cycle, hence at most 91. Positivity at every phase also follows from its rotated C>0 and the unchanged delta>0. This proves the bound at every original exponent position. The coefficients in (17) and the unaveraged C are retained; no substitution of a common anchor is made. QED.
+
+Consequently c,d are positive odd coprime integers, gcd(d,6)=1, and
+
+\[
+ \frac{c+d}{2}\le46d\le46\delta<46L. \tag{18}
+\]
+
+The original integral return class has order d: it is [C] in Z/(U-L)Z. For the basic mixed core PQ, (c,d)=(29839,3299); this class is nonzero and has order 3299. Its specified rational primitive is -29839/3299, not the integer anchor of either constituent. Repetitions keep that same primitive and its original covering multiplicity.
+
+The coordinate \(z=dx+c\) has inverse \(x=(z-c)/d\) on the affine lattice \(c+d\mathbb Z\). It is not treated as an invertible integral change on every ambient coordinate or modulo every prime. Its homogenized matrix has determinant d; that image lattice and its quotient are retained.
+
+## 5. The complete positive source of a repeated mixed core
+
+For r>=2, put \(L_r=L^r\), \(U_r=U^r\), and
+
+\[
+ C_r=c(L_r-U_r)/d\in\mathbb Z.
+\]
+
+The integrality follows from d dividing L-U and from the original composition formula. The exact positive source and image of p^r are
+
+\[
+ \boxed{\quad n=\frac{2U_rt-c}{d},\qquad
+ T^{mr}(n)=\frac{2L_rt-c}{d},\quad
+ t\ge1,\quad2U_rt\equiv c\pmod d.\quad} \tag{19}
+\]
+
+To prove completeness, multiply the original cylinder condition
+\(L_rn+C_r\equiv U_r\pmod{2U_r}\) by the odd unit d. It becomes
+\(L_r(dn+c)\equiv(c+d)U_r=0\pmod{2U_r}\). Since L_r is odd, this is exactly the divisibility in (19). Reversing the same congruences proves the converse. No original intermediate valuations are discarded.
+
+Also 2U^r>c. Indeed c<=91L, r>=2, and at alpha=beta=1 the integer comparison 2*8^2*2048^2>91*9*2187 holds. Increasing alpha or beta multiplies U^2/L by 64/9 or 4194304/2187, both greater than one; increasing r multiplies U^r by U. Thus every admitted t>=1 is positive in (19).
+
+The congruence modulo d has one residue because gcd(2U_r,d)=1. Let t_min be its least positive representative (one for d=1). Then t=t_min+dv. Equation (19) yields the original steps 2U_r and 2L_r, with v>=0, and the anchor is the unique positive cylinder representative below 2U_r. This gives both parameter inverses and proves agreement with (5). The denominator constraint is not dropped.
+
+## 6. The all-length arithmetic gap
+
+The following finite-plus-logarithmic proof is independent of any large source atlas. Its external premise is the cited established two-logarithm estimate in Section 11. Its finite part consists of a COMPLETE stated integer domain, not sampled word frequencies.
+
+### Theorem 1. Uniform mixed-count gap.
+
+For all alpha,beta>=1, r>=2, s>=1 and B>=2s, retain m,A,L,U above and set
+
+\[
+ M=rm,\qquad D=U^r2^B-L^r3^s.
+\]
+
+On the positive-gap domain D>0,
+
+\[
+ \boxed{\quad D>46L(2^B-3^s).\quad} \tag{20}
+\]
+
+**Proof.** Put K=46L and
+
+\[
+ F(B)=(U^r-K)2^B-(L^r-K)3^s.
+\]
+
+Here M>=18, A/m is between 3/2 and 11/7, and r>=2. Therefore
+
+\[
+ K/U^r\le46(3/8)^{M/2}\le46(3/8)^9<1/2. \tag{21}
+\]
+
+In particular F(B) increases with B.
+
+**Long falling tails.** For s>=M, it suffices to take B=2s. After division by 3^s, the expression is increasing with s, so take s=M. The relative upper bounds for the two subtractions are
+
+\[
+ \frac{L^r3^M}{U^r4^M}\le(81/128)^{M/2},\qquad
+ \frac{K(4^M-3^M)}{U^r4^M}<46(3/8)^{M/2}.
+\]
+
+Their sum is at most (81/128)^9+46(3/8)^9<1, an exact rational comparison. Thus F>0 throughout s>=M. This part uses no logarithm theorem.
+
+**A bounded tail before the first crossing.** Now s<M. Take B_0 as the least integer B>=2s for which D>0. It satisfies B_0<=2M, since U^r>=2^(3M/2) and
+\(2^{(7/2)M}>3^{2M}\), the latter following from 2^7>3^4. Define
+
+\[
+ A_*=rA+B_0\le4M,\quad m_*=M+s<2M,\quad
+ \Lambda=2^{A_*}3^{-m_*}-1>0.
+\]
+
+A failure F(B_0)<=0 implies
+
+\[
+ 0<\Lambda<\frac{K}{U^r-K}<\frac{2K}{U^r}.
+\]
+
+Using log 92<5, log 2>2/3, and log 3<11/10 gives
+
+\[
+ \log\Lambda<5-\frac9{20}M. \tag{22}
+\]
+
+Matveev's rational two-log bound, with the explicit safe constant computed in Section 11, gives
+
+\[
+ \log\Lambda>-10^9(1+\log(4M)). \tag{23}
+\]
+
+At M=10^12, 4M<2^42 and log 2<7/10 imply
+\((9/20)M>5+10^9(1+42\cdot7/10)\). The difference between the left linear term and the right logarithmic term is strictly increasing for M>=10^12, as its derivative is 9/20-10^9/M>0. Thus (22)–(23) force M<10^12.
+
+**Exact rational separation.** The certificate proves
+
+\[
+ \frac{83130157078217}{52449289519716}
+ <\frac{\log3}{\log2}
+ <\frac{\log3}{\log2}+2^{-128}
+ <\frac{350861368503572}{221368876767703}. \tag{24}
+\]
+
+For M>=256, (22) implies
+
+\[
+0<\frac{A_*}{m_*}-\frac{\log3}{\log2}
+=\frac{\log(1+\Lambda)}{m_*\log2}
+<\exp(6-9M/20)<2^{-128}.
+\]
+
+The fractions at the ends of (24) have determinant one. Their denominator sum is 273818166287419>2*10^12. Any fraction x/y strictly between p/q and r/s with rq-ps=1 satisfies y>=q+s: the positive integers k=xq-py and j=ry-sx obey y=sk+qj. This uses the original, possibly unreduced x,y. But m_*<2M<2*10^12, a contradiction. Thus any failed margin has M<256.
+
+**Complete remaining arithmetic.** The executable certificate visits exactly
+
+\[
+\alpha,\beta\ge1,\quad r\ge2,\quad
+18\le M=r(2\alpha+7\beta)<256,\quad1\le s<M,
+\]
+
+computes B_0 by literal integer doubling from 2s, and checks F(B_0)>0. There are 1,197 triples (alpha,beta,r) and 210,527 complete rows. The least margin is 801844969, at (alpha,beta,r,s,B_0)=(1,1,2,2,4). The row stream hash is in verification.json; --ledger materializes all rows. The committed receipt also pins the complete regenerated result by SHA-256 and byte length. This integer enumeration discharges precisely the residual domain. Monotonicity then proves the claim for every B>=B_0. These cases exhaust the theorem. QED.
+
+## 7. Descent after arbitrary repeated mixed cores
+
+### Theorem 2. Original positive-source descent.
+
+Let p be any ordered mixed core from Section 4, at any original phase, and r>=2. Let q=(c_1,...,c_s) be any nonempty falling word, every c_i>=2. Put B=sum c_i. Every original positive source realizing p^r q in the domain
+
+\[
+ U^r2^B>L^r3^s \tag{25}
+\]
+
+has strict descent below its starting value at the end of that word.
+
+**Proof.** Retain the exact falling numerator C_q and its anchored correction
+
+\[
+ E_q=C_q+3^s-2^B
+ =\sum_{i=1}^s3^{s-i}2^{B_{i-1}}(4-2^{c_i})\le0. \tag{26}
+\]
+
+All powers and original exponents remain. The supported-zero case E_q=0 is exactly the all-two tail. From (19), an original source and the endpoint y of p^r obey
+\(dn+c=2U^rt\) and \(dy+c=2L^rt\), with t>=1 and its retained congruence. Let z be the final original endpoint after q. Direct substitution gives
+
+\[
+ \boxed{\quad d2^B(n-z)
+ =2Dt-(c+d)(2^B-3^s)-dE_q.\quad} \tag{27}
+\]
+
+This is the exact affine displacement, not a multiplier-only test. By (18) and Theorem 1,
+
+\[
+ D>46L(2^B-3^s)>\frac{c+d}{2}(2^B-3^s).
+\]
+
+Rewrite the right side of (27) as
+\(2[D-(c+d)(2^B-3^s)/2]+2D(t-1)-dE_q\).
+The first term is strictly positive and the others nonnegative. Since d2^B>0, n>z. Both original endpoints are positive odd integers, so the descent is at least two. QED.
+
+The theorem has no bound on the number of packet switches in p, the counts alpha,beta, the number r of repetitions, or any tail exponent. It does require repetition r>=2 and a falling tail reaching its actual coefficient crossing. The original first-descent index is not asserted to equal the endpoint of this word; earlier descent remains possible and is not erased.
+
+### Consequence for actual cycles and component minima
+
+No positive cycle can have a full traversal equal to p^r q from Theorem 2, or a cyclic rotation of such a traversal. Multiplication of its original equations gives 2^(rA+B)>3^(rm+s), so (25) would hold, whereas Theorem 2 gives an endpoint smaller than its source. Repetitions and nonprimitive presentations remain explicit; the contradiction is on the actual original endpoint equation. A traversal p^r alone has its unique fixed point -c/d<0, so has no positive return either.
+
+Every nonbase actual component has a least positive integer. Its entire orbit cannot contain a strict descent below that initial minimum. The theorem therefore also excludes its domain as possible itineraries starting at such a minimum, whether the component would be periodic or nonperiodic. It does not by itself settle mixed itineraries outside that language.
+
+## 8. Full cylinders and original first-jet witnesses
+
+The implementation constructs p^r q using
+
+\[
+ L_{\rm tot}=3^sL^r,\quad U_{\rm tot}=2^BU^r,\quad
+ C_{\rm tot}=3^sC_r+U^rC_q. \tag{28}
+\]
+
+Equation (5) applied to this exact triple supplies the complete source and target progressions, not a sample. For a lift parameter zeta>=0, the anchor parameter in (19) changes by d2^B*zeta. Equation (27) is tested as an identity in the original anchor and its slope. The original word and phase recover every intermediate equation.
+
+Examples recorded with independent +1 division replay include
+
+\[
+ T^{19}(2823006875)=1527868265
+ \quad\text{with word }(PQ)^2(3),
+\]
+\[
+ T^{28}(8300162951835)=5396745598079
+ \quad\text{with word }(PQ)^3(3).
+\]
+
+Another retained mixed order is p=PPQQPQ, repeated twice with tail (2,2,2,2); its source and endpoint are
+
+\[
+9535679069403344498661387515
+\longmapsto9070365730002260119033546999.
+\]
+
+Each displayed anchor belongs to a complete infinite cylinder returned by `family`. The result file includes the unchanged steps, all coefficients, denominator constraint, and raw margin. Separate point witnesses to 1 have respectively 93, 128 and 256 original odd returns. Those point certificates do not assert convergence of every variable endpoint in their cylinders.
+
+The cohomological receiver is the published integral first-jet complex
+
+\[
+ d_\epsilon=d-\epsilon P,\qquad\epsilon^2=0.
+\]
+
+For the finite ORIGINAL edge chain B from n to z,
+
+\[
+ d_\epsilon(\epsilon B)=\epsilon V_n-\epsilon V_z. \tag{29}
+\]
+
+The identity follows from the original boundary and epsilon squared equal to zero. An integral original witness at z extends by adding B to its epsilon coefficient. The checker uses the unchanged authenticated predecessor `firstjet.py`, verifies both coefficient equations, and extracts the actual finite path. No negative rational primitive is substituted for the positive original graph. No division by a period or by d is admitted in its integer witness module.
+
+## 9. What the calculation does and does not control
+
+The interaction in (6)–(7), the compatible source fibres (12)–(15), and the rational lattice in (19) are all retained. The order-independent bound in (18) applies to those exact data rather than replacing them. This is the successful use of mixed extension control: preserve the coupling, compute its complete effect on the original source, and then prove a bound uniform over the retained order fibre.
+
+For a fixed repeated core, falling tails of length s>=M=rm necessarily cross (25), so they are covered without limiting their individual exponents. Before crossing, at any fixed s the sum is bounded by
+
+\[
+ 2s\le B\le\operatorname{bitlength}(3^{M+s})-1-rA. \tag{30}
+\]
+
+All ordered words with each exponent at least two and this sum bound can be enumerated exactly. An exponent-one return before crossing exits the falling-tail domain and remains an original mixed-switch case. There is no disappearance of that label.
+
+The universal remaining issue is nonrepeating or more general switching, not the formal existence of infinite inverse series. Equations (12)–(15) show why a bounded conductor index cannot be claimed to bound all future reset depths. They supply exact residue input for a further source-cover argument. The theorem here controls a large repeatable class without making that false step. No original positive nontrivial cycle, certified divergent orbit, or global source coverage is asserted.
+
+## 10. Executed verification and integration scope
+
+`verify.py` reconstructs the full 210,527-row finite domain of Theorem 1 and its stream hash. It obtains logarithm bounds from 160 positive rational-series terms and explicit remainders. It separately checks all 4,914 family fixtures, with 449,723 original returns independently divided rather than trusting a valuation bit operation. The 3,149 accepted fixtures and 1,765 pre-crossing fixtures are distinct recorded outcomes. There are 351 retained core/phase fixtures, 321 order-swap comparisons, 128 two-packet switch charts with two source lifts each, and sixteen rejected malformed or false inputs.
+
+The ordinary and optimized outputs have 1,106,639 named exact checks and are byte-identical. The general ordering/anchor/source arguments are the written proofs, not inferred from these fixtures. The finite gap-domain enumeration is a stated computer-assisted proof component. Matveev's theorem is an external mathematical dependency, not a locally formalized result. No Lean execution or independent external review is claimed.
+
+The new replay checks its source manifest and the original firstjet Git blob before running both modes. The new workflow also runs the unchanged firstjet predecessor pair. It has contents:read only, pinned action commits, and no retained checkout credentials.
+
+This increment is standalone relative to the published firstjet dependency. It neither assumes nor silently publishes the two earlier local pending directories `defect_rank_descent_20260915` and `negative_shadow_descent_20260916`. Their source formulas motivated this continuation; all numerical and logarithmic premises used here are reproduced in this contribution. Their separate pending package remains available with its original manifest.
+
+## 11. Exact external input and source identities
+
+[L] A. Languasco, F. Luca, P. Moree and A. Togbe, *Sequences of integers generated by two fixed primes*, Abhandlungen aus dem Mathematischen Seminar der Universitat Hamburg 95 (2025), 123–148, Theorem 2.1; DOI 10.1007/s12188-025-00293-9. The publisher's readable primary text was inspected in this continuation. For positive rationals gamma_i and nonzero integer exponents b_i, the cited established theorem bounds a nonzero product minus one by
+
+\[
+ \log|\Lambda|>-1.4\,30^{k+3}k^{4.5}(1+\log B)\prod_i h(\gamma_i).
+\]
+
+Our actual substitution is k=2, gamma_1=2, gamma_2=3, b_1=A_*, b_2=-m_*, with B=4M. Unique prime factorization gives Lambda nonzero, and the actual crossing gives Lambda positive. Since sqrt(2)<3/2, log2<7/10, and log3<11/10, its coefficient is smaller than the checked rational number
+
+\[
+ (7/5)30^5\,24\,(7/10)(11/10)<10^9.
+\]
+
+This proves (23) with all hypotheses verified.
+
+For x=2,3 and z=(x-1)/(x+1), the interval calculation uses
+
+\[
+ L_N(x)=2\sum_{j=0}^{N-1}\frac{z^{2j+1}}{2j+1},\quad
+0<\log x-L_N(x)<\frac{2z^{2N+1}}{(2N+1)(1-z^2)}.
+\]
+
+The identity follows by integrating the positive geometric series for 1/(1-z^2); the remainder bound follows by replacing its increasing denominators by the first. At N=160 the four rational endpoints prove (24), log2 and log3 bounds, and the listed determinant and denominator comparisons. No evaluation of a floating-point logarithm is a premise.
+
+[Z1] Zeta mixed-control `sources/MCF.tex`, blob `a8b1300ea8b842ab1340d67e44cd6da2f71e8e62`, especially MCF6–10, at the read-only pin above. Its original independent slot masks, zero insertion, and quotient fibres remain their source constructions. [Z2] `sources/MRE.tex`, blob `e50623727112e925961ca9e7ad9accbe78758cf1`, at the read-only pin above, especially MRE7–12 and MRE30–33. No unreturned file identity is used as a certificate.
+
+[C1] Original Collatz firstjet `firstjet.py`, blob `97f9ef5ad535f7ec18259d41fab6a3557be17d98`, at the authenticated base; the checker computes that Git blob from the local bytes. [C2] `intrinsic_zero_firstjet_20260915/note.md`, especially its original integral witness equations. The prior weighted automata presentation and preceding source-cylinder conventions remain their existing source contributions. No global priority claim is made for universal triangular extensions, exact overlap sequences, or the standard logarithmic method.

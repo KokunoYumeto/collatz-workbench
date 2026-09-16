@@ -1,0 +1,23 @@
+{
+  "collatz_parent": "ce8f784da8fb48aa19065c036cd815c05628cec4",
+  "collatz_parent_tree": "3edab0b6634e59bcfab8e2ea26344f38d38aa893",
+  "collatz_branch": "research/stopped-cycle-cohomology-20260914",
+  "collatz_pr": 2,
+  "splitzero_commit": "91ed3b7c358a1f444d0d48c292e4a400ca509eff",
+  "splitzero_source": "formal/splitzero/DERIVED_MATHEMATICS.md",
+  "splitzero_blob": "fe05d32ccd314daac7c59d225c9cac3d4c1bf3d3",
+  "splitzero_read_scope": "Sections 1-4; pinned Sections 3-4 read back",
+  "anchored_source": "collatz_reconstruction/research_program/anchored_defect_20260914/note.md",
+  "anchored_blob": "b9b5d07514676eb2b33989e301029910602c2e99",
+  "anchored_read_scope": "Lines 1-180: support, integral forcing, anchored period definitions",
+  "companion_blob": "f0142c0d4c237ed068a0762a08c6622df5dbcfee",
+  "companion_source": "collatz_reconstruction/research_companion/chapters/01_weighted_path_and_finite_residue_actions.tex",
+  "companion_scope": "Original two clocks and completed inverse retained from previous intake; definitions rederived here",
+  "local_clocked_predecessor_sha256": "59dea0487e404e5b16f4bb3b933dbaa68f693ba580fbdddd917c3f33316eeca7",
+  "local_predecessor_database_imported": false,
+  "known_development_correction": "A representative-change test first omitted actual endpoints introduced by d(f). The carrier check rejected it. The fixture now retains the union with those original one-step endpoints; the check was not weakened.",
+  "bulk_git_read": "Local clone unavailable due DNS; authenticated GitHub connector reads succeeded.",
+  "new_global_collatz_claim": false,
+  "new_lean_run": false,
+  "independent_external_review": false
+}

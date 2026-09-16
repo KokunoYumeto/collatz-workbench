@@ -1,0 +1,250 @@
+{
+  "block_examples": [
+    {
+      "clock": [
+        1,
+        1
+      ],
+      "descent_left": 1,
+      "descent_right": 1,
+      "last_exponent": 2,
+      "path_sources": [
+        1
+      ],
+      "r": 0,
+      "source": 1,
+      "t": 1,
+      "target": 1,
+      "word": [
+        2
+      ]
+    },
+    {
+      "clock": [
+        2,
+        3
+      ],
+      "descent_left": 23,
+      "descent_right": 7,
+      "last_exponent": 4,
+      "path_sources": [
+        3,
+        5
+      ],
+      "r": 1,
+      "source": 3,
+      "t": 1,
+      "target": 1,
+      "word": [
+        1,
+        4
+      ]
+    },
+    {
+      "clock": [
+        1,
+        3
+      ],
+      "descent_left": 39,
+      "descent_right": 7,
+      "last_exponent": 4,
+      "path_sources": [
+        5
+      ],
+      "r": 0,
+      "source": 5,
+      "t": 3,
+      "target": 1,
+      "word": [
+        4
+      ]
+    },
+    {
+      "clock": [
+        3,
+        1
+      ],
+      "descent_left": -11,
+      "descent_right": 1,
+      "last_exponent": 2,
+      "path_sources": [
+        7,
+        11,
+        17
+      ],
+      "r": 2,
+      "source": 7,
+      "t": 1,
+      "target": 13,
+      "word": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "clock": [
+        1,
+        2
+      ],
+      "descent_left": 35,
+      "descent_right": 3,
+      "last_exponent": 3,
+      "path_sources": [
+        13
+      ],
+      "r": 0,
+      "source": 13,
+      "t": 7,
+      "target": 5,
+      "word": [
+        3
+      ]
+    },
+    {
+      "clock": [
+        2,
+        1
+      ],
+      "descent_left": -7,
+      "descent_right": 1,
+      "last_exponent": 2,
+      "path_sources": [
+        27,
+        41
+      ],
+      "r": 1,
+      "source": 27,
+      "t": 7,
+      "target": 31,
+      "word": [
+        1,
+        2
+      ]
+    },
+    {
+      "clock": [
+        5,
+        1
+      ],
+      "descent_left": -179,
+      "descent_right": 1,
+      "last_exponent": 2,
+      "path_sources": [
+        31,
+        47,
+        71,
+        107,
+        161
+      ],
+      "r": 4,
+      "source": 31,
+      "t": 1,
+      "target": 121,
+      "word": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "clock": [
+        3,
+        2
+      ],
+      "descent_left": 155,
+      "descent_right": 3,
+      "last_exponent": 3,
+      "path_sources": [
+        247,
+        371,
+        557
+      ],
+      "r": 2,
+      "source": 247,
+      "t": 31,
+      "target": 209,
+      "word": [
+        1,
+        1,
+        3
+      ]
+    }
+  ],
+  "counts": {
+    "actual_later_absorption": 1,
+    "affine_descent_equivalence": 2048,
+    "circle_projection_chain_equation": 1024,
+    "circle_source_homotopy": 1024,
+    "circle_source_section": 255,
+    "circle_target_homotopy": 1024,
+    "circle_target_section": 255,
+    "complete_finite_word_fixture_count": 1,
+    "cycle_clock_inverses": 247,
+    "full_circle_period_boundary": 255,
+    "independent_original_valuations": 4095,
+    "large_parameter_round_trip": 260,
+    "laurent_cycle_coset_inverse": 2295,
+    "merger_not_singleton_absorption": 1,
+    "nonuniform_original_family": 683,
+    "nonuniform_residual_nonzero": 6,
+    "ordered_word_mark_inverse": 255,
+    "original_block_boundary": 2048,
+    "original_block_endpoint": 2048,
+    "original_determinant_specialization": 255,
+    "original_forcing_specialization": 255,
+    "original_intermediate_states": 4095,
+    "original_parameter_inverse": 2048,
+    "original_two_clocks": 2048,
+    "positive_cone_absorption_equivalence": 7290,
+    "same_binomial_different_original_history": 1,
+    "same_determinant_different_integral_mark": 1,
+    "signed_control_actual_cycle": 1,
+    "signed_control_period_module": 1,
+    "signed_merger_supported_zero": 1,
+    "synthetic_ray_laurent_inverse": 625,
+    "synthetic_ray_laurent_numerator": 625,
+    "synthetic_ray_meeting_independence": 1875,
+    "v_inverse_original_primitive": 2048
+  },
+  "formal_circle_warning": "labelled position circles, not asserted positive integer cycles",
+  "formal_circle_words": 255,
+  "global_targets_unproved_here": [
+    "periodic torsion exhaustion",
+    "generic ray-module exhaustion",
+    "positive integer survivor-source exhaustion"
+  ],
+  "original_block_sources": 2048,
+  "rejected_inputs": [
+    "zero source",
+    "even source",
+    "negative source",
+    "boolean source",
+    "zero exponent",
+    "erased forcing position",
+    "nonmonotone clock mark",
+    "wrong forcing coefficient",
+    "false original valuation",
+    "negative kernel time",
+    "merger promoted to one-step arrival"
+  ],
+  "scope": "finite regression; no global Collatz endpoint is asserted",
+  "signed_control": [
+    [
+      5,
+      1,
+      7
+    ],
+    [
+      7,
+      2,
+      5
+    ]
+  ],
+  "source_commit": "6b3ded8880946b2c3140a9d79f1aa1d658d36b8c",
+  "status": "PASS",
+  "synthetic_ray_warning": "all-2 forward test ray, not an original positive Collatz orbit",
+  "total_exact_checks": 38994
+}

@@ -1,0 +1,35 @@
+{
+  "archived_scalar_core": {
+    "blob": "ff991f7383922e71cdf0e4a3bc85e89e18f808ef",
+    "commit": "f7ff59b176c7dc3941babd4cb9272dffc653070d",
+    "invention_date_claim": false,
+    "path": "formalization/lean/classical_candidates_20260626/split_support_sidecar/SplitZero.lean",
+    "path_history_commit": "d7def24933004584b687842fe75e92ed5ee655a1",
+    "path_history_date": "2026-07-04T22:46:37Z",
+    "read_scope": "full file",
+    "repository": "KokunoYumeto/modern-latex-manuscripts"
+  },
+  "chapter14": {
+    "blob": "49318a578b96462384000afa16794cfd5fe492c1",
+    "commit": "42d00e359b16d52ca71568ce5e3db5341949d929",
+    "scope": "algebraic sections; later published corrections read separately"
+  },
+  "collatz_parent": "2a77e3bc9435f181bc4c9c3957224a7d93b4e887",
+  "current_formal_sources": {
+    "formal/splitzero/DERIVED_MATHEMATICS.md": "fe05d32ccd314daac7c59d225c9cac3d4c1bf3d3",
+    "formal/splitzero/MATHEMATICAL_NOTE.md": "7531d36aa44d8213e0e80d15f79668b6c8839ce5",
+    "formal/splitzero/README.md": "4279feaeb3a80f203684d7f6b00a4e208b71d92d"
+  },
+  "date": "2026-09-15",
+  "network_note": "GitHub connector reads succeeded; container network was unavailable; no git clone or authenticated local checkout is claimed.",
+  "new_Lean_execution": false,
+  "new_result_scope": "integral first-jet comparison kernel, original finite witnesses, support transitions; no new numerical bound",
+  "rees_first_variation": {
+    "blob": "168775d2be296d74b8243cebd3e9fc8942f2eb31",
+    "path": "workbenches/split-support-rees-trace/RESEARCH_NOTE.md",
+    "scope": "sections 1-5"
+  },
+  "terminology": "intrinsic support and original comparison data; not an identification with automata trajectory histories",
+  "unsupported_provenance_claims": false,
+  "zeta_read_only_pin": "652d3c7e269cef11e0f667be0401abb6014314c2"
+}
