@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-14",
+  "files": [
+    {
+      "bytes": 4200,
+      "git_blob_sha1": "a9293cd9eda479b636dff6be90b9043c49369a61",
+      "path": "README.md",
+      "sha256": "7d42cddabdc06b3150713d994ff589bc118c1c1fcce4209362e9d66d9d41a7fb"
+    },
+    {
+      "bytes": 19611,
+      "git_blob_sha1": "9b5072dc671d626b4919cb768ca9bcf884c537b8",
+      "path": "RESEARCH_NOTE.md",
+      "sha256": "eaf151f5f8229e9db80c24a6528def189d9d87a49762ddfe0385722ca8f61b6e"
+    },
+    {
+      "bytes": 13025,
+      "git_blob_sha1": "68aa75ed136459d9b9f10baae946a6234f51af71",
+      "path": "check_history_law.py",
+      "sha256": "101914ebe50d5da54da6f3958b247d7d1a43f358f4c965736e3e161f11167ab7"
+    },
+    {
+      "bytes": 6146,
+      "git_blob_sha1": "c36053c86f4e41d80de6e55983ef30e685727890",
+      "path": "verification.json",
+      "sha256": "94999792d713c8dae409b042639a20a68601582ace8636596cd984a859c1eb72"
+    }
+  ],
+  "manifest_scope": "These four new files only; manifest excludes itself. No inherited source is modified.",
+  "source_commit": "63407034387466870f9e092dcdf39fb5a1ec0399",
+  "source_repository": "KokunoYumeto/collatz-workbench"
+}

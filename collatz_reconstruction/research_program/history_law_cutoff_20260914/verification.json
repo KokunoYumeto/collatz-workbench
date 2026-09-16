@@ -1,0 +1,277 @@
+{
+  "arithmetic": "exact integers and Fraction; decimals are display only",
+  "checks": {
+    "capped_families": 55,
+    "cylinder_counts": 6600,
+    "descent_certificates": 216,
+    "descent_equivalences": 3006,
+    "integer_lifts": 4422,
+    "interval_laws": 72,
+    "joint_predicates": 3,
+    "moment_weight_recoveries": 21,
+    "profile_starting_integers": 332032,
+    "tv_envelopes": 1224
+  },
+  "descent_example": {
+    "H": 16,
+    "N": 4096,
+    "accounted": 3929,
+    "direct_count": 3487,
+    "lower": 3320,
+    "m": 5,
+    "unresolved": 167,
+    "upper": 3487
+  },
+  "negative_controls_rejected": [
+    "even starting integer",
+    "zero exponent",
+    "negative interval offset",
+    "lost probability mass",
+    "wrong fixed-point descent"
+  ],
+  "profiles": [
+    {
+      "N": 256,
+      "lower": {
+        "decimal": 2.682209014892578e-06,
+        "denominator": 16777216,
+        "numerator": 45
+      },
+      "m": 2,
+      "support": 37,
+      "tv": {
+        "decimal": 0.02587890625,
+        "denominator": 2048,
+        "numerator": 53
+      },
+      "upper": {
+        "decimal": 0.03515625,
+        "denominator": 256,
+        "numerator": 9
+      }
+    },
+    {
+      "N": 256,
+      "lower": {
+        "decimal": 0.1494140625,
+        "denominator": 1024,
+        "numerator": 153
+      },
+      "m": 4,
+      "support": 163,
+      "tv": {
+        "decimal": 0.276336669921875,
+        "denominator": 32768,
+        "numerator": 9055
+      },
+      "upper": {
+        "decimal": 0.36328125,
+        "denominator": 256,
+        "numerator": 93
+      }
+    },
+    {
+      "N": 256,
+      "lower": {
+        "decimal": 0.6005859375,
+        "denominator": 1024,
+        "numerator": 615
+      },
+      "m": 6,
+      "support": 247,
+      "tv": {
+        "decimal": 0.7390861511230469,
+        "denominator": 262144,
+        "numerator": 193747
+      },
+      "upper": {
+        "decimal": 0.85546875,
+        "denominator": 256,
+        "numerator": 219
+      }
+    },
+    {
+      "N": 4096,
+      "lower": {
+        "decimal": 0.002002716064453125,
+        "denominator": 262144,
+        "numerator": 525
+      },
+      "m": 4,
+      "support": 794,
+      "tv": {
+        "decimal": 0.053887367248535156,
+        "denominator": 1048576,
+        "numerator": 56505
+      },
+      "upper": {
+        "decimal": 0.072998046875,
+        "denominator": 4096,
+        "numerator": 299
+      }
+    },
+    {
+      "N": 4096,
+      "lower": {
+        "decimal": 0.178619384765625,
+        "denominator": 32768,
+        "numerator": 5853
+      },
+      "m": 6,
+      "support": 2510,
+      "tv": {
+        "decimal": 0.3076624274253845,
+        "denominator": 16777216,
+        "numerator": 5161719
+      },
+      "upper": {
+        "decimal": 0.38720703125,
+        "denominator": 2048,
+        "numerator": 793
+      }
+    },
+    {
+      "N": 4096,
+      "lower": {
+        "decimal": 0.571380615234375,
+        "denominator": 32768,
+        "numerator": 18723
+      },
+      "m": 8,
+      "support": 3797,
+      "tv": {
+        "decimal": 0.7083279304206371,
+        "denominator": 268435456,
+        "numerator": 190140331
+      },
+      "upper": {
+        "decimal": 0.80615234375,
+        "denominator": 2048,
+        "numerator": 1651
+      }
+    },
+    {
+      "N": 65536,
+      "lower": {
+        "decimal": 0.010614395141601562,
+        "denominator": 524288,
+        "numerator": 5565
+      },
+      "m": 6,
+      "support": 14893,
+      "tv": {
+        "decimal": 0.07950315251946449,
+        "denominator": 268435456,
+        "numerator": 21341465
+      },
+      "upper": {
+        "decimal": 0.1050567626953125,
+        "denominator": 65536,
+        "numerator": 6885
+      }
+    },
+    {
+      "N": 65536,
+      "lower": {
+        "decimal": 0.19880294799804688,
+        "denominator": 262144,
+        "numerator": 52115
+      },
+      "m": 8,
+      "support": 39203,
+      "tv": {
+        "decimal": 0.3271277185995132,
+        "denominator": 4294967296,
+        "numerator": 1405002853
+      },
+      "upper": {
+        "decimal": 0.4018096923828125,
+        "denominator": 65536,
+        "numerator": 26333
+      }
+    },
+    {
+      "N": 65536,
+      "lower": {
+        "decimal": 0.5511970520019531,
+        "denominator": 262144,
+        "numerator": 144493
+      },
+      "m": 10,
+      "support": 58651,
+      "tv": {
+        "decimal": 0.6844734091573628,
+        "denominator": 68719476736,
+        "numerator": 47036654517
+      },
+      "upper": {
+        "decimal": 0.7727508544921875,
+        "denominator": 65536,
+        "numerator": 50643
+      }
+    },
+    {
+      "N": 262144,
+      "lower": {
+        "decimal": 0.01633232831954956,
+        "denominator": 16777216,
+        "numerator": 274011
+      },
+      "m": 7,
+      "support": 63004,
+      "tv": {
+        "decimal": 0.09127753786742687,
+        "denominator": 536870912,
+        "numerator": 49004255
+      },
+      "upper": {
+        "decimal": 0.1189422607421875,
+        "denominator": 65536,
+        "numerator": 7795
+      }
+    },
+    {
+      "N": 262144,
+      "lower": {
+        "decimal": 0.20681190490722656,
+        "denominator": 524288,
+        "numerator": 108429
+      },
+      "m": 9,
+      "support": 155382,
+      "tv": {
+        "decimal": 0.3350651010405272,
+        "denominator": 4294967296,
+        "numerator": 1439093651
+      },
+      "upper": {
+        "decimal": 0.40726470947265625,
+        "denominator": 131072,
+        "numerator": 53381
+      }
+    },
+    {
+      "N": 262144,
+      "lower": {
+        "decimal": 0.5431880950927734,
+        "denominator": 524288,
+        "numerator": 284787
+      },
+      "m": 11,
+      "support": 230964,
+      "tv": {
+        "decimal": 0.6752812596532749,
+        "denominator": 68719476736,
+        "numerator": 46404974813
+      },
+      "upper": {
+        "decimal": 0.7596588134765625,
+        "denominator": 65536,
+        "numerator": 49785
+      }
+    }
+  ],
+  "scope": "Finite checks only; no numerical zeta, Lean, Gaussian-limit numerical certification, or Collatz convergence claim.",
+  "status": "pass",
+  "tv_convention": "half-L1 / supremum over events"
+}
