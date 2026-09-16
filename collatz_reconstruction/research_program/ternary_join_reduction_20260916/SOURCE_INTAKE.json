@@ -1,0 +1,34 @@
+{
+  "base_commit": "9afcbe2dc9bace77c1ae705b1cd128da22fe8f8b",
+  "base_tree": "784c8f3fa3494e65c2939da2605460fbc7bdf477",
+  "cohomology": "Original absolute integral first-jet comparison kernel; support denotes original equation sets, not chronological word history.",
+  "input_artifacts": {
+    "Collatz_Height_Window_Continuation_20260916.zip": {
+      "bytes": 21696186,
+      "sha256": "f04be291ab81e966fa9406aa2c43dfd6d6e6dfc41249585e885d9cb4734b0f81"
+    },
+    "Collatz_Height_Window_Delivery_Receipt.json": {
+      "bytes": 3999,
+      "sha256": "1f7d412bb6719c9fc604475a37791d41267dc54cd9773d2e78cdfd0722025b2d"
+    },
+    "Collatz_Height_Window_Proof.md": {
+      "bytes": 32365,
+      "sha256": "1d06a8c60933b1960ecb883e993134e33dc089feb5d7c4b7896a63c97019f680"
+    }
+  },
+  "local_predecessor_concepts": [
+    "sharp first-crossing envelope",
+    "finite integral common-future comparisons",
+    "retained-root retraction"
+  ],
+  "new_numerical_Zeta_estimate_imported": false,
+  "preserved_receiver": {
+    "path": "collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/firstjet.py",
+    "sha256": "a53cef65109285f377e2c1344ae662c4a74574a30c1c40dfffebc9ed6cca06b0"
+  },
+  "prior_pending_packages_integrated": false,
+  "proof_status": "Written general proofs; full finite arithmetic certificates; no new Lean execution or independent external review.",
+  "read_methodology": "CONTRIBUTING.md",
+  "recovery_note": "A local environment restart removed initial working files. Final core sources were rebuilt and the final mathematical and source-window checks were rerun before publication.",
+  "repository": "KokunoYumeto/collatz-workbench"
+}

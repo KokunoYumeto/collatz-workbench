@@ -1,0 +1,16 @@
+{
+  "audit_receipt_sha256": "ac1be9aa2e47d12d34aad693d0b700690fdd1ae337d81e0461e6ba9aada42166",
+  "full_source_ledger_required_for_audit": true,
+  "height_table_little_endian_sha256": "4753193246246c3bee56c398dc156114171ae874e1f6badd319a8cc147eb8c03",
+  "horizon": 10945,
+  "logarithm_theorem_used": false,
+  "maximum_inductive_total_odd_returns": 248,
+  "maximum_total_source": 6649279,
+  "original_divisions": 23482682,
+  "original_return_equations": 11738935,
+  "scan_receipt_sha256": "060607152a56b4df1c3a462990b1f8a22d187ea73a1a2aea518acf685f105cce",
+  "source_ledger_uncompressed_sha256": "a4ebf54a9916d883037788b4960871ed32996a2cae2a65f09d51586d0bbc2642",
+  "source_rows": 3364120,
+  "source_upper_odd": 6728241,
+  "status": "PASS"
+}
