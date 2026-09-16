@@ -1,0 +1,494 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\n X=\\{1,3,5,\\ldots\\},\\qquad T(n)=\\frac{3n+1}{2^{a(n)}},\\qquad a(n)=\\nu_2(3n+1).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p=(a_1,\\ldots,a_m)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n A_j=\\sum_{i=1}^j a_i,\\quad U_p=2^{A_m},\\quad L_p=3^m,\\quad\n C_p=\\sum_{j=0}^{m-1}3^{m-1-j}2^{A_j},\\qquad f_p(x)=\\frac{L_px+C_p}{U_p}.       \\tag{1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(m,A,L,U,C)=(0,0,1,1,0)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n=\\rho_p+2U_p t\\longmapsto \\eta_p+2L_p t,\\quad t\\in\\mathbb Z_{\\ge0},\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\rho_p\\equiv(U_p-C_p)L_p^{-1}\\pmod{2U_p},\\quad0<\\rho_p<2U_p,\n \\qquad\\eta_p=(L_p\\rho_p+C_p)/U_p.                            \\tag{2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\rho=\\eta=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{A_j+1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^{m-j-1}2^{A_j}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^j n+C_j\\equiv2^{A_j}\\pmod{2^{A_j+1}}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2U_p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2L_p"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n S(n)=\\begin{cases}(3n+1)/2&n\\text{ odd},\\\\n/2&n\\text{ even}.\\end{cases}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "T^j(n)=S^{A_j}(n)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1\\,0^{a-1}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n b_j=\\lfloor\\log_2 3^j\\rfloor=\\operatorname{bitlength}(3^j)-1,\\quad b_0=0,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C_m^*=\\sum_{j=0}^{m-1}3^{m-1-j}2^{b_j},\\qquad\n D_m^*=2^{b_m+1}-3^m>0,\\qquad \\Theta_m=C_m^*/D_m^*.           \\tag{3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C_0^*=0,\\qquad C_m^*=3C_{m-1}^*+2^{b_{m-1}}.                \\tag{4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n A_j\\le b_j\\ (j<m),\\quad A_m\\ge b_m+1,\n\\qquad \\frac{C_p}{2^{A_m}-3^m}\\le\\Theta_m.                   \\tag{5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Theta_m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n p_m^*=(b_1-b_0,\\ldots,b_{m-1}-b_{m-2},b_m+1-b_{m-1}).       \\tag{6}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n\\le\\lfloor\\Theta_m\\rfloor.                              \\tag{7}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{A_j}<3^j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_m^*"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C_m^*-C_p=\\sum_{j=0}^{m-1}3^{m-1-j}(2^{b_j}-2^{A_j})\\ge0.   \\tag{8}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b_m+1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(C_p-(2^{A_m}-3^m)n)/2^{A_m}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b_m+1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b_m+1-A_{m-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "C_p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{b_m+1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M\\ge1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H_M=\\max_{1\\le m\\le M}\\lfloor\\Theta_m\\rfloor.               \\tag{9}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1\\le n\\le H_M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n>H_M"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\frac{C_m^*}{3^m}=\\frac13\\sum_{j=0}^{m-1}\\frac{2^{b_j}}{3^j}>\\frac m6,\n \\qquad 0<D_m^*/3^m<1,\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Theta_m>m/6"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H_{10280}=5624777,\\qquad\n (m,b_m+1,\\lfloor\\Theta_m\\rfloor)=(9616,15241,5624777)\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (10281,16295,6728242).                                    \\tag{10}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n x_{\\rm short}=T^m(n)\\,2^{A-(b_m+1)}.                       \\tag{11}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\\text{Every positive source }n\\ge2\\text{ whose first shortened coefficient\n crossing uses at most }10280\\text{ odd steps descends at that crossing.}}          \\tag{12}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h(n)=m(n)+h(T^{m(n)}(n)),h(1)=0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C^0=\\mathbb Z^{(X)},\\quad C^1=\\mathbb Z^{(X)},\\quad\n Je_n=V_n,\\quad Pe_n=V_{T(n)},\\quad d=J-P.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb D=\\mathbb Z[\\epsilon]/(\\epsilon^2)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "q=1+\\epsilon"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon e_n=V_n-qV_{T(n)},\\qquad\n q^k=1+k\\epsilon\\quad(k\\in\\mathbb Z).                       \\tag{13}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "q^{-1}=1-\\epsilon"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathfrak B_X=\\ker\\bigl(H^1(K_\\epsilon)\\longrightarrow H^1(K)\\bigr)\n \\cong C^1/(dC^0+P\\ker d),\\qquad [V_n]\\longmapsto[\\epsilon V_n].                 \\tag{14}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z/m\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\xi_n=[\\epsilon V_n]"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal F_N=\\langle\\xi_n:n\\le N,\\ n\\text{ odd}\\rangle\\subseteq\\mathfrak B_X.\n                                                                    \\tag{15}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\xi_n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1_C\\mapsto\\xi_{\\min C}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal F_n/\\mathcal F_{n-2}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z/m\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\xi_n=\\xi_m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathfrak B_X"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d_\\epsilon(\\epsilon B_n)=\\epsilon V_n-\\epsilon V_y"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon(-e_1+\\epsilon c_n)=\\epsilon V_n.                \\tag{16}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal F_{5624777}=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L_p>U_p"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n=\\eta_p+2L_p t\\quad\\rightsquigarrow\\quad\n x=\\rho_p+2U_p t=\\frac{U_pn-C_p}{L_p},\\qquad t\\ge0.         \\tag{17}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "0<x<n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U_pn\\equiv C_p\\pmod{L_p}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n>C_p/U_p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(n-\\eta_p)/(2L_p)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(x-\\rho_p)/(2U_p)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P_p(x)=\\sum_{j=0}^{m-1}q^j e_{T^j(x)}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon P_p(x)=V_x-q^mV_n,\n\\quad\n d_\\epsilon(-q^{-m}P_p(x))=V_n-q^{-m}V_x.                 \\tag{18}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\xi_n=\\xi_x"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 13+18t\\rightsquigarrow11+16t,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n -(1-2\\epsilon)e_{27}-(1-\\epsilon)e_{41},\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "V_{31}-(1-2\\epsilon)V_{27}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n g=\\gcd(L_l,L_r)=3^{\\min(|l|,|r|)}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\eta_l\\equiv\\eta_r\\pmod{2g}.                            \\tag{19}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P=2L_lL_r/g"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\max(\\eta_l,\\eta_r)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n u_0=(y_0-\\eta_l)/(2L_l),\\quad v_0=(y_0-\\eta_r)/(2L_r),\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n_0=\\rho_l+2U_lu_0,\\qquad m_0=\\rho_r+2U_rv_0.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\n \\begin{aligned}\n n(t)&=n_0+2U_l(L_r/g)t,\\\\\n m(t)&=m_0+2U_r(L_l/g)t,\\\\\n y(t)&=y_0+2(L_lL_r/g)t,\n \\qquad t\\in\\mathbb Z_{\\ge0}.\n \\end{aligned}}                                                   \\tag{20}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t=(y-y_0)/P"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L_lu-L_rv=(\\eta_r-\\eta_l)/2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(L_r/g,L_l/g)t"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n a=n_0-m_0,\\qquad b=2(U_lL_r-U_rL_l)/g,\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t\\ge\\max(0,\\lfloor-a/b\\rfloor+1)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "0\\le t\\le\\lfloor(a-1)/(-b)\\rfloor"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P_l(n),P_r(m)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "k=|l|-|r|"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{d_\\epsilon\\bigl(P_l(n)-q^kP_r(m)\\bigr)=V_n-q^kV_m.}   \\tag{21}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\xi_n=\\xi_m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n l=(1),\\qquad r=(1,1,1,1,1,2,3).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{1731+2916t\\rightsquigarrow1215+2048t,\\qquad t\\ge0.}   \\tag{22}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 1731+2916t\\longrightarrow2597+4374t\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\begin{aligned}\n 1215+2048t&\\longrightarrow1823+3072t\\longrightarrow2735+4608t\\\\\n &\\longrightarrow4103+6912t\\longrightarrow6155+10368t\\\\\n &\\longrightarrow9233+15552t\\longrightarrow6925+11664t\n \\longrightarrow2597+4374t.\n \\end{aligned}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3x+1=2^ay"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "516+868t>0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n e_{1731}-(1-6\\epsilon)e_{1215}-(1-5\\epsilon)e_{1823}\n -(1-4\\epsilon)e_{2735}-(1-3\\epsilon)e_{4103}\n -(1-2\\epsilon)e_{6155}-(1-\\epsilon)e_{9233}-e_{6925},\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "V_{1731}-(1-6\\epsilon)V_{1215}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{a(x)}T(x)=3x+1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon B_n=V_n-q^{k_n}V_m.                             \\tag{23}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H(V_n)=B_n+q^{k_n}H(V_m),\\qquad Q(V_n)=q^{k_n}Q(V_m),\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n F=I-Hd_\\epsilon\\quad\\text{on edge vectors}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon H=I-Q,\\quad Q^2=Q,\\quad HQ=0,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon F=Qd_\\epsilon,\\quad F^2=F,\\quad FH=0,\n \\qquad Hd_\\epsilon=I-F.                                  \\tag{24}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[\\operatorname{im}F\\to\\operatorname{im}Q]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F^2=I-2Hd+HdHd"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C^0_{\\mathbb D}/\\operatorname{im}H\\ \\xrightarrow{\\sim}\\ \\operatorname{im}F,\n \\quad[e]\\mapsto Fe,                                      \\tag{25}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d_\\epsilon e_1=-\\epsilon V_1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1-q^m=-m\\epsilon"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon K=Q_0-Q_1,\\quad F_0K=K,\n\\quad F_1F_0=F_0F_1=F_1,\\quad Q_1Q_0=Q_0Q_1=Q_1.           \\tag{26}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n\\bmod36\\in\\{3,7,15,19,27\\},\\qquad n\\not\\equiv8731\\pmod{8748}.                \\tag{27}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n\\not\\equiv1731\\pmod{2916}.                              \\tag{28}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(8n-5)/9"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(2048n-2363)/2187"
+  }
+]

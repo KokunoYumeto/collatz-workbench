@@ -1,0 +1,287 @@
+[
+  {
+    "path": "collatz_reconstruction/research_program/all_even_join_extension_20260916/audit_families.py",
+    "original_sha256": "b0adc6f9a524d4d63fcdb7551031666424f548a413129f5cb4201dd0daa6b227",
+    "published_sha256": "e01b25c53aac3f0a3b7aab013a55b11f86e11108b5bb4b646662fff7afdea3ea"
+  },
+  {
+    "path": "collatz_reconstruction/research_program/all_even_join_extension_20260916/MANIFEST.json",
+    "original_sha256": "692abcba8f706365faf2acb097aefc8b6d43cca2dbf9d6c44d89843244a0c646",
+    "published_sha256": "f53944124d64abff904240bdc6e54a19ee356752435d7b8a04b2a718da4172fc"
+  },
+  {
+    "path": "collatz_reconstruction/research_program/all_even_join_extension_20260916/note.md",
+    "original_sha256": "537e64b1651beaa04148871fe1d88aa4861e9bba71112b3598e4c97b0fd914ce",
+    "published_sha256": "6ee7e26eb332db9f38dca29e7603a563c2456c9e23370b375d0cb19736151c88"
+  },
+  {
+    "path": ".github/workflows/collatz-all-even-join-extension.yml",
+    "original_sha256": "1f76361bcc0d866c8e8be5fe00a8c30479dcac1e0029fa84a4d2556b430a423a",
+    "published_sha256": "26f91106437677421a91e3833bd266e61b87a05fff45e38bdb392e221b594b1f"
+  },
+  {
+    "path": ".github/workflows/collatz-clocked-support.yml",
+    "original_sha256": "d60f5f2233d5d44a5f170ba694c64a3f62d16fc19252a8d525c3090fd3066b19",
+    "published_sha256": "93b7752dd29dcb8b6786a080da89bc96be3ce2fafaa9f02bdef6e803cf4e2797"
+  },
+  {
+    "path": ".github/workflows/collatz-defect-rank-descent.yml",
+    "original_sha256": "009f5ce02533f3eab97d8a831c94505ac2f70562a64ef5b217a7acf7f652db79",
+    "published_sha256": "8786077729b70b01816b06162dd393b2346f176353232b86e80b7b87199fcb80"
+  },
+  {
+    "path": ".github/workflows/collatz-global-cylinder-control.yml",
+    "original_sha256": "1aba0dbf39b74bed7c9438511fa242dd9e9354fb0272e0d4e65193e134933342",
+    "published_sha256": "df94d13e3a732eaa125964fb29b7b90f7354ea2fda0450c1bc3caf5141b628aa"
+  },
+  {
+    "path": ".github/workflows/collatz-height-window.yml",
+    "original_sha256": "e82fc9d3f0d85a7b6a2e253fdd71a84ee74b9e9ad5dd5661365028b09e948ec7",
+    "published_sha256": "ce4e7372e665216a6c7fe2718ca8b83613ef3695c96d0b837b73020eb408aeec"
+  },
+  {
+    "path": ".github/workflows/collatz-negative-shadow-descent.yml",
+    "original_sha256": "21eb306ff49ac0cd00453b2d7609035c90ba1e48fff140a8145b287578758b84",
+    "published_sha256": "d179d5369e75cc827d7caa2f741ed66f9e3b4b24b0868a13d5421170c101de20"
+  },
+  {
+    "path": "editions/cumulative_20260916/MANIFEST.json",
+    "original_sha256": "9177e2aa1764713f6910c1a7d867fe6440ec3749d0335df4a2097bbb3a663590",
+    "published_sha256": "41052737a8dc01922f426110819c0b3312554afe39c64701808f4701a749c026"
+  },
+  {
+    "path": "editions/cumulative_20260916/README.md",
+    "original_sha256": "d8ffff6c442e80f55585f97526c0d072c65acf8424de3aa7bed0cd26672fc5d2",
+    "published_sha256": "f6d1068223dfa5516e4088da1d6cbd14062a487b3bc17249c3d3f96f0cec26cd"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/main.pdf",
+    "original_sha256": "af3d5d17a15a1ff0d162f0ce87c8d24d08f9914f80a9df521c3bbba699255747",
+    "published_sha256": "26bcfcc5b759401164286a43f54754a6f8bb5c327c6960c3c30dbb50e85c7cd9"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/main.tex",
+    "original_sha256": "74182b57dae7444c5a83ff2198af054bd1682dca2588c1f7482e4239aba14bcb",
+    "published_sha256": "52550d1aa0d8540eba6529e8d2361e6b2bf50d438e02c01b035c250c9337a4db"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/README.md",
+    "original_sha256": "19106268f7308ca1ba050a1ebf9efc19c3b27d34eb51e9c1be5c6df4f6eb0fdf",
+    "published_sha256": "d27b56cc526d10ff9dc13e8c626eb2ca34c07e870b3e0c5732717e079bb1c7dc"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/SOURCE_MAP.json",
+    "original_sha256": "36bc2f6f98cc5b1c306a1c12b5da6a5441accd74214da16875621c66d295a6f7",
+    "published_sha256": "905d4853a372290c1c30bbcb22c559b326d5157a07f80e21759b144b5f8d141b"
+  },
+  {
+    "path": "editions/cumulative_20260916/tools/build_latex.py",
+    "original_sha256": "75890972d139468b0637923044eae45285f45c664d01b7d60cb5eb5af9bd624e",
+    "published_sha256": "8a94a235eac8415079aeaf8a5499945828b43772c89b157be167d445daf20ef5"
+  },
+  {
+    "path": "editions/cumulative_20260916/repository/collatz_reconstruction/research_program/all_even_join_extension_20260916/note.md",
+    "original_sha256": "537e64b1651beaa04148871fe1d88aa4861e9bba71112b3598e4c97b0fd914ce",
+    "published_sha256": "6ee7e26eb332db9f38dca29e7603a563c2456c9e23370b375d0cb19736151c88"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/01_history_law_cutoff_20260914_RESEARCH_NOTE.math.json",
+    "original_sha256": "f6e1bc57cd0f04ca08ea5785309df98af35727f4110547e58b537bbeee00729d",
+    "published_sha256": "15ea0272148180a2571092d69abe0ec48e03126cef48168b324d5689b4aeb863"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/01_history_law_cutoff_20260914_RESEARCH_NOTE.tex",
+    "original_sha256": "50e0fd456d35e2ec2928d6cd7ef6a8017ade95fb00fe488ee5931983454bd252",
+    "published_sha256": "f7a45ff327846c84cea141dd8ed69c8b38846c6db913d7353671ed6ce426a2f9"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/02_stopped_affine_transport_20260914_note.math.json",
+    "original_sha256": "0610b0e17be7dd587cc8d7e0e32e208443818fc2437d6d2a81aebf69f639a9f0",
+    "published_sha256": "d045c3f0cb1f1da090b843c9ca3433736cd831ce9a8a3042e9e2896b2182487d"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/02_stopped_affine_transport_20260914_note.tex",
+    "original_sha256": "1d8edd5817b554f17118a2a71949722e35a3241e7614784296fd85df08041470",
+    "published_sha256": "8283cba22a36c1df8f67e264158dc1cca0d8afb84bea1c431dac0eb9c3601a44"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/03_cycle_relative_cohomology_20260914_note.math.json",
+    "original_sha256": "790a8a96bfd4d4a3f91592b0cce1296dbeceb81789825b8b4a7ede74de2161c9",
+    "published_sha256": "046c753aea3dc7597f7bf00d0fcdfc8afb3d26e2b19efec6042d3cfcdf3f94a8"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/03_cycle_relative_cohomology_20260914_note.tex",
+    "original_sha256": "6b1ca4da11878a53180e1a54b6f1819b9b5c4e19c331ec9d064f2a70f44ee7a9",
+    "published_sha256": "5c4adc8c280dab7ce59e30efa9f81383edaa4a58155089934be30dccb8921a25"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/04_residual_splice_20260914_note.math.json",
+    "original_sha256": "165c20fbbe77c1e174799f4a0afb9200ee814098a91f046bc9dc3d4fca09b944",
+    "published_sha256": "b11e403824521beaa98912e7a5546ec956795dbed60324060fd29db7508662a6"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/04_residual_splice_20260914_note.tex",
+    "original_sha256": "5cbdc7fec4a1e130cc970c8fbfda97b0e32e0876be565b8e98376076a84a5287",
+    "published_sha256": "3953835b3bf300d161c9be6ebb8dcf50c7fb30c6a083ed1c7a00fbc64bda8729"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/05_residual_splice_20260914_integral_blocks.math.json",
+    "original_sha256": "b33b9d948d017366b6a79c76cfa66ccdfba9ad0ee24597cac438e9372f2311e8",
+    "published_sha256": "fea602e49f72daf1d3b98a6c76e8ab202670c140e07f369addd2af1848f385cd"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/05_residual_splice_20260914_integral_blocks.tex",
+    "original_sha256": "ab9b94b8af9740acb24f7e125a2185523e10ecfa5799a5a063b6317c74009475",
+    "published_sha256": "813185abf3bd4a56e9f68242b5c6d4879bc0d6971373b7022f1b8d5bdf87d119"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/06_clocked_support_20260914_note.math.json",
+    "original_sha256": "fc4d6cf652c47e63b0d898ac37792ac97595581b9973a6df112cbbf9b4ccf873",
+    "published_sha256": "6e5c910fef067a1e588612fac5d6285a0c4a7174bb33ef5cbb707b55d69c1c43"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/06_clocked_support_20260914_note.tex",
+    "original_sha256": "bc588847e19ae5d1fd5a6b2aa98590dad77f75331ab2fbe1935c3f5f0dfab279",
+    "published_sha256": "f48ea3cea19a74398debd95ea9486f0606e5ddf472e852f5617d9f2f52642569"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/07_completion_defect_20260914_note.math.json",
+    "original_sha256": "caa869770ff4c2c784794427a6925d4a8d7ad9867623fa14caef08418c8339ec",
+    "published_sha256": "36aee50b987673ae20aa568e7fe246550076f29a7472b407d610ab36e4f34198"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/07_completion_defect_20260914_note.tex",
+    "original_sha256": "c6bdaff1bf91e3a8915502de6fce5973ea16e1766fb1ad2b8bc8ddf3ca74a0c8",
+    "published_sha256": "c78fa7711b3f2a0d69e66f3a6ed1b5e3058eadfcec1dbcc0e976c5a6a82e4726"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/08_supported_structure_20260915_note.math.json",
+    "original_sha256": "7375cee69100f8acbfefd711d5b5cf2c858f40f2d3a7654193d0fa0895246755",
+    "published_sha256": "d9dd8300084db70204d3c9d68a8a197b40b21e827bf89d87178443b1a2315113"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/08_supported_structure_20260915_note.tex",
+    "original_sha256": "dd966f07dc9632ffaf39bdfe46a7fab119490fb8a9575ef76ccc8841a35cb9fe",
+    "published_sha256": "8757563dee41e8b9c827fdff8903f7740f087ec5e62d21977ee63df70e6239d4"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/09_intrinsic_zero_firstjet_20260915_note.math.json",
+    "original_sha256": "9a37ca7e1fad962e70836eaefc546fe17e46a84f33179a7b066ec623cc0412bc",
+    "published_sha256": "25be0d90ff7fd99b73a5b39eb09e7df4852b4f6b9a392351bd07f4ea53dd9a19"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/09_intrinsic_zero_firstjet_20260915_note.tex",
+    "original_sha256": "2143172f05d71110adca18d1f202a688a6c42e1475049b46af13ca1b2e360eea",
+    "published_sha256": "0e60c969bff80657f99ff31352a4bbd246befccfe765cfa91f326902bd1840d0"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/10_anchored_defect_20260914_note.math.json",
+    "original_sha256": "6583aa3efa2feb821c62967f315bc8984b2eeb7d2466d35f4ffc5a32823b575b",
+    "published_sha256": "8c3e1d36a63dae59bf75a946395ca49050fcc48ae1e4f81001c8aacf41c19a0f"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/10_anchored_defect_20260914_note.tex",
+    "original_sha256": "974ebe11befd4ea610f6f8841cae7dc4d0dc0b798aa982461a98874364937ef2",
+    "published_sha256": "f758f1ff3cd9b463fc7b24746e9fc5757df1b944753c2780625b7da606783a8f"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/11_anchored_defect_20260914_turns_and_unit_excess.math.json",
+    "original_sha256": "90a59ea8e4c56ab7594001c5699635c1201283a324f87663e27c34f30ff09ad5",
+    "published_sha256": "041db3362d74ebb702a25f0c5714fdd03168ee677c89e6b814d9627244278b10"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/11_anchored_defect_20260914_turns_and_unit_excess.tex",
+    "original_sha256": "3870e0cf23344199a546e46823443afbe34b313f9bf549b2850ec1574179c851",
+    "published_sha256": "392d7079e69e68f507961c5e5a0c2d957be651b0facc05e9b2afd3e5aac7823f"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/12_defect_rank_descent_20260915_note.math.json",
+    "original_sha256": "9b67538b1117fa8f8b3b6a2109c87aa8dee505039f93245bf824d827e315c3a0",
+    "published_sha256": "166e5a3393d6d37b56dcf99eeee949f521e3b43c9b40decfc4a231b1c7510a9a"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/12_defect_rank_descent_20260915_note.tex",
+    "original_sha256": "335e7f4e5ed73289db9d3028a8ed7032390f22ddee41a6bf90d752a9e91142cd",
+    "published_sha256": "e88fe047b58fce8279213ab92b7e20a69344dd2a328ce7d241f7170670faccf5"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/13_defect_rank_descent_20260915_logarithmic_run_exclusion.math.json",
+    "original_sha256": "13e6cedfb1578111d4ec6b0a087d4fa1e6afb25eeedc5ba54648a685e77543af",
+    "published_sha256": "9886fea9c166e0ce99ba67813b207cbb316d6d6633b1a8d347139f665891741e"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/13_defect_rank_descent_20260915_logarithmic_run_exclusion.tex",
+    "original_sha256": "ed8ca73f461e87ce97d39cdc21f9b7f25705793c9dbb79a6279653ff238600b2",
+    "published_sha256": "274577eb53615743912f514c95320a8e03607ddb7502b6854b31219aebaaeb28"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/14_negative_shadow_descent_20260916_note.math.json",
+    "original_sha256": "24eb82a08caaedef6fe592143f81460f7f292e5c7f92b4fb13d804d4b5b9dd8a",
+    "published_sha256": "f9722ed7f8ebe02d3c1192f1ac8344ba7b2d9e823fcbecb5439faf8d4c7284b7"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/14_negative_shadow_descent_20260916_note.tex",
+    "original_sha256": "2a537c683f7de07a45ed3df7ef181d8b384e993a243c0bb248d2101645057dca",
+    "published_sha256": "f00e6e8a8fbe6dc7731ce2f9383f46c9cba8aa13557838d40c69621f8e4abcea"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/15_mixed_switch_control_20260916_note.math.json",
+    "original_sha256": "09f9d8d630e0391c44076a70c50867f55dd9a38a3c215762600f25e759486f87",
+    "published_sha256": "b864ca3889f1050c37281f96932ef5a49a223f4d30861276531ee6265a156634"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/15_mixed_switch_control_20260916_note.tex",
+    "original_sha256": "b61a2ba2652f28ae10db741deeffda19f9b57124b3934375cf32cffe133caf83",
+    "published_sha256": "9f12afe4f9fc3185c7672fa06cf5b885aff5e7001c2122538e9168fec3cd43f8"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/16_global_cylinder_control_20260916_note.math.json",
+    "original_sha256": "d314daf28d12d0cf6bd013200dedac40bde706d944bcbded11c7cccc167fd49a",
+    "published_sha256": "cb0ce45625331d95e0e183260b527e114b73a2bc0aa573046f1e20cd6d28f9b4"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/16_global_cylinder_control_20260916_note.tex",
+    "original_sha256": "2c425fe183f44c418b7da16871e2ea8880991ea0b8709531f4301a4ed5d72a1c",
+    "published_sha256": "45cd1644e4db9798897a19ba34f2f6593f90aa05697c7173cf37498976d1f2bb"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/17_height_window_reduction_20260916_note.math.json",
+    "original_sha256": "f13a71616fbc5f61e64621df57b7687510d36110b9e50955d04e6e70bad00aef",
+    "published_sha256": "df116108a3f89eef7ebd24027c288d09102655b3ea325757302bc6623675b26c"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/17_height_window_reduction_20260916_note.tex",
+    "original_sha256": "faee331f362334590d25bced373e2f4862b36538b824833d0e5dee6d7b9559a1",
+    "published_sha256": "122d8f1bdc34211efd77e96c870b5da687c23f45f0677daecfa0b50b706a59be"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/18_ternary_join_reduction_20260916_note.math.json",
+    "original_sha256": "6fe156e598d6341550343244a84968b2b1389b786d8dc90c4d154b15c371d8c1",
+    "published_sha256": "30b59172334e0aaf2acd86ee660a3ba5d5c0a89431393329462d70ddf40b810f"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/18_ternary_join_reduction_20260916_note.tex",
+    "original_sha256": "7ce229a60737621b8de0df7529fb3008d037bc3242d55f391985d2dea598ae00",
+    "published_sha256": "8fa5e167370e380b0c5449524c446a3ff7aac1393f9d67a18078e8d8607010f2"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/19_bilateral_root_bounds_20260916_note.math.json",
+    "original_sha256": "f64303cd2c76aba7c80c811b89c3219ec4be6dce023d64141f60f3cb96ed2de5",
+    "published_sha256": "ab5380f8ff20f16ae5fb4161cb22c63dd65fb83bb4a6bea37ae63de496d19998"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/19_bilateral_root_bounds_20260916_note.tex",
+    "original_sha256": "c3bc549477ffc738a1f9798ced23f835599d8a89c62be8b27529e17a82013a34",
+    "published_sha256": "4e6d926d98704642bfccf67b140da463d2310da701219874f44a63aa18909deb"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/20_all_even_join_extension_20260916_note.math.json",
+    "original_sha256": "d90a9558fdde8178e112347045ab2802f72c63966e66e3ff2cbbd387cc8e2d06",
+    "published_sha256": "0af0d79dd7a6ff3fec5cd22e55f0596995f72eac0d7d8905bea0d47e44916c50"
+  },
+  {
+    "path": "editions/cumulative_20260916/latex/chapters/20_all_even_join_extension_20260916_note.tex",
+    "original_sha256": "81f12b884653b8a0916b3296d40c4fd0e2608dc38a5df6540294fa93a11e5624",
+    "published_sha256": "ee524faee78939a93b666ad9d53e96d08641a79b8e49636829e8974208e09036"
+  }
+]

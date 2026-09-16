@@ -1,0 +1,43 @@
+{
+  "status": "pass",
+  "scope": "Conversion and source-preservation audit of the corrected twenty-chapter Collatz reader; not a proof audit or PDF visual audit.",
+  "edition": "Collatz research continuations: corrected cumulative reader, 16 September 2026",
+  "checks": {
+    "source_count": 20,
+    "all_actual_source_sha256_match_input_and_output_maps": true,
+    "all_original_source_sha256_match_intake": true,
+    "chapters_1_through_19_byte_identical_to_intake": true,
+    "only_changed_chapter_source": 20,
+    "chapter_20_changes": [
+      "Restrict unrestricted support-budget statement to positive odd n>1.",
+      "Add R_*(1)=1 and zero homotopy column H(V_1) at the fixed root.",
+      "Restrict uncollected-term statement to positive odd n>1.",
+      "Add K_*(1)=0 at the fixed root."
+    ],
+    "reader_repair_rules": 19,
+    "all_repair_occurrence_counts_verified": true,
+    "explicit_math_tokens": 2670,
+    "all_explicit_math_tokens_equal_before_and_after_reader_repairs": true,
+    "all_explicit_math_inventories_match_generated_per_chapter_json": true,
+    "superscript_ast_nodes": 0,
+    "subscript_ast_nodes": 0,
+    "strikeout_ast_nodes": 0,
+    "unintended_emphasis_nodes": 0,
+    "remaining_emphasis": "All inspected remaining Emph nodes are deliberate prose emphasis or bibliographic titles.",
+    "root_convention_rendering": "R_*(1), K_*(1), and H(V_1) remain literal source notation; new root-convention text introduces no Emph nodes.",
+    "plaintext_operators": "No remaining conversion-induced operator swallowing detected in the inspected emphasis and superscript/subscript classes. Escaped arithmetic stars are preserved by the generated TeX.",
+    "published_builder_replay": "Executed in memory with every Path.write_text intercepted and compared against the existing output; no edition files were written.",
+    "replayed_outputs_compared": 43,
+    "all_replayed_outputs_equal_after_normalizing_windows_newlines": true,
+    "replayed_outputs": "20 chapter TeX files, 20 math inventories, SOURCE_MAP.json, main.tex, CONVERSION_RECEIPT.json.",
+    "front_matter_inspected": true,
+    "edition_files_edited_by_auditor": false
+  },
+  "bound_artifact_sha256": {
+    "latex/SOURCE_MAP_INPUT.json": "c3e68014df03a6ecf5047eb91fd8832731ecdb044ffd9d348b0d2e3eccb6e53a",
+    "latex/SOURCE_MAP.json": "905d4853a372290c1c30bbcb22c559b326d5157a07f80e21759b144b5f8d141b",
+    "latex/READER_REPAIRS.json": "a0b6f111233e978cbd43385cbf380d730a37f35a2ef0d14915155af78c7ed1dc",
+    "latex/main.tex": "52550d1aa0d8540eba6529e8d2361e6b2bf50d438e02c01b035c250c9337a4db"
+  },
+  "limitations": "This bounded audit does not independently validate mathematical claims or the semantic correctness of the n=1 clarification. PDF compilation and page rendering are covered by the parent review."
+}

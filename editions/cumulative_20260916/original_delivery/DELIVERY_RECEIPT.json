@@ -1,0 +1,77 @@
+{
+  "date": "2026-09-16",
+  "delivery": "Cumulative supplied-results archive and new all-even join extension",
+  "github": {
+    "repository": "KokunoYumeto/collatz-workbench",
+    "main_read": "9453b5306b3a897389dece309f9c119dffbcc489",
+    "main_commit_message": "Integrate September 16 research continuations, complete evidence and scoped reviews",
+    "pr2": {
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-09-16T20:11:41Z",
+      "merge_commit": "284748b5d9282b1963139fa5f7bffa4f23e5a904"
+    },
+    "new_contribution": "all_even_join_extension_20260916",
+    "new_remote_writes_this_session": false,
+    "new_remote_commit": null,
+    "new_GitHub_CI_result": null,
+    "historical_claims_not_rewritten": true
+  },
+  "archive_scope": {
+    "original_supplied_archives": 14,
+    "original_file_members": 412,
+    "original_archive_bytes": 119110337,
+    "standalone_input_locators": 71,
+    "standalone_inputs_preserved_as_exact_archive_members": 71,
+    "newly_recovered_full_GitHub_mathematical_notes": 4,
+    "all_remote_companion_code_present": false,
+    "companion_restore_scope": "three pinned directories in provenance/GITHUB_ONLY.json",
+    "full_Git_checkout": false
+  },
+  "latex": {
+    "complete_chapters": 20,
+    "pages": 236,
+    "original_math_tokens": 2670,
+    "original_markdown_mutated": false,
+    "original_source_SHA256s": "latex/SOURCE_MAP.json",
+    "typography_adjustments": "latex/TYPOGRAPHY_CHANGES.json",
+    "successful_XeLaTeX_runs": 2,
+    "all_pages_rendered_with_pdfium": true,
+    "text_outside_page_count": 0
+  },
+  "new_mathematics": {
+    "all_even_interiors": true,
+    "complete_input_specific_template_search": true,
+    "budget_preserving_extension": true,
+    "new_global_Collatz_claim": false,
+    "new_crossing_scan": false,
+    "independent_external_math_review": false,
+    "new_Lean_run": false
+  },
+  "execution": {
+    "new_ordinary_and_optimized": "PASS; byte-identical",
+    "checks_per_new_execution": 87989,
+    "new_verification_sha256": "bfd279ba233d6d5e6f690f9f03fb8563dcbb50d42de87f4fca23a55bae179572",
+    "new_verification_bytes": 10174,
+    "negative_controls": 14,
+    "independent_affine_audit": {
+      "families": 512,
+      "imports_predecessor": false,
+      "independently_audited_affine_equations": 24180,
+      "ledger_sha256": "8a7e14e120fe6c21ef766f1210872d31174f25419bf775cbb17e4aff6e72613f",
+      "status": "PASS"
+    },
+    "original_firstjet_pair": "PASS; 39211 exact checks each",
+    "full_historical_repository_replay": false,
+    "complete_prior_big_ledgers_rechecked_mathematically": false,
+    "all_prior_archives_CRC_checked": true,
+    "new_source_received_from_applied_patch": "PASS",
+    "inherited_overlay_files_preserved_in_test": 165,
+    "tracked_untracked_sentinel_preserved": true
+  },
+  "development_record": [
+    "A typed-cache negative control was added during final packaging. Family cache keys now distinguish Boolean, integer and float arguments; accepted final results include the warmed-cache rejection tests. No inherited source was edited.",
+    "Earlier local development output counted 87984 checks; final accepted suite counts 87989 after five additional invalid-input controls. Historical source-archive receipts are not changed."
+  ],
+  "next_entry_point": "repository/collatz_reconstruction/research_program/all_even_join_extension_20260916/README.md"
+}

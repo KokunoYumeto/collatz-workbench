@@ -1,0 +1,222 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\n T(n)=\\frac{3n+1}{2^{a(n)}},\\qquad a(n)=\\nu_2(3n+1).\n\\tag{1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n L=3^k,\\quad U=2^A,\\quad\n C=\\sum_{j=0}^{k-1}3^{k-1-j}2^{A_j},\\quad\n f_w(n)=(Ln+C)/U.\n\\tag{2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\rho+2Ut\\longmapsto\\eta+2Lt,\\qquad t\\ge0,\n\\quad \\rho\\equiv(U-C)L^{-1}\\pmod{2U},\\quad0<\\rho<2U,\n\\quad\\eta=(L\\rho+C)/U.\n\\tag{3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathbb D=\\mathbb Z[\\epsilon]/(\\epsilon^2),\\quad q=1+\\epsilon,\n \\qquad d_\\epsilon E_n=V_n-qV_{T(n)}.\n\\tag{4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathfrak B_X=\\ker\\bigl(H^1(K_\\epsilon)\\to H^1(K)\\bigr),\\qquad\n \\xi_n=[\\epsilon V_n].\n\\tag{5}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon B_l(n)=V_n-q^sV_y.\n\\tag{6}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{d_\\epsilon\\bigl(B_l(n)-q^{s-t}B_r(m)\\bigr)\n       =V_n-q^{s-t}V_m,\\quad t=|r|.}\n\\tag{7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n h_e=(2^e+2)/3\\in\\{2,22\\},\\qquad\n a=a(b,e)=\\min\\{a\\ge1:2^{a+e+2b-1}<3^{a+b}\\},\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n J=2^{e+2b-1},\\quad Q=3^{a+b},\\quad K=2^aJ<Q.\n\\tag{8}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n a(b,e)\\le b+2e-2,\\qquad\n a(b+1,e)-a(b,e)\\in\\{0,1\\}.\n\\tag{9}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r_{b,e}=(1)^a,(e),(2)^{b-1},(1),(1),(3).\n\\tag{10}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal S_{b,e}=\\{n>0:n\\equiv27\\pmod{32},\\quad\n                         Jn+h_e3^b\\equiv0\\pmod Q\\}.\n\\tag{11}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n m_0=(Kn_0+2^ah_e3^b)/Q-1,\\qquad y_0=(27n_0+23)/16.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\\begin{aligned}\n n(t)&=n_0+32Qt,\\\\\n m(t)&=m_0+32Kt,\\\\\n y(t)&=y_0+54Qt,\\qquad t\\in\\mathbb Z_{\\ge0},\n \\end{aligned}}\n\\tag{12}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n(t)\\xrightarrow{\\ (1,2,1)\\ }y(t)\n       \\xleftarrow{\\ r_{b,e}\\ }m(t),\\qquad0<m(t)<n(t).\n\\tag{13}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n x_j=3^j2^{a-j}W-1\\quad(0\\le j\\le a).\n\\tag{14}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n x_a=Jz+h_e-1=2^{e-1}(4/3)^b n+h_e-1.\n\\tag{15}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n v_0=1+2\\,4^{b-1}n/3^{b-1}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n v_j=1+2\\,4^{b-1-j}n/3^{b-1-j}\\quad(0\\le j\\le b-1).\n\\tag{16}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 2n+1\\xrightarrow{1}3n+2\\xrightarrow{1}(9n+7)/2\n                \\xrightarrow{3}(27n+23)/16.\n\\tag{17}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n m=(K/Q)n+h_e(2/3)^a-1.\n\\tag{18}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n h_e(2/3)^a<(2h_e/2^e)(3/4)^b<1.\n\\tag{19}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{1275+2592t\\longrightarrow2153+4374t\n                  \\longleftarrow1007+2048t.}\n\\tag{20}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n(t)=8808219+17006112t,\\qquad\n m(t)=8689663+16777216t,\n\\tag{21}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n J^{\\rm old}_{b,e}=2^{e+2b},\\quad\n J^{\\rm old}_{b,e}(n/3^b)+h_e=0\\pmod{3^{a^{\\rm old}(b,e)}},\n \\quad n=3\\pmod4,\n\\tag{22}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 32h_2-h_6=64-22=42,\\qquad\\nu_3(42)=1.\n\\tag{23}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n h_6-8h_2=22-16=6,\\qquad\\nu_3(6)=1.\n\\tag{24}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Z=J(n/3^b)+h_e,\\qquad A_{\\max}=\\nu_3(Z).\n\\tag{25}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n m_{a'}=2^{a'}Z/3^{a'}-1.\n\\tag{26}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n W_0=(J(n_0/3^b)+h_e)/3^a.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Z=3^a(W_0+32Jt).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{t=t_0+3^{r+1}s,\\quad\n t_0\\equiv(3^r u-W_0)(32J)^{-1}\\pmod{3^{r+1}},\n \\quad0\\le t_0<3^{r+1},\\quad s\\ge0.}\n\\tag{27}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 32Q\\,3^{r+1},\\qquad 2^{a+r}(32J)3.\n\\tag{28}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{B_{\\max}=B_{\\min}-q^{k_{\\min}-r}I.}\n\\tag{29}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Z\\le(J+h_e)n/3^b<3^{k+b+e},\\qquad\n A_{\\max}\\le k+b+e-1.\n\\tag{30}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\eta_l\\equiv\\eta_r\\pmod{2g}.\n\\tag{31}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\begin{aligned}\n n(t)&=n_0+2U_l(L_r/g)t,&n_0&=\\rho_l+2U_lu_0,\\\\\n m(t)&=m_0+2U_r(L_l/g)t,&m_0&=\\rho_r+2U_rv_0,\\\\\n y(t)&=y_0+2(L_lL_r/g)t,&t&\\ge0.\n\\end{aligned}\\tag{32}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (n_0-m_0)+\\bigl(2U_lL_r/g-2U_rL_l/g\\bigr)t>0.\n\\tag{33}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (1,1),\\ (1,2),\\ (1,1,1),\\ (1,1,2),\\ (1,2,1).\n\\tag{34}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 2^{A_r}L_l<U_l3^j.\n\\tag{35}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n\\bmod36\\in\\{3,7,15,19,27\\},\\quad\n n\\not\\equiv8731\\pmod{8748},\\quad n\\not\\equiv1731\\pmod{2916}.\n\\tag{36}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon B_n=V_n-q^{k_n}V_{\\pi(n)}.\n\\tag{37}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H(V_n)=B_n+q^{k_n}H(V_{\\pi(n)}),\\quad\n Q(V_n)=q^{k_n}Q(V_{\\pi(n)}),\\quad F=I-Hd_\\epsilon.\n\\tag{38}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon H=I-Q,\\quad Q^2=Q,\\quad HQ=0,\n \\quad d_\\epsilon F=Qd_\\epsilon,\\quad F^2=F,\\quad FH=0.\n\\tag{39}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C^0_{\\mathbb D}/\\operatorname{im}H\\xrightarrow{\\sim}\\operatorname{im}F,\n \\qquad[e]\\mapsto Fe.\n\\tag{40}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n F_{old}K=K,\\quad F_{new}F_{old}=F_{old}F_{new}=F_{new},\n \\quad Q_{new}Q_{old}=Q_{old}Q_{new}=Q_{new}.\n\\tag{41}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{R(n)=\\max\\{130(n+1),\\lfloor64n\\,4^{k(n)}/3^{k(n)}\\rfloor+21\\}.}\n\\tag{42}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{K(n)=\\frac{n-1}{2}\\bigl(3k(n)+14\\bigr)}\\qquad(n\\text{ odd}).\n\\tag{43}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n R(n)=\\lfloor64n\\,4^{k(n)}/3^{k(n)}\\rfloor+21\n       \\le64n^{\\log_3 4}+21.\n\\tag{44}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Q(C^1_{\\le n})\\subset C^1_{\\le n},\\quad\n H(C^1_{\\le n})\\subset C^0_{\\le R(n)},\\quad\n F(C^0_{\\le n})\\subset C^0_{\\le R(2n)}.\n\\tag{45}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\\{n>1:n\\bmod5668704\\in R_{new}\\}\n   \\setminus\\left(\\bigcup_{b,e}\\mathcal R^{old}_{b,e}\n                  \\ \\cup\\ \\bigcup_{b,e}\\mathcal S_{b,e}\\right).}\n\\tag{46}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n b_j=\\operatorname{bitlength}(3^j)-1,\\quad b_0=0,\\quad\n C_0^*=0,\\quad C_m^*=3C_{m-1}^*+2^{b_{m-1}},\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n D_m^*=2^{b_m+1}-3^m,\\qquad\\Theta_m=C_m^*/D_m^*.\n\\tag{47}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C_m^*-C_p=\\sum_{j=0}^{m-1}3^{m-1-j}(2^{b_j}-2^{A_j})\\ge0\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\max_{1\\le m\\le11610}\\lfloor\\Theta_m\\rfloor=8129266,\n \\quad\\text{record at }(m,b_m+1)=(10946,17349).\n\\tag{48}\n"
+  }
+]

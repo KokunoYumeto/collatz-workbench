@@ -1,0 +1,158 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\nT(n)=(3n+1)/2^{a(n)},\\qquad a(n)=\\nu_2(3n+1).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nC=\\sum_{j=0}^{k-1}3^{k-1-j}2^{A_j},\\qquad f_w(x)=(Lx+C)/U.\n\\tag{1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\rho+2Ut\\longmapsto\\eta+2Lt,\\qquad t\\ge0,\n\\quad \\rho\\equiv(U-C)L^{-1}\\pmod{2U},\\quad0<\\rho<2U,\n\\quad\\eta=(L\\rho+C)/U.\\tag{2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n0<\\eta<2L.\\tag{3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nh_e=(2^e+2)/3\\in\\{2,22\\},\\qquad\n a=a(b,e)=\\min\\{a\\ge1:2^{a+e+2b}<3^{a+b}\\}.\n\\tag{4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\na(b,e)\\le b+2e,\\qquad a(b+1,e)-a(b,e)\\in\\{0,1\\}.\\tag{5}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nw_{b,e}=(1)^a\\,(e)\\,(2)^{b-1}\\,(3).\\tag{6}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nQ=3^{a+b},\\qquad J=2^{e+2b},\\qquad K=2^{a+e+2b}<Q.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\mathcal R_{b,e}=\\{n>0:\\ n\\equiv3\\pmod4,\\quad\n Jn+h_e3^b\\equiv0\\pmod Q\\}.\\tag{7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nm_0=\\frac{Kn_0+2^ah_e3^b}{Q}-1.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\\begin{aligned}\nn(t)&=n_0+4Qt,\\\\\nm(t)&=m_0+4Kt,\\\\\ny(t)&=(3n_0+1)/2+6Qt,\\qquad t\\in\\mathbb Z_{\\ge0},\n\\end{aligned}}\\tag{8}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nn(t)\\xrightarrow{1}y(t)\\xleftarrow{\\ w_{b,e}\\ }m(t),\\qquad 0<m(t)<n(t).\n\\tag{9}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nm=2^a w-1=\\frac{Kn+2^ah_e3^b}{Q}-1.\\tag{10}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nx_j=3^j2^{a-j}w-1\\qquad(0\\le j\\le a).\\tag{11}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nx_a=2^e(4/3)^b n+h_e-1.\n\\tag{12}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nT(x_a)=1+4^b n/3^{b-1}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n1+4^{b-j}n/3^{b-1-j}\\qquad(0\\le j\\le b-1).\n\\tag{13}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nm=(K/Q)n+h_e(2/3)^a-1.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n6219+8748t\\longrightarrow9329+13122t\\longleftarrow5823+8192t.\n\\tag{14}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{13704327+19131876t\\longrightarrow20556491+28697814t\n\\longleftarrow12017663+16777216t.}\\tag{15}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\na_k\\text{ odd},\\qquad 2^{A-1}<3^{k-1}.\\tag{16}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\\begin{aligned}\nn(t)&=(2\\eta-1)/3+4\\cdot3^{k-1}t,\\\\\nm(t)&=\\rho+2^{A+1}t,\\\\\ny(t)&=\\eta+2\\cdot3^kt,\\qquad t\\ge0.\n\\end{aligned}}\\tag{17}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nm=(2^{A-1}n-D_0)/3^{k-1}<n.\\tag{18}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\sum_{k=2}^{12}\\sum_{A=k}^{\\operatorname{bitlength}(3^{k-1})}\n\\sum_{\\substack{j\\ge1\\text{ odd}\\\\j\\le A-k+1}}\n\\binom{A-j-1}{k-2}.\\tag{19}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nn\\bmod36\\in\\{3,7,15,19,27\\},\\quad\nn\\not\\equiv8731\\pmod{8748},\\quad n\\not\\equiv1731\\pmod{2916}.\\tag{20}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\{n>1:n\\bmod708588\\in R_{12}\\}\\setminus\n\\bigcup_{b\\ge1,e\\in\\{2,6\\}}\\mathcal R_{b,e}.\\tag{21}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon e_n=V_n-qV_{T(n)},\\qquad q^j=1+j\\epsilon\\quad(j\\in\\mathbb Z).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{d_\\epsilon(B_l(n)-q^{s-t}B_r(m))=V_n-q^{s-t}V_m.}\\tag{22}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nH(V_n)=B+q^kH(V_m),\\quad Q(V_n)=q^kQ(V_m),\\quad F=I-Hd_\\epsilon.\n\\tag{23}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon H=I-Q,\\quad Q^2=Q,\\quad HQ=0,\n\\quad d_\\epsilon F=Qd_\\epsilon,\\quad F^2=F,\\quad FH=0.\n\\tag{24}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nC^0_D/\\operatorname{im}H\\xrightarrow{\\sim}\\operatorname{im}F,\\qquad[e]\\mapsto Fe,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nF_new F_old=F_old F_new=F_new,\\qquad\nQ_new Q_old=Q_old Q_new=Q_new.\\tag{25}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{64n^2+21.}\\tag{26}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{K(n)=\\frac{n-1}{2}\\left(2\\lfloor\\log_3 n\\rfloor+14\\right)}\\tag{27}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nQ(C^1_{\\le n})\\subset C^1_{\\le n},\\qquad\nH(C^1_{\\le n})\\subset C^0_{\\le64n^2+21},\n\\quad F(C^0_{\\le n})\\subset C^0_{\\le256n^2+21}.\n\\tag{28}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nC_0^*=0,\\quad C_m^*=3C_{m-1}^*+2^{b_{m-1}},\\quad\nD_m^*=2^{b_m+1}-3^m,\\quad \\Theta_m=C_m^*/D_m^*.\n\\tag{29}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nC_m^*-C_p=\\sum_{j<m}3^{m-1-j}(2^{b_j}-2^{A_j})\\ge0,\n\\quad C_p/(2^{A_m}-3^m)\\le\\Theta_m.\\tag{30}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{H_{10945}=6728242,\\quad\\text{largest odd candidate }6728241.}\\tag{31}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\ndb=0,\\qquad dc-Pb=V_n\\tag{32}\n"
+  }
+]

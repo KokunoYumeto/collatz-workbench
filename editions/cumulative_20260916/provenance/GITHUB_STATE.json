@@ -1,0 +1,16 @@
+{
+  "repository": "KokunoYumeto/collatz-workbench",
+  "main_read": "9453b5306b3a897389dece309f9c119dffbcc489",
+  "main_commit_message": "Integrate September 16 research continuations, complete evidence and scoped reviews",
+  "pr2": {
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-09-16T20:11:41Z",
+    "merge_commit": "284748b5d9282b1963139fa5f7bffa4f23e5a904"
+  },
+  "new_contribution": "all_even_join_extension_20260916",
+  "new_remote_writes_this_session": false,
+  "new_remote_commit": null,
+  "new_GitHub_CI_result": null,
+  "historical_claims_not_rewritten": true
+}

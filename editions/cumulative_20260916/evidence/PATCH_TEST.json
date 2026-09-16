@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "additions": 13,
+  "inherited_files_preserved": 165,
+  "modifications": 0,
+  "deletions": 0,
+  "tracked_and_untracked_sentinels_preserved": true,
+  "new_and_firstjet_pairs_replayed_from_applied_files": true,
+  "full_remote_checkout": false,
+  "patch_sha256": "18b859765bf945c8ded0454a33cc836a380ac32f0448fd15ffb27e697fd28ff9",
+  "numstat": [
+    "29\t0\t.github/workflows/collatz-all-even-join-extension.yml",
+    "16\t0\tcollatz_reconstruction/research_program/all_even_join_extension_20260916/MANIFEST.json",
+    "51\t0\tcollatz_reconstruction/research_program/all_even_join_extension_20260916/README.md",
+    "12\t0\tcollatz_reconstruction/research_program/all_even_join_extension_20260916/SOURCE_INTAKE.json",
+    "21\t0\tcollatz_reconstruction/research_program/all_even_join_extension_20260916/TASK_STATE.md",
+    "180\t0\tcollatz_reconstruction/research_program/all_even_join_extension_20260916/all_even.py",
+    "62\t0\tcollatz_reconstruction/research_program/all_even_join_extension_20260916/audit_families.py",
+    "7\t0\tcollatz_reconstruction/research_program/all_even_join_extension_20260916/family_audit.json",
+    "-\t-\tcollatz_reconstruction/research_program/all_even_join_extension_20260916/family_cases.jsonl.gz",
+    "444\t0\tcollatz_reconstruction/research_program/all_even_join_extension_20260916/note.md",
+    "29\t0\tcollatz_reconstruction/research_program/all_even_join_extension_20260916/replay.py",
+    "617\t0\tcollatz_reconstruction/research_program/all_even_join_extension_20260916/verification.json",
+    "131\t0\tcollatz_reconstruction/research_program/all_even_join_extension_20260916/verify.py"
+  ]
+}

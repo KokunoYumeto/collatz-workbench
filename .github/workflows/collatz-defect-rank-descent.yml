@@ -1,0 +1,22 @@
+name: Collatz original defect-rank arithmetic
+
+# Historical complete replay and atlas rebuild are available on explicit request.
+'on':
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-arithmetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - name: Verify original sources, all-length certificates and exact ordinary/optimized replays
+        run: python -B collatz_reconstruction/research_program/defect_rank_descent_20260915/replay.py --predecessors --rebuild-atlas

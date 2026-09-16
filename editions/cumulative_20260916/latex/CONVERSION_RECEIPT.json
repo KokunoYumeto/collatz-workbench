@@ -1,0 +1,161 @@
+{
+  "format": "markdown+tex_math_single_backslash+tex_math_dollars+raw_tex-auto_identifiers-superscript-subscript",
+  "chapters": 20,
+  "math_tokens": 2670,
+  "reader_repairs": [
+    {
+      "source": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "from": "epsilon*y",
+      "to": "epsilon\\*y",
+      "count": 2,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 2
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "from": "epsilon*c",
+      "to": "epsilon\\*c",
+      "count": 2,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 2
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "from": "epsilon*P_Eb",
+      "to": "epsilon\\*P_Eb",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "from": "epsilon*z1",
+      "to": "epsilon\\*z1",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "from": "epsilon*(z1+P_Eb)",
+      "to": "epsilon\\*(z1+P_Eb)",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "from": "P_E*ker d_E",
+      "to": "P_E\\*ker d_E",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "from": "m*epsilon",
+      "to": "m\\*epsilon",
+      "count": 3,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 3
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "from": "epsilon*V_c",
+      "to": "epsilon\\*V_c",
+      "count": 2,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 2
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "from": "epsilon*sum_j e_(x_j)",
+      "to": "epsilon\\*sum_j e_(x_j)",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "from": "epsilon*V_(x_0)",
+      "to": "epsilon\\*V_(x_0)",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "from": "U*A*V=D",
+      "to": "U\\*A\\*V=D",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/anchored_defect_20260914/note.md",
+      "from": "4*0=3*0+0",
+      "to": "4\\*0=3\\*0+0",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/mixed_switch_control_20260916/note.md",
+      "from": "2*8^2*2048^2>91*9*2187",
+      "to": "2\\*8^2\\*2048^2>91\\*9\\*2187",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/mixed_switch_control_20260916/note.md",
+      "from": "273818166287419>2*10^12",
+      "to": "273818166287419>2\\*10^12",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/mixed_switch_control_20260916/note.md",
+      "from": "m_*<2M<2*10^12",
+      "to": "m_\\*<2M<2\\*10^12",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/mixed_switch_control_20260916/note.md",
+      "from": "b_1=A_*, b_2=-m_*",
+      "to": "b_1=A_\\*, b_2=-m_\\*",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/global_cylinder_control_20260916/note.md",
+      "from": "3^(m-j)*(3^j n+C_j)+3^(m-j-1)*2^A_j",
+      "to": "3^(m-j)\\*(3^j n+C_j)+3^(m-j-1)\\*2^A_j",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/global_cylinder_control_20260916/note.md",
+      "from": "U*y=L*rho+C",
+      "to": "U\\*y=L\\*rho+C",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    },
+    {
+      "source": "repository/collatz_reconstruction/research_program/all_even_join_extension_20260916/note.md",
+      "from": "collected constant coefficients have total absolute sum at most K_*(n), and\nfirst-order coefficients at most K_*(n)^2.",
+      "to": "collected constant coefficients have total absolute sum at most K_\\*(n), and\nfirst-order coefficients at most K_\\*(n)^2.",
+      "count": 1,
+      "reason": "Escape literal mathematical asterisk to prevent Markdown emphasis.",
+      "applied_count": 1
+    }
+  ],
+  "original_markdown_rewritten_by_converter": false,
+  "superscript_subscript_markdown_disabled": true
+}

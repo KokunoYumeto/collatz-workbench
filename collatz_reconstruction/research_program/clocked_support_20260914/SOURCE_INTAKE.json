@@ -1,0 +1,71 @@
+{
+  "source_commit": "6a30f1dc23110fae0abbe3b3bd5e60072a842385",
+  "repository": "KokunoYumeto/collatz-workbench",
+  "branch": "research/stopped-cycle-cohomology-20260914",
+  "pull_request": 2,
+  "read_date": "2026-09-14",
+  "local_source": "Uploaded Collatz_Residual_Continuation_20260914.zip, payload/",
+  "authenticated_matches": {
+    "cycle_relative_cohomology_20260914": "e3d7235aab4dc02cc35e91249140027487169b18",
+    "residual_splice_20260914": "28887bc56fb395003a3149935a6d4269dbec1cdf",
+    "stopped_affine_transport_20260914": "af92ada3eb6c213b7a30df257db9e67c15f9e533"
+  },
+  "inspected_sources": [
+    {
+      "path": "collatz_reconstruction/research_companion/chapters/01_weighted_path_and_finite_residue_actions.tex",
+      "git_blob": "f0142c0d4c237ed068a0762a08c6622df5dbcfee",
+      "line_ranges": [
+        [
+          1,
+          155
+        ],
+        [
+          260,
+          555
+        ]
+      ],
+      "used": "Original path weights, odd-block expansion, finite-support transfer and formal inverse"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/residual_splice_20260914/note.md",
+      "git_blob": "b31acf3b485b9565b1bbf878f1e1a98d5e704ad8",
+      "used": "Complete local note read and its bytes matched to authenticated Git blob; original first-descent cells, splicing and cycle windows"
+    },
+    {
+      "repository": "KokunoYumeto/zeta-function-research-reader",
+      "path": "CURRENT_RESEARCH.md",
+      "git_blob": "9eefdcb14ca6fa22efb29fd60a01429512bfbadc",
+      "line_ranges": [
+        [
+          1,
+          110
+        ]
+      ],
+      "used": "Current original-volume and period-Gram research scope; no theorem imported"
+    },
+    {
+      "repository": "KokunoYumeto/zeta-function-research-reader",
+      "path": "RESEARCH_PROGRAMMES.md",
+      "used": "Programme objective and support/cohomology methodology; no file modified"
+    }
+  ],
+  "github_access": {
+    "read_actions_available": true,
+    "write_actions_exposed": false,
+    "discovered_action_count": 48,
+    "installed_plugin_confirmed": true,
+    "container_git_network": "DNS resolution unavailable",
+    "remote_writes_performed": false,
+    "new_remote_ci_claimed": false
+  },
+  "excluded_claims": [
+    "Priority for weighted path sums or formal resolvents",
+    "Independent external mathematical review",
+    "A global Collatz proof",
+    "A positive Collatz counterexample",
+    "A current remote commit for this local patch"
+  ],
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "compression_verification": "Manifest verifies the preserved gzip bytes; regeneration compares exact decompressed canonical JSON across compressor versions.",
+  "local_wrapper_attempt": "A combined wrapper attempt completed the inherited eight executions and the new ordinary execution, then hit the 200-second container command limit. Separate ordinary and optimized executions already passed byte-identically. A new-only applied-patch replay is recorded separately in the delivery receipt."
+}

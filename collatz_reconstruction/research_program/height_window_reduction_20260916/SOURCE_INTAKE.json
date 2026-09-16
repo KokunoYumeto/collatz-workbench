@@ -1,0 +1,41 @@
+{
+  "branch": "research/stopped-cycle-cohomology-20260914",
+  "date": "2026-09-16",
+  "external_logarithm_theorem_used": false,
+  "independent_external_mathematical_review": false,
+  "literature": [
+    {
+      "authors": "Olivier Rozier and Claude Terracol",
+      "scope": "Introduction, coefficient-stopping-time definition, affine-parity context; no external theorem used as new numerical premise",
+      "title": "Paradoxical behavior in Collatz sequences",
+      "url": "https://arxiv.org/html/2502.00948v5",
+      "versions_inspected": [
+        "arXiv:2502.00948v3 (2025-03-15)",
+        "arXiv:2502.00948v5 (2026-05-17)"
+      ]
+    },
+    {
+      "author": "Guenther J. Wirsching",
+      "doi": "10.3934/dcds.2003.9.771",
+      "scope": "prior inverse-iteration context, not a numerical premise",
+      "title": "On the problem of positive predecessor density in 3n+1 dynamics",
+      "url": "https://www.aimsciences.org/article/doi/10.3934/dcds.2003.9.771"
+    }
+  ],
+  "new_lean_execution": false,
+  "original_firstjet_source": {
+    "git_blob": "97f9ef5ad535f7ec18259d41fab6a3557be17d98",
+    "path": "collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/firstjet.py",
+    "sha256": "a53cef65109285f377e2c1344ae662c4a74574a30c1c40dfffebc9ed6cca06b0"
+  },
+  "prior_local_package": {
+    "name": "global_cylinder_control_20260916",
+    "status": "preserved but not a proof dependency; previously pending remote integration",
+    "uploaded_zip_sha256": "b55f4d8e0027778910ab91192bf9b1f12db7fa5be325da459d7c53228b1ffff2"
+  },
+  "publication_scope": "Local source intake does not assert a new remote commit or a GitHub workflow success.",
+  "pull_request": 2,
+  "read_commit": "9afcbe2dc9bace77c1ae705b1cd128da22fe8f8b",
+  "repository": "KokunoYumeto/collatz-workbench",
+  "terminology": "Split-Zero equation-support fibres are not identified with chronological weighted-automata histories."
+}

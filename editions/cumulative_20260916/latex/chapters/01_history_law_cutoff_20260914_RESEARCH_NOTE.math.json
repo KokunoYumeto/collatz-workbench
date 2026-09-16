@@ -1,0 +1,762 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\nT(n)=\\frac{3n+1}{2^{\\nu_2(3n+1)}}\\qquad(n\\text{ positive and odd}).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N\\ge1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b\\ge0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m\\ge1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nI_{N,b}=\\{2b+1,2b+3,\\ldots,2(b+N)-1\\}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P_{N,b,m}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(a_1,\\ldots,a_m),\\qquad a_i=\\nu_2(3T^{i-1}(n)+1).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb N_{>0}^m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nG_m(w)=2^{-A(w)},\\qquad A(w)=a_1+\\cdots+a_m.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Pr(a=j)=2^{-j}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\Delta(P,G)=\\frac12\\sum_w|P(w)-G(w)|=\\sup_E|P(E)-G(E)|.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2\\Phi(2c)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_j=a_1+\\cdots+a_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_0=0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nB_w=\\sum_{j=0}^{m-1}3^{m-1-j}2^{A_j}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nT_w(x)=\\frac{3^m x+B_w}{2^{A_m}}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_w"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[1,2^{A_m+1})"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n3^m r_w+B_w\\equiv2^{A_m}\\pmod{2^{A_m+1}},\n\\qquad h_w=(r_w-1)/2.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n=2j+1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nj\\equiv h_w\\pmod{2^{A_m}}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(3n+1)/2^{a_1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a_1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B_w=3^{m-1}+2^{a_1}B_{w'}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{a_1}\\mid 3n+1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "y=(3n+1)/2^{a_1}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n3^{m-1}y+B_{w'}\\equiv2^{A_m-a_1}\\pmod{2^{A_m-a_1+1}}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B_{w'}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "y"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n=2j+1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\square"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "I_{N,b}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nC_{N,b}(w)=\n\\left\\lfloor\\frac{b+N-1-h_w}{2^{A_m}}\\right\\rfloor\n-\\left\\lfloor\\frac{b-1-h_w}{2^{A_m}}\\right\\rfloor. \\tag{2.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\lfloor N2^{-A_m}\\rfloor"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\lceil N2^{-A_m}\\rceil"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n|P_{N,b,m}(w)-2^{-A_m}|\\le\\frac1N. \\tag{2.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H\\ge0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nK_m(H)=\\begin{cases}\\binom Hm,&H\\ge m,\\\\0,&H<m,\\end{cases}\n\\qquad\nQ_m(H)=2^{-H}\\sum_{j=0}^{\\min(m-1,H)}\\binom Hj.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K_m(H)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_m\\le H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\binom{A-1}{m-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m\\le A\\le H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "G_m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nG_m(A_m>H)=Q_m(H). \\tag{3.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H<m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N,b,m,H"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\n\\max\\{0,Q_m(H)-N2^{-(H+1)}\\}\n\\le\\Delta(P_{N,b,m},G_m)\n\\le\\min\\{1,Q_m(H)+K_m(H)/N\\}.\n} \\tag{3.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Delta(P,G)=1-\\sum_w\\min(P(w),G(w))"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K_m(H)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\sum_w\\min(P(w),G(w))\\ge1-Q_m(H)-K_m(H)/N.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_m>H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "G"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{-(H+1)}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nG(F)\\le1-Q_m(H)+N2^{-(H+1)}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F^c"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\square"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\Delta(P_{N,b,m},G_m)\\le\n\\min\\left\\{1,Q_m(H)+\\frac1N\\sum_{A=m}^{H}\n\\binom{A-1}{m-1}\\{N2^{-A}\\}\\right\\}, \\tag{3.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P(w)\\ge\\lfloor N2^{-A}\\rfloor/N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h_*\\ge m-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K_m(h_*)\\le N"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\Delta(P_{N,b,m},G_m)\\ge\nQ_m(h_*)-\\bigl(N-K_m(h_*)\\bigr)2^{-(h_*+1)}. \\tag{3.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "G_m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h_*"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N-K_m(h_*)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h_*+1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N=2^L"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_m\\le L"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_m>L"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\n\\Delta(P_{2^L,b,m},G_m)=Q_m(L)\n-\\sum_{\\substack{w\\in\\operatorname{supp}P_{2^L,b,m}\\\\A(w)>L}}2^{-A(w)}.\n} \\tag{3.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Delta\\le Q_m(L)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L_N=\\log_2N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Phi"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "c"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nm_N=\\left\\lfloor\\frac{L_N}{2}+c\\sqrt{L_N}\\right\\rfloor.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N\\to\\infty"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\n\\sup_{b\\ge0}\\left|\\Delta(P_{N,b,m_N},G_{m_N})-\\Phi(2c)\\right|\\longrightarrow0.\n} \\tag{4.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1/2-\\varepsilon)\\log_2N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1/2+\\varepsilon)\\log_2N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a_N=L_N^{1/4}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H_- =\\lfloor L_N-a_N\\rfloor"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H_+=\\lceil L_N+a_N\\rceil"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K_m(H)\\le2^H"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nQ_{m_N}(H_+)-2^{-a_N-1}\n\\le\\Delta(P_{N,b,m_N},G_{m_N})\n\\le Q_{m_N}(H_-)+2^{-a_N}. \\tag{4.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Y_H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(H,1/2)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nQ_m(H)=\\Pr\\left(\\frac{2Y_H-H}{\\sqrt H}\n\\le\\frac{2m-2-H}{\\sqrt H}\\right).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(\\cos(t/\\sqrt H))^H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e^{-t^2/2}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\log\\cos u=-u^2/2+O(u^4)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H_\\pm"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2c"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a_N=o(\\sqrt{L_N})"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Phi"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\square"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "0<\\varepsilon<1/2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1\\le m\\le(1/2-\\varepsilon)L_N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\Delta(P_{N,b,m},G_m)\n\\le N^{-\\varepsilon}+N^{-\\varepsilon^2/(2\\log 2)}. \\tag{4.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\log2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H=\\lfloor(1-\\varepsilon)L_N\\rfloor"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N^{-\\varepsilon}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H/2-(m-1)\\ge\\varepsilon L_N/2+1/2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Pr(Y_H-H/2\\le-d)\\le e^{-2d^2/H}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H\\le L_N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e^{-\\varepsilon^2 L_N/2}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m\\ge(1/2+\\varepsilon)L_N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H=\\lceil(1+\\varepsilon)L_N\\rceil"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\varepsilon L_N>1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n1-\\Delta(P_{N,b,m},G_m)\n\\le \\frac12N^{-\\varepsilon}\n+\\exp\\left(-\\frac{2(\\varepsilon L_N/2-1/2)^2}{H}\\right). \\tag{4.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Pr(Y_H\\ge m)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m>H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb E e^{t(Y_H-H/2)}=(\\cosh(t/2))^H\\le e^{Ht^2/8}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t=4d/H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m+A_m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m,H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "W_{m,\\le H}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\partial"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_m>H"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\np_w=C_{N,b}(w)/N,\\qquad\np_\\partial=1-\\sum_{w\\in W_{m,\\le H}}p_w.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "g_w=2^{-A(w)}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "g_\\partial=Q_m(H)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "0\\le f\\le1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B_w"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{A(w)}-3^m>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_w"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_w=r_v>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_w<2^{H+1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K_m(H)+1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nZ_p(s,t)=p_\\partial\\zeta(s,1)+\\sum_{w\\in W_{m,\\le H}}p_w\\zeta(s,1+tr_w).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "|t|(2^{H+1}-1)<1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K_m(H)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H<m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w_{[1,j]}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nB_j=\\sum_{i=0}^{j-1}3^{j-1-i}2^{A_i},\\qquad D_j=2^{A_j}-3^j.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nT^j(n)<n\\iff D_j>0\\ \\text{and}\\ n>B_j/D_j.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\tau(w)=\\min_{1\\le j\\le m:D_j>0}\\left\\lfloor B_j/D_j\\right\\rfloor,\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\min\\varnothing=+\\infty"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n\\le\\tau(w)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n,B_j>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(2)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3/4<1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nU_w=\\min\\{b+N-1,\\lfloor(\\tau(w)-1)/2\\rfloor\\},\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U_w=b+N-1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nZ_w=\\begin{cases}\n\\left\\lfloor\\dfrac{U_w-h_w}{2^{A(w)}}\\right\\rfloor\n-\\left\\lfloor\\dfrac{b-1-h_w}{2^{A(w)}}\\right\\rfloor,&U_w\\ge b,\\\\\n0,&U_w<b.\n\\end{cases}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nD_{\\rm low}=\\sum_{w\\in W_{m,\\le H}}(C_{N,b}(w)-Z_w),\\qquad\nR=N-\\sum_{w\\in W_{m,\\le H}}C_{N,b}(w).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_{\\rm actual}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{D_{\\rm low}\\le D_{\\rm actual}\\le D_{\\rm low}+R.} \\tag{6.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N=4096,b=0,m=5,H=16"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "10^{30}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^8,2^{12},2^{16},2^{18}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m=L/2"
+  }
+]

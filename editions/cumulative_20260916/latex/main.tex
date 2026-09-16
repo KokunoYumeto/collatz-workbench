@@ -1,0 +1,163 @@
+\documentclass[11pt,oneside]{book}
+\usepackage[a4paper,margin=23mm,headheight=16pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}[Scale=0.82]
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{unicode-math}
+\setmathfont{latinmodern-math.otf}
+\usepackage{graphicx,adjustbox}
+\usepackage{longtable,booktabs,array,calc,etoolbox}\AtBeginEnvironment{longtable}{\footnotesize}
+\newcounter{none} % Pandoc 3.9 unnumbered longtable compatibility
+\usepackage{fvextra}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdftitle={Collatz Research Continuations -- Corrected Cumulative Reader},pdfauthor={Kokuno Yumeto; developed with ChatGPT 5.6 Sol and GPT-6 Astra}}
+\usepackage{xurl}
+\usepackage{newunicodechar}
+\newunicodechar{∎}{\ensuremath{\blacksquare}}
+\newunicodechar{⋯}{\ensuremath{\cdots}}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\raggedright}{\thesection}{0.75em}{}
+\titleformat{\subsection}{\normalsize\bfseries\raggedright}{\thesubsection}{0.75em}{}
+\makeatletter
+\renewcommand{\@pnumwidth}{3em}
+\renewcommand{\@tocrmarg}{4em}\renewcommand*{\l@section}{\@dottedtocline{1}{1.5em}{3.5em}}
+\makeatother
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\sffamily COLLATZ RESEARCH CONTINUATIONS}
+\fancyhead[R]{\small\sffamily CUMULATIVE SOURCES}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{0.45em}
+\setlength{\emergencystretch}{4em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\providecommand{\passthrough}[1]{#1}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newsavebox{\sourceformula}\newsavebox{\sourcetag}
+\newlength{\sourcewidth}
+\newcommand{\SourceMath}[2]{%
+ \par\addvspace{0.6em}\begingroup
+ \sbox{\sourceformula}{\(\displaystyle #1\)}%
+ \def\tagcontent{#2}%
+ \ifx\tagcontent\empty\sbox{\sourcetag}{}\setlength{\sourcewidth}{\linewidth}%
+ \else\sbox{\sourcetag}{\normalfont\small(#2)}\setlength{\sourcewidth}{\linewidth-\wd\sourcetag-1em}\fi
+ \noindent\hbox to\linewidth{\hfil\adjustbox{max width=\sourcewidth}{\usebox{\sourceformula}}\hfil\usebox{\sourcetag}}%
+ \endgroup\par\addvspace{0.6em}}
+\setcounter{tocdepth}{1}
+\begin{document}
+\frontmatter
+\begin{titlepage}
+\vspace*{20mm}
+{\sffamily\large CORRECTED CUMULATIVE READER\par}
+\vspace{12mm}
+{\Huge\bfseries Collatz\par}
+\vspace{3mm}
+{\LARGE Research continuations\par}
+\vspace{14mm}
+{\Large Split-Zero comparisons, original arithmetic, and retained-source reductions\par}
+\vspace{18mm}
+{\large Complete recovered mathematical notes, with an additive all-even-exponent continuation\par}
+\vfill
+{\sffamily 16 September 2026\par}
+{\small Public collaboration name: Kokuno Yumeto. Research and development with ChatGPT 5.6 Sol and GPT-6 Astra. Original source authors retain their attribution.\par}
+\end{titlepage}
+\chapter*{Corrected reader edition}
+\addcontentsline{toc}{chapter}{Corrected reader edition}
+This reader corrects the presentation of the supplied 16 September 2026
+cumulative archive. The original ZIP, original PDF, and historical receipts
+remain preserved as the original delivery. Its Markdown converter had treated
+pairs of literal caret characters in some unmarked inline arithmetic as
+superscript markup. The corrected converter disables that interpretation;
+unmarked formulas retain their literal source notation, while explicit
+mathematical displays remain mathematical displays. Source-specific repairs to
+unintended emphasis are recorded separately and do not rewrite the Markdown.
+
+Chapter 20 also states explicitly that its unrestricted support and coefficient
+bounds apply to positive odd $n>1$. At the fixed root, the conventions are
+$R_*(1)=1$, $K_*(1)=0$, and $H(V_1)=0$. This is the reviewed domain clarification;
+it does not assert that the residual root set has been exhausted.
+
+The source map records both original and edition SHA-256 identities. The first
+nineteen Markdown sources are unchanged. Historical source-time publication and
+execution statements remain historical, and the anthology is not a new
+independent proof audit of all twenty chapters.
+
+Public collaboration name: Kokuno Yumeto. The research and its continuation
+were developed with ChatGPT 5.6 Sol and GPT-6 Astra. The models are identified
+as tools in the research process; the historical mathematical literature keeps
+its own named authors and citations.
+
+\chapter*{Archive scope and how to read it}
+\addcontentsline{toc}{chapter}{Archive scope and how to read it}
+This volume transcribes the full mathematical notes available in the fourteen
+supplied continuation archives, adds four complete historical notes retrieved
+from the pinned GitHub source, and adds the present all-even-exponent note.
+The original Markdown, code, manifests, proof ledgers, and historical receipts
+remain separately preserved in the accompanying ZIP. This is an anthology of
+source versions, not a newly unified proof of Collatz.
+
+The source-time publication and verification statements in each chapter are
+retained. Some are now historical: PR 2 was merged on 16 September 2026, and the
+main branch was read at commit
+\texttt{9453b5306b3a897389dece309f9c119dffbcc489}.
+No new GitHub publication is implied by this edition. Historical finite test
+counts are not added into a claim of a new repository-wide mathematical audit.
+
+The bundle is a cumulative archive of the supplied artifacts, not a complete
+clone of every GitHub workbench file. Three additional historical directories
+are pinned in \texttt{provenance/GITHUB\_ONLY.json}: the history-law,
+anchored-period, and ternary-join checkpoints. Their four complete mathematical
+notes were retrieved through the GitHub connection and checked byte-for-byte
+against their Git blob identities. They are included in this volume and the
+source overlay. Their other companion files were not supplied locally.
+The accompanying \texttt{tools/fetch\_github\_sources.py} restores any missing
+files in those exact pinned directories on a networked machine, without
+overwriting an existing differing file. No placeholder is presented as missing
+source code or evidence.
+
+Every included chapter has a source locator and SHA-256 in
+\texttt{latex/SOURCE\_MAP.json}. Formula text is preserved in per-chapter math
+inventories. The original delivery typeset equation tags and scaled
+overwide displays to the available line width. The corrected reader also preserves unmarked inline notation as explained above. One malformed source subscript is grouped as
+$\mathbb Q\otimes_{\mathbb Z}Q$ in the presentation; the unchanged original
+Markdown and the explicit typography correction record remain in the archive.
+Original equation numbers are local to their source chapter. Original files, not the presentation conversion,
+remain the archival record.
+
+The current continuation is the final chapter. It proves complete common-future
+families for every positive even interior exponent, corrects their ternary layer
+through the exact identity $\nu_3((2^e+2)/3)=\nu_3(e-1)$, and makes template
+membership a finite test at each original source. Its budget-preserving version
+retains the predecessor's support bound. Unresolved roots remain represented.
+
+\tableofcontents
+\mainmatter
+\input{chapters/01_history_law_cutoff_20260914_RESEARCH_NOTE.tex}
+\input{chapters/02_stopped_affine_transport_20260914_note.tex}
+\input{chapters/03_cycle_relative_cohomology_20260914_note.tex}
+\input{chapters/04_residual_splice_20260914_note.tex}
+\input{chapters/05_residual_splice_20260914_integral_blocks.tex}
+\input{chapters/06_clocked_support_20260914_note.tex}
+\input{chapters/07_completion_defect_20260914_note.tex}
+\input{chapters/08_supported_structure_20260915_note.tex}
+\input{chapters/09_intrinsic_zero_firstjet_20260915_note.tex}
+\input{chapters/10_anchored_defect_20260914_note.tex}
+\input{chapters/11_anchored_defect_20260914_turns_and_unit_excess.tex}
+\input{chapters/12_defect_rank_descent_20260915_note.tex}
+\input{chapters/13_defect_rank_descent_20260915_logarithmic_run_exclusion.tex}
+\input{chapters/14_negative_shadow_descent_20260916_note.tex}
+\input{chapters/15_mixed_switch_control_20260916_note.tex}
+\input{chapters/16_global_cylinder_control_20260916_note.tex}
+\input{chapters/17_height_window_reduction_20260916_note.tex}
+\input{chapters/18_ternary_join_reduction_20260916_note.tex}
+\input{chapters/19_bilateral_root_bounds_20260916_note.tex}
+\input{chapters/20_all_even_join_extension_20260916_note.tex}
+\end{document}

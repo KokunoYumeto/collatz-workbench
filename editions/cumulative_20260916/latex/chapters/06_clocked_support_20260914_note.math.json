@@ -1,0 +1,494 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\n X=\\{1,3,5,\\ldots\\},\\qquad T(n)=\\frac{3n+1}{2^{a(n)}},\n \\qquad a(n)=\\nu_2(3n+1),\\qquad R=\\mathbb Z[u,v].\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n w_n=u v^{a(n)-1}.\n \\tag{C1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u^m v^{A-m}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "V_n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E_n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "V_n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_{u,v} E_n=V_n-w_nV_{T(n)},\\qquad V_1=0.\n \\tag{C2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal K^\\bullet_{u,v}=[E\\xrightarrow{d_{u,v}}V].\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal K^i=C_{1-i}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (Lf)(y)=u\\sum_{T(x)=y}v^{a(x)-1}f(x).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L V_n=w_nV_{T(n)}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E_n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "V_n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d=I-L"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R V_1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L V_1=uvV_1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n [R E_1\\xrightarrow{1-uv}R V_1]\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n_0\\to\\cdots\\to n_m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n W_0=1,\\qquad W_j=\\prod_{i<j}w_{n_i},\\qquad\n P_p=\\sum_{j=0}^{m-1}W_j E_{n_j}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n dP_p=V_{n_0}-W_mV_{n_m}.\n \\tag{C3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L=uS"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S V_n=v^{a(n)-1}V_{T(n)}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(I-uS)f=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p=(a_1,\\ldots,a_m)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n A_j=\\sum_{i=1}^j a_i,\\quad A_0=0,\\quad\n w_i=uv^{a_i-1},\\quad W_j=\\prod_{i=1}^j w_i,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n W=W_m=u^m v^{A_m-m},\\qquad\n N_p(u,v)=\\sum_{i=1}^m W_{i-1}.\n \\tag{C4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w_i"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (J_ph)_i=h_i-w_i h_{i+1},\\qquad h_{m+1}=h_1.\n \\tag{C5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\langle d e,h\\rangle=\\langle e,J_ph\\rangle"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\phi_0(h)=h_1,\\qquad \\phi_1(b)=\\sum_{i=1}^mW_{i-1}b_i\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n [R^m\\xrightarrow{J_p}R^m]\\longrightarrow[R\\xrightarrow{1-W}R].\n \\tag{C6}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (\\psi_0t)_1=t,\\qquad (\\psi_0t)_i=\\left(\\prod_{k=i}^m w_k\\right)t\\ (i\\ge2),\n \\qquad \\psi_1t=(t,0,\\ldots,0).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (Hb)_1=0,\\qquad\n (Hb)_i=\\sum_{j=i}^m\\left(\\prod_{k=i}^{j-1}w_k\\right)b_j\\quad(i\\ge2).\n \\tag{C7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\phi_1J_p=(1-W)\\phi_0,\\quad J_p\\psi_0=\\psi_1(1-W),\\quad\n \\phi_0\\psi_0=\\phi_1\\psi_1=I,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n J_pH=I-\\psi_1\\phi_1,\\qquad HJ_p=I-\\psi_0\\phi_0.\n \\tag{C8}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H^0=0,\\qquad H^1\\cong R/(1-W),\\qquad [b]\\longmapsto[\\phi_1(b)].\n \\tag{C9}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[N_p]"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (1-W)t=\\phi_1(b),\\qquad h=\\psi_0t+Hb.\n \\tag{C10}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1-W)h_1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(Hb)_i-w_i(Hb)_{i+1}=b_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(Hb)_1=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-\\sum_{i\\ge2}W_{i-1}b_i=b_1-\\phi_1(b)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h_i-(\\prod_{k=i}^m w_k)h_1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Q_i=\\prod_{k=i}^m w_k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sum_iW_{i-1}E_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "W=u^m v^B"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v^{b_j}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b_m=B"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n b_0=0,\\qquad 0=b_0\\le b_1\\le\\cdots\\le b_m,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n a_i=1+b_i-b_{i-1}\\quad(1\\le i\\le m).\n \\tag{C11}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b_j=A_j-j"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n W_{(1,3)}=W_{(2,2)}=u^2v^2,\n\\qquad N_{(1,3)}=1+u,\\quad N_{(2,2)}=1+uv.\n \\tag{C12}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n L=3^m,\\quad U=2^{A_m},\\quad D=U-L,\\qquad\n C=\\sum_{i=1}^m3^{m-i}2^{A_{i-1}},\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (B_px)_i=2^{a_i}x_{i+1}-3x_i.\n \\tag{C13}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Lambda=\\mathbb Z[1/3]"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\alpha:R\\longrightarrow\\Lambda,\\qquad u\\longmapsto2/3,\\quad v\\longmapsto2.\n \\tag{C14}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{a_i}/3"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\alpha(J_p)=-B_p/3,\\qquad\n \\alpha(1-W)=-D/3^m,\\qquad\n \\alpha(N_p)=C/3^{m-1}.\n \\tag{C15}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\alpha(J_p)x=-b/3"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\alpha(\\phi_1)(-b/3)=-F_p(b)/3^m,\n \\quad F_p(b)=\\sum_{i=1}^m3^{m-i}2^{A_{i-1}}b_i.\n \\tag{C16}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-3^m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n D t=F_p(b).\n \\tag{C17}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Lambda^m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z^m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathbb Z/D\\mathbb Z\\longrightarrow\\Lambda/D\\Lambda.\n \\tag{C18}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[F_p(b)]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F_pB_p=D e_1^T"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a/3^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a(3^r)^{-1}\\bmod D"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(\\Lambda/\\mathbb Z)^m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathscr C"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathscr A"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x_0,x_1,\\ldots"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "W_c=u^{m_c}v^{A_c-m_c}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n B_j=\\sum_{i<j}(a(x_i)-1),\\qquad W_j=u^jv^{B_j},\n\\qquad M_x=\\bigcup_{j\\ge0}W_j^{-1}R\n \\subset\\mathbb Z[u^{\\pm1},v^{\\pm1}].\n \\tag{C19}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H^0(\\mathcal K)=0,\\qquad\n H^1(\\mathcal K)\\cong\n \\bigoplus_{c\\in\\mathscr C} R/(1-W_c)\n \\ \\oplus\\ \\bigoplus_{x\\in\\mathscr A}M_x.\n \\tag{C20}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n [V_n]\\longmapsto\\frac{\\prod_{i<d}w_{T^i(n)}}{W_j}\\in M_x.\n \\tag{C21}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n R/(1-W_c^r)\\longrightarrow R/(1-W_c),\\qquad[f]\\longmapsto[f].\n \\tag{C22}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1-W_c)/(1-W_c^r)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (1+W_c+\\cdots+W_c^{r-1})P_c.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sum_i E_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sum_i t^{i-1}E_i"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (1-t^m)V_1=-(t-1)(1+t+\\cdots+t^{m-1})V_1.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-[1+t+\\cdots+t^{m-1}]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E_0=\\mathbb Z[v]^{(X\\setminus\\{1\\})}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\widehat R=\\mathbb Z[v][[u]]"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\iota:\\widehat R^{(X\\setminus\\{1\\})}\\longrightarrow E_0[[u]],\n \\quad (f_n(u,v))_n\\longmapsto\\sum_{j\\ge0}\\left(\\sum_n[u^j]f_n\\,V_n\\right)u^j.\n \\tag{C23}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (I-uS)^{-1}=\\sum_{j\\ge0}u^jS^j\n \\tag{C24}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n G_n=\\sum_{j\\ge0}u^jv^{A_j(n)-j}V_{T^j(n)},\\qquad V_1=0.\n \\tag{C25}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n [V_n]=0\\text{ in }H^1(\\mathcal K_{u,v})\n \\quad\\Longleftrightarrow\\quad\n G_n\\text{ is a polynomial vector}\n \\quad\\Longleftrightarrow\\quad n\\text{ reaches }1.\n \\tag{C26}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\widehat R"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\bigcup_j W_j^{-1}\\widehat R"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\widehat R"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z[v][[u]]\\to\\mathbb Z[v]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\ell_n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n h_w(V_n)=P_n,\\qquad Q_w(V_n)=M_nV_{r(n)},\\qquad\n F_w=I-h_wd.\n \\tag{C27}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n dh_w=I-Q_w,\\qquad h_wQ_w=0,\\qquad Q_w^2=Q_w,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n F_w^2=F_w,\\qquad dF_w=Q_wd.\n \\tag{C28}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Gamma_r"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n K_w(V_n)=M_n\\Gamma_{r(n)},\\qquad h'_w=h_w+K_w.\n \\tag{C29}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n dK_w=Q_w-Q'_w,\\quad F_wK_w=K_w,\n \\quad Q'_wQ_w=Q_wQ'_w=Q'_w,\n \\quad F'_wF_w=F_wF'_w=F'_w.\n \\tag{C30}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h_wdh_w=h_w(I-Q_w)=h_w"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n F_wP_c=P_c-(1-W_c)h_w(V_n).\n \\tag{C31}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 7\\xrightarrow{1}11\\xrightarrow{1}17\\xrightarrow{2}13\\xrightarrow{3}5.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u^4v^3"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n P_{7\\to5}+u^4v^3 E_5.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n V_7+(1-u^4v^3)V_5.\n \\tag{C32}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n=r+2Ut,\\qquad T^m(n)=q+2Lt,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n=3+2i,\\quad p=\\text{dictionary}[\\text{id}_i],\\quad\n t=(n-r)/(2U),\\quad y=q+2Lt.\n \\tag{C33}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "G(\\mathbb Z)=\\mathbb Z\\sqcup\\{\\tau\\}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n S^{164}=0,\\qquad\n (I-uS)^{-1}=\\sum_{j=0}^{163}u^jS^j.\n \\tag{C34}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S V_n=v^{a(n)-1}V_{T(n)}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 3^m<2^A=\\prod_i(3+1/x_i)\\le(3s+1)^m/s^m.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A=2m-k+\\sum_{a_i\\ge3}(a_i-2)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (4s)^m\\le2^k(3s+1)^m.\n \\tag{C35}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 2^{\\lceil\\log_2(3^m)\\rceil}s^m>(3s+1)^m\n \\quad(1\\le m\\le1635).\n \\tag{C36}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (4s)^{1634}>2^{678}(3s+1)^{1634}.\n \\tag{C37}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n m=1636,\\quad A=2593,\\quad\n 330751\\le\\min x_i\\le583287.\n \\tag{C38}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sum_{a_i\\ge3}(a_i-2)=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_i\\ge0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sum r_i=957"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 2\\cdot4^{r_i}y_{i+1}-3^{r_i+1}y_i=2\\cdot3^{r_i},\\qquad y_i=x_i-1.\n \\tag{C39}\n"
+  }
+]

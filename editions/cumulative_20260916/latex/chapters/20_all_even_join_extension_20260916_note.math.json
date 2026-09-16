@@ -1,0 +1,290 @@
+[
+  {
+    "kind": "InlineMath",
+    "text": "X=\\{1,3,5,\\ldots\\}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nT(n)=\\frac{3n+1}{2^{\\nu_2(3n+1)}}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w=(a_1,\\ldots,a_j)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_i"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nL_w=3^j,\\qquad U_w=2^{A_j},\\qquad\nC_w=\\sum_{i=0}^{j-1}3^{j-1-i}2^{A_i},\\qquad\nf_w(n)=\\frac{L_wn+C_w}{U_w}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nL_w\\rho_w+C_w\\equiv U_w\\pmod{2U_w},\\qquad 0<\\rho_w<2U_w,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\rho_w+2U_wt\\longmapsto\\eta_w+2L_wt,\\qquad\n\\eta_w=(L_w\\rho_w+C_w)/U_w,\\quad t\\ge0.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb D=\\mathbb Z[\\epsilon]/(\\epsilon^2)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "q=1+\\epsilon"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon E_n=V_n-qV_{T(n)},\\qquad q^k=1+k\\epsilon\\quad(k\\in\\mathbb Z).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "q^{-1}=1-\\epsilon"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "l:n\\to y"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r:m\\to y"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon\\bigl(B_l(n)-q^{s-t}B_r(m)\\bigr)=V_n-q^{s-t}V_m. \\tag{1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\xi_n=[\\epsilon V_n]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\xi_m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nh_e=\\frac{2^e+2}{3},\\qquad t_e=\\nu_3(h_e).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{t_e=\\nu_3(e-1).} \\tag{2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^e+2=2(1-(-2)^k)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1-3)^k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1-(-2)^k=3k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x^2+x+1=3(1+3z+3z^2)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x^3-1=(x-1)(x^2+x+1)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\nu_3(1-(-2)^k)=1+r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sigma\\in\\{0,1\\}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\na=a(b,e,\\sigma)=\\min\\{a\\ge1:2^{a+e+2b-\\sigma}<3^{a+b}\\},\n\\quad J=2^{e+2b-\\sigma},\\quad Q=3^{a+b},\\quad K=2^aJ<Q. \\tag{3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a=b+2e-2\\sigma"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(8/9)^{b+e-\\sigma}<1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\na\\le b+2e-2\\sigma. \\tag{4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(3/2)^a<2^{e-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(3/2)^a>2^{e-\\sigma}(4/3)^b>2^{e-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(d_\\sigma,r_\\sigma)=(4,3)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(32,27)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\mathcal E_{b,e,\\sigma}=\\{n>0:n\\equiv r_\\sigma\\pmod{d_\\sigma},\n\\quad Jn+h_e3^b\\equiv0\\pmod Q\\}. \\tag{5}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nm_0=\\frac{Kn_0+2^ah_e3^b}{Q}-1,\n\\qquad y_0=f_{l_\\sigma}(n_0).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\\begin{aligned}\nn(v)&=n_0+d_\\sigma Qv,\\\\\nm(v)&=m_0+d_\\sigma Kv,\\\\\ny(v)&=y_0+\\frac{L_{l_\\sigma}d_\\sigma Q}{U_{l_\\sigma}}v,\n\\qquad v\\in\\mathbb Z_{\\ge0}.\n\\end{aligned}} \\tag{6}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nw_0=1^a,e,2^{b-1},3,\\qquad\nw_1=1^a,e,2^{b-1},1,1,3. \\tag{7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nn(v)\\xrightarrow{l_\\sigma}y(v)\\xleftarrow{w_\\sigma}m(v),\n\\qquad 0<m(v)<n(v),\\qquad\n\\boxed{\\nu_3(n(v))=b+t_e.} \\tag{8}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\nu_3(z)=t_e"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nW=\\frac{Jz+h_e}{3^a}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nx_j=3^j2^{a-j}W-1\\quad(0\\le j\\le a). \\tag{9}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nx_a=\\frac{J}{3^b}n+h_e-1.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n1+\\frac{2^{2b-\\sigma}n}{3^{b-1}}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n1+\\frac{2^{2(b-j)-\\sigma}n}{3^{b-1-j}}\\quad(0\\le j\\le b-1). \\tag{10}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n2n+1\\xrightarrow1 3n+2\\xrightarrow1(9n+7)/2\n\\xrightarrow3(27n+23)/16.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^{a+b}W=Jn+h_e3^b"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nm=(K/Q)n+h_e(2/3)^a-1. \\tag{11}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nh_e(2/3)^a<2^{\\sigma-e}h_e(3/4)^b\n\\le \\frac{2+2^{2-e}}{3}(3/4)^b<1.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nA_{\\max}=\\nu_3\\left(J(n/3^b)+h_e\\right). \\tag{12}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nm_{a'}=2^{a'}\\frac{J(n/3^b)+h_e}{3^{a'}}-1. \\tag{13}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nm_{a'+1}+1=\\frac23(m_{a'}+1),\\qquad T(m_{a'+1})=m_{a'}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "J(n/3^b)+h_e-1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nk(n)=\\lfloor\\log_2(n-1)\\rfloor-1,\n\\qquad B=\\nu_3(n).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{2\\le e\\le k(n)} \\tag{14}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{b=B-\\nu_3(e-1)\\ge1.} \\tag{15}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2\\lfloor k(n)/2\\rfloor"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{a'+1}\\le n-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a'\\le k(n)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\\begin{aligned}\n20\\,241\\,207+1\\,549\\,681\\,956v\n&\\xrightarrow{1}30\\,361\\,811+2\\,324\\,522\\,934v\\\\\n&\\xleftarrow{1^{16},8,2,3}\n14\\,024\\,703+1\\,073\\,741\\,824v,\n\\qquad v\\ge0.\n\\end{aligned}} \\tag{16}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n6\\,216\\,504+475\\,940\\,132v>0.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n45\\,243+69\\,984v\\longrightarrow76\\,349+118\\,098v\n\\longleftarrow42\\,367+65\\,536v.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nR_0(n)=\\max\\{130(n+1),\\lfloor64n(4/3)^{\\lfloor\\log_3n\\rfloor}\\rfloor+21\\}. \\tag{17}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nH(V_n)=B_n+q^jH(V_m),\\qquad Q(V_n)=q^jQ(V_m),\n\\qquad F=I-Hd_\\epsilon.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon H=I-Q,\\quad Q^2=Q,\\quad HQ=0,\n\\quad d_\\epsilon F=Qd_\\epsilon,\\quad F^2=F,\\quad FH=0. \\tag{18}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nR_0(n)\\le64n^{\\log_3 4}+21\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(4096/9)n+85.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(4096/9)n+85\\le64(4/3)^{15}n+21\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{R_*(n)=\\max\\{130(n+1),\\lfloor(n-1)3^{k(n)}/2^{k(n)}\\rfloor-1\\}.} \\tag{19}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^{a'}W-1=(3/2)^{a'}(m+1)-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(2/3)(n-1)^{\\log_2 3}-1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nK_*(n)=\\frac{n-1}{2}\\max\\{24,k(n)+\\lfloor\\log_3n\\rfloor+6\\}. \\tag{20}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon K=Q_{old}-Q_{new},\\quad F_{old}K=K,\n\\quad F_{new}F_{old}=F_{old}F_{new}=F_{new}. \\tag{21}\n"
+  }
+]

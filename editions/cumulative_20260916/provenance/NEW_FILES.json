@@ -1,0 +1,20 @@
+{
+  "base_ref": "9453b5306b3a897389dece309f9c119dffbcc489",
+  "additions": [
+    ".github/workflows/collatz-all-even-join-extension.yml",
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/MANIFEST.json",
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/README.md",
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/SOURCE_INTAKE.json",
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/TASK_STATE.md",
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/all_even.py",
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/audit_families.py",
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/family_audit.json",
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/family_cases.jsonl.gz",
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/note.md",
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/replay.py",
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/verification.json",
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/verify.py"
+  ],
+  "modifications": [],
+  "deletions": []
+}

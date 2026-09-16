@@ -1,0 +1,118 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\pi:G(R)\\longrightarrow R,\\qquad\n \\chi:G(R)\\longrightarrow\\mathbb B,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (\\pi,\\chi):G(R)\\longrightarrow R\\times\\mathbb B\n \\tag{S1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\{(0,0)\\}\\ \\cup\\ \\{(r,1):r\\in R\\}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n T(n)=\\frac{3n+1}{2^{a(n)}},\\quad a(n)=\\nu_2(3n+1),\\qquad\n X=\\{1,3,5,\\ldots\\}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n A_j=\\sum_{i=1}^j a_i,\\quad A_0=0,\\quad\n U=2^{A_m},\\quad L=3^m,\\quad D=U-L,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C=\\sum_{i=1}^m3^{m-i}2^{A_{i-1}},\\qquad\n F_p(n)=(Ln+C)/U.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (B_px)_i=2^{a_i}x_{i+1}-3x_i,\\quad x_{m+1}=x_1,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n f_i=3^{m-i}2^{A_{i-1}},\\quad fB_p=D e_1^T.\n \\tag{A1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n B_py=b_p,\\qquad (b_p)_i=4-2^{a_i},\\qquad fb_p=C-D.\n \\tag{A2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n [b_p]=[1],\\qquad [C-D]=[C]\\text{ in }\\mathbb Z/D\\mathbb Z.\n \\tag{A3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\eta(n)=\\frac{2^{a(n)}(T(n)-1)}{3(n-1)}\n =1+\\frac{4-2^{a(n)}}{3(n-1)}.\n \\tag{P1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\prod_{j=0}^{m-1}\\eta(T^j(n))\n =\\frac{2^{A_m}}{3^m}\\frac{T^m(n)-1}{n-1}.\n \\tag{P2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\rho(v_n)=n-1,\\qquad \\lambda(e_n)=2^{a(n)}/3.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\eta(c)=\\lambda(c)\\rho(\\partial c)^{-1}.\n \\tag{P3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\eta(c)=\\lambda(c)=2^A/3^m.\n \\tag{P4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\\quad\n 1<\\frac{2^A}{3^m}\n \\le \\left(\\frac{3s-1}{3s-3}\\right)^k.\n \\quad}\n \\tag{P5}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 2^A(3s-3)^k\\le3^m(3s-1)^k.\n \\tag{P6}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n=r+2Ut,\\quad x=F_q(n)=u+2Lt,\\quad Uu=Lr+C.\n \\tag{C1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n a=1,\\qquad a=2,\\qquad a\\ge3.\n \\tag{C2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n t=t_0+4v,\\qquad\n t_0\\equiv-\\frac{3u+1}{2}(3L)^{-1}\\pmod4,\\quad0\\le t_0<4,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n=r+2Ut_0+8Uv.\n \\tag{C3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n a=\\nu_2(3u+1+6Lt).\n \\tag{C4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n F_p(n)<n\\quad\\Longleftrightarrow\\quad D_p>0\\text{ and }D_p n>C_p.\n \\tag{C5}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n t_0\\equiv ((c-r)/g)(Q/g)^{-1}\\pmod{M/g},\\quad 0\\le t_0<M/g,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\alpha=r+Qt_0,\\quad\\Delta=Q(M/g),\\qquad n=\\alpha+\\Delta z.\n \\tag{C6}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\left\\lceil\\frac{l-\\alpha}{\\Delta}\\right\\rceil\n \\le z\\le\n \\left\\lfloor\\frac{h-\\alpha}{\\Delta}\\right\\rfloor.\n \\tag{C7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (4s)^m\\le2^k(3s+1)^m,\\qquad\n A=2m-k+E,\\quad E=\\sum_{a_i\\ge3}(a_i-2)\\ge0.\n \\tag{Q1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n=99787,99799,\\ldots,274543,\n \\tag{Q2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 13399\\text{ exit sources}+1165\\text{ descent sources}=14564.\n \\tag{Q3}\n"
+  }
+]

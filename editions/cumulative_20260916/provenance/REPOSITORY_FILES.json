@@ -1,0 +1,718 @@
+{
+  "files": {
+    ".github/workflows/collatz-all-even-join-extension.yml": {
+      "bytes": 945,
+      "sha256": "1f76361bcc0d866c8e8be5fe00a8c30479dcac1e0029fa84a4d2556b430a423a"
+    },
+    ".github/workflows/collatz-bilateral-root-bounds.yml": {
+      "bytes": 963,
+      "sha256": "70aecfd5fc5a99ff055924665e74a04b8cb1e700b05f9eceb8a14b78bb11cc5c"
+    },
+    ".github/workflows/collatz-clocked-support.yml": {
+      "bytes": 1610,
+      "sha256": "d60f5f2233d5d44a5f170ba694c64a3f62d16fc19252a8d525c3090fd3066b19"
+    },
+    ".github/workflows/collatz-completion-defect.yml": {
+      "bytes": 1063,
+      "sha256": "11fee58c395279a62ba8ec80154832c3c430df7ae9834f931b04a1d6cc5bd570"
+    },
+    ".github/workflows/collatz-defect-rank-descent.yml": {
+      "bytes": 1171,
+      "sha256": "009f5ce02533f3eab97d8a831c94505ac2f70562a64ef5b217a7acf7f652db79"
+    },
+    ".github/workflows/collatz-global-cylinder-control.yml": {
+      "bytes": 929,
+      "sha256": "1aba0dbf39b74bed7c9438511fa242dd9e9354fb0272e0d4e65193e134933342"
+    },
+    ".github/workflows/collatz-height-window.yml": {
+      "bytes": 950,
+      "sha256": "e82fc9d3f0d85a7b6a2e253fdd71a84ee74b9e9ad5dd5661365028b09e948ec7"
+    },
+    ".github/workflows/collatz-intrinsic-firstjet.yml": {
+      "bytes": 1444,
+      "sha256": "c7a5aa4d0909167bb2c3099b34a7d41a771fb1c3ebee1c366f297dd3b5cc0f2c"
+    },
+    ".github/workflows/collatz-mixed-switch-control.yml": {
+      "bytes": 1082,
+      "sha256": "1eec3710e1c3ecf9cce60021316234f98e4b4e293068b7210b15980be78d533c"
+    },
+    ".github/workflows/collatz-negative-shadow-descent.yml": {
+      "bytes": 1071,
+      "sha256": "21eb306ff49ac0cd00453b2d7609035c90ba1e48fff140a8145b287578758b84"
+    },
+    ".github/workflows/collatz-residual-splice.yml": {
+      "bytes": 1464,
+      "sha256": "d90ffdafa827439dd730f4e8320edc1b2d61cbb911f0a92788c8eeca2429afab"
+    },
+    ".github/workflows/collatz-stopped-cycle-cohomology.yml": {
+      "bytes": 1075,
+      "sha256": "f7e84050c0a33a5ea1387605303c9b45c193068abc384680eefc14ba16b2bf83"
+    },
+    ".github/workflows/collatz-supported-structure.yml": {
+      "bytes": 1094,
+      "sha256": "23d36b42e7605a18401966e3ea1365dda96ad9b95f36c0c48a9f184149bbb930"
+    },
+    "collatz_reconstruction/research_program/CONTINUATION_STOPPED_CYCLES_20260914.md": {
+      "bytes": 1242,
+      "sha256": "fba5546768165d80758b2ac58e56852ace4b7854b1c1189980d13328c2eddba7"
+    },
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/MANIFEST.json": {
+      "bytes": 1094,
+      "sha256": "692abcba8f706365faf2acb097aefc8b6d43cca2dbf9d6c44d89843244a0c646"
+    },
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/README.md": {
+      "bytes": 2729,
+      "sha256": "de503b566d394fc64253855f25bf1f09d829dd5fdbc189f1a1a36651fedaa41c"
+    },
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/SOURCE_INTAKE.json": {
+      "bytes": 515,
+      "sha256": "1919f21ac0e19ed2a5f76b485e6de221e6260ee12fe48d6af80aba8f73c72342"
+    },
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/TASK_STATE.md": {
+      "bytes": 1233,
+      "sha256": "8ec705b9738661c60165873b436fd56699c5d53080edf23877c6f6cf81ecafbd"
+    },
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/all_even.py": {
+      "bytes": 7294,
+      "sha256": "a07c67f00cbee7ab4402a39fb888b99eca0b2dd8f50e1b671349af5f472c4216"
+    },
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/audit_families.py": {
+      "bytes": 2918,
+      "sha256": "b0adc6f9a524d4d63fcdb7551031666424f548a413129f5cb4201dd0daa6b227"
+    },
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/family_audit.json": {
+      "bytes": 212,
+      "sha256": "65971ac90997c8a13413534647b5f5d3e17d06ab3bed004e0ada7d7d24bd226e"
+    },
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/family_cases.jsonl.gz": {
+      "bytes": 61356,
+      "sha256": "9a5c623453e0f879cf70f9bbe873c1ffe54f7980f9d23b76cd898f46b06d7997"
+    },
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/note.md": {
+      "bytes": 19277,
+      "sha256": "537e64b1651beaa04148871fe1d88aa4861e9bba71112b3598e4c97b0fd914ce"
+    },
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/replay.py": {
+      "bytes": 1824,
+      "sha256": "4a97f8f7ad36357c7e79a98803b6c82e6ea210263f0566c2823ed66e89d071aa"
+    },
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/verification.json": {
+      "bytes": 10174,
+      "sha256": "bfd279ba233d6d5e6f690f9f03fb8563dcbb50d42de87f4fca23a55bae179572"
+    },
+    "collatz_reconstruction/research_program/all_even_join_extension_20260916/verify.py": {
+      "bytes": 7412,
+      "sha256": "1e06b18417b92a48f225a5577f1bb84eb07e8b7602c3368d5ccf91bff0878881"
+    },
+    "collatz_reconstruction/research_program/anchored_defect_20260914/note.md": {
+      "bytes": 20921,
+      "sha256": "8de5e1fada7dd8126050a29ad8ac2975e361db381a3a7cd6eb82651b64acfd5e"
+    },
+    "collatz_reconstruction/research_program/anchored_defect_20260914/turns_and_unit_excess.md": {
+      "bytes": 9441,
+      "sha256": "1b98e33deea8c567123029c2363e023468fb90a58f9ac5d50fe4393a2b9f0aa9"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/MANIFEST.json": {
+      "bytes": 1627,
+      "sha256": "c8e016099dfa9827e81f629e18cc502bac4a799664ff7a81c5b9c5b810ff4bd0"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/README.md": {
+      "bytes": 4136,
+      "sha256": "3234d9f839bdf58d215754d3c5059c32fc24af37f81daf4fdd84e37824c98f5c"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/SOURCE_INTAKE.json": {
+      "bytes": 2219,
+      "sha256": "0943ec11833a047cd5f53c5c6ef25aa50f1dd4e8a95d350741f4e23215f02b33"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/TASK_STATE.md": {
+      "bytes": 2694,
+      "sha256": "cb504ae4a5faf10b0291d61809bd6317663a8a107d5bef60a1cb3989be164a23"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/audit_families.py": {
+      "bytes": 7823,
+      "sha256": "08171aeae06a8725552231e0e0c65fd53bffe0aebf9b7faa153ec0a591f9d3de"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/audit_sources.py": {
+      "bytes": 6077,
+      "sha256": "29d073824333d429add981b90f0252415f322a6bbc06d9ff3ea0facc40a6b69a"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/bilateral_control.py": {
+      "bytes": 23004,
+      "sha256": "83288427125083f723d011915db9456843072eff10c15c0b71f3e56c31975358"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/envelope_records.json": {
+      "bytes": 1524,
+      "sha256": "563f95f57134b605dbba4f5cee0c692297c8def525489c0c6f825f7653e90f43"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/family_audit.json": {
+      "bytes": 1568,
+      "sha256": "3c9a1ccfe3ee51561a54482fd6b6bcd38ca57c8d263b31190cce60981faafaeb"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/note.md": {
+      "bytes": 35350,
+      "sha256": "8eb0d91adcfff7c29efcea0270398f9bc18f484fb665d154be1a4a32b5458eaf"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/replay.py": {
+      "bytes": 4200,
+      "sha256": "18883d8a810397c0f8c624eb5cdc82ff897fa25f2c5208adaea8560a7ec4de34"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/scan_sources.py": {
+      "bytes": 4864,
+      "sha256": "2a03e24e3fcbf56ffa966b9604d47ee433293b099e1977eb3f6e46d77e417391"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/test_audits.py": {
+      "bytes": 2344,
+      "sha256": "2c00d82cb8d936daa6f534e40a60a8c403ab2592ff564d2d8006a00fa5f683e5"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/verification.json": {
+      "bytes": 87572,
+      "sha256": "2560770274e1bf779f91e43f07906a4117a0857b0655e8c196192e02437767c4"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/verify.py": {
+      "bytes": 15313,
+      "sha256": "c414843cc1f1d3dfff2cf635a79fc9e7ba955a76e68d1f77d3c24d5a0c514184"
+    },
+    "collatz_reconstruction/research_program/bilateral_root_bounds_20260916/window_certificate.json": {
+      "bytes": 13372,
+      "sha256": "8735c5e75283bcd7ed43ae5cdd304120b68ab09832682833ca6b65918cabf6d4"
+    },
+    "collatz_reconstruction/research_program/clocked_support_20260914/BASE_FILES.json": {
+      "bytes": 7974,
+      "sha256": "cdc98ae8cb54fd7f4c5ce140bd00c3d4eaa2e5e5fba5b19fe0bb47af10eff96a"
+    },
+    "collatz_reconstruction/research_program/clocked_support_20260914/MANIFEST.sha256": {
+      "bytes": 893,
+      "sha256": "d0df835d8ba1ad02d6263ee17e89aaea85de8c2d79db53dc48892942c9bcb275"
+    },
+    "collatz_reconstruction/research_program/clocked_support_20260914/README.md": {
+      "bytes": 4800,
+      "sha256": "a26386ad3b8e736365846fe447c7c72781eea6f0c73c6406055dffe36af5a980"
+    },
+    "collatz_reconstruction/research_program/clocked_support_20260914/SOURCE_INTAKE.json": {
+      "bytes": 3032,
+      "sha256": "ccb970a69ebd9a4089201218a253916f84c1eb55bb8afb18a1c23694966abbec"
+    },
+    "collatz_reconstruction/research_program/clocked_support_20260914/TASK_STATE.md": {
+      "bytes": 4293,
+      "sha256": "cc81bfe0955eb4155291417681a52be237a3c278f930db6c9c5376a955e2f92c"
+    },
+    "collatz_reconstruction/research_program/clocked_support_20260914/clock_module.py": {
+      "bytes": 8907,
+      "sha256": "f4244a28ceb40b736990793eb0839859fc6892473d8498322c34badffc4d0f0b"
+    },
+    "collatz_reconstruction/research_program/clocked_support_20260914/note.md": {
+      "bytes": 35523,
+      "sha256": "59dea0487e404e5b16f4bb3b933dbaa68f693ba580fbdddd917c3f33316eeca7"
+    },
+    "collatz_reconstruction/research_program/clocked_support_20260914/replay.py": {
+      "bytes": 3931,
+      "sha256": "dd97de4ddabcc1a020acc10e92ab9786616da7822e4ac0b6d19bae359f8dd8da"
+    },
+    "collatz_reconstruction/research_program/clocked_support_20260914/sector_certificate.py": {
+      "bytes": 11722,
+      "sha256": "43cd9c6e5590fcae3fafa473ca0340fe79eacfd6e3c58b1e9b58f0aa6de4c01d"
+    },
+    "collatz_reconstruction/research_program/clocked_support_20260914/source_database.json.gz": {
+      "bytes": 395751,
+      "sha256": "7585ea7254d10a03945fd68e19babd03a5cd3a7cf7d10d77d98fe3031dd5a64c"
+    },
+    "collatz_reconstruction/research_program/clocked_support_20260914/verification.json": {
+      "bytes": 6776,
+      "sha256": "5b0e4eb8f4bdc964ffb36be8a3dc6ef74e519c68531a8fa6d509dc612c23c959"
+    },
+    "collatz_reconstruction/research_program/clocked_support_20260914/verify.py": {
+      "bytes": 12615,
+      "sha256": "6222d1142ac5df6ddf36bbca783ca14f4d3795994b272dfeaba6024e869245ce"
+    },
+    "collatz_reconstruction/research_program/completion_defect_20260914/MANIFEST.sha256": {
+      "bytes": 631,
+      "sha256": "1c1c761dd7322896e0833a77c6aee6a61849fadcdfa3655886d0f600c3f6c28d"
+    },
+    "collatz_reconstruction/research_program/completion_defect_20260914/README.md": {
+      "bytes": 3968,
+      "sha256": "15f6d040a6af06aaa6cd7e83d985f8c99ce9c649312c15e7c3f7acafc1e9232f"
+    },
+    "collatz_reconstruction/research_program/completion_defect_20260914/SOURCE_INTAKE.json": {
+      "bytes": 1666,
+      "sha256": "d9e0133a58ced475cce8affaa95ed7e54176d3242a7a5c6974f464b43f5d5398"
+    },
+    "collatz_reconstruction/research_program/completion_defect_20260914/TASK_STATE.md": {
+      "bytes": 3066,
+      "sha256": "9b6076031e5e91e25614b59d44cc30f1b1230a0b8c634ec1168874ff18ae293c"
+    },
+    "collatz_reconstruction/research_program/completion_defect_20260914/completion.py": {
+      "bytes": 12596,
+      "sha256": "e415e4ca3576411245baa748a4d97333f0f2a4a3f40e33682910c2a9a17088bc"
+    },
+    "collatz_reconstruction/research_program/completion_defect_20260914/note.md": {
+      "bytes": 32457,
+      "sha256": "02edcd1df086b538f102817bf533b7ef03605478629260798ab1bebc1679b816"
+    },
+    "collatz_reconstruction/research_program/completion_defect_20260914/replay.py": {
+      "bytes": 1275,
+      "sha256": "f24642f70b07f560e53d0c4b5c427bbf65bf00bc409606f9b5134fe9c6c38f10"
+    },
+    "collatz_reconstruction/research_program/completion_defect_20260914/verification.json": {
+      "bytes": 7335,
+      "sha256": "d9302c72c8d3228c5cddee69975cadb1a17d427d92fed0ff1ca8814537bb2863"
+    },
+    "collatz_reconstruction/research_program/completion_defect_20260914/verify.py": {
+      "bytes": 10499,
+      "sha256": "db24365db0e1176a8ef6f4449c28d7883b5efefe369deaafe4222c270101de2a"
+    },
+    "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/EXECUTION_RECEIPT.json": {
+      "bytes": 3246,
+      "sha256": "fff91dd903101486d0f55b6444832330f274d548a24d0c21e1598aaf7e82e438"
+    },
+    "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/MANIFEST.sha256": {
+      "bytes": 643,
+      "sha256": "4a1079ac8e0cbd0240ad6886944e3d893960d622a8f919cee6656bdb1e01681d"
+    },
+    "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/README.md": {
+      "bytes": 4194,
+      "sha256": "05b0ac2fcb5106dcfd6a930fa3ba3bc03f5a222a9913894dc596bbd45015fcd6"
+    },
+    "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/TASK_STATE.md": {
+      "bytes": 3950,
+      "sha256": "6278bdae2b8e39c0452c4cfd30e8a3b9c3bae8fb3c8b4168501dcc0c629565d7"
+    },
+    "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/cycle_detector.py": {
+      "bytes": 20600,
+      "sha256": "a7450a730a16d61f43a260d0ad0f57780546e6663ff9596c36ba1a41017b3f2e"
+    },
+    "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/note.md": {
+      "bytes": 42237,
+      "sha256": "5cfe64388682a5982d5c765bd0028c36287b68bea0a420e5808d7c2571f50df2"
+    },
+    "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/replay_all.py": {
+      "bytes": 2212,
+      "sha256": "b8a8298a3949536a21fc6e4b50b63ff58b77efd9b4a966a1eeb4f7afce44bb4f"
+    },
+    "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/verification.json": {
+      "bytes": 37410,
+      "sha256": "a100eb559307d32915360d371a89918f1bc05684d58428dcf596b6e90379972d"
+    },
+    "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/verify.py": {
+      "bytes": 19532,
+      "sha256": "4f609a6195b80266f9ded93785824bd4f8a72e6f8e118f3a5ffd20e079e65b49"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/MANIFEST.sha256": {
+      "bytes": 1315,
+      "sha256": "144b3f6f0874ee9cb292137c638b4b71864f0a1b0bd4577b811c368ae4b1eda7"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/README.md": {
+      "bytes": 5681,
+      "sha256": "989a548d194c59bd4d6ed1e8483f37009496b2ed4dd8ef605e91607771bbc9d7"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/SOURCE_INTAKE.json": {
+      "bytes": 4664,
+      "sha256": "dd99c0e55f03539703f1718cbbcbaba6f520a4894f43e096ef5beb3280954300"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/TASK_STATE.md": {
+      "bytes": 3954,
+      "sha256": "652777799e7e4bd731ba8947623ce447a3a2f282727798b232364e886a9a221d"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/arithmetic.py": {
+      "bytes": 12592,
+      "sha256": "3ed7100af3f5cea2d743dc0cb44e088fcf1a0d438cd2045f61e549042133b043"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/atlas.json.gz": {
+      "bytes": 1400829,
+      "sha256": "561756f144052e6a25959e684ac401121ba7f36a5e00493caf9b5d877101b79d"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/atlas.py": {
+      "bytes": 16962,
+      "sha256": "69bfb346c9667d725520fa22afc4be07476d68338e012da00c96423e4991661b"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/logarithm_certificate.py": {
+      "bytes": 10213,
+      "sha256": "db7a2c7c73c7d6f344eaa347aa26a370aedd4a002410752686a76024b147e519"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/logarithm_verification.json": {
+      "bytes": 209257,
+      "sha256": "65a0110f74ac0b3ab59da97a097ff2d66245a5244741c6557acda5c0cc08b077"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/logarithmic_run_exclusion.md": {
+      "bytes": 16165,
+      "sha256": "67fe34abbacc5822a1e1ab5a0cf025af1c5d8931cafa88b5d1ab9c139d4c3a66"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/morphisms.jsonl": {
+      "bytes": 7466,
+      "sha256": "27e6ccf6d0460e81821142048a4d21adc16598a1478d84d5ede3a3c9f53b23b7"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/note.md": {
+      "bytes": 34783,
+      "sha256": "e55610331364395e3c109022ce5a33ce05211a625460748d5bd75e3bbb76c4f5"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/query.py": {
+      "bytes": 3638,
+      "sha256": "77c5d61c0435867d1249bf5ad3ae6b4e1f0dae005fd24ba5251cf03479b288f9"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/replay.py": {
+      "bytes": 3622,
+      "sha256": "cff7167a0e6d30f864c56ef2efec7580c07fc2c58ea18c21a1f30c8c70456235"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/retained_zero_minima.json": {
+      "bytes": 24426,
+      "sha256": "8bd682474e1e7ab97b1924573280fa40fcf65e14ca91fbf7281589e5e7eaecee"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/verification.json": {
+      "bytes": 15219,
+      "sha256": "9763152d33083e3347136031f27c260ab0655563322fa77e6cc4ea4e989e439d"
+    },
+    "collatz_reconstruction/research_program/defect_rank_descent_20260915/verify.py": {
+      "bytes": 16525,
+      "sha256": "8138efe3f1114ccb803f6532299d4109badce9730ff057853f16eaf224577eb7"
+    },
+    "collatz_reconstruction/research_program/global_cylinder_control_20260916/MANIFEST.sha256": {
+      "bytes": 810,
+      "sha256": "a4176a608e440741e9f8c3cf5bd7da059774d7e92db5c84ff8e19e4d64df2003"
+    },
+    "collatz_reconstruction/research_program/global_cylinder_control_20260916/README.md": {
+      "bytes": 3720,
+      "sha256": "7013817831fd5b468b473ecbc66f4457595b25175199b8e3b0729a8edc25b3d9"
+    },
+    "collatz_reconstruction/research_program/global_cylinder_control_20260916/SOURCE_INTAKE.json": {
+      "bytes": 1994,
+      "sha256": "33279b5943f1d1752afc39374fc9aeb9fb6413f1ddaee1d58a92973d27502e42"
+    },
+    "collatz_reconstruction/research_program/global_cylinder_control_20260916/TASK_STATE.md": {
+      "bytes": 2820,
+      "sha256": "bfc47a378a355a990363662b095d2478f04b010df49800ca399c6ef945d8bae9"
+    },
+    "collatz_reconstruction/research_program/global_cylinder_control_20260916/audit_ledger.py": {
+      "bytes": 3671,
+      "sha256": "10ea0b7de6aa5ff1c3ba3b9eff73864ce5bcd179b9a11ae89ea5d790381cbe2b"
+    },
+    "collatz_reconstruction/research_program/global_cylinder_control_20260916/global_control.py": {
+      "bytes": 14798,
+      "sha256": "34bba5f236d789034251824091302e96fe572c4ac37a3590316d0067324b708e"
+    },
+    "collatz_reconstruction/research_program/global_cylinder_control_20260916/note.md": {
+      "bytes": 24363,
+      "sha256": "8324e1a481043af214b29fbb1adc1b341304a74f6c40f1ee29fc21e36b89e237"
+    },
+    "collatz_reconstruction/research_program/global_cylinder_control_20260916/power_gap_certificate.json": {
+      "bytes": 24031,
+      "sha256": "666c09ad2e18b559fb729d2bb07c9685735cee056fbf555c8816c25e9b570043"
+    },
+    "collatz_reconstruction/research_program/global_cylinder_control_20260916/replay.py": {
+      "bytes": 1462,
+      "sha256": "f8b873b22f154cd4c7d9a247f6c52700cfdc58435396580a78ba632a98dacdfc"
+    },
+    "collatz_reconstruction/research_program/global_cylinder_control_20260916/verification.json": {
+      "bytes": 33517,
+      "sha256": "48bd55f6c0f79b4d3bcf05339f0cde176fc495f1c0a0684bd14bbb61832dbcdc"
+    },
+    "collatz_reconstruction/research_program/global_cylinder_control_20260916/verify.py": {
+      "bytes": 10111,
+      "sha256": "48a1a5481b1cfaffaef7664013fbd972088071c708c1b46f4efbddd4654e3730"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/MANIFEST.sha256": {
+      "bytes": 1059,
+      "sha256": "8b258d71fc91109d0dcb1e091f8688b9959883b95c462bb8ecde805c66ed144d"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/README.md": {
+      "bytes": 5189,
+      "sha256": "78c12c1b80b8c8ed74428f961ebaa492196b3b37e4b3442e470f6b98c382809a"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/SOURCE_INTAKE.json": {
+      "bytes": 1922,
+      "sha256": "597d322ad6d86fe52756ccb3d0f8b301cc397445557e9c7231392d6392730d20"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/TASK_STATE.md": {
+      "bytes": 3032,
+      "sha256": "f1863d846b320f9c81f3598ce821252f51a793af546d076d86625c96771605e5"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/audit_sources.py": {
+      "bytes": 6077,
+      "sha256": "a5b6aa75264ac8115a13bd7773a29324aecc61ade39f31aec92f8681580e57b2"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/envelope.json": {
+      "bytes": 232594,
+      "sha256": "5e0ff89c0d075040cba424c04670d6e406ac72d68f72d4d6813314e8ed40d188"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/height_control.py": {
+      "bytes": 16687,
+      "sha256": "9ca024885971656e2cca935ee8d4f4205cf0c06b514cb569593aa69e8754b59f"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/independent_source_audit.json": {
+      "bytes": 4662,
+      "sha256": "98afe95857b0e9924e171750143f85b7ac166bca7c12012bd1d3ed86f38e4c71"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/note.md": {
+      "bytes": 32365,
+      "sha256": "1d06a8c60933b1960ecb883e993134e33dc089feb5d7c4b7896a63c97019f680"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/replay.py": {
+      "bytes": 3590,
+      "sha256": "0a2fcabe60bbc0cdaf1b73f045735512d0e509ede7e30ce74dc0d8af9610d5a4"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/scan_sources.py": {
+      "bytes": 4861,
+      "sha256": "39b5a06c2cef7cf82b94debfacdeefdc4a4fc0055533016ffdf94b2ee545971f"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/source_scan.json": {
+      "bytes": 6218,
+      "sha256": "69866baf0a38ab44d5eadabb7bdb4e3c71dd7c046b002705b1a3ee6690ceedfb"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/verification.json": {
+      "bytes": 65373,
+      "sha256": "0626039607fe86114584aa746f019d99303620cad53b39ad121059f99557c4db"
+    },
+    "collatz_reconstruction/research_program/height_window_reduction_20260916/verify.py": {
+      "bytes": 11780,
+      "sha256": "e0fed09cdacd6c10348324a8621bbad484192e23c8183592b75aa945004abfe9"
+    },
+    "collatz_reconstruction/research_program/history_law_cutoff_20260914/RESEARCH_NOTE.md": {
+      "bytes": 19611,
+      "sha256": "eaf151f5f8229e9db80c24a6528def189d9d87a49762ddfe0385722ca8f61b6e"
+    },
+    "collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/MANIFEST.sha256": {
+      "bytes": 549,
+      "sha256": "8a4a155f81d119c202cc315042a6cbbe0abc1af5b2aef19d8738850a1e1b908f"
+    },
+    "collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/README.md": {
+      "bytes": 3837,
+      "sha256": "2f7208b7a175aa384e67d26d6b8a633035b54e9095789b9be4780af40ac6ca5a"
+    },
+    "collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/SOURCE_INTAKE.json": {
+      "bytes": 1823,
+      "sha256": "b45d785e0e114e6b8982620a78e8543384dd5fbce85b6f738b819754235d0e8a"
+    },
+    "collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/firstjet.py": {
+      "bytes": 11587,
+      "sha256": "a53cef65109285f377e2c1344ae662c4a74574a30c1c40dfffebc9ed6cca06b0"
+    },
+    "collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md": {
+      "bytes": 32001,
+      "sha256": "1c232720d5de7331abec3be0effff8fc774d048f190c43bb79c9f69f806f765c"
+    },
+    "collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/replay.py": {
+      "bytes": 1139,
+      "sha256": "43c3ae2aaa92c005ce22a27ef4385645d68e9988db87052e9f8995c9c5b8824f"
+    },
+    "collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/verification.json": {
+      "bytes": 16353,
+      "sha256": "01203cd57c0fbad41c7d767467109ee93aaf0e4046bc164e605e3e817554fa83"
+    },
+    "collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/verify.py": {
+      "bytes": 13531,
+      "sha256": "e69b5a7f2972369981867ab570dd522e289cebf57e3e678ef8e90e2f36122ab4"
+    },
+    "collatz_reconstruction/research_program/mixed_switch_control_20260916/MANIFEST.sha256": {
+      "bytes": 633,
+      "sha256": "b31227809573383098ad1d18bc8b909ff081bd44c8bc4ec4b1c699f62ee52dc4"
+    },
+    "collatz_reconstruction/research_program/mixed_switch_control_20260916/README.md": {
+      "bytes": 3829,
+      "sha256": "e1606076e3c44e3f02241f923e50b45fe93d15104857e9857c27aca2b734ea55"
+    },
+    "collatz_reconstruction/research_program/mixed_switch_control_20260916/SOURCE_INTAKE.json": {
+      "bytes": 2374,
+      "sha256": "9073b6f6f592acff4c94dd340d73ac5b96ade852a444114e022d3277aa9fd0b6"
+    },
+    "collatz_reconstruction/research_program/mixed_switch_control_20260916/TASK_STATE.md": {
+      "bytes": 2627,
+      "sha256": "080c5ee7107b5efd1997c1814c5d89a24bb10ebd478d64559bf4c26090ac6e89"
+    },
+    "collatz_reconstruction/research_program/mixed_switch_control_20260916/mixed_switch.py": {
+      "bytes": 12150,
+      "sha256": "2d6e72f80c31a506a195f43cd958afa55518d80e9c809c33708ec666d3a5dc81"
+    },
+    "collatz_reconstruction/research_program/mixed_switch_control_20260916/note.md": {
+      "bytes": 28512,
+      "sha256": "4e3b6dbf69ef22622eed9836ec29956dae72b5f6912a68ae2900b9eb6eea3af5"
+    },
+    "collatz_reconstruction/research_program/mixed_switch_control_20260916/replay.py": {
+      "bytes": 1598,
+      "sha256": "8b45e6596d699516ea66141f629894d1dedba5a03048ae4b36921b20428cb8ea"
+    },
+    "collatz_reconstruction/research_program/mixed_switch_control_20260916/verification.json": {
+      "bytes": 2694,
+      "sha256": "ac9e8edf9b4388132d544948f10b85cb864facbe178ce070822502b77378fe07"
+    },
+    "collatz_reconstruction/research_program/mixed_switch_control_20260916/verify.py": {
+      "bytes": 15208,
+      "sha256": "d2cb809c15a2031021fdb4779dc6baf63f0543b5ce4afa9aeaa93404ea3d7129"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/MANIFEST.sha256": {
+      "bytes": 1055,
+      "sha256": "8567a257468f1807f61158fa6135861f4e6295cf76001a8931e5fb66534ece1a"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/README.md": {
+      "bytes": 5155,
+      "sha256": "57276b1c31ae2e3a7278088eb3a13e39c71699e978b7aef68f476bec053006fe"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/SOURCE_INTAKE.json": {
+      "bytes": 1958,
+      "sha256": "0ac3b1b5c235099a0c8913a54854d7a5821d45ec2c6147fd48e4ac45f882d45d"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/TASK_STATE.md": {
+      "bytes": 3469,
+      "sha256": "1f5953dc5a880d8bd175168c165120dd6c328a9230c4cd45794acb2105317457"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/atlas_crosscheck.json": {
+      "bytes": 10411,
+      "sha256": "759ac100cebc02db76c18c75a078ae7cb336cc449a776062959ee5cde8fe628b"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/crosscheck_atlas.py": {
+      "bytes": 3728,
+      "sha256": "8b5acad567b4df88182a3e474ebf84c4136c65a7116597441576a3e4fd4f056c"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/examples.json": {
+      "bytes": 12887,
+      "sha256": "45d451203df2d3b8eb237b88e4990ad3379e721301e639dccbd68ac31c2fa68f"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/gap_bases.json.gz": {
+      "bytes": 91375,
+      "sha256": "9f96f06b2985dcf2dd497bbf029d0b72913f34c53a0e7fb57595083ea07897f8"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/morphisms.jsonl": {
+      "bytes": 2861,
+      "sha256": "3cb11b34762a83b28c4a645a982880048cca1ba77580465b83d07597ca9c5c28"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/note.md": {
+      "bytes": 26015,
+      "sha256": "be6efcbd5aa9346cf27408cef87e404ade95bd1e2aa0629ed0fdbf5b334d5ef4"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/replay.py": {
+      "bytes": 2068,
+      "sha256": "e5b9aff438676c42b3fd60d7135055c8b61ab5f78b2a43d160c1863b8f349973"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/shadow_descent.py": {
+      "bytes": 13913,
+      "sha256": "8f936da0bdb82fd63d9b6580dc60b1906d248d63415f77b4a6f25d5978b9e38a"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/verification.json": {
+      "bytes": 27127,
+      "sha256": "b38ae44e6cfcf78b44fc17822bc299f093210b8d1cfb91247547ec4572c05e44"
+    },
+    "collatz_reconstruction/research_program/negative_shadow_descent_20260916/verify.py": {
+      "bytes": 21059,
+      "sha256": "d24b5ccdfe87a93a9019534469bbe27910069e4320c6ee0feede1844cbaee540"
+    },
+    "collatz_reconstruction/research_program/residual_splice_20260914/MANIFEST.sha256": {
+      "bytes": 719,
+      "sha256": "cd1e06cc3d7bc058c10b754b2792507396e694797f7ed324a91f10756c6805dd"
+    },
+    "collatz_reconstruction/research_program/residual_splice_20260914/README.md": {
+      "bytes": 5274,
+      "sha256": "b9e83840dd0ebc8e6b9c4bd29c870f4fe98ca6302627d74cd96be99fcbcebfbc"
+    },
+    "collatz_reconstruction/research_program/residual_splice_20260914/TASK_STATE.md": {
+      "bytes": 4644,
+      "sha256": "ed3bba217255183a01b181bb4e35a7b53d227c0ba97b9ae71eef47a83fc53f30"
+    },
+    "collatz_reconstruction/research_program/residual_splice_20260914/integral_blocks.md": {
+      "bytes": 10920,
+      "sha256": "9026a80f26f02c0226d6098afc64935c8aa8cded19088c07bf067f56358433b5"
+    },
+    "collatz_reconstruction/research_program/residual_splice_20260914/note.md": {
+      "bytes": 20291,
+      "sha256": "a57d832cdb3c5e219e4c0fbb3aecacce2b8deb121dd215f14f7608ddbc95dec7"
+    },
+    "collatz_reconstruction/research_program/residual_splice_20260914/replay.py": {
+      "bytes": 2214,
+      "sha256": "f69794fc02189f1a1f6f17fe660cdb8bd6a703481e283ef512894db05315d2c6"
+    },
+    "collatz_reconstruction/research_program/residual_splice_20260914/residual_descent.py": {
+      "bytes": 18144,
+      "sha256": "7bf5425b1000012b7633a81761cc3704239b77add87b8a1ae4638d9cd6c9b538"
+    },
+    "collatz_reconstruction/research_program/residual_splice_20260914/tail_descent.py": {
+      "bytes": 4077,
+      "sha256": "02ccb6e30e5b97eb5e3892e8f918616442bd051da386a03b9abac6c9e3321517"
+    },
+    "collatz_reconstruction/research_program/residual_splice_20260914/verification.json": {
+      "bytes": 23100,
+      "sha256": "f0c5246b233eb5c9ea2fbfef813263943147f5d87164c8c6120e1c0f9081c587"
+    },
+    "collatz_reconstruction/research_program/residual_splice_20260914/verify.py": {
+      "bytes": 19226,
+      "sha256": "c49ec60ae3c90ccb6fdbdcfdaba9b96dc3f477f8f7d08efbb16275e1fcbf4fee"
+    },
+    "collatz_reconstruction/research_program/stopped_affine_transport_20260914/EXECUTION_RECEIPT.json": {
+      "bytes": 2626,
+      "sha256": "0b737224b0c5799f1d1bb0ca487e4b5d08c0768165b8b4eab51906607e2aeb2f"
+    },
+    "collatz_reconstruction/research_program/stopped_affine_transport_20260914/HANDOFF.md": {
+      "bytes": 3792,
+      "sha256": "3451c7a054bccba95485fdc98b8be47f29fe424a28abf0188b256cf32fcedc94"
+    },
+    "collatz_reconstruction/research_program/stopped_affine_transport_20260914/MANIFEST.sha256": {
+      "bytes": 733,
+      "sha256": "5adce17643bd09364695b0a71d45ba78a7d5489de4a0146bc899217586e828b6"
+    },
+    "collatz_reconstruction/research_program/stopped_affine_transport_20260914/PROVENANCE.md": {
+      "bytes": 2929,
+      "sha256": "22af01894de33d8eed6bd445acb74835756bef6e434d3e79bbb375dd6741463a"
+    },
+    "collatz_reconstruction/research_program/stopped_affine_transport_20260914/README.md": {
+      "bytes": 4845,
+      "sha256": "c1c48cb1d2f75144ee1bf88368852b888df187582436350fc622e12774ed1edb"
+    },
+    "collatz_reconstruction/research_program/stopped_affine_transport_20260914/example_certificate.json": {
+      "bytes": 56089,
+      "sha256": "a3019ae167ae79788d2abc20f23e9419651f6393611d4ebb9e4ade06e7687847"
+    },
+    "collatz_reconstruction/research_program/stopped_affine_transport_20260914/make_certificate.py": {
+      "bytes": 8902,
+      "sha256": "cdbd26250ef7a59deea1f7437f7e4dc88d98c8b5ad037dc0a67cd4a6515afe6e"
+    },
+    "collatz_reconstruction/research_program/stopped_affine_transport_20260914/note.md": {
+      "bytes": 57957,
+      "sha256": "b04ceb79cb47e8c61999a2cb3131e08988a920ec3b22c89dae9f1f694f384953"
+    },
+    "collatz_reconstruction/research_program/stopped_affine_transport_20260914/verification.json": {
+      "bytes": 42851,
+      "sha256": "f83800b7839c9753acf8b4e62cb9539e56e1da1c6a7c1ad1fa856d47b2de4e34"
+    },
+    "collatz_reconstruction/research_program/stopped_affine_transport_20260914/verify.py": {
+      "bytes": 35692,
+      "sha256": "4181d895d61b3bab236530263c78fe34c7d935eb3f42f4786d91a41f88c696af"
+    },
+    "collatz_reconstruction/research_program/stopped_cycle_integration_20260914/INTEGRATION_RECEIPT.json": {
+      "bytes": 1338,
+      "sha256": "99318f80e953473268ff77b460066dc1747f78ccb27a211c4f8abeba3ae76686"
+    },
+    "collatz_reconstruction/research_program/stopped_cycle_integration_20260914/PAYLOAD_MANIFEST.json": {
+      "bytes": 4696,
+      "sha256": "5ec902e83d3b7d1c36bbfb0be162a75919bcaa86c957280c26d3e3c3ef152c50"
+    },
+    "collatz_reconstruction/research_program/stopped_cycle_integration_20260914/README.md": {
+      "bytes": 4257,
+      "sha256": "d2d39f3dc96c8329b1d8efeb8a8b6f82171de43c34853b988b4065fab573ca2b"
+    },
+    "collatz_reconstruction/research_program/stopped_cycle_integration_20260914/verify_import.py": {
+      "bytes": 1761,
+      "sha256": "4c99e419aa396b78ec0c2eacbfa8d280afaffe41774257858e5f0d65b9b38549"
+    },
+    "collatz_reconstruction/research_program/supported_structure_20260915/MANIFEST.sha256": {
+      "bytes": 310,
+      "sha256": "30d57ddb7220462552917933d9184d9b704cc5e50cddf9434b37becb6e7f3d5e"
+    },
+    "collatz_reconstruction/research_program/supported_structure_20260915/README.md": {
+      "bytes": 3486,
+      "sha256": "19473949a029f33dc58cff1ba6886e445fddd576c2152f1a709aeac9c4d6fea2"
+    },
+    "collatz_reconstruction/research_program/supported_structure_20260915/note.md": {
+      "bytes": 33248,
+      "sha256": "143acfef82726150c93a6aeae7bc9c98f8e335ba7466877ea312c31b60a58413"
+    },
+    "collatz_reconstruction/research_program/supported_structure_20260915/verification.json": {
+      "bytes": 4965,
+      "sha256": "205d60f72e636031d5357089a403ff510f9b9f962ed74cf32a7abf73c892f993"
+    },
+    "collatz_reconstruction/research_program/supported_structure_20260915/verify.py": {
+      "bytes": 15360,
+      "sha256": "dc408a3a06835ed89402b6b222de6efec5a85edd0040146a1fe288a3637cf3cc"
+    },
+    "collatz_reconstruction/research_program/ternary_join_reduction_20260916/note.md": {
+      "bytes": 26020,
+      "sha256": "82382023e9f97a47ab68021149c48548a5653a9fef19ae40533a65152d02ce71"
+    }
+  },
+  "full_repository_clone": false,
+  "new_prefix": "collatz_reconstruction/research_program/all_even_join_extension_20260916/"
+}

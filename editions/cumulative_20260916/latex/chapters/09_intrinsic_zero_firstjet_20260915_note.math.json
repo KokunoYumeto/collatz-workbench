@@ -1,0 +1,210 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\nG(R)=R\\sqcup\\{\\tau\\},\\qquad e=\\operatorname{ofR}(0_R)\\ne\\tau.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nG(R)\\longrightarrow R\\times\\mathbb B,\n\\quad \\tau\\mapsto(0,0),\\quad \\operatorname{ofR}(r)\\mapsto(r,1),\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\{(0,0)\\}\\cup(R\\times\\{1\\})"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\{\\tau,e\\}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s(m)=em"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nM_l=\\{m:em=l\\},\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m\\mapsto m+k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "V_l,\\rho_{lk}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(l,x)+(k,y)=(l\\vee k,\\rho_{l,l\\vee k}x+\\rho_{k,l\\vee k}y),\n\\quad e(l,x)=(l,0),\\quad\\tau(l,x)=(\\bot,0).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\{z\\in C^1:f^1z\\in d_DD^0\\}/d_CC^0\n\\ \\cong\\ \\ker H^1(f).\n\\tag{1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nX=\\{1,3,5,\\ldots\\},\\qquad\nT(n)=\\frac{3n+1}{2^{a(n)}},\\qquad a(n)=\\nu_2(3n+1).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_n:n\\to T(n)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nV(E)=E\\cup T(E),\\quad C_E^0=\\mathbb Z^{(E)},\\quad C_E^1=\\mathbb Z^{(V(E))}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nJ_Ee_n=V_n,\\qquad P_Ee_n=V_{T(n)},\\qquad d_E=J_E-P_E.\n\\tag{2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal P(X)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Omega_E=\\bigcup_{j\\ge0}T^j(E)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon h=I-\\iota\\pi,\\qquad h d_\\epsilon=I-\\iota\\pi\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\mathbb D=\\mathbb Z[\\epsilon]/(\\epsilon^2).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(a,b)(c,d)=(ac,ad+bc)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\operatorname{ofR}(\\epsilon)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\operatorname{ofR}(\\epsilon)^2=e"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r:\\mathbb D\\to\\mathbb Z"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nG(r)^{-1}(e)=\\{\\operatorname{ofR}(\\epsilon b):b\\in\\mathbb Z\\},\n\\qquad G(r)^{-1}(\\tau)=\\{\\tau\\}.\n\\tag{3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nK_E=[C_E^0\\xrightarrow{d_E}C_E^1],\\qquad\nK_{E,\\epsilon}=[C_E^0\\otimes\\mathbb D\\xrightarrow{d_{E,\\epsilon}}C_E^1\\otimes\\mathbb D],\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_{E,\\epsilon}=J_E-(1+\\epsilon)P_E=d_E-\\epsilon P_E.\n\\tag{4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_{E,\\epsilon}(b+\\epsilon c)=d_Eb+\\epsilon(d_Ec-P_Eb).\n\\tag{5}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n0\\longrightarrow K_E\\xrightarrow{\\epsilon}K_{E,\\epsilon}\n\\xrightarrow r K_E\\longrightarrow0.\n\\tag{6}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\alpha:R\\to\\mathbb D,\\qquad u\\mapsto1+\\epsilon,\\quad v\\mapsto1.\n\\tag{7}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "V_n-u v^{a(n)-1}V_{T(n)}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(v-1,(u-1)^2)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\alpha(f)=f(1,1)+\\epsilon\\partial_uf(1,1)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\beta_E:H^0(K_E)\\to H^1(K_E),\\qquad\nc\\longmapsto[-P_Ec],\\quad d_Ec=0.\n\\tag{8}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\mathfrak B_E=\\ker\\bigl(H^1(r):H^1(K_{E,\\epsilon})\\to H^1(K_E)\\bigr).\n\\tag{9}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\n\\mathfrak B_E\\cong\\operatorname{coker}\\beta_E\n\\cong C_E^1/(d_EC_E^0+P_E\\ker d_E)\n\\cong\\epsilon H^1(K_{E,\\epsilon}).\n}\n\\tag{10}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nK_{\\rm rep,E}=d_EC_E^0+\\epsilon C_E^1,\n\\quad B_{\\rm old,E}=d_{E,\\epsilon}(C_E^0\\otimes\\mathbb D).\n\\tag{11}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(E,[z])\\mapsto(E,0)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n[\\sum a_nV_n]\\longmapsto(\\sum_{n\\in A}a_n)_A.\n\\tag{12}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nc_C=\\sum_{n\\text{ on }C}e_n\n\\tag{13}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\beta_E(c_C)=-m\\eta_C.\n\\tag{14}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\n\\mathfrak B_E\\cong\n\\bigoplus_{C\\text{ cycles in }E}\\mathbb Z/m_C\\mathbb Z\n\\ \\oplus\\\n\\bigoplus_{A\\text{ components without a cycle}}\\mathbb Z.\n}\n\\tag{15}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{H^1(K_{\\epsilon}|_C)\\cong\\mathbb D/(m\\epsilon).}\n\\tag{16}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{H^1(K_{\\epsilon}|_A)\\cong\\mathbb D,\\qquad\n\\mathfrak B_A=\\epsilon\\mathbb D\\cong\\mathbb Z.}\n\\tag{17}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(2^a-3)n=1.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\n\\mathfrak B_X\\cong\n\\bigoplus_{C\\text{ nontrivial positive cycles}}\\mathbb Z/m_C\\mathbb Z\n\\ \\oplus\\\n\\bigoplus_{A\\text{ nonperiodic components}}\\mathbb Z.\n}\n\\tag{18}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\n\\begin{gathered}\n\\text{Every positive odd integer reaches }1;\\\\\n\\ker H^1(r:K_{X,\\epsilon}\\to K_X)=0;\\\\\n\\epsilon H^1(K_{X,\\epsilon})=0;\\\\\n\\beta_X:H^0(K_X)\\to H^1(K_X)\\text{ is an integral isomorphism}.\n\\end{gathered}}\n\\tag{19}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_Xb=0,\\qquad d_Xc-P_Xb=V_n.\n\\tag{20}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d_{X,\\epsilon}(b+\\epsilon c)=\\epsilon V_n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nb=-e_1,\\qquad c=\\sum_{e\\text{ in }p}e.\n\\tag{21}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon\\bigl(-(e_5+e_7)-\\epsilon e_7\\bigr)=2\\epsilon V_5.\n\\tag{22}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon(-e_1+\\epsilon(e_3+e_5))=\\epsilon V_3.\n\\tag{23}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\mathfrak B_X\\cong\\mathop{\\rm colim}_{E\\subset X,\\ E\\text{ finite}}\\mathfrak B_E.\n\\tag{24}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\mathfrak B_X\\otimes\\mathbb Z/p^r\n\\cong\\bigoplus_C\\mathbb Z/\\gcd(m_C,p^r)\\mathbb Z\n\\oplus\\bigoplus_A\\mathbb Z/p^r\\mathbb Z.\n\\tag{25}\n"
+  }
+]

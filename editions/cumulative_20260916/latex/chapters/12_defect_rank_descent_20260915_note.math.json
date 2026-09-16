@@ -1,0 +1,202 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\nA_j=\\sum_{i=1}^j a_i,\\quad A_0=0,\\quad\nL=3^m,\\quad U=2^{A_m},\\quad D=U-L,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nC=\\sum_{j=0}^{m-1}3^{m-1-j}2^{A_j},\\qquad\ng_p(n)=\\frac{Ln+C}{U}.\n\\tag{1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\begin{pmatrix}L&C\\\\0&U\\end{pmatrix}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nt s_n(1)-s_n(U)=h_p(n)e_1,\\qquad\n\\boxed{h_p(n)=C-Dn.}\n\\tag{2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\n\\text{the next exact exponent word is p}\n\\iff Ln+C\\equiv U\\pmod{2U}\n\\iff h_p(n)\\equiv0\\pmod{2U}.\n}\n\\tag{3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nn=r_p+2Ut,\\quad t\\ge0,\\qquad\nr_p\\equiv C D^{-1}\\pmod{2U},\\quad 1\\le r_p<2U.\n\\tag{4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{n\\text{ realizes }p^r\\iff 2U^r\\mid h_p(n).}\n\\tag{5}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\nR_p(n)=\\left\\lfloor\\frac{\\nu_2(h_p(n))-1}{A}\\right\\rfloor.\n}\n\\tag{6}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nh_p(g_p(n))=\\frac LU h_p(n),\\qquad\n\\nu_2(h_p(g_p(n)))=\\nu_2(h_p(n))-A.\n\\tag{7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nS_r=\\sum_{j=0}^{r-1}L^{r-1-j}U^j,\\quad\nC(p^r)=C S_r,\\quad D(p^r)=D S_r.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\ng_p^r(n)=\\frac{C-L^r h_p(n)/U^r}{D}.\n\\tag{8}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nn=\\frac{C-2^{Ar+1}z}{D}>0,\\qquad z\\in\\mathbb Z\\setminus\\{0\\},\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n2^{Ar+1}z\\equiv C\\pmod D,\\qquad 0\\le\\nu_2(z)<A.\n\\tag{9}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nR_p(n)\\le\\left\\lfloor\\frac{\\operatorname{bitlength}(|h_p(n)|)-2}{A}\\right\\rfloor.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\Delta_{p,q}=D_p C_q-D_q C_p.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nD_p h_q(x)-D_q h_p(x)=\\Delta_{p,q}.\n\\tag{10}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\nD_p h_q(y)=D_q L_p\\frac{h_p(n)}{U_p}+\\Delta_{p,q}.\n}\n\\tag{11}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nr\\ge2,\\quad v\\ge0,\\quad s=6v+1,\\qquad\nn=\\frac{2^{2r+3}s+1}{3},\n\\tag{12}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nT(n)=4^{r+1}s+1,\\qquad\n\\nu_2(h_q(T(n)))=2r+2.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{T^{r+1}(n)=4\\cdot3^r s+1<n.}\n\\tag{13}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nn-T^{r+1}(n)=\\frac{(8\\cdot4^r-12\\cdot3^r)s-2}{3}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\frac{2^{2r+3}+1}{3}+2^{2r+4}v,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nD_2(a,b)=2^{a+2b}-3^{a+b},\\qquad\n\\lambda_2=(3/2)^a(3/4)^b.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nn=2^{a+1}t-1,\\quad t>0\\text{ odd},\\qquad\nx=2\\cdot3^a t-1.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n3^a t-1=4^b z,\\qquad y=2\\cdot3^b z+1.\n\\tag{14}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\nn-y=2(k-1),\\qquad\nk=\\frac{D_2 z+2^a}{3^a}\\in\\mathbb Z_{>0}.\n}\n\\tag{15}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\ng_2g_3(x)-g_3g_2(x)=1/8>0.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\ng_2^{b-1}g_3(x)\n=1+\\frac{\\lambda_2}{2}(n+1)-\\frac53(3/4)^b.\n\\tag{16}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nD_2=256^h-243^h\\ge13\\cdot243^{h-1}>9^h-4^h.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nD_2=32\\cdot256^h-27\\cdot243^h\\ge5\\cdot243^h\n>3\\cdot9^h-2\\cdot4^h.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{b\\ge\\left\\lceil\\frac{2124a}{1507}\\right\\rceil.}\n\\tag{17}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nU_*=2^{q+2p}=2^{5755}>3^{q+p}=3^{3631}=L_*.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nD_2(r,\\lceil pr/q\\rceil)>3^r-2^r.\n\\tag{18}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nD_2(a+q,b+p)=L_*D_2(a,b)+(U_*-L_*)2^{a+2b}.\n\\tag{19}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nD_2=-40432553845953101497907.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\mathbb D=\\mathbb Z[\\epsilon]/(\\epsilon^2),\\qquad\n d_\\epsilon=d-\\epsilon P.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d B_p(n)=V_n-V_y,\\qquad\n\\boxed{d_\\epsilon(\\epsilon B_p(n))=\\epsilon V_n-\\epsilon V_y.}\n\\tag{20}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon\\left(-e_1+\\epsilon c_n\\right)=\\epsilon V_n,\n\\tag{21}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\tau(n)=\\nu_2(n+1)-1,\\quad t=(n+1)/2^{\\tau(n)+1},\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nT^j(n)=3^j2^{\\tau(n)+1-j}t-1\\quad(0\\le j\\le\\tau(n)),\\qquad\n\\theta(n)=2\\cdot3^{\\tau(n)}t-1\\in Y.\n\\tag{22}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_Y E_y=V_y-(1+\\ell(y)\\epsilon)V_{F(y)}.\n\\tag{23}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon H=I-\\iota\\pi,\\qquad H d_\\epsilon=I-\\iota\\pi\n\\tag{24}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nn=r+2Ut,\\qquad \\ell\\le t\\le h,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\ell=\\max\\left(0,\\left\\lfloor\\frac{C-Dr}{2UD}\\right\\rfloor+1\\right),\\qquad\nh=\\min_{\\substack{j<m\\\\D_j>0}}\\left\\lfloor\\frac{C_j-D_jr}{2UD_j}\\right\\rfloor,\n\\tag{25}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nH(1)=0,\\qquad H(n)=1+H(T(n))\\quad(n\\ne1).\n\\tag{26}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n3^m<2^A=\\prod_{i=1}^m(3+1/x_i)\\le(3s+1)^m/s^m.\n\\tag{27}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(4s)^m\\le2^k(3s+1)^m.\n\\tag{28}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n2^{\\operatorname{bitlength}(3^m)}s^m>(3s+1)^m\n\\quad(1\\le m\\le3630),\n\\tag{29}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{(4s)^{3631}>2^{1506}(3s+1)^{3631}.}\n\\tag{30}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nm=3631,\\quad A=5755,\\quad\n1166401\\le\\min x_i\\le1505447\\quad\\text{(odd minimum)}.\n\\tag{31}\n"
+  }
+]

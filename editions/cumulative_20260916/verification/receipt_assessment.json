@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "original_intake_assessment": {
+    "ordinary": "PASS; fresh output byte-identical to verification.json",
+    "optimized": "PASS; fresh output byte-identical to verification.json and ordinary run",
+    "independent_affine_auditor": "Mathematical PASS and zero exit; platform-specific byte comparison failed",
+    "auditor_fresh_bytes": 219,
+    "auditor_original_bytes": 212,
+    "auditor_fresh_CR_count": 7,
+    "auditor_original_CR_count": 0,
+    "auditor_LF_normalized_bytes_identical": true,
+    "auditor_fresh_sha256": "b1214d0f0c50fba7eba542078c81d0741a43c99104a8e6ef4ff4fb5f7c30c535",
+    "auditor_original_sha256": "65971ac90997c8a13413534647b5f5d3e17d06ab3bed004e0ada7d7d24bd226e",
+    "diagnosis": "audit_families.py Path.write_text uses platform newline translation; replay.py compares its output bytes with the LF receipt. The seven extra Windows CR bytes are the entire discrepancy."
+  },
+  "publication_repairs": [
+    {
+      "file": "publish/all_even_join_extension_20260916/note.md",
+      "change": "State formulas (19) and (20) for positive odd n>1; set R_*(1)=1, K_*(1)=0 and H(V_1)=0 separately.",
+      "sha256_before": "537e64b1651beaa04148871fe1d88aa4861e9bba71112b3598e4c97b0fd914ce",
+      "sha256_after": "6ee7e26eb332db9f38dca29e7603a563c2456c9e23370b375d0cb19736151c88"
+    },
+    {
+      "file": "publish/all_even_join_extension_20260916/audit_families.py",
+      "change": "Write deterministic UTF-8 bytes, preserving the source JSON text and LF newline content on every platform.",
+      "sha256_before": "b0adc6f9a524d4d63fcdb7551031666424f548a413129f5cb4201dd0daa6b227",
+      "sha256_after": "e01b25c53aac3f0a3b7aab013a55b11f86e11108b5bb4b646662fff7afdea3ea"
+    },
+    {
+      "file": "publish/all_even_join_extension_20260916/MANIFEST.json",
+      "change": "Rebind only the note.md and audit_families.py hashes. No evidence files altered."
+    }
+  ],
+  "publication_fresh_results": {
+    "ordinary": "PASS, 87989 checks, byte-identical original scientific output",
+    "optimized": "PASS, 87989 checks, byte-identical original scientific output",
+    "independent_affine_auditor": "PASS, 512 families, 24180 equations, byte-identical original scientific output"
+  },
+  "input_intake_edited": false,
+  "historical_evidence_altered": false,
+  "cap_bytes": 5000000000,
+  "cap_type": "OS-enforced aggregate committed memory across the owned Windows Job Object",
+  "time_limit_seconds_per_run": 180
+}

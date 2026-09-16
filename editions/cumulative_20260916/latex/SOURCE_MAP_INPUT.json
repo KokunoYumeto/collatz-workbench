@@ -1,0 +1,202 @@
+[
+  {
+    "number": 1,
+    "source": "repository/collatz_reconstruction/research_program/history_law_cutoff_20260914/RESEARCH_NOTE.md",
+    "source_sha256": "eaf151f5f8229e9db80c24a6528def189d9d87a49762ddfe0385722ca8f61b6e",
+    "latex": "chapters/01_history_law_cutoff_20260914_RESEARCH_NOTE.tex",
+    "math_tokens": 190,
+    "display_math_tokens": 35,
+    "original_source_sha256": "eaf151f5f8229e9db80c24a6528def189d9d87a49762ddfe0385722ca8f61b6e",
+    "edition_source_change": null
+  },
+  {
+    "number": 2,
+    "source": "repository/collatz_reconstruction/research_program/stopped_affine_transport_20260914/note.md",
+    "source_sha256": "b04ceb79cb47e8c61999a2cb3131e08988a920ec3b22c89dae9f1f694f384953",
+    "latex": "chapters/02_stopped_affine_transport_20260914_note.tex",
+    "math_tokens": 504,
+    "display_math_tokens": 142,
+    "original_source_sha256": "b04ceb79cb47e8c61999a2cb3131e08988a920ec3b22c89dae9f1f694f384953",
+    "edition_source_change": null
+  },
+  {
+    "number": 3,
+    "source": "repository/collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/note.md",
+    "source_sha256": "5cfe64388682a5982d5c765bd0028c36287b68bea0a420e5808d7c2571f50df2",
+    "latex": "chapters/03_cycle_relative_cohomology_20260914_note.tex",
+    "math_tokens": 341,
+    "display_math_tokens": 95,
+    "original_source_sha256": "5cfe64388682a5982d5c765bd0028c36287b68bea0a420e5808d7c2571f50df2",
+    "edition_source_change": null
+  },
+  {
+    "number": 4,
+    "source": "repository/collatz_reconstruction/research_program/residual_splice_20260914/note.md",
+    "source_sha256": "a57d832cdb3c5e219e4c0fbb3aecacce2b8deb121dd215f14f7608ddbc95dec7",
+    "latex": "chapters/04_residual_splice_20260914_note.tex",
+    "math_tokens": 172,
+    "display_math_tokens": 38,
+    "original_source_sha256": "a57d832cdb3c5e219e4c0fbb3aecacce2b8deb121dd215f14f7608ddbc95dec7",
+    "edition_source_change": null
+  },
+  {
+    "number": 5,
+    "source": "repository/collatz_reconstruction/research_program/residual_splice_20260914/integral_blocks.md",
+    "source_sha256": "9026a80f26f02c0226d6098afc64935c8aa8cded19088c07bf067f56358433b5",
+    "latex": "chapters/05_residual_splice_20260914_integral_blocks.tex",
+    "math_tokens": 120,
+    "display_math_tokens": 31,
+    "original_source_sha256": "9026a80f26f02c0226d6098afc64935c8aa8cded19088c07bf067f56358433b5",
+    "edition_source_change": null
+  },
+  {
+    "number": 6,
+    "source": "repository/collatz_reconstruction/research_program/clocked_support_20260914/note.md",
+    "source_sha256": "59dea0487e404e5b16f4bb3b933dbaa68f693ba580fbdddd917c3f33316eeca7",
+    "latex": "chapters/06_clocked_support_20260914_note.tex",
+    "math_tokens": 123,
+    "display_math_tokens": 57,
+    "original_source_sha256": "59dea0487e404e5b16f4bb3b933dbaa68f693ba580fbdddd917c3f33316eeca7",
+    "edition_source_change": null
+  },
+  {
+    "number": 7,
+    "source": "repository/collatz_reconstruction/research_program/completion_defect_20260914/note.md",
+    "source_sha256": "02edcd1df086b538f102817bf533b7ef03605478629260798ab1bebc1679b816",
+    "latex": "chapters/07_completion_defect_20260914_note.tex",
+    "math_tokens": 254,
+    "display_math_tokens": 54,
+    "original_source_sha256": "02edcd1df086b538f102817bf533b7ef03605478629260798ab1bebc1679b816",
+    "edition_source_change": null
+  },
+  {
+    "number": 8,
+    "source": "repository/collatz_reconstruction/research_program/supported_structure_20260915/note.md",
+    "source_sha256": "143acfef82726150c93a6aeae7bc9c98f8e335ba7466877ea312c31b60a58413",
+    "latex": "chapters/08_supported_structure_20260915_note.tex",
+    "math_tokens": 104,
+    "display_math_tokens": 31,
+    "original_source_sha256": "143acfef82726150c93a6aeae7bc9c98f8e335ba7466877ea312c31b60a58413",
+    "edition_source_change": null
+  },
+  {
+    "number": 9,
+    "source": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+    "source_sha256": "1c232720d5de7331abec3be0effff8fc774d048f190c43bb79c9f69f806f765c",
+    "latex": "chapters/09_intrinsic_zero_firstjet_20260915_note.tex",
+    "math_tokens": 52,
+    "display_math_tokens": 35,
+    "original_source_sha256": "1c232720d5de7331abec3be0effff8fc774d048f190c43bb79c9f69f806f765c",
+    "edition_source_change": null
+  },
+  {
+    "number": 10,
+    "source": "repository/collatz_reconstruction/research_program/anchored_defect_20260914/note.md",
+    "source_sha256": "8de5e1fada7dd8126050a29ad8ac2975e361db381a3a7cd6eb82651b64acfd5e",
+    "latex": "chapters/10_anchored_defect_20260914_note.tex",
+    "math_tokens": 29,
+    "display_math_tokens": 29,
+    "original_source_sha256": "8de5e1fada7dd8126050a29ad8ac2975e361db381a3a7cd6eb82651b64acfd5e",
+    "edition_source_change": null
+  },
+  {
+    "number": 11,
+    "source": "repository/collatz_reconstruction/research_program/anchored_defect_20260914/turns_and_unit_excess.md",
+    "source_sha256": "1b98e33deea8c567123029c2363e023468fb90a58f9ac5d50fe4393a2b9f0aa9",
+    "latex": "chapters/11_anchored_defect_20260914_turns_and_unit_excess.tex",
+    "math_tokens": 12,
+    "display_math_tokens": 12,
+    "original_source_sha256": "1b98e33deea8c567123029c2363e023468fb90a58f9ac5d50fe4393a2b9f0aa9",
+    "edition_source_change": null
+  },
+  {
+    "number": 12,
+    "source": "repository/collatz_reconstruction/research_program/defect_rank_descent_20260915/note.md",
+    "source_sha256": "e55610331364395e3c109022ce5a33ce05211a625460748d5bd75e3bbb76c4f5",
+    "latex": "chapters/12_defect_rank_descent_20260915_note.tex",
+    "math_tokens": 50,
+    "display_math_tokens": 50,
+    "original_source_sha256": "e55610331364395e3c109022ce5a33ce05211a625460748d5bd75e3bbb76c4f5",
+    "edition_source_change": null
+  },
+  {
+    "number": 13,
+    "source": "repository/collatz_reconstruction/research_program/defect_rank_descent_20260915/logarithmic_run_exclusion.md",
+    "source_sha256": "67fe34abbacc5822a1e1ab5a0cf025af1c5d8931cafa88b5d1ab9c139d4c3a66",
+    "latex": "chapters/13_defect_rank_descent_20260915_logarithmic_run_exclusion.tex",
+    "math_tokens": 30,
+    "display_math_tokens": 30,
+    "original_source_sha256": "67fe34abbacc5822a1e1ab5a0cf025af1c5d8931cafa88b5d1ab9c139d4c3a66",
+    "edition_source_change": null
+  },
+  {
+    "number": 14,
+    "source": "repository/collatz_reconstruction/research_program/negative_shadow_descent_20260916/note.md",
+    "source_sha256": "be6efcbd5aa9346cf27408cef87e404ade95bd1e2aa0629ed0fdbf5b334d5ef4",
+    "latex": "chapters/14_negative_shadow_descent_20260916_note.tex",
+    "math_tokens": 252,
+    "display_math_tokens": 59,
+    "original_source_sha256": "be6efcbd5aa9346cf27408cef87e404ade95bd1e2aa0629ed0fdbf5b334d5ef4",
+    "edition_source_change": null
+  },
+  {
+    "number": 15,
+    "source": "repository/collatz_reconstruction/research_program/mixed_switch_control_20260916/note.md",
+    "source_sha256": "4e3b6dbf69ef22622eed9836ec29956dae72b5f6912a68ae2900b9eb6eea3af5",
+    "latex": "chapters/15_mixed_switch_control_20260916_note.tex",
+    "math_tokens": 114,
+    "display_math_tokens": 59,
+    "original_source_sha256": "4e3b6dbf69ef22622eed9836ec29956dae72b5f6912a68ae2900b9eb6eea3af5",
+    "edition_source_change": null
+  },
+  {
+    "number": 16,
+    "source": "repository/collatz_reconstruction/research_program/global_cylinder_control_20260916/note.md",
+    "source_sha256": "8324e1a481043af214b29fbb1adc1b341304a74f6c40f1ee29fc21e36b89e237",
+    "latex": "chapters/16_global_cylinder_control_20260916_note.tex",
+    "math_tokens": 34,
+    "display_math_tokens": 34,
+    "original_source_sha256": "8324e1a481043af214b29fbb1adc1b341304a74f6c40f1ee29fc21e36b89e237",
+    "edition_source_change": null
+  },
+  {
+    "number": 17,
+    "source": "repository/collatz_reconstruction/research_program/height_window_reduction_20260916/note.md",
+    "source_sha256": "1d06a8c60933b1960ecb883e993134e33dc089feb5d7c4b7896a63c97019f680",
+    "latex": "chapters/17_height_window_reduction_20260916_note.tex",
+    "math_tokens": 123,
+    "display_math_tokens": 48,
+    "original_source_sha256": "1d06a8c60933b1960ecb883e993134e33dc089feb5d7c4b7896a63c97019f680",
+    "edition_source_change": null
+  },
+  {
+    "number": 18,
+    "source": "repository/collatz_reconstruction/research_program/ternary_join_reduction_20260916/note.md",
+    "source_sha256": "82382023e9f97a47ab68021149c48548a5653a9fef19ae40533a65152d02ce71",
+    "latex": "chapters/18_ternary_join_reduction_20260916_note.tex",
+    "math_tokens": 39,
+    "display_math_tokens": 39,
+    "original_source_sha256": "82382023e9f97a47ab68021149c48548a5653a9fef19ae40533a65152d02ce71",
+    "edition_source_change": null
+  },
+  {
+    "number": 19,
+    "source": "repository/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/note.md",
+    "source_sha256": "8eb0d91adcfff7c29efcea0270398f9bc18f484fb665d154be1a4a32b5458eaf",
+    "latex": "chapters/19_bilateral_root_bounds_20260916_note.tex",
+    "math_tokens": 55,
+    "display_math_tokens": 55,
+    "original_source_sha256": "8eb0d91adcfff7c29efcea0270398f9bc18f484fb665d154be1a4a32b5458eaf",
+    "edition_source_change": null
+  },
+  {
+    "number": 20,
+    "source": "repository/collatz_reconstruction/research_program/all_even_join_extension_20260916/note.md",
+    "source_sha256": "6ee7e26eb332db9f38dca29e7603a563c2456c9e23370b375d0cb19736151c88",
+    "latex": "chapters/20_all_even_join_extension_20260916_note.tex",
+    "math_tokens": 72,
+    "display_math_tokens": 41,
+    "original_source_sha256": "537e64b1651beaa04148871fe1d88aa4861e9bba71112b3598e4c97b0fd914ce",
+    "edition_source_change": "State n>1 for unrestricted bounds; fix root conventions R_*(1)=1, K_*(1)=0, H(V_1)=0."
+  }
+]

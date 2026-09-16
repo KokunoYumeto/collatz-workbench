@@ -1,0 +1,482 @@
+[
+  {
+    "kind": "InlineMath",
+    "text": "p=(a_1,\\ldots,a_m)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a_j\\ge1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_j=\\sum_{v\\le j}a_v"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_0=0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n K_p=[\\mathbb Z^m\\xrightarrow{B}\\mathbb Z^m],\\qquad\n (Bx)_j=2^{a_j}x_{j+1}-3x_j,\\quad x_{m+1}=x_1.\n \\tag{B1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L=3^m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U=2^{A_m}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D=U-L"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n f_j=3^{m-j}2^{A_{j-1}},\\qquad fB=D e_1^T.\n \\tag{B2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "|D|"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\operatorname{coker}B\\longrightarrow\\mathbb Z/D\\mathbb Z,\n \\qquad [b]\\longmapsto[f b].\n \\tag{B3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B\\mathbb Z^m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D\\mid f b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "q_1,\\ldots,q_k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s_1=1,s_2,\\ldots,s_k"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n L_i=3^{|q_i|},\\quad U_i=2^{\\sum q_i},\\quad\n C_i=\\sum_{j=1}^{|q_i|}3^{|q_i|-j}2^{\\sum_{v<j}(q_i)_v}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P_0:\\mathbb Z^m\\to\\mathbb Z^k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(P_0x)_i=x_{s_i}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R:\\mathbb Z^m\\to\\mathbb Z^k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "q_i"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (Gz)_i=U_i z_{i+1}-L_i z_i,\\quad z_{k+1}=z_1.\n \\tag{B4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "G=(D)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n RB=G P_0. \\tag{B5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U_i x_{s_{i+1}}-L_i x_{s_i}=C_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Bx=\\mathbf1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\bar f_i=\\left(\\prod_{v>i}L_v\\right)\\left(\\prod_{v<i}U_v\\right).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\bar fG=D e_1^T,\\qquad f=\\bar fR. \\tag{B6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\bar f"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "G"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "|\\prod U_i-\\prod L_i|=|D|"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\bar f"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z/D\\mathbb Z"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n [b]\\longmapsto[Rb],\\qquad [f b]=[\\bar fRb]. \\tag{B7}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S_1:\\mathbb Z^k\\to\\mathbb Z^m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u_i,v_i"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n u_i 3^{|q_i|-1}+v_i2^{\\sum_{j<|q_i|}(q_i)_j}=1.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u_i,v_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S_1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n RS_1=I_k. \\tag{B8}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n S_0=B^{-1}S_1G,\\qquad H=B^{-1}(I_m-S_1R). \\tag{B9}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n fS_1G=\\bar fG=D e_1^T,\\qquad f(I_m-S_1R)=0.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B\\mathbb Z^m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n BS_0=S_1G,\\qquad P_0S_0=I_k,\\qquad RS_1=I_k,\n \\tag{B10}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n BH=I_m-S_1R,\\qquad HB=I_m-S_0P_0,\\qquad P_0H=0.\n \\tag{B11}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "G"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n GP_0S_0=RBS_0=RS_1G=G.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "G"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n HB=B^{-1}(B-S_1RB)=I_m-S_0P_0.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "GP_0H=RBH=R-RS_1R=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P_0H=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(P_0,R):K_p\\to[\\mathbb Z^k\\xrightarrow G\\mathbb Z^k]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(S_0,S_1)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z/N\\mathbb Z"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n x\\longmapsto z=P_0x,\\qquad\n z\\longmapsto x=S_0z+Hb \\tag{B12}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Bx=b\\quad\\text{and}\\quad Gz=Rb.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n B(S_0z+Hb)=S_1Gz+(I_m-S_1R)b=b,\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P_0(S_0z+Hb)=z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S_0P_0x+HBx=x"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Hb"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S_0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b=\\mathbf1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "y=x-\\mathbf1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x=y+\\mathbf1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "+1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n By=\\mathbf1-B\\mathbf1=(4-2^{a_j})_{j=1}^m.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n G(P_0y)=(C_i+L_i-U_i)_{i=1}^k. \\tag{B13}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r\\ge0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n U_r=2\\cdot4^r,\\quad L_r=3^{r+1},\\quad C_r=2\\cdot4^r-3^r,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C_r+L_r-U_r=2\\cdot3^r. \\tag{B14}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "C_{r+1}=3C_r+2\\cdot4^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "C_0=1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 2\\cdot4^{r_i} y_{i+1}-3^{r_i+1} y_i=2\\cdot3^{r_i}.\n \\tag{B15}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,2,\\ldots,2)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_i+1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(r_i)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m-h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "i\\mapsto i+h\\pmod m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_{x_j}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "q_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s_{i+1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sum_j e_{x_j}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p=(1,1,2,4,3)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n G=\\begin{pmatrix}-3&2\\\\1024&-81\\end{pmatrix},\\qquad\n R\\mathbf1=\\begin{pmatrix}1\\\\197\\end{pmatrix},\\qquad D=1805=5\\cdot19^2.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(5/19,17/19)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\bar f=(81,2),\\qquad \\bar f R\\mathbf1=81+2\\cdot197=475.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z/1805\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z_2=(1+3z_1)/2"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 1805z_1=475\\pmod N.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N=19"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N=361"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n m=971,\\qquad A=1539,\\qquad k=403,\\qquad\n 99781\\le\\min x_j\\le330749.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A=2m-k+\\sum_{a_j\\ge3}(a_j-2)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r_i\\ge0,\\qquad \\sum_{i=1}^{403}r_i=568.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n D=2^{1539}-3^{971},\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "0\\le r\\le15"
+  }
+]

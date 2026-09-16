@@ -1,0 +1,22 @@
+name: Collatz global cylinder control
+
+# Historical complete replay is available on explicit request.
+'on':
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - name: Replay the retained receiver and all new exact checks
+        run: python -B collatz_reconstruction/research_program/global_cylinder_control_20260916/replay.py --predecessor

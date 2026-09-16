@@ -1,0 +1,1010 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\nT(x)=\\frac{3x+1}{2^{\\nu_2(3x+1)}}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "X=\\{1,3,5,\\ldots\\}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3x-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p=(a_1,\\ldots,a_m)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nA_j=\\sum_{i=1}^j a_i,\\quad A=A_m,\\quad U=2^A,\\quad L=3^m,\n\\quad C=\\sum_{j=0}^{m-1}3^{m-1-j}2^{A_j}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nf_p(x)=\\frac{Lx+C}{U}.\n\\tag{1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n-5\\xrightarrow{1}-7\\xrightarrow{2}-5,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n-17\\xrightarrow{1}-25\\xrightarrow{1}-37\\xrightarrow{1}-55\n\\xrightarrow{2}-41\\xrightarrow{1}-61\\xrightarrow{1}-91\n\\xrightarrow{4}-17.\n\\tag{2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p_h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p_h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(m,A)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nL>U,\\qquad C=h(L-U),\\qquad f_{p_h}(-h)=-h.\n\\tag{3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[C]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z/(U-L)\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-h"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nM_p=\\begin{pmatrix}L&C\\\\0&U\\end{pmatrix}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s_n(1)=e_2+ne_1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nM_ps_n(1)-s_n(U)=\\bigl(C-(U-L)n\\bigr)e_1\n=(L-U)(n+h)e_1.\n\\tag{4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[C]=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z=n+h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n=z-h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z\\mapsto(L/U)z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r\\ge1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p_h^r"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\\quad n=2U^r t-h,\\quad t\\in\\mathbb Z_{\\ge1},\\qquad\nT^{mr}(n)=2L^r t-h.\\quad}\n\\tag{5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(n+h)/(2U^r)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(y+h)/(2L^r)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2U^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2L^r"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nf_{p_h^r}(x)=\\frac{L^r(x+h)}{U^r}-h.\n\\tag{6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(L^r-U^r)(n+h)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U^r(f(n)-n)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2U^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L^r-U^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2U^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-h_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_j"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nx_j=-h_j+2^{Ar+1-A_j}3^j t.\n\\tag{7}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3x_{j-1}+1=2^{a_j}x_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U\\ge h+1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t\\ge1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "0,\\ldots,mr"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-h_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2U^r t-h=2L^r t-h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p_h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "q=(c_1,\\ldots,c_s)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s\\ge1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "c_i\\ge2"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nB_j=\\sum_{i=1}^j c_i,\\quad B=B_s,\\quad U_q=2^B,\\quad L_q=3^s,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nC_q=\\sum_{j=0}^{s-1}3^{s-1-j}2^{B_j},\\qquad\nE_q=C_q+3^s-2^B.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w=x-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x=w+1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nf_q(x)-1=\\frac{3^s(x-1)+E_q}{2^B},\n\\qquad\nE_q=\\sum_{i=1}^s3^{s-i}2^{B_{i-1}}(4-2^{c_i}).\n\\tag{8}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E_q\\le0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "c"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3E+(4-2^c)2^{B_{\\rm old}}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E_q"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^s/4^s"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nw=z-(h+1),\\qquad z=w+(h+1).\n\\tag{9}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h+1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(U,L,K)=(8,9,4)\\quad\\text{or}\\quad(2048,2187,46),\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r,s\\ge1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B\\ge2s"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nD=U^r2^B-L^r3^s.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D>0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\\quad D>K(2^B-3^s).\\quad}\n\\tag{10}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r,s,B"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nH(r,s,B)=(U^r-K)2^B-(L^r-K)3^s.\n\\tag{11}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U\\ge2K"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U<L"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n16U-9L>7K.\n\\tag{12}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s\\ge2r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B\\ge2s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B=2s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U^r-K>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s=2r"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(16U)^r-(9L)^r>K(16^r-9^r).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a^r-b^r=(a-b)\\sum_{j=0}^{r-1}a^{r-1-j}b^j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "16U\\ge16"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "9L\\ge9"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "7K\\sum16^{r-1-j}9^j=K(16^r-9^r)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1\\le s<2r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r,s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B_0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B\\ge2s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D>0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n2s\\le B_0\\le4r,\n\\tag{13}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U^r2^{4r}>L^r3^{2r}\\ge L^r3^s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B_0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\Lambda=\\frac{U^r2^{B_0}}{L^r3^s}-1\n=2^{A_*}3^{-m_*}-1>0,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nA_*=Ar+B_0\\le15r,\\qquad m_*=mr+s\\le9r.\n\\tag{14}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(m,A)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nD\\le K(2^{B_0}-3^s)<K2^{B_0},\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\Lambda<\\frac{K}{U^r-K}\\le\\frac{2K}{U^r}\\le\\frac{92}{8^r}.\n\\tag{15}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_*"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-m_*"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\log2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\log3"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n1.4\\,30^5\\,2^{4.5}\\log2\\log3\n<\\frac{14}{10}30^5\\cdot24\\cdot\\frac7{10}\\cdot\\frac{11}{10}\n=628689600<10^9.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{A_*}>3^{m_*}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_*>m_*"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_*"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\log\\Lambda>-10^9(1+\\log A_*).\n\\tag{16}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\log8>1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nr<10^9(1+\\log(15r))+\\log92.\n\\tag{17}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r<10^{12}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sum_{j=0}^{100}36^j/j!>15\\cdot10^{12}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sum_{j=0}^{6}5^j/j!>92"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "10^{12}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "37\\cdot10^9+5<10^{12}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1-10^9/r>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x=2,3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z=(x-1)/(x+1)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n2\\sum_{j=0}^{127}\\frac{z^{2j+1}}{2j+1}<\\log x<\n2\\sum_{j=0}^{127}\\frac{z^{2j+1}}{2j+1}\n+\\frac{2z^{257}}{257(1-z^2)}.\n\\tag{18}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "l_2,u_2,l_3,u_3"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\frac{83130157078217}{52449289519716}\n<\\frac{l_3}{u_2}<\\frac{\\log3}{\\log2}\n<\\frac{u_3}{l_2},\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\frac{u_3}{l_2}+2^{-128}\n<\\frac{350861368503572}{221368876767703}.\n\\tag{19}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n273818166287419>9\\cdot10^{12}.\n\\tag{20}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p/q<t/u"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "tq-pu=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a/b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "k=aq-pb"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "j=tb-au"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b=uk+qj\\ge u+q"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a/b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r\\ge128"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n0<\\frac{A_*}{m_*}-\\frac{\\log3}{\\log2}\n=\\frac{\\log(1+\\Lambda)}{m_*\\log2}\n<\\frac{184}{8^r}<2^{-128}.\n\\tag{21}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "184\\cdot2^{128}<8^{128}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\log(1+\\Lambda)<\\Lambda"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\log2>1/2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m_*<9\\cdot10^{12}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r\\ge128"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n1\\le r\\le127,\\qquad 1\\le s\\le2r,\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B_0\\ge2s"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(U^r-K)2^{B_0}>(L^r-K)3^s.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(r,s,B_0)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s\\ge\\lceil r/2\\rceil"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B\\ge2s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s\\ge\\lceil r/4\\rceil"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B\\ge2s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d=2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mu=3L^d"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "4U^d>3L^d"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mu>7"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nH(r+d,s+1,2s+2)-\\mu H(r,s,2s)\n=(4U^d-3L^d)U^r4^s\n+K\\bigl((\\mu-4)4^s-(\\mu-3)3^s\\bigr)>0.\n\\tag{22}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s\\ge1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(\\mu-7)/3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r=1,\\ldots,d"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s=\\lceil r/d\\rceil"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s,B"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p_h"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\np_h^r(c_1,\\ldots,c_s),\\qquad r,s\\ge1,\\quad c_i\\ge2.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\\quad U^r2^B>L^r3^s,\\qquad B=\\sum_i c_i,\\quad}\n\\tag{23}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n=2U^r t-h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t\\ge1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nC_{\\rm total}=3^s h(L^r-U^r)+U^r C_q.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\\quad n-y=\n\\frac{2Dt-(h+1)(2^B-3^s)-E_q}{2^B}.\\quad}\n\\tag{24}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2[D-K_h(2^B-3^s)]+2D(t-1)-E_q"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K_h=(h+1)/2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K_h\\le4"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K_h\\le46"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^B>3^s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n-y>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E_q=0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n0<\\frac{C_{\\rm total}}D<2U^r-h.\n\\tag{25}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D(2U^r-h)-C_{\\rm total}>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p_h^r(c_1,\\ldots,c_s)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{Ar+B}=\\prod(3+1/x_i)>3^{mr+s}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p_h^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,2)^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(m,A,k)=(3631,5755,1507)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,2)^{1507}(2)^{617}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_q"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nr_q\\equiv(2^B-C_q)(3^s)^{-1}\\pmod{2^{B+1}}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x=2L^rt-h"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nt\\equiv t_0:=\\frac{r_q+h}{2}(L^r)^{-1}\\pmod{2^B}.\n\\tag{26}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "0\\le t_0<2^B"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t_{\\min}=t_0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t_0>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t_{\\min}=2^B"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\n\\begin{aligned}\nn(v)&=2U^r t_{\\min}-h+2U^r2^Bv,\\\\\ny(v)&=y_0+2L^r3^s v,\\qquad v\\in\\mathbb Z_{\\ge0},\n\\end{aligned}}\n\\tag{27}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "y_0=(L^r3^s n(0)+C_{\\rm total})/(U^r2^B)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(n-n(0))/(2U^r2^B)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(y-y_0)/(2L^r3^s)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2L^rt-h\\equiv r_q\\pmod{2^{B+1}}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^B"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nn(v)-y(v)=n(0)-y_0+2Dv.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "J,P"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z[\\epsilon]/\\epsilon^2"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon=d-\\epsilon P,\\qquad d=J-P.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "c_{p,q}(n)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon(\\epsilon c_{p,q}(n))\n=\\epsilon V_n-\\epsilon V_y.\n\\tag{28}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathfrak B_X"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[\\epsilon V_n]=[\\epsilon V_y]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "y<n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d_\\epsilon(b_y+\\epsilon c_y)=\\epsilon V_y"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon\\bigl(b_y+\\epsilon(c_{p,q}(n)+c_y)\\bigr)=\\epsilon V_n.\n\\tag{29}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "y(v)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p_h^r"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nU^r2^B<L^r3^s,\n\\qquad B\\le H_s:=\\lfloor\\log_2(L^r3^s)\\rfloor-Ar.\n\\tag{30}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B\\ge2s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s<2r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\binom{H_s-s}{s}.\n\\tag{31}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H_s-s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h=5"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t\\equiv1\\pmod8"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n3(2\\cdot9^rt-5)+1=2(3\\cdot9^rt-7),\n\\quad \\nu_2(3\\cdot9^rt-7)=2.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nx=\\frac{3\\cdot9^rt-7}{4},\\qquad\n\\nu_2(x+1)=\\nu_2(9^rt-1)-2.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{k=\\nu_2(9^rt-1)-3,}\n\\tag{32}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nt\\equiv9^{-r}(1+2^{k+3})\\pmod{2^{k+4}}.\n\\tag{33}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^{k+1}(9^rt-1)/2^{k+2}-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1\\pmod8"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t=1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nk=\\nu_2(r).\n\\tag{34}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "9^d-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "9^d+1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\nu_2(9^r-1)=3+\\nu_2(r)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r=12,t=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "137438953467"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,2)^{12}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "211822152359"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nw=(1,2)^{12}(3,1,1,2,1,2,1,2,1,7),\n\\quad |w|=34,\\quad A(w)=57.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nL=16677181699666569,\\quad U=144115188075855872,\n\\quad C=81607860757265581.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_j\\le0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Dn_0>C"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\n137438953467+2^{58}v\n\\longmapsto\n15904599857+33354363399333138v,\n\\qquad v\\ge0.\n}\n\\tag{35}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "T^j(n)<n\\iff D_jn>C_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Dn-C"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r"
+  }
+]

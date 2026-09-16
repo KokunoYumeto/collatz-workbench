@@ -1,0 +1,185 @@
+{
+  "source_commit": "6a30f1dc23110fae0abbe3b3bd5e60072a842385",
+  "preserved_files": [
+    {
+      "path": ".github/workflows/collatz-residual-splice.yml",
+      "bytes": 1464,
+      "sha256": "d90ffdafa827439dd730f4e8320edc1b2d61cbb911f0a92788c8eeca2429afab"
+    },
+    {
+      "path": ".github/workflows/collatz-stopped-cycle-cohomology.yml",
+      "bytes": 1075,
+      "sha256": "f7e84050c0a33a5ea1387605303c9b45c193068abc384680eefc14ba16b2bf83"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/CONTINUATION_STOPPED_CYCLES_20260914.md",
+      "bytes": 1242,
+      "sha256": "fba5546768165d80758b2ac58e56852ace4b7854b1c1189980d13328c2eddba7"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/EXECUTION_RECEIPT.json",
+      "bytes": 3246,
+      "sha256": "fff91dd903101486d0f55b6444832330f274d548a24d0c21e1598aaf7e82e438"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/MANIFEST.sha256",
+      "bytes": 643,
+      "sha256": "4a1079ac8e0cbd0240ad6886944e3d893960d622a8f919cee6656bdb1e01681d"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/README.md",
+      "bytes": 4194,
+      "sha256": "05b0ac2fcb5106dcfd6a930fa3ba3bc03f5a222a9913894dc596bbd45015fcd6"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/TASK_STATE.md",
+      "bytes": 3950,
+      "sha256": "6278bdae2b8e39c0452c4cfd30e8a3b9c3bae8fb3c8b4168501dcc0c629565d7"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/cycle_detector.py",
+      "bytes": 20600,
+      "sha256": "a7450a730a16d61f43a260d0ad0f57780546e6663ff9596c36ba1a41017b3f2e"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/note.md",
+      "bytes": 42237,
+      "sha256": "5cfe64388682a5982d5c765bd0028c36287b68bea0a420e5808d7c2571f50df2"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/replay_all.py",
+      "bytes": 2212,
+      "sha256": "b8a8298a3949536a21fc6e4b50b63ff58b77efd9b4a966a1eeb4f7afce44bb4f"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/verification.json",
+      "bytes": 37410,
+      "sha256": "a100eb559307d32915360d371a89918f1bc05684d58428dcf596b6e90379972d"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/verify.py",
+      "bytes": 19532,
+      "sha256": "4f609a6195b80266f9ded93785824bd4f8a72e6f8e118f3a5ffd20e079e65b49"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/residual_splice_20260914/MANIFEST.sha256",
+      "bytes": 719,
+      "sha256": "cd1e06cc3d7bc058c10b754b2792507396e694797f7ed324a91f10756c6805dd"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/residual_splice_20260914/README.md",
+      "bytes": 5274,
+      "sha256": "b9e83840dd0ebc8e6b9c4bd29c870f4fe98ca6302627d74cd96be99fcbcebfbc"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/residual_splice_20260914/TASK_STATE.md",
+      "bytes": 4644,
+      "sha256": "ed3bba217255183a01b181bb4e35a7b53d227c0ba97b9ae71eef47a83fc53f30"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/residual_splice_20260914/integral_blocks.md",
+      "bytes": 10920,
+      "sha256": "9026a80f26f02c0226d6098afc64935c8aa8cded19088c07bf067f56358433b5"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/residual_splice_20260914/note.md",
+      "bytes": 20291,
+      "sha256": "a57d832cdb3c5e219e4c0fbb3aecacce2b8deb121dd215f14f7608ddbc95dec7"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/residual_splice_20260914/replay.py",
+      "bytes": 2214,
+      "sha256": "f69794fc02189f1a1f6f17fe660cdb8bd6a703481e283ef512894db05315d2c6"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/residual_splice_20260914/residual_descent.py",
+      "bytes": 18144,
+      "sha256": "7bf5425b1000012b7633a81761cc3704239b77add87b8a1ae4638d9cd6c9b538"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/residual_splice_20260914/tail_descent.py",
+      "bytes": 4077,
+      "sha256": "02ccb6e30e5b97eb5e3892e8f918616442bd051da386a03b9abac6c9e3321517"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/residual_splice_20260914/verification.json",
+      "bytes": 23100,
+      "sha256": "f0c5246b233eb5c9ea2fbfef813263943147f5d87164c8c6120e1c0f9081c587"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/residual_splice_20260914/verify.py",
+      "bytes": 19226,
+      "sha256": "c49ec60ae3c90ccb6fdbdcfdaba9b96dc3f477f8f7d08efbb16275e1fcbf4fee"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/EXECUTION_RECEIPT.json",
+      "bytes": 2626,
+      "sha256": "0b737224b0c5799f1d1bb0ca487e4b5d08c0768165b8b4eab51906607e2aeb2f"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/HANDOFF.md",
+      "bytes": 3792,
+      "sha256": "3451c7a054bccba95485fdc98b8be47f29fe424a28abf0188b256cf32fcedc94"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/MANIFEST.sha256",
+      "bytes": 733,
+      "sha256": "5adce17643bd09364695b0a71d45ba78a7d5489de4a0146bc899217586e828b6"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/PROVENANCE.md",
+      "bytes": 2929,
+      "sha256": "22af01894de33d8eed6bd445acb74835756bef6e434d3e79bbb375dd6741463a"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/README.md",
+      "bytes": 4845,
+      "sha256": "c1c48cb1d2f75144ee1bf88368852b888df187582436350fc622e12774ed1edb"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/example_certificate.json",
+      "bytes": 56089,
+      "sha256": "a3019ae167ae79788d2abc20f23e9419651f6393611d4ebb9e4ade06e7687847"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/make_certificate.py",
+      "bytes": 8902,
+      "sha256": "cdbd26250ef7a59deea1f7437f7e4dc88d98c8b5ad037dc0a67cd4a6515afe6e"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/note.md",
+      "bytes": 57957,
+      "sha256": "b04ceb79cb47e8c61999a2cb3131e08988a920ec3b22c89dae9f1f694f384953"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/verification.json",
+      "bytes": 42851,
+      "sha256": "f83800b7839c9753acf8b4e62cb9539e56e1da1c6a7c1ad1fa856d47b2de4e34"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_affine_transport_20260914/verify.py",
+      "bytes": 35692,
+      "sha256": "4181d895d61b3bab236530263c78fe34c7d935eb3f42f4786d91a41f88c696af"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_cycle_integration_20260914/INTEGRATION_RECEIPT.json",
+      "bytes": 1338,
+      "sha256": "99318f80e953473268ff77b460066dc1747f78ccb27a211c4f8abeba3ae76686"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_cycle_integration_20260914/PAYLOAD_MANIFEST.json",
+      "bytes": 4696,
+      "sha256": "5ec902e83d3b7d1c36bbfb0be162a75919bcaa86c957280c26d3e3c3ef152c50"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_cycle_integration_20260914/README.md",
+      "bytes": 4257,
+      "sha256": "d2d39f3dc96c8329b1d8efeb8a8b6f82171de43c34853b988b4065fab573ca2b"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/stopped_cycle_integration_20260914/verify_import.py",
+      "bytes": 1761,
+      "sha256": "4c99e419aa396b78ec0c2eacbfa8d280afaffe41774257858e5f0d65b9b38549"
+    }
+  ]
+}

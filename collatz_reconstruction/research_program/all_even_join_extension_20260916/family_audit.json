@@ -1,0 +1,7 @@
+{
+  "families": 512,
+  "imports_predecessor": false,
+  "independently_audited_affine_equations": 24180,
+  "ledger_sha256": "8a7e14e120fe6c21ef766f1210872d31174f25419bf775cbb17e4aff6e72613f",
+  "status": "PASS"
+}

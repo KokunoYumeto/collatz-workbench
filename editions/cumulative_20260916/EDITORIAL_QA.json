@@ -1,0 +1,81 @@
+{
+  "pdf": "latex/main.pdf",
+  "sha256": "26bcfcc5b759401164286a43f54754a6f8bb5c327c6960c3c30dbb50e85c7cd9",
+  "bytes": 951000,
+  "pages": 237,
+  "metadata": {
+    "/Creator": "LaTeX with hyperref",
+    "/Title": "Collatz Research Continuations – Corrected Cumulative Reader",
+    "/Author": "Kokuno Yumeto; developed with ChatGPT 5.6 Sol and GPT-6 Astra",
+    "/Producer": "MiKTeX-dvipdfmx (20260404)",
+    "/CreationDate": "D:20260916233853+02'00'"
+  },
+  "all_pages_rendered": 237,
+  "selected_physical_pages": [
+    1,
+    2,
+    3,
+    124,
+    179,
+    186,
+    191,
+    209,
+    220,
+    236,
+    237
+  ],
+  "formula_searches": {
+    "Z/(2^A-3^m)Z": [
+      124
+    ],
+    "(81/128)^9+46(3/8)^9<1": [
+      179
+    ],
+    "2^A>3^m": [
+      186,
+      192
+    ],
+    "C^1/(dC^0+Pkerd)": [
+      191
+    ],
+    "3^k-2^k": [
+      209
+    ],
+    "J^old_6=32J^new_2": [
+      220
+    ],
+    "K_*(1)=0": [
+      236
+    ],
+    "R_*(1)=1": [
+      236
+    ]
+  },
+  "tex_errors_overfull_missing_glyphs": [],
+  "zero_textsuperscript_commands": true,
+  "visual_review": "PASS: all selected physical pages inspected; clear formulas, no clipping, correct model credits and fixed-root clarification. The latest final page 3 was rechecked after its prose update.",
+  "reviewed_physical_pages": [
+    1,
+    2,
+    3,
+    124,
+    179,
+    186,
+    191,
+    209,
+    220,
+    236,
+    237
+  ],
+  "source_audit": {
+    "chapters": 20,
+    "math_tokens": 2670,
+    "unchanged_original_markdown_sources": 19,
+    "corrected_markdown_chapters": [
+      20
+    ],
+    "literal_character_repair_rules": 19,
+    "unintended_emphasis_nodes_removed": 15,
+    "superscript_subscript_markdown_disabled": true
+  }
+}

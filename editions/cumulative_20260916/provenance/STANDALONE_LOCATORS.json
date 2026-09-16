@@ -1,0 +1,679 @@
+[
+  {
+    "original_locator": "Collatz_All_Length_Run_Exclusion_Proof.md",
+    "bytes": 16165,
+    "sha256": "67fe34abbacc5822a1e1ab5a0cf025af1c5d8931cafa88b5d1ab9c139d4c3a66",
+    "archive_locators": [
+      "source_archives/Collatz_Arithmetic_Descent_Continuation_20260915.zip!payload/collatz_reconstruction/research_program/defect_rank_descent_20260915/logarithmic_run_exclusion.md",
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!payload/collatz_reconstruction/research_program/defect_rank_descent_20260915/logarithmic_run_exclusion.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Bilateral_All_Pairs_20260916.jsonl.gz",
+    "bytes": 2630177,
+    "sha256": "310ae90708384cbfbe4b42970e05afcc1ac49663669caa683367837674c1e797",
+    "archive_locators": [
+      "source_archives/Collatz_Bilateral_Root_Continuation_20260916.zip!evidence/all_join_pairs.jsonl.gz"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Bilateral_Root_Applied_Replay.txt",
+    "bytes": 2273,
+    "sha256": "2abe091b992b82cdaad5aaaf9625bb9c26f2242b59b107df9feaf83211dd50db",
+    "archive_locators": [
+      "source_archives/Collatz_Bilateral_Root_Continuation_20260916.zip!evidence/applied_full_replay.log"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Bilateral_Root_Bounds_20260916.patch",
+    "bytes": 229411,
+    "sha256": "dbc686701a58db533dd0fdfa6394c39e3720263232f4efc43702582af225ad4a",
+    "archive_locators": [
+      "source_archives/Collatz_Bilateral_Root_Continuation_20260916.zip!Collatz_Bilateral_Root_Bounds_20260916.patch"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Bilateral_Root_Delivery_Receipt.json",
+    "bytes": 4149,
+    "sha256": "512327b1c4edfd82b5aa1ee2694045d6060dae5fab0942df899ba48c910e257b",
+    "archive_locators": [
+      "source_archives/Collatz_Bilateral_Root_Continuation_20260916.zip!DELIVERY_RECEIPT.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Bilateral_Root_Proof.md",
+    "bytes": 35350,
+    "sha256": "8eb0d91adcfff7c29efcea0270398f9bc18f484fb665d154be1a4a32b5458eaf",
+    "archive_locators": [
+      "source_archives/Collatz_Bilateral_Root_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Bilateral_Root_Verification.json",
+    "bytes": 87572,
+    "sha256": "2560770274e1bf779f91e43f07906a4117a0857b0655e8c196192e02437767c4",
+    "archive_locators": [
+      "source_archives/Collatz_Bilateral_Root_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/verification.json",
+      "source_archives/Collatz_Bilateral_Root_Continuation_20260916.zip!evidence/structural.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Bilateral_Window_Certificate.json",
+    "bytes": 13372,
+    "sha256": "8735c5e75283bcd7ed43ae5cdd304120b68ab09832682833ca6b65918cabf6d4",
+    "archive_locators": [
+      "source_archives/Collatz_Bilateral_Root_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/window_certificate.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Clocked_Support_20260914.patch",
+    "bytes": 618996,
+    "sha256": "0b200441f37f73444e2431f7a70853b0e76e07500f95088170326e2415166510",
+    "archive_locators": [
+      "source_archives/Collatz_Clocked_Support_Continuation_20260914.zip!Collatz_Clocked_Support_20260914.patch"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Clocked_Support_Local_Receipt.json",
+    "bytes": 5752,
+    "sha256": "ecf7c4210f9d482b81f13203fc7520a7d3963cf4463d61af494ddb54941971e5",
+    "archive_locators": [
+      "source_archives/Collatz_Clocked_Support_Continuation_20260914.zip!Collatz_Clocked_Support_Local_Receipt.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Clocked_Support_Proof.md",
+    "bytes": 35523,
+    "sha256": "59dea0487e404e5b16f4bb3b933dbaa68f693ba580fbdddd917c3f33316eeca7",
+    "archive_locators": [
+      "source_archives/Collatz_Clocked_Support_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/clocked_support_20260914/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Clocked_Support_Verification.json",
+    "bytes": 6776,
+    "sha256": "5b0e4eb8f4bdc964ffb36be8a3dc6ef74e519c68531a8fa6d509dc612c23c959",
+    "archive_locators": [
+      "source_archives/Collatz_Clocked_Support_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/clocked_support_20260914/verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Completion_Defect_Publication_Receipt.json",
+    "bytes": 5007,
+    "sha256": "150d96a13745c8b88c9545db65e35846f7a0c8ed2737f35b8a23fd22790d2804",
+    "archive_locators": [
+      "source_archives/Collatz_SplitZero_Completion_Defect_20260914.zip!PUBLICATION_RECEIPT.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Completion_Defect_Verification.json",
+    "bytes": 7335,
+    "sha256": "d9302c72c8d3228c5cddee69975cadb1a17d427d92fed0ff1ca8814537bb2863",
+    "archive_locators": [
+      "source_archives/Collatz_SplitZero_Completion_Defect_20260914.zip!payload/collatz_reconstruction/research_program/completion_defect_20260914/verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Cycle_Relative_Cohomology_Note.md",
+    "bytes": 42237,
+    "sha256": "5cfe64388682a5982d5c765bd0028c36287b68bea0a420e5808d7c2571f50df2",
+    "archive_locators": [
+      "source_archives/Collatz_Cycle_Cohomology_GitHub_Integration.zip!Collatz_GitHub_Integration/payload/collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/note.md",
+      "source_archives/Collatz_Published_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/note.md",
+      "source_archives/Collatz_Residual_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Cycle_Relative_Verification.json",
+    "bytes": 37410,
+    "sha256": "a100eb559307d32915360d371a89918f1bc05684d58428dcf596b6e90379972d",
+    "archive_locators": [
+      "source_archives/Collatz_Cycle_Cohomology_GitHub_Integration.zip!Collatz_GitHub_Integration/payload/collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/verification.json",
+      "source_archives/Collatz_Published_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/verification.json",
+      "source_archives/Collatz_Residual_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Defect_Rank_Applied_Patch_Replay_20260915.txt",
+    "bytes": 736,
+    "sha256": "091d93e75baeb5af24c0cb420d4db467bd27ea2572ce4345657021209f53db47",
+    "archive_locators": [
+      "source_archives/Collatz_Arithmetic_Descent_Continuation_20260915.zip!evidence/FINAL_APPLIED_PATCH_REPLAY.txt"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Defect_Rank_Delivery_Receipt.json",
+    "bytes": 10098,
+    "sha256": "d5f876defa300694698c3b0d6469b3d33e1c91526e706f770df51bac541139ab",
+    "archive_locators": [
+      "source_archives/Collatz_Arithmetic_Descent_Continuation_20260915.zip!DELIVERY_RECEIPT.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Defect_Rank_Descent_20260915.patch",
+    "bytes": 2202952,
+    "sha256": "2e56b17c82d0d85d92e0f144c522522d64703b3ee6036641bdb0e26a69e22092",
+    "archive_locators": [
+      "source_archives/Collatz_Arithmetic_Descent_Continuation_20260915.zip!Collatz_Defect_Rank_Descent_20260915.patch"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Defect_Rank_Descent_Proof.md",
+    "bytes": 34783,
+    "sha256": "e55610331364395e3c109022ce5a33ce05211a625460748d5bd75e3bbb76c4f5",
+    "archive_locators": [
+      "source_archives/Collatz_Arithmetic_Descent_Continuation_20260915.zip!payload/collatz_reconstruction/research_program/defect_rank_descent_20260915/note.md",
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!payload/collatz_reconstruction/research_program/defect_rank_descent_20260915/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Defect_Rank_Descent_Verification.json",
+    "bytes": 15219,
+    "sha256": "9763152d33083e3347136031f27c260ab0655563322fa77e6cc4ea4e989e439d",
+    "archive_locators": [
+      "source_archives/Collatz_Arithmetic_Descent_Continuation_20260915.zip!payload/collatz_reconstruction/research_program/defect_rank_descent_20260915/verification.json",
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!payload/collatz_reconstruction/research_program/defect_rank_descent_20260915/verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Exact_Logarithm_Certificate.json",
+    "bytes": 209257,
+    "sha256": "65a0110f74ac0b3ab59da97a097ff2d66245a5244741c6557acda5c0cc08b077",
+    "archive_locators": [
+      "source_archives/Collatz_Arithmetic_Descent_Continuation_20260915.zip!payload/collatz_reconstruction/research_program/defect_rank_descent_20260915/logarithm_verification.json",
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!payload/collatz_reconstruction/research_program/defect_rank_descent_20260915/logarithm_verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Exact_Support_Certificate.json",
+    "bytes": 56089,
+    "sha256": "a3019ae167ae79788d2abc20f23e9419651f6393611d4ebb9e4ade06e7687847",
+    "archive_locators": [
+      "source_archives/Collatz_Cycle_Cohomology_GitHub_Integration.zip!Collatz_GitHub_Integration/payload/collatz_reconstruction/research_program/stopped_affine_transport_20260914/example_certificate.json",
+      "source_archives/Collatz_Published_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/stopped_affine_transport_20260914/example_certificate.json",
+      "source_archives/Collatz_Residual_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/stopped_affine_transport_20260914/example_certificate.json",
+      "source_archives/Collatz_Stopped_Affine_Transport.zip!collatz_reconstruction/research_program/stopped_affine_transport_20260914/example_certificate.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_First_Crossing_Original_Sources_10280.jsonl.gz",
+    "bytes": 21073089,
+    "sha256": "88c136d991ae0cd7284c9dd8fd4822307a1ae9835ac253e74ca6ffe698102233",
+    "archive_locators": [
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!evidence/original_sources_10280.jsonl.gz"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_First_Crossing_Sources_11610.jsonl.gz",
+    "bytes": 30541262,
+    "sha256": "080768c9f95fefec9e91fe2fcec368a557056c374192d361ea9480491b0b9fe9",
+    "archive_locators": [
+      "source_archives/Collatz_Bilateral_Root_Continuation_20260916.zip!evidence/sources11610.jsonl.gz"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_GitHub_Integration/README.md",
+    "bytes": 6612,
+    "sha256": "43460b0ef02568b772fbc85f1c20bc8ad0d9bd155ed9ba65b9af6a4e33d659b9",
+    "archive_locators": [
+      "source_archives/Collatz_Cycle_Cohomology_GitHub_Integration.zip!Collatz_GitHub_Integration/README.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_GitHub_Publication_Receipt.json",
+    "bytes": 9111,
+    "sha256": "12124e59b1bcc938878d8dc38b831ce63240041ca4bec60aff342f7b5dcb6e7d",
+    "archive_locators": [
+      "source_archives/Collatz_Published_Continuation_20260914.zip!PUBLICATION_RECEIPT.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Global_Crossing_All_Nodes.jsonl.gz",
+    "bytes": 28963914,
+    "sha256": "bb1d4d14aa3f78a16c181a7fa4872e727d8f5a3c923d7bb1a6c2ae8e4a0f0460",
+    "archive_locators": [
+      "source_archives/Collatz_Global_Cylinder_Continuation_20260916.zip!evidence/Collatz_Global_Crossing_All_Nodes.jsonl.gz"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Global_Cylinder_Applied_Replay.txt",
+    "bytes": 211,
+    "sha256": "53b18a10ce64e3fa5b238e0e2525ee7473b02ac3237d583646ba9ab81c06b5f4",
+    "archive_locators": [
+      "source_archives/Collatz_Global_Cylinder_Continuation_20260916.zip!evidence/applied_patch_ordinary_replay.txt",
+      "source_archives/Collatz_Global_Cylinder_Continuation_20260916.zip!evidence/new_optimized_replay.txt"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Global_Cylinder_Control_20260916.patch",
+    "bytes": 130365,
+    "sha256": "cf9f1e86984b6f4f7d0e5c846de4dca77433858ea85c74bb9f1822fc3578ec85",
+    "archive_locators": [
+      "source_archives/Collatz_Global_Cylinder_Continuation_20260916.zip!new-files.patch"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Global_Cylinder_Delivery_Receipt.json",
+    "bytes": 9160,
+    "sha256": "7bebf35cdd544e5b6f5c4cebceaa1e647845c7ec15c884f356698a504faf5ef3",
+    "archive_locators": [
+      "source_archives/Collatz_Global_Cylinder_Continuation_20260916.zip!DELIVERY_RECEIPT.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Global_Cylinder_Proof.md",
+    "bytes": 24363,
+    "sha256": "8324e1a481043af214b29fbb1adc1b341304a74f6c40f1ee29fc21e36b89e237",
+    "archive_locators": [
+      "source_archives/Collatz_Global_Cylinder_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/global_cylinder_control_20260916/note.md",
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/global_cylinder_control_20260916/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Global_Cylinder_Verification.json",
+    "bytes": 33517,
+    "sha256": "48bd55f6c0f79b4d3bcf05339f0cde176fc495f1c0a0684bd14bbb61832dbcdc",
+    "archive_locators": [
+      "source_archives/Collatz_Global_Cylinder_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/global_cylinder_control_20260916/verification.json",
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/global_cylinder_control_20260916/verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Global_Power_Gap_Certificate.json",
+    "bytes": 24031,
+    "sha256": "666c09ad2e18b559fb729d2bb07c9685735cee056fbf555c8816c25e9b570043",
+    "archive_locators": [
+      "source_archives/Collatz_Global_Cylinder_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/global_cylinder_control_20260916/power_gap_certificate.json",
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/global_cylinder_control_20260916/power_gap_certificate.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Height_Window_Applied_Replay.txt",
+    "bytes": 1665,
+    "sha256": "f09cd64a6c386d958d114d0ceab3f7d92aeae940f604331b087dd486c8521ca3",
+    "archive_locators": [
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!evidence/applied_full_replay.log"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Height_Window_Delivery_Receipt.json",
+    "bytes": 3999,
+    "sha256": "1f7d412bb6719c9fc604475a37791d41267dc54cd9773d2e78cdfd0722025b2d",
+    "archive_locators": [
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!Collatz_Height_Window_Delivery_Receipt.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Height_Window_Envelope.json",
+    "bytes": 232594,
+    "sha256": "5e0ff89c0d075040cba424c04670d6e406ac72d68f72d4d6813314e8ed40d188",
+    "archive_locators": [
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/height_window_reduction_20260916/envelope.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Height_Window_Proof.md",
+    "bytes": 32365,
+    "sha256": "1d06a8c60933b1960ecb883e993134e33dc089feb5d7c4b7896a63c97019f680",
+    "archive_locators": [
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/height_window_reduction_20260916/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Height_Window_Source_Audit.json",
+    "bytes": 4662,
+    "sha256": "98afe95857b0e9924e171750143f85b7ac166bca7c12012bd1d3ed86f38e4c71",
+    "archive_locators": [
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/height_window_reduction_20260916/independent_source_audit.json",
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!evidence/final_independent.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Height_Window_Verification.json",
+    "bytes": 86835,
+    "sha256": "ff8836caab11afe6e952049e3727f82cc7484e83291db7e25389fa3d1997a7bd",
+    "archive_locators": [
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!Collatz_Height_Window_Verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Integral_Block_Proof.md",
+    "bytes": 10920,
+    "sha256": "9026a80f26f02c0226d6098afc64935c8aa8cded19088c07bf067f56358433b5",
+    "archive_locators": [
+      "source_archives/Collatz_Residual_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/residual_splice_20260914/integral_blocks.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Intrinsic_FirstJet_Publication_Receipt.json",
+    "bytes": 4865,
+    "sha256": "4f761fb325b69a41078300e563742f4dbacbddf10553a60b2c714b6e6e122d75",
+    "archive_locators": [
+      "source_archives/Collatz_Intrinsic_SplitZero_FirstJet_20260915.zip!PUBLICATION_RECEIPT.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Intrinsic_FirstJet_Verification.json",
+    "bytes": 16353,
+    "sha256": "01203cd57c0fbad41c7d767467109ee93aaf0e4046bc164e605e3e817554fa83",
+    "archive_locators": [
+      "source_archives/Collatz_Bilateral_Root_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/verification.json",
+      "source_archives/Collatz_Global_Cylinder_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/verification.json",
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/verification.json",
+      "source_archives/Collatz_Intrinsic_SplitZero_FirstJet_20260915.zip!collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/verification.json",
+      "source_archives/Collatz_Mixed_Switch_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Intrinsic_SplitZero_FirstJet_Proof.md",
+    "bytes": 32001,
+    "sha256": "1c232720d5de7331abec3be0effff8fc774d048f190c43bb79c9f69f806f765c",
+    "archive_locators": [
+      "source_archives/Collatz_Bilateral_Root_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "source_archives/Collatz_Global_Cylinder_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "source_archives/Collatz_Intrinsic_SplitZero_FirstJet_20260915.zip!collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "source_archives/Collatz_Mixed_Switch_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Mixed_Switch_All_Gap_Rows.jsonl.gz",
+    "bytes": 26622811,
+    "sha256": "48e335bcb5462650326791c3999a595dbf5735c6eca3151f6bc491a36b65a988",
+    "archive_locators": [
+      "source_archives/Collatz_Mixed_Switch_Continuation_20260916.zip!evidence/Collatz_Mixed_Switch_All_Gap_Rows.jsonl.gz"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Mixed_Switch_Applied_Replay_20260916.txt",
+    "bytes": 870,
+    "sha256": "711e67dfa7e76d4801d6615b127d23f04f352e26203fab181ab4e186b47cf38c",
+    "archive_locators": [
+      "source_archives/Collatz_Mixed_Switch_Continuation_20260916.zip!evidence/Collatz_Mixed_Switch_Applied_Replay_20260916.txt"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Mixed_Switch_Control_20260916.patch",
+    "bytes": 75490,
+    "sha256": "3ba8054f60df5c1d1042f769011d5ce0235ad80d43544b015ed9398e177e9270",
+    "archive_locators": [
+      "source_archives/Collatz_Mixed_Switch_Continuation_20260916.zip!new-files.patch"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Mixed_Switch_Control_Proof.md",
+    "bytes": 28512,
+    "sha256": "4e3b6dbf69ef22622eed9836ec29956dae72b5f6912a68ae2900b9eb6eea3af5",
+    "archive_locators": [
+      "source_archives/Collatz_Global_Cylinder_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/mixed_switch_control_20260916/note.md",
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/mixed_switch_control_20260916/note.md",
+      "source_archives/Collatz_Mixed_Switch_Continuation_20260916.zip!checkout/collatz_reconstruction/research_program/mixed_switch_control_20260916/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Mixed_Switch_Publication_Receipt.json",
+    "bytes": 6331,
+    "sha256": "ead41b8847e07f937530ba039ffa775de6028411388f9dcf567496b7351b688a",
+    "archive_locators": [
+      "source_archives/Collatz_Mixed_Switch_Continuation_20260916.zip!evidence/Collatz_Mixed_Switch_Publication_Receipt.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Mixed_Switch_Verification.json",
+    "bytes": 32573,
+    "sha256": "0ce86e1f386210c7dd36e73bf03715e32adee34060ccf2ee42b9745c34d2059d",
+    "archive_locators": [
+      "source_archives/Collatz_Mixed_Switch_Continuation_20260916.zip!evidence/Collatz_Mixed_Switch_Verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Pending_Arithmetic_and_Shadow_20260916.patch",
+    "bytes": 2383525,
+    "sha256": "35f1b7b5fb7bd6f0c1ba82543ed0f7f1c54a46db81dd564d18dcbf92007548c4",
+    "archive_locators": [
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!Collatz_Pending_Arithmetic_and_Shadow_20260916.patch"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Pending_Global_and_Height_20260916.patch",
+    "bytes": 538232,
+    "sha256": "8d94d83e43f3013b2a70a762c1af59e025f3ffa226ba57766ef81cda73530ec3",
+    "archive_locators": [
+      "source_archives/Collatz_Height_Window_Continuation_20260916.zip!Collatz_Pending_Global_and_Height_20260916.patch"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Positive_Shadow_Atlas_Crosscheck.json",
+    "bytes": 10411,
+    "sha256": "759ac100cebc02db76c18c75a078ae7cb336cc449a776062959ee5cde8fe628b",
+    "archive_locators": [
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!payload/collatz_reconstruction/research_program/negative_shadow_descent_20260916/atlas_crosscheck.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Positive_Shadow_Delivery_Receipt.json",
+    "bytes": 5853,
+    "sha256": "8893e650aaa29ad834e76395a5ec0777c118c69f05db35318189eb6c41657224",
+    "archive_locators": [
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!DELIVERY_RECEIPT.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Positive_Shadow_Descent_Proof.md",
+    "bytes": 26015,
+    "sha256": "be6efcbd5aa9346cf27408cef87e404ade95bd1e2aa0629ed0fdbf5b334d5ef4",
+    "archive_locators": [
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!payload/collatz_reconstruction/research_program/negative_shadow_descent_20260916/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Positive_Shadow_Examples.json",
+    "bytes": 12887,
+    "sha256": "45d451203df2d3b8eb237b88e4990ad3379e721301e639dccbd68ac31c2fa68f",
+    "archive_locators": [
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!payload/collatz_reconstruction/research_program/negative_shadow_descent_20260916/examples.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Positive_Shadow_Verification.json",
+    "bytes": 27127,
+    "sha256": "b38ae44e6cfcf78b44fc17822bc299f093210b8d1cfb91247547ec4572c05e44",
+    "archive_locators": [
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!payload/collatz_reconstruction/research_program/negative_shadow_descent_20260916/verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Residual_Publication_Receipt.json",
+    "bytes": 5124,
+    "sha256": "9430b158ad5df35cd6a4845bc9cff9ea1a298c45e6c1034a268883be7e26be9d",
+    "archive_locators": [
+      "source_archives/Collatz_Residual_Continuation_20260914.zip!Collatz_Residual_Publication_Receipt.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Residual_Source_Proof.md",
+    "bytes": 20291,
+    "sha256": "a57d832cdb3c5e219e4c0fbb3aecacce2b8deb121dd215f14f7608ddbc95dec7",
+    "archive_locators": [
+      "source_archives/Collatz_Residual_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/residual_splice_20260914/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Residual_Verification.json",
+    "bytes": 23100,
+    "sha256": "f0c5246b233eb5c9ea2fbfef813263943147f5d87164c8c6120e1c0f9081c587",
+    "archive_locators": [
+      "source_archives/Collatz_Residual_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/residual_splice_20260914/verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Retained_Zero_Minima.json",
+    "bytes": 24426,
+    "sha256": "8bd682474e1e7ab97b1924573280fa40fcf65e14ca91fbf7281589e5e7eaecee",
+    "archive_locators": [
+      "source_archives/Collatz_Arithmetic_Descent_Continuation_20260915.zip!payload/collatz_reconstruction/research_program/defect_rank_descent_20260915/retained_zero_minima.json",
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!payload/collatz_reconstruction/research_program/defect_rank_descent_20260915/retained_zero_minima.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Shadow_Applied_Patch_Replay_20260916.txt",
+    "bytes": 1408,
+    "sha256": "b340709668523076f7c31f7617402be90214646d5cdeaa00d368671ca77a0d0b",
+    "archive_locators": [
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!evidence/APPLIED_PATCH_REPLAY.txt",
+      "source_archives/Collatz_Positive_Shadow_Continuation_20260916.zip!evidence/NEW_FULL_LOCAL_REPLAY.txt"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_SplitZero_Completion_Defect_Proof.md",
+    "bytes": 32457,
+    "sha256": "02edcd1df086b538f102817bf533b7ef03605478629260798ab1bebc1679b816",
+    "archive_locators": [
+      "source_archives/Collatz_SplitZero_Completion_Defect_20260914.zip!payload/collatz_reconstruction/research_program/completion_defect_20260914/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_SplitZero_Structural_Proof.md",
+    "bytes": 33248,
+    "sha256": "143acfef82726150c93a6aeae7bc9c98f8e335ba7466877ea312c31b60a58413",
+    "archive_locators": [
+      "source_archives/Collatz_SplitZero_Structural_Programme_20260915.zip!collatz_reconstruction/research_program/supported_structure_20260915/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_SplitZero_Structural_Publication_Receipt.json",
+    "bytes": 3285,
+    "sha256": "a19b572be4c085ded0d950b7853668e7c2499a7fd157d5da38a519d830bb542d",
+    "archive_locators": [
+      "source_archives/Collatz_SplitZero_Structural_Programme_20260915.zip!PUBLICATION_RECEIPT.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_SplitZero_Structural_Verification.json",
+    "bytes": 4965,
+    "sha256": "205d60f72e636031d5357089a403ff510f9b9f962ed74cf32a7abf73c892f993",
+    "archive_locators": [
+      "source_archives/Collatz_SplitZero_Structural_Programme_20260915.zip!collatz_reconstruction/research_program/supported_structure_20260915/verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Stopped_Affine_Transport_Note.md",
+    "bytes": 57957,
+    "sha256": "b04ceb79cb47e8c61999a2cb3131e08988a920ec3b22c89dae9f1f694f384953",
+    "archive_locators": [
+      "source_archives/Collatz_Cycle_Cohomology_GitHub_Integration.zip!Collatz_GitHub_Integration/payload/collatz_reconstruction/research_program/stopped_affine_transport_20260914/note.md",
+      "source_archives/Collatz_Published_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/stopped_affine_transport_20260914/note.md",
+      "source_archives/Collatz_Residual_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/stopped_affine_transport_20260914/note.md",
+      "source_archives/Collatz_Stopped_Affine_Transport.zip!collatz_reconstruction/research_program/stopped_affine_transport_20260914/note.md"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Collatz_Stopped_Affine_Verification.json",
+    "bytes": 42851,
+    "sha256": "f83800b7839c9753acf8b4e62cb9539e56e1da1c6a7c1ad1fa856d47b2de4e34",
+    "archive_locators": [
+      "source_archives/Collatz_Cycle_Cohomology_GitHub_Integration.zip!Collatz_GitHub_Integration/payload/collatz_reconstruction/research_program/stopped_affine_transport_20260914/verification.json",
+      "source_archives/Collatz_Published_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/stopped_affine_transport_20260914/verification.json",
+      "source_archives/Collatz_Residual_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/stopped_affine_transport_20260914/verification.json",
+      "source_archives/Collatz_Stopped_Affine_Transport.zip!collatz_reconstruction/research_program/stopped_affine_transport_20260914/verification.json"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "Residual_Splice_Local_Replay.txt",
+    "bytes": 1751,
+    "sha256": "4af9241f0b0806d71de3ca90027c5bc05fdbd13d05517e2884f9df5282ca90ae",
+    "archive_locators": [
+      "source_archives/Collatz_Residual_Continuation_20260914.zip!Residual_Splice_Local_Replay.txt"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "collatz_stopped_affine_transport/collatz_reconstruction/research_program/stopped_affine_transport_20260914/verify.py",
+    "bytes": 35692,
+    "sha256": "4181d895d61b3bab236530263c78fe34c7d935eb3f42f4786d91a41f88c696af",
+    "archive_locators": [
+      "source_archives/Collatz_Cycle_Cohomology_GitHub_Integration.zip!Collatz_GitHub_Integration/payload/collatz_reconstruction/research_program/stopped_affine_transport_20260914/verify.py",
+      "source_archives/Collatz_Published_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/stopped_affine_transport_20260914/verify.py",
+      "source_archives/Collatz_Residual_Continuation_20260914.zip!payload/collatz_reconstruction/research_program/stopped_affine_transport_20260914/verify.py",
+      "source_archives/Collatz_Stopped_Affine_Transport.zip!collatz_reconstruction/research_program/stopped_affine_transport_20260914/verify.py"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  },
+  {
+    "original_locator": "stopped_affine_transport_20260914.patch",
+    "bytes": 227322,
+    "sha256": "2d1cef09ed57544660e84d76f3cd2255ddeb70456dd1e92355bd7f074ed308df",
+    "archive_locators": [
+      "source_archives/Collatz_Stopped_Affine_Transport.zip!stopped_affine_transport_20260914.patch"
+    ],
+    "method": "exact original bytes also preserved in input archive"
+  }
+]

@@ -1,0 +1,458 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\n R_0=\\mathbb Z[\\lambda,\\mu,\\kappa],\\quad\n E_0=R_0e_1\\oplus R_0e_2,\\quad\n t\\bigm|E_0=\\begin{pmatrix}\\lambda&\\kappa\\\\0&\\mu\\end{pmatrix}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a\\mapsto ae_1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "ae_1+be_2\\mapsto b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R_0[t]"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n0\\longrightarrow R_{0,\\lambda}\\longrightarrow E_0\n\\longrightarrow R_{0,\\mu}\\longrightarrow0. \\tag{1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R_0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s_z(1)=e_2+ze_1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(ts_z-s_z\\mu)(1)=(\\kappa+(\\lambda-\\mu)z)e_1. \\tag{2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,u)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(u,1)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(\\lambda,\\mu,\\kappa)\\mapsto\n(a^\\rho,a^\\rho,a^\\rho\\log a)\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(\\lambda,\\mu,\\kappa)\\mapsto(L,U,C)\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "C-(U-L)z"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n M_qM_p=\n \\begin{pmatrix}L_qL_p&L_qC_p+U_pC_q\\\\0&U_pU_q\\end{pmatrix}. \\tag{3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n T(n)=\\frac{3n+1}{2^{a(n)}},\\qquad a(n)=\\nu_2(3n+1).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w=(a_1,\\ldots,a_m)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n A_j=\\sum_{i\\le j}a_i,\\quad A_0=0,\\quad\n L=3^m,\\quad U=2^{A_m},\\quad\n C=\\sum_{j=0}^{m-1}3^{m-1-j}2^{A_j}. \\tag{4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(Lx+C)/U"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n=\\rho+2Uz,\\quad z\\ge0,\\qquad\n \\rho\\equiv(U-C)L^{-1}\\pmod{2U},\\quad0<\\rho<2U. \\tag{5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(L\\rho+C)/U+2Lz"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2U"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2L"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n P=(1,2),\\quad (L_P,U_P,C_P)=(9,8,5),\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Q=(1,1,1,2,1,1,4),\\quad (L_Q,U_Q,C_Q)=(2187,2048,2363).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-5"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-17"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n -5\\to-7\\to-5,\n\\quad -17\\to-25\\to-37\\to-55\\to-41\\to-61\\to-91\\to-17.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C_{PQ}=29839,\\qquad C_{QP}=31507,\\qquad\n L_{PQ}=L_{QP}=19683,\\quad U_{PQ}=U_{QP}=16384,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C_{PQ}-C_{QP}=-1668. \\tag{6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "PQ"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "QP"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C_{\\mathrm{prefix}\\,PQ\\,\\mathrm{suffix}}\n -C_{\\mathrm{prefix}\\,QP\\,\\mathrm{suffix}}\n =-1668\\,U_{\\mathrm{prefix}}L_{\\mathrm{suffix}}. \\tag{7}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m>1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n a_1=\\nu_2(C-3^{m-1}),\\qquad\n C_{\\mathrm{tail}}=(C-3^{m-1})/2^{a_1}. \\tag{8}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x+5"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x+17"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n0\\to\\mathbb Z[X]/((X+5)(X+17))\n \\xrightarrow{\\operatorname{ev}}\\mathbb Z\\oplus\\mathbb Z\n \\xrightarrow{(a,b)\\mapsto b-a\\bmod12}\\mathbb Z/12\\mathbb Z\\to0,\n\\tag{9}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\operatorname{ev}(f)=(f(-5),f(-17))"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "X+5"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "X+17"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "12\\mid b-a"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n f(X)=a+\\frac{a-b}{12}(X+5). \\tag{10}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(a,b)=(x+5,x+17)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f(X)=x-X"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Lambda=\\operatorname{im}(\\operatorname{ev})\\subset\\mathbb Z^2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^k\\Lambda"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "I_k=\\Lambda\\cap2^k\\mathbb Z^2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "g_k=\\gcd(12,2^k)=2^{\\min(k,2)}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n I_k/2^k\\Lambda\\longrightarrow\\mathbb Z/g_k\\mathbb Z,\n \\quad [(a,b)]\\longmapsto\n \\frac{b/2^k-a/2^k}{12/g_k}\\pmod{g_k}.\n\\tag{10a}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^k(0,(12/g_k)j)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^k(1,1),2^k(0,12)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^k(1,1),2^k(0,12/g_k)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\min\\{\\nu_2(x+5),\\nu_2(x+17)\\}\\le2. \\tag{11}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Q^s"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n=2\\,8^r t-5,\\quad y=2\\,9^r t-5,\n\\quad 9^rt+6=2048^s z,\\quad y'=2\\,2187^s z-17. \\tag{12}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n t=t_0+2048^s v,\\quad\n t_0\\equiv-6(9^r)^{-1}\\pmod{2048^s},\\quad0<t_0<2048^s,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n z=z_0+9^r v,\\qquad z_0=(9^rt_0+6)/2048^s,\\qquad v\\ge0. \\tag{13}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2\\,8^r2048^s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2\\,9^r2187^s"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\nu_2(t)=1,\\qquad \\nu_2(n+5)=3r+2,\\qquad \\nu_2(y+5)=2.\n\\tag{14}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\nu_2(n+17)=11r+2"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\nu_2(9^rt+6)=k\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n t\\equiv(2^k-6)(9^r)^{-1}\\pmod{2^{k+1}}. \\tag{15}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n m=2\\alpha+7\\beta,\\quad A=3\\alpha+11\\beta,\\quad\n L=3^m,\\quad U=2^A,\\quad \\delta=L-U>0.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n g=\\gcd(C,\\delta),\\qquad c=C/g,\\quad d=\\delta/g,\n\\quad H=C/\\delta=c/d. \\tag{16}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f_j(x)=a_jx+h_j(a_j-1)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a_j=L_j/U_j>1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h_j\\in\\{5,17\\}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\sum_j h_j(a_j-1)\\prod_{k>j}a_k,\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\prod_ja_j-1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\omega_j=\\frac{(a_j-1)\\prod_{k>j}a_k}{\\prod_ja_j-1},\\qquad\\sum_j\\omega_j=1.\n\\tag{17}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\frac{c+d}{2}\\le46d\\le46\\delta<46L. \\tag{18}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z=dx+c"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x=(z-c)/d"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "c+d\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L_r=L^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U_r=U^r"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C_r=c(L_r-U_r)/d\\in\\mathbb Z.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\\quad n=\\frac{2U_rt-c}{d},\\qquad\n T^{mr}(n)=\\frac{2L_rt-c}{d},\\quad\n t\\ge1,\\quad2U_rt\\equiv c\\pmod d.\\quad} \\tag{19}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L_rn+C_r\\equiv U_r\\pmod{2U_r}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L_r(dn+c)\\equiv(c+d)U_r=0\\pmod{2U_r}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n M=rm,\\qquad D=U^r2^B-L^r3^s.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\\quad D>46L(2^B-3^s).\\quad} \\tag{20}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n F(B)=(U^r-K)2^B-(L^r-K)3^s.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n K/U^r\\le46(3/8)^{M/2}\\le46(3/8)^9<1/2. \\tag{21}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\frac{L^r3^M}{U^r4^M}\\le(81/128)^{M/2},\\qquad\n \\frac{K(4^M-3^M)}{U^r4^M}<46(3/8)^{M/2}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{(7/2)M}>3^{2M}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n A_*=rA+B_0\\le4M,\\quad m_*=M+s<2M,\\quad\n \\Lambda=2^{A_*}3^{-m_*}-1>0.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 0<\\Lambda<\\frac{K}{U^r-K}<\\frac{2K}{U^r}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\log\\Lambda<5-\\frac9{20}M. \\tag{22}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\log\\Lambda>-10^9(1+\\log(4M)). \\tag{23}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(9/20)M>5+10^9(1+42\\cdot7/10)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\frac{83130157078217}{52449289519716}\n <\\frac{\\log3}{\\log2}\n <\\frac{\\log3}{\\log2}+2^{-128}\n <\\frac{350861368503572}{221368876767703}. \\tag{24}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n0<\\frac{A_*}{m_*}-\\frac{\\log3}{\\log2}\n=\\frac{\\log(1+\\Lambda)}{m_*\\log2}\n<\\exp(6-9M/20)<2^{-128}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\alpha,\\beta\\ge1,\\quad r\\ge2,\\quad\n18\\le M=r(2\\alpha+7\\beta)<256,\\quad1\\le s<M,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n U^r2^B>L^r3^s \\tag{25}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n E_q=C_q+3^s-2^B\n =\\sum_{i=1}^s3^{s-i}2^{B_{i-1}}(4-2^{c_i})\\le0. \\tag{26}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "dn+c=2U^rt"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "dy+c=2L^rt"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\\quad d2^B(n-z)\n =2Dt-(c+d)(2^B-3^s)-dE_q.\\quad} \\tag{27}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n D>46L(2^B-3^s)>\\frac{c+d}{2}(2^B-3^s).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2[D-(c+d)(2^B-3^s)/2]+2D(t-1)-dE_q"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n L_{\\rm tot}=3^sL^r,\\quad U_{\\rm tot}=2^BU^r,\\quad\n C_{\\rm tot}=3^sC_r+U^rC_q. \\tag{28}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n T^{19}(2823006875)=1527868265\n \\quad\\text{with word }(PQ)^2(3),\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n T^{28}(8300162951835)=5396745598079\n \\quad\\text{with word }(PQ)^3(3).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n9535679069403344498661387515\n\\longmapsto9070365730002260119033546999.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon=d-\\epsilon P,\\qquad\\epsilon^2=0.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d_\\epsilon(\\epsilon B)=\\epsilon V_n-\\epsilon V_z. \\tag{29}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 2s\\le B\\le\\operatorname{bitlength}(3^{M+s})-1-rA. \\tag{30}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\log|\\Lambda|>-1.4\\,30^{k+3}k^{4.5}(1+\\log B)\\prod_i h(\\gamma_i).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (7/5)30^5\\,24\\,(7/10)(11/10)<10^9.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n L_N(x)=2\\sum_{j=0}^{N-1}\\frac{z^{2j+1}}{2j+1},\\quad\n0<\\log x-L_N(x)<\\frac{2z^{2N+1}}{(2N+1)(1-z^2)}.\n"
+  }
+]

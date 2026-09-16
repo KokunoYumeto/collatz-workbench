@@ -1,0 +1,16 @@
+{
+  "files": {
+    "README.md": "de503b566d394fc64253855f25bf1f09d829dd5fdbc189f1a1a36651fedaa41c",
+    "SOURCE_INTAKE.json": "1919f21ac0e19ed2a5f76b485e6de221e6260ee12fe48d6af80aba8f73c72342",
+    "TASK_STATE.md": "8ec705b9738661c60165873b436fd56699c5d53080edf23877c6f6cf81ecafbd",
+    "all_even.py": "a07c67f00cbee7ab4402a39fb888b99eca0b2dd8f50e1b671349af5f472c4216",
+    "audit_families.py": "e01b25c53aac3f0a3b7aab013a55b11f86e11108b5bb4b646662fff7afdea3ea",
+    "family_audit.json": "65971ac90997c8a13413534647b5f5d3e17d06ab3bed004e0ada7d7d24bd226e",
+    "family_cases.jsonl.gz": "9a5c623453e0f879cf70f9bbe873c1ffe54f7980f9d23b76cd898f46b06d7997",
+    "note.md": "6ee7e26eb332db9f38dca29e7603a563c2456c9e23370b375d0cb19736151c88",
+    "replay.py": "4a97f8f7ad36357c7e79a98803b6c82e6ea210263f0566c2823ed66e89d071aa",
+    "verification.json": "bfd279ba233d6d5e6f690f9f03fb8563dcbb50d42de87f4fca23a55bae179572",
+    "verify.py": "1e06b18417b92a48f225a5577f1bb84eb07e8b7602c3368d5ccf91bff0878881"
+  },
+  "bilateral_sha256": "83288427125083f723d011915db9456843072eff10c15c0b71f3e56c31975358"
+}

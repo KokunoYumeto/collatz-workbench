@@ -1,0 +1,2018 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\n T(n)=\\frac{3n+1}{2^{\\nu _2(3n+1)}}\\qquad(n\\in 2\\mathbb Z_{\\ge0}+1).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p=(a_1,\\ldots,a_m)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a_i\\ge1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n A_j=\\sum_{i=1}^j a_i,\\quad A_0=0,\\quad L_j=3^j,\n \\qquad C_j=\\sum_{i=1}^j3^{j-i}2^{A_{i-1}}.\n \\tag{1.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A=A_m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L=L_m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "C=C_m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U=2^A"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(A,L,C)=(0,1,0)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n F_p(x)=\\frac{Lx+C}{U},\\qquad\n F_j(x)=\\frac{L_jx+C_j}{2^{A_j}}.\n \\tag{1.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (A,L,C)\\longmapsto(A+a,3L,3C+2^A).\n \\tag{1.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p,v"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n A(pv)=A(p)+A(v),\\quad L(pv)=L(v)L(p),\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C(pv)=L(v)C(p)+2^{A(p)}C(v),\\qquad F_{pv}=F_v\\circ F_p.\n \\tag{1.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F_p(x)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(3x+1)/2^a"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(3Lx+3C+2^A)/2^{A+a}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F_v"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{A(p)+A(v)}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal M_p=\\begin{pmatrix}L&C\\\\0&U\\end{pmatrix}\n \\tag{1.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal M_{pv}=\\mathcal M_v\\mathcal M_p"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal M_p\\binom n1=U\\binom{F_p(n)}1\n \\tag{1.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\rho_p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{A+1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1\\le\\rho_p<2^{A+1}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\rho_p\\equiv (2^A-C)L^{-1}\\pmod {2^{A+1}}.\n \\tag{1.7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n=\\rho_p+2^{A+1}k,\\qquad k\\in\\mathbb Z,\\quad n>0.\n \\tag{1.8}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "j=0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n T^j(n)=F_j(\\rho_p)+2^{A+1-A_j}L_jk.\n \\tag{1.9}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u+2\\cdot3^j k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 3(u+2\\cdot3^jk)+1\\equiv 2^a\\pmod {2^{a+1}}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "k\\bmod 2^a"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{B+a+1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Ln+C\\equiv2^A\\pmod {2^{A+1}}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\rho'_p=\\rho_p+2^{A+1}h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "k'=k-h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{A+1-A_j}L_jh"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "k'\\equiv k-h\\pmod M"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n D_j=2^{A_j}-L_j.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n F_j(n)<n\n \\quad\\Longleftrightarrow\\quad D_j>0\\text{ and }D_jn>C_j.\n \\tag{2.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L_j/2^{A_j}<1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p=(1,1,3)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(L,U,C)=(27,32,19)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F_p(3)=100/32>3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal L"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n p\\in\\mathcal L\n \\quad\\Longleftrightarrow\\quad\n F_j(3)\\ge3\\ (0\\le j<m),\\qquad F_m(3)<3.\n \\tag{2.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F_j(3)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p\\in\\mathcal L"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 3D_m>C_m>0.\n \\tag{2.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n\\ge3"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 0<T^m(n)<n.\n \\tag{2.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3L+C<3U"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_mn\\ge3D_m>C_m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n\\ge3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Omega=\\mathbb N_{\\ge1}^{\\mathbb N}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\sigma:\\Omega\\longrightarrow\\mathcal L\\sqcup\\{\\infty\\}\n \\tag{2.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\infty"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\sigma^{-1}(p)=\\{p\\}\\times\\Omega\n \\tag{2.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n\\mapsto(a_1(n),a_2(n),\\ldots)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\infty"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H\\ge0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal L_H=\\{p\\in\\mathcal L:A(p)\\le H\\}.\n \\tag{2.7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n(t)=a+2dt,\\qquad t=b,b+1,\\ldots,b+N-1,\n \\tag{3.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d,N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b\\in\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a+2db\\ge3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n g=\\gcd(d,2^A),\\qquad c=(\\rho_p-a)/2.\n \\tag{3.2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\kappa_p(a,d)=\\mathbf1_{g\\mid c}.\n \\tag{3.3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n P=2^A/g,\\qquad\n s\\equiv(c/g)(d/g)^{-1}\\pmod P,\\quad 0\\le s<P,\n \\tag{3.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n t=s+Pv,\n \\tag{3.5}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n T^m(n(s+Pv))=u+2d'v,\n \\tag{3.6}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n u=\\frac{L(a+2ds)+C}{2^A}\\in2\\mathbb Z+1,\n \\qquad d'=\\frac d g L.\n \\tag{3.7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n v=(t-s)/P,\n \\qquad v=(y-u)/(2d').\n \\tag{3.8}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\left\\lceil\\frac{b-s}{P}\\right\\rceil\n \\le v\\le\n \\left\\lfloor\\frac{b+N-1-s}{P}\\right\\rfloor.\n \\tag{3.9}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a+2dt\\equiv\\rho_p\\pmod {2^{A+1}}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "dt\\equiv c\\pmod {2^A}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "g"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d/g"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\frac{L(a+2d(s+Pv))+C}{2^A}\n =\\frac{L(a+2ds)+C}{2^A}+2\\frac d g L v.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b\\le t\\le b+N-1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n J_p=\\begin{pmatrix}2dP&a+2ds\\\\0&1\\end{pmatrix},\n \\qquad K_p=\\begin{pmatrix}2d'&u\\\\0&1\\end{pmatrix}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\\mathcal M_pJ_p=2^A K_p.}\n \\tag{3.10}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "LdP=2^Ad'"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L(a+2ds)+C=2^Au"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "0\\le r<M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v=r+M\\ell"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n t=s+Pr+PM\\ell,\n \\qquad y=u+2d'r+2Md'\\ell.\n \\tag{3.11}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\ell"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (a_{\\rm new},d_{\\rm new})=(u+2d'r,Md').\n \\tag{3.12}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s_0=\\nu_2(d)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\nu_2(d')=\\max\\{s_0-A,0\\}.\n \\tag{3.13}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\nu_2(M)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d'=d3^m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n z=(y-1)/2,\\qquad y=2z+1,\n \\tag{4.1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n z=z_0+d'v,\\qquad z_0=(u-1)/2.\n \\tag{4.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "y"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2d'"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n K_{p,a,d}^{\\rm image}\n =\\left[\\mathbb Z\\xrightarrow{\\;d'\\;}\\mathbb Z\\right]\n \\quad\\text{in degrees }0,1\n \\tag{4.3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H^0=0,\\qquad H^1=\\mathbb Z/d'\\mathbb Z.\n \\tag{4.4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n [z_0]\\in H^1;\n \\qquad z\\text{ is in that image exactly when }[z]=[z_0].\n \\tag{4.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d'/\\gcd(d',z_0)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d'"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z-z_0\\in d'\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d'\\mid kz_0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d'/\\gcd(d',z_0)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v'=v-h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u+2d'h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z_0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z_0+d'h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\ell"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d'=\\ell^e w,\\qquad \\ell\\nmid w.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z\\hookrightarrow\\mathbb Z_\\ell"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d'"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z_\\ell"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H^0=0,\\qquad H^1=\\mathbb Z_\\ell/d'\\mathbb Z_\\ell.\n \\tag{4.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[\\mathbb Z_\\ell\\xrightarrow{\\ell^e}\\mathbb Z_\\ell]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w^{-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e=0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n h^1(x)=(d')^{-1}x.\n \\tag{4.7}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z_\\ell"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\ell^e w=d'"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w^{-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z_\\ell"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d'h^1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h^1d'"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z_2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d3^m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^{m+\\nu_3(d)}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N\\ge1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "g_N=\\gcd(d',N)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n d'v=z-z_0\\pmod N\n \\tag{4.8}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "g_N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "g_N\\mid z-z_0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "g_N"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\beta:H^0(K^{\\rm image}\\otimes\\mathbb Z/N)\n \\longrightarrow (\\mathbb Z/d'\\mathbb Z)[N],\n \\qquad [v]\\longmapsto\\left[\\frac{d'v}{N}\\right].\n \\tag{4.9}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Nq"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d'q"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d'v/N\\in d'\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v\\in N\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "g_N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n=\\rho_p+2^{A+1}k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "y=u+2Lk"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n=\\frac{2^Ay-C}{L}.\n \\tag{4.10}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "y"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 2^Ay\\equiv C\\pmod {3^m};\n \\tag{4.11}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z_2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2\\cdot3^m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p=(1,1,3,2)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (A,L,C,\\rho_p)=(7,81,89,247),\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 247+256k\\longmapsto157+162k.\n \\tag{4.12}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n z=78+81k.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H^1=\\mathbb Z/81\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[78]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z_2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "81^{-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n_*=a+2ds"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "j"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n T^j(n(s+Pv))\n =F_j(n_*)+2^{A+1-A_j}\\frac d g L_jv.\n \\tag{5.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2dP/2^{A_j}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r=v\\bmod M"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\left(n\\bmod M,T(n)\\bmod M,\\ldots,T^m(n)\\bmod M\\right)\n \\tag{5.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_j>0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\theta_j=\\frac{C_j/D_j-a}{2d}.\n \\tag{5.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "j"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n E_j(p)=\\left(\\theta_j,\\ \\min_{i<j,\\,D_i>0}\\theta_i\\right],\n \\tag{5.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "+\\infty"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E_j=\\varnothing"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_j\\le0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "j=1,\\ldots,m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_j>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t>\\theta_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_i>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t\\le\\theta_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p\\in\\mathcal L"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n(t)\\ge3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\pi(n)=(p,r,J),\\qquad r=v\\bmod M,\n \\tag{5.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "J"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\left\\{a+2d(s+Pr+PM\\ell):\\ell\\in\\mathbb Z,\\ \n b\\le s+Pr+PM\\ell<b+N,\\ \n s+Pr+PM\\ell\\in E_J(p)\\right\\}.\n \\tag{5.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "J"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "247"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,1,3,2)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 247\\to371\\to557\\to209\\to157.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "J=3"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 3\\to5\\to8\\to25/8\\to83/32.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m=4"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_3=5"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "C_3=19"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "19/5"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\lambda=(p,r,j)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "c_\\lambda"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n o=s+Pr,\\qquad h=PM,\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E_j=(\\theta_j,\\eta_j]"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n l=\\max\\{b,\\lfloor\\theta_j\\rfloor+1\\},\\qquad\n u=\\min\\{b+N-1,\\lfloor\\eta_j\\rfloor\\},\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "l\\le u"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n c_\\lambda=\n \\max\\left\\{0,\\left\\lfloor\\frac{u-o}{h}\\right\\rfloor\n             -\\left\\lceil\\frac{l-o}{h}\\right\\rceil+1\\right\\}.\n \\tag{6.1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n q_\\lambda=\n \\frac{|[b,b+N)\\cap E_j(p)|}{NMP}\n \\tag{6.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\left|\\frac{c_\\lambda}{N}-q_\\lambda\\right|\\le\\frac1N.\n \\tag{6.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sum_{r,j}q_{p,r,j}=1/P"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "o+h\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1/P"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mu_{a,d}(p)=\\frac1P=\\frac{g}{2^A},\n \\qquad\n \\mu_{a,d}(p)=0\\text{ for an incompatible leaf}.\n \\tag{6.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "g=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{-A}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n t_H^{a,d}=1-\\sum_{p\\in\\mathcal L_H}\\mu_{a,d}(p).\n \\tag{6.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N-\\sum_{p\\in\\mathcal L_H,r,j}c_{p,r,j}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n f_0(x)=x/2,\\qquad f_1(x)=(3x+1)/2.\n \\tag{7.1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n g_a=f_0^{a-1}\\circ f_1.\n \\tag{7.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(a_1,\\ldots,a_m)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 1\\,0^{a_1-1}\\,1\\,0^{a_2-1}\\cdots1\\,0^{a_m-1},\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A+1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^h"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{h+1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{-(h-1)}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mu(p)=2^{-A(p)}=\\prod_{i=1}^m2^{-a_i}.\n \\tag{7.3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\phi:x\\longmapsto z=x-1,\\qquad\\phi^{-1}(z)=z+1.\n \\tag{7.4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\phi f_0\\phi^{-1}(z)=\\frac{z-1}{2},\\qquad\n \\phi f_1\\phi^{-1}(z)=\\frac{3z+2}{2}.\n \\tag{7.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "V(x)=\\sqrt{x-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x\\ge3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z\\ge2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x\\ge3"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\frac{\\sqrt{f_0(x)-1}+\\sqrt{f_1(x)-1}}2\n \\le\\frac{\\sqrt{15}}4\\sqrt{x-1}.\n \\tag{7.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x=7"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n A_x=f_0(x)-1=(x-2)/2,\\qquad\n B_x=f_1(x)-1=(3x-1)/2.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 2A_x+B_x=\\frac52(x-1).\n \\tag{7.7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (\\sqrt{A_x}+\\sqrt{B_x})^2\n \\le(1/2+1)(2A_x+B_x)=\\frac{15}{4}(x-1).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B_x=4A_x"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x=7"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n R=\\frac{15}{4}(x-1)-A_x-B_x=\\frac{7x-9}{4}>0,\n \\qquad R^2-4A_xB_x=\\frac{(x-7)^2}{16}.\n \\tag{7.8}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "X_0=3"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\tau=\\inf\\{h\\ge1:X_h<3\\},\\qquad S_h=\\Pr(\\tau>h).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "V(X_h)\\ge\\sqrt2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "X_1=5"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "V(X_1)=2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h\\ge1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n S_h\\le\\sqrt2\\left(\\frac{\\sqrt{15}}4\\right)^{h-1}.\n \\tag{7.9}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\rho=\\frac{31}{32},\\qquad C_0=\\frac32.\n \\tag{7.10}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "15/16<\\rho^2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2<(C_0\\rho)^2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h=0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n S_h\\le C_0\\rho^h.\n \\tag{7.11}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Pr(\\tau=\\infty)=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f_1(x)>x"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x\\ge3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n A_{\\rm stop}=\\tau+R.\n \\tag{7.12}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\Pr(R=r\\mid\\text{that prefix})=2^{-r-1},\\qquad r\\ge0.\n \\tag{7.13}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n t_H=\\Pr(A_{\\rm stop}>H)=1-\\sum_{p\\in\\mathcal L_H}2^{-A(p)}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t_0=1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n t_H=\\frac{t_{H-1}+S_H}{2}\\qquad(H\\ge1).\n \\tag{7.14}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\tau"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\tau\\le H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Pr(R>H-\\tau)=2^{-(H-\\tau+1)}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S_H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Pr(\\tau=H)=S_{H-1}-S_H"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n K=\\frac{31}{20},\\qquad K(2\\rho-1)=C_0\\rho,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{t_H\\le K\\rho^H.}\n \\tag{7.15}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n b_h=2^{h-1}(S_{h-1}-S_h).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R=0,\\ldots,H-h"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n |\\mathcal L_H|=\\sum_{h=1}^H b_h(H-h+1).\n \\tag{7.16}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b_h\\le C_0(2\\rho)^{h-1}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n |\\mathcal L_H|\n \\le C_0\\frac{(2\\rho)^{H+1}}{(2\\rho-1)^2},\n \\qquad\n \\sum_{p\\in\\mathcal L_H}m(p)\\le H|\\mathcal L_H|.\n \\tag{7.17}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d=2^{s_0}d_o"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d_o"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t\\mapsto a+2dt"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n\\equiv a\\pmod {2^{s_0+1}}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{s_0+1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d_o"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{-s_0}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mu_{a,d}(E)=2^{s_0}\\mu\\bigl(E\\cap\\{n\\equiv a\\pmod{2^{s_0+1}}\\}\\bigr).\n \\tag{8.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 0\\le t_H^{a,d}\\le2^{s_0}t_H\\le2^{s_0}K\\rho^H.\n \\tag{8.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t_H^{a,d}=t_H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sum_{p\\in\\mathcal L}\\mu_{a,d}(p)=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P_{a,d,b,N,M}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\infty"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Q_{a,d,b,N,M}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Q(\\infty)=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\infty"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N,M\\ge1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H\\ge0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\\Delta(P_{a,d,b,N,M},Q_{a,d,b,N,M})\n \\le\\min\\left\\{1,\n t_H^{a,d}+\\frac{M}{N}\\sum_{p\\in\\mathcal L_H}m(p)\n \\right\\}.}\n \\tag{8.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a,b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal L_H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e=|S|/N=M\\sum m(p)/N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sum_{\\lambda\\in S}|P(\\lambda)-Q(\\lambda)|\\le e"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P(S^c)\\le Q(S^c)+e=t_H^{a,d}+e"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 2\\Delta(P,Q)\n \\le e+P(S^c)+Q(S^c)\n \\le2e+2t_H^{a,d}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\Delta(P^{\\rm word},\\mu_{a,d})\n \\le\\min\\{1,t_H^{a,d}+|\\mathcal L_H|/N\\}.\n \\tag{8.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\eta=-\\log_2(31/32)>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N\\ge M(1+\\log_2N)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H=\\left\\lfloor\\log_2\\frac{N}{M(1+\\log_2N)}\\right\\rfloor.\n \\tag{8.5}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\Delta(P,Q)\n \\le\\left(K+C_0\\frac{2\\rho}{(2\\rho-1)^2}\\right)\\rho^H\n \\le\\frac{K+C_0(2\\rho)/(2\\rho-1)^2}{\\rho}\n \\left(\\frac{M(1+\\log_2N)}{N}\\right)^\\eta.\n \\tag{8.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M H2^H/N\\le H/(1+\\log_2N)\\le1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\rho"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\psi"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\Delta(\\psi_*P,\\psi_*Q)\n =\\frac12\\sum_y\\left|\\sum_{\\lambda:\\psi(\\lambda)=y}\n                  (P(\\lambda)-Q(\\lambda))\\right|\n \\le\\Delta(P,Q).\n \\tag{8.7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n x(t)=a+2dt,\\quad b\\le t<b+N,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n_0(t)=a_0+2d_0t,\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n L(w)a_0+C(w)=2^{A(w)}a,\\qquad\n L(w)d_0=2^{A(w)}d.\n \\tag{9.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n o=s+Pr,\\quad h=PM,\\quad t=o+h\\ell.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n a'_0=a_0+2d_0o,\\qquad d'_0=d_0h,\n \\tag{9.2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n a'=u+2d'r,\\qquad d'_{\\rm current}=Md'.\n \\tag{9.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "wp"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "T(1)=1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\Xi(a_1,a_2,\\ldots)\n =-\\sum_{i=1}^{\\infty}\\frac{2^{A_{i-1}}}{3^i}.\n \\tag{9.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z_2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_{i-1}\\to\\infty"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\Xi(p\\omega)=\\frac{2^{A(p)}\\Xi(\\omega)-C(p)}{L(p)}.\n \\tag{9.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-1/3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal L"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\Pr(p_1,\\ldots,p_r)=\\prod_{i=1}^r2^{-A(p_i)}.\n \\tag{9.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p_1\\cdots p_r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{-\\sum_i A(p_i)}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d3^m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(2,2,\\ldots)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(2)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\lambda=(p,r,j)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F_\\lambda"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\ell"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n D_\\lambda=Md',\\qquad\n z_\\lambda=\\frac{u+2d'r-1}{2},\\qquad\n z(\\ell)=z_\\lambda+D_\\lambda\\ell.\n \\tag{10.0a}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z(\\ell)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal A_\\lambda=\n \\left[\\mathbb Z[F_\\lambda]\\xrightarrow{d_{\\mathcal A}}\\mathbb Z^2\\right],\n \\qquad d_{\\mathcal A}(e_\\ell)=(1,z(\\ell)).\n \\tag{10.0b}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal I_\\lambda=[\\mathbb Z[F_\\lambda]\\xrightarrow{\\delta}\\mathbb Z],\n \\quad\\delta(e_\\ell)=1,\n \\qquad\n \\mathcal K_\\lambda=[\\mathbb Z\\xrightarrow{D_\\lambda}\\mathbb Z].\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal I_\\lambda\\ \\xleftarrow{\\ q\\ }\\ \\mathcal A_\\lambda\n \\ \\xrightarrow{\\ f\\ }\\ \\mathcal K_\\lambda,\n \\tag{10.0c}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n q^0=\\mathrm{id},\\quad q^1(a,b)=a,\n \\qquad\n f^0(e_\\ell)=\\ell,\\quad f^1(a,b)=b-z_\\lambda a.\n \\tag{10.0d}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n q^1d_{\\mathcal A}(e_\\ell)=1=\\delta(e_\\ell),\n \\qquad\n f^1d_{\\mathcal A}(e_\\ell)=z(\\ell)-z_\\lambda\n                         =D_\\lambda f^0(e_\\ell).\n \\tag{10.0e}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z_\\lambda"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "q"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b\\mapsto(0,b)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 0\\longrightarrow H^0(\\mathcal A_\\lambda)\n \\longrightarrow H^0(\\mathcal I_\\lambda)\n \\xrightarrow{\\ \\theta\\ }\\mathbb Z\n \\longrightarrow H^1(\\mathcal A_\\lambda)\n \\longrightarrow H^1(\\mathcal I_\\lambda)\n \\longrightarrow0,\n \\tag{10.0f}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\theta\\!\\left(\\sum_\\ell c_\\ell e_\\ell\\right)\n   =\\sum_\\ell c_\\ell z(\\ell)\n   =D_\\lambda\\sum_\\ell c_\\ell\\ell,\n \\qquad \\sum_\\ell c_\\ell=0.\n \\tag{10.0g}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\theta"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H^0(\\mathcal A_\\lambda)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(0,b)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\theta"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n_\\lambda=|F_\\lambda|"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H^1(\\mathcal A_\\lambda)=\\mathbb Z^2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,z)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H^1(\\mathcal A_\\lambda)\\cong\\mathbb Z"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\theta(H^0(\\mathcal I_\\lambda))=D_\\lambda\\mathbb Z,\n \\qquad\n H^1(\\mathcal A_\\lambda)\\cong\\mathbb Z/D_\\lambda\\mathbb Z,\n \\qquad \\operatorname{rank}H^0(\\mathcal A_\\lambda)=n_\\lambda-2.\n \\tag{10.0h}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_\\lambda"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(0,D_\\lambda k)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n_\\lambda\\ge2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\ell_0,\\ell_0+1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z_*=z(\\ell_0)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\bar f^0(e_\\ell)=\\ell-\\ell_0,\n \\qquad\\bar f^1(a,b)=b-z_*a.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal K_\\lambda"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n i^0(1)=e_{\\ell_0+1}-e_{\\ell_0},\\qquad i^1(1)=(0,1).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n R_\\ell=e_\\ell-e_{\\ell_0}\n             -(\\ell-\\ell_0)(e_{\\ell_0+1}-e_{\\ell_0}),\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P^0(e_\\ell)=R_\\ell"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P^1=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h^1(a,b)=a e_{\\ell_0}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\bar f i=1,\\qquad\n 1-i\\bar f-P=d_{\\mathcal A}h+h d_{\\mathcal A}.\n \\tag{10.0i}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R_\\ell"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s^1(a,b)=\\ell_0 a"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f-\\bar f=d_{\\mathcal K}s+s d_{\\mathcal A}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z_*-z_\\lambda=D_\\lambda\\ell_0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal K_\\lambda"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d'M=D_\\lambda"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 0\\longrightarrow\\mathbb Z/M\\mathbb Z\n \\xrightarrow{\\ [c]\\mapsto[d'c]\\ }\n \\mathbb Z/(Md')\\mathbb Z\n \\longrightarrow\\mathbb Z/d'\\mathbb Z\n \\longrightarrow0.\n \\tag{10.0j}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[z_\\lambda]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[(u-1)/2]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d'r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "247+256\\ell"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\ell=0,\\ldots,6"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p=(1,1,3,2)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "j=3"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\begin{pmatrix}\n 1&1&1&1&1&1&1\\\\\n 78&159&240&321&402&483&564\n \\end{pmatrix}.\n \\tag{10.0k}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "81\\mathbb Z"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 0\\longrightarrow\\mathbb Z^5\\longrightarrow\\mathbb Z^6\n \\xrightarrow{\\theta}\\mathbb Z\n \\longrightarrow\\mathbb Z/81\\mathbb Z\\longrightarrow0.\n \\tag{10.0l}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "I"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Lambda_H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(p,r,j)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p\\in\\mathcal L_H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Lambda_H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\pi_H:I\\to\\Lambda_H"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n K^\\bullet_{\\pi_H}=\n \\left[\\mathbb Z[I]\\xrightarrow{\\delta}\\mathbb Z[\\Lambda_H]\\right],\n \\qquad \\delta(e_n)=e_{\\pi_H(n)}.\n \\tag{10.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\lambda"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n_\\lambda"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n h^1(e_\\lambda)=\n \\begin{cases}e_{n_\\lambda},&\\lambda\\text{ occupied},\\\\0,&\\lambda\\text{ empty}.\n \\end{cases}\n \\tag{10.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P^0=1-h^1\\delta"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "P^1=1-\\delta h^1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 1-P^0=h^1\\delta,\\qquad1-P^1=\\delta h^1,\n \\qquad\\delta P^0=0,\\qquad P^1\\delta=0.\n \\tag{10.3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H^0\\cong\\bigoplus_{\\lambda\\text{ occupied}}\n \\left\\langle e_n-e_{n_\\lambda}:n\\in\\pi_H^{-1}(\\lambda),\\ n\\ne n_\\lambda\\right\\rangle,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H^1\\cong\\mathbb Z[\\{\\lambda\\in\\Lambda_H:\\pi_H^{-1}(\\lambda)=\\varnothing\\}].\n \\tag{10.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\delta"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h^1(e_\\lambda)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_{n'_\\lambda}-e_{n_\\lambda}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\pi_H^*f=f\\circ\\pi_H.\n \\tag{10.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\delta"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\delta\\left(\\sum_{n\\in I}e_n\\right)=\\sum_{\\lambda\\in\\Lambda_H}c_\\lambda e_\\lambda.\n \\tag{10.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\psi:\\Lambda_H\\to\\Gamma"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\pi_H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\psi\\pi_H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_\\lambda\\mapsto e_{\\psi(\\lambda)}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_\\lambda-e_{\\lambda_0}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\psi"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\iota:\\Lambda_H\\longrightarrow\\{1,\\ldots,d_\\Lambda\\}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\lambda_i=i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\iota^{-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w_i=c_i/N"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n M_k=\\sum_{i=1}^{d_\\Lambda}w_i\\lambda_i^k,\n \\qquad Z(s)=\\sum_{i=1}^{d_\\Lambda}w_i\\zeta(s,\\lambda_i).\n \\tag{10.7}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M_0=1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\zeta(-k,x)=-\\frac{B_{k+1}(x)}{k+1},\n \\quad\n B_{k+1}(x)=\\sum_{r=0}^{k+1}\\binom{k+1}{r}B_{k+1-r}x^r.\n \\tag{10.8}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Z(-k)=-\\frac1{k+1}\\sum_{r=0}^{k+1}\n                   \\binom{k+1}{r}B_{k+1-r}M_r.\n \\tag{10.9}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M_0=1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n M_{k+1}=-(k+1)Z(-k)-\\sum_{r=0}^{k}\n                   \\binom{k+1}{r}B_{k+1-r}M_r.\n \\tag{10.10}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n L_i(X)=\\prod_{j\\ne i}\\frac{X-\\lambda_j}{\\lambda_i-\\lambda_j}\n       =\\sum_{k=0}^{d_\\Lambda-1}l_{ik}X^k.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{w_i=\\sum_{k=0}^{d_\\Lambda-1}l_{ik}M_k.}\n \\tag{10.11}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M_{k+1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\sum_k l_{ik}M_k=\\sum_jw_jL_i(\\lambda_j)=w_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "157+162t"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(3)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t=8u"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 247+2048u\\longmapsto157+1296u\\longmapsto59+486u,\n \\qquad u\\in\\mathbb Z_{\\ge0}.\n \\tag{11.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2\\cdot3^5"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (1,1,3,2),\\quad(3),\\quad(1,2,1,4),\\quad(1,3),\\quad(1,2,3),\\quad(4).\n \\tag{11.2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 157,\\quad59,\\quad19,\\quad11,\\quad5,\\quad1.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 247+2^{A+1}t\\longmapsto x_{\\rm anchor}+2\\cdot3^mt,\n \\qquad t\\ge0,\n \\tag{11.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n T^{15}(247+2^{33}t)=1+28\\,697\\,814t\n \\tag{11.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3,5,\\ldots,35"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\operatorname{rank}H^0=9"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\operatorname{rank}H^1=8"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3,5,\\ldots,2049"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n P(\\infty)=\\frac1N\\#\\{n\\in I:\\sigma(\\text{actual itinerary of }n)=\\infty\\}.\n \\tag{12.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1/N"
+  }
+]

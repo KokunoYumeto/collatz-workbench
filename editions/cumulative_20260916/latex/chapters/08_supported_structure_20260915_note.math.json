@@ -1,0 +1,418 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\n X=\\{1,3,5,\\ldots\\},\\quad T(n)=(3n+1)/2^{a(n)},\\quad a(n)=\\nu_2(3n+1),\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\Lambda=\\mathbb Z[v],\\quad R=\\Lambda[u],\\quad\n A=\\Lambda^{(X\\setminus\\{1\\})},\\quad M=A[u].\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "V_n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n S V_n=v^{a(n)-1}V_{T(n)},\\quad V_1=0,\\qquad d=I-uS,\n \\qquad K=[M\\xrightarrow d M],\\quad Q=\\operatorname{coker}d. \\tag{1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E_n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E_n\\leftrightarrow V_n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "dE_n=V_n-u v^{a(n)-1}V_{T(n)}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M,dM,Q"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\ker S^N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F\\subseteq X\\setminus\\{1\\}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Omega_F=\\{1\\}\\cup\\{T^j(n):n\\in F,j\\ge0\\}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(F,z)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(F,0)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(\\varnothing,0)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\widehat M=A[[u]]"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Gq=\\sum_{j\\ge0}u^jS^jq,\\qquad \\widehat dG=G\\widehat d=I. \\tag{2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_\\infty=\\widehat M/M"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\bar d"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Q\\xrightarrow{\\eta}\\ker\\bar d,\\quad[q]\\mapsto[Gq]\\bmod M,\n \\qquad\n [g]\\xmapsto{\\delta}[\\widehat dg]\\bmod dM. \\tag{3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n S^jV_n=v^{E_j(n)}V_{T^j(n)},\\quad E_j(n)=\\sum_{i=0}^{j-1}(a(T^i(n))-1).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n [V_n]=0\\text{ in }Q\n \\ \\Longleftrightarrow\\ GV_n\\in M\n \\ \\Longleftrightarrow\\ S^NV_n=0\\text{ for some }N\n \\ \\Longleftrightarrow\\ T^N(n)=1\\text{ for some }N. \\tag{4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r=\\nu_2(n+1)-1,\\qquad t=(n+1)/2^{r+1}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r\\ge0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n=2^{r+1}t-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(r,t)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n T^j(n)=3^j2^{r+1-j}t-1\\quad(0\\le j\\le r).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n b=1+\\nu_2(3^{r+1}t-1)\\ge2,\\qquad\n y=\\frac{3^{r+1}t-1}{2^{b-1}}. \\tag{5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1)^r(b)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n W=u^{r+1}v^{b-1}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2(3^{r+1}t-1)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n dP=V_n-u^{r+1}v^{b-1}V_y. \\tag{6}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n y<n\\quad\\Longleftrightarrow\\quad\n (2^{b+r}-3^{r+1})t>2^{b-1}-1. \\tag{7}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{b-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L=\\mathbb Z[u,u^{-1},v,v^{-1}]"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Q\\longrightarrow L\\otimes_R Q\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[q]=u[S q]"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n [V_n]=v\\,[u^{r+1}v^{b-2}V_y], \\tag{8}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z[u]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "I-uS_0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\bar f=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "q/(u^a v^b)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\bar S^a J_v^b(q)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v^{-1}[V_1]=u[V_1]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal C_*"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal B_\\infty"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\\quad\n Q\\cong\n \\bigoplus_{C\\in\\mathcal C_*}L/(1-u^{m_C}v^{e_C})\n \\ \\oplus\\ \\bigoplus_{B\\in\\mathcal B_\\infty} L,\n \\qquad e_C=A_C-m_C.\n \\quad} \\tag{9}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[V_n]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[w_n]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R/(1-W_C)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[V_c]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[R\\xrightarrow{1-W_C}R]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R/(1-u^m v^e)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u^{m-1}v^e"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u^m v^{e-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L/(1-u^m v^e)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x_0,x_1,\\ldots"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "W_j=u^jv^{E_j}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "w/W_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f/W_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f[V_{x_j}]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\bigcup_j W_j^{-1}R"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u^a v^b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "j+a\\ge0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E_j+b\\ge0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n u^a v^b=\\frac{u^{a+j}v^{b+E_j}}{W_j}. \\tag{10}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb K=\\mathbb Q(u,v)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\ell:Q\\longrightarrow\\mathbb K\\otimes_L Q,\\qquad q\\mapsto1\\otimes q.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal T=\\ker\\ell"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal F=\\mathbb K\\otimes_LQ"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal T\\cong\\bigoplus_{C\\in\\mathcal C_*}L/(1-W_C),\\qquad\n Q/\\mathcal T\\cong\\bigoplus_{B\\in\\mathcal B_\\infty}L,\\qquad\n \\mathcal F\\cong\\bigoplus_{B\\in\\mathcal B_\\infty}\\mathbb K. \\tag{11}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "0\\to\\mathcal T\\to Q\\to Q/\\mathcal T\\to0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\operatorname{Ann}_L[V_n]=\n \\begin{cases}\n L,&n\\text{ reaches }1,\\\\\n (1-W_C),&n\\text{ belongs to the nonbase cycle component }C,\\\\\n (0),&n\\text{ belongs to a component in }\\mathcal B_\\infty.\n \\end{cases} \\tag{12}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L/(1-u^m v^e)\\cong\\mathbb Z[\\mathbb Z^2/\\langle(m,e)\\rangle]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Q\\otimes_\\mathbb ZQ"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "M_{\\rm abs}=R^{(X)}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n K_1=[RE_1\\xrightarrow{1-uv}RV_1].\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\\quad\n 0\\longrightarrow R/(1-uv)\n \\xrightarrow{1\\mapsto[V_1]}Q_{\\rm abs}\n \\longrightarrow Q\\longrightarrow0.\n \\quad} \\tag{13}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K_N(F)=\\ker(S^N|_{\\Lambda^{(F)}})"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "y_n=T^N(n)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n V_n\\ (y_n=1),\\qquad\n V_n-v^{E_N(n)-E_N(n_y)}V_{n_y}\\ (y_n=y>1,n\\ne n_y). \\tag{14}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v^{E_N(n_y)}V_y"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_+=\\mathbb N[v]^{(X\\setminus\\{1\\})}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\\quad\n \\ker S^N\\cap A_+\n =\\left\\{\\sum c_n(v)V_n:c_n\\in\\mathbb N[v],\\ c_n\\ne0\\Rightarrow T^N(n)=1\\right\\}.\n \\quad} \\tag{15}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\Lambda V_5\\oplus\\Lambda(V_{13}-v^2V_3)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n W_p=u^m v^{A-m},\\qquad N_p=\\sum_{j=0}^{m-1}u^jv^{A_j-j}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b_j=A_j-j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a_i=1+b_i-b_{i-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "E_i\\mapsto V_i-w_iV_{i+1}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (J_ph)_i=h_i-u v^{a_i-1}h_{i+1}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\alpha:R\\to\\mathbb Z[1/3]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u\\mapsto2/3,v\\mapsto2"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\alpha(J_p)=-B_p/3,\\qquad\n (B_px)_i=2^{a_i}x_{i+1}-3x_i,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n D=2^A-3^m,\\quad C=\\sum_{j=0}^{m-1}3^{m-1-j}2^{A_j},\n \\quad\\alpha(1-W_p)=-D/3^m,\\quad\\alpha(N_p)=C/3^{m-1}. \\tag{16}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\alpha(J_p)x=-1/3"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n B_py=(4-2^{a_i})_i,\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1+W+\\cdots+W^{r-1}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\boxed{\n \\begin{gathered}\n \\text{Every original positive odd integer reaches }1;\\\\\n \\text{the canonical fixed-loop map }R/(1-uv)\\to Q_{\\rm abs}\\text{ is an isomorphism};\\\\\n \\mathcal T=0\\text{ and }\\mathcal F=0;\\\\\n \\ker(\\bar d:A[[u]]/M\\to A[[u]]/M)=0;\\\\\n A=\\bigcup_{N\\ge0}\\ker S^N.\n \\end{gathered}} \\tag{17}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n_N=2^{N+1}-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "T^j(n_N)=3^j2^{N+1-j}-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S^NV_{n_N}=V_{2\\cdot3^N-1}\\ne0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal F=0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal S_p=\\{n=r_p+2Ut\\ge3:\\ t\\in\\mathbb Z,\\ D_jn\\le C_j\\ (1\\le j\\le|p|)\\}. \\tag{18}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal S_{pa}\\subseteq\\mathcal S_p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_{j+1}=r_j+2^{A_j+1}b_j"
+  }
+]

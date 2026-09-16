@@ -1,0 +1,13 @@
+{"original_singleton_witnesses": 1024, "sha256": "01203cd57c0fbad41c7d767467109ee93aaf0e4046bc164e605e3e817554fa83", "status": "PASS", "total_checks": 39211}
+{"original_singleton_witnesses": 1024, "sha256": "01203cd57c0fbad41c7d767467109ee93aaf0e4046bc164e605e3e817554fa83", "status": "PASS", "total_checks": 39211}
+{"exact_checks_per_run": 39211, "ordinary_optimized_byte_identical": true, "status": "PASS"}
+{"status": "PASS", "exact_checks": 87989, "sha256": "bfd279ba233d6d5e6f690f9f03fb8563dcbb50d42de87f4fca23a55bae179572", "bytes": 10174}
+{"status": "PASS", "exact_checks": 87989, "sha256": "bfd279ba233d6d5e6f690f9f03fb8563dcbb50d42de87f4fca23a55bae179572", "bytes": 10174}
+{
+  "families": 512,
+  "imports_predecessor": false,
+  "independently_audited_affine_equations": 24180,
+  "ledger_sha256": "8a7e14e120fe6c21ef766f1210872d31174f25419bf775cbb17e4aff6e72613f",
+  "status": "PASS"
+}
+{"status": "PASS", "original_source_files_checked": 11, "ordinary_optimized_identical": true, "independent_all_row_audit_matched": true, "original_firstjet_pair_run": true, "full_historical_repository_replay": false}

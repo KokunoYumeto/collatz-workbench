@@ -1,0 +1,122 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\log|\\Lambda|>\n-1.4\\,30^{k+3}k^{4.5}(1+\\log B)\\prod_i h(\\gamma_i),\n\\quad B\\ge\\max_i|b_i|.\n\\tag{L1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\Lambda=2^A3^{-m}-1>0,\n\\quad A>m\\ge1,\n\\quad B=A.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n1.4\\,30^5\\,2^{4.5}\\log2\\log3\n<\\frac{14}{10}30^5\\,24\\frac7{10}\\frac{11}{10}\n=628689600<10^9.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\\log\\Lambda>-C_*(1+\\log A).}\n\\tag{L2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n2\\sum_{j=0}^{N-1}\\frac{z^{2j+1}}{2j+1}\n<\\log x\n<2\\sum_{j=0}^{N-1}\\frac{z^{2j+1}}{2j+1}\n+\\frac{2z^{2N+1}}{(2N+1)(1-z^2)}.\n\\tag{L3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\gamma_-:=l_3/u_2<\\gamma:=\\log3/\\log2<\\gamma_+:=u_3/l_2.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\frac{83130157078217}{52449289519716}\n<\\gamma_-<\\gamma_++2^{-128}\n<\\frac{350861368503572}{221368876767703}.\n\\tag{L4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n350861368503572\\cdot52449289519716\n-83130157078217\\cdot221368876767703=1,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n52449289519716+221368876767703\n=273818166287419>226\\cdot10^{12}.\n\\tag{L5}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{\n0<A/m-\\gamma<2^{-128},\\quad 1\\le m\\le226\\cdot10^{12}\n\\quad\\text{has no integral solution }(A,m).\n}\n\\tag{L6}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nD_2(a,b)=2^{a+2b}-3^{a+b},\\qquad a,b\\ge1.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{D_2(a,b)>3^a-2^a.}\n\\tag{L7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\na<b<\\lceil3a/2\\rceil,\\quad\nm=a+b<5a/2,\\quad A=a+2b<4a.\n\\tag{L8}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n0<\\Lambda=D_2/3^{a+b}<3^{-b}<3^{-a}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\na<C_*(1+\\log(4a)).\n\\tag{L9}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n0<A/m-\\gamma\n=\\frac{\\log(1+\\Lambda)}{m\\log2}\n<2\\,3^{-b}/m\n<2\\,3^{-128}<2^{-128}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{2^{a+2b}>3^{a+b}.}\n\\tag{L10}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n3^a t-1=4^b z,\\quad z\\ge1,\n\\qquad n-y=2\\left(\\frac{D_2z+2^a}{3^a}-1\\right).\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nn=2^{a+1}t-1,\\qquad t>0\\text{ odd}.\n\\tag{L11}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nt_a=\\text{least positive odd integer at least }(s_0+1)/2^{a+1},\n\\qquad s_a=2^{a+1}t_a-1.\n\\tag{L12}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\widetilde s_a=2^{a+1}\\widetilde t_a-1.\n\\tag{L12a}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\boxed{m>226a,}\n\\tag{L13}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n0<\\delta:=A\\log2-m\\log3\n=\\sum_{i=1}^m\\log\\left(1+\\frac1{3x_i}\\right)\n\\le\\frac{m}{3\\widetilde s_a}.\n\\tag{L14}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\Lambda<226a\\,2^{-a}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\na\\log2<C_*(1+\\log(452a))+\\log(226a).\n\\tag{L15}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\log(452a_0)<36,\\qquad a_0/2>37C_*+36,\n\\quad a_0>2(C_*+1),\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n0<A/m-\\gamma\\le\\frac1{3\\widetilde s_a\\log2}<2^{-a}\\le2^{-128},\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n\\gamma_++\\frac1{3\\widetilde s_a l_2}<\\frac{r_a}{s'_a}.\n\\tag{L16}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n(6/5)^m\\le2^a.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\nd_\\epsilon(\\epsilon B_p(n))=\\epsilon V_n-\\epsilon V_{g_p(n)}.\n"
+  }
+]

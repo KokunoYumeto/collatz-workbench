@@ -1,0 +1,1366 @@
+[
+  {
+    "kind": "DisplayMath",
+    "text": "\n T(n)=\\frac{3n+1}{2^{\\nu_2(3n+1)}}\\qquad(n\\in X:=\\{1,3,5,\\ldots\\}).\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p=(a_1,\\ldots,a_m)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n A_i=\\sum_{j=1}^i a_j,\\quad A_0=0,\\quad\n U=2^{A_m},\\quad L=3^m,\\quad D=U-L,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C=\\sum_{i=1}^m3^{m-i}2^{A_{i-1}},\\qquad\n F_p(x)=\\frac{Lx+C}{U}.\n \\tag{1.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D\\ne0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\gcd(D,6)=1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n K_p=[\\mathbb Z^m\\xrightarrow{B_p}\\mathbb Z^m],\\qquad\n (B_px)_i=2^{a_i}x_{i+1}-3x_i,\\quad x_{m+1}=x_1.\n \\tag{1.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{a_1}-3"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal F_p(y)=\\sum_{i=1}^m3^{m-i}2^{A_{i-1}}y_i.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal F_pB_p=D\\,e_1^t,\\qquad\n \\det B_p=(-1)^{m-1}D,\n \\tag{1.3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H^0(K_p)=0,\\qquad H^1(K_p)\\xrightarrow[\\mathcal F_p]{\\ \\simeq\\ }\\mathbb Z/D\\mathbb Z,\n \\qquad[\\mathbf1]\\longmapsto[C].\n \\tag{1.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B_px=\\mathbf1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n x_i=\\frac{C(p_i)}D,\n \\tag{1.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a_i"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n q(p)=\\frac{|D|}{\\gcd(|D|,C)}=\\operatorname{ord}([C]).\n \\tag{1.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal F_p(B_px)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Ux_1-Lx_1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m\\ge2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(-1)^{m-1}(U-L)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal F_p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3^{m-1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{A_{m-1}}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal F_p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z/D\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "|D|"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H^0=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x_1=C/D"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 2^{a_i}C(p_{i+1})=3C(p_i)+D.\n \\tag{1.7}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal F_pu=1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n f^0=e_1^t,\\quad f^1=\\mathcal F_p,\\qquad\n s^0=D B_p^{-1}u,\\quad s^1=u,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n h=B_p^{-1}(I-u\\mathcal F_p).\n \\tag{1.8}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K_p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[\\mathbb Z\\xrightarrow D\\mathbb Z]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Du"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "I-u\\mathcal F_p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B_p"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n fs=I,\\qquad B_ph=I-u\\mathcal F_p,\\qquad\n hB_p=I-s^0e_1^t.\n \\tag{1.9}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\begin{pmatrix}L&C\\\\0&U\\end{pmatrix}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z[t]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t-U"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\operatorname{Ext}^1_{\\mathbb Z[t]}(\\mathbb Z_U,\\mathbb Z_L)\n \\simeq \\mathbb Z/D\\mathbb Z.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "C-Dn"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n=C/D"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Q"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "N"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B_px=\\mathbf1\\pmod N"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\begin{cases}\n \\gcd(D,N) &\\text{when }\\gcd(D,N)\\mid C,\\\\\n 0&\\text{otherwise}\n \\end{cases}\n \\tag{1.10}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z/N\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Dz=C"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p=(1,1,2,4,3)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n D=1805=5\\cdot19^2,\\quad C=475=5^2\\cdot19,\\quad q=19.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(5,17,35,31,7)/19"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(0,10,6,0,6)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,-1,-1,5,-1)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal F_p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-25\\not\\equiv0\\pmod{19}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n(v)=r+2Uv,\\qquad 1\\le r<2U,\\qquad\n r\\equiv(U-C)L^{-1}\\pmod{2U}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n y(v)=u+2Lv,\\qquad u=(Lr+C)/U.\n \\tag{2.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v\\ge0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "u"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n z_0=(r-1)/2,\\quad z_1=(u-1)/2,\\quad k=z_1-z_0=(u-r)/2.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x\\mapsto(x-1)/2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "z\\mapsto2z+1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (z_0+Uv,z_1+Lv).\n \\tag{2.2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n P_p=[\\mathbb Z\\xrightarrow{v\\mapsto(Uv,Lv)}\\mathbb Z^2].\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n P_p\\longrightarrow[\\mathbb Z\\xrightarrow U\\mathbb Z],\\quad (s,t)\\mapsto s,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n P_p\\longrightarrow I_p:=[\\mathbb Z\\xrightarrow L\\mathbb Z],\\quad(s,t)\\mapsto t,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n P_p\\longrightarrow R_p:=[\\mathbb Z\\xrightarrow D\\mathbb Z],\\quad(s,t)\\mapsto s-t.\n \\tag{2.3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n(v)=y(v)\\quad\\Longleftrightarrow\\quad Dv=k.\n \\tag{2.4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C=Dr+2Uk,\\qquad [C]=2U[k]\\text{ in }\\mathbb Z/D\\mathbb Z.\n \\tag{2.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2U"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r+2U(k/D)=C/D.\n \\tag{2.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(U,L)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(n-y)/2=Dv-k"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Uu=Lr+C"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z/L\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z/D\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\lambda(s,t)=Ls-Ut.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-U^{-1}\\pmod L"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "L^{-1}\\pmod D"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\lambda(s,t)\\equiv-Ut\\pmod L,\n \\qquad \\lambda(s,t)\\equiv L(s-t)\\pmod D.\n \\tag{2.7}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_i"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n E_p=[\\mathbb Z^s\\longrightarrow\\mathbb Z^3],\\qquad\n e_i\\longmapsto(1,z_0+Uv_i,z_1+Lv_i).\n \\tag{2.8}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,z_1+Lv_i)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n E_p\\longrightarrow P_p,\\qquad e_i\\mapsto v_i,\n\\quad (a,s,t)\\mapsto(s-z_0a,t-z_1a).\n \\tag{2.9}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(Uv_i,Lv_i)=(Uv_i,Lv_i)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n D>0\\quad\\text{and}\\quad [C]=0\\text{ in }\\mathbb Z/D\\mathbb Z.\n \\tag{3.1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n y_i=x_i-1.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n B_py=b_p,\\qquad (b_p)_i=4-2^{a_i}.\n \\tag{3.2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n x_i=1\\ (\\text{all }i),\\qquad y=0,\\qquad b_p=0,\n \\qquad a_i=2\\ (\\text{all }i).\n \\tag{3.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x_i\\ge3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "y_i\\ge2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[C]=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3x_i+1=2^{a_i}x_{i+1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a_i"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B_p\\mathbf1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{a_i}-3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "B_p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b_p=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "y=0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\mathcal F_p(b_p)=C-D,\n \\tag{3.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "C"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,3)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(2,2)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D=7"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H^1(K_p)=\\mathbb Z/7\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[5]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[0]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,1)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p=q^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "q"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "U_q,L_q,C_q,D_q"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n S_r=\\sum_{j=0}^{r-1}U_q^{r-1-j}L_q^j.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n D_p=S_rD_q,\\qquad C_p=S_rC_q.\n \\tag{3.5}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n [\\mathbb Z\\xrightarrow{D_q}\\mathbb Z]\n \\longrightarrow[\\mathbb Z\\xrightarrow{D_p}\\mathbb Z]\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,S_r)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "[z]\\mapsto[S_rz]"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S_r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x>1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a\\ge2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n\\ge3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(3n+1)/2"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\frac{3((3n+1)/2)+1}{8}=\\frac{9n+5}{16}<n,\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p=(1,2,\\ldots,2)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n D=2\\cdot4^{m-1}-3^m,\\qquad C-D=2\\cdot3^{m-1}.\n \\tag{3.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\gcd(D,6)=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "|D|=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m=1,2"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D=-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m=3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D=5"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_{m+1}=4D_m+3^m> D_m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v_n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n\\in X"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "T(n)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\partial e_n=v_n-v_{T(n)}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v_1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C_1^{\\rm rel}=\\bigoplus_{n\\in X\\setminus\\{1\\}}\\mathbb Ze_n,\n \\qquad C_0^{\\rm rel}=\\bigoplus_{n\\in X\\setminus\\{1\\}}\\mathbb Zv_n,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\partial e_n=v_n-v_{T(n)},\\qquad v_1=0.\n \\tag{4.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_1,v_1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "x"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n i\\longmapsto x_i,\\qquad (i\\to i+1)\\longmapsto e_{x_i}.\n \\tag{4.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v_i\\mapsto v_{x_i}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_i\\mapsto e_{x_i}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n c_p=\\sum_{i=1}^m e_{x_i}\\ne0,\\qquad\\partial c_p=0.\n \\tag{4.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "R(x)_i=x_{i+1}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\delta=I-R"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n B_p\\operatorname{diag}(x_i)\n =I-\\operatorname{diag}(3x_i+1)\\delta.\n \\tag{4.4}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{a_i}x_{i+1}=3x_i+1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "a\\sim b"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal B"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal C"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H_0(C^{\\rm rel})\\simeq\\bigoplus_{B\\in\\mathcal B}\\mathbb Z,\n \\qquad\n H_1(C^{\\rm rel})\\simeq\\bigoplus_{C\\in\\mathcal C}\\mathbb Z.\n \\tag{4.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal B"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v_n-v_{T(n)}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathcal B"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n C^0_{\\rm rel}=\\{f:X\\to\\mathbb Z:f(1)=0\\},\\qquad\n C^1_{\\rm rel}=\\{g:X\\setminus\\{1\\}\\to\\mathbb Z\\},\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (\\delta f)(n)=f(n)-f(T(n)).\n \\tag{4.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbb Z"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H^0_{\\rm rel}\\simeq\\prod_{B\\in\\mathcal B}\\mathbb Z,\n \\qquad\n H^1_{\\rm rel}\\simeq\\prod_{C\\in\\mathcal C}\\mathbb Z.\n \\tag{4.7}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\operatorname{per}_C(g)=\\sum_{n\\in C}g(n).\n \\tag{4.8}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_0,r_1,\\ldots"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f(r_0)=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f(r_{j+1})=f(r_j)-g(r_j)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "g"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f(1)=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H^0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H^1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\eta(n)=1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\text{every }n\\in X\\text{ reaches }1;\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H_0(C^{\\rm rel})=0;\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\text{for each }n>1,\\quad v_n\\text{ is the boundary of a finite integer edge chain};\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\text{there exists }h:X\\to\\mathbb Z_{\\ge0},\\quad h(1)=0,\n \\quad\\delta h=\\eta.\n \\tag{5.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H(v_n)=\\sum_{j=0}^{\\tau(n)-1}e_{T^j(n)},\\qquad\n \\partial H(v_n)=v_n.\n \\tag{5.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h(n)=\\tau(n)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h(T^j(n))=h(n)-j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "j>h(n)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\tau"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\eta"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "f(r_j)=f(r_0)-j"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n P(v_n)=v_{T(n)},\\qquad v_1=0.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\partial=I-P"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n (I-tP)^{-1}v_n=\\sum_{j\\ge0}t^jP^jv_n.\n \\tag{5.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "t=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n>1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p_n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "d(n)=T^{|p_n|}(n)<n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n b_n=\\sum_{j=0}^{|p_n|-1}e_{T^j(n)},\\qquad\n \\partial b_n=v_n-v_{d(n)}.\n \\tag{6.1}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r(1)=1,\\quad H(v_1)=0;\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r(n)=n,\\quad H(v_n)=0\\quad\\text{for an unlisted }n;\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r(n)=r(d(n)),\\quad H(v_n)=b_n+H(v_{d(n)})\n \\quad\\text{for a listed }n.\n \\tag{6.2}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Q(v_n)=v_{r(n)},\\qquad\n F=I-H\\partial\\quad\\text{on }C_1^{\\rm rel}.\n \\tag{6.3}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\partial H=I-Q,\\quad HQ=0,\\quad Q^2=Q,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\partial F=Q\\partial,\\quad F^2=F,\\quad I-F=H\\partial.\n \\tag{6.4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n [\\operatorname{im}F\\xrightarrow{\\partial}\\operatorname{im}Q]\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(F,Q)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\partial c=0\\quad\\Longrightarrow\\quad Fc=c.\n \\tag{6.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\partial H(v_n)=v_n-v_{r(n)}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H(v_{r(n)})=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r(r(n))=r(n)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\partial F=\\partial-\\partial H\\partial\n =\\partial-(I-Q)\\partial=Q\\partial.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H\\partial H=H(I-Q)=H"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n F^2=I-2H\\partial+H\\partial H\\partial=I-H\\partial=F.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\operatorname{Hom}(-,\\mathbb Z)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\partial c=0"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n T_{-}(n)=\\frac{3n-1}{2^{\\nu_2(3n-1)}}.\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 5\\xrightarrow{a=1}7\\xrightarrow{a=2}5.\n \\tag{6.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D=-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-\\mathbf1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\mathbf1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(5,7)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n T_{-}(n)=-T_{+}(-n),\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3(-n)+1=-(3n-1)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "7\\to5"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n H(v_7)=e_7,\\quad H(v_5)=0,\\quad Q(v_7)=Q(v_5)=v_5,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n F(e_7)=0,\\qquad F(e_5)=e_5+e_7,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n F(e_5+e_7)=e_5+e_7.\n \\tag{6.7}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_5"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "e_7"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n 247\\to371\\to557\\to209\\to157\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v_{247}-v_{157}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "v_{247}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H\\ge0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r_H,\\quad h_H:C_0^{\\rm rel}\\to C_1^{\\rm rel},\\quad\n Q_H,\\quad F_H=I-h_H\\partial.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K\\ge H"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r_K(r_H(n))=r_K(n),\\qquad r_H(r_K(n))=r_K(n),\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n h_K=h_H+h_KQ_H,\\qquad h_HQ_K=0,\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Q_KQ_H=Q_HQ_K=Q_K,\\qquad F_KF_H=F_HF_K=F_K.\n \\tag{6.8}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_H(n)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h_H(v_n)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_\\infty(n)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h_\\infty(v_n)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n Q_\\infty(v_n)=v_{r_\\infty(n)},\\qquad\n F_\\infty=I-h_\\infty\\partial,\n \\tag{6.9}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F_\\infty"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r_\\infty(n)=1\n \\quad\\Longleftrightarrow\\quad\n r_H(n)=1\\text{ for some finite }H\n \\quad\\Longleftrightarrow\\quad n\\text{ reaches }1.\n \\tag{6.10}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h_K=h_H+h_KQ_H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "K"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h_HQ_K=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "Q"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "\\partial h_H=I-Q_H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "h_HQ_K=0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(I-h_K\\partial)(I-h_H\\partial)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "I-h_K\\partial"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F_\\infty c=c-h_\\infty\\partial c=c"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n\\ge3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F_p(n)=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F_p"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F_p(3)\\le F_p(n)=1<3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H\\ge1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n_H=2^{H+1}-1\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S\\subset X\\setminus\\{1\\}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n V_S=\\{1\\}\\cup S\\cup T(S),\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "S\\cup\\{1\\}"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H_1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H_0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "3\\to5"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "H_0=\\mathbb Z"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "5\\to1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "2^{A_m+1}"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r_{m+1}=r_m+2^{A_m+1}b_m,\\qquad b_m\\in\\mathbb Z_{\\ge0}.\n \\tag{7.1}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "b_m"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n \\text{the infinite word is realized by a positive integer}\n \\quad\\Longleftrightarrow\\quad (r_m)\\text{ is bounded in }\\mathbb R\n \\quad\\Longleftrightarrow\\quad r_m\\text{ is eventually constant}.\n \\tag{7.2}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_m=n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "A_m\\ge m"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(1,1,\\ldots)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r_m=2^{m+1}-1,\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "-1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(2,2,\\ldots)"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r_m=1"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "p^\\infty"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "C/D"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n n=2^ku-1,\\qquad k=\\nu_2(n+1)\\ge1,\\quad u\\ge1\\text{ odd}.\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "0\\le j\\le k-1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n T^j(n)=3^j2^{k-j}u-1.\n \\tag{7.3}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "k-1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n r=\\nu_2(3^ku-1),\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "r+1"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n y=\\frac{3^ku-1}{2^r}.\n \\tag{7.4}\n"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n y<n\\quad\\Longleftrightarrow\\quad\n (2^{k+r}-3^k)u>2^r-1.\n \\tag{7.5}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s\\ge3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "s"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(D_j,C_j)"
+  },
+  {
+    "kind": "DisplayMath",
+    "text": "\n D_js\\le C_j.\n \\tag{7.6}\n"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_j>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_j\\le0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "C_j>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "F_j(3)\\ge3"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_j>0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "C_j\\ge D_js\\ge3D_j"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "D_j\\le0"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "(2)^r"
+  },
+  {
+    "kind": "InlineMath",
+    "text": "1\\le r\\le10"
+  }
+]

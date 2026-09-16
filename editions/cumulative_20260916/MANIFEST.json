@@ -1,0 +1,520 @@
+{
+  "scope": "Current GitHub reading edition; original delivery has its own separate manifest.",
+  "files": [
+    {
+      "path": "AMENDMENTS.json",
+      "bytes": 16407,
+      "sha256": "b2bee5b0f234dfd12638237f77d5d0e235caa2ae023e3f371bfc50d8a3748ba5"
+    },
+    {
+      "path": "CONVERSION_VALIDATION.json",
+      "bytes": 2805,
+      "sha256": "4f60ce7cc07dcff8a23d8cfdc2c3740622685f712e0a9fc85d22ccf0a070a94f"
+    },
+    {
+      "path": "EDITORIAL_QA.json",
+      "bytes": 1700,
+      "sha256": "fe5dd42c88f99eb214c97f5e0cc0b2b9d90613931e33b46cb43e7e9fcea8028b"
+    },
+    {
+      "path": "PUBLICATION_NOTES.md",
+      "bytes": 4245,
+      "sha256": "d48dd5ab2d12d6f4c89142b105182762e3387f0d02e3b734aefa0cb2bff89a53"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4619,
+      "sha256": "f6d1068223dfa5516e4088da1d6cbd14062a487b3bc17249c3d3f96f0cec26cd"
+    },
+    {
+      "path": "RESULTS_INDEX.md",
+      "bytes": 5728,
+      "sha256": "90093d9a5df86c0b9bbd0ef43dac2d8089cac22591bf4edd68fe2c058048ce06"
+    },
+    {
+      "path": "evidence/ALL_EVEN_LOCAL_REPLAY.txt",
+      "bytes": 1110,
+      "sha256": "6ed16e0873a7519fccc50664bf4e16e8b0df5cbc251e9760647e53ec8127f38b"
+    },
+    {
+      "path": "evidence/APPLIED_PATCH_REPLAY.txt",
+      "bytes": 1110,
+      "sha256": "6ed16e0873a7519fccc50664bf4e16e8b0df5cbc251e9760647e53ec8127f38b"
+    },
+    {
+      "path": "evidence/EXPLORATORY_ALL_EVEN_FAMILY_SEARCH.json",
+      "bytes": 17659,
+      "sha256": "867f1b24e290737cf0456e853fb839932433fac578b70d5433d5bec96faa2552"
+    },
+    {
+      "path": "evidence/INTEGRATOR_TESTS.txt",
+      "bytes": 306,
+      "sha256": "67333794d2a2a44d46ce3699a9562d735f3afa0c59e4e0d10b3c1fe9b85f3a31"
+    },
+    {
+      "path": "evidence/LATEX_COMPILE_LOG.txt",
+      "bytes": 14563,
+      "sha256": "3a4dfb3d58b0b6bb9462357a8619f78a42be619fe324b0c71b0a76af69c122fa"
+    },
+    {
+      "path": "evidence/OVERLAY_DRY_RUN.json",
+      "bytes": 1389,
+      "sha256": "232ac7a80dd55e8a33e57cc9a13e5ec961329929dced105a436f7cc2a0b09f7c"
+    },
+    {
+      "path": "evidence/PATCH_TEST.json",
+      "bytes": 1658,
+      "sha256": "94eda2d664385f8129fab3630e160196580a6fef8f9b3f0e9451afa1c34925a6"
+    },
+    {
+      "path": "evidence/PDF_RENDER_AUDIT.json",
+      "bytes": 1271,
+      "sha256": "47277f4f35902c68231e29f4cd1dd40e8e9e941edb8be968f8e2b382741f86ae"
+    },
+    {
+      "path": "latex/CONVERSION_RECEIPT.json",
+      "bytes": 6541,
+      "sha256": "078621ef1281100d632022b1eeea300dc1004e25dce9c0def8a67694bd79f27f"
+    },
+    {
+      "path": "latex/FRONT_MATTER.tex",
+      "bytes": 7411,
+      "sha256": "cb2d944af927b7953ffc1e095b62a61be7f301efdf3cd8c3aef00bceb0f3b8f0"
+    },
+    {
+      "path": "latex/READER_REPAIRS.json",
+      "bytes": 5496,
+      "sha256": "a0b6f111233e978cbd43385cbf380d730a37f35a2ef0d14915155af78c7ed1dc"
+    },
+    {
+      "path": "latex/README.md",
+      "bytes": 1677,
+      "sha256": "d27b56cc526d10ff9dc13e8c626eb2ca34c07e870b3e0c5732717e079bb1c7dc"
+    },
+    {
+      "path": "latex/SOURCE_MAP.json",
+      "bytes": 12153,
+      "sha256": "905d4853a372290c1c30bbcb22c559b326d5157a07f80e21759b144b5f8d141b"
+    },
+    {
+      "path": "latex/SOURCE_MAP_INPUT.json",
+      "bytes": 9693,
+      "sha256": "c3e68014df03a6ecf5047eb91fd8832731ecdb044ffd9d348b0d2e3eccb6e53a"
+    },
+    {
+      "path": "latex/chapters/01_history_law_cutoff_20260914_RESEARCH_NOTE.math.json",
+      "bytes": 13851,
+      "sha256": "15ea0272148180a2571092d69abe0ec48e03126cef48168b324d5689b4aeb863"
+    },
+    {
+      "path": "latex/chapters/01_history_law_cutoff_20260914_RESEARCH_NOTE.tex",
+      "bytes": 20829,
+      "sha256": "f7a45ff327846c84cea141dd8ed69c8b38846c6db913d7353671ed6ce426a2f9"
+    },
+    {
+      "path": "latex/chapters/02_stopped_affine_transport_20260914_note.math.json",
+      "bytes": 40673,
+      "sha256": "d045c3f0cb1f1da090b843c9ca3433736cd831ce9a8a3042e9e2896b2182487d"
+    },
+    {
+      "path": "latex/chapters/02_stopped_affine_transport_20260914_note.tex",
+      "bytes": 64003,
+      "sha256": "8283cba22a36c1df8f67e264158dc1cca0d8afb84bea1c431dac0eb9c3601a44"
+    },
+    {
+      "path": "latex/chapters/03_cycle_relative_cohomology_20260914_note.math.json",
+      "bytes": 25876,
+      "sha256": "046c753aea3dc7597f7bf00d0fcdfc8afb3d26e2b19efec6042d3cfcdf3f94a8"
+    },
+    {
+      "path": "latex/chapters/03_cycle_relative_cohomology_20260914_note.tex",
+      "bytes": 45255,
+      "sha256": "5c4adc8c280dab7ce59e30efa9f81383edaa4a58155089934be30dccb8921a25"
+    },
+    {
+      "path": "latex/chapters/04_residual_splice_20260914_note.math.json",
+      "bytes": 12427,
+      "sha256": "b11e403824521beaa98912e7a5546ec956795dbed60324060fd29db7508662a6"
+    },
+    {
+      "path": "latex/chapters/04_residual_splice_20260914_note.tex",
+      "bytes": 22044,
+      "sha256": "3953835b3bf300d161c9be6ebb8dcf50c7fb30c6a083ed1c7a00fbc64bda8729"
+    },
+    {
+      "path": "latex/chapters/05_residual_splice_20260914_integral_blocks.math.json",
+      "bytes": 8748,
+      "sha256": "fea602e49f72daf1d3b98a6c76e8ab202670c140e07f369addd2af1848f385cd"
+    },
+    {
+      "path": "latex/chapters/05_residual_splice_20260914_integral_blocks.tex",
+      "bytes": 11522,
+      "sha256": "813185abf3bd4a56e9f68242b5c6d4879bc0d6971373b7022f1b8d5bdf87d119"
+    },
+    {
+      "path": "latex/chapters/06_clocked_support_20260914_note.math.json",
+      "bytes": 11544,
+      "sha256": "6e5c910fef067a1e588612fac5d6285a0c4a7174bb33ef5cbb707b55d69c1c43"
+    },
+    {
+      "path": "latex/chapters/06_clocked_support_20260914_note.tex",
+      "bytes": 37268,
+      "sha256": "f48ea3cea19a74398debd95ea9486f0606e5ddf472e852f5617d9f2f52642569"
+    },
+    {
+      "path": "latex/chapters/07_completion_defect_20260914_note.math.json",
+      "bytes": 19521,
+      "sha256": "36aee50b987673ae20aa568e7fe246550076f29a7472b407d610ab36e4f34198"
+    },
+    {
+      "path": "latex/chapters/07_completion_defect_20260914_note.tex",
+      "bytes": 34472,
+      "sha256": "c78fa7711b3f2a0d69e66f3a6ed1b5e3058eadfcec1dbcc0e976c5a6a82e4726"
+    },
+    {
+      "path": "latex/chapters/08_supported_structure_20260915_note.math.json",
+      "bytes": 9671,
+      "sha256": "d9dd8300084db70204d3c9d68a8a197b40b21e827bf89d87178443b1a2315113"
+    },
+    {
+      "path": "latex/chapters/08_supported_structure_20260915_note.tex",
+      "bytes": 35082,
+      "sha256": "8757563dee41e8b9c827fdff8903f7740f087ec5e62d21977ee63df70e6239d4"
+    },
+    {
+      "path": "latex/chapters/09_intrinsic_zero_firstjet_20260915_note.math.json",
+      "bytes": 6354,
+      "sha256": "25be0d90ff7fd99b73a5b39eb09e7df4852b4f6b9a392351bd07f4ea53dd9a19"
+    },
+    {
+      "path": "latex/chapters/09_intrinsic_zero_firstjet_20260915_note.tex",
+      "bytes": 34150,
+      "sha256": "0e60c969bff80657f99ff31352a4bbd246befccfe765cfa91f326902bd1840d0"
+    },
+    {
+      "path": "latex/chapters/10_anchored_defect_20260914_note.math.json",
+      "bytes": 3534,
+      "sha256": "8c3e1d36a63dae59bf75a946395ca49050fcc48ae1e4f81001c8aacf41c19a0f"
+    },
+    {
+      "path": "latex/chapters/10_anchored_defect_20260914_note.tex",
+      "bytes": 22469,
+      "sha256": "f758f1ff3cd9b463fc7b24746e9fc5757df1b944753c2780625b7da606783a8f"
+    },
+    {
+      "path": "latex/chapters/11_anchored_defect_20260914_turns_and_unit_excess.math.json",
+      "bytes": 1599,
+      "sha256": "041db3362d74ebb702a25f0c5714fdd03168ee677c89e6b814d9627244278b10"
+    },
+    {
+      "path": "latex/chapters/11_anchored_defect_20260914_turns_and_unit_excess.tex",
+      "bytes": 10035,
+      "sha256": "392d7079e69e68f507961c5e5a0c2d957be651b0facc05e9b2afd3e5aac7823f"
+    },
+    {
+      "path": "latex/chapters/12_defect_rank_descent_20260915_note.math.json",
+      "bytes": 6105,
+      "sha256": "166e5a3393d6d37b56dcf99eeee949f521e3b43c9b40decfc4a231b1c7510a9a"
+    },
+    {
+      "path": "latex/chapters/12_defect_rank_descent_20260915_note.tex",
+      "bytes": 38217,
+      "sha256": "e88fe047b58fce8279213ab92b7e20a69344dd2a328ce7d241f7170670faccf5"
+    },
+    {
+      "path": "latex/chapters/13_defect_rank_descent_20260915_logarithmic_run_exclusion.math.json",
+      "bytes": 3713,
+      "sha256": "9886fea9c166e0ce99ba67813b207cbb316d6d6633b1a8d347139f665891741e"
+    },
+    {
+      "path": "latex/chapters/13_defect_rank_descent_20260915_logarithmic_run_exclusion.tex",
+      "bytes": 18043,
+      "sha256": "274577eb53615743912f514c95320a8e03607ddb7502b6854b31219aebaaeb28"
+    },
+    {
+      "path": "latex/chapters/14_negative_shadow_descent_20260916_note.math.json",
+      "bytes": 18412,
+      "sha256": "f9722ed7f8ebe02d3c1192f1ac8344ba7b2d9e823fcbecb5439faf8d4c7284b7"
+    },
+    {
+      "path": "latex/chapters/14_negative_shadow_descent_20260916_note.tex",
+      "bytes": 27691,
+      "sha256": "f00e6e8a8fbe6dc7731ce2f9383f46c9cba8aa13557838d40c69621f8e4abcea"
+    },
+    {
+      "path": "latex/chapters/15_mixed_switch_control_20260916_note.math.json",
+      "bytes": 11094,
+      "sha256": "b864ca3889f1050c37281f96932ef5a49a223f4d30861276531ee6265a156634"
+    },
+    {
+      "path": "latex/chapters/15_mixed_switch_control_20260916_note.tex",
+      "bytes": 30749,
+      "sha256": "9f12afe4f9fc3185c7672fa06cf5b885aff5e7001c2122538e9168fec3cd43f8"
+    },
+    {
+      "path": "latex/chapters/16_global_cylinder_control_20260916_note.math.json",
+      "bytes": 4952,
+      "sha256": "cb0ce45625331d95e0e183260b527e114b73a2bc0aa573046f1e20cd6d28f9b4"
+    },
+    {
+      "path": "latex/chapters/16_global_cylinder_control_20260916_note.tex",
+      "bytes": 25833,
+      "sha256": "45cd1644e4db9798897a19ba34f2f6593f90aa05697c7173cf37498976d1f2bb"
+    },
+    {
+      "path": "latex/chapters/17_height_window_reduction_20260916_note.math.json",
+      "bytes": 12131,
+      "sha256": "df116108a3f89eef7ebd24027c288d09102655b3ea325757302bc6623675b26c"
+    },
+    {
+      "path": "latex/chapters/17_height_window_reduction_20260916_note.tex",
+      "bytes": 33510,
+      "sha256": "122d8f1bdc34211efd77e96c870b5da687c23f45f0677daecfa0b50b706a59be"
+    },
+    {
+      "path": "latex/chapters/18_ternary_join_reduction_20260916_note.math.json",
+      "bytes": 5144,
+      "sha256": "30b59172334e0aaf2acd86ee660a3ba5d5c0a89431393329462d70ddf40b810f"
+    },
+    {
+      "path": "latex/chapters/18_ternary_join_reduction_20260916_note.tex",
+      "bytes": 28042,
+      "sha256": "8fa5e167370e380b0c5449524c446a3ff7aac1393f9d67a18078e8d8607010f2"
+    },
+    {
+      "path": "latex/chapters/19_bilateral_root_bounds_20260916_note.math.json",
+      "bytes": 7563,
+      "sha256": "ab5380f8ff20f16ae5fb4161cb22c63dd65fb83bb4a6bea37ae63de496d19998"
+    },
+    {
+      "path": "latex/chapters/19_bilateral_root_bounds_20260916_note.tex",
+      "bytes": 37911,
+      "sha256": "4e6d926d98704642bfccf67b140da463d2310da701219874f44a63aa18909deb"
+    },
+    {
+      "path": "latex/chapters/20_all_even_join_extension_20260916_note.math.json",
+      "bytes": 7271,
+      "sha256": "0af0d79dd7a6ff3fec5cd22e55f0596995f72eac0d7d8905bea0d47e44916c50"
+    },
+    {
+      "path": "latex/chapters/20_all_even_join_extension_20260916_note.tex",
+      "bytes": 20731,
+      "sha256": "ee524faee78939a93b666ad9d53e96d08641a79b8e49636829e8974208e09036"
+    },
+    {
+      "path": "latex/main.pdf",
+      "bytes": 951000,
+      "sha256": "26bcfcc5b759401164286a43f54754a6f8bb5c327c6960c3c30dbb50e85c7cd9"
+    },
+    {
+      "path": "latex/main.tex",
+      "bytes": 8658,
+      "sha256": "52550d1aa0d8540eba6529e8d2361e6b2bf50d438e02c01b035c250c9337a4db"
+    },
+    {
+      "path": "original_delivery/ALL_EVEN_ADDITION.patch",
+      "bytes": 141659,
+      "sha256": "18b859765bf945c8ded0454a33cc836a380ac32f0448fd15ffb27e697fd28ff9"
+    },
+    {
+      "path": "original_delivery/DELIVERY_RECEIPT.json",
+      "bytes": 3395,
+      "sha256": "d2ce89e3a8389f5447b557bbe99eb2c3dea5234b3241cc6b07fddc2325654ef3"
+    },
+    {
+      "path": "original_delivery/MANIFEST.json",
+      "bytes": 58738,
+      "sha256": "9177e2aa1764713f6910c1a7d867fe6440ec3749d0335df4a2097bbb3a663590"
+    },
+    {
+      "path": "original_delivery/README.md",
+      "bytes": 6367,
+      "sha256": "d8ffff6c442e80f55585f97526c0d072c65acf8424de3aa7bed0cd26672fc5d2"
+    },
+    {
+      "path": "original_delivery/tools/apply_overlay.py",
+      "bytes": 1957,
+      "sha256": "e41f119195a15643ad10cb75c3687468220ef3a1ad44398eba39bf2ea588ee26"
+    },
+    {
+      "path": "original_delivery/tools/build_latex.py",
+      "bytes": 10617,
+      "sha256": "75890972d139468b0637923044eae45285f45c664d01b7d60cb5eb5af9bd624e"
+    },
+    {
+      "path": "original_delivery/tools/fetch_github_sources.py",
+      "bytes": 4172,
+      "sha256": "a8ab7dcae377336a13c5f9f47dfec3c7b44eb430770722f7b6a56aec33f83669"
+    },
+    {
+      "path": "original_delivery/tools/safe_files.py",
+      "bytes": 2174,
+      "sha256": "fe69b641a81cd15c756891f55e867106c7957e3814f61a533a191fc0ee3ca456"
+    },
+    {
+      "path": "original_delivery/tools/test_safe_files.py",
+      "bytes": 1477,
+      "sha256": "b3c444e4fbd2256ecd93c1a01d39ad33fe5394d8953b8f271ce001e8fa71ed5c"
+    },
+    {
+      "path": "original_delivery/tools/verify_archive.py",
+      "bytes": 1328,
+      "sha256": "d733902ed1af485c861d4029f83e12764b29f99355f334cb6583ab37dfa35e08"
+    },
+    {
+      "path": "provenance/GITHUB_ONLY.json",
+      "bytes": 2385,
+      "sha256": "0fdab6e91a8665d57f2aef03c55df3fcfa95c481f8a1cb16586a2941418cbd5b"
+    },
+    {
+      "path": "provenance/GITHUB_STATE.json",
+      "bytes": 592,
+      "sha256": "497e8f5a61e687e0bef9fb025c88abf8c738c9338d5ecea47548c5375052002d"
+    },
+    {
+      "path": "provenance/INPUT_ARCHIVES.json",
+      "bytes": 105866,
+      "sha256": "ae0767188c05e47bd672d1c084b734e4fff464d7e7c38ba6ce8fbd58d843d570"
+    },
+    {
+      "path": "provenance/NEW_FILES.json",
+      "bytes": 1318,
+      "sha256": "2d3a219765deb7ed8e1fcd240221f3496d205d6ce3879a44e34c95d2f6e4b414"
+    },
+    {
+      "path": "provenance/REPOSITORY_FILES.json",
+      "bytes": 36351,
+      "sha256": "42db31ea918a3019c231675e37d03ffa7e092d6c2c1d70dbf918984074416514"
+    },
+    {
+      "path": "provenance/STANDALONE_LOCATORS.json",
+      "bytes": 36183,
+      "sha256": "f6ba13dd5b6b913a4de15e7742ec7f2d38a4a7954b9381cb634464981efc789a"
+    },
+    {
+      "path": "provenance/union_inventory.json",
+      "bytes": 123940,
+      "sha256": "e629ef555f1274fbedf6d5812eadf4f8b1f96c3c1550030830791973cfeb4bd9"
+    },
+    {
+      "path": "provenance/variants.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/all_even_join_extension_20260916/note.md",
+      "bytes": 19426,
+      "sha256": "6ee7e26eb332db9f38dca29e7603a563c2456c9e23370b375d0cb19736151c88"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/anchored_defect_20260914/note.md",
+      "bytes": 20921,
+      "sha256": "8de5e1fada7dd8126050a29ad8ac2975e361db381a3a7cd6eb82651b64acfd5e"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/anchored_defect_20260914/turns_and_unit_excess.md",
+      "bytes": 9441,
+      "sha256": "1b98e33deea8c567123029c2363e023468fb90a58f9ac5d50fe4393a2b9f0aa9"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/bilateral_root_bounds_20260916/note.md",
+      "bytes": 35350,
+      "sha256": "8eb0d91adcfff7c29efcea0270398f9bc18f484fb665d154be1a4a32b5458eaf"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/clocked_support_20260914/note.md",
+      "bytes": 35523,
+      "sha256": "59dea0487e404e5b16f4bb3b933dbaa68f693ba580fbdddd917c3f33316eeca7"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/completion_defect_20260914/note.md",
+      "bytes": 32457,
+      "sha256": "02edcd1df086b538f102817bf533b7ef03605478629260798ab1bebc1679b816"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/cycle_relative_cohomology_20260914/note.md",
+      "bytes": 42237,
+      "sha256": "5cfe64388682a5982d5c765bd0028c36287b68bea0a420e5808d7c2571f50df2"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/defect_rank_descent_20260915/logarithmic_run_exclusion.md",
+      "bytes": 16165,
+      "sha256": "67fe34abbacc5822a1e1ab5a0cf025af1c5d8931cafa88b5d1ab9c139d4c3a66"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/defect_rank_descent_20260915/note.md",
+      "bytes": 34783,
+      "sha256": "e55610331364395e3c109022ce5a33ce05211a625460748d5bd75e3bbb76c4f5"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/global_cylinder_control_20260916/note.md",
+      "bytes": 24363,
+      "sha256": "8324e1a481043af214b29fbb1adc1b341304a74f6c40f1ee29fc21e36b89e237"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/height_window_reduction_20260916/note.md",
+      "bytes": 32365,
+      "sha256": "1d06a8c60933b1960ecb883e993134e33dc089feb5d7c4b7896a63c97019f680"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/history_law_cutoff_20260914/RESEARCH_NOTE.md",
+      "bytes": 19611,
+      "sha256": "eaf151f5f8229e9db80c24a6528def189d9d87a49762ddfe0385722ca8f61b6e"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/intrinsic_zero_firstjet_20260915/note.md",
+      "bytes": 32001,
+      "sha256": "1c232720d5de7331abec3be0effff8fc774d048f190c43bb79c9f69f806f765c"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/mixed_switch_control_20260916/note.md",
+      "bytes": 28512,
+      "sha256": "4e3b6dbf69ef22622eed9836ec29956dae72b5f6912a68ae2900b9eb6eea3af5"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/negative_shadow_descent_20260916/note.md",
+      "bytes": 26015,
+      "sha256": "be6efcbd5aa9346cf27408cef87e404ade95bd1e2aa0629ed0fdbf5b334d5ef4"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/residual_splice_20260914/integral_blocks.md",
+      "bytes": 10920,
+      "sha256": "9026a80f26f02c0226d6098afc64935c8aa8cded19088c07bf067f56358433b5"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/residual_splice_20260914/note.md",
+      "bytes": 20291,
+      "sha256": "a57d832cdb3c5e219e4c0fbb3aecacce2b8deb121dd215f14f7608ddbc95dec7"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/stopped_affine_transport_20260914/note.md",
+      "bytes": 57957,
+      "sha256": "b04ceb79cb47e8c61999a2cb3131e08988a920ec3b22c89dae9f1f694f384953"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/supported_structure_20260915/note.md",
+      "bytes": 33248,
+      "sha256": "143acfef82726150c93a6aeae7bc9c98f8e335ba7466877ea312c31b60a58413"
+    },
+    {
+      "path": "repository/collatz_reconstruction/research_program/ternary_join_reduction_20260916/note.md",
+      "bytes": 26020,
+      "sha256": "82382023e9f97a47ab68021149c48548a5653a9fef19ae40533a65152d02ce71"
+    },
+    {
+      "path": "tools/build_latex.py",
+      "bytes": 5672,
+      "sha256": "8a94a235eac8415079aeaf8a5499945828b43772c89b157be167d445daf20ef5"
+    },
+    {
+      "path": "verification/packaged_replay.json",
+      "bytes": 4482,
+      "sha256": "084e1634aa25dbe7f543d807faeba2ab7800bf8024de538cff0e15ac45f32850"
+    },
+    {
+      "path": "verification/receipt_assessment.json",
+      "bytes": 2461,
+      "sha256": "054c41004b34179db2dfb1ea2461d646eb943e34b82760d8af2e314c883e506a"
+    }
+  ]
+}

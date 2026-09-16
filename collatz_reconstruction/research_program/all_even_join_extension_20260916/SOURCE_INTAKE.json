@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-16",
+  "repository": "KokunoYumeto/collatz-workbench",
+  "read_main": "9453b5306b3a897389dece309f9c119dffbcc489",
+  "PR_2_merged": true,
+  "PR_2_merge_commit": "284748b5d9282b1963139fa5f7bffa4f23e5a904",
+  "new_remote_write": false,
+  "dependency": "../bilateral_root_bounds_20260916/bilateral_control.py",
+  "dependency_sha256": "83288427125083f723d011915db9456843072eff10c15c0b71f3e56c31975358",
+  "primary_literature_as_proof_premise": false,
+  "full_historical_mathematical_audit": false
+}

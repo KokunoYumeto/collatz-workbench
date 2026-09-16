@@ -1,0 +1,49 @@
+{
+  "repository": "KokunoYumeto/collatz-workbench",
+  "ref": "9453b5306b3a897389dece309f9c119dffbcc489",
+  "directories": [
+    "collatz_reconstruction/research_program/history_law_cutoff_20260914",
+    "collatz_reconstruction/research_program/anchored_defect_20260914",
+    "collatz_reconstruction/research_program/ternary_join_reduction_20260916"
+  ],
+  "complete_mathematical_notes_included": [
+    {
+      "path": "collatz_reconstruction/research_program/history_law_cutoff_20260914/RESEARCH_NOTE.md",
+      "git_blob": "9b5072dc671d626b4919cb768ca9bcf884c537b8",
+      "sha256": "eaf151f5f8229e9db80c24a6528def189d9d87a49762ddfe0385722ca8f61b6e",
+      "bytes": 19611,
+      "included": true,
+      "ref": "9453b5306b3a897389dece309f9c119dffbcc489",
+      "read_source": "GitHub connector; complete text verified against original blob ID"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/anchored_defect_20260914/note.md",
+      "git_blob": "b9b5d07514676eb2b33989e301029910602c2e99",
+      "sha256": "8de5e1fada7dd8126050a29ad8ac2975e361db381a3a7cd6eb82651b64acfd5e",
+      "bytes": 20921,
+      "included": true,
+      "ref": "9453b5306b3a897389dece309f9c119dffbcc489",
+      "read_source": "GitHub connector; complete text verified against original blob ID"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/anchored_defect_20260914/turns_and_unit_excess.md",
+      "git_blob": "c4859014364f6cce2c7ada34a405124e43461253",
+      "sha256": "1b98e33deea8c567123029c2363e023468fb90a58f9ac5d50fe4393a2b9f0aa9",
+      "bytes": 9441,
+      "included": true,
+      "ref": "9453b5306b3a897389dece309f9c119dffbcc489",
+      "read_source": "GitHub connector; complete text verified against original blob ID"
+    },
+    {
+      "path": "collatz_reconstruction/research_program/ternary_join_reduction_20260916/note.md",
+      "git_blob": "9a852a3602de5e0a57c8efe0240c47d4df3c3355",
+      "sha256": "82382023e9f97a47ab68021149c48548a5653a9fef19ae40533a65152d02ce71",
+      "bytes": 26020,
+      "included": true,
+      "ref": "9453b5306b3a897389dece309f9c119dffbcc489",
+      "read_source": "GitHub connector; complete text verified against original blob ID"
+    }
+  ],
+  "remaining_companion_scripts_and_receipts_in_these_three_directories": "not bundled; exact pinned optional read-only restoration script supplied",
+  "full_repository_clone": false
+}
