@@ -60,6 +60,8 @@ K_xλ_y^(∞,b)=λ_x^(∞,b)                           (1≤x≤y),
 
 Thus approximate stabilization at successive starting scales yields an exactly compatible limiting family at **all** thresholds, using one common sequence of input measures. The proof sums the adjacent-scale errors: `Σ[i≥j](log t_i)^(−c)=(log t_j)^(−c)/(1−α^(−c))`. Replacing b by b^(α^k), for a nonnegative integer k, leaves this family unchanged; equality for arbitrary different bases is not established.
 
+The analytic input is Tao’s comparison at the moving threshold t_j. To use it at a fixed smaller threshold x, apply the same exact map K_x to both compared distributions. Its contraction property gives `||λ_(x,j+1)^(b)−λ_(x,j)^(b)||₁≤B′(α^j log b)^(−c)` once x≤t_j. Thus the successive differences form a summable geometric series, rather than accumulating an uncontrolled error at each descent. Completeness of the finite-dimensional space of measures on E_x gives the limit. The identity `K_xλ_(y,j)^(b)=λ_(x,j)^(b)` already holds before taking limits; continuity then makes compatibility exact in the limit. This is the step converting an approximate analytic estimate into the stated exact family.
+
 **Joint-law theorem.** For any integer r≥1 and finite list 1≤x₁≤⋯≤x_r, sample N_j with law μ_(t_(j+1)). The joint law of
 
 ```
@@ -75,6 +77,8 @@ J(z)=(p_x₁(z),…,p_x_r(z))
 is a bijection from E_x_r onto the tuples (z₁,…,z_r)∈E_x₁×⋯×E_x_r satisfying p_x_i(z_(i+1))=z_i for 1≤i<r. The inverse is projection to the last coordinate; pushforward by J preserves the ℓ¹ distance exactly.
 
 The largest-threshold entrance therefore contains precisely the information needed for every smaller-threshold entrance. This is why observing them jointly does not multiply the error by the number of observations.
+
+No independence assumption is involved in this joint law. An entrance at the larger threshold fixes every subsequent smaller-threshold entrance, so the limit is concentrated on the compatible tuples described above. Passing from the final coordinate z to J(z) merely relabels its atoms; that is why it preserves, rather than merely bounds, the total-variation error. The resulting family describes where a trajectory first enters each interval. It is not asserted to be a stationary distribution for iteration of T.
 
 These are distributional consequences of Tao's analytic stabilization estimate. The same transport proof recovers his quantitative orbit-minimum estimate
 
@@ -187,6 +191,8 @@ In particular the limiting distance at c=0 is ½. For every fixed 0<δ<½, the d
 
 Why this scale? A prescribed history using A divisions occupies exactly one residue class among the odd integers modulo `2^(A+1)`, giving model probability `2^(-A)`. Exact residue counting controls the approximation from above. Conversely, N starting integers can produce at most N distinct histories, which limits how much of the geometric distribution they can represent. Its typical total division count is about 2m; the transition occurs when this reaches log₂N. Matching these two estimates yields the Gaussian profile.
 
+The normal distribution enters through an explicit squeeze, not an assumption that the Collatz iterates are Gaussian. Under G_m, the event A>H means that H fair Bernoulli trials contain at most m−1 successes, so Q_m(H) is a binomial tail. Put `a_N=L_N^(1/4)`, `H_−=floor(L_N−a_N)` and `H_+=ceil(L_N+a_N)`. The finite bounds above give `Q_(m_N)(H_+)−2^(−a_N−1)≤Δ≤Q_(m_N)(H_−)+2^(−a_N)`, uniformly in b. Both binomial thresholds, after centering at H/2 and dividing by √H/2, tend to 2c. The central limit theorem therefore gives Φ(2c) at both ends of the squeeze. The buffer a_N tends to infinity, making the counting errors vanish, but is smaller than √L_N, leaving the same normal limit on both sides.
+
 This distinguishes modelling a complete history from modelling a selected observable. Beyond the cutoff, the complete-history approximation fails, but an entrance location or another statistic that forgets part of the history may still be well approximated. That distinction connects the result to the first section: Tao controls the particular distributions needed for descent, rather than requiring unlimited independent histories. The sampling here is uniform on a finite interval, whereas the entrance-law theorem uses logarithmic weights.
 
 ## From statistical information to certificates for individual starts
@@ -215,6 +221,8 @@ B := ker(H¹(K_ε)→H¹(K))
    ≅ C¹/(dC⁰+P ker d)
    ≅ εH¹(K_ε).
 ```
+
+The quotient formula can be seen directly by separating the two coefficients. For integral edge vectors u,v, `d_ε(u+εv)=du+ε(dv−Pu)`. A class killed by constant reduction has a representative y₀+εy₁ with y₀=du. Subtracting d_εu leaves the representative ε(y₁+Pu). Choosing a different u changes this vertex vector by P applied to an element of ker d; changing the representative by a first-order boundary changes it by an element of dC⁰. These are exactly the two relation terms in the displayed quotient. Conversely, either kind of relation makes ε times that vector a d_ε-boundary. This explains why the additional relation comes from actual cycles, and why it retains their integer lengths instead of simply declaring every connected component zero.
 
 On the full positive odd graph,
 
@@ -301,6 +309,8 @@ Here 1^a and 2^(b−1) denote repeated exponents. Both actual paths have exactly
 The common endpoint is (3n(v)+1)/2 for σ=0 and (27n(v)+23)/16 for σ=1. Conversely, equality of these word endpoints on their positive sources gives precisely the displayed progression. [Proof, Theorem 2](https://github.com/KokunoYumeto/collatz-workbench/blob/main/collatz_reconstruction/research_program/all_even_join_extension_20260916/note.md).
 
 Completeness here is for the two displayed word templates with the stated parameters, not a classification of every possible common-future pair.
+
+The arithmetic behind these formulas is constructive. The ternary congruence makes `W=(J(n/3^b)+h)/3^a` an integer, and the dyadic conditions give ν₂(W)=1. Starting from `m=2^aW−1`, the successive values during the initial run are `3^j2^(a−j)W−1` for 0≤j≤a, which verifies the a exponents equal to one. The identity `3h−2=2^e` then gives the next exponent e; the remaining displayed exponents lead to the same endpoint as the short path. Reversing that affine endpoint equality recovers the ternary congruence, while the short path recovers the dyadic one. The Chinese remainder theorem therefore gives a complete progression, rather than a progression guessed from examples. Finally `m=(K/Q)n+h(2/3)^a−1`: the proof bounds both K/Q and h(2/3)^a strictly below one, so the full affine expression, including its constant term, yields m<n. This is the arithmetic input used by the reductions below.
 
 ### Finite membership and an additional infinite progression
 
