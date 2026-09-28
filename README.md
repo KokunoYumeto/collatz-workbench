@@ -1,5 +1,12 @@
 # Collatz research workbench
 
+## First-passage comparison and quantitative refinements
+
+The [29 September proof note](collatz_reconstruction/research_program/natural_density_audit_20260928/audit.tex) reconstructs the change from logarithmic to uniform input in the first-passage argument. It proves joint offset–valuation mixing, an elementary endpoint-separation estimate, and a uniform first-passage comparison with error O((log x)^(-c)) for every 0<c<1/17.232, including c=1/18. The proof improves the corresponding component rate in Allikvere's v2 manuscript using the same published Diophantine input. It does not certify that manuscript's subsequent full natural-density or time-bound conclusions.
+
+[Statements, proof guide, source citations and reproducible checks](collatz_reconstruction/research_program/natural_density_audit_20260928/README.md). The code tests exact finite identities; the analytical argument is written out in the note, not claimed as Lean-certified.
+
+
 A PolyClank home for sustained human–LLM mathematics on Collatz dynamics: literature, exact constructions, proofs, reproducible calculations, and the history needed to continue them.
 
 ## Start here

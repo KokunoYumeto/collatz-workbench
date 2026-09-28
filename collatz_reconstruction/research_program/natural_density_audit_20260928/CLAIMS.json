@@ -1,0 +1,595 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-28",
+  "active_tex": "audit.tex",
+  "full_natural_density_theorem_independently_verified": false,
+  "formal_status": "No Lean proof or build performed for this comparison.",
+  "sources": [
+    {
+      "id": "ALLIKVERE-2026-V2",
+      "canonical_source_id": "SRC-COL-000053",
+      "author": "Jaan Allikvere",
+      "record": "https://zenodo.org/records/21499244",
+      "tex_url": "https://zenodo.org/api/records/21499244/files/paper.tex/content",
+      "sha256": "23d9cb265a4fccd4e60827b584f92e7d192ac643fe577657f515a3d54f4ad28a",
+      "md5_as_recorded_by_zenodo": "17a3eeaa7f2a47da78ff5fb5325e04dd",
+      "content_read_lines": [
+        [
+          1,
+          2216
+        ]
+      ],
+      "coverage_type": "first complete source-content reading, not complete independent proof certification"
+    },
+    {
+      "id": "TAO-V7",
+      "author": "Terence Tao",
+      "record": "https://arxiv.org/abs/1909.03562v7",
+      "sha256": "bfbc39432d4084a276416cb019a592003c868fa32f18e2f90028ac325ae5c19d",
+      "content_rechecked_this_continuation": [
+        [
+          785,
+          924
+        ],
+        [
+          957,
+          1095
+        ],
+        [
+          1101,
+          1196
+        ]
+      ],
+      "coverage_type": "targeted primary-source proof comparison"
+    },
+    {
+      "id": "KN-1974",
+      "canonical_source_id": "SRC-COL-000054",
+      "authors": [
+        "L. Kuipers",
+        "H. Niederreiter"
+      ],
+      "title": "Uniform Distribution of Sequences",
+      "year": 1974,
+      "sha256": "b52cc1f9a3fa41489d6cb09897608e80644319a3de4a77c284a3671117068b98",
+      "content_read": "Ch.2 Definition 1.1 pp.88-89; Theorem2.5 proof pp.112-114; Koksma pp.142-143.",
+      "visually_checked_pdf_pages": [
+        128,
+        130,
+        159
+      ]
+    },
+    {
+      "id": "RHIN-1987",
+      "canonical_source_id": "SRC-COL-000055",
+      "author": "Georges Rhin",
+      "doi": "10.1007/978-1-4757-4267-1_11",
+      "primary_url": "https://www.researchgate.net/profile/Georges-Rhin/publication/282190026_Approximants_de_Pade_et_mesures_effectives_d'irrationalite/links/582b257d08ae004f74afa09e/Approximants-de-Pade-et-mesures-effectives-dirrationalite.pdf",
+      "content_read": "Original ten-page paper text read in web PDF extraction; applied proposition (8) p.160 and checked appendix polynomial locator p.162. Auxiliary-polynomial numerical computation not independently replayed."
+    }
+  ],
+  "claims": [
+    {
+      "id": "ND-001",
+      "type": "source_argument_reconstructed_from_cited_theorem",
+      "statement": "Primitive Fourier decay under conditioning on a moderate total valuation, with the odd leftover fixed in the conditioning sigma-algebra.",
+      "tex_label": "prop:condition",
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            365,
+            430
+          ]
+        },
+        {
+          "id": "TAO-V7",
+          "lines": [
+            1101,
+            1194
+          ]
+        }
+      ],
+      "dependencies": [
+        "Tao Proposition 7.3 as a sourced theorem",
+        "negative-binomial local limit via Stirling"
+      ],
+      "priority_claim": false
+    },
+    {
+      "id": "ND-002",
+      "type": "proved_direct_consequence",
+      "statement": "The sum over all totals of the absolute joint Fourier coefficients is bounded by the same positive majorant expectation; likewise every bounded pair-total-measurable weight.",
+      "tex_label": "eq:joint",
+      "dependencies": [
+        "ND-001 pointwise majorant, not its final conditional estimate"
+      ],
+      "priority_claim": false
+    },
+    {
+      "id": "ND-003",
+      "type": "proved_exact_coordinate_reconstruction",
+      "statement": "A positive valuation word determines one odd input class modulo 2^(A+1), with inverse N=(2^A M-B)/3^r and exact positivity and congruence tests.",
+      "tex_label": "prop:fibre",
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1000,
+            1016
+          ]
+        },
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1135,
+            1170
+          ]
+        }
+      ],
+      "dependencies": [],
+      "priority_claim": false
+    },
+    {
+      "id": "ND-004",
+      "type": "proved_elementary_generalization_of_source_mechanism",
+      "statement": "A union of P first-passage valuation-cylinder intervals has residue-count discrepancy at most P for every odd modulus, retaining strict lower and closed upper crossing endpoints.",
+      "tex_label": "prop:crt",
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1126,
+            1207
+          ]
+        }
+      ],
+      "dependencies": [
+        "ND-003"
+      ],
+      "priority_claim": false
+    },
+    {
+      "id": "ND-005",
+      "type": "proved_parameter_range_extension_of_existing_local_result",
+      "statement": "The harmonic coefficient bound PC-13 is uniform for every integer m_0<=n<=n_0, hence includes Allikvere's top-extended interval for sufficiently large x.",
+      "tex_label": "eq:cn",
+      "local_proof": "../../preprints/tao_clock_audit/sections/repairs.tex#prop:cn",
+      "dependencies": [
+        "PC-13 exact low/high-valuation summation"
+      ],
+      "allikvere_consumers": [
+        [
+          1229,
+          1236
+        ],
+        [
+          1302,
+          1320
+        ],
+        [
+          1411,
+          1416
+        ]
+      ]
+    },
+    {
+      "id": "ND-006",
+      "type": "explicit_source_dependency_check",
+      "statement": "The displayed archimedean separation proof needs reserve rho>log(2)/(4 log(4/3)); use v7's rho=0.99. Counting possible l values alone does not justify calling rho immaterial.",
+      "tex_label": "eq:rho",
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            463,
+            471
+          ]
+        },
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            599,
+            605
+          ]
+        },
+        {
+          "id": "TAO-V7",
+          "lines": [
+            1057,
+            1088
+          ]
+        }
+      ],
+      "nonclaim": "Not a counterexample to all possible separation proofs with smaller reserve."
+    },
+    {
+      "id": "ND-007",
+      "canonical_claim_id": "CLM-COL-000201",
+      "type": "proved_joint_measure_extension_of_source_argument",
+      "statement": "For mu_n(y,s)=P(X_n=y,S_n=s), reduction R and exact uniform lift U in the residue coordinate, ||mu_n-U_(m,n) R_(n,m) mu_n||_1 <= K_A m^(-A) for every A>0 and all 1<=m<=n. The total coordinate is retained and summed over all integers.",
+      "tex_label": "prop:joint-mixing",
+      "dependencies": [
+        "ND-002",
+        "ND-006 with source-compatible prefix 2j-2",
+        "Tao positive-majorant theorem",
+        "independent-block convolution",
+        "Chernoff bound and Plancherel"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            433,
+            680
+          ]
+        },
+        {
+          "id": "TAO-V7",
+          "lines": [
+            926,
+            1095
+          ]
+        }
+      ],
+      "maps": [
+        "R_(n,m): l1(G_n x Z) -> l1(G_m x Z), sum over residue fibres",
+        "U_(m,n): l1(G_m x Z) -> l1(G_n x Z), exact factor 3^(m-n), l1 isometry",
+        "C_j: convolution of the total coordinate with p_j, l1 contraction; R_(n,nu) mu_n = C_(n-nu) mu_nu"
+      ],
+      "proof_parameter_order": "A, then concentration/reserve constant C, then Fourier exponent D>A+4+(log 2) C^2/2, then sufficiently large n; finite remainder absorbed by J<=2",
+      "priority_claim": false,
+      "formal_status": "Complete written deduction from cited Tao majorant; finite exact map checks only, not Lean."
+    },
+    {
+      "id": "ND-008",
+      "canonical_claim_id": "CLM-COL-000202",
+      "type": "proved_conditioned_scale_extension",
+      "statement": "For every fixed epsilon>0, conditioned residue mixing is O_(A,C,epsilon)(m^-A) uniformly for n^epsilon<=m<=n and |s-2n|<=C sqrt(n log n). For any possible total, the exact bound is min(2,K_B m^-B/p_n(s)).",
+      "tex_label": "cor:fixed-total",
+      "dependencies": [
+        "ND-007",
+        "ND-001 negative-binomial probability estimate"
+      ],
+      "source_comparison": "Includes Allikvere Theorem 4.1 and Proposition 4.2, which state epsilon=1/4.",
+      "nonclaim": "No uniform conditional decay over arbitrarily rare totals is asserted.",
+      "priority_claim": false
+    },
+    {
+      "id": "ND-009",
+      "type": "source_coarse_conditioning_argument_reconstructed",
+      "statement": "The first m geometric entries conditioned on a moderate total have l1 distance O_C(sqrt(m log n/n)) from the product law for log^4 n<=m<=n^(9/10). The same bound survives the exact offset pushforward.",
+      "tex_label": "lem:coarse-tilt",
+      "dependencies": [
+        "negative-binomial local limit",
+        "exact density p_(n-m)(s-sigma)/p_n(s)"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            682,
+            731
+          ]
+        }
+      ],
+      "priority_claim": false
+    },
+    {
+      "id": "ND-010",
+      "canonical_claim_id": "CLM-COL-000203",
+      "type": "proved_product_formula_range_extension",
+      "statement": "For fixed 0<epsilon<9/10, n^epsilon<=m<=n^(9/10), and a moderate total s, Law(X_n|S_n=s) has l1 distance O_(A,C,epsilon)(m^-A+sqrt(m log n/n)) from 3^(m-n) Law(X_m) lifted to G_n.",
+      "tex_label": "cor:product",
+      "dependencies": [
+        "ND-008",
+        "ND-009",
+        "uniform-lift l1 isometry"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            733,
+            749
+          ]
+        }
+      ],
+      "source_comparison": "Contains source Corollary 4.4 range n^(1/4)<=m<=n^(1/2); extends only the proved random-variable product estimate, not the unreviewed natural-density endpoint.",
+      "priority_claim": false
+    },
+    {
+      "id": "ND-011",
+      "canonical_claim_id": "CLM-COL-000204",
+      "type": "source_residue_discrepancy_reconstructed_with_prefix_count",
+      "statement": "The full return band is a union of at most P_x=O(L*4^m0*exp(O(L^(7/10))))=O(x^(1e-4)) interval pieces in dyadic valuation cylinders. Its interval-restricted residue discrepancy is at most P_x for every odd modulus.",
+      "tex_label": "lem:flat-band",
+      "dependencies": [
+        "ND-003",
+        "ND-004",
+        "pre-crossing affine bound"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1126,
+            1207
+          ]
+        }
+      ],
+      "nonclaim": "An arbitrary restriction on terminal values is not asserted to preserve the full band's interval pieces.",
+      "priority_claim": false
+    },
+    {
+      "id": "ND-012",
+      "canonical_claim_id": "CLM-COL-000205",
+      "type": "proved_elementary_endpoint_separation",
+      "statement": "If R>=1, M>4*3^(2R), and v>0, at most one (r,s) in {1,...,R} x Z satisfies M-3^r <= v*3^r*2^(-s) <= M. Equivalently, the closed intervals [(M-3^r)2^s/3^r,M2^s/3^r] are pairwise disjoint.",
+      "tex_label": "lem:one-endpoint",
+      "dependencies": [
+        "integer separation |3^q-2^p|>=1 for integers p,q>=1"
+      ],
+      "maps": [
+        "(r,s) maps to its exact closed interval in the endpoint coordinate v; each v has at most one incidence under the stated M bound"
+      ],
+      "priority_claim": false
+    },
+    {
+      "id": "ND-013",
+      "canonical_claim_id": "CLM-COL-000206",
+      "type": "proved_endpoint_bound_and_dependency_improvement",
+      "statement": "The absolute incidence cost of replacing y<=2^(s-r lambda)(M-F)<=y^alpha by y<2^(s-r lambda)M<=y^alpha, summed over the full return band and all positive words and multiplied by 2/y^alpha, is O_alpha((log x)^(-1/2)).",
+      "tex_label": "prop:window-cost",
+      "dependencies": [
+        "ND-011",
+        "ND-012",
+        "ND-005 harmonic mass bound",
+        "sup_s p_r(s)=O(r^(-1/2))"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1326,
+            1425
+          ]
+        }
+      ],
+      "source_comparison": "Source uses Rhin to obtain (log x)^(-1/2+o(1)) via a bulk-window crossing bound. The integer argument bounds at most one incidence across the full prefix-length interval and needs no irrationality measure.",
+      "nonclaim": "Does not remove the separate equidistribution input from the leading kernel constant.",
+      "priority_claim": false
+    },
+    {
+      "id": "ND-014",
+      "canonical_claim_id": "CLM-COL-000207",
+      "type": "proved_kernel_upper_bound_without_equidistribution",
+      "statement": "For the exact kernel D_y(M)=sum_r 3^-r sum_(r lambda+u0<s<=r lambda+u) binom(s-1,r-1), D_y(M)=O_alpha(y^alpha/M) uniformly on the full return band. This follows from hockey-stick summation and a uniform Gaussian upper bound, without the kernel asymptotic constant or any irrationality exponent.",
+      "tex_label": "prop:kernel-upper",
+      "dependencies": [
+        "exact hockey-stick identity",
+        "uniform Stirling bound on a compact ratio range"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1229,
+            1236
+          ]
+        },
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1429,
+            1537
+          ]
+        }
+      ],
+      "priority_claim": false
+    },
+    {
+      "id": "ND-015",
+      "canonical_claim_id": "CLM-COL-000208",
+      "type": "source_uniform_fibre_formula_reconstructed",
+      "statement": "For the actual uniform odd input and prefix-concentrated word sum W_y(M), W_y(M)=(2/y^alpha)3^m1 rho_m1(M)D_y(M)+R_y(M), with sum_(M in full E') |R_y(M)|=O_alpha((log x)^(-1/4)). All endpoint, normalization, conditioned mixing, noncentral total and exceptional-word terms are bounded before restricting terminal values.",
+      "tex_label": "prop:fibre-master",
+      "dependencies": [
+        "ND-003",
+        "ND-005",
+        "ND-010",
+        "ND-011",
+        "ND-013",
+        "ND-014"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1000,
+            1425
+          ]
+        }
+      ],
+      "coordinate_caution": "Reversal identifies unrestricted F and X histograms at fixed total; the prefix-concentration event is not asserted reversal invariant.",
+      "nonclaim": "This result alone proves the uniform fibre formula and its remainder. The leading kernel is proved separately in ND-018; the full natural-density/timed endpoint is not established by these component results.",
+      "priority_claim": false
+    },
+    {
+      "id": "ND-016",
+      "canonical_claim_id": "CLM-COL-000209",
+      "type": "proved_Abel_weighted_discrepancy_estimate",
+      "statement": "For lambda=log_2 3 and mu=8.616, every real BV circle function f and real weight w supported on N consecutive integers satisfy |sum w(n)f({n lambda+u})-sum(w)*integral(f)| <= C_lambda Var(f) N^(1-1/mu) Var_Z(w). Variation includes both zero-extension endpoints; no phase-weight independence is needed.",
+      "tex_label": "lem:abel-rotation",
+      "dependencies": [
+        "Rhin 1987 proposition (8), p.160",
+        "Kuipers-Niederreiter Ch.2 Theorems 2.5 and 5.1",
+        "exact finite Abel identity"
+      ],
+      "priority_claim": false
+    },
+    {
+      "id": "ND-017",
+      "canonical_claim_id": "CLM-COL-000210",
+      "type": "proved_exact_envelope_integral_and_variation",
+      "statement": "For a=2-log_2 3, g_z(t)=(pi*t)^(-1/2)exp(-a^2(t-z)^2/(4t)) has exact integral 2/a on t>0. For z asymptotic to L and J={r:|r-z|<=sqrt(z) log L}, the zero-extended sampled envelope has variation O(L^-1/2) and mass 2/a+O(L^-1/2), uniformly in real z.",
+      "tex_label": "lem:envelope-mass",
+      "dependencies": [
+        "bijective changes t=s^2 and v=s-z/s",
+        "Gaussian integral",
+        "unimodality and integral comparison"
+      ],
+      "maps": [
+        "s>0 -> v=s-z/s in R; inverse s=(v+sqrt(v^2+4z))/2; ds/dv=(1+v/sqrt(v^2+4z))/2"
+      ],
+      "priority_claim": false
+    },
+    {
+      "id": "ND-018",
+      "canonical_claim_id": "CLM-COL-000211",
+      "type": "source_kernel_constant_reconstructed_with_improved_error",
+      "statement": "For alpha=1.001, y=x^alpha or x^(alpha^2), and every real M in [M_-,M_+], D_y(M)=y^alpha/(M log(4/3))*(1+O_(alpha,c)((log x)^(-c))) for every fixed 0<c<1/17.232; c=1/18 is admissible. Explicit error is O(L^(-1/(2mu))*(log L)^(1-1/mu)+L^-1/2*(log L)^3), mu=8.616.",
+      "tex_label": "prop:kernel-leading",
+      "dependencies": [
+        "ND-014",
+        "ND-016",
+        "ND-017",
+        "exact upper and lower floor hockey-stick identities",
+        "uniform Stirling expansion"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1429,
+            1642
+          ]
+        }
+      ],
+      "source_comparison": "Same Rhin input, but direct Abel summation replaces block freezing, improving this component's exponent ceiling from 1/(2(mu+1)) to 1/(2mu). No assertion that this is the best known discrepancy exponent.",
+      "priority_claim": false,
+      "nonclaim": "The rate reaches the first-passage law in ND-022, but no upgraded final natural-density or timed theorem is asserted."
+    },
+    {
+      "id": "ND-019",
+      "canonical_claim_id": "CLM-COL-000212",
+      "type": "proved_common_finite_fibre_profile",
+      "statement": "Pi_x(M)=(2/log(4/3))*3^m1*rho_m1(M mod3^m1)/M satisfies sum_(E')|W_y(M)-Pi_x(M)|=O_(alpha,c)(L^-c) for both y and every 0<c<1/17.232. Every pushforward under a map on E' contracts this l1 bound.",
+      "tex_label": "cor:fibre-leading",
+      "dependencies": [
+        "ND-015",
+        "ND-018",
+        "weighted harmonic mass bound"
+      ],
+      "priority_claim": false,
+      "nonclaim": "Pi_x is initially a finite measure; its positive mass and actual first-passage identification are now proved separately in ND-020–ND-022."
+    },
+    {
+      "id": "ND-020",
+      "canonical_claim_id": "CLM-COL-000213",
+      "type": "source_actual_input_and_window_argument_reconstructed",
+      "statement": "For both uniform odd input intervals and alpha=1.001, the length-n0 valuation vector is O(x^-eta) close in l1 to independent Geom(2); the full prefix-concentration and top-extended first-passage window fail with probability O(exp(-kappa*(log x)^(1/5))), while P(T_x>n0)=O(x^-eta).",
+      "tex_label": "lem:uniform-input",
+      "dependencies": [
+        "ND-003 exact valuation cylinders",
+        "Tao v7 Proposition 1.9",
+        "geometric exponential Markov estimate",
+        "exact affine drift",
+        "Allikvere top-extended window"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            805,
+            923
+          ]
+        },
+        {
+          "id": "TAO-V7",
+          "lines": [
+            254,
+            283
+          ]
+        },
+        {
+          "id": "TAO-V7",
+          "lines": [
+            597,
+            648
+          ]
+        },
+        {
+          "id": "TAO-V7",
+          "lines": [
+            736,
+            832
+          ]
+        }
+      ],
+      "priority_claim": false
+    },
+    {
+      "id": "ND-021",
+      "canonical_claim_id": "CLM-COL-000214",
+      "type": "proved_full_measure_first_passage_reduction",
+      "statement": "For q_x:E'->positive odd integers <=x, q_x(M)=Syr^m0(M), the l1 distance between the actual first-passage law and (q_x)_*W_y is O_B((log x)^-B) for every B>0. A pointwise counting measure H_N has at most O(log x) atoms, and equals the passage atom on the full good event, giving the complete mass-error estimate.",
+      "tex_label": "prop:actual-reduction",
+      "dependencies": [
+        "ND-003",
+        "ND-020",
+        "true input-window indicator",
+        "exact first-passage equivalence"
+      ],
+      "maps": [
+        "q_x:E'->O_x, M maps to Syr^m0(M); pushforward of finite measures contracts l1"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            924,
+            990
+          ]
+        },
+        {
+          "id": "TAO-V7",
+          "lines": [
+            833,
+            896
+          ]
+        }
+      ],
+      "priority_claim": false
+    },
+    {
+      "id": "ND-022",
+      "canonical_claim_id": "CLM-COL-000215",
+      "type": "source_first_passage_theorem_reconstructed_with_stronger_error",
+      "statement": "Pi_x(E')=1+O_c((log x)^-c)>0 and Q_x=(q_x)_*Pi_x/Pi_x(E') is a probability independent of y. For each c in (0,1/17.232), including 1/18, each actual uniform-input first-passage law is O_c((log x)^-c) from Q_x in l1, hence so are the two laws from each other. Infinite passage has probability O(x^-eta).",
+      "tex_label": "cor:uniform-stabilisation",
+      "dependencies": [
+        "ND-019",
+        "ND-020",
+        "ND-021",
+        "l1 contraction and exact mass correction"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            838,
+            849
+          ]
+        }
+      ],
+      "nonclaim": "This proves the uniform first-passage theorem at its stated scope, not the subsequent global natural-density or timed theorem.",
+      "priority_claim": false
+    }
+  ],
+  "remaining_source_verification": [
+    "Natural-density target-set iteration from the now-proved uniform first-passage theorem.",
+    "Timed iteration and final raw-clock transfer, retaining all hypotheses and exceptional sets."
+  ],
+  "distribution": "Public edition: primary works are cited and hash-pinned, not redistributed."
+}

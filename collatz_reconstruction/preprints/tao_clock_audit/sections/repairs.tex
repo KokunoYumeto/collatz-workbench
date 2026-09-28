@@ -113,18 +113,20 @@ For an arbitrary $E\subseteq\Opos\cap[1,x]$ set
 \]
 This is the same set as in the approximate formula of
 \cite[Proposition 5.2]{Tao7}; successful passage makes its meaning
-independent of the failure convention.  For $n\in I_y\cap\Z$ write
+independent of the failure convention. For every integer $m_0\leq n\leq n_0$ write
 $m=m_0$, $r=n-m\geq0$, and define on $\Z/3^r\Z$
 \begin{equation}\label{eq:cn}
  c_n(z)=3^r\sum_{\substack{M\in E'\\M\equiv z\pmod{3^r}}}\frac1M.
 \end{equation}
-The source parameters ensure $m\leq n\leq n_0$ for sufficiently large
-$x$.  The case $r=0$ is allowed in the estimate below, with modulus one.
+The original first-passage interval $I_y$ lies in this range for sufficiently
+large $x$. The coefficient bound is valid on the whole range, not only on
+$I_y$: its proof uses $n\leq n_0$ and $r=n-m\geq0$, but neither endpoint
+of $I_y$. The case $r=0$ is allowed, with modulus one.
 
 \begin{proposition}[Uniform coefficient bound]\label{prop:cn}
 There is an absolute constant $C$ such that $0\leq c_n(z)\leq C$
-for all sufficiently large $x$, both choices of $y$, all
-$n\in I_y\cap\Z$, all residue classes $z$, and every set $E$ above.
+for all sufficiently large $x$, every integer $m_0\leq n\leq n_0$,
+all residue classes $z$, and every set $E$ above.
 \end{proposition}
 \begin{proof}
 Partition \eqref{eq:cn} by the unique length-$m$ valuation tuple of $M$,
@@ -211,6 +213,10 @@ to all positive tuples is valid.  Summing \eqref{eq:low} and
 \eqref{eq:high} proves $c_n(z)\leq C_4(2+x^{-8999/100000})$, uniformly
 in every stated variable.
 \end{proof}
+
+In particular the bound applies to a first-passage time interval with an
+extended upper endpoint, provided that interval remains in $[m_0,n_0]$.
+This extension of the parameter range changes no estimate in the proof.
 
 The last displayed majorant in the printed proof of Lemma~5.3 is instead
 $\sum_{a_1,\ldots,a_m\geq1}2^{-A/2}=(1+\sqrt2)^m$.

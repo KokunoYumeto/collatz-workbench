@@ -1,5 +1,12 @@
 # Collatz workbench: where to start
 
+## First-passage comparison and quantitative refinements
+
+The [29 September proof note](../collatz_reconstruction/research_program/natural_density_audit_20260928/audit.tex) reconstructs the change from logarithmic to uniform input in the first-passage argument. It proves joint offset–valuation mixing, an elementary endpoint-separation estimate, and a uniform first-passage comparison with error O((log x)^(-c)) for every 0<c<1/17.232, including c=1/18. The proof improves the corresponding component rate in Allikvere's v2 manuscript using the same published Diophantine input. It does not certify that manuscript's subsequent full natural-density or time-bound conclusions.
+
+[Statements, proof guide, source citations and reproducible checks](../collatz_reconstruction/research_program/natural_density_audit_20260928/README.md). The code tests exact finite identities; the analytical argument is written out in the note, not claimed as Lean-certified.
+
+
 This workbench studies Collatz dynamics through the literature and through new proofs, constructions and computations. Its two current PolyClank strands are the continuing literature reconstruction and the examination of recent natural-density arguments. The manuscripts below contain the mathematics; this page connects them without treating a catalogue entry or an AI review as a completed proof check.
 
 [PolyClank discussion and other contributors' workbenches](https://www.reddit.com/r/PolyClank/comments/1wslv90/polyclank_auditing_the_collatz_literature_and/) · [Fifty-entry literature catalogue](https://www.reddit.com/r/PolyClank/wiki/collatzliterature/) · [Current work plan](WORKPLAN.md) · [How to contribute](../CONTRIBUTING.md)

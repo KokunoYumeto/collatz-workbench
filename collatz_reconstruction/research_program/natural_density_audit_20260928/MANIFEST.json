@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "scope": "Authored proof source, public claim records, exact finite checks and explanatory figure. Literature is cited, not redistributed.",
+  "files": [
+    {
+      "path": "audit.tex",
+      "bytes": 71576,
+      "sha256": "af75aeb58fb61be6e8dc9eaf7713f96169b444a459099ddff67cc4a6bf60da2e"
+    },
+    {
+      "path": "check_exact.py",
+      "bytes": 23809,
+      "sha256": "912293db9b97ae677f5cc4babdae4b93b032e25bcb37c09e26f974af2c464256"
+    },
+    {
+      "path": "checks.json",
+      "bytes": 3778,
+      "sha256": "fedced9514be1f52cd0630e535f04aec9b0fed84c58c51d57c76ee0ae5a17790"
+    },
+    {
+      "path": "CLAIMS.json",
+      "bytes": 21955,
+      "sha256": "2306325c458b90b4b872ae395537c45f328eef883f2bc168ab587f19685b60d8"
+    },
+    {
+      "path": "draw_kernel_mechanism.py",
+      "bytes": 2534,
+      "sha256": "0f07520ea704afa75a68db5572ac3bbfb697f6ef9af159daef9e53b80da9a08a"
+    },
+    {
+      "path": "kernel_mechanism.png",
+      "bytes": 137474,
+      "sha256": "c2270c021a8d8dc197db7a55c397f6b4bbde2d8c1bc36a102f728103392e98be"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8529,
+      "sha256": "08f9805d0da2df915100afbe39abbfca303049c99238ea289da4b033be941a61"
+    }
+  ]
+}

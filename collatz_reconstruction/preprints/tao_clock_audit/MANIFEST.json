@@ -23,8 +23,8 @@
     },
     {
       "path": "proof_registry.json",
-      "bytes": 3730,
-      "sha256": "288e87d56c4f17092d726c0d640d20f6e0c4cf3a709ea5b207a40ba517598c82"
+      "bytes": 4096,
+      "sha256": "09ee9d5e02bdf20941931b3acc1bf3ebe355ad53f6d03b483a6731604e6e6054"
     },
     {
       "path": "sections/clocks.tex",
@@ -38,8 +38,8 @@
     },
     {
       "path": "sections/repairs.tex",
-      "bytes": 9525,
-      "sha256": "d562ab491da485526ee71dde391a8c2ffbd66a14d862b9294b5080c972d8c5f7"
+      "bytes": 9888,
+      "sha256": "9e14e992cc43f0b64d3b1e1701a89b5a2c0bacd9b9b13ad45c9bff8965fb271c"
     },
     {
       "path": "sections/transport.tex",
