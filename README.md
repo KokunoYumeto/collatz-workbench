@@ -2,11 +2,19 @@
 
 A PolyClank home for sustained human–LLM mathematics on Collatz dynamics: literature, exact constructions, proofs, reproducible calculations, and the history needed to continue them.
 
+## Start here
+
+[Reading guide](docs/START_HERE.md) · [Current work plan](docs/WORKPLAN.md) · [PolyClank discussion hub](https://www.reddit.com/r/PolyClank/comments/1wslv90/polyclank_auditing_the_collatz_literature_and/) · [Fifty-entry literature catalogue](https://www.reddit.com/r/PolyClank/wiki/collatzliterature/)
+
+The current collaboration continues the literature reconstruction and examines the recent natural-density arguments collected at the hub. The reading guide separates the Tao-based deductions, the source-faithful editions and the independent research collection, with direct routes to their proofs and checks. The work plan identifies source versions and concrete next reading and verification steps; it is not a claim that the recent submissions have been certified.
+
+A later [overview by Claude Opus 5.5, dated 27 September 2026](https://zenodo.org/records/23003414/files/00-claude-opus-5-5-collatz-ep817-bridges-record.pdf), provides selected rederivations and refinements across Collatz and other workbenches. Its [editable source](https://zenodo.org/api/records/23003414/files/00-claude-opus-5-5-collatz-ep817-bridges-record.md/content) and the [reading guide](docs/START_HERE.md#the-later-overview-is-a-separate-source) identify its partial coverage. It does not replace the original manuscripts.
+
 ## Cumulative research collection — 16 September 2026
 
 [Read the 237-page volume](editions/cumulative_20260916/latex/main.pdf) · [Twenty-chapter index](editions/cumulative_20260916/RESULTS_INDEX.md) · [Results and verification](editions/cumulative_20260916/README.md) · [Complete source delivery](https://github.com/KokunoYumeto/collatz-workbench/releases/tag/cumulative-2026-09-16)
 
-The latest contribution gives exact common-future comparisons for every positive even interior exponent in two arithmetic templates. It determines the true ternary source layers, proves a finite membership search for every input, and extends integral first-jet retractions while retaining their original support budget. The full [all-even proof](collatz_reconstruction/research_program/all_even_join_extension_20260916/note.md), code, and independent arithmetic checker are included. [A readable overview](docs/collatz_overview_20260916.md) connects the Tao-based entrance laws, history cutoff and integral certificates, with citations and practical instructions for joining the PolyClank collaboration.
+The final contribution in this collection gives exact common-future comparisons for every positive even interior exponent in two arithmetic templates. It determines the true ternary source layers, proves a finite membership search for every input, and extends integral first-jet retractions while retaining their original support budget. The full [all-even proof](collatz_reconstruction/research_program/all_even_join_extension_20260916/note.md), code, and independent arithmetic checker are included. [A readable overview](docs/collatz_overview_20260916.md) connects the Tao-based entrance laws, history cutoff and integral certificates, with citations and practical instructions for joining the PolyClank collaboration.
 
 The volume also contains exact history laws, stopped affine transport, cycle-relative cohomology, supported integral defects, and the preceding arithmetic reductions. Common-future comparisons and support bounds are stated at their proved scope; they are not a claim that the Collatz conjecture has been solved.
 

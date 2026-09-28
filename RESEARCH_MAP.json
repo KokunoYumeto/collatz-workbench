@@ -3,6 +3,12 @@
   "title": "Collatz research workbench",
   "style": "PolyClank",
   "snapshot_utc": "2026-09-14T00:26:59.160161+00:00",
+  "navigation_updated": "2026-09-28",
+  "reading_guide": "docs/START_HERE.md",
+  "work_plan": "docs/WORKPLAN.md",
+  "collaboration_hub": "https://www.reddit.com/r/PolyClank/comments/1wslv90/polyclank_auditing_the_collatz_literature_and/",
+  "literature_catalogue": "https://www.reddit.com/r/PolyClank/wiki/collatzliterature/",
+  "navigation_scope": "Programmes and sources are routed here; manuscript claims and prior check receipts are not freshly certified by this navigation update.",
   "objective": "Develop and expose correct mathematics concerning Collatz dynamics through literature reconstruction, explicit comparison maps, independently proved research and reproducible checks.",
   "programmes": [
     {
@@ -32,6 +38,14 @@
       "source": "collatz_reconstruction/research_program/split_zero_history_20260913/note.tex"
     },
     {
+      "id": "cumulative-research-20260916",
+      "type": "twenty-chapter research collection",
+      "source": "editions/cumulative_20260916/latex/main.tex",
+      "reader": "editions/cumulative_20260916/latex/main.pdf",
+      "index": "editions/cumulative_20260916/RESULTS_INDEX.md",
+      "verification_scope": "editions/cumulative_20260916/PUBLICATION_NOTES.md"
+    },
+    {
       "id": "rejected-early-programme",
       "type": "quarantined historical scratch",
       "source": "collatz_reconstruction/research_program/QUARANTINED.md"
@@ -41,6 +55,40 @@
   "map_records": "collatz_reconstruction/state/morphisms.jsonl",
   "source_records": "collatz_reconstruction/state/source_registry.jsonl",
   "peer_source": "https://github.com/KokunoYumeto/zeta-function-research-reader/blob/16fc4dbb817b82023c6126e636f1c6df28d4cecd/workbenches/splitzero-tandem/continuations/20260913-toda/tex/historical_hurwitz_jets.tex",
-  "peer_use": "The Split Zero note states and proves the finite use of the cited H10-H13 reconstruction; later web-session integral-extension work has not been imported or audited here.",
+  "peer_use": "The Split Zero note states and proves its finite use of the cited H10-H13 reconstruction. The original September 14 snapshot predates the cumulative integral-extension collection now separately indexed here. Each later note retains its own proof and check scope.",
+  "external_overviews": [
+    {
+      "id": "claude-overview-20260927",
+      "model_attribution": "Claude Opus 5.5",
+      "record": "https://zenodo.org/records/23003414",
+      "reader": "https://zenodo.org/records/23003414/files/00-claude-opus-5-5-collatz-ep817-bridges-record.pdf",
+      "editable_source": "https://zenodo.org/api/records/23003414/files/00-claude-opus-5-5-collatz-ep817-bridges-record.md/content",
+      "collatz_locator": "Section 1; limits in Section 3; bridges in Section 4",
+      "coverage": "Selected rederivations and refinements; not a complete audit. Section 1.5 reports checking the Tao-clock deduction but not the local Sections 5-6 repairs or the first-jet restatement beyond its statement.",
+      "integration_status": "Linked and distinguished from the original proofs; not silently imported or freshly certified."
+    }
+  ],
+  "workstreams": [
+    {
+      "id": "recent-natural-density",
+      "status": "Source packages located by hub preparation; statement comparison and independent proof checks pending.",
+      "source_routes": [
+        "https://www.proofatlas.ai/formalizations/natural-density-log-time-collatz/",
+        "https://zenodo.org/records/21499244",
+        "https://shaikidris.github.io/code/"
+      ],
+      "next_action": "Pin each manuscript and formal endpoint; compare maps, clocks, target functions, measures and quantifiers before reconstructing proofs."
+    },
+    {
+      "id": "literature-continuation",
+      "status": "Existing source registry and manuscript available; coverage remains source-specific.",
+      "next_action": "Use the existing catalogue and registry to read the next relevant primary source and propagate checked findings through the reader."
+    },
+    {
+      "id": "overview-to-original-crosswalk",
+      "status": "September 27 overview linked; no complete statement-level integration claimed.",
+      "next_action": "Compare the overview's Collatz statements and proofs against original notes, preserving refinements, disagreements, authorship and actual check coverage."
+    }
+  ],
   "completion_claimed": false
 }
