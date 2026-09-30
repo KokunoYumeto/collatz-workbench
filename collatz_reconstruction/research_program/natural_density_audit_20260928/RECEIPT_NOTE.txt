@@ -1,0 +1,5 @@
+Finite-check receipt note, 30 September 2026
+
+The Zenodo snapshot at commit e56508d9102bf16442ec9a1bc21fb0a7e1f29898 preserves one older local report in local_receipts/checks.json. Its audit.tex hash refers to the pre-formatting manuscript: the post-formatting test had run successfully but its output had not replaced that saved local report. The current local report has now been rerun and saved with --local-state. The archive's separate top-level checks.json was already rerun on the distributed files and records the current manuscript hash.
+
+No theorem, proof, test algorithm, PDF or test outcome changed. All 33 finite suites were run after layout repairs. These are finite regressions and source-locator checks, not certification of an infinite analytic theorem. Git history preserves both local reports.

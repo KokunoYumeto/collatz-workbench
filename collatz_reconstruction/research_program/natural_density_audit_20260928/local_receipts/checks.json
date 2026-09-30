@@ -109,8 +109,8 @@
   "remote_writes": false,
   "local_artifact_hashes": {
     "check_exact.py": "a68688948a61a869bac0ba3a058dada950d079173909625e7b4c1620046f26dd",
-    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "audit.tex": "eeb88041a4af95dd86d18b0c283642a6cd4617906773e210c7d0a5ffe827c782",
     "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865"
   },
-  "distribution_note": "Recorded local run after layout-only propagation. local_artifact_hashes refer to original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+  "distribution_note": "Recorded local execution with --local-state after layout repairs. local_artifact_hashes identify the original local files; the public CLAIMS file omits private machine paths. The separately provided checks.json is the independently rerun portable-package receipt."
 }
