@@ -345,7 +345,9 @@ itself is unchanged.
 Throughout this section put
 \[
  \lambda=\log_2 3,\quad a_0=\lambda/2,\quad
- g=1-a_0,\quad \rho=2^{-g}=\sqrt3/2,\quad
+ g=1-a_0,\quad \rho=2^{-g}=\sqrt3/2,
+\]
+\[
  p_*=\log_3 2,\quad \kappa=1-H_2(p_*),\quad
  A_{\rm FP}=\frac1{2\kappa}.
 \]
@@ -1513,12 +1515,12 @@ One specified choice in either interval \((u,v)\) is
 such that \(2^k(v-u)>1\).
 Finally set
 \begin{equation}\label{eq:Shaik-prescribed-high}
- \begin{split}
+ \begin{aligned}
  \tau&=\tfrac12\min(r_{\rm hi}-a_0,\beta,a_0),&
  K&=\gamma+4,\\
  D&=K/c_0+1,&
  C_{\rm sw}&=(D/\tau)^2+K/\log2+A/\log2+3 .
- \end{split}
+ \end{aligned}
 \end{equation}
 The package fields are
 \(\lambda_{\rm lo}=\alpha\), \(\eta_{\rm lo}=t\),
@@ -3378,10 +3380,11 @@ For \(z\in W^*\), \(z\ge K\), put
 \]
 Then the original first-passage time satisfies
 \begin{equation}\label{eq:Shaik-clipped-block}
- 0<l(z)\le L(z),\qquad T^{L(z)}(z)\le 2^q,\qquad
- l(z)\le \min\{\log_2z,a\log_2z+c_r\},
- \quad
+ \begin{gathered}
+ 0<l(z)\le L(z),\qquad T^{L(z)}(z)\le 2^q,\\
+ l(z)\le \min\{\log_2z,a\log_2z+c_r\},\\
  a=\frac{1+\eta-r}{g},\quad c_r=\frac{1+r}{g}+1 .
+ \end{gathered}
 \end{equation}
 Below \(K\), define \(L(z)=0\); both the original block and its clock
 remain the identity and zero. No extra startup rank is needed.
@@ -3746,7 +3749,9 @@ Fix \(0<\eta<a_0\). Let \(r\) be positive rational,
 \(1\le L\le U<M\), \(H\ge0\) integer,
 and suppose \((q+2)/(r2^q)\le1/3\) for \(L\le q\le U\).
 Write \(\mathcal E\) for the source's
-\(\texttt{generatedFirstBadSources}(M,L,U,H,r,\eta)\):
+\[
+ \texttt{generatedFirstBadSources}(M,L,U,H,r,\eta):
+\]
 these are starts in \(I_M\) with a certified rank chain of elapsed time
 \(1\le h\le H\), target rank \(q\in[L,U]\), and endpoint in
 \((2^{q-1},2^q]\setminus W_\eta\).
@@ -4633,7 +4638,9 @@ finite domain, the reserve-free producer and its same-set propagation.
  \eta_L=g-K_0/L,\quad m=q-1
  \quad\xrightarrow{\ \alpha_{L,m}=1-1/(\eta_Lm)\ }\quad
  \frac{K_g}{\eta_L\sqrt m}e^{-m\mathcal B(\eta_L/\lambda)}
- \quad\xrightarrow{\ \div2,\ +2^{-q}\ }\quad
+\]
+\[
+ \xrightarrow{\ \div2,\ +2^{-q}\ }\quad
  \text{landing bound \eqref{eq:Shaik-moving-low-reserve}} .
 \]
 \[
@@ -5642,9 +5649,11 @@ On the good set of Theorem~\ref{thm:Shaik-refined-moving-endpoint},
 the shortcut, ordinary, and (for odd sources) Syracuse clocks have
 respective upper bounds
 \[
- \frac{2\log n}{\log(4/3)}+O(\sqrt{\log n\log\log n}),\qquad
- \frac{3\log n}{\log(4/3)}+O(\sqrt{\log n\log\log n}),\qquad
+ \begin{gathered}
+ \frac{2\log n}{\log(4/3)}+O(\sqrt{\log n\log\log n}),\\
+ \frac{3\log n}{\log(4/3)}+O(\sqrt{\log n\log\log n}),\\
  \frac{\log n}{\log(4/3)}+O(\sqrt{\log n\log\log n}).
+ \end{gathered}
 \]
 The target is the one in \eqref{eq:Shaik-refined-moving-witness};
 all three prefixes have height at most \(n^{1+\beta}\), eventually.
@@ -5875,9 +5884,11 @@ All floors here are the source's nonnegative integer floors; the stage
 hypotheses imply \(0<q_\ell(m)<m\) for \(m\ge L\).
 Compare the literal source envelopes
 \[
- E_A=\mathrm{movingSeparatedFailureEnvelope}(P,p_\ell,M,L,S),\quad
- E_T=\mathrm{timeoutSeparatedFailureEnvelope}
-                (P.\mathrm{toTimeoutHigh},K_0,M,L,S).
+ \begin{aligned}
+ E_A&=\mathrm{movingSeparatedFailureEnvelope}(P,p_\ell,M,L,S),\\
+ E_T&=\mathrm{timeoutSeparatedFailureEnvelope}
+                 (P.\mathrm{toTimeoutHigh},K_0,M,L,S).
+ \end{aligned}
 \]
 Then
 \begin{equation}\label{eq:Shaik-timeout-envelope-inclusion}
@@ -6396,9 +6407,11 @@ For every successful continuation its total duration \(d\) satisfies
 \]
 For \(L<p\le S\), moreover,
 \begin{equation}\label{eq:Shaik-low-budget}
- \min{\cal D}(p)=p-L,\quad\max{\cal D}(p)=F(p),\qquad
- F(p)\le\frac{p(p-1)-L(L-1)}2,\qquad
+ \begin{gathered}
+ \min{\cal D}(p)=p-L,\quad\max{\cal D}(p)=F(p),\\
+ F(p)\le\frac{p(p-1)-L(L-1)}2,\\
  F(p)<\frac{p-1}{1-r_L}=\frac{2L(p-1)}{K_0}.
+ \end{gathered}
 \end{equation}
 The minimum and maximum are exact for the stated scalar construction.
 Neither equality of \({\cal D}(p)\) with actual orbit durations nor
@@ -6673,7 +6686,9 @@ Precisely, the timed input used here is
 \[
  \#\{n\le X:n\ {\rm odd},\
        \nexists k\le K(n):\Syr^k(n)\le B\}
- \le C_c X(\log B)^{-c},\qquad
+ \le C_c X(\log B)^{-c},
+\]
+\[
  K(n)=d^{-1}\log n+C_K(\log(n+2))^{4/5},
 \]
 for all \(X,B\ge2\), \(B\) integral, \(0<c<1/17.232\).

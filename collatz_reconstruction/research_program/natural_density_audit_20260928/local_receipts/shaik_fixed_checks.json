@@ -156,11 +156,11 @@
   "new_formal_theorems": 0,
   "whole_natural_density_package_verified": false,
   "local_artifact_hashes": {
-    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "audit.tex": "eeb88041a4af95dd86d18b0c283642a6cd4617906773e210c7d0a5ffe827c782",
     "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
     "check_shaik_fixed.py": "80dceed135935d112d8fdd534778aa2c20abfd09eb89d5abb65bf081b3546a71",
     "draw_shaik_fixed.py": "a2391662c2e14837a95d644cf4042df65df507d99290f71dc194eb64370860da",
     "shaik_fixed_clocks.png": "21fb368457755ec25807dd01e4f4e7f7d483ed8f1227b2af3f767cf42afd8c8e"
   },
-  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+  "distribution_note": "Recorded local run after layout-only propagation. local_artifact_hashes refer to original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
 }

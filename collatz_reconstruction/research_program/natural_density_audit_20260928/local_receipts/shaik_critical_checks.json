@@ -91,11 +91,11 @@
     }
   ],
   "local_artifact_hashes": {
-    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "audit.tex": "eeb88041a4af95dd86d18b0c283642a6cd4617906773e210c7d0a5ffe827c782",
     "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
     "check_shaik_critical.py": "5b9cdecd352d1c737f5287466bc1effbb5916c7aa740dad64ed6ebfe4350f146",
     "draw_shaik_critical.py": "6d3bdc4d2d8150413d506801550481f5fda705ec32fe0c63e5f9aaa16eeb58ed",
     "shaik_critical_scales.png": "e87e981662483a0ffd562c3bda0f13f6fafc0df5999bd10a1cc631b7f5156f23"
   },
-  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+  "distribution_note": "Recorded local run after layout-only propagation. local_artifact_hashes refer to original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
 }

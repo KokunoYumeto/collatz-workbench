@@ -44,8 +44,8 @@
   "public_mutations": false,
   "local_artifact_hashes": {
     "check_mazur_finite.py": "05783e5fd8214150ee0d0c9ec40f1ed296555849a203fc5420032ccdcf6823e0",
-    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "audit.tex": "eeb88041a4af95dd86d18b0c283642a6cd4617906773e210c7d0a5ffe827c782",
     "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865"
   },
-  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+  "distribution_note": "Recorded local run after layout-only propagation. local_artifact_hashes refer to original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
 }

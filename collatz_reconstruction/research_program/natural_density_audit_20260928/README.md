@@ -6,10 +6,7 @@ and how large the orbit can become before the passage ends. It develops the
 source comparisons into complete written arguments, with exact arithmetic
 checks and separately scoped Lean certificates.
 
-The [complete LaTeX manuscript](audit.tex) contains the proofs and bibliography.
-This edition is dated **30 September 2026**. It has no newly compiled PDF:
-the available compiler failed before processing the source. Older PDFs elsewhere
-in the repository are earlier editions, not PDFs of this text.
+Read the [168-page PDF](audit.pdf), or use its [complete LaTeX source](audit.tex). This edition is dated **30 September 2026**. The current PDF was compiled in the existing Overleaf project and checked for errors, cross-references and page overflow; the main theorem, proof, repaired displays and bibliography were visually inspected. The [build record](PDF_QA.json) identifies the source and PDF by hash.
 
 ## A common path with three clocks
 

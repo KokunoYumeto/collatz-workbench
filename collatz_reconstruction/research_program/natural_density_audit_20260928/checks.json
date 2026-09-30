@@ -106,7 +106,7 @@
   },
   "artifact_hashes": {
     "check_exact.py": "a68688948a61a869bac0ba3a058dada950d079173909625e7b4c1620046f26dd",
-    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "audit.tex": "eeb88041a4af95dd86d18b0c283642a6cd4617906773e210c7d0a5ffe827c782",
     "CLAIMS.json": "c180aecc1dac0c066e99344641f19d34f359ca10dfcef23d8cc0eb675d5834bb"
   },
   "scope": "Finite exact formula checks; not a proof of asymptotic mixing or natural-density almost-boundedness.",

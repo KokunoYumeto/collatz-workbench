@@ -1,0 +1,86 @@
+{
+  "pages": 168,
+  "source_sha256": "eeb88041a4af95dd86d18b0c283642a6cd4617906773e210c7d0a5ffe827c782",
+  "pdf_sha256": "e1ea208983ddcc0022c3f94580bc64f432b2ec10db163e2a56189db81e1dcab4",
+  "pdf_bytes": 1524685,
+  "compiler": "Overleaf pdfLaTeX / TeX Live 2026",
+  "build": "1a0f1790338-078b9a4ded9ae139",
+  "errors": 0,
+  "warnings": 0,
+  "overfull_boxes": 0,
+  "underfull_boxes": 2,
+  "page_boundary_check": "passed",
+  "located_sections": {
+    "prescribed": [
+      16,
+      18,
+      64,
+      83,
+      97,
+      99,
+      100,
+      110,
+      125,
+      147,
+      153,
+      157,
+      165
+    ],
+    "Two different reasons": [
+      39
+    ],
+    "generatedFirstBadSources": [
+      124
+    ],
+    "moving tolerance": [
+      135
+    ],
+    "Three clocks": [
+      147
+    ],
+    "Joining the drift prefix": [
+      161
+    ],
+    "References": [
+      167
+    ]
+  },
+  "rendered_pages": [
+    1,
+    2,
+    16,
+    18,
+    39,
+    64,
+    83,
+    97,
+    99,
+    100,
+    110,
+    124,
+    125,
+    135,
+    147,
+    153,
+    157,
+    161,
+    165,
+    167,
+    168
+  ],
+  "visual_review": "Passed: opening page, repaired comparison diagram and parameter alignment, long identifiers, moving-stage diagram, three-clock statement, complete same-orbit synthesis and bibliography inspected as rendered PNGs.",
+  "visually_reviewed_pages": [
+    1,
+    39,
+    97,
+    124,
+    135,
+    147,
+    161,
+    162,
+    163,
+    164,
+    168
+  ],
+  "scope": "Typesetting and publication QA; not a new mathematical validation."
+}

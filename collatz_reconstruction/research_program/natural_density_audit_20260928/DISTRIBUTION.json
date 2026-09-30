@@ -7,6 +7,7 @@
   ],
   "other_finite_checks": "Local runs passed; source-dependent replay requires the cited authors' pinned source archives. These reports are labelled local_receipts.",
   "lean": "Existing certificate integrity rechecked locally; no Lean launched for this publication.",
-  "pdf": "No current PDF: built-in compiler failed before source processing.",
-  "private_data": "Private conversations, machine paths and third-party bulk literature excluded."
+  "pdf": "Current 168-page Overleaf build; source/PDF hashes and precise layout checks in PDF_QA.json.",
+  "private_data": "Private conversations, machine paths and third-party bulk literature excluded.",
+  "local_finite_checks": "All 33 existing finite suites rerun after layout-only propagation; no new Lean launch."
 }

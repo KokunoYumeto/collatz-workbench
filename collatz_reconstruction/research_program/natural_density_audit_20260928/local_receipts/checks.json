@@ -112,5 +112,5 @@
     "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
     "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865"
   },
-  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+  "distribution_note": "Recorded local run after layout-only propagation. local_artifact_hashes refer to original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
 }

@@ -2,6 +2,11 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage[margin=27mm]{geometry}
+\usepackage{microtype,seqsplit}
+% Source identifiers remain literal, with discretionary breaks for print.
+\let\AuditTexttt\texttt
+\protected\def\texttt#1{\AuditTexttt{\seqsplit{#1}}}
+\emergencystretch=3em
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
 \newtheorem{proposition}{Proposition}
 \newtheorem{theorem}[proposition]{Theorem}
@@ -795,7 +800,9 @@ We now return to actual integer fibres. In this section $E'$ means the
 \emph{full} set of positive odd $M$ with $T_x(M)=m_0$ in the band
 \[
  M_-:=xe^{d m_0-L^{7/10}}\le M\le
- M_+:=xe^{d m_0+L^{7/10}},\qquad
+ M_+:=xe^{d m_0+L^{7/10}},
+\]
+\[
  L=\log x,\quad d=\log(4/3),\quad m_0=\lfloor L/100000\rfloor.
 \]
 There is no additional restriction on the final value at this point.
@@ -1741,7 +1748,9 @@ inclusion below explains why value-distribution comparison suffices.
 
 Put $p=4/5$ and
 \[
- \Delta_0=(1-\alpha^{-3})\frac{\log N_0}{d},\qquad
+ \Delta_0=(1-\alpha^{-3})\frac{\log N_0}{d},
+\]
+\[
  E_z^\bullet=\left\{M\in O_z:\exists k\in\NN,\ 
  k\le\frac{(\log(M/N_0))_+}{d}+\Delta_0+C_1(\log z)^p,\
  \Syr^k(M)\le N_0\right\}.
@@ -2835,7 +2844,9 @@ $v-1\ge1-v^{-1}$ since $(v-1)^2/v\ge0$.
 Let $m\ge150$, $8m\le n$, $D_\ell=|\ell-2n|\le n/8$, and put
 \[
  S_m=\sqrt{m\log m},\quad R_m=\lceil16S_m\rceil,\quad
- G=\{u\ge m:|u-2m|\le R_m\},\quad
+ G=\{u\ge m:|u-2m|\le R_m\},
+\]
+\[
  \epsilon_{m,n,\ell}=\frac{57S_mD_\ell+1021S_m^2}{n}.
 \]
 This is precisely \texttt{ndFixedTotalRatioEps}: its first term is
@@ -2952,12 +2963,14 @@ smaller reference scale in the source's formal package.
 \label{cor:mazur-exponential-terminal}
 Keep the literal schedules of \eqref{eq:mazur-eta}. Define
 \begin{equation}
+ \begin{gathered}
  E_B=\frac{57SW+1021S^2}{F},\quad
  \theta_B=\frac2{m^3},\quad
- \gamma_B=\frac{e^{E_B}}{1-\theta_B}-1,\qquad
+ \gamma_B=\frac{e^{E_B}}{1-\theta_B}-1,\\
  \mathcal R_\sigma^\dagger(B)=
  \frac{\gamma_B(1+11B^{-9/10})+(7/2)W p_\sigma(m,K)}
-      {1-\gamma_B}.
+       {1-\gamma_B}.
+ \end{gathered}
  \label{eq:mazur-exponential-terminal}
 \end{equation}
 For all sufficiently large $B$, this is the terminal comparison bound
@@ -3028,8 +3041,9 @@ dependencies remain distinct from the finite terminal comparison.
  \begin{array}{ccccc}
  \mu_{n,\ell}&\longrightarrow&U\pi_*\mu_{n,\ell}
  &\longrightarrow&U\operatorname{Law}(X_m)\\
- \text{fine conditioned law}&&\text{coarse conditioned law lifted}
- &&\text{unconditioned reference lifted}\\
+ \substack{\text{fine conditioned}\\\text{law}}&&
+ \substack{\text{coarse conditioned}\\\text{law lifted}}&&
+ \substack{\text{unconditioned}\\\text{reference lifted}}\\
  &H\Omega/2&&a^\dagger V+2H/m^3&
  \end{array}
 \]
@@ -3289,7 +3303,9 @@ is needed to exclude an earlier passage.
 Fix $C>0$. Use the unchanged schedules
 \[
  L=\log B,\quad n_0=\lfloor L/(10\log2)\rfloor,\quad
- h=\lfloor L/100000\rfloor,\quad
+ h=\lfloor L/100000\rfloor,
+\]
+\[
  W=C\sqrt{n_0\log n_0},\quad H_0=L^{3/5},\quad s_0=L^{7/10}.
 \]
 Put $d=\log(4/3)$, $\delta=d/\log2$, and
@@ -4102,8 +4118,11 @@ For $S=\mathcal E(E)$, put $Z_0(S)=\sum_SK_m(M)$ and
  r_F(M)=R_F(M)-(e^\beta-1)/d.
 \]
 The actual reference profiles
-$P_H(S)=\sum_SK_m(M)R_H(M)/H$ and
-$P_F(S)=\sum_SK_m(M)(z/D)R_F(M)$ satisfy
+\[
+ P_H(S)=\sum_SK_m(M)R_H(M)/H,\qquad
+ P_F(S)=\sum_SK_m(M)(z/D)R_F(M)
+\]
+satisfy
 \begin{align}
  P_H(S)-aZ_0(S)
  &=\frac1H\sum_SK_m(M)r_H(M)
@@ -5295,7 +5314,9 @@ decay theorem here.
 Throughout this section put
 \[
  L=\log B,\quad N=\lfloor L/(10\log2)\rfloor,\quad
- h=\lfloor L/100000\rfloor,\quad m=\lceil hL^{-2/5}\rceil,\quad
+ h=\lfloor L/100000\rfloor,\quad m=\lceil hL^{-2/5}\rceil,
+\]
+\[
  W=C\sqrt{N\log N},\quad d=\log(4/3).
 \]
 Fix $C\ge1/2$. Write $\alpha=1001/1000$, and for either
@@ -6578,7 +6599,9 @@ itself is unchanged.
 Throughout this section put
 \[
  \lambda=\log_2 3,\quad a_0=\lambda/2,\quad
- g=1-a_0,\quad \rho=2^{-g}=\sqrt3/2,\quad
+ g=1-a_0,\quad \rho=2^{-g}=\sqrt3/2,
+\]
+\[
  p_*=\log_3 2,\quad \kappa=1-H_2(p_*),\quad
  A_{\rm FP}=\frac1{2\kappa}.
 \]
@@ -7746,12 +7769,12 @@ One specified choice in either interval \((u,v)\) is
 such that \(2^k(v-u)>1\).
 Finally set
 \begin{equation}\label{eq:shaik-prescribed-high}
- \begin{split}
+ \begin{aligned}
  \tau&=\tfrac12\min(r_{\rm hi}-a_0,\beta,a_0),&
  K&=\gamma+4,\\
  D&=K/c_0+1,&
  C_{\rm sw}&=(D/\tau)^2+K/\log2+A/\log2+3 .
- \end{split}
+ \end{aligned}
 \end{equation}
 The package fields are
 \(\lambda_{\rm lo}=\alpha\), \(\eta_{\rm lo}=t\),
@@ -9611,10 +9634,11 @@ For \(z\in W^*\), \(z\ge K\), put
 \]
 Then the original first-passage time satisfies
 \begin{equation}\label{eq:shaik-clipped-block}
- 0<l(z)\le L(z),\qquad T^{L(z)}(z)\le 2^q,\qquad
- l(z)\le \min\{\log_2z,a\log_2z+c_r\},
- \quad
+ \begin{gathered}
+ 0<l(z)\le L(z),\qquad T^{L(z)}(z)\le 2^q,\\
+ l(z)\le \min\{\log_2z,a\log_2z+c_r\},\\
  a=\frac{1+\eta-r}{g},\quad c_r=\frac{1+r}{g}+1 .
+ \end{gathered}
 \end{equation}
 Below \(K\), define \(L(z)=0\); both the original block and its clock
 remain the identity and zero. No extra startup rank is needed.
@@ -9979,7 +10003,9 @@ Fix \(0<\eta<a_0\). Let \(r\) be positive rational,
 \(1\le L\le U<M\), \(H\ge0\) integer,
 and suppose \((q+2)/(r2^q)\le1/3\) for \(L\le q\le U\).
 Write \(\mathcal E\) for the source's
-\(\texttt{generatedFirstBadSources}(M,L,U,H,r,\eta)\):
+\[
+ \texttt{generatedFirstBadSources}(M,L,U,H,r,\eta):
+\]
 these are starts in \(I_M\) with a certified rank chain of elapsed time
 \(1\le h\le H\), target rank \(q\in[L,U]\), and endpoint in
 \((2^{q-1},2^q]\setminus W_\eta\).
@@ -10866,7 +10892,9 @@ finite domain, the reserve-free producer and its same-set propagation.
  \eta_L=g-K_0/L,\quad m=q-1
  \quad\xrightarrow{\ \alpha_{L,m}=1-1/(\eta_Lm)\ }\quad
  \frac{K_g}{\eta_L\sqrt m}e^{-m\mathcal B(\eta_L/\lambda)}
- \quad\xrightarrow{\ \div2,\ +2^{-q}\ }\quad
+\]
+\[
+ \xrightarrow{\ \div2,\ +2^{-q}\ }\quad
  \text{landing bound \eqref{eq:shaik-moving-low-reserve}} .
 \]
 \[
@@ -11875,9 +11903,11 @@ On the good set of Theorem~\ref{thm:shaik-refined-moving-endpoint},
 the shortcut, ordinary, and (for odd sources) Syracuse clocks have
 respective upper bounds
 \[
- \frac{2\log n}{\log(4/3)}+O(\sqrt{\log n\log\log n}),\qquad
- \frac{3\log n}{\log(4/3)}+O(\sqrt{\log n\log\log n}),\qquad
+ \begin{gathered}
+ \frac{2\log n}{\log(4/3)}+O(\sqrt{\log n\log\log n}),\\
+ \frac{3\log n}{\log(4/3)}+O(\sqrt{\log n\log\log n}),\\
  \frac{\log n}{\log(4/3)}+O(\sqrt{\log n\log\log n}).
+ \end{gathered}
 \]
 The target is the one in \eqref{eq:shaik-refined-moving-witness};
 all three prefixes have height at most \(n^{1+\beta}\), eventually.
@@ -12108,9 +12138,11 @@ All floors here are the source's nonnegative integer floors; the stage
 hypotheses imply \(0<q_\ell(m)<m\) for \(m\ge L\).
 Compare the literal source envelopes
 \[
- E_A=\mathrm{movingSeparatedFailureEnvelope}(P,p_\ell,M,L,S),\quad
- E_T=\mathrm{timeoutSeparatedFailureEnvelope}
-                (P.\mathrm{toTimeoutHigh},K_0,M,L,S).
+ \begin{aligned}
+ E_A&=\mathrm{movingSeparatedFailureEnvelope}(P,p_\ell,M,L,S),\\
+ E_T&=\mathrm{timeoutSeparatedFailureEnvelope}
+                 (P.\mathrm{toTimeoutHigh},K_0,M,L,S).
+ \end{aligned}
 \]
 Then
 \begin{equation}\label{eq:shaik-timeout-envelope-inclusion}
@@ -12629,9 +12661,11 @@ For every successful continuation its total duration \(d\) satisfies
 \]
 For \(L<p\le S\), moreover,
 \begin{equation}\label{eq:shaik-low-budget}
- \min{\cal D}(p)=p-L,\quad\max{\cal D}(p)=F(p),\qquad
- F(p)\le\frac{p(p-1)-L(L-1)}2,\qquad
+ \begin{gathered}
+ \min{\cal D}(p)=p-L,\quad\max{\cal D}(p)=F(p),\\
+ F(p)\le\frac{p(p-1)-L(L-1)}2,\\
  F(p)<\frac{p-1}{1-r_L}=\frac{2L(p-1)}{K_0}.
+ \end{gathered}
 \end{equation}
 The minimum and maximum are exact for the stated scalar construction.
 Neither equality of \({\cal D}(p)\) with actual orbit durations nor
@@ -12906,7 +12940,9 @@ Precisely, the timed input used here is
 \[
  \#\{n\le X:n\ {\rm odd},\
        \nexists k\le K(n):\Syr^k(n)\le B\}
- \le C_c X(\log B)^{-c},\qquad
+ \le C_c X(\log B)^{-c},
+\]
+\[
  K(n)=d^{-1}\log n+C_K(\log(n+2))^{4/5},
 \]
 for all \(X,B\ge2\), \(B\) integral, \(0<c<1/17.232\).

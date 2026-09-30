@@ -820,7 +820,9 @@ $v-1\ge1-v^{-1}$ since $(v-1)^2/v\ge0$.
 Let $m\ge150$, $8m\le n$, $D_\ell=|\ell-2n|\le n/8$, and put
 \[
  S_m=\sqrt{m\log m},\quad R_m=\lceil16S_m\rceil,\quad
- G=\{u\ge m:|u-2m|\le R_m\},\quad
+ G=\{u\ge m:|u-2m|\le R_m\},
+\]
+\[
  \epsilon_{m,n,\ell}=\frac{57S_mD_\ell+1021S_m^2}{n}.
 \]
 This is precisely \texttt{ndFixedTotalRatioEps}: its first term is
@@ -937,12 +939,14 @@ smaller reference scale in the source's formal package.
 \label{cor:Mazur-exponential-terminal}
 Keep the literal schedules of \eqref{eq:Mazur-eta}. Define
 \begin{equation}
+ \begin{gathered}
  E_B=\frac{57SW+1021S^2}{F},\quad
  \theta_B=\frac2{m^3},\quad
- \gamma_B=\frac{e^{E_B}}{1-\theta_B}-1,\qquad
+ \gamma_B=\frac{e^{E_B}}{1-\theta_B}-1,\\
  \mathcal R_\sigma^\dagger(B)=
  \frac{\gamma_B(1+11B^{-9/10})+(7/2)W p_\sigma(m,K)}
-      {1-\gamma_B}.
+       {1-\gamma_B}.
+ \end{gathered}
  \label{eq:Mazur-exponential-terminal}
 \end{equation}
 For all sufficiently large $B$, this is the terminal comparison bound
@@ -1013,8 +1017,9 @@ dependencies remain distinct from the finite terminal comparison.
  \begin{array}{ccccc}
  \mu_{n,\ell}&\longrightarrow&U\pi_*\mu_{n,\ell}
  &\longrightarrow&U\operatorname{Law}(X_m)\\
- \text{fine conditioned law}&&\text{coarse conditioned law lifted}
- &&\text{unconditioned reference lifted}\\
+ \substack{\text{fine conditioned}\\\text{law}}&&
+ \substack{\text{coarse conditioned}\\\text{law lifted}}&&
+ \substack{\text{unconditioned}\\\text{reference lifted}}\\
  &H\Omega/2&&a^\dagger V+2H/m^3&
  \end{array}
 \]
@@ -1273,7 +1278,9 @@ is needed to exclude an earlier passage.
 Fix $C>0$. Use the unchanged schedules
 \[
  L=\log B,\quad n_0=\lfloor L/(10\log2)\rfloor,\quad
- h=\lfloor L/100000\rfloor,\quad
+ h=\lfloor L/100000\rfloor,
+\]
+\[
  W=C\sqrt{n_0\log n_0},\quad H_0=L^{3/5},\quad s_0=L^{7/10}.
 \]
 Put $d=\log(4/3)$, $\delta=d/\log2$, and
@@ -2085,8 +2092,11 @@ For $S=\mathcal E(E)$, put $Z_0(S)=\sum_SK_m(M)$ and
  r_F(M)=R_F(M)-(e^\beta-1)/d.
 \]
 The actual reference profiles
-$P_H(S)=\sum_SK_m(M)R_H(M)/H$ and
-$P_F(S)=\sum_SK_m(M)(z/D)R_F(M)$ satisfy
+\[
+ P_H(S)=\sum_SK_m(M)R_H(M)/H,\qquad
+ P_F(S)=\sum_SK_m(M)(z/D)R_F(M)
+\]
+satisfy
 \begin{align}
  P_H(S)-aZ_0(S)
  &=\frac1H\sum_SK_m(M)r_H(M)
@@ -3278,7 +3288,9 @@ decay theorem here.
 Throughout this section put
 \[
  L=\log B,\quad N=\lfloor L/(10\log2)\rfloor,\quad
- h=\lfloor L/100000\rfloor,\quad m=\lceil hL^{-2/5}\rceil,\quad
+ h=\lfloor L/100000\rfloor,\quad m=\lceil hL^{-2/5}\rceil,
+\]
+\[
  W=C\sqrt{N\log N},\quad d=\log(4/3).
 \]
 Fix $C\ge1/2$. Write $\alpha=1001/1000$, and for either

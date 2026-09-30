@@ -287,7 +287,7 @@
   "lean_started": false,
   "whole_natural_density_package_verified": false,
   "local_artifact_hashes": {
-    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "audit.tex": "eeb88041a4af95dd86d18b0c283642a6cd4617906773e210c7d0a5ffe827c782",
     "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
     "check_shaik_startup.py": "7e1b5842ba88326321b5b76fca7d015d95b1ec771cd8fe2a8e7f4fd8146dd975",
     "draw_shaik_startup_floor.py": "5d931821814ad0082bbcbda41ac8fa976ba8fa32644319a87cb0a1a0c296de88",
@@ -295,5 +295,5 @@
     "draw_shaik_least_startup.py": "7af7a1ee63ddd0610a5e15dbe7dcd63f2fd3e90cc596ad0c90fb309fb1ed4943",
     "shaik_least_startup.png": "637783670986da8d16d84c9b1c01b9f9f0cfb5b574ec5cecac0f0efc2a903e1d"
   },
-  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+  "distribution_note": "Recorded local run after layout-only propagation. local_artifact_hashes refer to original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
 }

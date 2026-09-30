@@ -29,7 +29,7 @@
   "lean_started": false,
   "whole_natural_density_package_verified": false,
   "artifact_hashes": {
-    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "audit.tex": "eeb88041a4af95dd86d18b0c283642a6cd4617906773e210c7d0a5ffe827c782",
     "CLAIMS.json": "c180aecc1dac0c066e99344641f19d34f359ca10dfcef23d8cc0eb675d5834bb",
     "check_shaik_allikvere_splice.py": "096583e71a7cfead1df23ec470fab734fc239172f473a898d346ad02b136c290"
   }
