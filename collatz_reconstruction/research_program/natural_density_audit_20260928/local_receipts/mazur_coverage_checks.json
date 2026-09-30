@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "counts": {
+    "written_proof_propagation_checks": 1,
+    "composition_cut_bijections": 2509,
+    "factorial_moment_identities": 2024,
+    "positive_pgf_comparisons": 852,
+    "directed_cut_tail_checks": 1920,
+    "order_statistic_event_identities": 464280,
+    "directed_T3_checks": 183,
+    "geometric_mgf_guard_checks": 4,
+    "exact_exponent_and_clock_constants": 1,
+    "actual_affine_block_identities": 12000,
+    "nonvacuous_reverse_prefix_exclusions": 4026,
+    "forward_stepback_and_first_hit_checks": 6704,
+    "large_exact_first_passage_witnesses": 1,
+    "coefficient_one_event_mass_checks": 1024
+  },
+  "scope": "Exact finite regressions, directed rational exponential tests and proof-text propagation; not an analytic proof, global Collatz verification or Lean replay.",
+  "source_package_commit": "ca3dd0d63920411213403092aecc6946619eb082",
+  "source_hashes": {
+    "ND/Fourier/FixedTotalBars.lean": "de18b91432e18caa525d2eb40c1eb996f6d16b6a49466f70e3ddc4344f359840",
+    "ND/Fourier/FixedTotalConcentration.lean": "e56a9946fb92f06b58fc5f678b0ec21df45eaddc4c3a823c1fa02deb3f3bf9a0",
+    "ND/Fourier/FixedTotalPGF.lean": "73aab642b85e81b182d1a1c904c1058112a9d64175b58672cfaf844749dd933e",
+    "ND/Fourier/FixedTotalMGF.lean": "e5b0f105783e6eed2cbb0806767edfb1df332c56e507136801eb8a53a33490e9",
+    "ND/Fourier/FixedTotalTail.lean": "02da6fef2b92579c6d1cd536f6ce3bbae3b554ce649741a2050e0ee92141162e",
+    "ND/Fourier/FixedTotalT3.lean": "bb115f5e27efb05b1c6bedc91ca8bd5874326a5c9640678feb9d61bc6210f15c",
+    "ND/Fourier/FixedTotalRatioTails.lean": "d986d58358b9e33fd1345571e4a7107a032b28e1e9fd41e16ba053f0b1f85413",
+    "ND/Band/A5TerminalAtomCoverage.lean": "f4dbc4f6e97f8358d95e2f98445bd67b2d5e0aedfb06541e736183f47d21f9d4",
+    "ND/Band/A5TerminalAtomCoverageProbability.lean": "f3c57cc14f7b0171747645cb414cd95f5ef498f9404ded434c0c983e7ce189d0",
+    "ND/Band/A5GoodTimeLocalization.lean": "0c815469b8a9da7d7c3abfcb3b3d70cdb998b406396dcd50845adedc1f253fc5",
+    "ND/Band/A5GoodEPrimeIngress.lean": "deb915aa00617ea2ec02dc3ab3b87d7ea770c17f634d4b466ac0f3536bf3970d",
+    "Tao/Section5/ReversePrefix.lean": "94da4bca2ab5f0898efabcd5fa8eab3435e755463c8748b20ba249c2abfe7cff",
+    "Tao/Section5/ReversePrefixScalar.lean": "3e93b73f54868890f92432d2131e26ccf74a124cc6bfcf81de295be3db6e29a9",
+    "Tao/Section5/PassLostWindow.lean": "c2b8ac74758bac39fcfb04e439bf411be948658d2ed0dd12de30e4f49204f3b0"
+  },
+  "large_witness_scope": "An exact finite orbit with all valuations two; not the asymptotic schedule of the coverage theorem.",
+  "lean_started": false,
+  "public_mutations": false,
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_mazur_coverage.py": "d5bc6c3517fa1467cc3f4c682aa110b4cadd66c2a97ca771d8bf3c622830c386"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

@@ -1,0 +1,89 @@
+{
+  "status": "passed",
+  "counts": {
+    "exact_retained_chains": 210,
+    "exact_active_block_horizons": 102,
+    "exact_closed_exponent_witnesses": 20,
+    "rational_floor_carry_cases": 720,
+    "decimal_coefficient_diagnostics": 20,
+    "complete_written_propagation": 1
+  },
+  "reading": [
+    {
+      "name": "HeightSensitiveClock.lean",
+      "sha256": "0d1e4ef386685b6f2c2e694fb4a73461d475999f36e4719cd3833eefcc247e90",
+      "lines": 149,
+      "read": "complete"
+    },
+    {
+      "name": "GradedClock.lean",
+      "sha256": "8dad9466527eb13787e13cbea9f6e37eb63f0e762594de9a5f0732ea47750078",
+      "lines": 330,
+      "read": "complete"
+    },
+    {
+      "name": "RawClockBudget.lean",
+      "sha256": "40540c730f9059cbd31530a1fd8137fd36b054939dabcfc66c40a49b00498e46",
+      "lines": 383,
+      "read": "complete"
+    },
+    {
+      "name": "PowerDescent.lean",
+      "sha256": "79259969a824aa466124f1616af90fd48512ac7808bf83479ee598d1cf8edde5",
+      "lines": 88,
+      "read": "complete"
+    },
+    {
+      "name": "RawNaturalDensityDescent.lean",
+      "sha256": "66520554723968263a4fa90d6aabf21c6acbd6daeffe3040fdf2b2b833437da7",
+      "lines": 141,
+      "read": "complete"
+    }
+  ],
+  "example": {
+    "n": "150917070010072269477859878733743694521900012913948764517906824760720938004936",
+    "rows": [
+      {
+        "start": "150917070010072269477859878733743694521900012913948764517906824760720938004936",
+        "rank": 256,
+        "actual": 90,
+        "horizon": 157,
+        "full": 256
+      },
+      {
+        "start": "1080479352998927672533635904126206248584387163708680894966002032519965093",
+        "rank": 239,
+        "actual": 78,
+        "horizon": 146,
+        "full": 239
+      },
+      {
+        "start": "14487910171766265302895312212403010995364467923833638279397410431723",
+        "rank": 223,
+        "actual": 73,
+        "horizon": 136,
+        "full": 223
+      }
+    ],
+    "h": 241,
+    "s": 122
+  },
+  "constants": {
+    "a": "0.60235520991330225114560108270310911404216773025190718717107315313",
+    "c_r": "10.336505753656184892756816781898191267653599818904561401151633874",
+    "source_E": "74.938860963569487143902417864601300381695767549156468588322707027",
+    "M0": 64
+  },
+  "scope": "Exact integer actual-envelope, first-passage, accumulated odd and closed-exponent tests, rational floor/ceiling checks; Decimal diagnostics are noncertifying. Infinite analytic claims have written proofs, not finite certificates.",
+  "lean_started": false,
+  "new_formal_theorems": 0,
+  "whole_natural_density_package_verified": false,
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_clipped.py": "9a377f7009f75d88d1698d4015e80775d73cc92c60021f6b04ddacc63ec2f196",
+    "draw_shaik_clipped.py": "2909c50bb7b58d2ab88032e89851b046e7fd1f74191d6f0675238fdcac73922c",
+    "shaik_clipped_horizons.png": "cdce94d093e4be950353064fe570cb0afaa27634970f35a7e81bc65f2ddfadd4"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

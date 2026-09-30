@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "counts": {
+    "exact_schedule_cases": 15,
+    "directed_eta_enclosures": 45,
+    "terminal_coefficient_identities": 135,
+    "power_identities": 9
+  },
+  "source_manifest_files_verified": 604,
+  "lean_files_present": 599,
+  "source_package_commit": "ca3dd0d63920411213403092aecc6946619eb082",
+  "build_files_not_bundled": [
+    "lakefile.lean",
+    "lakefile.toml",
+    "lake-manifest.json",
+    "lean-toolchain"
+  ],
+  "finite_test_domain": "L=t^5, t in a fixed 15-point set; C=1/2,40,100; K=0,1,7/3",
+  "analytic_scope": "Finite rational interval regressions; written proofs, not these samples, establish the limits.",
+  "formal_status": "No Lean worker launched and no new Lean theorem compiled.",
+  "source_hashes": {
+    "paper.pdf": "08a46dd1cdd9183beb2e09af517361f24d3b7945a6ee00db563a944a4a2373cf",
+    "checked_source.zip": "5761e6bdad1284275f3a19aa51d8278a68b19cb569c516c20df956e6fac91864",
+    "source/Erdos1135/ND/LogTime/Paper.lean": "040eae84c87d52a042c53574a44533091e453b3d0f409d81dd5e951ba294012a"
+  },
+  "local_artifact_hashes": {
+    "check_mazur_terminal.py": "9b22824b6fae4abdb68438b98e04d12ba3e3e61705899b47cd7493ed6ce6b974",
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

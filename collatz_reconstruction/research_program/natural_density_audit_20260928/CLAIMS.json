@@ -1,10 +1,24 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "date": "2026-09-28",
   "active_tex": "audit.tex",
-  "full_natural_density_theorem_independently_verified": false,
-  "formal_status": "No Lean proof or build performed for this comparison.",
+  "formal_status": "Scoped independent certificates: 36 core, 9 joint-witness, 31 reflection, 23 dyadic-count, and 29 completed-height declarations. The real analytic package is not independently certified; formal_verification_complete remains false.",
   "sources": [
+    {
+      "id": "SHAIK-2026-V324",
+      "canonical_source_id": "SRC-COL-000058",
+      "author": "Idris Ali Shaik",
+      "record": "https://zenodo.org/records/22130385",
+      "sha256": "78415ed1c0069f03524d6e981531b3dcc8542083bc0626d5e5f6d3dd8ddb152b",
+      "source_commit": "ef3410843bf58d69f771f5ba2c0571d54b54da59",
+      "visual_pdf_pages": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "coverage_type": "Selected deterministic source proofs reconstructed, not whole-package review."
+    },
     {
       "id": "ALLIKVERE-2026-V2",
       "canonical_source_id": "SRC-COL-000053",
@@ -38,6 +52,10 @@
         [
           1101,
           1196
+        ],
+        [
+          535,
+          596
         ]
       ],
       "coverage_type": "targeted primary-source proof comparison"
@@ -66,6 +84,37 @@
       "doi": "10.1007/978-1-4757-4267-1_11",
       "primary_url": "https://www.researchgate.net/profile/Georges-Rhin/publication/282190026_Approximants_de_Pade_et_mesures_effectives_d'irrationalite/links/582b257d08ae004f74afa09e/Approximants-de-Pade-et-mesures-effectives-dirrationalite.pdf",
       "content_read": "Original ten-page paper text read in web PDF extraction; applied proposition (8) p.160 and checked appendix polynomial locator p.162. Auxiliary-polynomial numerical computation not independently replayed."
+    },
+    {
+      "id": "MAZUR-2026-V2",
+      "canonical_source_id": "SRC-COL-000056",
+      "author": "Lech Mazur",
+      "title": "Natural-Density Almost-Bounded Collatz Orbits in Logarithmic Time",
+      "version": "2, 21 July 2026",
+      "record": "https://www.proofatlas.ai/formalizations/natural-density-log-time-collatz/",
+      "sha256": "08a46dd1cdd9183beb2e09af517361f24d3b7945a6ee00db563a944a4a2373cf",
+      "checked_source_path": "../../external_literature/mazur_2026_v2/source",
+      "source_commit": "ca3dd0d63920411213403092aecc6946619eb082",
+      "paper_reported_commit": "f386357d453ac4dcf91242b76252d88a5a729906",
+      "visually_checked_pages": [
+        3,
+        7,
+        8,
+        9,
+        18,
+        21,
+        22
+      ],
+      "source_scope": "Selected endpoint, scalar, finite terminal inverse/injectivity, boundary comparison, two-row reindexing and absorption proofs. The full package has not been independently replayed. Complete written reconstructions of fixed-total concentration and actual passage coverage now appear in ND-040–ND-044. Selected source content rechecked; no full Lean replay."
+    },
+    {
+      "id": "ROBBINS-1955",
+      "canonical_source_id": "SRC-COL-000057",
+      "author": "Herbert Robbins",
+      "title": "A Remark on Stirling's Formula",
+      "doi": "10.2307/2308012",
+      "sha256": "b4bb1e9209a800c5fc71318a3f27bd1bda000f43348e29e5446a524a85656a5a",
+      "read_scope": "Equations(1),(2),(8) and proof on printedpp26–27 visually read; bibliographic front matter read from primary PDF extraction. Published input, no priority claim."
     }
   ],
   "claims": [
@@ -295,7 +344,7 @@
           ]
         }
       ],
-      "source_comparison": "Contains source Corollary 4.4 range n^(1/4)<=m<=n^(1/2); extends only the proved random-variable product estimate, not the unreviewed natural-density endpoint.",
+      "source_comparison": "Contains source Corollary 4.4 range n^(1/4)<=m<=n^(1/2); extends the product estimate. The downstream endpoint is now reconstructed separately in ND-023–ND-027.",
       "priority_claim": false
     },
     {
@@ -468,7 +517,7 @@
       ],
       "source_comparison": "Same Rhin input, but direct Abel summation replaces block freezing, improving this component's exponent ceiling from 1/(2(mu+1)) to 1/(2mu). No assertion that this is the best known discrepancy exponent.",
       "priority_claim": false,
-      "nonclaim": "The rate reaches the first-passage law in ND-022, but no upgraded final natural-density or timed theorem is asserted."
+      "nonclaim": "The component alone is not an endpoint theorem; the rate is now carried through first passage and timed counts in ND-022–ND-027."
     },
     {
       "id": "ND-019",
@@ -527,7 +576,8 @@
           ]
         }
       ],
-      "priority_claim": false
+      "priority_claim": false,
+      "subsequent_refinement": "ND-049 supplies explicit prefix exponent constant5log2/2; the separate no-hit estimate remains unchanged."
     },
     {
       "id": "ND-021",
@@ -583,13 +633,2947 @@
           ]
         }
       ],
-      "nonclaim": "This proves the uniform first-passage theorem at its stated scope, not the subsequent global natural-density or timed theorem.",
+      "nonclaim": "This claim is only first-passage stabilization. The separate target-set iteration and clock transfer are now supplied by ND-023–ND-027.",
       "priority_claim": false
+    },
+    {
+      "id": "ND-023",
+      "canonical_claim_id": "CLM-COL-000216",
+      "type": "source_target_set_iteration_reconstructed",
+      "statement": "For alpha=1001/1000, every fixed 0<c<1/17.232, integer N0>=2 and sufficiently large y, uniform odd starts in [y,y^alpha] fail ever to reach N0 with probability O_c((log N0)^-c). The exact nested-passage identity includes zero-length legs, and the Pass=1 failure convention is subtracted explicitly.",
+      "tex_label": "prop:untimed-ladder",
+      "dependencies": [
+        "ND-022",
+        "exact nested first passage",
+        "geometric sum with factor 1/(1-alpha^-c)"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1687,
+            1793
+          ]
+        },
+        {
+          "id": "TAO-V7",
+          "lines": [
+            535,
+            586
+          ]
+        }
+      ],
+      "source_comparison": "Reconstructs the source's measure-agnostic target-set iteration with the improved first-passage rate. Makes the failure mass explicit; Allikvere's O-term already accommodates it, and Tao writes the comparison as an inequality.",
+      "priority_claim": false,
+      "formal_status": "Written argument from cited and previously reconstructed inputs; finite identity checks, no Lean certificate."
+    },
+    {
+      "id": "ND-024",
+      "canonical_claim_id": "CLM-COL-000217",
+      "type": "source_timed_iteration_reconstructed_with_improved_error",
+      "statement": "There is CK independent of target N0 and exponent c such that K(N)=log(N)/log(4/3)+CK*(log(N+2))^(4/5) is a witnessing odd-return clock for all but O_c((log N0)^-c) of uniform odd starts in every sufficiently large power interval. Holds for all integer N0>=2 and 0<c<1/17.232.",
+      "tex_label": "prop:timed-block",
+      "dependencies": [
+        "ND-020 two-sided passage time and drift",
+        "ND-022 passage-value law comparison",
+        "ND-023 ladder",
+        "timed target inclusion, lemma lem:timed-step"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1795,
+            1981
+          ]
+        }
+      ],
+      "source_comparison": "Uses Allikvere's timed target sets with Delta0=(1-alpha^-3)*log(N0)/d. One Delta0 suffices in the final concatenation. No time-value independence or joint-law comparison is used.",
+      "priority_claim": false,
+      "formal_status": "Written argument from cited and previously reconstructed inputs; finite identity checks, no Lean certificate."
+    },
+    {
+      "id": "ND-025",
+      "canonical_claim_id": "CLM-COL-000218",
+      "type": "proved_global_count_refinement_by_exact_disjoint_cover",
+      "statement": "For every X>=2, integer N0>=2 and fixed 0<c<1/17.232, the number of positive odd N<=X without a witness k<=K(N) reaching N0 is at most C_c*X*(log N0)^-c. No additive finite-X cutoff error is needed. The disjoint half-open power cover and its closed-interval count loss are proved in lem:power-cover.",
+      "tex_label": "cor:timed-count",
+      "dependencies": [
+        "ND-024",
+        "exact half-open power interval cover",
+        "zero-time success below target"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            103,
+            115
+          ]
+        },
+        {
+          "id": "TAO-V7",
+          "lines": [
+            535,
+            586
+          ]
+        }
+      ],
+      "source_comparison": "Improves the source's displayed exponent 1/29 to every c<1/17.232 and removes X^-1/2000. The rate improvement is inherited from ND-018; removing the cutoff term uses the classical scale-covering mechanism, not new mixing.",
+      "priority_claim": false,
+      "formal_status": "Written argument from cited and previously reconstructed inputs; finite identity checks, no Lean certificate.",
+      "later_refinements": [
+        "ND-116"
+      ]
+    },
+    {
+      "id": "ND-026",
+      "canonical_claim_id": "CLM-COL-000219",
+      "type": "proved_exact_raw_clock_and_global_count_transfer",
+      "statement": "For the raw map C(n)=3n+1 on odd n and n/2 on even n, R(N)=(3/log(4/3)+1/log2)*logN+3CK*(log(N+2))^(4/5) has fixed-target failure count <=C_c*X*(log N0)^-c for all X>=2, integer N0>=2. Exact clock identity m=a+k+s_k for N=2^a M and the partition by a prove the transfer.",
+      "tex_label": "cor:universal-clock",
+      "dependencies": [
+        "ND-025",
+        "2^s_k Syr^k(M)=M product_i(3+1/M_i)<=4^k M",
+        "bijection between odd M<=X/2^a and inputs of valuation a"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1983,
+            2022
+          ]
+        }
+      ],
+      "source_comparison": "Retains the source's raw clock constant. The uniform fixed-target rate permits summing all valuation strata directly, without discarding a tail first.",
+      "priority_claim": false,
+      "formal_status": "Written argument from cited and previously reconstructed inputs; finite identity checks, no Lean certificate."
+    },
+    {
+      "id": "ND-027",
+      "canonical_claim_id": "CLM-COL-000220",
+      "type": "source_natural_density_conclusion_reconstructed_with_threshold_independent_clock",
+      "statement": "For every real-valued f on positive integers tending to infinity, all but o(X) inputs N<=X have C^m(N)<f(N) at some integer 0<=m<=R(N); on odd inputs the analogous result holds with Syr and K. The clocks do not depend on f, but exceptional sets may depend on f.",
+      "tex_label": "cor:universal-clock",
+      "dependencies": [
+        "ND-025",
+        "ND-026",
+        "N0(X)=ceil(inf_(n>=sqrtX) f(n))-1, eventually >=2",
+        "explicit strict-threshold and low-input count"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            89,
+            126
+          ]
+        },
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "lines": [
+            1998,
+            2022
+          ]
+        }
+      ],
+      "source_comparison": "Completes the written natural-density deduction from the pinned external analytic inputs. Not a claim to have proved every individual Collatz orbit converges.",
+      "priority_claim": false,
+      "formal_status": "Written argument from cited and previously reconstructed inputs; finite identity checks, no Lean certificate.",
+      "later_refinements": [
+        "ND-116"
+      ]
+    },
+    {
+      "id": "ND-028",
+      "canonical_claim_id": "CLM-COL-000221",
+      "type": "proved_scalar_terminal_refinement",
+      "statement": "With Mazur's unchanged schedules L=logB, n=floor(L/(10log2)), m=ceil(floor(L/100000)*L^(-2/5)), S=sqrt(m logm), W=C sqrt(n logn), F=(340/100000)L, eta=57SW/F+1021S^2/F+8/m^3 has the explicit bound in eq:mazur-eta-envelope for L>=10^10 and eta/(L^(-1/5)logL) tends to (57C/f)*sqrt((3/5)*tau*q)>0. Thus eta=o(L^-d) for every d<1/5.",
+      "tex_label": "prop:mazur-eta",
+      "dependencies": [
+        "exact floor and ceiling bounds",
+        "logarithm monotonicity",
+        "elementary power/logarithm limits"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "p.7 schedule following (19)",
+            "p.8 tube preceding (26)",
+            "ND/Band/A5ReferenceEta.lean",
+            "ND/Band/A5ReferenceEtaRate.lean"
+          ]
+        }
+      ],
+      "source_comparison": "Sharpens the source's L^-1/20 positive scalar envelope without changing schedules, maps, laws or constants; no global priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written scalar proof; bounded rational interval checks; no Lean compilation."
+    },
+    {
+      "id": "ND-029",
+      "canonical_claim_id": "CLM-COL-000222",
+      "type": "proved_scalar_terminal_aggregate_rate_and_scoped_propagation",
+      "statement": "For fixed C>0,K>=0 and pH=20K/m^11+80/m^3, pF=4pH, R_sigma=(86/25)eta*(1+11B^(-9/10))+14W p_sigma satisfies R_sigma/(L^(-1/5)logL)->(86/25)A_C. Hence both scalar terminal bounds are o(L^-d) for every 0<d<1/5, uniformly in all later band/event parameters.",
+      "tex_label": "prop:mazur-terminal-rate",
+      "dependencies": [
+        "ND-028",
+        "literal nonproportional error coefficients",
+        "quantifier order: C,K fixed before B and all bands/events"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "Lemma 3.5, p.9",
+            "ND/Band/A5ReferenceFixedTimeAbsorption.lean: pH and pF",
+            "ND/Discrepancy/A5ReferenceTerminalAggregateRate.lean",
+            "ND/Discrepancy/A5ReferenceGenuineBandRate.lean"
+          ]
+        }
+      ],
+      "source_comparison": "Replaces the terminal scalar d<1/20 guard by d<1/5. The source's own phase cap 5/143 is unchanged. Removes this particular obstacle to importing the 1/17.232 phase exponent; not a completed independent revalidation of the whole Mazur argument.",
+      "priority_claim": false,
+      "formal_status": "Written scalar proof and source-local propagation; no new Lean theorem compiled.",
+      "refinement": "ND-039 retains the exact exponential and ND-038 halves the absolute cell errors, giving terminal leading coefficient A_C; this earlier bound remains valid."
+    },
+    {
+      "id": "ND-030",
+      "canonical_claim_id": "CLM-COL-000223",
+      "type": "proved_terminal_record_inverse_and_injectivity",
+      "statement": "For positive odd endpoints with first hit of [1,B] exactly h, compatible finite terminal records (t,a,M), t>h, have positive odd inverse N=(2^ell M-c_a)/3^(t-h) when M>F_a. If diam(J)<=h this map is injective, including sources outside the sampling band. The unchanged Mazur schedules satisfy this window condition eventually.",
+      "tex_label": "prop:mazur-atoms",
+      "dependencies": [
+        "exact affine iteration and positive valuation-word decoding",
+        "first-hit shift by d in [0,h]",
+        "Mazur schedules W=o(log B), h~log B/100000"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "Appendix C.2–C.3, pp.21–23",
+            "ND/Band/A5TerminalAtoms.lean: ndA5TerminalAtomIndex_eq_of_common_affineSource",
+            "ND/Band/A5TerminalAtomDenominatorComparison.lean: ndA5TerminalAtomCandidate_odd_and_affine"
+          ]
+        }
+      ],
+      "nonclaim": "Terminal membership alone does not identify the original first passage; the explicit orbit of 63 separates the notions. Source coverage is separately required.",
+      "priority_claim": false,
+      "formal_status": "Written exact proof and finite rational regression checks; no Lean replay."
+    },
+    {
+      "id": "ND-031",
+      "canonical_claim_id": "CLM-COL-000224",
+      "type": "proved_exact_nominal_boundary_comparison",
+      "statement": "For the injective terminal records of ND-030, N=(1-alpha)N0, delta=-log(1-alpha)<=eps and alpha<=rho. Actual band [z,U) and nominal strict band (z,U) masses obey |UF-IF|<=#(Sminus union Splus)/D and |UH-IH|<=rho UH+sum_shell(1/N)/H, with Sminus=[z exp(-eps),z), Splus=[U exp(-eps),U), restricted to positive odd integers. One-sided nominal caps need only Sminus. No time-count factor multiplies shell mass.",
+      "tex_label": "prop:mazur-boundaries",
+      "dependencies": [
+        "ND-030",
+        "exact identity 1/N0=(1-alpha)/N",
+        "oriented support mismatch"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5TerminalAtomNominalization.lean",
+            "ND/Band/A5TerminalBoundaryShell.lean",
+            "ND/Band/A5NominalTotalCap.lean"
+          ]
+        }
+      ],
+      "nonclaim": "General shell estimates proved here; the numerical 11 and 5 shell constants are attributed source inputs at their own parameter guards.",
+      "priority_claim": false,
+      "formal_status": "Written exact proof and finite rational regression checks; no Lean replay."
+    },
+    {
+      "id": "ND-032",
+      "canonical_claim_id": "CLM-COL-000225",
+      "type": "proved_strict_two_row_and_measure_weight_identity",
+      "statement": "For nu>=1, 0<W<=nu/8 and 0<beta<2log2, the strict-band binomial sum over nu<=ell<=3nu, |ell-2nu|<W, 0<(ell-bnu)log2<beta equals the two terms ell=floor(bnu)+1+r, r=0,1 with the same indicators and arbitrary signed weights. The inverse is r=ell-floor(bnu)-1. The flat nominal weight contains exactly one factor z exp((ell-bnu)log2)/D; the harmonic weight divides by H instead.",
+      "tex_label": "prop:mazur-two-rows",
+      "dependencies": [
+        "integer floor bijection retaining strict boundaries",
+        "positive-composition mass binom(ell-1,nu-1)2^-ell",
+        "exact affine nominal weight"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5TerminalAtomReconstruction.lean: sum_ndA5TerminalTotals_endpointMass_strict_eq_range_two",
+            "ND/Band/A5ReferenceTerminalAggregate.lean: harmonic and flat profile definitions"
+          ]
+        }
+      ],
+      "nonclaim": "This reindexing does not replace the conditioned residue law by the coarse Syracuse law; that analytic step remains separate.",
+      "priority_claim": false,
+      "formal_status": "Written exact proof and finite rational regression checks; no Lean replay."
+    },
+    {
+      "id": "ND-033",
+      "canonical_claim_id": "CLM-COL-000226",
+      "type": "proved_sharp_finite_absorption",
+      "statement": "For every finite nonnegative collection Y_i,Z_i,E_i and 0<=a_i<=lambda<1 satisfying |Y_i-Z_i|<=E_i+a_i Z_i, sum|Y_i-Z_i|<=(lambda sum Y_i+sum E_i)/(1-lambda). One cell with Z=(Y+E)/(1-lambda), a=lambda attains equality.",
+      "tex_label": "lem:mazur-sharp-absorption",
+      "dependencies": [
+        "finite triangle inequality",
+        "Z_i<=Y_i+|Y_i-Z_i|",
+        "division by positive 1-lambda"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Probability/TrueAbsorption.lean: comparison with the bound replacing 1/(1-lambda) by 2",
+            "ND/Band/A5ReferenceFixedTimeAbsorption.lean: local-cell application"
+          ]
+        }
+      ],
+      "nonclaim": "Sharp among the stated finite comparison data, not a claim that actual Collatz errors attain equality.",
+      "priority_claim": false,
+      "formal_status": "Written exact proof and finite rational regression checks; no Lean replay."
+    },
+    {
+      "id": "ND-034",
+      "canonical_claim_id": "CLM-COL-000227",
+      "type": "proved_sharper_terminal_scalar_and_leading_constant",
+      "statement": "For unchanged schedules, lambda_B=(43/25)eta_B, fixed C>0,K>=0, and p_sigma from ND-029, Rstar_sigma=[lambda_B(1+11B^(-9/10))+7W p_sigma]/(1-lambda_B) equals R_sigma/[2(1-lambda_B)]. Its ratio to L^(-1/5)logL tends to (43/25)A_C, and Rstar/R tends to 1/2. For lambda_B<=1/2 it is no larger than the source bound. The local-cell comparison plus total nominal cap give this exact aggregate refinement.",
+      "tex_label": "cor:mazur-sharp-terminal",
+      "dependencies": [
+        "ND-028",
+        "ND-029",
+        "ND-031",
+        "ND-033",
+        "source conditioned fixed-cell estimate",
+        "sum_ell q_(nu,ell)<=1 and #J<=7W"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5ReferenceFixedTimeAbsorption.lean",
+            "ND/Band/A5ReferenceTerminalPacket.lean",
+            "ND/Band/A5ReferenceTerminalAggregate.lean"
+          ]
+        }
+      ],
+      "source_comparison": "Refines ND-029 without retracting it. Leading terminal coefficient is halved asymptotically; admissible terminal exponent d<1/5 and separate phase restriction are unchanged.",
+      "nonclaim": "Complete scalar proof and exact use of the source cell inequality; no independent certification of conditioned FM1, genuine coverage or the full Mazur package.",
+      "priority_claim": false,
+      "formal_status": "Written exact proof and finite rational regression checks; no Lean replay.",
+      "refinement": "ND-039 retains the exact exponential and ND-038 halves the absolute cell errors, giving terminal leading coefficient A_C; this earlier bound remains valid."
+    },
+    {
+      "id": "ND-035",
+      "canonical_claim_id": "CLM-COL-000228",
+      "type": "proved_fibrewise_cancellation_and_test_maps",
+      "statement": "For G_n->G_m reduction pi with fibre size k=3^(n-m), pi_* sums masses, Uq(y)=q(pi y)/k, Ac(x)=sum_(pi y=x)c(y)/k. pi_*U=I, A pi^*=I, <Uq,c>=<q,Ac>; ker A is the zero-fibre-sum tests. If r=p-U pi_*p, |<r,c>|<=1/2 sum_x osc_fibre(c) sum_fibre|r|, hence <=H||r||_1/2 for 0<=c<=H. The factor1/2 is sharp.",
+      "tex_label": "prop:mazur-centred-test",
+      "dependencies": [
+        "finite fibre summation",
+        "zero mass in each fibre",
+        "midpoint subtraction"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Fourier/FixedTotalFiniteResolvedDescent.lean: finite resolved tests and exact fibre average"
+          ]
+        }
+      ],
+      "nonclaim": "No Fourier decay or stronger distributional mixing is claimed.",
+      "priority_claim": false,
+      "formal_status": "Written proof at stated scope and exact finite regression tests; no Lean replay."
+    },
+    {
+      "id": "ND-036",
+      "canonical_claim_id": "CLM-COL-000229",
+      "type": "proved_conditioned_prefix_mixture_and_likelihood",
+      "statement": "For 1<=m<n, ell>=n, b_j(u)=binom(u-1,j-1)2^-u on u>=j and zero otherwise, P(u)=b_m(u)b_(n-m)(ell-u)/b_n(ell), Q(u)=b_m(u). pi_*mu_(n,ell)=sum_u P(u)mu_(m,u); Law(X_m)=sum_u Q(u)mu_(m,u). On strict suffix support R(u+1)/R(u)=2(ell-u-(n-m))/(ell-u-1), and ratio minus1=[(ell-2n)-(u-2m)+1]/(ell-u-1). Word reversal identifies affine/chronological fixed-total offset laws.",
+      "tex_label": "prop:mazur-prefix-mixture",
+      "dependencies": [
+        "positive-composition split/concatenation bijection",
+        "reduction modulo3^m",
+        "exact binomial ratio"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Fourier/FixedTotalSourceLaw.lean: ndAffineFixedTotalSubmass_eq_section7",
+            "ND/Fourier/FixedTotalRatioWindow.lean: exact likelihood and suffix guards"
+          ]
+        }
+      ],
+      "nonclaim": "Reversal preserves the total gate, not arbitrary prefix events.",
+      "priority_claim": false,
+      "formal_status": "Written proof at stated scope and exact finite regression tests; no Lean replay."
+    },
+    {
+      "id": "ND-037",
+      "canonical_claim_id": "CLM-COL-000230",
+      "type": "proved_exact_central_likelihood_and_signed_tail",
+      "statement": "For countable probabilities P,Q positive on G, log-likelihood oscillation<=eps, and outside masses p0,q0<1, R(u) is between exp(+-eps)(1-p0)/(1-q0). Given outside upper bounds thetaP,thetaQ<1, bounded nonnegative phi<=H satisfies |E_Pphi-E_Qphi|<=a E_Qphi+H max(thetaP,thetaQ), a=max(exp(eps)/(1-thetaQ)-1,1-exp(-eps)(1-thetaP)). Equal tails theta permit a=exp(eps)/(1-theta)-1. The fixed-total ratio on the source literal window has eps=(57 sqrt(m logm)|ell-2n|+1021m logm)/n under m>=150,8m<=n,|ell-2n|<=n/8.",
+      "tex_label": "lem:mazur-exact-likelihood",
+      "dependencies": [
+        "exact central mass ratio",
+        "sign of outside difference",
+        "explicit adjacent log telescope"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Fourier/FixedTotalRatioNormalization.lean: comparison with source43/25 coefficient and sum of tails",
+            "ND/Fourier/FixedTotalRatioWindow.lean and FixedTotalRatioTelescope.lean: literal central window"
+          ]
+        }
+      ],
+      "nonclaim": "The source tail estimates now have complete written reconstructions in ND-040–ND-042; finite tests do not certify the analytic estimates.",
+      "priority_claim": false,
+      "formal_status": "Written proof at stated scope and exact finite regression tests; no Lean replay."
+    },
+    {
+      "id": "ND-038",
+      "canonical_claim_id": "CLM-COL-000231",
+      "type": "proved_refined_fixed_cell_descent",
+      "statement": "Under the written literal central-window and displacement guards, using the source two2/m^3 tails, for 0<=c<=H the fixed-cell error is <=H Omega/2+[exp(eps)/(1-2/m^3)-1]V+2H/m^3, V=E_Law(X_m)Ac. For Omega<=K/m^11 and the source assembled test caps20/80 with all source guards, absolute errors pHdag=10K/m^11+40/m^3, pFdag=40K/m^11+160/m^3 halve the earlier pH,pF. Prior Tao-based conditioned estimate supplies Omega on terminal scales m~tau(logB)^(3/5), fine level comparablelogB.",
+      "tex_label": "cor:mazur-centred-descent",
+      "dependencies": [
+        "ND-035",
+        "ND-036",
+        "ND-037",
+        "ND-008",
+        "ND-042 and sourced assembled endpoint-test cap theorems"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Fourier/FixedTotalRatioTails.lean: both outside_ratioGood_le_two_div_cube declarations",
+            "ND/Band/A5FixedCellTerminalDescent.lean: harmonic cap20 and flat cap80"
+          ]
+        }
+      ],
+      "nonclaim": "Tail inputs are independently reconstructed in writing in ND-042, which also sharpens them. Assembled test caps retain their sourced guards. No complete package or Lean certification.",
+      "priority_claim": false,
+      "formal_status": "Written proof at stated scope and exact finite regression tests; no Lean replay.",
+      "sharper_consequence": "ND-042 retains unequal tails2m^(-25/7),2m^-8 and aSharp; the earlier bound and terminal coefficient remain valid."
+    },
+    {
+      "id": "ND-039",
+      "canonical_claim_id": "CLM-COL-000232",
+      "type": "proved_exact_exponential_terminal_refinement",
+      "statement": "Let E=(57SW+1021S^2)/F,theta=2/m^3,gamma=exp(E)/(1-theta)-1 and Rdag=[gamma(1+11B^-0.9)+(7/2)W p_sigma]/(1-gamma). On source range lambda=(43/25)(E+4theta)<=1/2, gamma<=lambda and Rdag<=Rstar<=R. With unchanged schedules and fixed C>0,K>=0, Rdag/[L^-1/5 logL]->A_C, Rdag/R->25/86, Rdag/Rstar->25/43. Terminal exponent d<1/5 and separate phase restriction unchanged.",
+      "tex_label": "cor:mazur-exponential-terminal",
+      "dependencies": [
+        "ND-028",
+        "ND-029",
+        "ND-031",
+        "ND-033",
+        "ND-038",
+        "source nominal cap and time count"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5ReferenceEta.lean: literal scalar",
+            "ND/Band/A5ReferenceFixedTimeAbsorption.lean and A5ReferenceTerminalAggregate.lean: source aggregation"
+          ]
+        }
+      ],
+      "nonclaim": "No claim of novelty or complete independent package certification; existing stronger error exponent is preserved, not further improved.",
+      "priority_claim": false,
+      "formal_status": "Written proof at stated scope and exact finite regression tests; no Lean replay."
+    },
+    {
+      "id": "ND-040",
+      "canonical_claim_id": "CLM-COL-000233",
+      "type": "proved_cut_bijection_and_without_replacement_concentration",
+      "statement": "For 1<=n<=ell, positive compositions of ell into n parts biject with (n-1)-subsets of {1,...,ell-1} by partial sums; inverse consecutive differences, source cut coordinate s-1. For a uniform K-subset of {1,...,N}, 0<=K<=N,N>=1, H_q counts cuts<=q. E binom(H_q,r)=binom(q,r)binom(K,r)/binom(N,r)<=binom(q,r)(K/N)^r for 0<=r<=N. For 1<=q<=N,v>=0, both inclusive centered tails are <=exp(-2v^2/q). Complementation proves the lower tail; membership indicators are not assumed independent.",
+      "tex_label": "prop:mazur-cut-count",
+      "dependencies": [
+        "finite double counting",
+        "positive PGF expansion",
+        "Bernoulli log-MGF second derivative <=1/4",
+        "complement-subset bijection"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Fourier/FixedTotalBars.lean",
+            "ND/Fourier/FixedTotalConcentration.lean",
+            "ND/Fourier/FixedTotalPGF.lean",
+            "ND/Fourier/FixedTotalMGF.lean",
+            "ND/Fourier/FixedTotalTail.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Written reconstruction and finite regressions, not a local Lean replay or full Mazur-package certification. No novelty claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof at stated scope; finite exact checks in mazur_coverage_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-041",
+      "canonical_claim_id": "CLM-COL-000234",
+      "type": "proved_fixed_total_order_statistic_tail",
+      "statement": "For n>=3,1<=j<n,n<=ell<=3n, U_j=sum first j parts of a uniform positive composition of ell into n. For 8<=u<=3j, P(|U_j-j ell/n|>=u)<=2 exp(-u^2/(63j)). Lower event uses q=floor(j ell/n-u) and H_q>=j; upper uses v=ceil(j ell/n+u) and H_(v-1)<=j-1, including integral endpoints. Polynomial63(u-1)^2-48u^2=15(u-8)^2+114(u-8)+15 proves the upper endpoint constant.",
+      "tex_label": "prop:mazur-order-statistic",
+      "dependencies": [
+        "ND-040",
+        "rho=(n-1)/(ell-1)>=1/4",
+        "j-1<=j ell rho/n<=j",
+        "exact integer support bounds"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Fourier/FixedTotalT3.lean: ndFixedTotalSplitIndexPMF_map_headTotal_absTail_le"
+          ]
+        }
+      ],
+      "nonclaim": "Written reconstruction and finite regressions, not a local Lean replay or full Mazur-package certification. No novelty claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof at stated scope; finite exact checks in mazur_coverage_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-042",
+      "canonical_claim_id": "CLM-COL-000235",
+      "type": "proved_two_tail_powers_and_asymmetric_cell_refinement",
+      "statement": "For m>=150,8m<=n,|ell-2n|<=n/8,m|ell-2n|/n<=S=sqrt(m logm), R=ceil(16S),G={u>=m:|u-2m|<=R}, the conditioned prefix-total law P and independent geometric total law Q satisfy P(Gc)<=2m^(-25/7), Q(Gc)<=2m^-8. Both imply the earlier2m^-3 tails. Put thetaP=2m^(-25/7),thetaQ=2m^-8 and aSharp=max(exp(eps)/(1-thetaQ)-1,1-exp(-eps)(1-thetaP)). Fixed-cell error<=H Omega/2+aSharp V+H thetaP. With sourced assembled caps20/80 and Omega<=K/m^11, absolute errors are10K/m^11+40m^(-25/7) and40K/m^11+160m^(-25/7).",
+      "tex_label": "cor:mazur-two-tails",
+      "dependencies": [
+        "ND-041",
+        "ND-037",
+        "ND-035",
+        "exact geometric moment exp(-t)/(2-exp(t))",
+        "retained source central window and displacement guards"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Fourier/FixedTotalRatioTails.lean: both outside_ratioGood_le_two_div_cube declarations",
+            "ND/Fourier/FixedTotalT3.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Written reconstruction and finite regressions, not a local Lean replay or full Mazur-package certification. No novelty claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof at stated scope; finite exact checks in mazur_coverage_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-043",
+      "canonical_claim_id": "CLM-COL-000236",
+      "type": "proved_genuine_first_passage_terminal_record_identity",
+      "statement": "For fixed C>0 and all sufficiently large B, uniformly in E and bands B^alpha<=z<U<=B^(alpha^3),alpha=1001/1000,0<log(U/z)<2log2, the genuine finite first-passage event A_E and original unrestricted terminal union U_E agree on G={|S_k-2k|<W:0<=k<=n0}. Here n0=floor(logB/(10log2)),h=floor(logB/100000),W=C sqrt(n0 log n0),J=[ceil(log(z/B)/d-3W),floor(log(U/B)/d+3W)]capN,d=log(4/3). The endpoint set uses original ceil/floor of D_±=(4/3)^h B exp(±(logB)^(7/10)), first-hit h and landing in E. Map: actual first hit t, actual prefix of length t-h, total ell and endpoint T^(t-h)N; inverse exact integer affine map. An earlier hit forces M<=2^(2(logB)^(3/5))B+3^n0<D_-, a contradiction. All scalar guards proved eventually; uniqueness uses diamJ<=h.",
+      "tex_label": "prop:mazur-genuine-coverage",
+      "dependencies": [
+        "ND-030",
+        "exact affine block identity and upper offset bound",
+        "unchanged source schedules",
+        "explicit logarithmic scalar estimates"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5TerminalAtomCoverage.lean",
+            "ND/Band/A5GoodTimeLocalization.lean",
+            "ND/Band/A5GoodEPrimeIngress.lean",
+            "Tao/Section5/ReversePrefix.lean",
+            "Tao/Section5/ReversePrefixScalar.lean",
+            "Tao/Section5/PassLostWindow.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Written reconstruction and finite regressions, not a local Lean replay or full Mazur-package certification. No novelty claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof at stated scope; finite exact checks in mazur_coverage_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-044",
+      "canonical_claim_id": "CLM-COL-000237",
+      "type": "proved_one_charge_actual_event_comparison",
+      "statement": "For every probability measure p on positive odd integers, with events and eventual guards of ND-043, |p(A_E)-p(U_E)|<=p(Gc). This charges the complement once after the full union. Applies separately to uniform and harmonic band laws. With original A5 sub-band mass/test guards, combine with the nominal boundary comparison and Rdag terminal error; ND-048 now supplies actual-band p(Gc); evaluation of the common reference profile remains separate.",
+      "tex_label": "cor:mazur-coverage-mass",
+      "dependencies": [
+        "ND-043",
+        "pointwise indicator difference vanishes on G"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5TerminalAtomCoverageProbability.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Written reconstruction and finite regressions, not a local Lean replay or full Mazur-package certification. No novelty claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof at stated scope; finite exact checks in mazur_coverage_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-045",
+      "canonical_claim_id": "CLM-COL-000238",
+      "type": "proved_exact_band_residue_and_density_comparison",
+      "statement": "For I={positive odd N:z<=N<U},z>=1,D=#I>0,H=sum_I1/N,pF=1/D,pH=1/(NH), the density ratio is NH/D with inverse D/(NH). For M>=1,q=2^M, the full L1 residue distances to the uniform odd-residue law are <=q/(2D) and <=q/(2ceil(z)H), respectively. Proof uses period q/2 and exact finite Abel summation; real endpoints retained.",
+      "tex_label": "prop:mazur-band-residues",
+      "dependencies": [
+        "periodic odd lattice count",
+        "finite Abel summation"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5HarmonicResidue.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Written proof and exact finite regressions; not Lean replay or whole-package certification. No priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof; finite rational checks in mazur_band_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-046",
+      "canonical_claim_id": "CLM-COL-000239",
+      "type": "proved_strict_decoder_transport_with_single_ideal_overflow",
+      "statement": "For n,M>=1 and any probability p on positive odd integers, write Pn for its actual n-valuation law,Qn=Geom(2)^n,DeltaM for full L1 residue error modulo2^M. Then ||Pn-Qn||1<=DeltaM+2Theta(n,M), Theta=2^(-(M-1))*sum_(j=0)^(n-1)binom(M-1,j). Every event costs <=DeltaM/2+Theta. Strict accepted words total s<M have2^(M-s-1) residue lifts; decoder d satisfies d pi=T Vn. Overflow is one symbol, and untruncation costs2min(bP,bQ)<=2bQ. No actual overflow estimate assumed.",
+      "tex_label": "prop:mazur-truncation-transport",
+      "dependencies": [
+        "Tao exact valuation cylinder",
+        "full L1 pushforward contraction",
+        "equal positive and negative mass"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "Tao/Syracuse/Prop19Laws.lean",
+            "Tao/Syracuse/Prop19Truncation.lean",
+            "Tao/Syracuse/TruncatedValuationTV.lean"
+          ]
+        },
+        {
+          "id": "TAO-2019-V7",
+          "locators": [
+            "Proposition1.9 (rach), Section4 proof"
+          ]
+        }
+      ],
+      "nonclaim": "Written proof and exact finite regressions; not Lean replay or whole-package certification. No priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof; finite rational checks in mazur_band_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-047",
+      "canonical_claim_id": "CLM-COL-000240",
+      "type": "proved_maximal_geometric_exact_rate",
+      "statement": "For iid P(Ai=a)=2^-a,a>=1, Xk=sum_(i<=k)(Ai-2), n>=2,0<w<n: P(max_(1<=k<=n)|Xk|>=w)<=Psi(n,w)=exp(-nI(w/n))+exp(-nI(-w/n)), where I(v)=(1+v)log(1+v)-(2+v)log(1+v/2),v>-1. Bounded stopped exponential proof uses exact h(t)=-t-log(2-exp(t)),t<log2; there is no factor n. Also Theta(n,3n)<=(27/32)^n for every n>=1. I''=1/((1+v)(2+v)), I(v)=v²/4+O(|v|³).",
+      "tex_label": "prop:mazur-maximal-tail",
+      "dependencies": [
+        "exact geometric moment",
+        "finite stopped-increment expectation identity"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "Tao/Probability/Geom2PrefixTypical.lean: comparison with its union bound"
+          ]
+        }
+      ],
+      "nonclaim": "Written proof and exact finite regressions; not Lean replay or whole-package certification. No priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof; finite rational checks in mazur_band_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-048",
+      "canonical_claim_id": "CLM-COL-000241",
+      "type": "proved_actual_band_fullgood_sharpening",
+      "statement": "For fixed C>0,n=floor(logB/(10log2)),W=C sqrt(n logn),w=ceilW and sufficiently large B, actual strict G={|Sk-2k|<W:0<=k<=n} satisfies pH(Gc)<=Psi+2^(3n-2)/(ceilz H)+Theta(n,3n), pF(Gc)<=Psi+2^(3n-2)/D+Theta. On exact A5 subbands alpha=1001/1000,y=B^alpha orB^(alpha²),K=floor((alpha-1)logy),beta=(alpha-1)logy/K,z=y exp(jbeta),U=z expbeta,0<=j<K: both <=Psi+B^(-701/1000)+(27/32)^n <=(2+o_C(1))n^(-C²/4), uniform in branch and band. Combines with ND044 one exceptional charge. Not an asymptotic equality or improved final density theorem.",
+      "tex_label": "cor:mazur-band-fullgood",
+      "dependencies": [
+        "ND-043",
+        "ND-044",
+        "ND-045",
+        "ND-046",
+        "ND-047",
+        "explicit H>=1/3,D>=z/2 eventual band floors"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5HarmonicFullGood.lean",
+            "ND/Band/A5BandCoverageFullGood.lean",
+            "ND/Band/A5Physical.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Written proof and exact finite regressions; not Lean replay or whole-package certification. No priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof; finite rational checks in mazur_band_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-049",
+      "canonical_claim_id": "CLM-COL-000242",
+      "type": "proved_explicit_Allikvere_uniform_prefix_constant",
+      "statement": "For L=logx,alpha=1001/1000,y=x^alpha orx^(alpha²),n=floor(L/(10log2)),N uniform on positive odds in closed[y,y^alpha], P(max_(0<=k<=n)|Sk(N)-2k|>=L^(3/5)) <=(2+o(1))exp(-(5log2/2)L^(1/5)). Uniform in both branches. Closed endpoint represented exactly by half-open[y,floor(y^alpha)+1). This sharpens the constant in ND020's prefix component, not its separate power bound for no passage by n0.",
+      "tex_label": "cor:mazur-allikvere-prefix",
+      "dependencies": [
+        "ND-045",
+        "ND-046",
+        "ND-047",
+        "ND-020"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "Tao Proposition1.9",
+            "Allikvere uniform-input prefix comparison"
+          ]
+        },
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "locators": [
+            "existing uniform-input reconstruction ND020"
+          ]
+        }
+      ],
+      "nonclaim": "Written proof and exact finite regressions; not Lean replay or whole-package certification. No priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof; finite rational checks in mazur_band_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-050",
+      "canonical_claim_id": "CLM-COL-000243",
+      "type": "proved_exact_halfopen_lattice_corrections",
+      "statement": "For nonempty odd band I=[z,U),z>=1,beta=log(U/z),D=#I,H=sum1/N, signed epsD=D-(U-z)/2 and epsH=H-beta/2 obey |epsD|<1 and |epsH|<=1/z. For d=log(4/3), RH/H-2/d=(RH-beta/d)/H-2epsH/(dH), zRF/D-2/d=(z/D)(RF-(expbeta-1)/d)-2epsD/(dD). Ifz>=6,beta>=1 thenH>=1/3,D>z/2. Raw-error charges sharpen to3EH+6/(zd) and2EF+4/(zd), with exact signed versions retained.",
+      "tex_label": "prop:mazur-band-denominators",
+      "dependencies": [
+        "finite odd-lattice ceiling count",
+        "exact finite counting-integral identity"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5BandNormalizerRatios.lean",
+            "ND/Discrepancy/A5TwoProfileNormalizedA6.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete finite written reconstruction and bounded regressions. No full interior/exterior analytic rate proof, whole-package certification, Lean replay or priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof at stated finite scope; reproducible mazur_profile_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-051",
+      "canonical_claim_id": "CLM-COL-000244",
+      "type": "proved_exact_two_cell_means_and_neighbour_residual",
+      "statement": "Forlog2<beta<2log2,W>0,nu>=1,A=log2(z/M),s=floor(A+nu log2 3)+1,theta=fractional phase,b=2-beta/log2,q0=pnu(s)1_|s-2nu|<W,q1=pnu(s+1)1_|s+1-2nu|<W: RH=sum(q0+1_theta>b q1),RF=sum(2^(1-theta)q0+1_theta>b2^(2-theta)q1). Separatingq1-q0 leaves phase functions fH=1+1_theta>b, fF=2^(1-theta)+1_theta>b2^(2-theta), with integrals beta/log2,(expbeta-1)/log2. Strict gate and distinct tube supports retained; no identification of raw sum with its mean.",
+      "tex_label": "prop:mazur-profile-phase",
+      "dependencies": [
+        "ND-032 exact two-row reindexing",
+        "positive composition endpoint mass"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5TwoProfileRawQ.lean",
+            "ND/Band/A5RawMass.lean",
+            "ND/Discrepancy/A5TwoProfilePhysicalA6.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete finite written reconstruction and bounded regressions. No full interior/exterior analytic rate proof, whole-package certification, Lean replay or priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof at stated finite scope; reproducible mazur_profile_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-052",
+      "canonical_claim_id": "CLM-COL-000245",
+      "type": "proved_signed_common_kernel_transport",
+      "statement": "On original EPrime endpoint carrier, K_m(M)=3^m p_m(M mod3^m)/M. Common profileZ(E)=(2/d)sum_EPrime(E)K is the landing pushforward of the weighted finite endpoint measure, not presumed probability. WithrH=RH-beta/d,rF=RF-(expbeta-1)/d, PH-(2/d)sumK=sumKrH/H-2epsHsumK/(dH); PF-(2/d)sumK=(z/D)sumKrF-2epsDsumK/(dD). Signed denominator correction is paid once against kernel mass, not once per endpoint/time.",
+      "tex_label": "prop:mazur-profile-residual",
+      "dependencies": [
+        "ND-050",
+        "ND-051",
+        "unchanged positive endpoint carrier and landing map"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5ReferencePhysicalSplit.lean",
+            "ND/Discrepancy/A5ReferenceInteriorAggregate.lean",
+            "Tao/Section5/CommonZ.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete finite written reconstruction and bounded regressions. No full interior/exterior analytic rate proof, whole-package certification, Lean replay or priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof at stated finite scope; reproducible mazur_profile_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-053",
+      "canonical_claim_id": "CLM-COL-000246",
+      "type": "proved_all_endpoint_envelope_and_sharp_exterior_centering",
+      "statement": "For finite positive physical time setV, Gv=sum_nu binom(2nu-2,nu-1)/2^(2nu-2)<=sum_nu nu^(-1/2). Everyendpoint has0<=RH/H<=LH=Gv/H and0<=(z/D)RF<=LF=z expbeta Gv/D. For original closed interior |logM-logB-hd|<=4W/25 and strict exterior, witha=2/d andZout=sum_outK, |Pout-aZout|<=max(a,Lsigma-a)Zout. This factor is sharp from only positivity and envelope; not a sharpness claim for actual orbits. Written peak-mass proof and exact signed interior/exterior assembly.",
+      "tex_label": "prop:mazur-profile-envelope",
+      "dependencies": [
+        "ND-051",
+        "ND-052",
+        "adjacent negative-binomial ratio",
+        "central-binomial induction"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5ReferenceExteriorEnvelope.lean",
+            "ND/Discrepancy/A5ReferenceFullCenterRate.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete finite written reconstruction and bounded regressions. No full interior/exterior analytic rate proof, whole-package certification, Lean replay or priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof at stated finite scope; reproducible mazur_profile_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-054",
+      "canonical_claim_id": "CLM-COL-000247",
+      "type": "proved_exact_shifted_support_and_signed_correction",
+      "statement": "With d_n=floor(A-delta*n)+1, R=ceil(W)-1, positive indicator supports I0={-R<=d<=R}, I1={-R<=d+1<=R} have lost fibre d=R, gained fibre d=-R-1 and common -R<=d<=R-1. Each boundary fibre has at most three indices. For ell=min(I0 union I1)>R+1, exact signed q1-q0 and L1 correction E are proved; E<=c_R(ell)*Z+actual boundary masses<=c_R(ell)*Z+3/sqrt(ell), with explicit endpoint-max coefficient and no support identification.",
+      "tex_label": "prop:mazur-shift-support",
+      "dependencies": [
+        "ND-051",
+        "ND-053",
+        "exact floor inequalities and binomial ratio"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5ShiftedRawComparison.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete finite written proofs and bounded exact regressions. Does not certify the full Diophantine or raw-mass asymptotic, exterior tail, whole package, or Lean replay. No priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof at stated finite scope; mazur_weighted_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-055",
+      "canonical_claim_id": "CLM-COL-000248",
+      "type": "proved_raw_time_recurrences_and_variation",
+      "statement": "On nonempty intrinsic interval I0=[l,h], l>R, consecutive raw masses have exact ratio defects d/(2n) or (d²+d-2n)/(4n(n+d+1)) for level increments 1 or 2. Full zero-extension variation V=q_l+q_h+sum|q_(n+1)-q_n| <=q_l+q_h+eta(l,R)*Z, with eta=max(R/(2l),(R²+R+2l)/(4l(l-R+1))). Under explicit W>1,W<=l/8,Z>=1/32,W>=(37/20)sqrt(l), V<=20ZW/l; reconstructs source constant20 without setting raw mass Z=1.",
+      "tex_label": "prop:mazur-raw-variation",
+      "dependencies": [
+        "ND-051",
+        "ND-053",
+        "ND-054",
+        "exact cross-length binomial recurrences"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5Regularity.lean:119–388,416–633"
+          ]
+        }
+      ],
+      "nonclaim": "Complete finite written proofs and bounded exact regressions. Does not certify the full Diophantine or raw-mass asymptotic, exterior tail, whole package, or Lean replay. No priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof at stated finite scope; mazur_weighted_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-056",
+      "canonical_claim_id": "CLM-COL-000249",
+      "type": "proved_raw_padded_Abel_identity_and_exact_empirical_phase_bound",
+      "statement": "For original raw vector u_k=q_(l+k), pad by P>=1 zeros and use circle anchor phi=A+(l-P)gamma. Exact phase error is u_last S_(P+s)-u_0 S_P+sum(u_k-u_(k+1))S_(P+k+1). Actual weak empirical discrepancies give |error|<=C_sigma Dstar B_P with C_H=1,C_F=2exp(beta)-1 and exact B_P<= (P+s)V. Source constant20 yields 40ZsWD(s)/l after equal padding instead of its deliberately relaxed64; no exponent or equidistribution novelty. Intrinsic raw centers retain weighted-phase, signed-shift and raw-mass errors separately; physical containment is not assumed.",
+      "tex_label": "prop:mazur-raw-abel",
+      "dependencies": [
+        "ND-051",
+        "ND-054",
+        "ND-055",
+        "finite telescoping and weak endpoint counting integral"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Discrepancy/A5Padding.lean",
+            "ND/Discrepancy/A5PaddedProfile.lean",
+            "ND/Discrepancy/A5TwoProfileTail.lean",
+            "ND/Discrepancy/PhaseToDbar.lean:494–660"
+          ]
+        }
+      ],
+      "nonclaim": "Complete finite written proofs and bounded exact regressions. Does not certify the full Diophantine or raw-mass asymptotic, exterior tail, whole package, or Lean replay. No priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof at stated finite scope; mazur_weighted_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-057",
+      "canonical_claim_id": "CLM-COL-000250",
+      "type": "proved_exact_atom_gaussian_comparison",
+      "statement": "For nu>=1 and integer |k|<=nu/2, p_nu(2nu+k) equals exp(-nu*I(k/nu)+r_(2nu+k)-r_nu-r_(nu+k))/(2sqrt(pi*nu)*sqrt((1+k/(2nu))(1+k/nu))). Robbins remainders give |log(p/G_nu(k))|<=4|k|/(3nu)+16|k|^3/(27nu^2)+1/(4nu). On the unchanged strict tube W<=l/2, the actual floor error e in (0,1] gives exact signed correction -(2d_nu*e-e^2)/(4nu) and |log(q0/G_xi)|<=epsilon=11W/(6l)+16W^3/(27l^2)+1/(2l).",
+      "tex_label": "prop:mazur-atom-gaussian",
+      "dependencies": [
+        "ND-047",
+        "ND-051",
+        "Robbins1955 equations1–2"
+      ],
+      "sources": [
+        {
+          "id": "ROBBINS-1955",
+          "locators": [
+            "pp26–27, equations(1),(2),(8)"
+          ]
+        },
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A6PhysicalRate.lean",
+            "ND/Band/A6PhysicalInteriorRate.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof using named published inputs; bounded checks do not certify the infinite statement. Exterior kernel-tail assembly and full Mazur/Shaik review remain. No full-package Lean replay or priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof; exact rational/symbolic finite regressions and separately labelled high-precision diagnostics in mazur_mass_checks.json; not Lean."
+    },
+    {
+      "id": "ND-058",
+      "canonical_claim_id": "CLM-COL-000251",
+      "type": "proved_finite_raw_mass_bound_and_uniform_asymptotic",
+      "statement": "For R>=1,xi>R/delta,W<=l/2, exact tube (xi-R/delta,xi+(R+1)/delta] has raw mass |Z-1/delta|<=(exp(epsilon)-1)(1/delta+Q)+Q, Q=2M_xi+T with exact maximum and explicit two Mills tails. Gaussian coordinate u->sqrt(u)-xi/sqrt(u) proves integral1/delta. Fixed C>=1/2,W=C sqrt(N logN),xi in[N/43,N/13] gives uniformly Z=1/delta+O_C((logN)^(3/2)/sqrtN). All guards proved eventually; no setting Z=1.",
+      "tex_label": "prop:mazur-tube-mass",
+      "dependencies": [
+        "ND-057",
+        "ND-017",
+        "exact bounded-variation quadrature and Gaussian coordinate map"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A6PhysicalInteriorRate.lean"
+          ]
+        },
+        {
+          "id": "ROBBINS-1955",
+          "locators": [
+            "pp26–27"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof using named published inputs; bounded checks do not certify the infinite statement. Exterior kernel-tail assembly and full Mazur/Shaik review remain. No full-package Lean replay or priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof; exact rational/symbolic finite regressions and separately labelled high-precision diagnostics in mazur_mass_checks.json; not Lean."
+    },
+    {
+      "id": "ND-059",
+      "canonical_claim_id": "CLM-COL-000252",
+      "type": "proved_intrinsic_two_profile_rate_from_smooth_comparison",
+      "statement": "Under ND058 schedule, uniformly in real center and log2<beta<2log2, intrinsic raw harmonic/flat sums equal beta/log(4/3) and (exp(beta)-1)/log(4/3) with error O_C(N^(-1/17.232)(logN)^(1/2-1/17.232)). Exact q0-G remainder is retained in L1; smooth zero-extension variation O(N^-1/2) saves sqrt(logN) compared with the coarser raw variation. Uses Rhin mu8.616, existing Abel estimate, exact shift and mass correction.",
+      "tex_label": "cor:mazur-intrinsic-centers",
+      "dependencies": [
+        "ND-016",
+        "ND-051",
+        "ND-054",
+        "ND-056",
+        "ND-057",
+        "ND-058"
+      ],
+      "sources": [
+        {
+          "id": "RHIN-1987",
+          "locators": [
+            "p160 equation(8)"
+          ]
+        },
+        {
+          "id": "KN-1974",
+          "locators": [
+            "Chapter2 Theorems2.5 and5.1"
+          ]
+        },
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Discrepancy/A5TwoProfilePhysicalA6.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof using named published inputs; bounded checks do not certify the infinite statement. Exterior kernel-tail assembly and full Mazur/Shaik review remain. No full-package Lean replay or priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof; exact rational/symbolic finite regressions and separately labelled high-precision diagnostics in mazur_mass_checks.json; not Lean."
+    },
+    {
+      "id": "ND-060",
+      "canonical_claim_id": "CLM-COL-000253",
+      "type": "proved_exact_physical_transport_and_uniform_interior_profiles",
+      "statement": "With d=log(4/3),delta=d/log2,tau=logM-logB-m0*d,A=log(z/M)/log2,t0=log(z/B)/d, margin |tau|/d+(W+1)/delta<=3W and log2<beta<2log2 imply both strict supports embed by nu->nu+m0 into original J=[t0-3W,t0+beta/d+3W] intersect nonnegative integers. Inverse is n-m0 on image, no clipped subtraction, and both physical sums exactly equal intrinsic sums. Original alpha1001/1000 two branches and fixed C>=1/2 satisfy all guards uniformly on |tau|<=4W/25 for large B; physical centers inherit ND059 rate, and actual band denominators give normalized center2/d for every c<1/17.232.",
+      "tex_label": "prop:mazur-physical-centers",
+      "dependencies": [
+        "ND-050",
+        "ND-051",
+        "ND-054",
+        "ND-059",
+        "exact source schedule and directed logarithm constants"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5Physical.lean:29–113,196–220,370–487,696–855",
+            "Tao/Section5/Schedule.lean:1–60",
+            "Tao/Section5/PassSchedule.lean:1–40",
+            "ND/Discrepancy/A5TwoProfilePhysicalA6.lean:1–187"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof using named published inputs; bounded checks do not certify the infinite statement. Exterior kernel-tail assembly and full Mazur/Shaik review remain. No full-package Lean replay or priority claim.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof; exact rational/symbolic finite regressions and separately labelled high-precision diagnostics in mazur_mass_checks.json; not Lean."
+    },
+    {
+      "id": "ND-061",
+      "canonical_claim_id": "CLM-COL-000254",
+      "type": "proved_native_endpoint_coefficient_with_decaying_high_remainder",
+      "statement": "For B>1,L=logB,h=floor(L/100000)>=1,N=floor(L/(10log2)),2*3^(h-1)<=B,h+q<=N, any finite set S of positive odd endpoints with first passage h has c_q(S,x)<=sum of (1+b_h/2)2^(-|b|) over its nonempty word/residue fibres +3B^(-4997/600000). Consequently c_q<=2+3B^(-4997/600000), without assuming mass one. Rounded first-passage intervals, CRT modulus, low/high equality convention and endpoint-filter witnesses are retained.",
+      "tex_label": "prop:mazur-native-coefficient",
+      "dependencies": [
+        "ND-045",
+        "exact affine Syracuse iteration",
+        "geometric series"
+      ],
+      "sources": [
+        {
+          "id": "TAO-2019-V7",
+          "locators": [
+            "geom",
+            "loam",
+            "mant"
+          ]
+        },
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "Tao/Section5/EndpointFiberEnvelope.lean",
+            "EndpointCoefficientBound.lean",
+            "Geom2HighWeightScalar.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof at stated scope; finite tests do not certify the asymptotic statement. No full-package Lean replay, priority claim, or improved final Mazur natural-density theorem.",
+      "priority_claim": false,
+      "formal_status": "Written proof; exact rational/symbolic regressions and separately labelled 70-digit diagnostics in mazur_exterior_checks.json; no Lean."
+    },
+    {
+      "id": "ND-062",
+      "canonical_claim_id": "CLM-COL-000255",
+      "type": "proved_terminal_weighted_two_event_chernoff",
+      "statement": "For h>=2,u>0,0<v<h-1 and a finite distinct positive-word carrier inside {sum(b_i-2)>u} union {sum_{i<h}(b_i-2)<-v}, its native weighted sum is <=(2+u/(2h))*exp(-h I(u/h))+2*exp(-(h-1)I(-v/(h-1))), I(t)=(1+t)log(1+t)-(2+t)log(1+t/2). Terminal linear weight is summed exactly: weighted MGF=g(t)^h*(1+1/(2-exp(t))), g=exp(-t)/(2-exp(t)). No terminal cap or logB multiplier.",
+      "tex_label": "prop:mazur-weighted-chernoff",
+      "dependencies": [
+        "exact positive-geometric generating series",
+        "one-sided Markov inequality"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5ReferenceTerminalCap.lean",
+            "ND/Probability/Geom2FiniteTwoEventTail.lean"
+          ]
+        },
+        {
+          "id": "TAO-2019-V7",
+          "locators": [
+            "geom"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof at stated scope; finite tests do not certify the asymptotic statement. No full-package Lean replay, priority claim, or improved final Mazur natural-density theorem.",
+      "priority_claim": false,
+      "formal_status": "Written proof; exact rational/symbolic regressions and separately labelled 70-digit diagnostics in mazur_exterior_checks.json; no Lean."
+    },
+    {
+      "id": "ND-063",
+      "canonical_claim_id": "CLM-COL-000256",
+      "type": "proved_original_exterior_coefficient_and_exact_majorant_asymptotic",
+      "statement": "Retain ND061 hypotheses with h>=2, W>0,u=4W/(25log2),kappa8=log(8/3)/log2,v=u-kappa8 in(0,h-1). The strict original exterior |logM-logB-h log(4/3)|>4W/25 has coefficient bounded by ND062 expression plus3B^(-4997/600000). Exact corridor uses predecessor lower and full-word upper centered totals. For fixed C>0,W=C sqrt(NlogN), the explicit majorant equals(4+o_C(1))N^(-A_C),A_C=64C^2/(log2)^3. This equality is for the majorant, not the actual coefficient.",
+      "tex_label": "cor:mazur-exterior-coefficient",
+      "dependencies": [
+        "ND-061",
+        "ND-062",
+        "ND-047"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5ReferenceExteriorTupleTail.lean",
+            "A5ReferenceFilteredCoefficient.lean",
+            "A5ReferenceSchedule.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof at stated scope; finite tests do not certify the asymptotic statement. No full-package Lean replay, priority claim, or improved final Mazur natural-density theorem.",
+      "priority_claim": false,
+      "formal_status": "Written proof; exact rational/symbolic regressions and separately labelled 70-digit diagnostics in mazur_exterior_checks.json; no Lean."
+    },
+    {
+      "id": "ND-064",
+      "canonical_claim_id": "CLM-COL-000257",
+      "type": "proved_full_harmonic_flat_reference_profiles",
+      "statement": "For the original two-branch band schedule, fixed C>=1/2,q=ceil(h*(logB)^(-2/5)), common kernel K_q(M)=3^q p_q(M mod3^q)/M and S=E(E), Z_q(S)<=2+epsilon_B and Z_out<=T_B. Exact finite centered error <=e_sigma Z_in+max(2/d,L_sigma-2/d)Z_out. Uniformly in branch,band,target, both full profiles equal(2/d)Z_q(S)+O_C(N^(-1/17.232)(logN)^(1/2-1/17.232)). Exterior charge O_C(N^(-64C^2/(log2)^3)sqrt(logN)); residue averaging costs no3^q factor and does not normalize original mass.",
+      "tex_label": "prop:mazur-full-profile",
+      "dependencies": [
+        "ND-050",
+        "ND-052",
+        "ND-053",
+        "ND-059",
+        "ND-060",
+        "ND-061",
+        "ND-063"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Discrepancy/A5ReferenceFullCenterRate.lean",
+            "ND/Band/A5ReferenceSchedule.lean"
+          ]
+        },
+        {
+          "id": "RHIN-1987",
+          "locators": [
+            "p160 equation(8), via ND059"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof at stated scope; finite tests do not certify the asymptotic statement. No full-package Lean replay, priority claim, or improved final Mazur natural-density theorem.",
+      "priority_claim": false,
+      "formal_status": "Written proof; exact rational/symbolic regressions and separately labelled 70-digit diagnostics in mazur_exterior_checks.json; no Lean."
+    },
+    {
+      "id": "ND-065",
+      "canonical_claim_id": "CLM-COL-000258",
+      "type": "proved_explicit_affine_boundary_majorants",
+      "statement": "On the original A5 schedule, every compatible retained record has 0<F_a/M<=rho=B^(-19749/20000) and delta<=epsilon=B^(-9/10). Exact shell majorants b_H-=(epsilon/2+exp(epsilon)/z)/H, b_H=(epsilon+exp(epsilon)*(1/z+1/U))/H, b_F-=(z*(1-exp(-epsilon))/2+1)/D and b_F=((z+U)*(1-exp(-epsilon))/2+2)/D give |U_H-I_H|<=rho*U_H+b_H, |U_F-I_F|<=b_F and I_sigma<=1+b_sigma-. Their ratios to epsilon converge uniformly to 1,2,1/(e-1),(e+1)/(e-1), respectively; these are majorant limits, not actual errors.",
+      "tex_label": "prop:mazur-genuine-boundaries",
+      "dependencies": [
+        "ND-030",
+        "ND-031",
+        "ND-050"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5ExactAffineCorrection.lean",
+            "ND/Band/A5TerminalBoundaryShell.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof from the cited Tao/Rhin inputs at stated scope; finite regressions do not certify infinite/asymptotic claims. No Lean replay, novelty claim or new final Mazur timed/natural-density theorem.",
+      "priority_claim": false,
+      "formal_status": "Written proof and exact finite regressions in mazur_genuine_checks.json; separately labelled70-digit diagnostics, no Lean."
+    },
+    {
+      "id": "ND-066",
+      "canonical_claim_id": "CLM-COL-000259",
+      "type": "proved_native_assembled_caps_and_refined_terminal_bound",
+      "statement": "For the original fixed-cell endpoint set S_(nu,ell), fine harmonic/flat tests are bounded by A_H=(2+epsilon_B)/H and A_F=(2+epsilon_B)*U/D, epsilon_B=3B^(-4997/600000). Exact fibre averaging preserves all endpoint collisions and changes the common factor3^nu to3^m. Uniform limits are4 and4e/(e-1). The terminal error is at most [gamma_B*(1+b_sigma-)+#J*A_sigma*(K_C/(2m^11)+2/m^3)]/(1-gamma_B), asymptotic to the previously proved terminal A_C*(logB)^(-1/5)*loglogB. One fixed K_C serves every cell; analytic inputs are those proved/cited previously.",
+      "tex_label": "prop:mazur-genuine-caps",
+      "dependencies": [
+        "ND-008",
+        "ND-033",
+        "ND-038",
+        "ND-039",
+        "ND-042",
+        "ND-061",
+        "ND-065"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5FixedCellTerminalDescent.lean",
+            "ND/Band/A5ReferenceFixedTimeAbsorption.lean"
+          ]
+        },
+        {
+          "id": "TAO-2019-V7",
+          "locators": [
+            "conditioned mixing via cor:fixed-total"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof from the cited Tao/Rhin inputs at stated scope; finite regressions do not certify infinite/asymptotic claims. No Lean replay, novelty claim or new final Mazur timed/natural-density theorem.",
+      "priority_claim": false,
+      "formal_status": "Written proof and exact finite regressions in mazur_genuine_checks.json; separately labelled70-digit diagnostics, no Lean."
+    },
+    {
+      "id": "ND-067",
+      "canonical_claim_id": "CLM-COL-000260",
+      "type": "proved_uniform_genuine_band_passage_rate",
+      "statement": "For every fixed C>=1/2 on the unchanged Mazur A5 schedules, actual finite-passage probabilities from every original harmonic/uniform band have common original measure Zcal_B(E)=(2/log(4/3))*sum_(M in E'_B(E))3^m*p_m(M mod3^m)/M and uniform error O_C((logB)^(-b)*(loglogB)^(1/2-b)), b=1/17.232. The exact finite four-term bound retains coverage, rho*U_H+b_H or b_F, the refined terminal quotient, and the full-profile interior/exterior error. C=1/2 works since C^2/4=1/16>b; it is not an assertion of orbitwise boundedness.",
+      "tex_label": "thm:mazur-genuine-rate",
+      "dependencies": [
+        "ND-043",
+        "ND-044",
+        "ND-048",
+        "ND-064",
+        "ND-065",
+        "ND-066"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Discrepancy/A5ReferenceGenuineBandRate.lean"
+          ]
+        },
+        {
+          "id": "TAO-2019-V7",
+          "locators": [
+            "conditioned mixing via cor:fixed-total"
+          ]
+        },
+        {
+          "id": "RHIN-1987",
+          "locators": [
+            "p160 equation(8), via ND059"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof from the cited Tao/Rhin inputs at stated scope; finite regressions do not certify infinite/asymptotic claims. No Lean replay, novelty claim or new final Mazur timed/natural-density theorem.",
+      "priority_claim": false,
+      "formal_status": "Written proof and exact finite regressions in mazur_genuine_checks.json; separately labelled70-digit diagnostics, no Lean."
+    },
+    {
+      "id": "ND-068",
+      "canonical_claim_id": "CLM-COL-000261",
+      "type": "proved_whole_source_and_exact_nonpassage_completion",
+      "statement": "For both original closed source blocks and harmonic/uniform starting laws, the genuine landing subprobability has the same common-center rate O((logB)^(-b)*(loglogB)^(1/2-b)),b=1/17.232. Exact convex band mixtures retain a possible top endpoint with error p*max(Z,|1-Z|). For every0<c<b, the source factors7(band),8(whole) and16(pairwise) hold with (logB)^(-c), without c<1/20. Adding one point for actual nonpassage gives probability pushforwards whose TV event supremum equals the finite-target supremum exactly; bounded-test difference costs oscillation timesTV. Original common mass tends to1 at this rate, equivalently unscaled kernel mass tends tolog(4/3)/2, without normalization.",
+      "tex_label": "cor:mazur-genuine-source",
+      "dependencies": [
+        "ND-048",
+        "ND-061",
+        "ND-067"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Band/A5SourceMixture.lean",
+            "ND/Discrepancy/A5ReferenceGenuineSourceRate.lean"
+          ]
+        },
+        {
+          "id": "TAO-2019-V7",
+          "locators": [
+            "conditioned mixing via cor:fixed-total"
+          ]
+        },
+        {
+          "id": "RHIN-1987",
+          "locators": [
+            "p160 equation(8), via ND059"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof from the cited Tao/Rhin inputs at stated scope; finite regressions do not certify infinite/asymptotic claims. No Lean replay, novelty claim or new final Mazur timed/natural-density theorem.",
+      "priority_claim": false,
+      "formal_status": "Written proof and exact finite regressions in mazur_genuine_checks.json; separately labelled70-digit diagnostics, no Lean."
+    },
+    {
+      "id": "ND-069",
+      "canonical_claim_id": "CLM-COL-000262",
+      "type": "proved_exact_totalizer_loss",
+      "statement": "The source totalizer factors through r_B merging exactly {1,partial}. For difference Delta of probability laws, full-L1 loss is |Delta1|+|Deltapartial|-|Delta1+Deltapartial|, with kernel span(delta1-deltapartial); retaining nonpassage mass gives an exact inverse on admissible pairs. Full-L1 is twice event TV, so natural-source totalized rate is O(R(logB)) and <=32(logB)^(-c) eventually for all0<c<1/17.232.",
+      "tex_label": "prop:mazur-totalizer-exact",
+      "dependencies": [
+        "ND-068"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Probability/PassTotalizer.lean",
+            "ND/Discrepancy/A5ReferenceTotalizedSourceRate.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof at stated scope. Finite checks do not certify infinite or asymptotic claims. No whole-package Lean replay, priority claim, or proof that every Collatz orbit reaches1.",
+      "priority_claim": false,
+      "formal_status": "Written proof and exact finite regressions in mazur_real_timed_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-070",
+      "canonical_claim_id": "CLM-COL-000263",
+      "type": "proved_exact_weighted_source_overlap",
+      "statement": "For the original probabilities w*1_S/W_S and w*1_T/W_T with w>0, event TV equals1-W_intersection/max(W_S,W_T)=max(W_SminusT,W_TminusS)/max(W_S,W_T). Common pushforwards contract this exact quantity with loss equal to fibrewise cancellation; neither original denominator is changed.",
+      "tex_label": "prop:mazur-source-overlap",
+      "dependencies": [],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Probability/UniformFloorPerturbation.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof at stated scope. Finite checks do not certify infinite or asymptotic claims. No whole-package Lean replay, priority claim, or proof that every Collatz orbit reaches1.",
+      "priority_claim": false,
+      "formal_status": "Written proof and exact finite regressions in mazur_real_timed_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-071",
+      "canonical_claim_id": "CLM-COL-000264",
+      "type": "proved_real_floor_source_envelopes",
+      "statement": "For B=floor x, beta in{alpha,alpha^2},q=alpha*beta, unchanged closed odd windows[B^beta,B^q] and[x^beta,x^q], exact event errors epsilon_F,H obey the displayed finite endpoint/mass envelopes. Uniformly in0<=x-B<1, limsup B*epsilon_F<=q and limsup B logB*epsilon_H<=1001. These are upper envelopes, not limits of the actual errors, which vanish atintegerx.",
+      "tex_label": "prop:mazur-real-overlap",
+      "dependencies": [
+        "ND-070"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Probability/UniformFloorPerturbation.lean",
+            "ND/Discrepancy/A5ReferenceRealFloorPass.lean"
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof at stated scope. Finite checks do not certify infinite or asymptotic claims. No whole-package Lean replay, priority claim, or proof that every Collatz orbit reaches1.",
+      "priority_claim": false,
+      "formal_status": "Written proof and exact finite regressions in mazur_real_timed_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-072",
+      "canonical_claim_id": "CLM-COL-000265",
+      "type": "proved_real_passage_and_scheduled_failure",
+      "statement": "Actual hitting at realx equals hitting atfloorx for every integer iterate. All four real-source output laws have pairwise event/full-L1 error O(R(logx)),R(L)=L^(-b)(1+logL)^(1/2-b),b=1/17.232. Failure to hit by the original n_x=floor(log floorx/(10log2)) has probabilityO((logx)^(-1/16)), including infinite nonpassage; exact real/floor errors enter once for event TV, twice for full-L1.",
+      "tex_label": "thm:mazur-real-passage",
+      "dependencies": [
+        "ND-043",
+        "ND-048",
+        "ND-068",
+        "ND-069",
+        "ND-071"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Discrepancy/A5ReferenceRealFloorPass.lean",
+            "ND/Discrepancy/A5ReferenceRealLogBlock.lean"
+          ]
+        },
+        {
+          "id": "TAO-2019-V7",
+          "locators": [
+            "Passage law via ND068; exact source schedule and time-carrying Section3 comparisons."
+          ]
+        },
+        {
+          "id": "RHIN-1987",
+          "locators": [
+            "p160 equation(8), via ND059 and ND068."
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof at stated scope. Finite checks do not certify infinite or asymptotic claims. No whole-package Lean replay, priority claim, or proof that every Collatz orbit reaches1.",
+      "priority_claim": false,
+      "formal_status": "Written proof and exact finite regressions in mazur_real_timed_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-073",
+      "canonical_claim_id": "CLM-COL-000266",
+      "type": "proved_time_carrying_critical_scale_iteration",
+      "statement": "On the original forward scales y_j=y0^(alpha^j),q_j=y_j^(1/alpha),K_J=sum_(j<J)n_qj, actual harmonic bad probability<=sum(event-landing-distance+scheduled-failure). Deterministic timed-event inequalities hold even whenq_j<B. K_J<=logq0*(alpha^J-1)/(10(alpha-1)log2). Exact critical-rate sum has upper factor1/(1-r)+a logalpha*r/((1+logL)(1-r)^2),r=alpha^-b,a=1/2-b, and infinite ratio limit1/(1-r). Hence H_y{tau_B>logy/(10alpha(alpha-1)log2)}<=C R(logB), uniformly in large B and all y>=2 with a nonempty odd source block.",
+      "tex_label": "prop:mazur-critical-iteration",
+      "dependencies": [
+        "ND-072"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "Tao/Section3/AmbientPartialTrace.lean",
+            "ND/Discrepancy/A5ReferenceSection3GeometricBudget.lean",
+            "Tao/Section3/TimeBudget.lean"
+          ]
+        },
+        {
+          "id": "TAO-2019-V7",
+          "locators": [
+            "Passage law via ND068; exact source schedule and time-carrying Section3 comparisons."
+          ]
+        },
+        {
+          "id": "RHIN-1987",
+          "locators": [
+            "p160 equation(8), via ND059 and ND068."
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof at stated scope. Finite checks do not certify infinite or asymptotic claims. No whole-package Lean replay, priority claim, or proof that every Collatz orbit reaches1.",
+      "priority_claim": false,
+      "formal_status": "Written proof and exact finite regressions in mazur_real_timed_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-074",
+      "canonical_claim_id": "CLM-COL-000267",
+      "type": "proved_mazur_schedule_timed_natural_density",
+      "statement": "For allintegersB>=2 andrealX>=2, countofpositiveoddn<=X failing tohitB within100log_2n Syracuse steps dividedbyX<=C R(logB). Positiveintegerrawfailures within301log_2n dividedbyX<=2C R(logB), R(L)=L^-b(1+logL)^(1/2-b),b=1/17.232. Consequently every thresholdfunction growingtoinfinity is reached strictlybelowit withinthese clocks atdensityone (oddrelativeorordinary respectively). Refines Mazur scheduled constants501501/(5000log2),1509503/(5000log2); doesnotimprove the workbench's faster Allikvere-based clock.",
+      "tex_label": "thm:mazur-critical-density",
+      "dependencies": [
+        "ND-072",
+        "ND-073"
+      ],
+      "sources": [
+        {
+          "id": "MAZUR-2026-V2",
+          "locators": [
+            "ND/Discrepancy/A5ReferenceND31Main.lean",
+            "ND/LogTime/Clock.lean",
+            "ND/LogTime/Statement.lean"
+          ]
+        },
+        {
+          "id": "TAO-2019-V7",
+          "locators": [
+            "Passage law via ND068; exact source schedule and time-carrying Section3 comparisons."
+          ]
+        },
+        {
+          "id": "RHIN-1987",
+          "locators": [
+            "p160 equation(8), via ND059 and ND068."
+          ]
+        }
+      ],
+      "nonclaim": "Complete written proof at stated scope. Finite checks do not certify infinite or asymptotic claims. No whole-package Lean replay, priority claim, or proof that every Collatz orbit reaches1.",
+      "priority_claim": false,
+      "formal_status": "Written proof and exact finite regressions in mazur_real_timed_checks.json; no Lean replay."
+    },
+    {
+      "id": "ND-075",
+      "canonical_claim_id": "CLM-COL-000268",
+      "type": "proved_deterministic_shaik_reconstruction_and_refinement",
+      "statement": "On an actual positive shortcut first-passage path to real Y>1, n=(2^h y/3^s)P and the exact product defect 1-P=b/y for the forward affine offset b. With o(Y) the least odd integer >Y, E_Y<=Ys/(3o(Y)+1)<=Y(h-1)/(3o(Y)+1)<h/3. Additive and exact defects have the stated exact concatenation laws, including the negative cross term for the latter.",
+      "tex_label": "prop:shaik-defect",
+      "dependencies": [],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "PDF pp14–17, Lemmas4.1–4.2, Proposition4.3, Lemmas5.1–5.2",
+            "FirstPassage.lean; LossTransport.lean; NestedRecertification.lean; RankScaledLoss.lean"
+          ]
+        }
+      ],
+      "nonclaim": "No novelty claim, full Shaik endpoint audit, complete Lean replay, or inference of infinite claims from finite checks.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof; exact finite rational regressions recorded separately. No Lean replay.",
+      "later_refinements": [
+        "ND-116"
+      ]
+    },
+    {
+      "id": "ND-076",
+      "canonical_claim_id": "CLM-COL-000269",
+      "type": "proved_deterministic_shaik_reconstruction_and_refinement",
+      "statement": "For sources in [2^M,2^(M+1)), M>=1, with fixed positive first-passage time h and landing y and exact reverse-product defect <=epsilon<=1/3, the odd count is constant. Cardinality <=1+floor(epsilon(2^(M+1)-1)), with the sharper explicitly clipped integer interval bound. This improves Shaik's coefficient3 to2 for the additive loss filter E_Y<=D. Optimality concerns interval containment, not Collatz fibre occupancy.",
+      "tex_label": "prop:shaik-clipped-fibre",
+      "dependencies": [
+        "ND-075"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "PDF pp14–17, Lemmas4.1–4.2, Proposition4.3, Lemmas5.1–5.2",
+            "FirstPassage.lean; LossTransport.lean; NestedRecertification.lean; RankScaledLoss.lean"
+          ]
+        }
+      ],
+      "nonclaim": "No novelty claim, full Shaik endpoint audit, complete Lean replay, or inference of infinite claims from finite checks.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof; exact finite rational regressions recorded separately. No Lean replay.",
+      "later_refinements": []
+    },
+    {
+      "id": "ND-077",
+      "canonical_claim_id": "CLM-COL-000270",
+      "type": "proved_deterministic_shaik_reconstruction_and_refinement",
+      "statement": "For positive-duration decreasing-rank first-passage chains q_j>=1 with h_j<=m_j<(q_j+1)/r, cumulative loss at final rank q is <=sum_j 2^q s_j/(3*2^q_j+4)<2(q+2)/(3r). Direct passage, disjoint tags and clipped fibres give the exact support-sensitive count in the proof and coefficient4(q+2)/(3r), versus source3(q+2)/r. This coefficient ratio4/9 does not itself improve a density exponent.",
+      "tex_label": "prop:shaik-chain-transport",
+      "dependencies": [
+        "ND-075",
+        "ND-076"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "PDF pp14–17, Lemmas4.1–4.2, Proposition4.3, Lemmas5.1–5.2",
+            "FirstPassage.lean; LossTransport.lean; NestedRecertification.lean; RankScaledLoss.lean"
+          ]
+        }
+      ],
+      "nonclaim": "No novelty claim, full Shaik endpoint audit, complete Lean replay, or inference of infinite claims from finite checks.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof; exact finite rational regressions recorded separately. No Lean replay."
+    },
+    {
+      "id": "ND-078",
+      "canonical_claim_id": "CLM-COL-000271",
+      "type": "proved_deterministic_shaik_reconstruction_and_refinement",
+      "statement": "For odd n>Y>1, a finite shortcut passage (h,y,s) maps to the first Syracuse passage with s returns and odd landing u=y/2^v2(y). Sum of actual return valuations=h+v2(y); raw first-passage time=h+s. The inverse recovers d=max{k:2^k u<=Y}, y=2^d u and h=sum a-d. Exact reverse products and additive losses are preserved through the final even tail.",
+      "tex_label": "prop:shaik-clock-map",
+      "dependencies": [
+        "ND-075"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "PDF pp14–17, Lemmas4.1–4.2, Proposition4.3, Lemmas5.1–5.2",
+            "FirstPassage.lean; LossTransport.lean; NestedRecertification.lean; RankScaledLoss.lean"
+          ]
+        }
+      ],
+      "nonclaim": "No novelty claim, full Shaik endpoint audit, complete Lean replay, or inference of infinite claims from finite checks.",
+      "priority_claim": false,
+      "formal_status": "Complete written proof with independently kernel-checked substatements: Raw/shortcut exact clock, first-passage equivalence and prefix height bounds only; Syracuse return map and its inverse are still written proofs.",
+      "partial_formal_certificate": {
+        "claim_id": "ND-084",
+        "receipt": "formal_shaik_core/verification.json",
+        "scope": "Raw/shortcut exact clock, first-passage equivalence and prefix height bounds only; Syracuse return map and its inverse are still written proofs."
+      }
+    },
+    {
+      "id": "ND-079",
+      "canonical_claim_id": "CLM-COL-000272",
+      "type": "proved_written_shaik_endpoint_reconstruction_and_refinement",
+      "statement": "Uniform finite-shell certificate: |I_m minus W_t|/2^m <=2 exp(4c0) exp(-c0 t^2 m), c0=1/(2 log_2(3)^2), for m>=0 and 0<t<=1. Proof includes parity/residue bijection, stopped fair-prefix bound and actual affine additive term.",
+      "tex_label": "prop:shaik-prefix-uniform",
+      "dependencies": [],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Section6 pp19–26, Lemmas6.1/6.3 and Propositions6.2/6.4",
+            "Pinned TimeoutDensity.lean and TimeoutEndpointProfile.lean"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written argument; finite regressions separate; no Lean replay.",
+      "nonclaim": "No full formal dependency-closure certification, no priority claim or improved A_FP threshold.",
+      "later_refinements": [
+        "ND-112",
+        "ND-113",
+        "ND-115",
+        "ND-116"
+      ]
+    },
+    {
+      "id": "ND-080",
+      "canonical_claim_id": "CLM-COL-000273",
+      "type": "proved_written_shaik_endpoint_reconstruction_and_refinement",
+      "statement": "Exact integer affine envelope U_m(s)=floor(3^s(2^(m+1)-1+2^(m-s))/2^m)-1 gives refined timeout binomial cutoff ksharp>=floor(q log_3 2). For q=floor((1-K0/(2L))m), fixed K0>0,C>1 and L<=m<=CL, timeout fraction is O_{C,K0}(m^(-1/2)2^(-kappa m)); rounding costs a fixed multiplier, not an exponent loss.",
+      "tex_label": "prop:shaik-timeout-tail",
+      "dependencies": [
+        "ND-079"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Section6 pp19–26, Lemmas6.1/6.3 and Propositions6.2/6.4",
+            "Pinned TimeoutDensity.lean and TimeoutEndpointProfile.lean"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written proof with independently kernel-checked substatements: All-size affine identity, integer endpoint U_m(s) and timeout subset implication only; binomial law, threshold comparison and entropy estimates not included.",
+      "nonclaim": "No full formal dependency-closure certification, no priority claim or improved A_FP threshold.",
+      "partial_formal_certificate": {
+        "claim_id": "ND-084",
+        "receipt": "formal_shaik_core/verification.json",
+        "scope": "All-size affine identity, integer endpoint U_m(s) and timeout subset implication only; binomial law, threshold comparison and entropy estimates not included."
+      }
+    },
+    {
+      "id": "ND-081",
+      "canonical_claim_id": "CLM-COL-000274",
+      "type": "proved_written_shaik_endpoint_reconstruction_and_refinement",
+      "statement": "Actual nonendpoint high ranks form one deterministic sequence m0=M, qi=floor(r mi), m(i+1)=qi-1. Exact one-sided cumulative corridor has center M-qj-j and width sum(2t_i m_i+t_i+2)/g. Low durations are at most [S(S-1)-L(L-1)]/2. Feasible time support is O(sqrt(M log(M+2))).",
+      "tex_label": "prop:shaik-time-corridor",
+      "dependencies": [
+        "ND-079"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Section6 pp19–26, Lemmas6.1/6.3 and Propositions6.2/6.4",
+            "Pinned TimeoutDensity.lean and TimeoutEndpointProfile.lean"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written proof with independently kernel-checked substatements: Exact rank telescoping only; real tolerances, time interval and cardinality estimates not included.",
+      "nonclaim": "No full formal dependency-closure certification, no priority claim or improved A_FP threshold.",
+      "partial_formal_certificate": {
+        "claim_id": "ND-084",
+        "receipt": "formal_shaik_core/verification.json",
+        "scope": "Exact rank telescoping only; real tolerances, time interval and cardinality estimates not included."
+      },
+      "later_refinements": [
+        "ND-116"
+      ]
+    },
+    {
+      "id": "ND-082",
+      "canonical_claim_id": "CLM-COL-000275",
+      "type": "proved_written_shaik_endpoint_reconstruction_and_refinement",
+      "statement": "For every integer L_M asymp log(M+2), beta>0 and e>0, except proportion O(sqrt(M log(M+2))*sqrt(L_M)*2^(-kappa L_M)+M^(-e)), a single shortcut witness lands below2^L, has height<=n^(1+beta), and length<=M/g+O(sqrt(M log(M+2))). Actual deterministic ranks reduce the high failure charge from O(H M^2 d) to O(H M d).",
+      "tex_label": "thm:shaik-shell-drift",
+      "dependencies": [
+        "ND-077",
+        "ND-079",
+        "ND-080",
+        "ND-081"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Section6 pp19–26, Lemmas6.1/6.3 and Propositions6.2/6.4",
+            "Pinned TimeoutDensity.lean and TimeoutEndpointProfile.lean"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written proof with independently kernel-checked substatements: Nested passage and exact dyadic completion only; density, real-valued clock and real power-height estimates not included.",
+      "nonclaim": "No full formal dependency-closure certification, no priority claim or improved A_FP threshold.",
+      "partial_formal_certificate": {
+        "claim_id": "ND-084",
+        "receipt": "formal_shaik_core/verification.json",
+        "scope": "Nested passage and exact dyadic completion only; density, real-valued clock and real power-height estimates not included."
+      },
+      "later_refinements": [
+        "ND-104",
+        "ND-116"
+      ]
+    },
+    {
+      "id": "ND-083",
+      "canonical_claim_id": "CLM-COL-000276",
+      "type": "proved_written_shaik_endpoint_reconstruction_and_refinement",
+      "statement": "For fixed A>A_FP, delta=kappa A-1/2, the common target C(log n)^A and height n^(1+beta) fail for at most O(X(log X)^(-delta)loglog X) sources. Shortcut, raw and odd-return clock leading constants are respectively2,3,1 divided bylog(4/3), each with additive O(sqrt(log n loglog n)); odd-return statement is for odd sources. Moving Delta_M criterion also reconstructed. No improved critical target exponent claimed.",
+      "tex_label": "cor:shaik-fixed-rate-clocks",
+      "dependencies": [
+        "ND-078",
+        "ND-082"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Section6 pp19–26, Lemmas6.1/6.3 and Propositions6.2/6.4",
+            "Pinned TimeoutDensity.lean and TimeoutEndpointProfile.lean"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written proof with independently kernel-checked substatements: Raw/shortcut clock and integer prefix height transfer only; analytic density rate and logarithmic leading constants not included.",
+      "nonclaim": "No full formal dependency-closure certification, no priority claim or improved A_FP threshold.",
+      "partial_formal_certificate": {
+        "claim_id": "ND-084",
+        "receipt": "formal_shaik_core/verification.json",
+        "scope": "Raw/shortcut clock and integer prefix height transfer only; analytic density rate and logarithmic leading constants not included."
+      },
+      "later_refinements": [
+        "ND-116"
+      ]
+    },
+    {
+      "id": "ND-084",
+      "canonical_claim_id": "CLM-COL-000277",
+      "type": "kernel_checked_exact_integer_and_path_reconstruction",
+      "statement": "For all natural n,k the exact integer numerator satisfies 2^k T^k(n)=3^s n+A_k and A_k+2^k<=3^s2^(k-s). For n<2^(k+1) this gives T^k(n)<=U_k(s) with its floor and final -1 retained, and every timeout satisfies U_k(s)>2^q. Exact nested first passage, dyadic completion, raw clock h+s, first-passage equivalence, prefix height transfer and rank telescoping have independent core Lean certificates.",
+      "tex_label": "prop:shaik-core-certificate",
+      "dependencies": [],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Basic.lean; RawDynamics.lean; TimeoutRun.lean; TimeoutExecution.lean; TimeoutEndpointWitness.lean, pinned commit ef3410843bf58d69f771f5ba2c0571d54b54da59",
+            "Existing written ND078, ND080–ND083; deterministic substatements only"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Independent Lean4.15.0 Init-only certificate, 17 exported axiom reports; no sorryAx, sixteen use only propext and Quot.sound, iterate_unique uses none.",
+      "formal_receipt": "formal_shaik_core/verification.json",
+      "nonclaim": "No formal binomial count, entropy tail, real-valued corridor, Syracuse odd-part inverse or whole-package natural-density proof. The source's additive shortcut clock already occurs at TimeoutOrbitCeiling.lean htime.",
+      "later_refinements": [
+        "ND-110",
+        "ND-111",
+        "ND-112",
+        "ND-113",
+        "ND-114",
+        "ND-115"
+      ]
+    },
+    {
+      "id": "ND-085",
+      "canonical_claim_id": "CLM-COL-000278",
+      "type": "constructive_parity_reconstruction_with_scoped_kernel_certificate",
+      "statement": "For all n,d,m and i<=m, s_i(n+2^m d)=s_i(n) and T^i(n+2^m d)=T^i(n)+2^(m-i)3^s_i(n)d. Q_m=sum 2^i epsilon_i has an executable inverse D_m modulo 2^m; its complete natural fibre is D_m(w)+2^m N and its positive-shell inverse is 2^m+D_m(w). It preserves odd-count/Hamming weight and sends the two-successor modular Collatz relation to the binary shift relation. Restricting a shell I_m to prefix u of length j gives exactly n=D_j(u)+2^j d, 2^(m-j)<=d<2^(m+1-j), with actual image T^j(D_j(u))+3^wt(u)d. Written counting gives binomial(m,s) and conditional binomial(m-j,b) exactly.",
+      "tex_label": "prop:shaik-parity-decoder",
+      "additional_tex_labels": [
+        "cor:shaik-parity-counting",
+        "eq:shaik-parity-graph"
+      ],
+      "dependencies": [],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Parity.lean, complete (pinned ef3410843bf58d69f771f5ba2c0571d54b54da59)",
+            "Barrier.lean lines208–392: parity/Boolean equivalence, filtered cardinality, positive-shell transport"
+          ]
+        },
+        {
+          "id": "SRC-COL-000004",
+          "locators": [
+            "Laarhoven–de Weger arXiv1209.3495v1 original main.tex lines63–175, Section2 finite graph theorem; earlier cumulative chapter01c"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "14 parity/lift/decoder statements added to the preceding17, for31 exported general Lean4.15 Init-only theorem axiom reports. No sorryAx; allowed axioms only propext and Quot.sound. Full natural-number fibre iff, decoder inverses, lift, code shift and weight equality are compiled.",
+      "formal_receipt": "formal_shaik_core/verification.json",
+      "nonclaim": "At the ND085 checkpoint cardinalities were written only. ND086/CLM-COL-000279 subsequently kernel-checks the complete-shell binomial count. Prefix-conditioned cardinality and packaged graph isomorphism remain written, not separately exported Lean theorems. No new parity/graph theorem, density exponent or arbitrary-shell uniform landing law."
+    },
+    {
+      "id": "ND-086",
+      "canonical_claim_id": "CLM-COL-000279",
+      "type": "independent_formal_reconstruction_of_classical_finite_counting",
+      "statement": "For every m and f:Nat->Nat, sum_{n<2^m} f(Q_m(n))=sum_{w<2^m}f(w)=sum_{r<2^m}f(Q_m(2^m+r)). The literal count of starts in [2^m,2^(m+1)) with s odd inputs in m shortcut steps equals B(m,s), where B is the standard Pascal recursion, including zero outside s<=m. The manuscript identifies B with the usual binomial coefficient by the subset recursion.",
+      "tex_label": "prop:shaik-weighted-count",
+      "additional_tex_labels": [],
+      "dependencies": [
+        "ND-085"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Parity.lean and Barrier.lean; pinned ef3410843bf58d69f771f5ba2c0571d54b54da59"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Four general statements compiled, not finite tests; no Mathlib Nat.choose import is claimed.",
+      "formal_receipt": "formal_shaik_core/verification.json",
+      "nonclaim": "Classical parity/cardinality mechanism, already present in the source. Prefix-conditioned cardinality and full graph packaging remain written, not separately formalized. No density exponent or priority claim."
+    },
+    {
+      "id": "ND-087",
+      "canonical_claim_id": "CLM-COL-000280",
+      "type": "exact_finite_startup_comparison_and_rate_preserving_refinement",
+      "statement": "For positive-integer good sets with S∩[N,infinity) subset W, E=max(N-1,0), B_W(X)<=B_S(X)+min(X,E). Every eventual incoming bound B_S(X)<=C0 X(log X)^(-eta), eta>0, gives B_W(X)<=(C0+epsilon)X(log X)^(-eta) eventually for every epsilon>0. Explicit cutoff: choose integer k>eta and log X>=max(1,(max(1,E)k!/epsilon)^(1/(k-eta))). Thus Main.lean's final finite-startup conversion need not replace eta by min(eta,1).",
+      "tex_label": "prop:shaik-startup-rate",
+      "additional_tex_labels": [
+        "eq:shaik-startup-exact",
+        "eq:shaik-startup-rate"
+      ],
+      "dependencies": [],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "FiniteStartup.lean25–129; Main.lean168–268; complete files read at pinned commit"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "finite_startup_count_bound proves the general finite-sum inequality. Real exponential-series absorption is a complete written proof, not formalized in Init.",
+      "formal_receipt": "formal_shaik_core/verification.json",
+      "nonclaim": "This retains the incoming exponent; it does not establish an enlarged range of incoming exponents or certify the source's analytic dependencies. Source helper is valid but weaker; no error or novelty of the elementary finite-modification principle asserted."
+    },
+    {
+      "id": "ND-088",
+      "canonical_claim_id": "CLM-COL-000281",
+      "type": "explicit_rate_first_source_parameter_reconstruction",
+      "statement": "For every A>1/(2*kappa), c>2/log(4/3), beta>0 and prescribed 0<gamma<kappa*A-1/2, an explicit Shaik shrinking parameter package has P.kappa=gamma. Entropy deficit b*-b_j<=L*d*(1-alpha_j^2)<2L*d/(j+2) gives an explicit j. Both StageSetup cutoffs are M0=1+ceil(max(1,(2+eta)/(r-a0-eta),2/r,6/(r log2)^2)). Every package field is proved. The original high 5/2 charge, shell sum, actual common time/target/height witness and finite startup retain gamma. This exposes the manuscript's already claimed rate interval without enlarging it.",
+      "tex_label": "prop:shaik-prescribed-rate",
+      "additional_tex_labels": [
+        "eq:shaik-effective-barrier",
+        "eq:shaik-prescribed-high",
+        "eq:shaik-explicit-startup",
+        "eq:shaik-barrier-gap",
+        "eq:shaik-prescribed-profile"
+      ],
+      "dependencies": [
+        "ND-079",
+        "ND-083",
+        "ND-087"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Corollary1.2(1), printed PDF p4, visually checked",
+            "Pinned ef3410843bf58d69f771f5ba2c0571d54b54da59: ShrinkingParameters, FixedPolylogParameters, Parameters, ShrinkingTailAsymptotics, ShrinkingPolylogProfile, ShrinkingOrbitCeiling, ShrinkingNaturalDensityDescent, PolylogTarget"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written scalar construction and source-level analytic quantifier comparison. No new Lean theorem, no full source-package replay; the existing 36-theorem Init-only certificate is unchanged.",
+      "nonclaim": "No new density theorem, endpoint exponent, uniform constants at parameter boundaries, priority claim or full formal certification. Decimal entropy samples are numerical diagnostics, not interval certificates; exact rational checks cover parameter algebra only.",
+      "later_refinements": [
+        "ND-104",
+        "ND-110"
+      ]
+    },
+    {
+      "id": "ND-089",
+      "canonical_claim_id": "CLM-COL-000282",
+      "type": "critical_iterated_logarithmic_endpoint_rate_refinement",
+      "statement": "Let kappa=1-H2(log_3 2), a=1/(2*kappa). For every fixed c>2/log(4/3), beta>0: target C(log n)^a(loglog n)^B, B>1/kappa, has O(X/(loglog X)^(kappa*B-1)) literal simultaneous time/target/height exceptions. Target C(log n)^a(loglog n)^(1/kappa)(logloglog n)^D, D>0, has O(X/(logloglog X)^(kappa*D)) exceptions. Exact original M+2,M+3,M+4 schedules give ceiling factor 2^(-kappa*r), 0<=r<1. General antitone shell assembly costs at most 2^K+2CXq(K), K=floor(floor(log_2 X)/2), retaining each boundary exponent. All three previously proved drift clocks and height bounds propagate.",
+      "tex_label": "cor:shaik-critical-rates",
+      "additional_tex_labels": [
+        "lem:shaik-antitone-assembly",
+        "eq:shaik-antitone-prefix",
+        "eq:shaik-critical-B-rate",
+        "eq:shaik-critical-D-rate",
+        "eq:shaik-critical-cancellation"
+      ],
+      "dependencies": [
+        "ND-082",
+        "ND-083"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Corollary1.2(2-3), PDF p4; exact schedules pp26-27, equations6.20-6.23",
+            "MovingEndpointScalars; TimeoutEndpointAsymptotics; TimeoutEndpointNaturalDensity; PolylogExceptionalCount; Main lines1-160 at pinned ef341084"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written analytic proof and source-level theorem comparison; no new Lean theorem and no independent analytic dependency replay. The separate 36-theorem core is unchanged.",
+      "nonclaim": "No lowered critical target exponent, optimality, novelty or whole-package certification. This retains boundary rates directly supplied by the source's intermediate shell estimate; the weaker printed corollary remains correct."
+    },
+    {
+      "id": "ND-090",
+      "canonical_claim_id": "CLM-COL-000283",
+      "type": "source_slow_minorant_reconstruction_with_quantitative_profile",
+      "statement": "For arbitrary Omega:[1,infinity)->(0,infinity) tending to infinity, choose x_j>=exp(j^2), x_(j+1)>=x_j+1 and Omega(x)>=j for x>=x_j; phi=j on[x_j,x_(j+1)), phi=1 initially. Then phi is nondecreasing, diverges, eventually <=Omega and <=sqrt(log x). With z_M=log(M log2), H=a log_2(M+2)+(1/kappa)log_2 log(M+3)+log_2 phi(z_M), L=ceil H, the exact critical buffer is kappa log_2 phi(z_M)+kappa(L-H). Target C(log n)^a(loglog n)^(1/kappa)phi(loglog n) is n^o(1) and has the same actual clock/height witness outside at most 2^K+2CX{phi(log(K log2))^(-kappa)+(K+2)^(-1)} sources <=X eventually. The larger Omega target is reached by inclusion. No continuity, regular variation or effective divergence modulus is required.",
+      "tex_label": "prop:shaik-slow-factor",
+      "additional_tex_labels": [
+        "eq:shaik-slow-target",
+        "eq:shaik-slow-prefix",
+        "eq:shaik-slow-cancellation"
+      ],
+      "dependencies": [
+        "ND-082",
+        "ND-089"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Functional clause of Corollary1.2, PDF pp4-5 and full minorant construction p27",
+            "MovingEndpointScalars and TimeoutEndpointNaturalDensity at pinned ef341084"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written analytic proof and source-level theorem comparison; no new Lean theorem and no independent analytic dependency replay. The separate 36-theorem core is unchanged.",
+      "nonclaim": "No rate uniform over arbitrary Omega, no replacement of the shifted phi argument by phi(loglog X), and no effective tail-cutoff algorithm from point evaluations. The arbitrary-Omega claim belongs to Shaik; this is its complete reconstruction and retained minorant-dependent count."
+    },
+    {
+      "id": "ND-091",
+      "canonical_claim_id": "CLM-COL-000284",
+      "later_refinements": [
+        "ND-102",
+        "ND-104"
+      ],
+      "type": "fixed_barrier_stretched_endpoint_reconstruction",
+      "statement": "For 0<sigma<1 and fixed shortcut/raw/odd-return budgets above2/3/1 divided by log(4/3), and beta>0, one actual successful-chain set reaches exp((log n)^sigma) with those clocks and height n^(1+beta). With explicit quadratic barrier d_eta=c0 eta^2, b=min(d_eta,log2), its exceptions are O(X(log X)^(1+sigma)exp(-(b/log2)(log X)^sigma)). Rank L_M=floor((log2)^(sigma-1)M^sigma) is unchanged. Last-shell summation preserves d in 2^J J^p exp(-dJ^sigma), with finite startup and denominator1-exp(theta)/2. This reconstructs the full manuscript endpoint, retaining a displayed coefficient/polynomial tradeoff.",
+      "tex_label": "prop:shaik-stretched-fixed",
+      "additional_tex_labels": [
+        "lem:shaik-fixed-barrier",
+        "eq:shaik-fixed-failure",
+        "eq:shaik-fixed-witness",
+        "eq:shaik-fixed-clock",
+        "lem:shaik-final-shell",
+        "eq:shaik-final-shell",
+        "eq:shaik-final-shell-natural",
+        "eq:shaik-stretched-rate",
+        "eq:shaik-fixed-odd-budget"
+      ],
+      "dependencies": [
+        "ND-075",
+        "ND-077",
+        "ND-078",
+        "ND-079"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Theorem1.3 and Corollary1.4 p5; Section5 pp16-18; Section7 pp27-28; formal coverage disclosure pp29-30",
+            "StretchedExceptionalCount.lean1-90; QuantitativeNaturalDensityDescent.lean146-EOF; Main.lean161-393, pinned ef341084"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written analytic proof and actual-source type comparison. No new Lean export or independent analytic closure replay; separate36-theorem Init-only core unchanged.",
+      "nonclaim": "The full stretched exceptional power and simultaneous witness are Shaik's already stated manuscript result, not a correction or new headline theorem. The quadratic rate is not the optimal entropy rate. Formal-wrapper scope differences are explicitly disclosed by the source.",
+      "formal_component_update": {
+        "date": "2026-09-30",
+        "claim": "ND-095",
+        "scope": "Integer common-witness/count/concatenation/zero-block mechanism now separately kernel checked; this analytic statement remains a written proof."
+      },
+      "related_assembly_refinement": {
+        "claim": "ND-097",
+        "application": "ND-098",
+        "scope": "Sharp shifted-shell coefficient/prefactor and integer boundary; existing stronger fixed-barrier result and shifted-schedule claims unchanged."
+      }
+    },
+    {
+      "id": "ND-092",
+      "canonical_claim_id": "CLM-COL-000285",
+      "later_refinements": [
+        "ND-102",
+        "ND-104"
+      ],
+      "type": "quantitative_graded_three_clock_reconstruction",
+      "statement": "For fixed0<alpha<1, epsilon,beta>0, the same actual retained set reaches n^alpha with height<=n^(1+beta) and shortcut/raw/odd-return leading clocks2/3/1 times(1-alpha)/log(4/3), each plus epsilon; odd-return assertion restricts to odd starts. Set D=epsilon*g*ell/(2*(1+1/lambda)),r=1-min(g/2,D/(4alpha)),eta=min((r-a0)/2,beta/2,(1-r)*D/4,1/2),ell=log2. Then xi=alpha*min(c0 eta^2,ell)/ell in(0,1) and exceptions are O(X^(1-xi)(log X)^2). Exact rank telescope and bounded number of fixed-power stages give h<((1-alpha)+mu)M/g+E/g, mu=alpha(1-r)+eta/(1-r)<=D/2; raw and odd clocks use s<=(h-M+floor(alpha M))/lambda.",
+      "tex_label": "prop:shaik-graded-quantitative",
+      "additional_tex_labels": [
+        "eq:shaik-graded-clocks",
+        "eq:shaik-graded-rate",
+        "eq:shaik-graded-parameters"
+      ],
+      "dependencies": [
+        "ND-091"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Theorem5.3 and Corollary1.5(graded); AppendixA pp30-31",
+            "HeightSensitiveClock.lean and GradedPowerDescent.lean complete; GradedClock.lean206-EOF; Bootstrap.lean1-160; source's PowerDense exponentDc*(r/2)^R already present"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written analytic proof and actual-source type comparison. No new Lean export or independent analytic closure replay; separate36-theorem Init-only core unchanged.",
+      "nonclaim": "Existence of a positive power-saving for the graded clock is already inside Shaik's fixed-depth proof; this gives an explicit fixed-barrier rate and joint three-clock/height refinement. No comparison against the best fixed-depth exponent, no optimality/priority, no uniformity at parameter endpoints, no proof of all-orbit convergence.",
+      "formal_component_update": {
+        "date": "2026-09-30",
+        "claim": "ND-095",
+        "scope": "Integer common-witness/count/concatenation/zero-block mechanism now separately kernel checked; this analytic statement remains a written proof."
+      }
+    },
+    {
+      "id": "ND-093",
+      "canonical_claim_id": "CLM-COL-000286",
+      "later_refinements": [
+        "ND-102",
+        "ND-104"
+      ],
+      "type": "endpoint_logweighted_original_pullback",
+      "statement": "For the original Shaik StageSetup(r,eta,M0), positive-integer stopped mapG, W*=W_eta union[1,2^M0), P(S)=W* intersectG^-1(S), let Deta=c0 eta^2/ell,ell=log2. A missing-count bound C X^(1-D)(1+logX)^p with0<D<=Deta,p>=0 transports for every integerX>=1 to Pi(C,D,p) X^(1-rD)(1+logX)^(p+2), Pi=ell^(-p-2)(2^(rDM0)+C0+(5/2)2^D C)/(1-2^(rD-1)). Thus the identical bootstrap sets S0=W*,S(R+1)=P(SR) obey B_SR(X)<=A_R X^(1-Deta r^R)(1+logX)^(2R), A0=Aeta, A(R+1)=Pi(A_R,Deta r^R,2R). An explicit uniform prefactor envelope is A_R+1<=(Aeta+1)L^R ell^(-R(R+1)), with E,F,Q,L defined in the proof. For fixedR>=1 this majorant is asymptotically smaller than every source fixedchi<r pure-power majorant; no assertion about a lower bound on actual exceptions.",
+      "tex_label": "prop:shaik-log-pullback",
+      "additional_tex_labels": [
+        "eq:shaik-log-stage",
+        "eq:shaik-log-pullback",
+        "eq:shaik-log-recursion",
+        "eq:shaik-log-iterate",
+        "eq:shaik-log-prefactor"
+      ],
+      "dependencies": [
+        "ND-077",
+        "ND-079"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Pullback.lean: StageSetup, shellBad_pullback_subset, transportedBad_le, transportedBad_le_paid, firstPassagePullback_powerDense; pinned ef341084",
+            "BarrierDensity.lean: card_shellInitialWindowBad_le_quadratic, initialWindowGood_powerDense",
+            "Bootstrap.lean: bootstrapSet, bootstrapC, bootstrapD, bootstrapSet_powerDense; complete content read"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written proof with pinned source comparison and exact finite regressions. No new Lean theorem; unchanged independent36-statement Init-only certificate does not certify these analytic estimates.",
+      "nonclaim": "The mechanism and original pure-power theorem are Shaik's. Keeping the polynomial yields an endpoint refinement, not a correction or priority claim. No optimality, no count lower bound, no variable-depth density claim from fixed-depth limits, no replacement of Tao/Allikvere/Mazur almost-bounded target regimes.",
+      "formal_component_update": {
+        "date": "2026-09-30",
+        "claim": "ND-095",
+        "scope": "Integer common-witness/count/concatenation/zero-block mechanism now separately kernel checked; this analytic statement remains a written proof."
+      },
+      "related_assembly_refinement": {
+        "claim": "ND-097",
+        "application": "ND-098",
+        "scope": "Sharp shifted-shell coefficient/prefactor and integer boundary; existing stronger fixed-barrier result and shifted-schedule claims unchanged."
+      }
+    },
+    {
+      "id": "ND-094",
+      "canonical_claim_id": "CLM-COL-000287",
+      "type": "absorbing_startup_actual_path_refinement",
+      "statement": "For n in the same original S_R, z_i=G^i(n), h_R=sum_i<R l(z_i), K=2^M0 and g_R=(1-r^R)/(1-r), z_R=T^h_R(n)<=max(K,n^(r^R)), h_R<=g_R log2 n, and the actual shortcut path height<=n^(1+eta). AboveK each retained stage contracts to z^r; belowK G is identity and the block has zero duration. The exact raw expansion has lengthh_R+s_R, same endpoint and height<=2n^(1+eta); s_R<=(h_R+log2 z_R-log2n)/lambda. For oddstarts, completing the final even tail and cutting at oddstates yields exactlys_R returns. Marked-chain membership equals n inS_R, so ND093's count applies without another exceptional set. This removes the coarse K^R target and R^2 log2K clock payments in the source's displayed intermediate formal bounds.",
+      "tex_label": "prop:shaik-absorbing-startup",
+      "additional_tex_labels": [
+        "eq:shaik-absorbing-witness",
+        "eq:shaik-absorbing-odd"
+      ],
+      "dependencies": [
+        "ND-075",
+        "ND-078",
+        "ND-093"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Pullback.lean: stageLength, stageMap, bounded_passage_exists, stageLength_le_shell",
+            "Bootstrap.lean: stageMap_le_power, stageOrbit_eq_orbit_stageClock, stageOrbit_le_power, stageClock_le_logb; pinned ef341084",
+            "The source explicitly calls its K^R target weaker than the manuscript's bounded geometric factor"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written proof with pinned source comparison and exact finite regressions. No new Lean theorem; unchanged independent36-statement Init-only certificate does not certify these analytic estimates.",
+      "nonclaim": "No different stopped map or fresh sampling. No claim that the main manuscript theorem is incorrect, no injectivity of the unmarked landing map, no raw-height factor removal, no all-orbit convergence or formal certification of these new statements.",
+      "formal_component_update": {
+        "date": "2026-09-30",
+        "claim": "ND-095",
+        "scope": "Integer common-witness/count/concatenation/zero-block mechanism now separately kernel checked; this analytic statement remains a written proof."
+      }
+    },
+    {
+      "id": "ND-095",
+      "canonical_claim_id": "CLM-COL-000288",
+      "type": "constructive_joint_witness_count_certificate",
+      "statement": "For Nat-valued H,S,Y,B, a shortcut witness h<=H(n), oddCount(n,h)<=S(n), T^h(n)<=Y(n), and every prefix<=B(n) gives a raw witness of exact length h+oddCount(n,h)<=H(n)+S(n), same endpoint and height<=2B(n). Shortcut first passage expands to raw first passage. For every positive prefix[1,X], bad(raw)<=bad(tagged). If a decidable retained predicate P supplies such witnesses for n>=N, bad(raw)<=bad(P)+min(X,(N-1)_+). For any G,l with G(x)=T^l(x)(x), the actual R-block endpoint is T^(sum_i<R l(G^i(n)))(n). G(n)=n and l(n)=0 imply endpoint n and total clock0 at every depth. Nine general statements compiled against the unchanged36-statement Init-only core, with exact source/object/compiler/dependency/axiom checks.",
+      "tex_label": "prop:shaik-joint-certificate",
+      "additional_tex_labels": [
+        "eq:shaik-joint-count",
+        "eq:shaik-joint-startup"
+      ],
+      "dependencies": [
+        "ND-084",
+        "ND-087"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "RawDynamics.lean and Bootstrap.lean: same shortcut/raw maps and actual stage concatenation; pinned ef341084",
+            "Independent formal_shaik_joint/JointWitness.lean: nine theorem statements and complete proofs"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Nine new general integer witness/count/concatenation/absorption statements independently compiled with Lean4.15.0, sole local import unchangedClockAndRanks.lean; pinned232 Init modules and9 binaries, no admissions, axioms subset{propext,Quot.sound}. No analytic formalization.",
+      "nonclaim": "No real logarithmic, entropy, exceptional-rate or whole natural-density theorem is kernel certified. This implements the common integer mechanism without formalizing the analytic premises of ND091-094.",
+      "later_refinements": [
+        "ND-111"
+      ]
+    },
+    {
+      "id": "ND-096",
+      "canonical_claim_id": "CLM-COL-000289",
+      "later_refinements": [
+        "ND-102",
+        "ND-104"
+      ],
+      "type": "matched_stretched_endpoint_original_bootstrap",
+      "statement": "For the fixed original StageSetup(r,eta,M0) and ND093 constants, take omega>0, a=omega log(1/r) in(0,1), sigma=1-a, R_M=floor(omega log(M+4))+1 and Gcal={n>=1:n in S_(R_floorlog2n)}. On Gcal all sufficiently large n reach exp((log n)^sigma) in h<=((1-r^R)/(1-r))log2n shortcut steps with height<=n^(1+eta). For every0<c<rDeta(log2)^a, its missing prefix count is O(X exp(-c(logX)^sigma)). The same paths have raw/odd-return leading clocks H+(H-1/log2)/lambda and (H-1/log2)/lambda, respectively, with arbitrary fixed positive slack; H=1/((1-r)log2), odd returns restricted to oddstarts. Raw height<=2n^(1+eta); all three heights<=n^(1+beta) eventually for beta>eta. Explicit landing and count cutoffs retain the full depth-dependent prefactor and both floor inequalities. One extra actual block is declared, not silently inserted.",
+      "tex_label": "prop:shaik-matched-schedule",
+      "additional_tex_labels": [
+        "eq:shaik-matched-depth",
+        "eq:shaik-matched-clock",
+        "eq:shaik-matched-rate",
+        "eq:shaik-matched-floor",
+        "eq:shaik-matched-landing-cutoff",
+        "eq:shaik-matched-shell",
+        "eq:shaik-matched-count-cutoff"
+      ],
+      "dependencies": [
+        "ND-091",
+        "ND-093",
+        "ND-094"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Scalar.lean stageCount; VaryingDensity.lean and GlobalAssembly.lean exact shellwise selection",
+            "BootstrapSchedule.lean full quadratic-log cost and original chi<r loss",
+            "StretchedLogLanding.lean strict delta<omega log(1/r); pinned ef341084"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written analytic proof and exact source comparison; separate ND095 certifies the integer witness/count mechanism only. Real-variable schedules, exponents, logarithms and prefactor absorption are not formalized.",
+      "nonclaim": "Not an unchanged original stageCount: the +1 is explicit. No stronger headline theorem, optimality or priority claim; ND091's direct fixed-barrier method already gives the stronger available coefficientDeta. No full source-package replay.",
+      "related_assembly_refinement": {
+        "claim": "ND-097",
+        "application": "ND-098",
+        "scope": "Sharp shifted-shell coefficient/prefactor and integer boundary; existing stronger fixed-barrier result and shifted-schedule claims unchanged."
+      }
+    },
+    {
+      "id": "ND-097",
+      "canonical_claim_id": "CLM-COL-000290",
+      "type": "sharp_shifted_shell_assembly_integer_boundary",
+      "statement": "For E subset positive integers and |E intersect[2^M,2^(M+1))|<=A2^M exp(-c(M+4)^alpha), M>=M0,A,c>0,0<alpha<1, every epsilon>0 eventually gives B_E(X)<=(2A+epsilon)X exp(-c(log2X)^alpha). For0<theta<log2 and N0>=M0 satisfying c alpha(N0+4)^(alpha-1)<=theta, a finite bound is E0+A2^J exp(-c(J+4)^alpha)/(1-exp(theta)/2), J=floorlog2X, E0=B_E(2^N0-1). Full natural-log coefficient c/(log2)^alpha is retained. Explicit choices/cutoffs and a set attaining limsup2A are proved. At alpha=1, put gamma=Aexp(-4c): c<log2 gives exact growing geometric sum and O(X^(1-c/log2)); c=log2 gives at most floor(A/16) exceptions per shell; c>log2 forces no exceptions beyond explicit Mstar. Startup remains; a nonempty finite set cannot satisfy a negative-power count bound.",
+      "tex_label": "prop:shaik-sharp-shell",
+      "additional_tex_labels": [
+        "eq:shaik-shifted-shell-input",
+        "eq:shaik-sharp-shell-finite",
+        "eq:shaik-sharp-shell-asymptotic",
+        "prop:shaik-linear-shell"
+      ],
+      "dependencies": [
+        "ND-091"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "StretchedExceptionalCount.lean: stretchedDyadicRate, badCount_assembleDyadic_le_stretched_rate/log; full396-line source read",
+            "Density.lean: badCount_le_shell_sum and powerDense_of_shell_bound; full source",
+            "Existing workbench lem:shaik-final-shell is the unshifted ancestor; this retains source shift, sharp2A and integer alpha1 boundary"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written proof, explicit cutoffs and sharpness construction; no new Lean export. Finite exact regressions are separate from the infinite proof.",
+      "nonclaim": "Sharpness is universal for arbitrary exceptional integer sets, not a lower bound or optimality assertion for Collatz failures. Existing source estimate is valid; no correction or priority claim."
+    },
+    {
+      "id": "ND-098",
+      "canonical_claim_id": "CLM-COL-000291",
+      "type": "unclipped_original_schedule_common_witness_count",
+      "statement": "For the original StageSetup and fixed0<chi<r<1,0<Dc<=min(1,Deta),chiDc<1,omega>0,0<delta<1 and0<sigma<1 with delta<omega log(1/r),sigma<1-omega log(1/chi), use unchanged R_M=floor(omega log(M+4)) and assembled bootstrapG. Source proof supplies shell ratio<=2exp[-kappa(M+4)^sigma], kappa=(log2)Dc/20. Everyepsilon>0 eventually gives B_G(X)<=(4+epsilon)X exp[-Dc(log2)^(1-sigma)(logX)^sigma/20]. Same actual starts reach exp((logn)^(1-delta)), with shortcut clock<=Hlogn,H=1/((1-r)log2), height<=n^(1+eta), raw/odd leading coefficients H+(H-1/log2)/lambda and(H-1/log2)/lambda plus arbitrarily small fixed slack, raw height<=2n^(1+eta). Odd path restricts to odd starts. The same absolute count applies to odd failures only among odd starts and to the simultaneous common-witness predicate after finite startup; its odd-return clause is imposed only at odd starts. No normalization by the count of odd inputs is used. The original source generic summation gives coefficient (log2)Dc/160 and prefactor5; this retains factor8(log2)^(-sigma) more coefficient and any prefactor4+epsilon, without changing schedules.",
+      "tex_label": "cor:shaik-unclipped-source-count",
+      "additional_tex_labels": [
+        "eq:shaik-unclipped-source-count"
+      ],
+      "dependencies": [
+        "ND-094",
+        "ND-095",
+        "ND-097"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "BootstrapSchedule.lean: eventuallyShellBootstrapRatioLeStretched proof takes c0=log2*Dc/5,c=c0/4",
+            "QuantitativeNaturalDensityDescent.lean: targetCertifiedSet and targetExceptionalCountEventually; complete308-line source",
+            "ClockBudget.lean and NaturalDensityDescent.lean: original common actual stageClock and stageOrbit, clockThreshold"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written analytic/counting proof and pinned source-interface comparison. ND095 verifies only integer common-witness/count mechanism, not this analytic application.",
+      "nonclaim": "A quantitative refinement of source majorants on unchanged sets; not stronger than ND091's fixed-barrier headline endpoint, not a new natural-density theorem, no novelty or full-package formal certification."
+    },
+    {
+      "id": "ND-099",
+      "canonical_claim_id": "CLM-COL-000292",
+      "type": "exact_integer_horizon_and_absorbing_graded_clock",
+      "statement": "For the original StageSetup and z in W*,z>=K, M=floor(log2z),q=floor(rM),H=ceil(((1+eta)log2z-q)/g),g=1-log2(3)/2. The source terminal budget gives H<=M and the original first passage satisfies 0<l(z)<=H. With a=(1+eta-r)/g,c_r=(1+r)/g+1, l(z)<=min(log2z,a log2z+c_r). BelowK the original identity/zero branch is unchanged. For n inS_R,nu=min(first startup index,R),h_R<=sum_i<nu H(z_i)<=min(g_nu log2n,a g_nu log2n+nu c_r); s_R<=min(h_R/2+eta g_nu logn/log3,(h_R+log2z_R-log2n)/lambda). Raw length is exactlyh_R+s_R; previous endpoints and heights retained. The source coarse horizon can also be clipped atM without an extra startup rank. No longer horizon is substituted for an actual block.",
+      "tex_label": "prop:shaik-clipped-horizon",
+      "additional_tex_labels": [
+        "eq:shaik-clipped-block",
+        "eq:shaik-clipped-sum",
+        "eq:shaik-clipped-odd"
+      ],
+      "dependencies": [
+        "ND-094"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "HeightSensitiveClock.lean: heightSensitiveHorizon, stageLength_le_heightSensitiveHorizon; complete source",
+            "GradedClock.lean: heightClockError, stageClock_le_heightClock; complete source",
+            "RawClockBudget.lean: oddCount_upper_of_initialWindowGood, oddCount_stageClock_le; complete source"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written proof. Exact integer tests and rational floor/ceiling regression are finite; Decimal coefficient diagnostics are noncertifying. No new Lean export.",
+      "nonclaim": "Refines bounds for the same original blocks and sets. No monotonicity after first passage, replacement of stopped endpoints, novelty or full-package certification is asserted."
+    },
+    {
+      "id": "ND-100",
+      "canonical_claim_id": "CLM-COL-000293",
+      "later_refinements": [
+        "ND-102",
+        "ND-104"
+      ],
+      "type": "closed_fixed_depth_exponent_joint_quantitative_descent",
+      "statement": "Fix originalStageSetup with eta<r-a0,R>=1,alpha=r^R,g_R=(1-alpha)/(1-r),a=(1+eta-r)/g,c_r=(1+r)/g+1. Put C_T=a g_R/log2,C_S=C_T/2+eta g_R/log3,C_U=3C_T/2+eta g_R/log3. Every n inS_R withn^alpha>=K has originalendpoint<=n^alpha,shortcutclock<=C_Tlogn+Rc_r,oddcount<=C_Slogn+Rc_r/2,rawclock<=C_Ulogn+3Rc_r/2,shortcutheight<=n^(1+eta),rawheight<=2n^(1+eta). Odd-start completion gives s_R odd returns to oddpart(z_R); raw clock ends atz_R before even-tail completion. For positive epsilons choose integerN>=2 withlogN>=logK/alpha andlogN>max(Rc_r/epsT,Rc_r/(2epsS),3Rc_r/(2epsU)). The same-witness predicateQ with strict budgets C+epsilon has absolutefailurecount<=A_R X^(1-D_eta alpha)(1+logX)^(2R)+min(X,N-1), all integerX>=1. Odd clause only on odd starts; same absolute bound for odd failures. The source's strict r^R<targetalpha and RE_source+aR^2M0 payment are replaced by equality andRc_r on unchangedS_R. Fixed parameters precede X->infinity; eta is not set to zero.",
+      "tex_label": "cor:shaik-closed-graded",
+      "additional_tex_labels": [
+        "eq:shaik-closed-coefficients",
+        "eq:shaik-closed-shortcut",
+        "eq:shaik-closed-three",
+        "eq:shaik-closed-cutoff",
+        "eq:shaik-closed-count"
+      ],
+      "dependencies": [
+        "ND-093",
+        "ND-094",
+        "ND-099"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "GradedClock.lean: fixedDepthGradedPowerDescent and stageClock_le_heightClock",
+            "PowerDescent.lean: qualitative fixed-power wrapper from delta=1/2; complete source",
+            "RawNaturalDensityDescent.lean: exists_rawClockStage and actual raw witness; complete source"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written proof and common-witness counting transfer, not a new analytic Lean theorem.",
+      "nonclaim": "Sharper fixed-depth interface, not a correction or replacement of the source main density theorem or ND092; no assertion of identical existential parameter choices in different source wrappers."
+    },
+    {
+      "id": "ND-101",
+      "canonical_claim_id": "CLM-COL-000294",
+      "type": "full_fixed_tolerance_entropy_rate",
+      "statement": "Fix 0<eta<a0=lambda/2, lambda=log_2(3), ell=log(2). Let B(u)=ell+(1/2+u)log(1/2+u)+(1/2-u)log(1/2-u), u=eta/lambda, b=B(u), J=B'(u)/lambda, m=ceil(max(1,1/eta,(log_2(2(2+sqrt(3)))-2)/(a0-eta))), C=max(2exp(J),exp(b(m-1))). For every integer M>=0, |I_M\\W_eta|<=C 2^M exp(-b M); for M>=m, 2exp(J) suffices. Use auxiliary fraction 1-1/(eta M) in the source finite-rank theorem, not a varying parameter in its eventual wrapper. W_eta and actual Collatz orbits are unchanged. The derivative estimate M B(u-1/(lambda M))>=M B(u)-J retains the full entropy rate. 0<b<ell and b>2(eta/lambda)^2=4 c0 eta^2. Fixed eta precedes M->infinity; startup and endpoint dependence are explicit.",
+      "tex_label": "prop:shaik-full-entropy",
+      "additional_tex_labels": [
+        "eq:shaik-full-entropy-constants",
+        "eq:shaik-full-entropy-shell",
+        "eq:shaik-entropy-quadratic-comparison"
+      ],
+      "dependencies": [
+        "ND-079",
+        "ND-085"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "AdjustableBarrierDensity.lean: card_shellInitialWindowBad_adjustable_le versus eventually_card_shellInitialWindowBad_adjustable_le",
+            "AdjustableEnvelope.lean: orbit_envelope_of_adjustableBarrier and its two finite startup hypotheses",
+            "EntropyBarrier.lean: barrierHitCount_le_binaryEntropy",
+            "Envelope.lean: normalizedCorrection_scaled_le_maximal; revision ef3410843bf58d69f771f5ba2c0571d54b54da59"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written analytic proof. Exact rational/integer regressions test finite mechanisms; Decimal diagnostics do not certify inequalities. No new Lean theorem or full-package certification.",
+      "nonclaim": "Improves displayed upper-bound decay exponents, not measured failure frequencies; no optimality, priority, correction of the headline theorem, or convergence to 1 is asserted.",
+      "later_refinements": [
+        "ND-104"
+      ]
+    },
+    {
+      "id": "ND-102",
+      "canonical_claim_id": "CLM-COL-000295",
+      "type": "exact_terminal_profile_and_same_set_entropy_propagation",
+      "statement": "With ND101 constants b,C,D=b/ell, put F_r(z,L)=z^L((1+3(L+2)/r)/(1-z)+(3/r)z/(1-z)^2) and F_r(z;L,U)=F_r(z,L)-F_r(z,U+1). For rational r>0,1<=L<=U<M,H integer>=0 and (q+2)/(r2^q)<=1/3 on [L,U], the actual generatedFirstBadSources have proportion <=H(F_r(1/2;L,U)+(C exp(b)/2)F_r(exp(-b);L,U)). This retains the upper landing endpoint and both finite cutoffs. In the unchanged original StageSetup, D replaces the quadratic D_eta in ND093's pullback recurrence, with C replacing C0 and A0=C/(1-exp(b)/2). Thus B_SR(X)<=A_R X^(1-D r^R)(1+log X)^(2R), including ND100's same closed target and cutoff. For the unchanged fixed-barrier sets, failure/2^M<=C' (exp(-bM)+M(L+1)(exp(-bL)+2^-L)). Consequently ND091 has O(X(log X)^(1+sigma)exp(-D(log X)^sigma)); ND092 has O(X^(1-alpha D)(log X)^2). Same parameters, witnesses, three clocks and heights. Explicit prefactor A_R+1<=(A0+1)Lcal^R ell^(-R(R+1)) propagates to ND096's declared shifted schedule with 0<c<rD ell^(omega log(1/r)).",
+      "tex_label": "cor:shaik-entropy-propagation",
+      "additional_tex_labels": [
+        "lem:shaik-entropy-terminal",
+        "eq:shaik-entropy-terminal",
+        "eq:shaik-entropy-pullback",
+        "eq:shaik-entropy-iterate",
+        "eq:shaik-entropy-fixed-failure",
+        "eq:shaik-entropy-stretched"
+      ],
+      "dependencies": [
+        "ND-091",
+        "ND-092",
+        "ND-093",
+        "ND-096",
+        "ND-100",
+        "ND-101"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "FirstBadEnvelope.lean: generatedFirstBadSources_subset_envelope and generatedFirstBadSources_card_le",
+            "TerminalProfile.lean: exact multiplier compared with rank_transport_multiplier_le",
+            "TerminalTail.lean: weighted_exp_Icc_le spends a strict rate margin",
+            "Existing reconstructed StageSetup, Pullback.lean and fixed-barrier path interfaces; revision ef3410843bf58d69f771f5ba2c0571d54b54da59"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written analytic proof. Exact rational/integer regressions test finite mechanisms; Decimal diagnostics do not certify inequalities. No new Lean theorem or full-package certification.",
+      "nonclaim": "No new retained set, independence assumption or injectivity of tags; no changed clock or target endpoint, no full analytic Lean certificate, no priority claim.",
+      "later_refinements": [
+        "ND-104"
+      ]
+    },
+    {
+      "id": "ND-103",
+      "canonical_claim_id": "CLM-COL-000296",
+      "type": "exact_reflection_and_uniform_sharp_prefactor",
+      "statement": "Exact reflection at first hit a>=1 is an involution between length-M Boolean walks that hit a but end below a and walks ending above a. Consequently one-sided hit count equals T(M,ceil((M+a)/2))+T(M,floor((M+a)/2)+1); the two-sided count is at most twice this. With lambda=log_2(3),a0=lambda/2,0<tau<a0, u_tau=tau/lambda,delta_tau=(1/2-u_tau)/2,C*=sqrt(2/e),J_tau=B'(u_tau)/lambda,N_tau=ceil(max(1,(log_2(2(2+sqrt3))-2)/(a0-tau),2/(1/2-u_tau))),K_tau=4lambda C*exp(J_tau)/sqrt(delta_tau), every 0<eta<=tau,M>=N_tau,eta M>=2 satisfies |I_M minus W_eta|/2^M <= K_tau/(eta sqrtM) exp(-M B(eta/lambda)). The proof supplies explicit factorial bounds e^(3/4)c(n)/sqrt2 <= n! <= e c(n)/sqrt2 by telescoping logarithmic differences. For fixed eta, N*=max(N_eta,ceil(2/eta)),C_eta*=max(sqrt2 K_eta/eta,sqrtN* exp(b_eta(N*-1))) gives all-rank shell bound C_eta*2^M(M+1)^(-1/2)exp(-b_eta M). Original parity-shell map and W_eta unchanged.",
+      "tex_label": "prop:shaik-uniform-prefactor",
+      "additional_tex_labels": [
+        "lem:shaik-exact-reflection",
+        "eq:shaik-reflection-tail",
+        "eq:shaik-explicit-stirling",
+        "eq:shaik-uniform-prefactor",
+        "eq:shaik-fixed-prefactor"
+      ],
+      "dependencies": [
+        "ND-101"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "SharpEntropyBarrier.lean: binomialUpperTail_weighted_le, exists_choose_le_stirlingCore_ratio, stirlingCore_ratio_eq_sqrt_exp",
+            "Supplementary Extras/Unreachable/SharpEntropyBarrier.lean: integerBarrierCount_le_four_endpointUpperCount and exists_barrierHitCount_real_normalized_le_binaryBarrierRate already provide the maximal bound; present proof gives explicit bijection and exact two-tail identity.",
+            "AdjustableEnvelope.lean: finite orbit_envelope_of_adjustableBarrier"
+          ]
+        },
+        {
+          "id": "MATHLIB-STIRLING-9837ca9",
+          "authors": [
+            "Moritz Firsching",
+            "Fabian Kruse",
+            "Nikolas Kuhn"
+          ],
+          "locators": [
+            "Mathlib/Analysis/SpecialFunctions/Stirling.lean: log_stirlingSeq_diff_hasSum, log_stirlingSeq_diff_le_geo_sum"
+          ],
+          "url": "https://github.com/leanprover-community/mathlib4/blob/9837ca9d65d9de6fad1ef4381750ca688774e608/Mathlib/Analysis/SpecialFunctions/Stirling.lean"
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Analytic estimate remains a written proof with finite checks. Its reflection/counting mechanism is now independently Lean-certified in ND-105; not an analytic Lean export.",
+      "later_refinements": [
+        "ND-105",
+        "ND-106"
+      ],
+      "nonclaim": "The map acts on finite Boolean words; no independent infinite orbit law or sharpness/novelty claim. Uniformity is only on the explicit eta,M region."
+    },
+    {
+      "id": "ND-104",
+      "canonical_claim_id": "CLM-COL-000297",
+      "type": "fixed_and_shrinking_prefactor_propagation",
+      "statement": "On the original StageSetup sets the ND103 seed yields B_SR(X)<=A_R* X^(1-D r^R)(1+logX)^(2R-1/2), D=b_eta/log2. Exact all-X initial constant and pullback recurrence for p>=-1/2 are in eq:shaik-prefactor-pullback, with negative-p correction Z_r(p)=(r log2/2)^min(p,0). Closed-target cutoff and all witnesses/clocks unchanged. The finite terminal profile retains upper endpoint 2^-q and sum over both original integer cutoffs. Fixed-barrier failure <=C[(M+1)^(-1/2)e^-bM+M sqrt(L+1)e^-bL+M(L+1)2^-L], hence stretched O(X(logX)^(1+sigma/2)e^(-D(logX)^sigma)) and graded O(X^(1-alpha D)(logX)^(3/2)). Depth prefactor <=(A0+1)L_*^R ell^(-R^2-R/2); matched coefficient interval unchanged. For shrinking high tolerance eta=D_h sqrt(V/m),V=log(M+2),m>=ceil(Csw V),D_h/sqrtCsw<=tau and V>=max(N_tau/Csw,2/(D_h sqrtCsw)), uniform delta=K_tau/(D_h sqrtV)(M+2)^(-4c0 D_h^2). Landing bad proportion <=2^-q+delta/2. Actual deterministic rank/time charge is O(delta+H_M[M delta+(S+2)2^-S]); sufficient high-phase O(M^-e) margins are 4c0 D_h^2>e+3/2 and Csw ell>e+1/2 alongside original conditions. Low timeout rate, critical target, clocks and heights unchanged. The source all-rank union retains M^2, not M, in this charge.",
+      "tex_label": "cor:shaik-prefactor-propagation",
+      "additional_tex_labels": [
+        "eq:shaik-prefactor-pullback",
+        "eq:shaik-prefactor-iterate",
+        "eq:shaik-prefactor-terminal",
+        "eq:shaik-prefactor-fixed-failure",
+        "eq:shaik-prefactor-stretched",
+        "eq:shaik-prefactor-graded",
+        "cor:shaik-shrinking-prefactor",
+        "eq:shaik-shrinking-prefactor",
+        "eq:shaik-shrinking-high-charge"
+      ],
+      "dependencies": [
+        "ND-082",
+        "ND-088",
+        "ND-091",
+        "ND-092",
+        "ND-093",
+        "ND-096",
+        "ND-100",
+        "ND-101",
+        "ND-102",
+        "ND-103"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "ShrinkingHighDensity.lean complete; high tolerance cap and exact exponent",
+            "ShrinkingBarrierCore.lean complete; unchanged lowering tolerance, endpoint exclusion and clock corridor",
+            "ShrinkingTimeSupport.lean complete; actual-run potential and finite time support",
+            "Existing written ND082/088/091/092/093/096/100/101/102 and exact transport proofs"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written analytic propagation; not newly Lean formalized.",
+      "later_refinements": [
+        "ND-106",
+        "ND-109",
+        "ND-110"
+      ],
+      "nonclaim": "No changed good sets, orbit dynamics, critical A_FP or low-phase kappa; no formal certification of the whole natural-density package."
+    },
+    {
+      "id": "ND-105",
+      "canonical_claim_id": "CLM-COL-000298",
+      "type": "general_finite_reflection_formal_certificate",
+      "statement": "Init-only Lean 4.15 certificate for 31 general statements: executable first-hit reflection with typed inverses; exact endpoint/complement identities; one-sided hit count T(r,ceil((r+a)/2))+T(r,floor((r+a)/2)+1) for integer a>=0 including time zero, strict-endpoint bijection for a>0, and two-sided count <=4T(r,ceil((r+a)/2)). Boolean-word enumeration is exhaustive, duplicate-free and length 2^r; recursive quantities equal literal predicate counts; endpoint y+2 ups(w)-length(w). No finite-range enumeration is used as proof of the general statement.",
+      "tex_label": "prop:shaik-reflection-certificate",
+      "dependencies": [
+        "ND-103"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Extras/Unreachable/SharpEntropyBarrier.lean; existing recursive maximal comparison",
+            "audit.tex lem:shaik-exact-reflection; explicit coordinate map"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Independently compiled and verified: 31 named declarations, Init only, axioms at most propext and Quot.sound; no sorry, unsafe or Classical.choice. Receipt formal_shaik_reflection/verification.json.",
+      "nonclaim": "No novel reflection principle; no certification of factorial estimates, real entropy, Collatz infinite orbit law, or entire source package."
+    },
+    {
+      "id": "ND-106",
+      "canonical_claim_id": "CLM-COL-000299",
+      "type": "explicit_reserve_free_moving_low_density",
+      "statement": "For K0>0, g=1-a0, u*=g/lambda, b*=B(u*), D0=K0 B'(u*)/lambda, C_lo=K_g/g, and L0=max(2,ceil(2K0/g),N_g+1,ceil(4/g)+1), every L>=L0,q>=L with m=q-1 satisfies landingBad(q,g-K0/L)/2^q <=2^-q+C_lo m^-1/2 exp(-(b*-D0/L)m). On m<=cL, replace the exponential by exp(cD0)exp(-b*m). This bounds the original envelope/landing set with no auxiliary K1 hypothesis. For L>=L1=max(L0,ceil(2D0/b*)), the original moving first-bad low profile has exact finite sum H(1+6/r*) sum_{q=L}^S(q+1)[2^-q+C_lo(q-1)^-1/2 exp(-(b*-D0/L)(q-1))], bounded by H(1+6/r*)[2(L+2)2^-L+3C_lo exp(b*+D0)/(1-exp(-b*/2))^2 sqrtL exp(-b*L)]. Retain all source StageSetup, feasible-time and transport/startup conditions. Full all-rank separated envelope adds d_hi[1+H(1+6/r*)(M+1)^2]; ND104 uniform high seed gives d_hi=2^-S+Delta_M on its stated domain.",
+      "tex_label": "prop:shaik-moving-low-reserve",
+      "additional_tex_labels": [
+        "eq:shaik-moving-low-reserve",
+        "eq:shaik-moving-low-finite-profile",
+        "eq:shaik-moving-low-explicit-profile"
+      ],
+      "dependencies": [
+        "ND-103",
+        "ND-104"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "MovingLowParameters.lean; read complete",
+            "Alternates/AllPrefix/MovingLowParameters.lean; read complete",
+            "Alternates/AllPrefix/Implementation/MovingLowDensity.lean; read complete",
+            "Alternates/AllPrefix/Implementation/MovingSharpProfile.lean; read complete",
+            "Alternates/AllPrefix/Implementation/MovingEndpointProfile.lean; read complete",
+            "Alternates/AllPrefix/LowStagePackage.lean; read complete"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written analytic proof and source comparison, with finite rational/integer regressions and noncertifying Decimal diagnostics. Not an analytic Lean export.",
+      "nonclaim": "The source already proves the square-root prefactor and endpoint rate. No removal of other K1 requirements from the complete parameter package, no canonical timeout-route change, no lowering A_FP, no priority claim.",
+      "later_refinements": [
+        "ND-107",
+        "ND-109",
+        "ND-110"
+      ]
+    },
+    {
+      "id": "ND-107",
+      "canonical_claim_id": "CLM-COL-000300",
+      "type": "sharp_moving_stage_startup_threshold",
+      "statement": "For g=1-log_2(3)/2 and fixed K0>0, eta_L=g-K0/L and r_L=1-K0/(2L) admit the original StageSetup with M0<=L for every sufficiently large integer L if and only if K0>=4+g. At and above the closed threshold, M0=L works for all L>=max(8,ceil(2K0/g)). The exact terminal field is F(K0 M/(2L))>=1+g-K0/L, F(t)=2t-ceil(t), for every integer M>=L. Below threshold explicit counterparents are M=L for K0<=2 or 4<K0<4+g, and M=floor(4L/K0)+1 for 2<K0<=4, with exact L cutoffs in the proof. All remaining target, parameter and rational horizon fields are proved. ND106 density/profile and this stage share explicit L_all=max(L0,L_st,ceil(2D0/b*),ceil(K0/(2(1-r*))),ceil(9/(2r*))) for any fixed rational 0<r*<1, retaining high data and feasible-time restrictions.",
+      "tex_label": "prop:shaik-exact-moving-startup",
+      "additional_tex_labels": [
+        "eq:shaik-exact-moving-threshold",
+        "eq:shaik-exact-moving-budget",
+        "eq:shaik-sawtooth-budget",
+        "eq:shaik-common-moving-startup"
+      ],
+      "dependencies": [
+        "ND-106"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Pullback.lean StageSetup and targetScale, lines24-41",
+            "Parameters.lean central_terminal_identity; complete reread",
+            "Alternates/AllPrefix/Implementation/MovingLowSetup.lean complete: original sufficient K0>6",
+            "MovingEndpointParameters.lean complete reread: unchanged public type K0>6 and constructor K0=7,K1=8/g"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written necessary-and-sufficient proof of the original scalar interface and its common-startup propagation. Exact finite Fraction/integer regressions are separate evidence; no new Lean export.",
+      "nonclaim": "No Collatz impossibility below threshold; no obstruction to other constructions. Identity of orbit objects holds for fixed K0, not between distinct K0. Author's package type and canonical timeout target remain unchanged; no whole-package certification or priority claim.",
+      "later_refinements": [
+        "ND-108",
+        "ND-109",
+        "ND-110",
+        "ND-112"
+      ]
+    },
+    {
+      "id": "ND-108",
+      "canonical_claim_id": "CLM-COL-000301",
+      "type": "least_moving_stage_startup_and_exact_repair",
+      "statement": "For fixed K0>0, g=1-log_2(3)/2 and integer L>2K0/g, the least possible startup of the original StageSetup(r_L,eta_L) is Z_L=ceil((4+g)L/K0-1). Every M>=Z_L satisfies every stage field, while M=Z_L-1 violates the exact terminal budget. Put c=K0/(2L),d=1+g-2c,B=(3+d)/(2c); B-2/c>1 pins the last failed parent strictly after the floor jump and below B. With rho=(4+g)/K0, rho L-1<=Z_L<rho L and 2^(rho L)/2<=2^Z_L<2^(rho L). Finite startup M0<=L is equivalent to K0>=(4+g)L/(L+1). At K0=4+g minimum is L-1; below threshold the exact excess is ceil((rho-1)L-1). This constructs the same parameter family's valid stage at larger startup rather than declaring failure of that family. For same-parameter valid startups a<=b, stage maps agree off [2^a,2^b); on that annulus the higher-startup map is identity and the lower one is the explicit bounded first-passage iterate. Pullback symmetric difference is exactly the written xor set; its count in[1,X] is <=max(0,min(floorX+1,2^b)-2^a).",
+      "tex_label": "prop:shaik-least-moving-startup",
+      "additional_tex_labels": [
+        "eq:shaik-least-moving-startup",
+        "eq:shaik-least-moving-rounding",
+        "eq:shaik-finite-moving-threshold",
+        "eq:shaik-startup-map-comparison",
+        "eq:shaik-startup-pullback-difference"
+      ],
+      "dependencies": [
+        "ND-107"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Pullback.lean StageSetup,targetScale,stageLength and absorbing startup branch",
+            "Parameters.lean central_terminal_identity",
+            "Alternates/AllPrefix/Implementation/MovingLowSetup.lean original moving family"
+          ]
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written exact minimum, finite threshold and dyadic-cost proof. Rational/integer regression evidence; no new Lean export.",
+      "nonclaim": "Changing startup changes the absorbing branch below it; no global identity of those stopped maps, no automatic transfer to the old terminal target or natural-density endpoint. Density producer independent of startup keeps its original domain; new terminal cutoff requires the actual corresponding run.",
+      "later_refinements": [
+        "ND-109",
+        "ND-110"
+      ]
+    },
+    {
+      "id": "ND-109",
+      "canonical_claim_id": "CLM-COL-000302",
+      "type": "moving_reachable_rank_time_support_and_linear_high_charge",
+      "statement": "For original MovingRecertificationRun with both startups<=L,2<=L<=S<M and tLo<a0, every rank q in[L,M-1] is on a unique deterministic list: q0=floor(rHi M), m_next=q-1, then high/low literal floor according to m>=S; stop at first q<=L and retain q=L if reached. Original feasible-time and first-bad sets vanish off that list. For prefix j, E_j=sum_i<=j[t_i(m_i+1)+3], center=M+1-q_j, and E_j+V(q_j)<=V(M+1). Actual times lie in [max(1,ceil((center-E_j)/g)),min(C_cut,floor((center+E_j)/g))]; interval cardinal H_j=max(0,B_j-A_j+1). Original separated envelope proportion <=initial +sum H_j[1+3(q_j+2)/r*]delta_qj. With unchanged uniform high seed Delta_M=K_tau/(D_h sqrtV)(M+2)^(-Q),Q=2D_h^2/lambda^2, its initial/high part <=Delta_M+H[(1+3(S+4)/r*)2^-S+Delta_M C_hi(S)M/2], C_hi(S)=r/(1-r)[3/r*+(1+6/r*)/(S+1)]. Thus on the very same source envelope the former M^2 charge becomes linear by proved empty fibres. For source H=O(sqrt((M+2)V)),S=ceil(Csw V), high error is O((M+2)^(3/2-Q)+(M+2)^(1/2-Csw log2)V^(3/2)); Q>=e+3/2 (closed) and Csw log2>e+1/2 suffice. Same low bound from ND106, actual witnesses, clocks, heights and critical A_FP retained. Directed refinement retains c_j=M-q_j-j, U_j=sum t_i m_i, T_j=sum t_i(m_i+1): c_j-U_j<=g h<c_j+T_j+2(j+1). Block intervals have a_i=max(1,ceil(((1-t_i)m_i-q_i)/g)), b_i=min(m_i,ceil(((1+t_i)(m_i+1)-q_i+1)/g)-1). If any is empty no actual prefix exists; otherwise summed intervals, clipped at C_cut, enclose all original times and have exact scalar cardinality H_j^int. A constructive greedy section proves the addition map from independent block intervals onto their sum interval; no realization of every scalar tuple is asserted. H_j^int<=H_j and replaces H_j in the identical failure profile.",
+      "tex_label": "prop:shaik-moving-reachable-support",
+      "additional_tex_labels": [
+        "eq:shaik-moving-reachable-ranks",
+        "eq:shaik-moving-integer-time-support",
+        "eq:shaik-moving-retained-potential",
+        "eq:shaik-moving-reachable-profile",
+        "cor:shaik-moving-linear-high",
+        "eq:shaik-moving-linear-high",
+        "eq:shaik-moving-high-rate",
+        "eq:shaik-moving-high-closed-margin",
+        "eq:shaik-moving-directed-corridor",
+        "eq:shaik-moving-blockwise-support"
+      ],
+      "dependencies": [
+        "ND-104",
+        "ND-106",
+        "ND-107",
+        "ND-108"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "MovingEndpointAssembly.lean; complete 64 lines",
+            "Alternates/AllPrefix/Implementation/MovingExecution.lean; complete 211 lines",
+            "Alternates/AllPrefix/Implementation/MovingTimeSupport.lean; complete 836 lines",
+            "Alternates/AllPrefix/Implementation/MovingFirstBad.lean; complete 303 lines",
+            "Alternates/AllPrefix/Implementation/MovingProfile.lean; complete 268 lines",
+            "Alternates/AllPrefix/Implementation/MovingOrbitCeiling.lean; complete 299 lines",
+            "ShrinkingBarrierCore.lean; complete 205 lines; certified_firstPassage_duration_corridor"
+          ],
+          "attribution": "Source run, certified landing shell q-1, duration corridor, rankwise transport and simultaneous clock/height mechanisms credited to Idris Ali Shaik."
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written source-level induction, finite support/profile and asymptotic propagation. Exact finite rational/integer tests separate from general proof; no new Lean export.",
+      "nonclaim": "No assertion that interval times are all realized or that failure unions are disjoint; no replacement of actual runs, startup, terminal target, or low critical rate. No full source-package replay or novelty claim.",
+      "later_refinements": [
+        "ND-110",
+        "ND-115"
+      ]
+    },
+    {
+      "id": "ND-110",
+      "canonical_claim_id": "CLM-COL-000303",
+      "type": "refined_all_prefix_moving_endpoint_and_exact_global_count",
+      "statement": "For the original all-prefix moving construction, fixed Amax,e,beta>0,c>1/(g ln2), rational a0<r<1,0<tau<min(r-a0,a0,beta/2),K0>=4+g,Q=2D_h^2/lambda^2>=e+3/2 and Csw>max(Amax/ln2,(D_h/tau)^2,(e+1/2)/ln2) construct valid fixed high data and the original moving low stage with startup L. For any eventually A(M)<=Amax and buffer Delta_buf=kappa ceil(A(M)log_2(M+2))-.5log_2(M+2)-log_2 ln(M+3) tending to infinity, the unchanged separated failure proportion is <=C_low 2^(-Delta_buf)+C_high(M+2)^(-e), with explicit positive constants in the proof independent of A. Same source outside the envelope has one shortcut witness y<=2^L<C_tar(ln n)^A, k< c ln n, all prefix heights<=n^(1+beta/2). Exact potential yields k<=M/g+O(sqrt(M ln M)); original affine identity gives odd input count s<=M/(2g)+O(sqrt(M ln M)), ordinary length exactly k+s, odd-source Syracuse returns<=s; respective leading log n coefficients 2,3,1 divided by ln(4/3), all heights<=n^(1+beta) eventually. For N=floorlog_2 X>=M0 exact prefix exception bound is 2^M0-1+sum_(M0<=m<N) min(2^m,floor(2^m delta_m))+min(X-2^N+1,floor(2^N delta_N)); tail supremum <=2^K-1+2X sup_(K<=m<=N)delta_m proves density one without monotone A. For fixed parameters any valid low startups<=L give identical original failure envelopes and runs through their first threshold<=L via identity on actual path records. Source stronger bundled type is unchanged; different K0 means a different member of the generic family. Critical target/buffer unchanged; no K1 reserve is used.",
+      "tex_label": "thm:shaik-refined-moving-endpoint",
+      "additional_tex_labels": [
+        "eq:shaik-refined-moving-domain",
+        "eq:shaik-refined-moving-buffer",
+        "eq:shaik-refined-moving-profile",
+        "eq:shaik-refined-moving-witness",
+        "eq:shaik-refined-moving-global-count",
+        "eq:shaik-moving-tail-sup",
+        "cor:shaik-refined-moving-clocks"
+      ],
+      "dependencies": [
+        "ND-084",
+        "ND-088",
+        "ND-104",
+        "ND-106",
+        "ND-107",
+        "ND-108",
+        "ND-109"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "MovingEndpointParameters.lean; complete 100 lines",
+            "MovingEndpointAssembly.lean; complete 64 lines",
+            "Alternates/AllPrefix/Implementation/MovingEndpointProfile.lean; complete 425 lines",
+            "Alternates/AllPrefix/Implementation/MovingExecution.lean; complete 211 lines",
+            "Alternates/AllPrefix/Witness.lean; complete 146 lines",
+            "Alternates/AllPrefix/NaturalDensity.lean; complete 178 lines"
+          ],
+          "attribution": "Idris Ali Shaik: moving run, first-bad envelope, potential, same-witness height/clock and moving-density endpoint. Local refinement reconstructs weaker sufficient parameters and full explicit constants on those objects."
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "Complete written analytic and set/path-comparison proof; exact finite count/clock regressions and explicitly noncertifying floating scalar diagnostics. No new Lean export.",
+      "nonclaim": "Not a new headline almost-boundedness theorem or Collatz solution; critical target unchanged. No identification with timeout good sets, full source-package certification, or constants uniform in degenerate fixed-parameter limits.",
+      "later_refinements": [
+        "ND-111",
+        "ND-112"
+      ],
+      "formal_component_update": "ND111 verifies its exact integer dyadic consumer and same-start clock transfer; the real analytic shell input remains written, not newly Lean-certified."
+    },
+    {
+      "id": "ND-111",
+      "canonical_claim_id": "CLM-COL-000304",
+      "type": "formal_exact_dyadic_prefix_and_same_witness_clock_consumer",
+      "statement": "For f:N->N, C_f(a,t)=sum_(0<=i<t) f(a+i), P_f(X)=C_f(1,X), B_f(m)=C_f(2^m,2^m), N=K+J and 2^N<=X<2^(N+1), the exact decomposition is P_f(X)=P_f(2^K-1)+sum_(j<J)B_f(K+j)+C_f(2^N,X+1-2^N). If f<=1 and B_f(K+j)<=b(K+j) for j<=J, then P_f(X)<=2^K-1+sum_(j<J)min(2^(K+j),b(K+j))+min(X+1-2^N,b(N)). If instead D B_f(K+j)<=R2^(K+j), then D P_f(X)<=D(2^K-1)+2XR for natural D,R. The indicator f(n)=1_(not P(n)) is literally the count of missing P-points in [1,X]. The same shell-budget bound transfers from a single shortcut witness of length<=H, odd inputs<=S, endpoint<=Y and prefix height<=B to the ordinary witness with length<=H+S, same endpoint and height<=2B on the identical start. All statements quantify over arbitrary natural cutoffs and budgets and are independently kernel checked; ND110's real analytic shell estimate is not part of this certificate. For an arbitrary decidable retained set G, the implication to the tagged witness is needed only at n=2^(K+j)+i, j<=J, i<2^(K+j). Its missing-shell budgets transfer to missing ordinary witnesses with no hypothesis below 2^K and no second startup charge.",
+      "tex_label": "prop:shaik-dyadic-certificate",
+      "additional_tex_labels": [
+        "eq:shaik-certified-prefix-partition",
+        "eq:shaik-certified-prefix-bound",
+        "eq:shaik-certified-scaled-tail"
+      ],
+      "dependencies": [
+        "ND-084",
+        "ND-095",
+        "ND-110"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Alternates/AllPrefix/NaturalDensity.lean; moving endpoint consumer reconstructed in ND110"
+          ],
+          "attribution": "Idris Ali Shaik's moving construction and same-witness mechanism; independent local certificate of the exact discrete counting and clock consumer."
+        }
+      ],
+      "priority_claim": false,
+      "formal_status": "23 general declarations independently checked in Lean 4.15.0 with pinned JointWitness/ClockAndRanks/Init imports; axiom sets contained in {propext,Quot.sound}. No admissions, finite enumeration as proof, real analytic formalization or whole source-package replay.",
+      "formal_receipt": "formal_shaik_dyadic/verification.json",
+      "nonclaim": "No new headline density theorem, novelty claim, or independent replay of real analytic parameters, entropy bounds or the source package.",
+      "later_refinements": [
+        "ND-112"
+      ]
+    },
+    {
+      "id": "ND-112",
+      "canonical_claim_id": "CLM-COL-000305",
+      "type": "exact_timeout_all_prefix_run_and_failure_comparison",
+      "statement": "For matching shrinking high data P, K0,L and a valid low StageSetup(rLo,tLo), rLo=1-K0/(2L), tLo<a0, 2<=L<=S<M and both stage startups<=L, the original timeout failure envelope E_T is a subset of the original all-prefix envelope E_A. Initial pieces and each high first-bad piece agree. A numerical all-prefix run stopped at its first threshold<=L maps to a timeout run by deleting low certificates, preserving source, parents, targets, block durations, elapsed times and actual orbit. The inverse on its image restores low W_t tests. A first timeout is mapped to the first failed low certificate on its prefix, at an equal or larger rank, proving the inclusion without assuming eventual descent. The low power-of-two upper endpoint cannot time out; its halving is retained, and all-prefix's additional q=L rejection is retained. Writing E_A=I union H union C and E_T=I union H union D gives D subset C and G_T\\G_A=C\\(I union H union D). On G_A the terminal numerical traces and exact ordinary clocks coincide. At equal A,c,beta,C,M the original timeoutEndpointWitnessGood and movingEndpointWitnessGood definitions are exactly identical. Thus all-prefix shell count bounds, including ND110's refined profile at matching stage parameters, also bound E_T; original timeout witness bounds are retained, not strengthened merely by this count improvement. With two estimates the budget is min(2^M,floor b_A(M),floor b_T(M)), assembled with the exact incomplete final shell and the one-startup retained-set ordinary-clock transfer.",
+      "tex_label": "prop:shaik-timeout-forgetting",
+      "additional_tex_labels": [
+        "eq:shaik-timeout-envelope-inclusion",
+        "eq:shaik-timeout-certificate-defect",
+        "cor:shaik-identical-endpoint-witness",
+        "eq:shaik-literal-witness-equality"
+      ],
+      "dependencies": [
+        "ND-079",
+        "ND-084",
+        "ND-107",
+        "ND-110",
+        "ND-111"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "TimeoutEndpointWitness.lean",
+            "TimeoutEndpointNaturalDensity.lean",
+            "TimeoutRun.lean",
+            "TimeoutEnvelope.lean",
+            "TimeoutExecution.lean",
+            "TimeoutCore.lean",
+            "TimeoutFirstBad.lean",
+            "Alternates/AllPrefix/Witness.lean",
+            "Alternates/AllPrefix/NaturalDensity.lean",
+            "Alternates/AllPrefix/Implementation/MovingExecution.lean",
+            "Alternates/AllPrefix/Implementation/MovingFirstBad.lean"
+          ],
+          "attribution": "Idris Ali Shaik; original typed run records, literal failure envelopes and identical endpoint witness definitions, revision ef3410843bf58d69f771f5ba2c0571d54b54da59."
+        }
+      ],
+      "formal_status": "Complete written source-level induction, definition equality and exact finite actual-path regressions; no new Lean declaration or whole-package replay. Existing 23-statement dyadic and clock consumer unchanged.",
+      "priority_claim": false,
+      "nonclaim": "Not equality of certificate-defined failure sets; not a pointwise clock strengthening on additional timeout-good sources or certification of an entire source package.",
+      "later_refinements": [
+        "ND-113",
+        "ND-115"
+      ]
+    },
+    {
+      "id": "ND-113",
+      "canonical_claim_id": "CLM-COL-000306",
+      "type": "two_sided_completed_timeout_block_height",
+      "statement": "For the original shortcut map, every completed positive orbit block y=T^h(x) satisfies T^v(x)<=min(floor(3^v(x+1)/2^v)-1,2^(h-v)y) for 0<=v<=h. If x is in [2^m,2^(m+1)), h<=m and y<=2^q with 1<=q<m, its height is at most B(m,q)=max_(0<=v<=m) min(3^v 2^(m+1-v)-1,2^(m+q-v)). The integer crossing a=max{v<=m:2^(m+1)3^v-2^v<=2^(m+q)} lies in[0,m-1] and B=max(3^a2^(m+1-a)-1,2^(m+q-a-1)). With alpha=1-log(2)/log(3) and kappa=1+alpha, B(m,q)<2^(m+1+alpha(q-1)). For S>=3 every original completed timeout low block is bounded by B_S=B(S-1,S-2)<2^(kappa S-3alpha). On the unchanged original timeout-good set, every shortcut prefix including dyadic completion is bounded by max(n^(1+tau),B_S). Thus beta>=tau and B_S<=2^((1+beta)M) suffice for the original n^(1+beta) ceiling; kappa S-3alpha<=M even puts every low prefix below n. A logarithmic switch eventually meets this latter condition without the old low margin 2S<=beta M. Source identity, complete numerical orbit, landing, time and failure sets are unchanged; ordinary expansion retains time h+oddCount and twice the shortcut height. B is optimal only for the two scalar envelopes, not claimed optimal over actual completed Collatz blocks.",
+      "tex_label": "prop:shaik-completed-block-height",
+      "additional_tex_labels": [
+        "eq:shaik-two-sided-block-height",
+        "eq:shaik-height-crossing",
+        "eq:shaik-height-two-candidates",
+        "eq:shaik-height-exponent",
+        "cor:shaik-timeout-height-refinement",
+        "eq:shaik-timeout-low-height",
+        "eq:shaik-timeout-height-max"
+      ],
+      "dependencies": [
+        "ND-079",
+        "ND-084",
+        "ND-112"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "TimeoutOrbitCeiling.lean:shortcut_le_two_mul, orbit_le_two_pow_mul, orbit_le_start_power",
+            "TimeoutRun.lean:LowTimeoutPassage, nextLo",
+            "OrbitCeiling.lean:orbit_le_one_add_eta_of_le_stageLength",
+            "TimeoutEndpointWitness.lean:dyadic completion"
+          ],
+          "attribution": "Idris Ali Shaik; original block and high-height mechanisms, revision ef3410843bf58d69f771f5ba2c0571d54b54da59. Two elementary inequalities proved directly; no priority claim."
+        }
+      ],
+      "formal_status": "Discrete completed-block inequalities, exact integer maximum and ordinary-clock transfer certified by ND-114; real exponents, high-stage bounds and whole-run assembly retain their written/source proofs.",
+      "priority_claim": false,
+      "nonclaim": "No claim of optimal Collatz peak, stronger density or leading clock, nor certification of the analytic source package.",
+      "later_refinements": [
+        "ND-114",
+        "ND-115"
+      ]
+    },
+    {
+      "id": "ND-114",
+      "canonical_claim_id": "CLM-COL-000307",
+      "type": "kernel_checked_completed_height_certificate",
+      "statement": "The completed-height certificate proves, for the literal shortcut map and all natural x,h,v with v<=h, T^v(x)<=min(floor(3^v(x+1)/2^v)-1,2^(h-v)T^h(x)). For x<2^(m+1), h<=m, T^h(x)<=2^q, every prefix is bounded by the inclusive integer maximum B(m,q). With 1<=q<m it proves that a is the greatest v<=m satisfying 2^(m+1)3^v-2^v<=2^(m+q), that a<m, and B(m,q)=max(3^a2^(m+1-a)-1,2^(m+q-a-1)). It proves monotonicity in m,q and the uniform B(S-1,S-2) bound for m<S, q<m, and transfers the same endpoint to ordinary time h+oddCount(x,h) with all ordinary prefix heights<=2B(m,q). These are universal discrete proofs, not finite enumeration; no real logarithmic exponent or full analytic package replay is claimed.",
+      "tex_label": "prop:shaik-completed-height-certificate",
+      "dependencies": [
+        "ND-084",
+        "ND-113"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Basic.lean and RawDynamics.lean:literal maps",
+            "TimeoutRun.lean:LowTimeoutPassage and nextLo",
+            "TimeoutOrbitCeiling.lean:low height mechanism"
+          ],
+          "attribution": "Idris Ali Shaik, revision ef341084. This is an independent certificate of the workbench's exact discrete refinement, using the original maps."
+        }
+      ],
+      "formal_status": "29 general declarations independently kernel-checked in Lean 4.15.0 with pinned JointWitness/ClockAndRanks/Init imports; axiom sets contained in {propext,Quot.sound}. Real exponents, high-window and full timeout-run assembly, and analytic density are not new certified exports.",
+      "formal_receipt": "formal_shaik_height/verification.json",
+      "priority_claim": false,
+      "nonclaim": "Not a formalization of the real power estimate or whole timeout run/density package."
+    },
+    {
+      "id": "ND-115",
+      "canonical_claim_id": "CLM-COL-000308",
+      "type": "exact_timeout_low_schedule_and_finite_clock_support",
+      "statement": "For Shaik's unchanged timeout procedure with 2<=L<S, r=1-K0/(2L) in (0,1), Q(p)=floor(r(p-1)) and 1<=Q(p)<p-1 for L<p<=S, every completed low continuation from (2^(p-1),2^p] has duration in D(p), where D(p)={0} for p<=L and D(p)={p-L} union ([p-Q(p),p-1]+D(Q(p))) otherwise. Its exact scalar maximum is F(p)=p-1+F(Q(p)), its minimum p-L, and F(p)<=sum_(m=L)^(p-1)m and F(p)<2L(p-1)/K0. Low first-timeout ranks lie on the single deterministic list p_(j+1)=Q(p_j); off-list first-timeout sets are empty, not necessarily the broader feasible-time sets. Given high entry interval [a,b], arrivals at p_j lie in [a+p0-p_j,b+sum_(i<j)(p_i-1)], with W_j=b-a+1+sum_(i<j)(p_(i+1)-1) integer times. The unchanged low-failure union proportion is at most sum_j W_j (2^(p_j-M)+3(p_j+2)/r*) |B_(p_j)|/2^p_j under the original rank-transport conditions; retain the minimum with existing time-cardinality bounds. For successful paths K=b+F(p0), the exact integer odd budget J=max{s<=K:3^s2^M<=2^(K+L)} gives shortcut/ordinary/odd clocks K,K+J,J. ND113's height bounds remain on the same paths. For L20,K04,p0=S64, the finite low reserve is323 instead of the triangular1826; no stronger leading clock or asymptotic density exponent is claimed.",
+      "tex_label": "prop:shaik-low-schedule",
+      "additional_tex_labels": [
+        "eq:shaik-low-duration-set",
+        "eq:shaik-low-budget",
+        "prop:shaik-low-timeout-support",
+        "eq:shaik-low-refined-count",
+        "cor:shaik-low-schedule-clocks",
+        "eq:shaik-low-integer-clock"
+      ],
+      "dependencies": [
+        "ND-079",
+        "ND-084",
+        "ND-109",
+        "ND-112",
+        "ND-113"
+      ],
+      "sources": [
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "TimeoutRun.lean:LowTimeoutPassage, nextLo, landingBand",
+            "TimeoutTimeSupport.lean:timeoutTimePotential and fixed-rank support",
+            "TimeoutFirstBad.lean:timeoutFirstBadSourcesAtRank_card_le",
+            "TimeSupportTransport.lean:lossFiltered_arbitraryTarget_transport_atTimes",
+            "TimeoutEndpointWitness.lean:terminal/dyadic completion",
+            "MovingLowParameters.lean:movingLowRatio"
+          ],
+          "attribution": "Idris Ali Shaik, revision ef3410843bf58d69f771f5ba2c0571d54b54da59. Original objects, actual runs, target, and transport; exact local scalar refinement without a priority claim."
+        }
+      ],
+      "formal_status": "Complete general written proofs, source-level constructor and finite-time transport comparison, and exact finite scalar/actual-path regressions. No new Lean export or whole analytic package replay.",
+      "priority_claim": false,
+      "nonclaim": "D is an exact scalar construction, not a realization theorem for Collatz durations. Off-list emptiness concerns first-timeout sets only. No new leading clock, density exponent, full-source certification or modified source parameter type."
+    },
+    {
+      "id": "ND-116",
+      "canonical_claim_id": "CLM-COL-000309",
+      "type": "proved_same_orbit_drift_clock_and_height_synthesis",
+      "statement": "For every beta,e>0 there is A_beta,e independent of the target B and exponent c, such that the same actual positive Collatz prefix reaches an odd value <=B with odd/shortcut/ordinary clocks j*log(n)/log(4/3)+A_beta,e*(log(n+2))^(4/5), j=1,2,3, and ordinary height <=n^(1+beta), except at most C_c*X*(log B)^(-c)+C_beta,e*X*(log(X+2))^(-e) inputs n<=X, for all X>=2, integer B>=2, 0<c<1/17.232. Therefore every f(n)->infinity is reached strictly below f(n) on a natural-density-one set with these same f-independent clocks and height. The high prefix has two-sided clocks via its direct first-passage product; subtracting its odd-return time from Allikvere's total timed witness leaves O(log(n)^(4/5)) actual returns. No uniform landing distribution is assumed.",
+      "tex_label": "thm:shaik-allikvere-drift-target",
+      "additional_tex_labels": [
+        "lem:shaik-high-two-sided",
+        "eq:shaik-high-three-clocks",
+        "lem:shaik-same-orbit-tail",
+        "eq:shaik-exact-tail",
+        "eq:shaik-allikvere-count"
+      ],
+      "dependencies": [
+        "ND-025",
+        "ND-027",
+        "ND-075",
+        "ND-079",
+        "ND-081",
+        "ND-082",
+        "ND-083"
+      ],
+      "sources": [
+        {
+          "id": "ALLIKVERE-2026-V2",
+          "locators": [
+            "paper.tex lines 1795-2031; prop:timed, thm:quant, lem:telescope"
+          ],
+          "attribution": "Jaan Allikvere's total timed witness; its reconstructed strengthened count is ND025."
+        },
+        {
+          "id": "SHAIK-2026-V324",
+          "locators": [
+            "Sections 4-6 and the reconstructed high phase in thm:shaik-shell-drift"
+          ],
+          "attribution": "Idris Ali Shaik's high-prefix certificates, first-passage transport and height construction."
+        },
+        {
+          "id": "TAO-V7",
+          "locators": [
+            "Section 3 first-passage iteration; analytic dependencies of ND025"
+          ],
+          "attribution": "Terence Tao's underlying analytic and first-passage method."
+        },
+        {
+          "id": "INSELMANN-2024-V3",
+          "locators": [
+            "Theorems 1.1,1.9,1.10; source labels main,thirdmaintheoremCol,TheoremColfast"
+          ],
+          "attribution": "Manuel Inselmann's earlier drift-horizon trajectory results; comparison, not a new analytic dependency."
+        }
+      ],
+      "formal_status": "Complete written synthesis from the existing analytic reconstruction; exact finite path regressions. No new Lean theorem or full analytic dependency replay.",
+      "priority_claim": false,
+      "nonclaim": "Not a correction to Tao or Allikvere's valuation telescope; no novelty of drift coefficients, no uniform landing law, no proof of convergence for every positive integer."
     }
   ],
   "remaining_source_verification": [
-    "Natural-density target-set iteration from the now-proved uniform first-passage theorem.",
-    "Timed iteration and final raw-clock transfer, retaining all hypotheses and exceptional sets."
+    "Independent core certificate ND084 now passed. Shaik's entire formal dependency closure and analytic endpoint are not independently replayed; continue remaining content-level literature and package work.",
+    "ND088-090 reconstruct prescribed and critical rates. ND091-092 complete the fixed-barrier stretched endpoint and explicit graded three-clock power-saving comparison. Continue remaining source dependencies, matching bounded formalization and the connected literature; no full analytic Lean replay."
   ],
-  "distribution": "Public edition: primary works are cited and hash-pinned, not redistributed."
+  "natural_density_written_reconstruction_complete": true,
+  "formal_verification_complete": false,
+  "external_input_scope": "Uses the published Tao positive-majorant theorem and Rhin Diophantine bound at pinned primary-source locators. Does not independently reprove every external analytic input.",
+  "verification_schema_change": "Replaced the old all-purpose full_natural_density_theorem_independently_verified boolean by separate written-reconstruction and formal-verification fields; endpoint deductions ND-023–ND-027 now supply the previously absent assembly.",
+  "remaining_programme_work": [
+    "Read and audit the connected Mazur and Shaik packages at content level; the overall Collatz programme is not complete.",
+    "No Lean formalization of the analytic endpoint or compilation of this updated source has been obtained."
+  ],
+  "endpoint_primary_reading": {
+    "date": "2026-09-29",
+    "allikvere_lines": [
+      [
+        1,
+        320
+      ],
+      [
+        1687,
+        2216
+      ]
+    ],
+    "tao_lines": [
+      [
+        535,
+        596
+      ]
+    ],
+    "scope": "Read actual source statements, untimed iteration, timed target sets, and raw-clock proof before reconstructing the deductions."
+  },
+  "mazur_independent_package_verification_complete": false,
+  "mazur_next_source_work": [
+    "Compare the actual Shaik manuscript and pinned formal endpoint with the now reconstructed Mazur and Allikvere timed density statements, using the existing index and source registry; preserve clocks, measure conventions, error rates and quantifiers.",
+    "Develop bounded formal verification of matching finite/general statements without treating the written endpoint proof or finite regressions as a whole-package Lean replay; continue the remaining connected literature programme."
+  ],
+  "exact_core_formal_certificate": {
+    "claim_id": "ND-084",
+    "receipt": "formal_shaik_core/verification.json",
+    "whole_analytic_theorem_certified": false
+  },
+  "exact_joint_formal_certificate": {
+    "claim_id": "ND-095",
+    "receipt": "formal_shaik_joint/verification.json",
+    "theorems": 9,
+    "imported_core_statements": 36,
+    "whole_analytic_theorem_certified": false
+  },
+  "exact_dyadic_formal_certificate": {
+    "claim_id": "ND-111",
+    "receipt": "formal_shaik_dyadic/verification.json",
+    "theorems": 23,
+    "imported_core_statements": 36,
+    "imported_joint_statements": 9,
+    "whole_analytic_theorem_certified": false
+  },
+  "exact_completed_height_certificate": {
+    "claim_id": "ND-114",
+    "receipt": "formal_shaik_height/verification.json",
+    "theorems": 29,
+    "imported_core_statements": 36,
+    "imported_joint_statements": 9,
+    "whole_analytic_theorem_certified": false
+  },
+  "distribution": "Public research edition; primary works cited and hash-pinned, not redistributed."
 }

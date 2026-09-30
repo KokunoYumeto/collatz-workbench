@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "counts": {
+    "exact_barrier_recursions": 280,
+    "rational_cosh_potentials": 840,
+    "decoder_and_weight": 2047,
+    "prefix_fibres": 4083,
+    "actual_image_points": 20481,
+    "complete_binomial_shells": 11,
+    "natural_fibres": 2556,
+    "graph_vertices": 2046,
+    "lift_coordinates": 9216,
+    "complete_written_propagation": 1
+  },
+  "lean_started": false,
+  "formal_scope": "36 separately compiled all-input exact statements, including complete-shell binomial cardinality and the finite-startup count bound. Prefix-conditioned cardinality and graph packaging remain written proofs; real-variable absorption and analytic density are not formalized here.",
+  "test_scope": "Complete shells 0<=m<=10; full prefix disintegration; lifts m<=7,n<64,d<4; signed-lift graph checks; exact barrier counts r<=7,a<=4,abs(y)<=3 and rational cosh potentials at exp(theta)=1,3/2,2.",
+  "source_hashes": {
+    "Parity.lean": "0bb6c96a16b6366622d56bd5b61351ac1e1cd203cae61d95c2446a5bb61fe9e1",
+    "Barrier.lean": "9071b546a3d4e99df1b0c466070ce8aa7099766da312a31f2b8682b4e4be71ad"
+  },
+  "laarhoven_source": {
+    "path": "C:\\Users\\Floris\\Documents\\arxiv_latex\\library\\collatz_reconstruction\\latex\\1209.3495v1\\main.tex",
+    "sha256": "51b2c072646d33fc7f37fcd23e966f4435dc3e2026cd3fe83b6717829c31e0eb",
+    "read_lines": [
+      63,
+      175
+    ]
+  },
+  "whole_natural_density_package_verified": false,
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_parity.py": "90867f6c603e721c19c5e90a7b8ea8d2c46bc71a313683afd517ff603f911ac2",
+    "draw_shaik_parity.py": "88cbd70c34c264912e5249171e29dbc92b6ef884c6209b5b317efb48b8281bd6",
+    "shaik_parity_coordinates.png": "965cf6ab1ebe4884d5e863ddff823f790610209db171f0920990a0119afbe4b5",
+    "formal_shaik_core/verification.json": "954549cda6dc0dfd9c459d18011ea81b76e8313528ac1b20017c72372220ed43"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

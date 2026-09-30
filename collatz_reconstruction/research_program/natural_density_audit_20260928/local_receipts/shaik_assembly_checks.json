@@ -1,0 +1,134 @@
+{
+  "status": "passed",
+  "counts": {
+    "rational_prefactor_choices": 12,
+    "exact_terminal_sums": 1984,
+    "exhaustive_prefix_partitions": 29696,
+    "exact_linear_shell_caps": 1372,
+    "exact_illustrated_prefixes": 63,
+    "decimal_shifted_sums": 72,
+    "decimal_rate_factors": 18,
+    "complete_written_propagation": 1
+  },
+  "reading": [
+    {
+      "name": "HeadlineParameters.lean",
+      "sha256": "96c32365e2ec0ccfa9126c9b5dc1b007efbb6c662567905c52dccc2d1e678514",
+      "lines": 256,
+      "read": "complete"
+    },
+    {
+      "name": "QuantitativeNaturalDensityDescent.lean",
+      "sha256": "1f3a609f26a6096acd94f33b59dacfe2fc06f14bda22630d6e4f77243bc932c0",
+      "lines": 308,
+      "read": "complete"
+    },
+    {
+      "name": "StretchedExceptionalCount.lean",
+      "sha256": "db1d9f4ba1d88b9b931a3f364750112f073e00bd5ec141b48da6d228df7695d4",
+      "lines": 396,
+      "read": "complete"
+    },
+    {
+      "name": "Density.lean",
+      "sha256": "f28997d1f00fe9f1195b53de70d13b80d55e79a9d864eb0fbdb795a58221e03a",
+      "lines": 281,
+      "read": "complete"
+    },
+    {
+      "name": "ClockBudget.lean",
+      "sha256": "e95b39bdef58763bd5730b45784af02ec5b952d9fcc5eaf81b298603082833d9",
+      "lines": 173,
+      "read": "complete"
+    },
+    {
+      "name": "NaturalDensityDescent.lean",
+      "sha256": "3b06e5fd8dbc00ef6d0def02cbbe01ddcd41fa8dc2cad27dce13b9b3b11396bd",
+      "lines": 112,
+      "read": "complete"
+    }
+  ],
+  "illustrated_prefixes": {
+    "1/2": [
+      1,
+      2,
+      4,
+      6,
+      10,
+      15,
+      23,
+      34,
+      50,
+      72,
+      104,
+      149,
+      213,
+      303,
+      431,
+      612,
+      868,
+      1230,
+      1742,
+      2466,
+      3490
+    ],
+    "1": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "3/2": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "new_formal_theorems": 0,
+  "lean_started": false,
+  "whole_natural_density_package_verified": false,
+  "scope": "Exact rational/integer finite checks and noncertifying Decimal diagnostics. Complete analytic and sharpness proofs are in TeX; no new Lean theorem.",
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_assembly.py": "9a3dd1e33256c05ac70a4a1069a6337516f07f894e88f1d015c25463e7372fc1",
+    "draw_shaik_assembly.py": "13fd6c380f9f855f06673b91d36440411a28dbe0facd2a49aa5e1bd5b0210546",
+    "shaik_linear_shells.png": "6e2a28250a237c90caf1579c60492d4acba341ed21ffb6c641f99ce1cab937db"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

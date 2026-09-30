@@ -1,0 +1,166 @@
+{
+  "status": "passed",
+  "counts": {
+    "rational_parameter_packages": 720,
+    "rational_rank_chains": 1719,
+    "exact_geometric_tails": 180,
+    "exhaustive_subset_prefixes": 2304,
+    "decimal_profile_diagnostics": 216,
+    "complete_written_propagation": 1
+  },
+  "reading": [
+    {
+      "name": "HeightSensitiveClock.lean",
+      "sha256": "0d1e4ef386685b6f2c2e694fb4a73461d475999f36e4719cd3833eefcc247e90",
+      "lines": 149,
+      "read": "complete"
+    },
+    {
+      "name": "GradedPowerDescent.lean",
+      "sha256": "0c80971eb9f14c88910b6652ffe40df60cadde3570b3bac1e9d77eda1de39f90",
+      "lines": 169,
+      "read": "complete"
+    },
+    {
+      "name": "Bootstrap.lean",
+      "sha256": "83c0ca843f1a5906a78d7fca22f3cfe98488cb025ee0f2756faf998bd4a1b64d",
+      "lines": 547,
+      "read": [
+        [
+          1,
+          160
+        ]
+      ]
+    },
+    {
+      "name": "GradedClock.lean",
+      "sha256": "8dad9466527eb13787e13cbea9f6e37eb63f0e762594de9a5f0732ea47750078",
+      "lines": 330,
+      "read": [
+        [
+          206,
+          330
+        ]
+      ]
+    },
+    {
+      "name": "StretchedExceptionalCount.lean",
+      "sha256": "db1d9f4ba1d88b9b931a3f364750112f073e00bd5ec141b48da6d228df7695d4",
+      "lines": 396,
+      "read": [
+        [
+          1,
+          90
+        ]
+      ]
+    },
+    {
+      "name": "QuantitativeNaturalDensityDescent.lean",
+      "sha256": "1f3a609f26a6096acd94f33b59dacfe2fc06f14bda22630d6e4f77243bc932c0",
+      "lines": 308,
+      "read": [
+        [
+          146,
+          308
+        ]
+      ]
+    },
+    {
+      "name": "Main.lean",
+      "sha256": "98748e4543788f84926559aa1b388685921d49d6a6c1921dc1d2b590f1d84c42",
+      "lines": 393,
+      "read": [
+        [
+          161,
+          393
+        ]
+      ]
+    }
+  ],
+  "decimal_samples": [
+    {
+      "sigma": "0.1",
+      "d": "0.1",
+      "N0": 2,
+      "L": "1"
+    },
+    {
+      "sigma": "0.1",
+      "d": "1",
+      "N0": 2,
+      "L": "1"
+    },
+    {
+      "sigma": "0.1",
+      "d": "3",
+      "N0": 2,
+      "L": "1"
+    },
+    {
+      "sigma": "0.3",
+      "d": "0.1",
+      "N0": 2,
+      "L": "1"
+    },
+    {
+      "sigma": "0.3",
+      "d": "1",
+      "N0": 2,
+      "L": "1"
+    },
+    {
+      "sigma": "0.3",
+      "d": "3",
+      "N0": 5,
+      "L": "2"
+    },
+    {
+      "sigma": "0.5",
+      "d": "0.1",
+      "N0": 2,
+      "L": "1"
+    },
+    {
+      "sigma": "0.5",
+      "d": "1",
+      "N0": 4,
+      "L": "2"
+    },
+    {
+      "sigma": "0.5",
+      "d": "3",
+      "N0": 20,
+      "L": "5"
+    },
+    {
+      "sigma": "0.9",
+      "d": "0.1",
+      "N0": 2,
+      "L": "1"
+    },
+    {
+      "sigma": "0.9",
+      "d": "1",
+      "N0": 13948,
+      "L": "5571"
+    },
+    {
+      "sigma": "0.9",
+      "d": "3",
+      "N0": 823536758,
+      "L": "109655935"
+    }
+  ],
+  "scope": "Exact rational parameter, rank and geometric-tail tests; exhaustive finite subset/prefix tests. Decimal real-log/profile samples are numerical diagnostics, not interval certificates. The general analytic and actual-orbit proofs are in audit.tex.",
+  "lean_started": false,
+  "new_formal_theorems": 0,
+  "whole_natural_density_package_verified": false,
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_fixed.py": "80dceed135935d112d8fdd534778aa2c20abfd09eb89d5abb65bf081b3546a71",
+    "draw_shaik_fixed.py": "a2391662c2e14837a95d644cf4042df65df507d99290f71dc194eb64370860da",
+    "shaik_fixed_clocks.png": "21fb368457755ec25807dd01e4f4e7f7d483ed8f1227b2af3f767cf42afd8c8e"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

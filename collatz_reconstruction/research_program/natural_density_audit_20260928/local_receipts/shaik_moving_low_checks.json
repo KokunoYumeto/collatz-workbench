@@ -1,0 +1,98 @@
+{
+  "status": "passed",
+  "counts": {
+    "rational_startup_and_one_bit": 1296,
+    "integer_series_weights": 8800,
+    "rational_geometric_series": 792,
+    "exact_dyadic_tails": 264,
+    "decimal_rate_diagnostics": 12,
+    "complete_written_propagation": 1
+  },
+  "decimal_diagnostics": [
+    {
+      "K0": "0.5",
+      "L": 100,
+      "actual_rate_loss": "0.00167020262171390727616051937523501084868665741039474389158572140",
+      "upper": "0.0016915464400332557433763825505857779861079541527685905863639422626"
+    },
+    {
+      "K0": "0.5",
+      "L": 200,
+      "actual_rate_loss": "0.00084043414357931667805871265684945065426637282017244419220104568",
+      "upper": "0.0008457732200166278716881912752928889930539770763842952931819711313"
+    },
+    {
+      "K0": "0.5",
+      "L": 1000,
+      "actual_rate_loss": "0.00016894098034132682142518410831561175031995686529603673020729609",
+      "upper": "0.00016915464400332557433763825505857779861079541527685905863639422626"
+    },
+    {
+      "K0": "0.5",
+      "L": 10000,
+      "actual_rate_loss": "0.00001691332753648551378790815941882530146158254181801699880632133",
+      "upper": "0.000016915464400332557433763825505857779861079541527685905863639422626"
+    },
+    {
+      "K0": "1",
+      "L": 100,
+      "actual_rate_loss": "0.00329781633938333103017974474419104614981575594643347719078221813",
+      "upper": "0.0033830928800665114867527651011715559722159083055371811727278845252"
+    },
+    {
+      "K0": "1",
+      "L": 200,
+      "actual_rate_loss": "0.00167020262171390727616051937523501084868665741039474389158572140",
+      "upper": "0.0016915464400332557433763825505857779861079541527685905863639422626"
+    },
+    {
+      "K0": "1",
+      "L": 1000,
+      "actual_rate_loss": "0.00033745473419888966028362662151687758865881926736534220195761724",
+      "upper": "0.00033830928800665114867527651011715559722159083055371811727278845252"
+    },
+    {
+      "K0": "1",
+      "L": 10000,
+      "actual_rate_loss": "0.00003382238144632976222686402737150415319245850063529411056594649",
+      "upper": "0.000033830928800665114867527651011715559722159083055371811727278845252"
+    },
+    {
+      "K0": "7",
+      "L": 100,
+      "actual_rate_loss": "0.01955548069092971757881964413194122242247827954563252788903139900",
+      "upper": "0.023681650160465580407269355708200891805511358138760268209095191677"
+    },
+    {
+      "K0": "7",
+      "L": 200,
+      "actual_rate_loss": "0.01080195556090317374720654109326971073630224372496528303435485817",
+      "upper": "0.011840825080232790203634677854100445902755679069380134104547595838"
+    },
+    {
+      "K0": "7",
+      "L": 1000,
+      "actual_rate_loss": "0.00232635057490548337224723002867613379765163664092864627773027817",
+      "upper": "0.0023681650160465580407269355708200891805511358138760268209095191677"
+    },
+    {
+      "K0": "7",
+      "L": 10000,
+      "actual_rate_loss": "0.00023639774060107703311818786404840136567589600951353969433762535",
+      "upper": "0.00023681650160465580407269355708200891805511358138760268209095191677"
+    }
+  ],
+  "formal_named_statements": 31,
+  "lean_launched_by_this_check": false,
+  "whole_natural_density_package_verified": false,
+  "scope": "Exact rational startup/reserve checks, squared integer series factors and exact finite dyadic tails. Decimal entropy evaluations are diagnostics only. General finite reflection proof is separately kernel-checked; analytic density refinements are written proofs.",
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_moving_low.py": "699ad3026a36779278d72646da828afe997d49e91478505b22ab23166a07e00e",
+    "draw_shaik_moving_low.py": "a2f78f64e8be666998329c2cd5dc5f00c0839b38eb9095a80f7e1f033f44cd4c",
+    "shaik_moving_low.png": "8a44d274c287cfea1bec5f1b33d2409692f590535d0202f04b83bc72aaa69530",
+    "formal_shaik_reflection/verification.json": "322b3eabf13e4532a9019e0f5620bf839724148db629d7d90f6bc76d39f5e747"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

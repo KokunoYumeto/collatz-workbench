@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "counts": {
+    "pascal_shell_weights": 99,
+    "weighted_shells": 33,
+    "finite_startup_set_pairs": 26937,
+    "sharp_startup_examples": 63,
+    "rational_absorption_witnesses": 75,
+    "complete_written_propagation": 1
+  },
+  "lean_started": false,
+  "general_formal_theorem_count": 36,
+  "whole_natural_density_package_verified": false,
+  "scope": "Finite regression only. General counts and startup bound are independently kernel checked. Real exponential-series absorption is proved in the manuscript, not formalized here.",
+  "source_hashes": {
+    "Main.lean": "98748e4543788f84926559aa1b388685921d49d6a6c1921dc1d2b590f1d84c42",
+    "TimeoutCore.lean": "b9239bf70305f6051cced9079f33c316203a1b73f8f1ac2ddd7fec3b9771ca85",
+    "TimeoutEndpointNaturalDensity.lean": "11737197c612e258d12720a096c34850f3f59b6cd421f0de5a494cd33a2f4fec",
+    "MovingEndpointAsymptotics.lean": "2de01a34c909acd0072ab6a46c8befb0d50e801c536e9538346271e5bd6b5b67",
+    "FiniteStartup.lean": "5427f88dd207682794c0dbf7b70ddf64010ffa68e4604f3a8e8d7e92c5ae6d2f"
+  },
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_counts.py": "7d05c3b73107cb63eb93626fc82a9547f45bd0555536c564c372a46ba8a36f6a",
+    "formal_shaik_core/verification.json": "954549cda6dc0dfd9c459d18011ea81b76e8313528ac1b20017c72372220ed43",
+    "draw_shaik_startup.py": "33f1378a4f793ea1293d2fffe4071538266b17645990d3f91327928cde2bc409",
+    "shaik_startup_count.png": "698b9f749ea4a551442249bbd56b3d6f5fb12ff1edb9b5ac902e4ff289057f5b"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

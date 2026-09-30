@@ -1,0 +1,9 @@
+'CollatzJointCertificate.tagged_to_raw' depends on axioms: [propext, Quot.sound]
+'CollatzJointCertificate.tagged_first_passage_to_raw' depends on axioms: [propext, Quot.sound]
+'CollatzJointCertificate.finiteSum_mono' depends on axioms: [propext, Quot.sound]
+'CollatzJointCertificate.missingCount_mono' depends on axioms: [propext, Quot.sound]
+'CollatzJointCertificate.missingCount_startup' depends on axioms: [propext, Quot.sound]
+'CollatzJointCertificate.raw_exception_count' depends on axioms: [propext, Quot.sound]
+'CollatzJointCertificate.raw_exception_count_of_retained' depends on axioms: [propext, Quot.sound]
+'CollatzJointCertificate.actual_block_concat' depends on axioms: [propext]
+'CollatzJointCertificate.zero_block_absorbs' does not depend on any axioms

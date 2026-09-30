@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "counts": {
+    "high_passage_records": 34880,
+    "continued_prefixes": 129413,
+    "zero_return_tails": 52673,
+    "truncated_prefixes": 119639,
+    "valuation_fibre_counts": 1764,
+    "proof_locators": 6
+  },
+  "example": {
+    "n": 27,
+    "Y": 16,
+    "B": 2,
+    "H": 65,
+    "y": 10,
+    "z": 5,
+    "terminal_halvings": 1,
+    "s": 40,
+    "sigma": 41,
+    "r": 1,
+    "odd_tail": [
+      5,
+      1
+    ]
+  },
+  "scope": "Exact finite arithmetic and actual path regressions; no verification of infinite density, analytic inputs or asymptotic constants.",
+  "new_formal_theorems": 0,
+  "lean_started": false,
+  "whole_natural_density_package_verified": false,
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_allikvere_splice.py": "096583e71a7cfead1df23ec470fab734fc239172f473a898d346ad02b136c290"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "python": "3.13.9",
+  "source_hashes": {},
+  "source_hash_check_not_requested": [
+    "ALLIKVERE-2026-V2",
+    "TAO-V7"
+  ],
+  "checks": {
+    "valuation_cylinders_and_first_passage": {
+      "words": 1585,
+      "cylinder_examples": 4755,
+      "first_passage_interval_equivalences": 23775,
+      "ranges": "1<=r<=5, r<=sum<=12; three representatives per cylinder",
+      "diagram_examples": 100
+    },
+    "conditional_pair_factorization": {
+      "pair_fibres": 809,
+      "tuples": 9086,
+      "sum_cases": 57,
+      "ranges": "1<=n<=7, n<=s<=min(14,2n+4)",
+      "arithmetic": "exact integer histograms modulo 3^n, including odd n"
+    },
+    "first_passage_CRT_discrepancy": {
+      "comparisons": 2160,
+      "nonempty_prefix_parts": 299,
+      "thresholds": [
+        10,
+        50,
+        200
+      ],
+      "lengths": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "odd_moduli": [
+        1,
+        3,
+        5,
+        9,
+        15,
+        27
+      ],
+      "arithmetic": "integer discrepancy after multiplication by q"
+    },
+    "hockey_stick_and_fibre_weight": {
+      "cases": 414,
+      "ranges": "1<=n<=12, n<=s<=40",
+      "arithmetic": "Fraction"
+    },
+    "joint_offset_total_maps": {
+      "words": 2156,
+      "joint_projection_histograms": 152,
+      "restricted_prefix_split_histograms": 469,
+      "signed_lift_isometries_and_left_inverses": 15,
+      "lift_compositions": 35,
+      "ranges": "1<=n<=6, n<=total<=min(12,2n+3); lifts 1<=k<=m<=n<=5",
+      "arithmetic": "exact integer histograms and Fraction, including zero-length tail sums"
+    },
+    "separated_endpoint_intervals": {
+      "separated_intervals": 1950,
+      "strict_adjacent_separations": 1932,
+      "closed_endpoint_and_midpoint_probes": 5850,
+      "actual_valuation_words": 385,
+      "window_localizations": 8085,
+      "arithmetic": "Fraction and integer arithmetic, including negative total-index tests for the abstract interval lemma",
+      "ranges": "1<=R<=9, two M>4*9^R each; actual words 1<=r<=4, r<=sum<=10"
+    },
+    "Abel_envelope_and_cutoffs": {
+      "signed_Abel_identities_and_endpoint_bounds": 2184,
+      "exact_change_of_variable_and_Jacobian_checks": 672,
+      "strict_lower_closed_upper_binomial_sums": 1827,
+      "rate_comparison": "1/(2*(8.616+1)) < 1/18 < 1/(2*8.616), exact Fraction",
+      "scope": "Finite identities only; does not certify Rhin, discrepancy or asymptotic estimates."
+    },
+    "actual_input_and_measure_mass": {
+      "odd_residues": 18724,
+      "exact_low_total_word_masses": 2400,
+      "binomial_tail_equalities": 5,
+      "pushforward_and_positive_mass_identities": 1280,
+      "scope": "Finite cylinder and measure identities only, not asymptotic first-passage certification."
+    },
+    "scale_iteration_and_clocks": {
+      "finite_functional_graphs": 256,
+      "nested_first_passage_identities": 7712,
+      "failure_convention_indicator_identities": 65536,
+      "exact_rational_cover_tests": 135,
+      "halfopen_closed_endpoint_tests": 18,
+      "finite_geometric_sum_identities": 96,
+      "valuation_telescopes": 3263,
+      "actual_raw_clock_identities": 16315,
+      "odd_valuation_partition_identities": 447,
+      "scope": "Exact finite identities only. No check of the analytic mixing input or an infinite density theorem."
+    },
+    "local_state_and_source_manifest": {
+      "audit_labels": 406,
+      "claim_locators": 116,
+      "bibliography_keys": 10,
+      "preprint_manifest_files": 12,
+      "new_canonical_source_records": 1,
+      "older_preprint_finite_suite": "not rerun; this check verifies its source manifest only"
+    }
+  },
+  "scope": "Finite exact formula checks; not a proof of asymptotic mixing or natural-density almost-boundedness.",
+  "lean_started": false,
+  "remote_writes": false,
+  "local_artifact_hashes": {
+    "check_exact.py": "a68688948a61a869bac0ba3a058dada950d079173909625e7b4c1620046f26dd",
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

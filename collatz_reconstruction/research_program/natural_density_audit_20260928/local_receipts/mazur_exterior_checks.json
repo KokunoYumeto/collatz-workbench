@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "counts": {
+    "complete_written_propagation": 1,
+    "symbolic_mgf_and_terminal_series": 4,
+    "exact_exponent_constants": 3,
+    "exact_infinite_tail_comparisons": 550,
+    "exact_word_symmetry": 24,
+    "actual_first_passage_intervals": 1910,
+    "actual_high_fibre_envelopes": 3829,
+    "actual_fibre_crt": 3829,
+    "actual_low_fibre_envelopes": 195,
+    "exact_kernel_mass_regrouping": 3,
+    "exact_centered_kernel_bounds": 54,
+    "numerical_asymptotic_diagnostics": 8
+  },
+  "numerical_diagnostics": {
+    "A_at_C_half": "48.04449131451048709599627851550887823216250747220188803679960857684917",
+    "precision_digits": 70
+  },
+  "lean_started": false,
+  "public_mutations": false,
+  "scope": "Exact rational infinite-tail formula evaluations, finite word/orbit/CRT/kernel tests and symbolic MGF identities; separate 70-digit diagnostics. The complete written proof establishes the universal and asymptotic claims, not these samples. No Lean replay.",
+  "source_package_commit": "ca3dd0d63920411213403092aecc6946619eb082",
+  "source_hashes": {
+    "ND/Band/A5ReferenceFilteredCoefficient.lean": "b7d1746641f2576f4cfd11b63121c3b9f88b3a139e6a23dc2e1db2a1542c7754",
+    "ND/Band/A5ReferenceExteriorTupleTail.lean": "3ad87f6dfc24e507852dad4000523fd81d56f25260701492022aa1c1fda3f397",
+    "ND/Band/A5ReferenceTerminalCap.lean": "6af8ae7305fb870b648b654f8b8d07b0b42936386259301f3ffbad34a9bf6386",
+    "ND/Probability/Geom2FiniteTwoEventTail.lean": "85872a860bfdbeeb231ff2bb43c92de57ea85a799f53b1ad95216e3db1430fe5",
+    "Tao/Section5/EndpointCoefficientBound.lean": "28a88ea24774e900aa1b47fd5853518001fe5382d7a05372f3a4002e32389395",
+    "Tao/Section5/EndpointFiberEnvelope.lean": "1f2eda05e55a9722a30b627c532474456ccb66bc7da65727d5bdc39b2c460c96",
+    "Tao/Section5/EndpointLowRoom.lean": "4833d13e053a5237a5ea8e5625e452035b73d33813ebc557248201824d5ea584",
+    "Tao/Section5/EndpointRatio.lean": "a135aff25bc6bf37e3b272cb4ea3cd1799ec519d0d4782e32f633ac59fd94b61",
+    "Tao/Section5/Geom2HighWeightScalar.lean": "11b2c969ed2b8ec66f4d1d0b357c452365c532e614f72c7758ba65dbdcf7ea10",
+    "Tao/Probability/Geom2HighWeight.lean": "4097d5fb8bb13531e25f1281301935fe252116ad9b9d5ff4b55d36a5152edf37",
+    "Tao/Section5/EndpointValuationFiber.lean": "d9a894887c5986613b7d098776d718e3b69c07fbdff2ba369026adc28ac2b74c",
+    "Tao/Section5/EndpointFiberProgression.lean": "8fabd4f2269f385909eeef49d883968ad6281540393a1d80a555500d59052f07",
+    "ND/Discrepancy/A5ReferenceFullCenterRate.lean": "b1653d445e68eeb5134a99e7f93685b07e871540ddec82880f23d053a309f082",
+    "ND/Band/A5ReferenceSchedule.lean": "92e91a8802a6064413ac2bf80939aecf63e8e395111800aadb0243db56582769"
+  },
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_mazur_exterior.py": "d011a28267b64f54dbcc4cf6c3958edf8bd411ae507d9066e35a076f5b559cbd"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

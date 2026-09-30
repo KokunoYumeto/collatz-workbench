@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "counts": {
+    "complete_written_propagation": 1,
+    "symbolic_rate_prefactor_rounding": 4,
+    "directed_rate_remainders": 101,
+    "certified_physical_log_constants": 4,
+    "rational_support_transport": 47724,
+    "rational_transport_cases": 108,
+    "numerical_atom_identities_and_bounds": 155,
+    "numerical_finite_mass_and_tails": 9,
+    "numerical_rounded_atoms": 702
+  },
+  "lean_started": false,
+  "scope": "Exact symbolic/rational finite regressions and separately labelled 65-digit numerical diagnostics. Complete written proofs establish the infinite estimates using Robbins, Rhin and discrepancy inputs; neither these samples nor source-file presence is a Lean replay.",
+  "source_package_commit": "ca3dd0d63920411213403092aecc6946619eb082",
+  "source_hashes": {
+    "ND/Band/A6PhysicalRate.lean": "c83b53aa5a47d97a321e7faaee76627a148137cea8de99523f41a71560d456b4",
+    "ND/Band/A6PhysicalInteriorRate.lean": "63ea314cb2c565a490fbcf0292a95d3d900d9e57e80445a8011b79162bcd5009",
+    "ND/Band/A5Physical.lean": "5e0688b0fb1274e1369a1213ae52a0394dadfb5ab476f6533aff62179208cc00",
+    "ND/Discrepancy/A5TwoProfilePhysicalA6.lean": "dc3633ed489a6091d25382c23bcaac565cf1f7312c2f2a84cdaa68ae4b13bece",
+    "Tao/Section5/Schedule.lean": "c7e11e8371e07a2e8c6edc60936eb19d21b76209d91f61b1f359b99aae9774cc",
+    "Tao/Section5/PassSchedule.lean": "178ce8a6a68fa81578e6877a94c94aba795d65a5375cfc18c3e38ed5143910a6",
+    "Tao/Probability/LogWindowEndpoints.lean": "cd70cf7cf58032bdae090bbb7c99e74235739cce923945393d92832fef9b0282"
+  },
+  "robbins_sha256": "b4bb1e9209a800c5fc71318a3f27bd1bda000f43348e29e5446a524a85656a5a",
+  "public_mutations": false,
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_mazur_mass.py": "c50227716a6c87b03c79b729f60b78cd70c1807367b70a0c01cef379b4c6df9e"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

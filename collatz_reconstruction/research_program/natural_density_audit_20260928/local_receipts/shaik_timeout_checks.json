@@ -1,0 +1,105 @@
+{
+  "status": "passed",
+  "counts": {
+    "complete_written_proof_propagation": 1,
+    "actual_affine_paths": 8190,
+    "complete_timeout_shell_counts": 78,
+    "certified_one_block_corridors": 383,
+    "exact_rank_prefixes": 1221,
+    "exact_low_rank_sums": 900,
+    "60_digit_entropy_diagnostics": 47
+  },
+  "integer_cut_examples": [
+    {
+      "m": 2,
+      "q": 1,
+      "source_cut": 0,
+      "integer_cut": 1,
+      "timeouts": 3,
+      "old_tail": 4,
+      "refined_tail": 3
+    },
+    {
+      "m": 3,
+      "q": 1,
+      "source_cut": 0,
+      "integer_cut": 1,
+      "timeouts": 7,
+      "old_tail": 8,
+      "refined_tail": 7
+    },
+    {
+      "m": 4,
+      "q": 1,
+      "source_cut": 0,
+      "integer_cut": 1,
+      "timeouts": 15,
+      "old_tail": 16,
+      "refined_tail": 15
+    },
+    {
+      "m": 4,
+      "q": 3,
+      "source_cut": 1,
+      "integer_cut": 2,
+      "timeouts": 9,
+      "old_tail": 15,
+      "refined_tail": 11
+    },
+    {
+      "m": 5,
+      "q": 1,
+      "source_cut": 0,
+      "integer_cut": 1,
+      "timeouts": 31,
+      "old_tail": 32,
+      "refined_tail": 31
+    },
+    {
+      "m": 5,
+      "q": 3,
+      "source_cut": 1,
+      "integer_cut": 2,
+      "timeouts": 23,
+      "old_tail": 31,
+      "refined_tail": 26
+    },
+    {
+      "m": 6,
+      "q": 1,
+      "source_cut": 0,
+      "integer_cut": 1,
+      "timeouts": 63,
+      "old_tail": 64,
+      "refined_tail": 63
+    },
+    {
+      "m": 6,
+      "q": 3,
+      "source_cut": 1,
+      "integer_cut": 2,
+      "timeouts": 54,
+      "old_tail": 63,
+      "refined_tail": 57
+    }
+  ],
+  "diagnostics": {
+    "p_star": "0.630929753571457437099527114342760854299585640131880427870655",
+    "kappa": "0.0500444728116693651860994204612823068048805603369003620080861",
+    "A_FP": "9.99111334195951505351784225241862353828335221693655828002611",
+    "source": "Numerical diagnostics only; analytic bounds have written proofs."
+  },
+  "source_hashes": {
+    "TimeoutDensity.lean": "7f8792c26c6b238d0f0c8f4efcab0955aee7e326cae08722abb6ca301d5278d5",
+    "TimeoutEndpointProfile.lean": "0def00354eecf22cf6b47db89f6384455b2727f418b73ce15744f19a9770d8c8"
+  },
+  "formal_replay": false,
+  "public_mutations": false,
+  "scope": "Exact complete finite-shell parity/timeout/affine/clock regressions; exact rank algebra; separately labelled 60-digit analytic diagnostics. Written proofs, not samples, establish infinite claims.",
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_timeout.py": "03715ab57a7b969d1e38d3beb9fc7e3d2abfcdc00836bcd1f0e6e98c7ed75aaf"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

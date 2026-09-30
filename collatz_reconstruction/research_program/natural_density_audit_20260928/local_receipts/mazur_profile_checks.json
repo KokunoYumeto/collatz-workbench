@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "counts": {
+    "written_proof_propagation": 1,
+    "exact_counting_discrepancies": 370,
+    "directed_logarithmic_band_tests": 6,
+    "signed_denominator_identities": 288,
+    "strict_two_cell_enumerations": 108,
+    "signed_neighbour_identities": 1296,
+    "distinct_tube_supports": 114,
+    "central_atom_ceiling_checks": 80,
+    "adjacent_mass_and_peak_checks": 1890,
+    "phase_mean_coefficient_identities": 9,
+    "signed_kernel_transport": 64,
+    "landing_fibre_sums": 8,
+    "sharp_exterior_tests": 88,
+    "sharp_exterior_witnesses": 8
+  },
+  "scope": "Finite exact rational identities, bounded log enclosures and proof-text propagation. Phase integrals and all-size assertions are proved in the written text, not certified by these samples. No Lean replay.",
+  "source_hashes": {
+    "ND/Band/A5BandNormalizerRatios.lean": "0eb5b99635d2d6265737c3f12bf90c1377847c9e5a0d7a90484d6876d9da307d",
+    "ND/Band/A5TwoProfileRawQ.lean": "bd2122e86797b0031f1ef045049b0b8b2f3e31f6d2e8699927ea314c0f5c7d2b",
+    "ND/Band/A5RawMass.lean": "5a54cec32939ac8accb249e25efe25988f1a6e225567bcf4d7aead22c398a681",
+    "ND/Band/A5ReferencePhysicalSplit.lean": "90354a2396d3df0658c4358699379b6851be7647a46872150672299682891e0f",
+    "ND/Discrepancy/A5TwoProfileNormalizedA6.lean": "2b58e546055f48d4317223caede1f1709b9179cc5f4bbb583bea09d67c1eca0b",
+    "ND/Discrepancy/A5ReferenceInteriorAggregate.lean": "1a4e819b10e2fdbe271ec50bef67c276a357236bb2cfa479096e3064b4cd056f",
+    "ND/Discrepancy/A5ReferenceFullCenterRate.lean": "b1653d445e68eeb5134a99e7f93685b07e871540ddec82880f23d053a309f082",
+    "Tao/Section5/CommonZ.lean": "5bb64311582c4d36e6d90e5c5e70254ff983751f84d574e78c6363b927895b84"
+  },
+  "source_package_commit": "ca3dd0d63920411213403092aecc6946619eb082",
+  "lean_started": false,
+  "public_mutations": false,
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_mazur_profile.py": "df81d379528086cbd756cf28bd2ec155146852df834d67c5ddac5a43642a7fdd"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

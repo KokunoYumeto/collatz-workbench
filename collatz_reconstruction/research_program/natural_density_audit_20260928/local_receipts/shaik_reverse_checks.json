@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "counts": {
+    "complete_written_proof_propagation": 1,
+    "exact_concatenations": 18218,
+    "exact_clock_correspondences": 3039,
+    "actual_first_passage_paths": 6083,
+    "exact_tagged_fibres": 5094,
+    "exact_transport_unions": 194,
+    "rational_shell_intervals": 3695,
+    "actual_chain_prefixes": 1118,
+    "admissible_chain_transport_budgets": 919
+  },
+  "strict_defect_example": [
+    {
+      "n": 3,
+      "Y": "3/2",
+      "h": 5,
+      "y": 1,
+      "product_defect": "5/32",
+      "additive_loss": "13/80",
+      "epsilon": "51/320"
+    }
+  ],
+  "source_commit": "ef3410843bf58d69f771f5ba2c0571d54b54da59",
+  "source_hashes": {
+    "FirstPassage.lean": "9e79af8b71dc82847103aa893ccf0b072dbcd90c4bada8d5b38845d49eee1eaa",
+    "LossTransport.lean": "8c6736137411e933516f449a643017eb8d0100d89bc799f3f7b656139b5036b7",
+    "NestedRecertification.lean": "455eb6b015b19655e879d1790dada2c9f023cca3a145e9e9f3007849e708112b",
+    "RankScaledLoss.lean": "d2569bb2559614d6957ab38cec0d74b2b31c3496ac730442d4288d17c674d2a0",
+    "Main.lean": "98748e4543788f84926559aa1b388685921d49d6a6c1921dc1d2b590f1d84c42"
+  },
+  "scope": "Exact rational checks of finite actual paths, products, affine defects, shell-clipped fibres, disjoint tag aggregation, rank-chain budgets and clock inverses. Sharpness is for interval containment, not actual Collatz occupancy. All-size assertions have separate written proofs; no density theorem is certified by enumeration.",
+  "formal_replay": false,
+  "public_mutations": false,
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_reverse.py": "8a326a7916634ec6076a1b7c623868c1340a7d3396eb4e996f0b5a9c5f822469"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

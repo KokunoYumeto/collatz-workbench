@@ -74,7 +74,7 @@ Let \(n\ge2\), \(L=\log n\), \(C_A>0\), and let
 \(a_1,\ldots,a_K\) be positive integers satisfying
 \begin{equation}
 \label{eq:Tao-Section6-prefix-lower}
- a_{[1,j]}\ge2j-C_A(\sqrt{jL}+L)
+ a_{[1,j]}\ge2j-2-C_A(\sqrt{jL}+L)
  \qquad(1\le j\le K).
 \end{equation}
 If
@@ -110,8 +110,8 @@ From \eqref{eq:Tao-Section6-prefix-lower},
 \begin{split}
  S
  :=\sum_{j=1}^{K}3^{j-1}2^{\,l-a_{[1,j]}}
- &\ll
- 3^n e^{-\rho bC_A^2L+bC_AL}
+ &\le
+ \frac43\,3^n e^{-\rho bC_A^2L+bC_AL}
  \sum_{j\ge1}e^{-aj+bC_A\sqrt{jL}}.
 \end{split}
 \]
@@ -134,6 +134,18 @@ The coefficient of \(C_A^2L\) in the resulting exponent is
 It is strictly negative under the stated hypothesis.  It absorbs first the
 linear \(bC_AL\) term after \(C_A\) is chosen, and then the polynomial factor
 after \(n\) is chosen.  This proves \(S<3^n\).
+
+The additive two in \eqref{eq:Tao-Section6-prefix-lower} is retained from
+the source's interval convention.  It contributes the exact factor
+\(2^2/3=4/3\) above.  An alternative finite bound, also used in the
+clocks companion, keeps this factor explicit throughout.  Since
+\(K\le l<n\log3/\log2<2n\), completing the same square termwise gives
+\[
+ \frac{S}{3^n}\le\frac83
+ n^{1-(\rho b-b^2/(4a))C_A^2+bC_A}.
+\]
+Thus \((\rho b-b^2/(4a))C_A^2-bC_A\ge3\) suffices for every
+\(n\ge2\): the last bound is at most \(8/(3n^2)\le2/3<1\).
 
 For the v5 counterexample, set
 \[
@@ -359,6 +371,14 @@ of two prefix offsets by \(2^l\) gives a congruence modulo \(3^N\) between
 two positive integers.  Their prefix inequalities and
 \eqref{eq:Tao-v7-point99-window} meet the hypotheses of
 Proposition~\ref{prop:Tao-Section6-reserve-repair} with \(\rho=0.99\).
+Indeed, for \(j\ge2\) the source's interval beginning at index one gives
+\[
+ a_{[1,j]}\ge2(j-1)-C_A(\sqrt{(j-1)\log N}+\log N)
+ \ge2j-2-C_A(\sqrt{j\log N}+\log N).
+\]
+For \(j=1\) the latter inequality follows from \(a_1\ge1\).
+This is exactly the prefix hypothesis with its additive two, without
+strengthening the concentration event.
 Hence both positive integers are strictly below \(3^N\).  They are therefore
 equal as integers.  Dividing by \(2^l\) and applying rational injectivity
 proves residue-level separation.
@@ -1313,9 +1333,12 @@ Proposition~\ref{prop:Tao-v7-Fourier-to-mixing} gives Proposition~1.14.
 The second display records every consequence edge leaving this branch.
 Proposition~\ref{prop:Tao-v7-Prop19-valuation-law} now supplies the separately
 typed Proposition~1.9 input.  The exact step combining it with
-Proposition~1.14 to prove Proposition~1.11, and the two later theorem edges,
-remain behind their named proof-audit gate.  This is a dependency record, not
-a handwaving theorem claim.
+Proposition~1.14 is proved in
+Theorem~\ref{thm:Tao-v7-Prop111-first-passage}; the subsequent reductions are
+proved in Theorems~\ref{thm:Tao-main-alt-repaired},
+\ref{thm:Tao-main-syr-repaired}, and~\ref{thm:Tao-main-repaired}.
+Those proofs are separate arguments below, not consequences established
+by merely listing their dependency edges here.
 \end{proof}
 
 \begin{nonclaim}
@@ -1325,6 +1348,109 @@ it does not certify Proposition~1.9, Proposition~1.11, Theorem~1.6, or
 Theorem~1.3; Proposition~\ref{prop:Tao-v7-Prop19-valuation-law} supplies the
 first of those results by an independent argument.  This branch does
 not prove the stronger v5/journal Lemma~7.9, use Baker's theorem, establish
-exponential Fourier decay, prove natural-density mixing of the full affine
-map, give a fixed absolute orbit bound, or prove convergence to one.
+exponential Fourier decay, prove natural-density almost-boundedness for
+integer orbits, give a fixed absolute orbit bound, or prove convergence to one.
 \end{nonclaim}
+
+\subsection{Retaining the total valuation in the mixing estimate}
+\label{subsec:Tao-joint-total-mixing}
+
+Allikvere's natural-density argument \cite[Section~4]{Allikvere2026v2}
+uses the same random offset conditioned on the total valuation. This is a
+different measure from the unconditioned offset law, but the positive
+majorant above controls it. The following joint formulation retains both
+coordinates and supplies the exact comparison. Its expanded proof,
+including the stopping events, constants, finite-range cases and the
+subsequent coarse-law calculation, is in
+\path{research_program/natural_density_audit_20260928/audit.tex},
+Proposition \texttt{prop:joint-mixing} and its two corollaries.
+
+\begin{proposition}[joint offset and total-valuation mixing]
+\label{prop:Tao-joint-total-mixing}
+Let $a_i$ be independent with $\mathbb P(a_i=r)=2^{-r}$ for $r\ge1$,
+$S_j=\sum_{i\le j}a_i$, and
+$X_n=\sum_{i=1}^n3^{i-1}2^{-S_i}\pmod{3^n}$.
+On $G_n\times\mathbb Z$, where $G_n=\mathbb Z/3^n\mathbb Z$, put
+$\mu_n(y,s)=\mathbb P(X_n=y,S_n=s)$. Let $R_{n,m}$ sum a measure over
+residue fibres, keeping $s$ fixed, and let
+$(U_{m,n}h)(y,s)=3^{m-n}h(y\bmod3^m,s)$.
+For every $A>0$,
+\[
+ \|\mu_n-U_{m,n}R_{n,m}\mu_n\|_1\ll_A m^{-A}
+ \qquad(1\le m\le n).
+\]
+For fixed $C>0$, $\varepsilon>0$, $n^\varepsilon\le m\le n$ and
+$|s-2n|\le C\sqrt{n\log n}$, the corresponding conditioned mixing
+error is $O_{A,C,\varepsilon}(m^{-A})$. The lift is applied to the
+\emph{conditioned} coarse law, not silently to the unconditioned one.
+\end{proposition}
+\begin{proof}
+The white-point pairing majorant $Z_{q,\xi}$ proved above is measurable
+with respect to pair totals, together with the last entry when $q$ is odd.
+So is $S_q$. Therefore the tower property gives
+\[
+ \sum_u\left|\mathbb E\left(e^{-2\pi i\xi X_q/3^q}
+                      1_{\{S_q=u\}}\right)\right|
+ \le\mathbb E Z_{q,\xi}\ll_Dq^{-D}
+ \quad(3\nmid\xi).
+\]
+Use the stopping split already proved, retaining the $0.99$ reserve.
+For a prefix event $D_{k,l}=E_k\cap B_k\cap\{S_{k+1}=l\}$ write
+$g_s(y)=\mathbb P(X_n=y,S_n=s,D_{k,l})$. If
+$v=v_3(\xi)<n-m$ and $q=n-k-1-v$, exact block independence gives
+\[
+ \widehat g_s(\xi)=\beta(\xi)(h_{q,\xi'}*p_v)(s-l),\quad
+ h_{q,\xi'}(u)=\mathbb E(e^{-2\pi i\xi'X_q/3^q}1_{\{S_q=u\}}),
+ \quad p_v(r)=\mathbb P(S_v=r),
+\]
+where $\xi'=2^{-l}\xi/3^v$ is first a unit modulo $3^{n-v}$ and then
+reduced modulo $3^q$. Set $p_0=1_{\{0\}}$. Convolution with $p_v$
+contracts $\ell^1$, so its displayed factor is $O_D(q^{-D})$ uniformly
+in the total. For $m\ge0.9n$, $q\gg n$. Prefix separation, with the
+source-compatible $2j-2$ bound of
+Proposition~\ref{prop:Tao-Section6-reserve-repair}, gives
+$\sum_\xi|\beta(\xi)|^2\le3^n2^{-l}\le n^{(\log2)C^2}$.
+Consequently Plancherel and Cauchy--Schwarz bound each fixed-total
+oscillation by $O_{C,D}(n^{-D+(\log2)C^2/2})$.
+
+There are $O_C(n^2)$ possible stopping pairs and at most $4n$ totals
+between $n$ and $4n$. The remaining total mass is bounded by
+$\mathbb P(S_n>4n)\le(81/128)^n$, from
+$\mathbb E(4/3)^{a_i}=2$. The stopping events are disjoint and their
+union contains the all-interval concentration event. Its removal costs
+at most twice its complementary probability. Choose $C$ to make that
+probability $O_A(n^{-A-2})$, and then
+$D>A+4+(\log2)C^2/2$. This proves the joint estimate at adjacent scales.
+
+For all scales, define $(\mathcal C_jh)(y,s)=\sum_u h(y,u)p_j(s-u)$.
+Independence gives the exact relation
+$R_{n,\nu}\mu_n=\mathcal C_{n-\nu}\mu_\nu$.
+The operator $\mathcal C_j$ is an $\ell^1$ contraction and commutes
+with residue reduction and lift. Telescoping along
+$\nu_{i+1}=\max(m,\lceil0.9\nu_i\rceil)$, using the isometry of $U$,
+therefore bounds the joint error by $\sum_i O_A(\nu_i^{-A})=O_A(m^{-A})$.
+For scales at least $20$, successive nonfinal scales have ratio at most
+$0.95$; smaller scales use the bound $2$.
+
+Finally divide by $p_n(s)=\binom{s-1}{n-1}2^{-s}$ for a possible total.
+The exact conditional bound is $\min(2,K_Bm^{-B}/p_n(s))$.
+Stirling gives $p_n(s)^{-1}\ll_C n^{1/2+C^2/4}$ in the stated window;
+choosing $B=A+(1/2+C^2/4)/\varepsilon$ proves the last assertion.
+\end{proof}
+
+Allikvere's Lemma~4.3 separately compares the conditioned initial block
+with the product geometric law. The expanded reconstruction retains its
+density $p_{n-m}(s-\sigma)/p_n(s)$ and proves an $\ell^1$ error
+$O_C(\sqrt{m\log n/n})$ for $\log^4n\le m\le n^{9/10}$.
+Combining that calculation with the proposition and the lift isometry
+gives, for any fixed $0<\varepsilon<9/10$ and $n^\varepsilon\le m\le n^{9/10}$,
+\[
+ \sum_{y\in G_n}\left|\mathbb P(X_n=y\mid S_n=s)
+    -3^{m-n}\mathbb P(X_m=y\bmod3^m)\right|
+ \ll_{A,C,\varepsilon}m^{-A}+\sqrt{m\log n/n}.
+\]
+This includes the source's $n^{1/4}\le m\le n^{1/2}$ product-formula
+range and extends its random-variable estimate. Actual uniform counts of
+integer first-passage fibres are a further argument, not a consequence
+of changing the name of the measure. No historical priority or complete
+natural-density theorem is asserted for this extension.

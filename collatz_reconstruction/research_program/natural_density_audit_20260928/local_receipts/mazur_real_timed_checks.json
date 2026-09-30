@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "counts": {
+    "complete_written_propagation": 1,
+    "exact_totalizer_law_pairs": 1225,
+    "exact_weighted_overlap_pairs": 450,
+    "exact_endpoint_shell_cases": 486,
+    "actual_timed_implications": 38400,
+    "actual_floor_hit_equalities": 7200,
+    "finite_system_timed_implications": 55296,
+    "abstract_nonpassage_cases": 2136,
+    "actual_raw_clock_paths": 500,
+    "exact_odd_part_count_identities": 297,
+    "exact_rate_clock_guards": 5,
+    "exact_geometric_clock_identities": 41,
+    "noncertifying_geometric_diagnostics": 3
+  },
+  "diagnostics": {
+    "precision": 60,
+    "rows": [
+      {
+        "L": "10.0",
+        "first_2000_terms_ratio": "2113.38022183487005503327992181350999500645533893870295446631",
+        "proved_upper_envelope": "56999.2182340471227123432663394619777883941428282796050556316"
+      },
+      {
+        "L": "100000.0",
+        "first_2000_terms_ratio": "1951.94090603908815482234826127804931203799233326558437276441",
+        "proved_upper_envelope": "27734.6255279326340413391167888472620678805204832048016531553"
+      },
+      {
+        "L": "100000000000000000000.0",
+        "first_2000_terms_ratio": "1905.65230508312763470984890537431237411422010279695277996504",
+        "proved_upper_envelope": "20031.7579532718124706741044597615530688898999098351869594593"
+      }
+    ],
+    "infinite_ratio_limit": "17241.1145695510933157835955380803344879643032103752217037111"
+  },
+  "lean_started": false,
+  "public_mutations": false,
+  "scope": "Finite exact measures, map loss, endpoints, actual and abstract dynamical implications, raw path lengths, and geometric algebra. Abstract finite cycles test nonpassage branches; no infinite Collatz claim is decided by a simulation. Critical-rate diagnostics are noncertifying. Analytic conclusions rest on written proofs.",
+  "source_package_commit": "ca3dd0d63920411213403092aecc6946619eb082",
+  "source_hashes": {
+    "ND/Probability/PassTotalizer.lean": "2821e3bf8cb181d56f1293b0d56bd0d1685b2a52b8903d4e43b50d7aa161eaa3",
+    "ND/Probability/UniformFloorPerturbation.lean": "613483e666364f25435eed308ddc00a0871481664cffa9a838a92ec873297f26",
+    "ND/Discrepancy/A5ReferenceTotalizedSourceRate.lean": "275bbbf26042d672641d7c5d4ed517dc40d7c269c0dc54ae74ab6bf433a6be29",
+    "ND/Discrepancy/A5ReferenceRealFloorPass.lean": "b10c12dd9575e217f72158b1c3a31f7b7cc65a74f2f2d43a33a3912310763bdc",
+    "ND/Discrepancy/A5ReferenceRealLogBlock.lean": "eb0b823e6316ec08c5fb759900a231629c214bf9baaa1d75e5a29f63b7b2fa83",
+    "ND/Discrepancy/A5ReferenceSection3GeometricBudget.lean": "a10b9fc0f962229c2fb4ec7ed44e7313f812cc3d3771155f1ad91478b6dd8735",
+    "ND/LogTime/Clock.lean": "57569f4a44f2ecc5999d13024a7d5c0a7235c543fb58f32ec259ba1e2a1dc3f2",
+    "Tao/Section3/TimeBudget.lean": "47cb6547eeec99eeb92277939792cd35504215f3cca4e01acce01109048d1af3",
+    "Tao/Section3/AmbientPartialTrace.lean": "b44941acda79676c6cb681ac24d5f4ac9dc018954e9faf3c9ea2aaa14364db99"
+  },
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_mazur_real_timed.py": "99edc3461a23548cd3eaa258977b9825ee749fb54c3d365aedbc1f51eb3ea16f"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

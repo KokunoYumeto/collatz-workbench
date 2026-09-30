@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "counts": {
+    "written_proof_propagation_checks": 1,
+    "projection_and_cancellation_fixtures": 112,
+    "sharp_half_witnesses": 1,
+    "reversal_words": 1708,
+    "conditioned_mixtures": 105,
+    "adjacent_ratios": 315,
+    "exact_likelihood_fixtures": 300,
+    "signed_tail_equality_witnesses": 1,
+    "exp_chord_certificates": 1,
+    "directed_terminal_comparisons": 120
+  },
+  "scope": "Finite exact rational and directed exponential regressions; not proof of concentration, Fourier estimates, first-passage coverage, or formal certification.",
+  "source_package_commit": "ca3dd0d63920411213403092aecc6946619eb082",
+  "source_hashes": {
+    "ND/Fourier/FixedTotalFiniteResolvedDescent.lean": "f4bbbbf55f189dd41886c3c299fe543fa53cdc83db0c143d7332920dc667bc08",
+    "ND/Fourier/FixedTotalSourceLaw.lean": "6c21a5f500c7500244de6da3c857c89ca7fee1c7a74c1a28042efbc1cb6569f0",
+    "ND/Fourier/FixedTotalRatioWindow.lean": "e74856b4ced5b0730bce0d2eba0dbed2597b4736b9e1a974abca7007ebb15779",
+    "ND/Fourier/FixedTotalRatioTelescope.lean": "7b658af933dc465ac39dcc189c0016621838c513b703d3fb88625fa661af39da",
+    "ND/Fourier/FixedTotalRatioTails.lean": "d986d58358b9e33fd1345571e4a7107a032b28e1e9fd41e16ba053f0b1f85413",
+    "ND/Fourier/FixedTotalRatioNormalization.lean": "5bc8f23f9e88bfd504b8d63e5ee1181184d8581e9ba61f0e49f6a4b3bc8cbda5",
+    "ND/Band/A5FixedCellTerminalDescent.lean": "d0cc4cb97b10ab47cce7a50c2c15d95425923851782da563b17c1c1106582a5a"
+  },
+  "lean_started": false,
+  "public_mutations": false,
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_mazur_descent.py": "49c96cfe9e7cf8470929293c60535ed41652d73cbeaed19957ae246984105651"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

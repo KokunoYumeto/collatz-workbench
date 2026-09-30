@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "counts": {
+    "rational_cancellations": 729,
+    "exhaustive_subset_prefixes": 491520,
+    "decimal_shifted_schedules": 252,
+    "decimal_target_conversions": 8,
+    "complete_written_propagation": 1
+  },
+  "scope": "Exact rational cancellation tests and exhaustive finite shell-prefix counts. 60/80-digit real-log calculations are numerical diagnostics, not interval certificates. No finite test certifies an infinite orbit or analytic theorem.",
+  "lean_started": false,
+  "new_formal_theorems": 0,
+  "whole_natural_density_package_verified": false,
+  "reading": [
+    {
+      "name": "MovingEndpointScalars.lean",
+      "sha256": "6c610128a2f4968b50bc7071530410695ae66cabdaf1435cca6828f4fe23efcd",
+      "lines": 269,
+      "read": "complete"
+    },
+    {
+      "name": "MovingEndpointParameters.lean",
+      "sha256": "e7b951a9f90a27c773365a7c74dfa4df8d6b4e378a743f67e3200b473813b579",
+      "lines": 100,
+      "read": "complete"
+    },
+    {
+      "name": "MovingEndpointAssembly.lean",
+      "sha256": "52ab2f3a00492728f9dfc32a99578d919a0e15601ebfca6281aced6c71b38c00",
+      "lines": 64,
+      "read": "complete"
+    },
+    {
+      "name": "TimeoutEndpointAsymptotics.lean",
+      "sha256": "595395fb9387b42a271ee68df85ab3018d49b150bff3d7d068dba1fda0511258",
+      "lines": 467,
+      "read": "complete"
+    },
+    {
+      "name": "TimeoutEndpointNaturalDensity.lean",
+      "sha256": "11737197c612e258d12720a096c34850f3f59b6cd421f0de5a494cd33a2f4fec",
+      "lines": 177,
+      "read": "complete"
+    },
+    {
+      "name": "PolylogExceptionalCount.lean",
+      "sha256": "bfd0e6f30c6e4c5b54ba740c7001f3b3ba9da7b15eef8423b81cae94368f9d3b",
+      "lines": 363,
+      "read": "complete"
+    },
+    {
+      "name": "Main.lean",
+      "sha256": "98748e4543788f84926559aa1b388685921d49d6a6c1921dc1d2b590f1d84c42",
+      "lines": 393,
+      "read": [
+        [
+          1,
+          160
+        ]
+      ]
+    }
+  ],
+  "decimal_samples": [
+    {
+      "M": 16,
+      "type": "B",
+      "L": "89",
+      "delta": "0.8110028042316670653163956344259673374950971450065544657144848568336845569556514",
+      "rounding_factor": "0.97805912338236557546037783582013943841473540695052192079512716174958204494374700"
+    },
+    {
+      "M": 16,
+      "type": "D",
+      "L": "73",
+      "delta": "0.0102912392449572223388049070454504286170081796161486735851077606101562096585931",
+      "rounding_factor": "0.99751144211654386493146845236829167582503623601486502829181489008490382238367476"
+    },
+    {
+      "M": 1000000,
+      "type": "B",
+      "L": "313",
+      "delta": "1.9099169759992044202847871430981383520199088872281163672683909511828797449453448",
+      "rounding_factor": "0.98910231353764264611991378196552378745235873931119149877171999147509359704913889"
+    },
+    {
+      "M": 1000000,
+      "type": "D",
+      "L": "277",
+      "delta": "0.1083159547791072735852080064919753070442087150997033349772924846799409635269638",
+      "rounding_factor": "0.97358822345454340830862058698570082723485763004023180711789514565978542257330941"
+    }
+  ],
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_critical.py": "5b9cdecd352d1c737f5287466bc1effbb5916c7aa740dad64ed6ebfe4350f146",
+    "draw_shaik_critical.py": "6d3bdc4d2d8150413d506801550481f5fda705ec32fe0c63e5f9aaa16eeb58ed",
+    "shaik_critical_scales.png": "e87e981662483a0ffd562c3bda0f13f6fafc0df5999bd10a1cc631b7f5156f23"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

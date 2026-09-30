@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "counts": {
+    "complete_written_propagation": 1,
+    "exact_scale_guards": 6,
+    "actual_affine_records": 34,
+    "exact_shell_counts": 52,
+    "actual_boundary_comparisons": 26,
+    "actual_lower_mismatches": 9,
+    "actual_upper_mismatches": 12,
+    "exact_assembled_caps": 21,
+    "exact_fibre_averages": 450,
+    "exact_absorption_witnesses": 18,
+    "exact_whole_source_mixtures": 324,
+    "exact_completed_law_pairs": 1225,
+    "numerical_limit_diagnostics": 3
+  },
+  "diagnostics": {
+    "precision": 70,
+    "continuous_denominator_diagnostics_only": [
+      {
+        "L": "10000.0",
+        "boundary_H_ratio": "1.998001998001998001998001998001998001998001998001998001998001998001998",
+        "boundary_F_ratio": "2.162114056844831736689364172431094260107854053694904790717604217586527",
+        "cap_H": "3.996003996003996003996003996003996003996003996003996003996003996003996",
+        "cap_F": "6.324228113689663473378728344862188520215708107389809581435208435173054"
+      },
+      {
+        "L": "100000.0",
+        "boundary_H_ratio": "1.998001998001998001998001998001998001998001998001998001998001998001998",
+        "boundary_F_ratio": "2.162114056844831736689364172431094260107854053694904790717604217586527",
+        "cap_H": "3.996003996003996003996003996003996003996003996003996003996003996003996",
+        "cap_F": "6.324228113689663473378728344862188520215708107389809581435208435173054"
+      },
+      {
+        "L": "1000000.0",
+        "boundary_H_ratio": "2.0",
+        "boundary_F_ratio": "2.163953413738652848770004010218023117093738602150792272533574119296088",
+        "cap_H": "4.0",
+        "cap_F": "6.327906827477305697540008020436046234187477204301584545067148238592175"
+      }
+    ],
+    "flat_cap_limit": "6.327906827477305697540008020436046234187477204301584545067148238592175"
+  },
+  "lean_started": false,
+  "public_mutations": false,
+  "scope": "Exact finite arithmetic, original affine records, fibre averages, mixture/completion identities, and separately labelled numerical diagnostics. The written proofs, not finite tests, establish the analytic rates. No Lean replay.",
+  "source_package_commit": "ca3dd0d63920411213403092aecc6946619eb082",
+  "source_hashes": {
+    "ND/Band/A5ExactAffineCorrection.lean": "d4e0eb7be5b015edc582c1c74e6303ef3096b9881e27cd0bd52b2a0764f7aa22",
+    "ND/Band/A5TerminalBoundaryShell.lean": "564f62ede69b7afa8d709940a728e98567714be27dbad36d0fbeb09988028238",
+    "ND/Band/A5FixedCellTerminalDescent.lean": "d0cc4cb97b10ab47cce7a50c2c15d95425923851782da563b17c1c1106582a5a",
+    "ND/Band/A5SourceMixture.lean": "1d9393e3f0f5e0bf9d599f6655311e7f012f896b681a8a41e1deecb62e8c858f",
+    "ND/Band/A5ReferenceFixedTimeAbsorption.lean": "fe7b54fe450a3e6dbf58c67d2f9984b6b1f9250da5291e0a003c74a8a53eaceb",
+    "ND/Discrepancy/A5ReferenceGenuineBandRate.lean": "c29e5ab8fd68772d258c54153ab3ced21276150a3539bdefe86ef724118d9ec1",
+    "ND/Discrepancy/A5ReferenceGenuineSourceRate.lean": "3151b921c29ec124c2edf168068398795e0bf574e6fb7be8bb70ad57a351a08a"
+  },
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_mazur_genuine.py": "b28f92213a30193549e871e5d98e67962841783fec25eafbf554ce7504ab9a3b"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

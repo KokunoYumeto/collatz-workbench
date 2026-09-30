@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "counts": {
+    "exact_prefix_budget_extrema": 6885,
+    "exact_tail_sup_bounds": 18792,
+    "nonmonotone_counterexample": 1,
+    "exhaustive_subset_prefixes": 896,
+    "rational_density_budgets": 504,
+    "actual_affine_raw_clock_prefixes": 16384,
+    "complete_written_propagation": 1
+  },
+  "noncertifying_diagnostics": {
+    "low_constant_samples": 800,
+    "high_absorption_samples": 1000,
+    "buffer_identity_samples": 16
+  },
+  "new_formal_theorems": 0,
+  "lean_started": false,
+  "whole_natural_density_package_verified": false,
+  "scope": "Exact finite dyadic counts and actual integer orbit-clock identities; floating scalar diagnostics are not proofs. Infinite analytic endpoint has the separate written proof, not a new Lean certificate.",
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_moving_endpoint.py": "a7a1cf74a03e67dce49470b7e230fc48fb0de7a049999168670b7cc3e834e24c",
+    "draw_shaik_moving_endpoint.py": "c2c2c85fdb80acff8f3bf46b62b3b7bebc891611f7fd817d59409703db22fe09",
+    "shaik_moving_endpoint_assembly.png": "6c4494ebcd59a4ea1f19699232db9202e692038debc516d961439f5a526e26b0"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

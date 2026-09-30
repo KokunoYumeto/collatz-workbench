@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "counts": {
+    "written_proof_and_cross_source_propagation_checks": 1,
+    "strict_decoder_lift_checks": 5110,
+    "exact_overflow_identities": 45,
+    "accepted_decoder_fibres": 456,
+    "overflow_rate_checks": 100,
+    "sharp_overflow_and_half_event_witnesses": 1,
+    "band_density_ratio_identities": 279,
+    "band_residue_bounds": 72,
+    "full_valuation_distance_bounds": 216,
+    "actual_band_event_transfers": 288,
+    "strict_radius_endpoint_checks": 456,
+    "exact_maximal_tail_checks": 26,
+    "exact_stopped_exponential_identities": 36,
+    "rate_derivative_and_optimizer_checks": 6
+  },
+  "scope": "Exact rational finite regressions, including full infinite ideal-law residual mass and summed geometric overshoots. Written proofs establish the asymptotic bounds; these tests are not a Lean or analytic certificate.",
+  "source_package_commit": "ca3dd0d63920411213403092aecc6946619eb082",
+  "source_hashes": {
+    "ND/Band/A5HarmonicFullGood.lean": "dc4be569ea714971721553f1cac9cd829674c48e49e7dde794743e8c1d97744d",
+    "ND/Band/A5BandCoverageFullGood.lean": "62a96969feec0c09a22ba11ce3168a6d6b35b13e0fa825ffa27980c76152aabd",
+    "ND/Band/A5BandCoverageProbability.lean": "c638e4bb2ef02d754b5c149ec72bd5ce2e63fad9facbfe5b6b8ab03a7d868762",
+    "ND/Band/A5PrefixGood.lean": "83177f25343f359cc93c3b54935bfa70adeecb843b2972a098ae025ef1244368",
+    "ND/Band/A5HarmonicProp19.lean": "80c2bbd6e07cba906a91fdea476b325f73bddd51da80e15e65e01dd1b45d3d77",
+    "ND/Band/A5HarmonicResidue.lean": "32c07d186ae24923c5519cf698bc5837b26c63fe68966b3603e454f41295d280",
+    "Tao/Probability/Geom2PrefixTypical.lean": "c3033203d3f7f52a4164292cb9f1974172b7b5259e374b56e20e9dbab7044b24",
+    "Tao/Probability/LogWindowResidue.lean": "2a363c1666c54761865c1f2996b97293849111726eaa37759fdf429016796183",
+    "Tao/Syracuse/Prop19.lean": "f4ae66a40a73e0fe88ac7ce4ccba32293c14231ac876214114c63a8c6f79ed4c",
+    "Tao/Syracuse/Prop19Laws.lean": "46d710a610674fc6b806bb271d440d7b8d47b2afbf32b7d0a50f528410d907c8",
+    "Tao/Syracuse/Prop19Truncation.lean": "8429a1855d5fa1474b2044469d15eb114febd0408ade87a1682bdb6e210e2fed",
+    "Tao/Syracuse/TruncatedValuationTV.lean": "0b6c00a4efc0654043b8170708ceb5bf3e9dbdf60822b40b7575a5a6bf89c2eb"
+  },
+  "lean_started": false,
+  "public_mutations": false,
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_mazur_band.py": "93ba74f21bba64aae9fd61e349f97f014c9e8948fcafcb1ae6922355e2076670"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

@@ -9,6 +9,32 @@ This working register lists only sources already used in mathematical text.
 Machine-readable identities, hashes, manifestations, and reading status are
 maintained in \path{state/source_registry.jsonl}.
 \begin{thebibliography}{99}
+\bibitem{Shaik2026v324} I. A. Shaik,
+\emph{Polylogarithmic Descent for Almost All Collatz Orbits in Natural Density},
+version 3.2.4, 27 August 2026.
+\href{https://doi.org/10.5281/zenodo.22130385}{doi:10.5281/zenodo.22130385}.
+Lemmas 4.1--4.2, Proposition 4.3 and Lemmas 5.1--5.2,
+pp.~14--17; formal sources at commit
+\texttt{ef3410843bf58d69f771f5ba2c0571d54b54da59},
+\href{https://github.com/shaikidris/FirstPassageLinearTransport/tree/lean-v3.2.0}{FirstPassageLinearTransport, lean-v3.2.0}.
+\bibitem{Robbins1955} H. Robbins, \emph{A Remark on Stirling's Formula},
+American Mathematical Monthly \textbf{62}(1) (1955), pp.~26--29.
+\href{https://doi.org/10.2307/2308012}{doi:10.2307/2308012}.
+Equations (1)--(2), p.~26; positive remainder series (8), p.~27.
+
+\bibitem{Mazur2026v2}
+L.~Mazur, \emph{Natural-Density Almost-Bounded Collatz Orbits in
+Logarithmic Time}, version 2, 21 July 2026.
+\href{https://www.proofatlas.ai/formalizations/natural-density-log-time-collatz/}{ProofAtlas manuscript and source release}.
+The terminal refinement uses the schedule following (19),
+the tube definition preceding (26), Lemmas 3.4--3.5,
+and the first-party source at commit
+\texttt{ca3dd0d63920411213403092aecc6946619eb082}:
+\texttt{A5ReferenceEta.lean}, \texttt{A5ReferenceEtaRate.lean},
+\texttt{A5ReferenceTerminalAggregateRate.lean}, and
+\texttt{A5ReferenceGenuineBandRate.lean}.
+The whole analytic and formal package has not been independently
+replayed in this workbench.
 
 \bibitem{Crandall1978}
 R.~E. Crandall,
@@ -806,5 +832,47 @@ embedding; and lines 3796--3820 define the Albanese functor and record the
 integral adjunction boundary.  The source contains no Collatz-specific
 $(2,3)$ specialization or Kummer character used in the live chapter.
 
+\bibitem{Allikvere2026v2}
+Jaan Allikvere,
+\emph{Almost all Collatz orbits attain almost bounded values in natural density},
+version 2, 22 July 2026,
+\href{https://doi.org/10.5281/zenodo.21499244}{doi:10.5281/zenodo.21499244}.
+The unchanged author source \path{paper.tex} has 107,915 bytes and SHA-256
+\nolinkurl{23d9cb265a4fccd4e60827b584f92e7d192ac643fe577657f515a3d54f4ad28a}.
+Section~3, source lines 365--430, supplies the sum-conditioned Fourier
+argument. Section~4, lines 433--749, states and proves the conditioned
+mixing, scale comparison, coarse conditioning and product formula.
+The joint-total formulation in
+Section~\ref{subsec:Tao-joint-total-mixing} is the local extension of those
+arguments and Tao's positive-majorant method, not a statement attributed
+verbatim to either source. The source's full natural-density and timed
+claims are not certified by that component comparison.
+
+\bibitem{KN1974}
+L. Kuipers and H. Niederreiter, \emph{Uniform Distribution of Sequences},
+Wiley, 1974. Chapter~2, Definition~1.1, pp.~88--89;
+Theorem~2.5 and equation (2.42), pp.~112--114; Theorem~5.1, p.~143.
+The original inequalities were read in the local book, including visual
+checks of printed pp.~112, 114 and 143. The book uses normalized
+discrepancy; the counting estimates in the kernel proof retain its
+factor equal to the number of points. Source record SRC-COL-000054.
+
+\bibitem{Rhin1987}
+G. Rhin, \emph{Approximants de Pad\'e et mesures effectives
+d'irrationalit\'e}, in \emph{S\'eminaire de Th\'eorie des Nombres,
+Paris 1985--86}, Progress in Mathematics \textbf{71}, Birkh\"auser,
+1987, pp.~155--164.
+\href{https://doi.org/10.1007/978-1-4757-4267-1_11}{doi:10.1007/978-1-4757-4267-1\_11}.
+Proposition (8), p.~160, gives the published exponent $7.616$;
+Appendix~2 on p.~162 records the auxiliary polynomials.
+The primary paper was read through PDF text extraction. Its numerical
+auxiliary-polynomial calculation was not independently replayed.
+Source record SRC-COL-000055.
+
+\bibitem{Inselmann2024v3} M. Inselmann,
+\emph{An Approximation of the Collatz Map and a Lower Bound for its Average Total Stopping Time},
+\href{https://arxiv.org/abs/2402.03276v3}{arXiv:2402.03276v3}, 13 August 2024.
+Theorems 1.1, 1.9--1.10; source labels \texttt{main},
+\texttt{thirdmaintheoremCol}, \texttt{TheoremColfast}.
 \end{thebibliography}
 \endgroup

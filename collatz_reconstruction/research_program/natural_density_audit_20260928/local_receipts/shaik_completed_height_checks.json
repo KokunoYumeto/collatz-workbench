@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "counts": {
+    "integer_crossing_budgets": 7140,
+    "forward_prefixes": 20476,
+    "actual_completed_blocks": 3737,
+    "two_sided_prefixes": 24729,
+    "ordinary_expansions": 3737,
+    "proof_locators": 8
+  },
+  "example": {
+    "x": 1887,
+    "m": 10,
+    "q": 9,
+    "h": 10,
+    "y": 448,
+    "path": [
+      1887,
+      2831,
+      4247,
+      6371,
+      9557,
+      14336,
+      7168,
+      3584,
+      1792,
+      896,
+      448
+    ],
+    "budget": 15551,
+    "forward": [
+      1887,
+      2831,
+      4247,
+      6371,
+      9557,
+      14336,
+      21504,
+      32257,
+      48386,
+      72580,
+      108870
+    ],
+    "backward": [
+      458752,
+      229376,
+      114688,
+      57344,
+      28672,
+      14336,
+      7168,
+      3584,
+      1792,
+      896,
+      448
+    ],
+    "raw": [
+      1887,
+      5662,
+      2831,
+      8494,
+      4247,
+      12742,
+      6371,
+      19114,
+      9557,
+      28672,
+      14336,
+      7168,
+      3584,
+      1792,
+      896,
+      448
+    ],
+    "odd": 5
+  },
+  "scope": "All integer crossing budgets for 2<=m<=120; all positive shell sources 2<=m<=10, all positive smaller target ranks, and their completed first passages by m. Finite exact regression, not proof of the general theorem or analytic package.",
+  "new_formal_theorems": 0,
+  "lean_started": false,
+  "whole_natural_density_package_verified": false,
+  "source_hashes": {
+    "TimeoutOrbitCeiling.lean": "1bc945eed9538527a9246bae33dc97ff921531e788b03511a060d4113d492f93",
+    "TimeoutEndpointWitness.lean": "a7b591481e498f2ce27ae73cc14ebf872ae17f8bb2155d0ec4b0d7d54d92fff8",
+    "TimeoutRun.lean": "3ecfd187df276522c535d3e07e5db0660cdee93764cc82ecc51d385a889a6c5e",
+    "OrbitCeiling.lean": "3bfc6b8b4801f900912e91569a38a9d524ff0896917f281110b6d7eae9b1ce6e"
+  },
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_completed_height.py": "1cb7f1d404a1eb5c1309cccedbb03012e4809b0172ccc80a67b22fa2ec779564"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

@@ -2,11 +2,11 @@
   "schema_version": 1,
   "status": "passed",
   "python": "3.13.9",
-  "source_hashes": {
-    "ALLIKVERE-2026-V2": "23d9cb265a4fccd4e60827b584f92e7d192ac643fe577657f515a3d54f4ad28a",
-    "TAO-V7": "bfbc39432d4084a276416cb019a592003c868fa32f18e2f90028ac325ae5c19d"
-  },
-  "source_hash_check_not_requested": [],
+  "source_hashes": {},
+  "source_hash_check_not_requested": [
+    "ALLIKVERE-2026-V2",
+    "TAO-V7"
+  ],
   "checks": {
     "valuation_cylinders_and_first_passage": {
       "words": 1585,
@@ -83,18 +83,31 @@
       "pushforward_and_positive_mass_identities": 1280,
       "scope": "Finite cylinder and measure identities only, not asymptotic first-passage certification."
     },
+    "scale_iteration_and_clocks": {
+      "finite_functional_graphs": 256,
+      "nested_first_passage_identities": 7712,
+      "failure_convention_indicator_identities": 65536,
+      "exact_rational_cover_tests": 135,
+      "halfopen_closed_endpoint_tests": 18,
+      "finite_geometric_sum_identities": 96,
+      "valuation_telescopes": 3263,
+      "actual_raw_clock_identities": 16315,
+      "odd_valuation_partition_identities": 447,
+      "scope": "Exact finite identities only. No check of the analytic mixing input or an infinite density theorem."
+    },
     "local_state_and_source_manifest": {
-      "audit_labels": 47,
-      "claim_locators": 22,
-      "bibliography_keys": 5,
-      "full_natural_density_verified": false,
+      "audit_labels": 406,
+      "claim_locators": 116,
+      "bibliography_keys": 10,
+      "written_endpoint_reconstruction": true,
+      "formal_certificate": false,
       "private_workbench_checks": "not requested; use --local-state inside the original corpus"
     }
   },
   "artifact_hashes": {
-    "check_exact.py": "912293db9b97ae677f5cc4babdae4b93b032e25bcb37c09e26f974af2c464256",
-    "audit.tex": "af75aeb58fb61be6e8dc9eaf7713f96169b444a459099ddff67cc4a6bf60da2e",
-    "CLAIMS.json": "2306325c458b90b4b872ae395537c45f328eef883f2bc168ab587f19685b60d8"
+    "check_exact.py": "a68688948a61a869bac0ba3a058dada950d079173909625e7b4c1620046f26dd",
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "c180aecc1dac0c066e99344641f19d34f359ca10dfcef23d8cc0eb675d5834bb"
   },
   "scope": "Finite exact formula checks; not a proof of asymptotic mixing or natural-density almost-boundedness.",
   "lean_started": false,

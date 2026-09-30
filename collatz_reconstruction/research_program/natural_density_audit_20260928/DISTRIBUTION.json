@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-30",
+  "scope": "Complete current audit TeX, own mirrored proof chapters, finite scripts and local reports, five scoped Lean sources and axiom outputs.",
+  "self_contained_checks_rerun": [
+    "check_exact.py",
+    "check_shaik_allikvere_splice.py"
+  ],
+  "other_finite_checks": "Local runs passed; source-dependent replay requires the cited authors' pinned source archives. These reports are labelled local_receipts.",
+  "lean": "Existing certificate integrity rechecked locally; no Lean launched for this publication.",
+  "pdf": "No current PDF: built-in compiler failed before source processing.",
+  "private_data": "Private conversations, machine paths and third-party bulk literature excluded."
+}

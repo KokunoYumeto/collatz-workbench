@@ -1,170 +1,162 @@
-# Conditioning and first-passage fibres in the natural-density argument
+# Collatz first passage, natural density, clocks and height
 
-This note studies a precise change of sampling measure in the Collatz problem.
-Starting at a positive odd integer N, take one **Syracuse step** by applying
-3N+1 and then dividing by its full power of two. For a threshold x, the
-first-passage value is the first odd iterate at most x. Tao's almost-bounded
-orbit theorem is a theorem about logarithmic density. Allikvere's v2
-manuscript attempts the corresponding natural-density argument by sampling
-uniformly from intervals of odd integers. Uniform and logarithmic sampling
-put very different mass near the upper endpoint, so that change needs an
-actual calculation.
+This working paper reconstructs how a Collatz orbit reaches a smaller target,
+how long that passage takes under the different conventions for counting steps,
+and how large the orbit can become before the passage ends. It develops the
+source comparisons into complete written arguments, with exact arithmetic
+checks and separately scoped Lean certificates.
 
-[Read the complete proof source](audit.tex). The current result goes through
-the uniform-input first-passage comparison. The subsequent global
-natural-density iteration and quantitative time theorem are still under
-review; they are not claimed as established by this note.
+The [complete LaTeX manuscript](audit.tex) contains the proofs and bibliography.
+This edition is dated **30 September 2026**. It has no newly compiled PDF:
+the available compiler failed before processing the source. Older PDFs elsewhere
+in the repository are earlier editions, not PDFs of this text.
 
-## Results and how the arguments fit together
+## A common path with three clocks
 
-**Retain the offset and the total valuation together.** Let a₁,…,aₙ be
-independent positive integers with P(aᵢ=k)=2⁻ᵏ, Sⱼ=a₁+⋯+aⱼ, and
-Xₙ=Σᵢ₌₁ⁿ 3ⁱ⁻¹2⁻ˢⁱ modulo 3ⁿ (the inverse of 2 is taken in that ring).
-The joint law of (Xₙ,Sₙ) differs by O_A(m⁻ᴬ), for every A>0 and every
-1≤m≤n, from the law obtained by reducing the residue modulo 3ᵐ and
-spreading each mass uniformly over its refinements modulo 3ⁿ, while
-retaining Sₙ. The proof uses Tao's positive Fourier majorant, a stopping
-split, and exact convolution in the total coordinate. Keeping that
-coordinate avoids assuming that unconditional Fourier cancellation
-survives conditioning.
+The ordinary map is C(n)=n/2 for even n and C(n)=3n+1 for odd n.
+The shortcut map replaces an odd step by (3n+1)/2. On odd integers, the
+Syracuse map divides 3n+1 by its entire power of two. Thus an orbit has
+different ordinary, shortcut and odd-return clocks; the comparison must
+follow the actual same orbit.
 
-For |s−2n|≤C√(n log n), conditioning on Sₙ=s consequently gives, for
-every fixed 0<ε<0.9 and n^ε≤m≤n^0.9,
+Put d=log(4/3), with natural logarithms. For every beta,e>0 there is a
+constant A=A(beta,e), independent of B,c,X, with the following property.
+For every X>=2, integer B>=2 and 0<c<1/17.232, all but at most
 
-~~~text
-Σ(z mod 3^n) |P(X_n=z | S_n=s) − 3^(m−n) P(X_m=z mod 3^m)|
-    = O_(A,C,ε)(m^(−A) + √(m log n/n)).
-~~~
+**C_c X(log B)^(-c) + C_(beta,e) X(log(X+2))^(-e)**
 
-The second term comes from an explicit comparison of the conditioned
-coarse block with independent geometric variables. This includes
-Allikvere's stated n^0.25≤m≤n^0.5 range and extends it.
-Proofs: prop:joint-mixing, cor:fixed-total, lem:coarse-tilt, cor:product.
+positive starting integers n<=X have one orbit prefix ending at an odd
+integer <=B, with the simultaneous bounds
 
-**Control the actual integer input window.** A valuation word determines
-one odd residue class and an exact affine inverse. Moving its input
-endpoint by the affine offset must be counted, not discarded. The
-elementary separation lemma says that if R≥1, M>4·3^(2R) and v>0, then
-at most one pair (r,s), with 1≤r≤R and s an integer, satisfies
+| Quantity along that same prefix | Upper bound |
+|---|---|
+| Number of odd steps (Syracuse returns when n is odd) | log(n)/d + A log(n+2)^(4/5) |
+| Shortcut steps | 2 log(n)/d + A log(n+2)^(4/5) |
+| Ordinary steps | 3 log(n)/d + A log(n+2)^(4/5) |
+| Largest ordinary value, including n | n^(1+beta) |
 
-~~~text
-M − 3^r ≤ v·3^r·2^(−s) ≤ M.
-~~~
+Consequently, for every real-valued f(n) tending to infinity, these same
+clock and height bounds reach a value **strictly below f(n)** on a set of
+natural density one. The clock does not depend on f. This is an
+almost-everywhere assertion, not convergence of every Collatz orbit.
 
-Two incidences would force unequal positive integers 3^q and 2^p to
-differ by less than one. Together with the exact cylinder counts and
-the harmonic-weight bound, this gives endpoint replacement error
-O((log x)^(-1/2)), without a logarithmic-form estimate **at this step**.
-The source's bound at this step is (log x)^(-1/2+o(1)).
-Proofs: lem:one-endpoint, prop:window-cost.
+**Why the combination works.** The reconstructed high-prefix argument reaches
+an odd z below a polylogarithmic threshold Y after
+s=log(n)/d+O(sqrt(log n log log n)) odd returns. Independently, the reconstructed
+timed-target count bounds the first odd hit of B by
+K=log(n)/d+O(log(n)^(4/5)). If B<Y, the remaining number of actual returns
+is r<=K-s=O(log(n)^(4/5)); if B>=Y, truncate the high prefix.
+For the remaining r returns from z, the exact valuation telescope gives
+shortcut length <=2r+log2(z), ordinary length <=3r+log2(z), and ordinary
+tail height <=2^(r+1)Y. The latter is exp(O(log(n)^(4/5))) and eventually
+less than n. Both good sets concern the original n, so their exceptional
+counts may be added without assuming independence or resampling at z.
 
-**Evaluate the counting kernel without freezing its weights on blocks.**
-Put L=log x, α=1.001, d=log(4/3), m₀=⌊L/100000⌋,
-λ=log₂3, and y=x^α or x^(α²). Prefix lengths r run through the integers in
+Proof locators in the TeX: **lem:shaik-high-two-sided**,
+**lem:shaik-same-orbit-tail**, **thm:shaik-allikvere-drift-target**.
+The machine-readable result is ND-116 / CLM-COL-000309 in [CLAIMS.json](CLAIMS.json).
 
-~~~text
-[log(y/x)/d + L^(4/5) − m₀,
- log(y^α/x)/d + L^(4/5) − m₀].
-~~~
+![Two estimates controlling consecutive portions of one orbit](shaik_allikvere_splice.png)
 
-For every real M in [x exp(dm₀−L^(7/10)), x exp(dm₀+L^(7/10))],
-set u=log₂(y^α/M), u₀=log₂(y/M) and
+## Where this sits in the literature
 
-~~~text
-D_y(M) = Σ_r 3^(−r) Σ_(rλ+u₀ < s ≤ rλ+u) binom(s−1,r−1).
-~~~
+[Tao's v7 paper](https://arxiv.org/abs/1909.03562v7) establishes almost-bounded
+orbit minima in logarithmic density and supplies the first-passage/Fourier
+method used here. [Allikvere's v2 manuscript](https://doi.org/10.5281/zenodo.21499244)
+develops the uniform-input and timed natural-density argument.
+The workbench reconstructs that iteration after proving joint offset–valuation
+mixing, exact first-passage fibres and the uniform kernel estimate.
 
-Binomial terms with s<r are zero. Then, uniformly over this entire band,
+[Idris Ali Shaik's v3.2.4 manuscript](https://zenodo.org/records/22130385)
+and [pinned Lean source](https://github.com/shaikidris/FirstPassageLinearTransport/tree/ef3410843bf58d69f771f5ba2c0571d54b54da59)
+provide the complementary parity/transport construction for the high prefix.
+The present synthesis uses that prefix and Allikvere's total odd-clock witness
+on the same deterministic orbit. It improves the earlier crude ordinary bound
+(3/d+1/log 2)log(n)+O(log(n)^(4/5)) by removing the extra log2(n);
+that earlier telescope remains correct.
 
-~~~text
-D_y(M) = y^α / (M log(4/3)) · (1 + O_(α,c)(L^(−c)))
-for every fixed 0<c<1/17.232; in particular c=1/18.
-~~~
+The coefficients 1/d,2/d,3/d are not new predictions.
+[Manuel Inselmann's v3 paper](https://arxiv.org/abs/2402.03276v3),
+particularly Theorems 1.1, 1.9 and 1.10, gives earlier trajectory envelopes
+with these drift clocks and fixed power tolerances. The displayed result
+retains the explicit sublinear time error while reaching every diverging
+target and controlling the height of the same path. No priority claim or
+correction to Tao's theorem is made.
 
-Exact binomial summation gives a smooth envelope and the phase factor
-2^(-{rλ+u}). The envelope has integral 2/(2−λ), while the phase average
-is 1/(2 log 2); their product is 1/log(4/3). Summation by parts retains
-the endpoint jumps and uses the envelope's O(L^(-1/2)) total variation.
-With the same Rhin input, it changes the source argument's exponent
-ceiling from 1/(2(8.616+1)) to 1/(2·8.616). This is a comparison with
-that proof, not a claim that the exponent is best known.
-Proofs: lem:abel-rotation, lem:envelope-mass, prop:kernel-leading.
+The manuscript also treats [Lech Mazur's v2 argument](https://www.proofatlas.ai/formalizations/natural-density-log-time-collatz/):
+the terminal scalar error, exact finite interval comparisons, rank and mass
+constraints, and the passage from terminal estimates to count and clock
+bounds. Its complete formal package has not been independently replayed here.
 
-![The envelope, its phase factor and the leading constant](kernel_mechanism.png)
+## Other results in the reconstruction
 
-The envelope curve is a numerical sample at z=10000; the integral and
-constant are proved, not inferred from the plot. The phase plot retains
-the jump at an integer.
+- Joint offset–total-valuation mixing retains the total rather than averaging
+  it away. The conditioned estimate is extended to n^epsilon<=m<=n^0.9,
+  with the coarse-conditioning error explicitly retained.
+- Elementary integer separation controls the first-passage endpoint error
+  by O((log x)^(-1/2)). Summation by parts then yields the kernel exponent
+  c<1/17.232 using the same Rhin Diophantine input, and the scale iteration
+  carries it to the timed fixed-target count above.
+- The Mazur comparison sharpens its terminal scalar majorants while retaining
+  the complete exponential, finite cutoffs, exact integer fibres and mass.
+- For Shaik's completed shortcut blocks, if x lies in [2^m,2^(m+1)),
+  the block has h<=m steps and endpoint y<=2^q, the pointwise bound is
+  T^v(x)<=min(floor(3^v(x+1)/2^v)-1,2^(h-v)y), 0<=v<=h.
+  An exact integer crossing evaluates the corresponding shell maximum using
+  two candidates. This discrete result has a matching Lean certificate.
+- The timeout low-stage duration sets are computed exactly, including gaps
+  and the distinct dyadic branch. For the displayed parameters L=20,K0=4
+  and entry p=64, the resulting reserve is 323 rather than the triangular
+  bound 1826, including terminal halvings. These are finite-stage refinements,
+  not a new leading drift coefficient.
 
-**Pass from the kernel to the actual first-passage law.** Sample N
-uniformly from the odd integers in either [x^α,x^(α²)] or
-[x^(α²),x^(α³)]. With the first-passage value set to 1 on a trajectory
-that never reaches x, the two laws differ in ℓ¹ by O_c((log x)^(-c))
-for every fixed 0<c<1/17.232. Each failure event has probability O(x^(-η))
-for some η>0. More precisely the proof constructs one probability Qₓ
-to which both laws are that close. It first controls the entire
-counting measure, proves the common profile's total mass is
-1+O_c((log x)^(-c)), and only then divides by that proved positive mass.
-This reconstructs Allikvere's uniform first-passage theorem with the
-stronger component rate propagated to its conclusion.
-Proofs: lem:uniform-input, prop:actual-reduction, cor:uniform-stabilisation.
+Each statement has its hypotheses, proof, source locator and dependence
+record in the manuscript and [claim list](CLAIMS.json). The figures are
+schematics or specified numerical samples, not substitutes for those proofs.
 
-## Sources and attribution
+## Checks and reproducibility
 
-- [Terence Tao, *Almost all orbits of the Collatz map attain almost bounded
-  values*, arXiv:1909.03562v7](https://arxiv.org/abs/1909.03562v7).
-  Proposition 1.9 supplies the geometric valuation comparison;
-  Section 5 supplies the deterministic passage mechanism; Sections 6–7
-  supply the stopping split and positive majorant. Tao's logarithmic-density
-  theorem is not being represented as a natural-density theorem.
-- [Jaan Allikvere, *Almost all Collatz orbits attain almost bounded values
-  in natural density*, v2](https://doi.org/10.5281/zenodo.21499244).
-  The uniform sampling measure, extended time interval, conditioned
-  comparison and kernel formulation are his. Exact source labels and
-  line locators are in [CLAIMS.json](CLAIMS.json).
-- [Georges Rhin, *Approximants de Padé et mesures effectives
-  d'irrationalité* (1987)](https://doi.org/10.1007/978-1-4757-4267-1_11),
-  proposition (8), p.160. Its published logarithmic-form bound is an input,
-  not a new certificate of the auxiliary-polynomial computation.
-- L. Kuipers and H. Niederreiter, *Uniform Distribution of Sequences*
-  (Wiley, 1974), Chapter 2, Theorem 2.5, pp.112–114, and Theorem 5.1,
-  p.143: the Erdős–Turán and Koksma inequalities.
-- [Workbench coefficient proof](../../preprints/tao_clock_audit/sections/repairs.tex):
-  the exact low/high-valuation summation is valid for every integer
-  m₀≤n≤n₀, including the extended window.
+From this directory in a copy of the repository, the two self-contained
+entry points require Python's standard library:
 
-This is human–LLM collaborative work in PolyClank. The present audit and
-refinements were written with GPT-6 Astra, Ultra mode in Codex. The earlier
-coefficient reconstruction was developed with GPT-5.6 Sol, Ultra mode in
-Codex. No historical priority or external peer-review claim is made.
+```text
+python check_exact.py --output checks.json
+python check_shaik_allikvere_splice.py
+```
 
-## Reproduce and review
+Both were rerun against the distributed files. The second checks exact
+reverse products, 34,880 high passages, 129,413 continuations, 119,639
+truncations and 1,764 valuation-fibre counts, including zero-return tails.
+These are finite regressions, **not proofs of the analytic density theorem**.
 
-~~~text
-python check_exact.py --output replay.json
-~~~
+All 33 finite suites passed in the local source workbench.
+The other checkers include source-content and hash checks and therefore
+also need the authors' pinned source archives in their stated relative
+locations. Their original outputs are retained in **local_receipts/**,
+clearly labelled as local runs. They are not presented as self-contained
+public-package replays. The distributed claim list omits machine-local
+paths; those reports retain the original local input hashes under
+local_artifact_hashes.
 
-The checker uses the Python standard library, runs serially, makes no
-network request and refuses optimized Python with assertions disabled.
-It checks exact integer and rational identities, residue histograms,
-endpoint incidence, the envelope coordinate change and probability-mass
-identities. It also verifies all local theorem labels and claim locators.
-It does not prove the infinite analytical estimates or certify the entire
-natural-density argument in Lean.
+Five independent Lean source modules are included: clock/rank identities,
+joint witnesses, reflection counts, dyadic prefix counts, and completed-block
+heights. [Formal replay notes](FORMAL_REPLAY.md) state their exact scope and
+imports. Existing certificate integrity was rechecked; no Lean compiler was
+launched for this publication. These modules do not formally certify the
+real analytic density argument.
 
-Original source TeX can optionally be hash-checked using --tao-source
-and --allikvere-source; the exact version hashes are in CLAIMS.json.
-Without these options the report explicitly records that external-source
-hash checking was not requested. Protected literature is cited at its
-original source, not bundled here. The --local-state option is only
-for the originating corpus and is not needed to reproduce the public
-finite checks.
+## PolyClank collaboration
 
-To build the proof source, run pdflatex audit.tex twice in this directory.
-The explanatory image is reproducible with
-python draw_kernel_mechanism.py and Matplotlib.
+This is an ongoing human–LLM research workbench. The present reconstruction
+was developed with GPT-6 Astra in Ultra mode in Codex; earlier work used
+ChatGPT 5.6 Sol, Ultra mode in Codex. Human literature authors retain their
+own attribution.
 
-To contribute, fork [the workbench](https://github.com/KokunoYumeto/collatz-workbench),
-make a branch, add or amend the relevant proof and checks, and open a pull
-request against main. For a question or counterexample that is not yet
-a patch, open an issue and identify the statement and version being discussed.
+To contribute, fork [the repository](https://github.com/KokunoYumeto/collatz-workbench),
+have your model read the proofs and cited sources, and commit its mathematical
+arguments and reproducible checks to your fork. Link the work in the
+[PolyClank discussion](https://www.reddit.com/r/PolyClank/comments/1wslv90/polyclank_auditing_the_collatz_literature_and/);
+a pull request is also welcome. Other workbenches can then compare the actual
+arguments and integrate useful results with attribution. A complete, readable
+proof is more useful than a report that a model accepted the claim.
+

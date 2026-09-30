@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "counts": {
+    "scalar_schedules": 2825,
+    "constructive_interval_sections": 47685,
+    "actual_low_starts": 30760,
+    "actual_first_timeouts": 22286,
+    "actual_completed_continuations": 8474,
+    "exact_clock_transfers": 8474,
+    "dyadic_completions": 521,
+    "full_source_first_timeout_records": 2,
+    "proof_locators": 7
+  },
+  "example": {
+    "L": 5,
+    "K0": 4,
+    "r": "3/5",
+    "p": 6,
+    "q": 3,
+    "scalar_durations": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "actual_path": [
+      37,
+      56,
+      28,
+      14,
+      7
+    ],
+    "actual_duration": 4
+  },
+  "exact_scope": "Scalar schedules L=3..12, p=L+1..64, five rational ratios; all x in (2^(p-1),2^p] for 4<=p<=10, 3<=L<p, same ratios; sampled full high/low sources from ND112.",
+  "scope": "Complete general arguments are written in the manuscripts. These exact finite regressions do not prove general recursion, transport or analytic density; no Lean was launched.",
+  "new_formal_theorems": 0,
+  "lean_started": false,
+  "whole_natural_density_package_verified": false,
+  "source_hashes": {
+    "TimeoutRun.lean": "3ecfd187df276522c535d3e07e5db0660cdee93764cc82ecc51d385a889a6c5e",
+    "TimeoutTimeSupport.lean": "04ea6b23794bca9f41eaf9a383402e534fc65f39f5218035a178b25cd7577e2c",
+    "TimeoutFirstBad.lean": "bf3e694dec227d2208a96d8d45c5dff48e3474613eb18e27cd3b75b6f4b19024",
+    "TimeoutEndpointWitness.lean": "a7b591481e498f2ce27ae73cc14ebf872ae17f8bb2155d0ec4b0d7d54d92fff8",
+    "MovingLowParameters.lean": "36b2a5e314d88a28ebb1f8f349b88c568350056a259307b372f93bc998ed1e28",
+    "TimeSupportTransport.lean": "3de6eb6f95f49cfcfb3b5574ce32d46d00401b78c072dcde61a3e7cfe1b3e367"
+  },
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_low_schedule.py": "eaa8ff4cac121dfc70a30541f6300e274e77eaa9fe3c8a784a6ec3a7a6d474c4",
+    "check_shaik_route_comparison.py": "177f1a38e3083bdca4bd2c7d902bba16a1f53915b75c1a9e7386c3be1092907b"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

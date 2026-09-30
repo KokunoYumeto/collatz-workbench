@@ -1,0 +1,4215 @@
+\subsection{Mazur's terminal error: retaining the square-root scales}
+\label{subsec:Mazur-terminal}
+
+Mazur's version--2 manuscript \cite{Mazur2026v2} gives another
+natural-density argument, with an explicit logarithmic clock. Its
+Theorems~1.1--1.2 state the odd-return constant
+$501501/(5000\log2)$, the raw constant $1509503/(5000\log2)$,
+and every fixed-target exponent $0<d<5/143$. These are the source's
+claims; the terminal scalar calculation below is not a certificate
+for the whole source package.
+
+The two restrictions in its Lemmas~3.4--3.5 have different origins.
+Phase averaging requires $d<1/(2\kappa)$ when
+$\|q\log_2 3\|\ge c q^{1-\kappa}$. Terminal reconstruction is
+stated with the additional restriction $d<1/20$. The latter is
+introduced when square-root scales are replaced by larger pure
+powers. Keeping the original expressions improves this part of
+the argument without changing its reference level, tube, or measures.
+
+\paragraph{Literal parameters and source locators.}
+Let $B$ be a positive integer, $L=\log B$, and fix $C>0$. Put
+\[
+ \tau=\frac1{100000},\quad q=\frac1{10\log2},\quad
+ f=\frac{340}{100000},\quad
+ a=\frac1{200000},\quad b=\frac1{50000},
+\]
+\[
+ n=\lfloor qL\rfloor,\quad m_0=\lfloor\tau L\rfloor,\quad
+ m=\lceil m_0L^{-2/5}\rceil,\quad
+ S=\sqrt{m\log m},\quad W=C\sqrt{n\log n},\quad F=fL.
+\]
+Here $n$ is the local passage horizon, $m_0$ the step-back
+depth, and $m$ the smaller common reference level. They are not
+interchangeable. These are the unnumbered schedule following (19)
+in Section~3.3 and the tube definition preceding (26) of the paper,
+and the definitions in
+\texttt{A5ReferenceSchedule.lean}, \texttt{A5Physical.lean}
+and \texttt{A5ReferenceEta.lean}, in its
+\texttt{Erdos1135/ND/Band} directory.
+The executable definition $n=\lfloor\lfloor\log_2 B\rfloor/10\rfloor$
+equals $\lfloor qL\rfloor$ by integer division.
+The exact nonnegative scalar majorant in the last file is
+\begin{equation}
+ \eta_B(C)=\frac{57SW}{F}+\frac{1021S^2}{F}+\frac8{m^3}.
+ \label{eq:Mazur-eta}
+\end{equation}
+All following assertions concern large $B$, where $m,n\ge1$.
+
+\begin{proposition}[a sharper terminal majorant]
+\label{prop:Mazur-eta}
+For $L\ge10^{10}$ the literal parameters satisfy
+\begin{equation}
+ \eta_B(C)\le
+ \frac{57C\sqrt{bq}}{f}L^{-1/5}\log L+
+ \frac{1021b}{f}L^{-2/5}\log L+
+ 8a^{-3}L^{-9/5}.
+ \label{eq:Mazur-eta-envelope}
+\end{equation}
+Moreover, with $C$ fixed and positive,
+\begin{equation}
+ \frac{\eta_B(C)}{L^{-1/5}\log L}
+ \longrightarrow
+ A_C:=\frac{57C}{f}\sqrt{\frac35\tau q}>0.
+ \label{eq:Mazur-eta-limit}
+\end{equation}
+In particular, for every $d<1/5$ and $\varepsilon>0$,
+$\eta_B(C)\le\varepsilon L^{-d}$ for all sufficiently large $B$.
+\end{proposition}
+\begin{proof}
+The floor and ceiling give
+\[
+ \tau L-1<m_0\le\tau L,\qquad
+ m_0L^{-2/5}\le m<m_0L^{-2/5}+1.
+\]
+Since $L\ge10^{10}$, these imply
+$aL^{3/5}\le m\le bL^{3/5}$: for the lower bound use
+$\tau L-1\ge\tau L/2$; for the upper bound use
+$1\le\tau L^{3/5}$.
+Also $1\le m\le L$ and $1\le n\le qL<L$.
+The last inequality uses $\log2>1/2$, obtained by integrating
+$1/t>1/2$ on $(1,2)$.
+Monotonicity of the logarithm now gives
+\[
+ S^2\le bL^{3/5}\log L,\qquad
+ W^2\le C^2qL\log L.
+\]
+All factors are nonnegative. Taking square roots, multiplying,
+and dividing by the original $F=fL$ gives the first term of
+\eqref{eq:Mazur-eta-envelope}. The same estimate for $S^2$
+gives its second term. The lower bound for $m$ gives its third.
+No rescaling of either law or tube is involved.
+
+For the asserted limit, the same floor and ceiling bounds give
+\[
+ \frac m{L^{3/5}}\to\tau,\quad \frac nL\to q,\quad
+ \frac{\log m}{\log L}\to\frac35,\quad
+ \frac{\log n}{\log L}\to1.
+\]
+Consequently
+\[
+ \frac{SW}{L^{4/5}\log L}
+ =C\sqrt{\frac m{L^{3/5}}\frac nL
+              \frac{\log m}{\log L}\frac{\log n}{\log L}}
+ \longrightarrow C\sqrt{\frac35\tau q}.
+\]
+After division by $L^{-1/5}\log L$, the second term in
+\eqref{eq:Mazur-eta} is $O(L^{-1/5})$ and its third is
+$O(L^{-8/5}/\log L)$; both tend to zero.
+This proves \eqref{eq:Mazur-eta-limit}.
+Finally, if $\delta=1/5-d>0$, then
+$L^{-\delta}\log L\to0$. For example,
+$\log L\le (2/\delta)L^{\delta/2}$ for $L\ge1$,
+by integrating $t^{-1}\le t^{\delta/2-1}$.
+This proves the final assertion.
+\end{proof}
+
+\begin{figure}[ht]
+\centering
+\fbox{\begin{minipage}{0.92\linewidth}
+\[
+ \begin{array}{c@{\qquad}c}
+ \text{Retained scales}&\text{Source's pure-power bounds}\\[2pt]
+ S=O(L^{3/10}\sqrt{\log L})&S\le L^{7/20}\\
+ W=O_C(L^{1/2}\sqrt{\log L})&W\le L^{3/5}\\
+ F=fL&F=fL\\[3pt]
+ SW/F=O_C(L^{-1/5}\log L)&SW/F=O(L^{-1/20})
+ \end{array}
+\]
+The leading coefficient of the actual scalar majorant is
+$A_C=(57C/f)\sqrt{(3/5)\tau q}$, not an unspecified change of
+normalization. The lower two terms in \eqref{eq:Mazur-eta}
+decay faster.
+\end{minipage}}
+\caption{Where the terminal exponent is lost, and how it is recovered.
+This is a proof diagram for Proposition~\ref{prop:Mazur-eta},
+not sampled orbit data. The original parameters and coefficients are
+Mazur's; the retained-scale comparison is the present refinement.}
+\label{fig:Mazur-scales}
+\end{figure}
+
+
+
+
+\begin{proposition}[the complete scalar terminal bound]
+\label{prop:Mazur-terminal-rate}
+Fix $C>0$ and $K\ge0$. Define the two nonproportional errors
+and terminal scalar bounds by the source's exact expressions
+\[
+ p_H(m,K)=20K/m^{11}+80/m^3,\qquad p_F(m,K)=4p_H(m,K),
+\]
+\[
+ {\cal R}_\sigma(B)=\frac{86}{25}\eta_B(C)
+                  (1+11B^{-9/10})+14W p_\sigma(m,K),
+ \qquad \sigma\in\{H,F\}.
+\]
+Then
+\[
+ 0\le{\cal R}_H(B)\le{\cal R}_F(B),\qquad
+ \frac{{\cal R}_\sigma(B)}{L^{-1/5}\log L}
+       \longrightarrow\frac{86}{25}A_C .
+\]
+For every $0<d<1/5$ and $\varepsilon>0$ both bounds are
+at most $\varepsilon(\log B)^{-d}$ for all sufficiently large
+$B$. The threshold may depend on $C,K,d,\varepsilon$, but not
+on a source branch, a band index, an endpoint, or an output event.
+\end{proposition}
+\begin{proof}
+The factor $86/25$ is twice the original absorption coefficient
+$43/25$; it has not been discarded. Positivity and $p_H\le p_F$
+give the first assertion. With the unchanged schedules,
+\[
+ W/m^{11}=O_C(L^{-61/10}\sqrt{\log L}),\qquad
+ W/m^3=O_C(L^{-13/10}\sqrt{\log L}).
+\]
+Indeed $W=O_C(L^{1/2}\sqrt{\log L})$ and
+$m\asymp L^{3/5}$, so the exponents are
+$1/2-33/5=-61/10$ and $1/2-9/5=-13/10$.
+Both quantities are $o(L^{-1/5}\log L)$.
+Since $B^{-9/10}\to0$, Proposition~\ref{prop:Mazur-eta}
+therefore proves the two limits, and its final elementary
+logarithmic comparison proves the rate assertion.
+All four parameters were fixed before taking $B$ large.
+The displayed scalar expressions contain none of the later
+branch, band, endpoint or event parameters, which proves
+the stated uniformity.
+\end{proof}
+
+\paragraph{Propagation through the source estimates.}
+The source theorem
+\texttt{eventually\_ndA5ReferenceTerminalAggregateRHS\_le\_rate}
+bounds exactly $\mathcal R_H,\mathcal R_F$ above, but only for
+$d<1/20$. Proposition~\ref{prop:Mazur-terminal-rate} proves
+that scalar assertion for every $d<1/5$.
+Its next theorem compares each nominal terminal sum with the
+physical reference profile by these scalar bounds; the fixed
+constant $K$ is chosen before $B$ and before the band and event.
+Thus the improved estimate remains uniform when used there.
+
+The subsequent genuine-band comparison is a four-term triangle
+inequality. Its coverage error is at most $L^{-10}$,
+its exact-to-nominal error at most $11B^{-9/10}$,
+its terminal aggregation error is bounded by
+Proposition~\ref{prop:Mazur-terminal-rate}, and its analytic
+full-profile error is at most $6L^{-d}$.
+The first two errors are respectively at most
+$L^{-d}/4$ and $L^{-d}/2$ for large $B$ and $d<1/5$;
+take $\varepsilon=1/4$ for the third.
+The same displayed sum in the source is therefore
+$(1/4+1/2+1/4+6)L^{-d}=7L^{-d}$.
+The full-profile estimate still requires the separate
+phase restriction $d<1/(2\kappa)$.
+Consequently the restriction introduced by this terminal
+calculation is $d<1/5$, not $d<1/20$.
+This deduction uses the source's finite terminal comparison
+and full-profile estimate at their stated scopes; those entire
+dependency chains have not been independently replayed here.
+
+For the source's $\kappa=143/10$, the phase ceiling
+$5/143<1/20$ already dominates, so this refinement does not
+change its printed headline exponent. For the published Rhin
+input $\kappa=8.616$ used earlier in this note, the phase ceiling
+is $1/17.232$: the improved terminal bound no longer prevents
+that exponent from passing through this part of Mazur's
+argument. This is a precise compatibility result between the
+two arguments, not a new claim that a $599$-file Lean package
+has been checked locally.
+
+Equation~\eqref{eq:Mazur-eta-limit} also shows that this
+particular positive scalar majorant is not $O(L^{-1/5})$.
+That statement is about the retained upper-bound expression.
+It is not a lower bound on the actual passage-law error and
+does not exclude a sharper argument using cancellation.
+
+\paragraph{Version and formal status.}
+The manuscript is version~2, 21 July 2026. It names source
+commit \texttt{f386357d453ac4dcf91242b76252d88a5a729906};
+the downloaded source and its evidence records name
+\texttt{ca3dd0d63920411213403092aecc6946619eb082}.
+The latter's main file hash agrees with its advertised hash.
+The source evidence reports the standard axioms
+\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}
+and no \texttt{sorryAx}. These are the publisher's records,
+not a build performed in this workbench. The archive contains
+the first-party Lean closure but no bundled Mathlib, lake
+manifest, or toolchain file. No formal verification status
+is transferred from that evidence to the refinement above.
+
+\subsubsection{Finite terminal records, boundary mass, and sharp absorption}
+\label{sec:Mazur-finite}
+
+The terminal scalar has a specific probabilistic meaning. It measures the
+comparison between a finite sum of nominal affine weights and a reference
+profile. Before this comparison can be used, one must retain the actual
+integer sources and show why summing over many terminal records does not
+multiply a probability mass by the number of records. We reconstruct that
+finite mechanism here, then sharpen its algebraic absorption step.
+The source locators are Mazur~\cite{Mazur2026v2}, Appendix~C.2--C.3,
+pp.~21--23, and the Lean files named below; all refer to the downloaded
+commit already identified in Section~\ref{subsec:Mazur-terminal}.
+
+\paragraph{The exact inverse, with compatibility retained.}
+Write $T=\operatorname{Syr}$ on positive odd integers. Fix an integer
+threshold $B\ge1$, a positive integer $h$, a finite set $J$ of integer
+times greater than $h$, and a finite set $\mathcal E$ of positive odd
+integers whose first hitting time of $[1,B]$ is exactly $h$.
+For $t\in J$ put $\nu=t-h$. A terminal record consists of
+$(t,a,M)$, where $a=(a_1,\ldots,a_\nu)$ has positive integer entries
+and $M\in\mathcal E$. Restrict these records to any finite collection;
+Mazur uses the additional strict total-valuation tube
+$|\ell-2\nu|<W$, where $\ell=\sum_i a_i$.
+
+Put $s_i=a_1+\cdots+a_i$, $s_0=0$, and
+\[
+ c_a=\sum_{i=0}^{\nu-1}3^{\nu-1-i}2^{s_i},\qquad
+ F_a=c_a/2^\ell,\qquad
+ N_a(M)=\frac{2^\ell M-c_a}{3^\nu},\qquad
+ N_a^0(M)=\frac{2^\ell M}{3^\nu}.
+\]
+Compatibility means $2^\ell M\equiv c_a\pmod{3^\nu}$.
+Retain only compatible records with $M>F_a$. Then $N_a(M)$ is a
+positive odd integer: $c_a$ is odd, the numerator is positive and
+odd, and its odd divisor is $3^\nu$.
+This is the inverse of the original affine equation
+$T^\nu N=(3^\nu N+c_a)/2^\ell=M$ on the indicated word cylinder,
+not a change of the map.
+
+For clarity, terminal oddness proves the intermediate exponents too.
+The one-letter assertion is immediate from $3N+1=2^{a_1}M$.
+For a longer word, use $c_a=3^{\nu-1}+2^{a_1}c_{a'}$ to obtain
+$2^{a_1}\mid3N+1$. The resulting integer $y=(3N+1)/2^{a_1}$
+is positive and odd: the suffix equation
+$3^{\nu-1}y+c_{a'}=2^{\ell-a_1}M$ has odd $c_{a'}$ and even
+right side. Induction on the suffix proves all remaining exponents.
+Conversely actual iteration gives the affine equation.
+This gives both directions and the unique inverse.
+It is the arithmetic content of
+\texttt{A5TerminalAtomDenominatorComparison.lean},
+\texttt{ndA5TerminalAtomCandidate\_odd\_and\_affine};
+the source's endpoint-room estimate supplies $M>F_a$.
+
+\begin{proposition}[one source per terminal record, across times]
+\label{prop:Mazur-atoms}
+Suppose $\max J-\min J\le h$ when $J$ is nonempty.
+The map from compatible positive terminal records to $N_a(M)$ is
+injective. In particular, restricting to any physical sampling band
+preserves disjointness, and boundary candidates outside that band
+also have multiplicity at most one.
+\end{proposition}
+\begin{proof}
+Suppose the same $N$ has records at $t\le t'$.
+The affine decoding gives $M=T^{t-h}N$ and
+$M'=T^{t'-h}N=T^{t'-t}M$. Put $d=t'-t$.
+Since $0\le d\le h$ and the first hit from $M$ is at $h$,
+the first hit from $T^dM$ is exactly $h-d$:
+its earlier iterates are the corresponding earlier iterates of $M$,
+and its iterate at $h-d$ is $T^hM\le B$.
+But $M'\in\mathcal E$ has first-hit time $h$, so $d=0$.
+The times and word lengths coincide. Deterministic iteration from $N$
+then gives the same ordered word and the same endpoint.
+No band-membership assumption entered the proof.
+\end{proof}
+
+For the source's particular band, with $d=\log(4/3)$,
+\[
+ J=\left[\left\lceil\frac{\log(z/B)}d-3W\right\rceil,
+          \left\lfloor\frac{\log(U/B)}d+3W\right\rfloor\right]
+          \cap\mathbb N
+ \quad\Longrightarrow\quad
+ \operatorname{diam}J\le\frac{\beta}{d}+6W .
+\]
+The floor and ceiling can only reduce this diameter.
+With fixed $C$, $W=o(\log B)$ and
+$h=m_0\sim(\log B)/100000$, so the diameter is at most $h$
+eventually. Also $z\ge B^{1001/1000}$ gives
+$\min J\ge (\log B)/(1000d)-3W>h$ eventually:
+$d<1/3$ implies $1/(1000d)>3/1000>1/100000$.
+Thus the time hypotheses hold for the unchanged bands and schedules,
+not for an arbitrary long interval of times.
+
+The source proof is
+\texttt{A5TerminalAtoms.lean},
+\texttt{ndA5TerminalAtomIndex\_eq\_of\_common\_affineSource}.
+This is a statement about terminal records, not yet identification of
+their union with the genuine first-passage event.
+For example, the actual orbit of $63$ first reaches $[1,50]$ at
+time $35$, with value $23$; its values at times $36,37,38$ are
+$35,53,5$. Thus an endpoint at time $37$ whose own first hit is one
+step later does not imply that the source's first hit is time $38$.
+Also the endpoints at times $34$ and $37$ are $61$ and $53$,
+both with first-hit time one; their corresponding terminal times differ
+by three and therefore violate the proposition's diameter hypothesis.
+These exact examples explain why the source has a separate coverage
+argument and a short time-window condition.
+
+\paragraph{Actual and nominal weights.}
+Take a nonempty band
+$\mathcal B=\{N>0:N\text{ odd},\ z\le N<U\}$, where
+$z>0$, $U=ze^\beta$, and $\beta>0$.
+Write $D=\#\mathcal B$, $H=\sum_{N\in\mathcal B}N^{-1}$.
+For a compatible record put
+\[
+ \alpha_a=F_a/M,\quad
+ \delta_a=-\log(1-\alpha_a),\quad
+ u_a=\log(N_a^0(M)/z).
+\]
+Then $0<\alpha_a<1$ and the exact identities are
+\[
+ N_a=(1-\alpha_a)N_a^0,\qquad
+ \log(N_a/z)=u_a-\delta_a,\qquad
+ \frac{3^\nu}{2^\ell M}=\frac1{N_a^0}
+                  =\frac{1-\alpha_a}{N_a}.
+ \tag{*}
+\]
+Let $P_a=\mathbf1_{\{z\le N_a<U\}}$ and
+$Q_a=\mathbf1_{\{z<N_a^0<U\}}$; their endpoint conventions differ
+deliberately. The actual masses of the union and the nominal sums are
+\[
+ U_H=\sum_a\frac{P_a}{HN_a},\quad U_F=\sum_a\frac{P_a}{D},
+ \qquad I_H=\sum_a\frac{Q_a}{HN_a^0},\quad I_F=\sum_a\frac{Q_a}{D}.
+\]
+Here and below the index $a$ in sums abbreviates the entire terminal
+record; different times have not been identified.
+Proposition~\ref{prop:Mazur-atoms} gives $0\le U_H,U_F\le1$.
+
+\begin{proposition}[boundary comparison with no record-count loss]
+\label{prop:Mazur-boundaries}
+If all retained records have $\delta_a\le\varepsilon$ and
+$\alpha_a\le\rho$, define the odd-integer shells
+\[
+ S_-=[ze^{-\varepsilon},z)\cap(2\mathbb N+1),\qquad
+ S_+=[Ue^{-\varepsilon},U)\cap(2\mathbb N+1).
+\]
+Then
+\[
+ |U_F-I_F|\le\frac{\#(S_-\cup S_+)}D,\qquad
+ |U_H-I_H|\le\rho U_H+
+       \frac1H\sum_{N\in S_-\cup S_+}\frac1N.
+ \label{eq:Mazur-shell-bounds}
+\]
+There are also the one-sided bounds
+\[
+ I_F\le U_F+\frac{\#S_-}{D},\qquad
+ I_H\le U_H+\frac1H\sum_{N\in S_-}\frac1N.
+\]
+\end{proposition}
+\begin{proof}
+If $Q_a=1$ and $P_a=0$, then $0<u_a<\beta$ while
+$u_a-\delta_a<0$; consequently $N_a\in S_-$.
+If $P_a=1$ and $Q_a=0$, positivity of $\delta_a$ excludes
+$u_a\le0$, so $\beta\le u_a<\beta+\delta_a$ and
+$N_a\in S_+$. Injectivity charges each mismatching record to
+a distinct shell integer. This proves the flat bound.
+For the harmonic bound insert the actual-support nominal sum
+$I_H^{\rm phys}=\sum_a P_a/(HN_a^0)$. Identity (*) gives
+\[
+ 0\le U_H-I_H^{\rm phys}
+       =\sum_a\frac{P_a\alpha_a}{HN_a}\le\rho U_H.
+\]
+For support mismatch, $1/N_a^0\le1/N_a$, so injectivity
+bounds $|I_H^{\rm phys}-I_H|$ by the stated shell sum.
+The triangle inequality proves the assertion.
+For the one-sided bounds only nominal-only records can increase
+the nominal sum; these lie in $S_-$, while on the common support
+the nominal harmonic weight is no greater than the actual one.
+\end{proof}
+
+Mazur's finite band estimates supply
+$\varepsilon=B^{-9/10}$, $\rho=B^{-19749/20000}$, and the
+respective shell ratios $<11B^{-9/10}$ and $\le5B^{-9/10}$.
+The precise source declarations are in
+\texttt{A5TerminalBoundaryShell.lean} and
+\texttt{A5TerminalAtomNominalization.lean}.
+Thus both nominal sums have the common cap $1+11B^{-9/10}$;
+for the harmonic sum the triangle estimate alone already gives
+$1+6B^{-9/10}$. The one-sided statement above retains still more
+information if the individual lower shell is to be used.
+These estimates explain, rather than assume, why the cap is for
+the entire time-indexed sum.
+
+\paragraph{The two integer rows and the flat exponential.}
+Let $\theta=\log_2 3$, $A=\log_2(z/M)$, and
+\[
+ b_\nu=A+\nu\theta,\quad
+ \ell_{\nu,r}=\lfloor b_\nu\rfloor+1+r,\quad
+ u_{\nu,r}=(\ell_{\nu,r}-b_\nu)\log2
+             =(r+1-\{b_\nu\})\log2,\quad r=0,1.
+\]
+The $+1$ is retained even when $b_\nu$ is integral.
+The source bands have $0<\beta<2\log2$ for $\log B\ge300000$:
+their logarithmic length before subdivision is at least $300$,
+so $\beta<301/300<2\log2$.
+
+\begin{proposition}[exact two-row reindexing]
+\label{prop:Mazur-two-rows}
+For $\nu\ge1$ and $0<W\le\nu/8$, let
+$q_{\nu,\ell}=\binom{\ell-1}{\nu-1}2^{-\ell}$ for $\ell\ge\nu$
+and zero otherwise. For every real-valued function $f$ on integers,
+\[
+ \sum_{\substack{\nu\le\ell\le3\nu\\|\ell-2\nu|<W\\
+              0<(\ell-b_\nu)\log2<\beta}}
+      q_{\nu,\ell}f(\ell)
+ =
+ \sum_{r=0}^1
+ \mathbf1_{\{|\ell_{\nu,r}-2\nu|<W\}}
+ \mathbf1_{\{0<u_{\nu,r}<\beta\}}
+ q_{\nu,\ell_{\nu,r}}f(\ell_{\nu,r}).
+\]
+\end{proposition}
+\begin{proof}
+The integers strictly above $b_\nu$ begin at
+$\lfloor b_\nu\rfloor+1$. Since $\beta/\log2<2$, only this
+integer and its successor can satisfy the displayed band inequality.
+The map $r\mapsto\lfloor b_\nu\rfloor+1+r$ is injective, with
+inverse $\ell\mapsto\ell-\lfloor b_\nu\rfloor-1$.
+The tube and $W\le\nu/8$ imply $\nu<\ell<3\nu$, so no
+additional endpoint is lost. Each summand is identical after this
+bijection; neither positivity of $f$ nor an approximation is used.
+The expression for $q_{\nu,\ell}$ follows by counting the
+$\binom{\ell-1}{\nu-1}$ positive compositions, each of geometric
+probability $2^{-\ell}$.
+\end{proof}
+
+This is the finite identity in
+\texttt{A5TerminalAtomReconstruction.lean},
+\texttt{sum\_ndA5TerminalTotals\_endpointMass\_strict\_eq\_range\_two}.
+Before any mixing estimate, let $\rho_{\nu,\ell}(M)$ be the fraction
+of those compositions satisfying the original compatibility congruence.
+Summing the harmonic nominal weights over one fixed $(\nu,\ell,M)$
+cell gives exactly
+\[
+ \frac{3^\nu}{MH}\,q_{\nu,\ell}\rho_{\nu,\ell}(M).
+\]
+The flat expression is the same before the harmonic normalizer,
+multiplied instead by $z e^{(\ell-b_\nu)\log2}/D$.
+Indeed $(3^\nu/(2^\ell M))ze^{(\ell-b_\nu)\log2}=1$.
+Thus the exponential appears exactly once; omitting it would change
+the flat law to a different weighting.
+
+Replacing the conditioned residue factor by its common coarse law
+is the separate mixing step. Its resulting endpoint kernel is
+$K_m(M)=3^m p_m(M\bmod3^m)/M$, with $p_m$ the source's
+Syracuse offset law at the fixed reference depth $m$.
+The two reference profiles retain this same kernel and multiply it by
+\[
+ \frac1H\sum_{\nu,r}Q_{\nu,r}
+ \quad\hbox{and}\quad
+ \frac zD\sum_{\nu,r}Q_{\nu,r}e^{u_{\nu,r}},
+\]
+respectively, where $Q_{\nu,r}$ is the product of the two indicators
+and $q_{\nu,\ell_{\nu,r}}$ above, and $\nu=t-h$, $t\in J$.
+The inverse time reindex is $t=\nu+h$. These are the literal
+profiles in \texttt{A5ReferenceTerminalAggregate.lean}, not an
+identification of the two sampling measures.
+
+\begin{lemma}[sharp finite proportional absorption]
+\label{lem:Mazur-sharp-absorption}
+Let a finite collection have $Y_i,Z_i,E_i\ge0$ and
+$0\le a_i\le\lambda<1$, with
+$|Y_i-Z_i|\le E_i+a_iZ_i$ for each $i$. Then
+\[
+ \sum_i|Y_i-Z_i|
+ \le\frac{\lambda\sum_iY_i+\sum_iE_i}{1-\lambda}.
+ \label{eq:Mazur-sharp-absorption}
+\]
+In particular this bounds the absolute difference of the two sums.
+The coefficients cannot be decreased using only these hypotheses.
+\end{lemma}
+\begin{proof}
+Put $D_*=\sum_i|Y_i-Z_i|$. Summation and $Z_i\ge0$ give
+$D_*\le\sum_iE_i+\lambda\sum_iZ_i$.
+Also $\sum_iZ_i\le\sum_iY_i+D_*$.
+Hence $(1-\lambda)D_*\le\sum_iE_i+\lambda\sum_iY_i$;
+division is permitted since $1-\lambda>0$.
+For one cell, choose any $Y,E\ge0$ and $Z=(Y+E)/(1-\lambda)$.
+Then $Z\ge Y$ and $Z-Y=E+\lambda Z$, so equality holds.
+This proves sharpness for this finite comparison problem, not
+saturation by the Collatz distributions.
+\end{proof}
+
+In the source cell inequality,
+$i=(t,\ell)$, $Z_i=q_{\nu,\ell}R_i$ and
+$E_i=q_{\nu,\ell}p_\sigma(m,K)$, where $R_i$ is the nonnegative
+coarse-reference expectation. The coefficient is
+\[
+ a_i=\frac{43}{25}
+   \left(\operatorname{eps}_{m,\nu,\ell}+\frac8{m^3}\right),
+ \qquad
+ \lambda_B=\frac{43}{25}\eta_B(C).
+\]
+Here $\operatorname{eps}_{m,\nu,\ell}$ denotes exactly
+\texttt{ndFixedTotalRatioEps} in the source, not a new choice.
+The common terminal packet gives $0\le a_i\le\lambda_B\le1/2$.
+Since $\sum_\ell q_{\nu,\ell}\le1$, summing the errors first over
+totals and then over times costs at most $\#J\,p_\sigma$.
+The nominal mass cap, on the other hand, is applied once after
+both sums. With $\#J\le7W$, Lemma~\ref{lem:Mazur-sharp-absorption}
+therefore replaces the source's bound by the smaller explicit scalar
+\[
+ \mathcal R_\sigma^*(B)=
+ \frac{\lambda_B(1+11B^{-9/10})+7W p_\sigma(m,K)}
+      {1-\lambda_B}.
+ \label{eq:Mazur-sharp-terminal}
+\]
+This is an algebraic refinement of the local-cell estimate
+used in \texttt{A5ReferenceFixedTimeAbsorption.lean}, followed
+by the same finite aggregation. It does not purport to prove
+the analytic conditioned-mixing estimate used to obtain those cells.
+
+\begin{corollary}[leading constant of the refined terminal scalar]
+\label{cor:Mazur-sharp-terminal}
+For the unchanged schedules, fixed $C>0$ and $K\ge0$, eventually
+$0\le\lambda_B<1$, and
+\[
+ \frac{\mathcal R_\sigma^*(B)}{(\log B)^{-1/5}\log\log B}
+       \longrightarrow\frac{43}{25}A_C,\qquad
+ \frac{\mathcal R_\sigma^*(B)}{\mathcal R_\sigma(B)}
+       \longrightarrow\frac12,\qquad \sigma=H,F.
+\]
+For $0\le\lambda_B\le1/2$, $\mathcal R_\sigma^*\le\mathcal R_\sigma$.
+\end{corollary}
+\begin{proof}
+Proposition~\ref{prop:Mazur-eta} gives $\lambda_B\to0$ and its
+scaled limit $(43/25)A_C$. Proposition~\ref{prop:Mazur-terminal-rate}
+proves that $Wp_\sigma$ is negligible on that scale.
+Thus the denominator tends to one, proving the first limit.
+The exact relation is
+$\mathcal R_\sigma^*=\mathcal R_\sigma/[2(1-\lambda_B)]$;
+the second limit and the finite comparison follow.
+\end{proof}
+
+The admissible terminal exponents remain every $d<1/5$.
+In the four-term genuine-band estimate of the preceding section,
+$\mathcal R_\sigma$ may be replaced by $\mathcal R_\sigma^*$;
+all other terms and the separate phase restriction remain unchanged.
+The finite inverse, boundary comparison and two-row identities above
+have written proofs and exact arithmetic regression tests.
+The coverage and conditioned-mixing dependencies are reconstructed
+separately below; Section~\ref{sec:Mazur-genuine-assembly} now composes them
+with this finite mechanism. No finite test certifies those analytic proofs
+or supplies a formal replay of the source package.
+
+\begin{figure}[ht]
+\centering
+\fbox{\begin{minipage}{0.92\linewidth}
+\[
+ \begin{array}{ccc}
+ (t,a,M)&\longmapsto&N=(2^\ell M-c_a)/3^\nu\\
+ \text{first hit from }M\text{ at }h
+ &&\text{distinct records have distinct }N\\[2pt]
+ N&=&(1-F_a/M)N^0<N^0\\
+ Q=1,\ P=0&\Longrightarrow&ze^{-\varepsilon}\le N<z\\
+ P=1,\ Q=0&\Longrightarrow&Ue^{-\varepsilon}\le N<U
+ \end{array}
+\]
+The injectivity hypothesis is $\operatorname{diam}J\le h$.
+Shell mass is counted once, not once per time or valuation total.
+\[
+ \sum_i|Y_i-Z_i|
+ \le\frac{\lambda\sum_iY_i+\sum_iE_i}{1-\lambda},
+ \quad
+ \sum_iY_i\le1+11B^{-9/10},\quad
+ \sum_iE_i\le7W p_\sigma .
+\]
+\end{minipage}}
+\caption{Exact terminal records and the two different aggregation costs.
+Propositions~\ref{prop:Mazur-atoms}--\ref{prop:Mazur-two-rows}
+reconstruct Mazur's finite mechanism; Lemma~\ref{lem:Mazur-sharp-absorption}
+retains the denominator in its final comparison. The diagram shows
+formulas and set membership, not sampled orbit geometry.}
+\label{fig:Mazur-finite}
+\end{figure}
+
+\subsection{Fixed-total descent with fibre cancellation}
+\label{sec:Mazur-descent}
+
+The terminal comparison needs more than equidistribution of a residue.
+Its endpoint weights depend on the valuation total, several endpoints
+may occupy the same residue, and the reference law has forgotten that
+total. These are three distinct operations. The following reconstruction
+keeps their maps separate and improves the error by using the signs of
+the discarded masses. The source is Mazur~\cite{Mazur2026v2},
+\texttt{ND/Fourier/FixedTotalFiniteResolvedDescent.lean},
+\texttt{FixedTotalSourceLaw.lean}, \texttt{FixedTotalRatioWindow.lean},
+\texttt{FixedTotalRatioNormalization.lean}, and
+\texttt{ND/Band/A5FixedCellTerminalDescent.lean}, in the pinned source
+release specified above.
+
+\paragraph{Masses and tests have different projection maps.}
+Write $G_j=\mathbb Z/3^j\mathbb Z$, let $0\le m\le n$, and put
+$k=3^{n-m}$. The reduction $\pi:G_n\to G_m$ has the fibre
+$\{x+3^mj:0\le j<k\}$ over the standard representative $x$.
+For real masses $p$ on $G_n$, masses $q$ on $G_m$, and real tests
+$c$ on $G_n$, define
+\begin{equation}
+ (\pi_*p)(x)=\sum_{\pi y=x}p(y),\qquad
+ (Uq)(y)=k^{-1}q(\pi y),\qquad
+ (Ac)(x)=k^{-1}\sum_{\pi y=x}c(y).
+ \label{eq:Mazur-descent-maps}
+\end{equation}
+Here $\pi_*$ sums masses; $A$ averages tests. With the counting pairing,
+\[
+ \pi_*U=I,\qquad \langle Uq,c\rangle=\langle q,Ac\rangle.
+\]
+The map $U$ is an $\ell^1$ isometry, $\pi_*$ an $\ell^1$ contraction,
+and $A$ a positive unital supremum-norm contraction.
+All statements follow by summing over the displayed $k$-element fibres.
+The pullback $\pi^*g=g\circ\pi$ satisfies $A\pi^*=I$.
+The kernel of $A$ consists exactly of tests whose sum on every fibre
+is zero. Thus $A$ is onto, and loses precisely these within-fibre
+variations, not the total weight assigned to a fibre.
+
+For a finite endpoint index set $I$, arbitrary addresses $a_i\in G_n$
+and coefficients $d_i$, put $c(y)=\sum_{a_i=y}d_i$. Finite interchange gives
+\[
+ \langle p,c\rangle=\sum_{i\in I}p(a_i)d_i,\qquad
+ (Ac)(x)=k^{-1}\sum_{\pi a_i=x}d_i.
+\]
+Coincident addresses add their weights. No injectivity or choice of one
+endpoint per residue is permitted. In the terminal cell the harmonic
+coefficient is $d_M=3^n/(MH)$ and the flat coefficient is
+$d_M=z3^n e^{u_{n,\ell}(M)}/(MD)$, with the strict endpoint set
+and $u_{n,\ell}(M)=(\ell-\log_2(z/M)-n\log_2 3)\log2$
+as in the preceding section. Averaging changes $3^n$ to $3^m$;
+it changes neither that endpoint set nor the flat exponential.
+
+\begin{proposition}[cancellation on each residue fibre]
+\label{prop:Mazur-centred-test}
+For a probability mass $p$ on $G_n$, put $q=\pi_*p$, $r=p-Uq$ and
+$\Omega=\|r\|_1$. For every real test $c$,
+\begin{equation}
+ |\langle p,c\rangle-\langle q,Ac\rangle|
+ \le \frac12\sum_{x\in G_m}
+       \operatorname{osc}_{\pi^{-1}x}(c)
+       \sum_{\pi y=x}|r(y)|.
+ \label{eq:Mazur-centred-test}
+\end{equation}
+In particular, $0\le c\le H$ gives the bound $H\Omega/2$.
+The coefficient $1/2$ is best possible in this general statement.
+\end{proposition}
+\begin{proof}
+The sum of $r$ on each fibre is zero, since $\pi_*Uq=q$.
+On that fibre subtract the midpoint between the largest and smallest
+values of $c$ without changing its pairing with $r$.
+The absolute value of the resulting test is at most half its oscillation.
+The triangle inequality, summed over fibres, proves the estimate.
+For sharpness take $m=0,n=1$, $p=(1,0,0)$ and $c=(H,0,0)$,
+with $H>0$. Then $Uq=(1/3,1/3,1/3)$, $\Omega=4/3$, and the
+pairing difference is $2H/3$. Equality holds.
+\end{proof}
+
+This uses the full $\ell^1$ distance, as in the source, not a redefinition
+of that distance as total variation. The source's $H\Omega$ bound is
+valid; the zero fibre sums give the smaller displayed bound.
+
+\paragraph{The exact law after conditioning.}
+Let $a_i$ be independent positive integers with
+$\mathbb P(a_i=j)=2^{-j}$, and let $S_j=a_1+\cdots+a_j$.
+For $j\ge1$ set
+\[
+ b_j(u)=
+ \begin{cases}\binom{u-1}{j-1}2^{-u}&u\ge j,\\0&u<j,\end{cases}
+ \qquad
+ X_j=\sum_{i=1}^j3^{i-1}2^{-S_i}\pmod{3^j}.
+\]
+The inverses of $2$ here exist in $G_j$.
+Write $\mu_{j,u}=\operatorname{Law}(X_j\mid S_j=u)$ when $u\ge j$.
+
+\begin{proposition}[conditioned prefix mixture and its likelihood]
+\label{prop:Mazur-prefix-mixture}
+For $1\le m<n$ and $\ell\ge n$, define probabilities on the integers by
+\[
+ P(u)=\frac{b_m(u)b_{n-m}(\ell-u)}{b_n(\ell)},\qquad Q(u)=b_m(u).
+\]
+Then
+\begin{equation}
+ \pi_*\mu_{n,\ell}=\sum_uP(u)\mu_{m,u},\qquad
+ \operatorname{Law}(X_m)=\sum_uQ(u)\mu_{m,u}.
+ \label{eq:Mazur-prefix-mixture}
+\end{equation}
+Zero-weight terms with $u<m$ can use any probability law.
+On $u\ge m$, the likelihood is
+$R(u)=P(u)/Q(u)=b_{n-m}(\ell-u)/b_n(\ell)$.
+For $u+(n-m)<\ell$ its positive adjacent ratio is exactly
+\begin{equation}
+ \frac{R(u+1)}{R(u)}
+ =\frac{2(\ell-u-(n-m))}{\ell-u-1},\qquad
+ \frac{R(u+1)}{R(u)}-1
+ =\frac{(\ell-2n)-(u-2m)+1}{\ell-u-1}.
+ \label{eq:Mazur-adjacent-ratio}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Every positive composition of $\ell$ into $n$ parts has probability
+$2^{-\ell}$; there are $\binom{\ell-1}{n-1}$ such compositions.
+Splitting after $m$ parts is a bijection onto the disjoint union over $u$
+of a composition of $u$ into $m$ parts and a composition of $\ell-u$
+into $n-m$ parts. Its inverse concatenates the two ordered lists.
+Counting proves the formula for $P$ and $\sum_uP(u)=1$.
+For fixed $u$, the prefix is uniform among its positive compositions.
+Reduction modulo $3^m$ discards exactly the terms with $i>m$ in $X_n$,
+so it equals $X_m$ of that prefix. This proves the first mixture.
+The second is ordinary partition by $S_m$, with an absolutely
+convergent sum when paired with a bounded test.
+Finally
+$b_j(v-1)/b_j(v)=2(v-j)/(v-1)$ for $v>j$.
+Use $j=n-m$, $v=\ell-u$ and subtract one. The strict suffix room
+ensures positive numerator and denominator; the $+1$ is not omitted.
+\end{proof}
+
+The affine endpoint offset uses the reversed word: if
+$F_a=\sum_{i=1}^n3^{n-i}2^{-(a_i+\cdots+a_n)}$, then
+$F_{a^{\rm rev}}=X_n(a)$. Word reversal is its own inverse and preserves
+the geometric probability and total valuation. It therefore identifies
+the two fixed-total offset laws. It does not preserve arbitrary prefix
+events. This is exactly the separately stated reversal map in
+\texttt{ndAffineFixedTotalSubmass\_eq\_section7}, not an identification
+of an unreversed prefix with an affine tail.
+
+\begin{lemma}[likelihood comparison retaining the actual masses]
+\label{lem:Mazur-exact-likelihood}
+Let $P,Q$ be probabilities on a countable set and $G$ a set on which
+both are positive. Put $p_0=P(G^c)<1$, $q_0=Q(G^c)<1$.
+Suppose the oscillation of $\log(P/Q)$ on $G$ is at most $\epsilon\ge0$.
+For every $u\in G$,
+\begin{equation}
+ e^{-\epsilon}\frac{1-p_0}{1-q_0}
+ \le \frac{P(u)}{Q(u)}
+ \le e^\epsilon\frac{1-p_0}{1-q_0}.
+ \label{eq:Mazur-exact-likelihood}
+\end{equation}
+If $p_0\le\theta_P<1$ and $q_0\le\theta_Q<1$, set
+\[
+ a=\max\left(\frac{e^\epsilon}{1-\theta_Q}-1,\
+              1-e^{-\epsilon}(1-\theta_P)\right).
+\]
+For every $0\le\phi\le H$,
+\begin{equation}
+ \left|\sum_u(P(u)-Q(u))\phi(u)\right|
+ \le a\,\mathbb E_Q\phi+H\max(\theta_P,\theta_Q).
+ \label{eq:Mazur-signed-tail}
+\end{equation}
+When $\theta_P=\theta_Q=\theta$, one can take
+$a=e^\epsilon/(1-\theta)-1$.
+\end{lemma}
+\begin{proof}
+For fixed $u\in G$, exponentiation compares $R(v)=P(v)/Q(v)$
+to $R(u)$ within the factors $e^{\pm\epsilon}$ at every $v\in G$.
+Average over $Q(v)/Q(G)$. The exact average is $P(G)/Q(G)$.
+Rearranging proves the first inequality and then $|R(u)-1|\le a$.
+The central contribution is bounded by
+$a\mathbb E_Q(\phi\mathbf1_G)\le a\mathbb E_Q\phi$.
+The outside signed contribution lies in $[-Hq_0,Hp_0]$.
+Its absolute value is at most $H\max(p_0,q_0)$, not the sum
+of these two bounds. All sums converge absolutely because $\phi$
+is bounded. For equal tails put $v=e^\epsilon/(1-\theta)\ge1$;
+$v-1\ge1-v^{-1}$ since $(v-1)^2/v\ge0$.
+\end{proof}
+
+\paragraph{The source's literal central window.}
+Let $m\ge150$, $8m\le n$, $D_\ell=|\ell-2n|\le n/8$, and put
+\[
+ S_m=\sqrt{m\log m},\quad R_m=\lceil16S_m\rceil,\quad
+ G=\{u\ge m:|u-2m|\le R_m\},\quad
+ \epsilon_{m,n,\ell}=\frac{57S_mD_\ell+1021S_m^2}{n}.
+\]
+This is precisely \texttt{ndFixedTotalRatioEps}: its first term is
+$57\sqrt{\log m}\,(mD_\ell/n)/\sqrt m=57S_mD_\ell/n$.
+
+For completeness the window constants follow from
+$\log m\le m/29$ and $S_m\ge2$. The function $\log x/x$ decreases
+for $x\ge150$, and
+$\log150=7\log2+\log(75/64)<49/10+11/64<51/10<150/29$.
+Here $\log2<7/10$ follows from the first five terms of the exponential
+series at $7/10$, whose sum exceeds $2$.
+Thus $S_m\le m/\sqrt{29}$ and
+$16m/\sqrt{29}\le3m-1$ for $m\ge150$ (square the positive sides).
+Consequently
+\[
+ R_m\le3m,\qquad R_m+1\le18S_m,\qquad 2R_m+1\le34S_m.
+\]
+Every $u\in G$ satisfies $u\le5m$ and $u+(n-m)<\ell$.
+The denominator in \eqref{eq:Mazur-adjacent-ratio} is at least
+$15n/8-5m-1\ge5n/4-1\ge6n/5$.
+Its numerator after subtracting one has absolute value at most
+$D_\ell+R_m+1\le n/2+1\le27n/50$, since $n\ge1200$.
+The ratio is therefore within $9/20$ of one.
+Integration of $1/t$ on $[11/20,29/20]$ gives
+$|\log t|\le2|t-1|$ there. Adjacent log differences are at most
+$5(D_\ell+R_m+1)/(3n)$.
+For $u<v$ in $G$, telescope over the half-open integer interval
+$[u,v)$, all of whose indices remain in $G$. There are at most $34S_m$
+terms, so
+\[
+ |\log R(u)-\log R(v)|
+ \le\frac{170S_m(D_\ell+18S_m)}{3n}
+ \le\epsilon_{m,n,\ell}.
+\]
+This reconstructs the source's pairwise likelihood estimate with its
+literal signs, ceiling, and $57,1021$ constants.
+
+The source tail estimates used at this point are
+\begin{equation}
+ P(G^c)\le2/m^3,\qquad Q(G^c)\le2/m^3
+ \quad\text{when }mD_\ell/n\le S_m.
+ \label{eq:Mazur-tail-input}
+\end{equation}
+Their exact declarations are
+\texttt{ndFixedTotalHeadTotalPMF\_outside\_ratioGood\_le\_two\_div\_cube}
+and \texttt{ndGeom2EndpointPMF\_outside\_ratioGood\_le\_two\_div\_cube}
+in \texttt{FixedTotalRatioTails.lean}.
+The conditioned proof applies its concentration estimate about $m\ell/n$
+at radius $15S_m$, using the displacement bound $mD_\ell/n\le S_m$,
+and obtains $2e^{-225S_m^2/(63m)}\le2/m^3$.
+The unconditioned proof obtains
+$2e^{-\min(R_m^2/(32m),R_m/8)}\le2/m^3$.
+These are Mazur's source estimates. Complete written reconstructions,
+including their concentration inputs, now appear in
+Corollary~\ref{cor:Mazur-two-tails} below. The finite checks do not
+certify the analytic inequalities or replay their Lean formalization.
+
+\begin{corollary}[refined fixed-cell descent]
+\label{cor:Mazur-centred-descent}
+Use the preceding window and displacement hypotheses. For any test
+$0\le c\le H$ on $G_n$, put
+\[
+ \Omega=\|\mu_{n,\ell}-U\pi_*\mu_{n,\ell}\|_1,\qquad
+ V=\mathbb E_{\operatorname{Law}(X_m)}Ac,\qquad
+ a^\dagger=\frac{\exp(\epsilon_{m,n,\ell})}{1-2/m^3}-1 .
+\]
+Using the source tail estimates \eqref{eq:Mazur-tail-input},
+\begin{equation}
+ |\mathbb E_{\mu_{n,\ell}}c-V|
+ \le H\Omega/2+a^\dagger V+2H/m^3.
+ \label{eq:Mazur-centred-descent}
+\end{equation}
+\end{corollary}
+\begin{proof}
+The first replacement, from $\mu_{n,\ell}$ to $U\pi_*\mu_{n,\ell}$,
+costs at most $H\Omega/2$ by Proposition~\ref{prop:Mazur-centred-test}.
+By Proposition~\ref{prop:Mazur-prefix-mixture}, the remaining difference
+is $\sum_u(P(u)-Q(u))\phi(u)$, where
+$\phi(u)=\mathbb E_{\mu_{m,u}}Ac$ lies in $[0,H]$.
+Its $Q$-expectation is $V$. Apply
+Lemma~\ref{lem:Mazur-exact-likelihood} with $\theta=2/m^3$.
+\end{proof}
+
+At a terminal cell the source bounds the assembled tests by $20$
+(harmonic) and $80$ (flat). The harmonic bound uses the endpoint
+coefficient bound $5$ and band harmonic mass at least $1/4$;
+the flat bound uses pointwise domination by four times the harmonic
+test. Their original guards include the source passage-window facts,
+positive band count, $m_0+n\le n_0$, and, for the flat case,
+$\log B\ge300000$. We retain these guards and do not substitute a
+single-endpoint estimate for the assembled-test bound.
+With $\Omega\le K/m^{11}$ the nonproportional errors become
+\[
+ p_H^\dagger=10K/m^{11}+40/m^3=p_H/2,\qquad
+ p_F^\dagger=40K/m^{11}+160/m^3=p_F/2.
+\]
+The two halves have different reasons: zero fibre mass for the first
+term, and the sign of the two outside contributions for the second.
+This does not strengthen the Fourier theorem itself.
+
+The mixing input on the terminal schedule is also covered by
+Proposition~\ref{prop:Tao-joint-total-mixing}: the fine level $n$ lies between
+$f\log B$ and $n_0=\lfloor q\log B\rfloor$, while
+$m\sim\tau(\log B)^{3/5}$. Hence $m\ge n^{1/2}$ eventually,
+and $|\ell-2n|\le W=C\sqrt{n_0\log n_0}\ll_C\sqrt{n\log n}$
+uniformly over these cells. Taking $A=11$ there gives a single finite
+$K$ for this range. This connects the previously reconstructed Tao-based
+estimate to the present descent. Also $8m=o(F)$, $W=o(F)$, and
+$mW/(FS)=O_C((\log B)^{-1/5})\to0$; hence the central-window
+and displacement guards hold uniformly eventually. It makes no assertion about every
+smaller reference scale in the source's formal package.
+
+\begin{corollary}[retaining the exponential improves the terminal constant]
+\label{cor:Mazur-exponential-terminal}
+Keep the literal schedules of \eqref{eq:Mazur-eta}. Define
+\begin{equation}
+ E_B=\frac{57SW+1021S^2}{F},\quad
+ \theta_B=\frac2{m^3},\quad
+ \gamma_B=\frac{e^{E_B}}{1-\theta_B}-1,\qquad
+ \mathcal R_\sigma^\dagger(B)=
+ \frac{\gamma_B(1+11B^{-9/10})+(7/2)W p_\sigma(m,K)}
+      {1-\gamma_B}.
+ \label{eq:Mazur-exponential-terminal}
+\end{equation}
+For all sufficiently large $B$, this is the terminal comparison bound
+obtained from the preceding descent and the same nominal cap.
+On the source range $0\le\lambda_B=(43/25)\eta_B\le1/2$,
+\[
+ 0\le\gamma_B\le\lambda_B,\qquad
+ \mathcal R_\sigma^\dagger\le\mathcal R_\sigma^*\le\mathcal R_\sigma.
+\]
+For fixed $C>0$, $K\ge0$, and $\sigma=H,F$,
+\[
+ \frac{\mathcal R_\sigma^\dagger(B)}
+      {(\log B)^{-1/5}\log\log B}\longrightarrow A_C,\qquad
+ \frac{\mathcal R_\sigma^\dagger}{\mathcal R_\sigma}
+       \longrightarrow\frac{25}{86},\qquad
+ \frac{\mathcal R_\sigma^\dagger}{\mathcal R_\sigma^*}
+       \longrightarrow\frac{25}{43}.
+\]
+\end{corollary}
+\begin{proof}
+On each cell, $n\ge F$ and $D_\ell\le W$ give
+$\epsilon_{m,n,\ell}\le E_B$. Therefore $a^\dagger\le\gamma_B$.
+Multiplication by the single endpoint mass $q_{n,\ell}$
+gives a cell error with absolute part $q_{n,\ell}p_\sigma/2$.
+Sum first over $\ell$, using $\sum_\ell q_{n,\ell}\le1$, and
+then over times, using $\#J\le7W$.
+Apply Lemma~\ref{lem:Mazur-sharp-absorption} and the nominal mass
+cap $1+11B^{-9/10}$ once. This gives the displayed quotient.
+
+Since $\eta_B=E_B+4\theta_B$, the stated range implies
+$0\le\theta_B<1/2$ and $E_B+2\theta_B\le1$.
+Integration gives $-\log(1-\theta_B)\le2\theta_B$.
+For $0\le x\le1$, convexity gives
+$e^x-1\le(e-1)x<(43/25)x$. For instance the exponential series
+through degree $6$ has remaining tail at most
+$(1/7!)/(1-1/8)$, proving $e<68/25$.
+Consequently
+\[
+ \gamma_B
+ \le e^{E_B+2\theta_B}-1
+ \le(43/25)(E_B+2\theta_B)\le\lambda_B.
+\]
+The function $(aM+e)/(1-a)$ increases in $a,e\ge0$ for $a<1$,
+$M\ge0$, proving the finite comparison with $\mathcal R_\sigma^*$.
+
+Write $s_B=(\log B)^{-1/5}\log\log B$. The earlier scalar proof gives
+$E_B/s_B\to A_C$, $\theta_B/s_B\to0$ and $Wp_\sigma/s_B\to0$.
+Since $E_B\to0$,
+$\gamma_B=(e^{E_B}-1+\theta_B)/(1-\theta_B)$ has
+$\gamma_B/s_B\to A_C$. The denominator and nominal cap tend to one.
+The last two limits follow from the previously proved coefficients
+$(86/25)A_C$ and $(43/25)A_C$, both positive.
+\end{proof}
+
+The four-term genuine-band estimate can therefore use
+$\mathcal R_\sigma^\dagger$ in place of $\mathcal R_\sigma^*$.
+Its boundary, exceptional-event and phase terms are unchanged.
+The terminal exponent range is still $d<1/5$; the source's separate
+phase restriction is not removed by this constant improvement.
+The tail estimates and genuine first-passage identification are proved
+separately in Section~\ref{sec:Mazur-concentration-coverage}; their
+dependencies remain distinct from the finite terminal comparison.
+
+\begin{figure}[ht]
+\centering
+\fbox{\begin{minipage}{0.92\linewidth}
+\[
+ \begin{array}{ccccc}
+ \mu_{n,\ell}&\longrightarrow&U\pi_*\mu_{n,\ell}
+ &\longrightarrow&U\operatorname{Law}(X_m)\\
+ \text{fine conditioned law}&&\text{coarse conditioned law lifted}
+ &&\text{unconditioned reference lifted}\\
+ &H\Omega/2&&a^\dagger V+2H/m^3&
+ \end{array}
+\]
+Each arrow records its absolute pairing error against $0\le c\le H$.
+The first uses zero mass on every residue fibre. The second uses the
+exact prefix-mixture likelihood and retains the signed outside mass.
+Endpoint collisions are summed before either comparison.
+\end{minipage}}
+\caption{Two different reasons for error in the fixed-cell comparison.
+The arrows are comparisons of expectations, not deterministic maps
+between sample outcomes. The actual mass and test maps are
+\eqref{eq:Mazur-descent-maps}; the error is proved in
+Corollary~\ref{cor:Mazur-centred-descent}, with the tail bounds proved in
+Corollary~\ref{cor:Mazur-two-tails}.
+Mazur's source construction is retained with finer error accounting.}
+\label{fig:Mazur-descent}
+\end{figure}
+
+\subsection{Concentration from cuts and the actual passage event}
+\label{sec:Mazur-concentration-coverage}
+
+There are two remaining identifications behind the preceding comparison.
+First, conditioning on a total valuation changes the distribution of an
+initial block; its exceptional mass must be proved small.
+Second, a terminal affine record need not by itself describe the
+\emph{first} passage of its source. This section reconstructs both
+mechanisms. The first uses finite counting and exponential moments.
+The second uses the actual ordered valuation word and a lower bound on
+the step-back endpoint. Neither is inferred from a numerical orbit survey.
+
+The primary source locators are Mazur~\cite{Mazur2026v2},
+\texttt{ND/Fourier/FixedTotalBars.lean},
+\texttt{FixedTotalConcentration.lean}, \texttt{FixedTotalPGF.lean},
+\texttt{FixedTotalMGF.lean}, \texttt{FixedTotalTail.lean},
+\texttt{FixedTotalT3.lean}; and
+\texttt{ND/Band/A5TerminalAtomCoverage.lean},
+\texttt{A5GoodTimeLocalization.lean},
+\texttt{Tao/Section5/ReversePrefix.lean},
+\texttt{ReversePrefixScalar.lean}, and \texttt{PassLostWindow.lean}.
+The written proofs below expose the numerical content of their guards.
+They are source-level reconstructions, not a claim to have replayed the
+Lean package or to have discovered sampling-without-replacement bounds.
+
+\paragraph{Positive compositions as cuts.}
+For $1\le n\le\ell$, let
+\[
+ \mathcal C_{n,\ell}=\{(a_1,\ldots,a_n)\in\mathbb N_{>0}^n:
+                       a_1+\cdots+a_n=\ell\}.
+\]
+The map to subsets of $\{1,\ldots,\ell-1\}$ is
+\begin{equation}
+ (a_1,\ldots,a_n)\longmapsto
+ \{a_1,a_1+a_2,\ldots,a_1+\cdots+a_{n-1}\}.
+ \label{eq:Mazur-cuts}
+\end{equation}
+Its inverse takes consecutive differences after adjoining $0$ and $\ell$.
+The cuts are strictly increasing, so all inverse differences are positive;
+telescoping proves both compositions are the identity.
+There are $\binom{\ell-1}{n-1}$ such words. Each has the same geometric
+probability $2^{-\ell}$ before conditioning, hence the fixed-total law
+is exactly the uniform cut-set law. The source stores a physical cut
+$s$ as $s-1\in\operatorname{Fin}(\ell-1)$. Thus its strict zero-based
+test $s-1<q$ is our inclusive physical test $s\le q$.
+For $n=\ell=1$ both carriers consist of one empty-cut configuration.
+No corresponding identification with a uniform cut set is asserted
+for the infeasible positive-total, zero-length carrier.
+
+\begin{proposition}[finite count and inclusive cut-count tails]
+\label{prop:Mazur-cut-count}
+Let $\mathcal B$ be a uniform $K$-subset of $\{1,\ldots,N\}$,
+where $N\ge1$ and $0\le K\le N$. Put
+$H_q=\#(\mathcal B\cap\{1,\ldots,q\})$, $0\le q\le N$,
+and $\rho=K/N$. For $0\le r\le N$,
+\begin{equation}
+ \mathbb E\binom{H_q}{r}
+   =\binom qr\frac{\binom Kr}{\binom Nr}
+   \le\binom qr\rho^r.
+ \label{eq:Mazur-cut-moments}
+\end{equation}
+For $q\ge1$ and $v\ge0$,
+\begin{equation}
+ \mathbb P(H_q-q\rho\ge v)\le e^{-2v^2/q},\qquad
+ \mathbb P(q\rho-H_q\ge v)\le e^{-2v^2/q}.
+ \label{eq:Mazur-cut-tails}
+\end{equation}
+Both events include equality. For $q=0$ the count is identically zero.
+\end{proposition}
+\begin{proof}
+Count pairs $(R,\mathcal B)$ with $R\subseteq\{1,\ldots,q\}$,
+$|R|=r$, and $R\subseteq\mathcal B$. For $r\le K$ their number is
+$\binom qr\binom{N-r}{K-r}$; for $r>K$ it is zero.
+Dividing by $\binom NK$ proves the identity, with binomial zeros retained.
+For $r\le K$ the ratio equals
+$\prod_{i=0}^{r-1}(K-i)/(N-i)\le(K/N)^r$;
+for $r>K$ its numerator is zero.
+More generally a prefix extending beyond $N$ uses $\min(q,N)$
+in this count; it is not an additional population.
+
+For $x\ge1$, expand $x^{H_q}=(1+(x-1))^{H_q}$ and extend by
+the zero binomial terms to $r=q$. Positivity of $(x-1)^r$ gives
+\[
+ \mathbb E x^{H_q}\le(1+\rho(x-1))^q.
+\]
+For a Bernoulli variable of mean $\rho$, set
+$g(t)=\log(1-\rho+\rho e^t)-\rho t$.
+For $0<\rho<1$ its second derivative is $p_t(1-p_t)\le1/4$,
+where $p_t=\rho e^t/(1-\rho+\rho e^t)$.
+Since $g(0)=g'(0)=0$, integration twice gives $g(t)\le t^2/8$.
+For $\rho=0,1$, $g=0$ and the same bound holds.
+At $x=e^t$, $t\ge0$, it follows that
+$\mathbb E e^{t(H_q-q\rho)}\le e^{qt^2/8}$.
+On the event $H_q-q\rho\ge v$, the exponential is at least $e^{tv}$.
+Markov's inequality with $t=4v/q$ proves the upper-tail bound,
+including $v=0$. Complementation $\mathcal B\mapsto\mathcal B^c$
+is a bijection of the uniform $K$- and $(N-K)$-subset carriers.
+It changes $H_q$ to $q-H_q$ and $\rho$ to $1-\rho$,
+so the same argument proves the lower tail. No independence of
+the individual membership indicators was assumed.
+\end{proof}
+
+\begin{proposition}[the fixed-total prefix tail with its integer endpoints]
+\label{prop:Mazur-order-statistic}
+Let $n\ge3$, $1\le j<n$, $n\le\ell\le3n$, and let
+$U_j=a_1+\cdots+a_j$ under the uniform law on $\mathcal C_{n,\ell}$.
+For $8\le u\le3j$,
+\begin{equation}
+ \mathbb P\left(\left|U_j-\frac{j\ell}{n}\right|\ge u\right)
+ \le 2\exp\left(-\frac{u^2}{63j}\right).
+ \label{eq:Mazur-order-statistic}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The variable $U_j$ is the $j$th physical cut. Its mean is
+$c=j\ell/n$: permutation of the parts preserves the uniform
+composition law, so every part has mean $\ell/n$.
+Set $\rho=(n-1)/(\ell-1)$. Direct calculation gives
+\[
+ \rho\ge\frac14,\qquad j-1\le c\rho\le j,\qquad c\le3j.
+\]
+Indeed $4(n-1)\ge\ell-1$ follows from $n\ge3$, $\ell\le3n$;
+also $j-c\rho=j(\ell-n)/(n(\ell-1))\in[0,1)$.
+
+For the lower deviation put $q=\lfloor c-u\rfloor$.
+If $q<j$ the event is empty, since $U_j\ge j$.
+Otherwise $1\le q\le3j$ and $q<\ell$. The exact event is
+$\{U_j\le q\}=\{H_q\ge j\}$.
+As $q\rho\le c\rho-u\rho\le j-u/4$,
+Proposition~\ref{prop:Mazur-cut-count} bounds its probability by
+$e^{-u^2/(8q)}\le e^{-u^2/(24j)}\le e^{-u^2/(63j)}$.
+
+For the upper deviation put $v=\lceil c+u\rceil$.
+The support bound is $U_j\le\ell-(n-j)$; if $v$ exceeds it,
+the event is empty. Otherwise put $q=v-1$.
+Here $1\le q\le\ell-1$, $q<c+u\le6j$, and $q\ge c+u-1$.
+The exact event is
+$\{U_j\ge v\}=\{H_{v-1}\le j-1\}$.
+In particular the ceiling is followed by a subtraction of one,
+also when $c+u$ is integral. Since
+$q\rho\ge j-1+(u-1)/4$, the lower cut-count tail gives
+$e^{-(u-1)^2/(8q)}\le e^{-(u-1)^2/(48j)}$.
+For $u=8+w$, $w\ge0$,
+\[
+ 63(u-1)^2-48u^2=15w^2+114w+15\ge0.
+\]
+This proves the claimed upper-deviation bound.
+The two one-sided events cover the absolute deviation; their sum
+proves the assertion.
+\end{proof}
+
+\begin{corollary}[both exceptional masses in the fixed-cell descent]
+\label{cor:Mazur-two-tails}
+Keep $m,n,\ell,S_m,R_m,G,P,Q$ from
+Section~\ref{sec:Mazur-descent}, with
+$m\ge150$, $8m\le n$, $|\ell-2n|\le n/8$, and
+$m|\ell-2n|/n\le S_m$. Then
+\begin{equation}
+ P(G^c)\le2m^{-25/7}\le2m^{-3},\qquad
+ Q(G^c)\le2m^{-8}\le2m^{-3}.
+ \label{eq:Mazur-two-tails}
+\end{equation}
+Thus both tail inputs in Corollary~\ref{cor:Mazur-centred-descent}
+now have complete written proofs.
+\end{corollary}
+\begin{proof}
+The law $P$ is the law of $U_m$ conditional on the total $\ell$.
+Its mean differs from $2m$ by at most $S_m$.
+Outside $G$ its support still has $u\ge m$, so $|u-2m|>R_m$.
+Since $R_m\ge16S_m$, this implies
+$|u-m\ell/n|\ge15S_m$.
+The previously proved $S_m\ge2$ and $R_m\le3m$ imply
+$8\le15S_m\le3m$. Also $n\le\ell\le3n$.
+Proposition~\ref{prop:Mazur-order-statistic} gives
+\[
+ P(G^c)\le2e^{-225S_m^2/(63m)}=2m^{-25/7}.
+\]
+
+For the unconditioned law $Q$, the centered one-step moment is exactly
+\[
+ \mathbb E e^{t(a_i-2)}
+       =\frac{e^{-t}}{2-e^t},\qquad t<\log2.
+\]
+Its logarithm $h(t)=-t-\log(2-e^t)$ satisfies
+$h(0)=h'(0)=0$ and $h''(t)=2e^t/(2-e^t)^2$.
+For $|t|\le1/4$, $e^t\le e^{1/4}<4/3$, because
+$\log(4/3)=\int_1^{4/3}x^{-1}\,dx>1/4$.
+Thus $h''(t)\le6$, and integration gives
+$h(t)\le3t^2\le8t^2$ on this interval.
+Independence now gives
+$\mathbb E e^{t(\sum_{i=1}^m a_i-2m)}\le e^{8mt^2}$.
+Using $t=\min(R/(16m),1/4)$ for the upper deviation and $-t$
+for the lower one yields, for every $R>0$,
+\[
+ Q\left(\left|\sum_{i=1}^m a_i-2m\right|\ge R\right)
+ \le2\exp\left(-\min\left(\frac{R^2}{32m},\frac R8\right)\right).
+\]
+In the first case $R\le4m$, the exponent is $-R^2/(32m)$;
+in the second, $-R/4+m/2\le-R/8$.
+At $R=R_m\le3m$ the quadratic term is the minimum, and
+$R_m^2/(32m)\ge8\log m$. This proves the second bound.
+All infinite geometric sums converge in the displayed range of $t$.
+\end{proof}
+
+The sharper, unequal tails can also be inserted directly into
+Lemma~\ref{lem:Mazur-exact-likelihood}. For the same test as before, let
+$\theta_P=2m^{-25/7}$, $\theta_Q=2m^{-8}$ and
+\[
+ a^\sharp=\max\left(
+       \frac{e^{\epsilon_{m,n,\ell}}}{1-\theta_Q}-1,\
+       1-e^{-\epsilon_{m,n,\ell}}(1-\theta_P)\right).
+\]
+Then the error is at most $H\Omega/2+a^\sharp V+H\theta_P$.
+This is no greater than the previous bound because each tail is smaller.
+In particular the harmonic and flat absolute cell errors may be
+$10K/m^{11}+40m^{-25/7}$ and
+$40K/m^{11}+160m^{-25/7}$, respectively.
+The coefficient $a^\sharp$ is retained as a maximum; unequal tails
+do not justify silently replacing it by its first entry.
+
+\paragraph{What a terminal record has to prove about the orbit.}
+We now use the positive odd-return map
+$T(N)=(3N+1)/2^{v_2(3N+1)}$.
+Write $x_k=T^kN$, $a_k=v_2(3x_{k-1}+1)$ and
+$S_k=a_1+\cdots+a_k$. For any consecutive block of length $r$,
+the exact affine identity gives
+\begin{equation}
+ x_{j+r}=\frac{3^r}{2^{S_{j+r}-S_j}}x_j+
+ \sum_{i=1}^r3^{r-i}2^{-(a_{j+i}+\cdots+a_{j+r})}.
+ \label{eq:Mazur-actual-block}
+\end{equation}
+The offset is nonnegative and at most $3^r$.
+For $r=0$ it is zero. For $r\ge1$, bounding each inverse power
+by one bounds the sum by $(3^r-1)/2<3^r$.
+The \emph{upper} offset bound, not merely its positivity,
+is needed to exclude an earlier passage.
+
+Fix $C>0$. Use the unchanged schedules
+\[
+ L=\log B,\quad n_0=\lfloor L/(10\log2)\rfloor,\quad
+ h=\lfloor L/100000\rfloor,\quad
+ W=C\sqrt{n_0\log n_0},\quad H_0=L^{3/5},\quad s_0=L^{7/10}.
+\]
+Put $d=\log(4/3)$, $\delta=d/\log2$, and
+\[
+ D_-=(4/3)^hB e^{-s_0},\qquad D_+=(4/3)^hB e^{s_0}.
+\]
+For a target set $E$ of positive odd integers, define the original
+finite endpoint set
+\[
+ E'_B(E)=
+ \{M\text{ odd}:\lceil D_-\rceil\le M\le\lfloor D_+\rfloor,\
+       \tau_B(M)=h,\ T^hM\in E\},
+\]
+where $\tau_B$ is the first time at which the orbit is at most $B$,
+and is $\infty$ if it never reaches that threshold.
+These are exactly the closed integer endpoints of
+\texttt{taoSection5EPrime}, not a changed window.
+
+Take a band of positive odd integers $z\le N<U$ with
+\[
+ B^{1001/1000}\le z<U\le B^{(1001/1000)^3},
+ \qquad 0<\log(U/z)<2\log2,
+\]
+which includes the source's two branches and their exact sub-bands.
+Set
+\[
+ J=\left[\left\lceil\frac{\log(z/B)}d-3W\right\rceil,\
+          \left\lfloor\frac{\log(U/B)}d+3W\right\rfloor\right]
+        \cap\mathbb N,\qquad
+ \mathcal G=\{N:|S_k-2k|<W\ (0\le k\le n_0)\}.
+\]
+Let $\mathcal A_E$ be the event of a finite first passage into $E$
+from this band. Let $\mathcal U_E$ be its terminal-record union:
+a member is an odd $N$ in the band for which some $t\in J$,
+$r=t-h$, positive word $a$ of length $r$ and total $\ell$, and
+$M\in E'_B(E)$ satisfy
+\[
+ r\le\ell\le3r,\qquad |\ell-2r|<W,\qquad
+ \operatorname{Aff}_a(N)=M.
+\]
+The endpoint bound makes the family finite. The list coordinates are
+equivalent to the source's extras multiset: the multiplicity of index
+$i$ is $a_i-1$, with inverse $a_i=1+\text{multiplicity}(i)$.
+This is the same unrestricted affine union used above;
+no first-passage condition on $N$ has been inserted in its definition.
+
+\begin{proposition}[actual first passage equals the terminal union on the good event]
+\label{prop:Mazur-genuine-coverage}
+For all sufficiently large $B$, depending on $C$ but uniformly in
+the band and the target $E$,
+\begin{equation}
+ \mathcal A_E\cap\mathcal G=\mathcal U_E\cap\mathcal G.
+ \label{eq:Mazur-genuine-coverage}
+\end{equation}
+The map from a good source to its terminal record is its actual first-hit
+time $t$, actual first $t-h$ valuations, their total, and $M=T^{t-h}N$.
+Its inverse is the integer affine inverse of
+Proposition~\ref{prop:Mazur-atoms}.
+\end{proposition}
+\begin{proof}
+We first verify the scalar guards; they are not assumptions about an
+unknown orbit. Uniformly over the stated bands, as $L\to\infty$,
+\[
+ W=o(L),\quad W=o(H_0),\quad H_0=o(s_0),\quad s_0=o(h),\quad
+ 2\,3^{n_0}\le B.
+\]
+The last assertion follows from
+$3^{n_0}\le B^{\log3/(10\log2)}<B^{1/5}$.
+Also $h<\min J\le\max J<n_0$ whenever $J$ is nonempty, and
+$W\le(t-h)/8$ for all $t\in J$ eventually.
+For the lower edge use
+$\log(z/B)\ge L/1000$ and $d<1/3$, giving
+$\min J-h\ge(3/1000-1/100000)L-3W$.
+For the upper edge use $(1001/1000)^3<101/100$, $d>1/4$ and
+$n_0>L/10-1$, giving $\max J\le L/25+3W<n_0$.
+Floors and ceilings have the displayed favourable directions.
+
+If $N\in\mathcal G$ lies in the band, \eqref{eq:Mazur-actual-block} gives
+\[
+ T^{n_0}N\le(3/4)^{n_0}2^W U+3^{n_0}\le B
+\]
+eventually. Indeed the first term is at most
+$(4/3)B^{(1001/1000)^3-d/(10\log2)}2^W$;
+its exponent is less than $101/100-1/40<1$ before the $o(1)$
+contribution of $2^W$. Thus a first hit exists with $1\le t\le n_0$.
+
+The final inequality $T^tN\le B$, offset positivity, and
+$S_t<2t+W$ imply
+\[
+ t>\frac{\log(N/B)}d-\frac W\delta.
+\]
+At its predecessor $T^{t-1}N>B$, the upper offset bound and
+$2\,3^{n_0}\le B$ imply
+$B/2<3^{t-1}N/2^{S_{t-1}}$.
+Using $S_{t-1}>2(t-1)-W$ therefore gives
+\[
+ t<\frac{\log(N/B)}d+\frac{W+1}{\delta}+1.
+\]
+The exact integer inequality $3^{29}<2^{46}$ implies
+$\delta>12/29$. For $W\ge6$,
+$W/\delta<3W$ and $(W+1)/\delta+1<3W$.
+The band bounds now place $t$ in the original $J$.
+
+Put $r=t-h$ and $M=T^rN$.
+Differences of the prefix inequalities give
+$2k-2H_0\le S_{r+k}-S_r\le2k+2H_0$ for $k\le h$.
+Since $T^hM\le B$,
+\[
+ M\le(4/3)^h2^{2H_0}B.
+\]
+Since $T^{h-1}M>B$ and its offset is at most $B/2$,
+\[
+ M>(3/8)(4/3)^h2^{-2H_0}B.
+\]
+For large $B$, $2(\log2)H_0+\log(8/3)\le s_0$.
+Consequently $D_-\le M\le D_+$, with exactly the stated integer
+rounding. First passage shifts to $\tau_B(M)=h$, and the landing
+point is unchanged. The actual prefix word has
+$|\ell-2r|<W\le r/8$, hence $r\le\ell\le3r$.
+This constructs a terminal record and proves the forward inclusion.
+
+Conversely take a record for $N\in\mathcal U_E\cap\mathcal G$.
+Its odd affine endpoint decodes to the actual positive valuation word
+and $T^rN=M$, by the affine inverse already proved.
+Suppose some $j<r$ had $T^jN\le B$. The prefix deviations give
+$S_r-S_j\ge2(r-j)-2H_0$, and \eqref{eq:Mazur-actual-block} then gives
+\[
+ M\le(3/4)^{r-j}2^{2H_0}B+3^{r-j}
+      \le2^{2H_0}B+3^{n_0}.
+\]
+But $M\ge D_-$, whereas
+\[
+ 2^{2H_0}B+3^{n_0}<D_-
+\]
+eventually: divide by $B$ and use
+$hd-s_0-2(\log2)H_0\to+\infty$ and
+$3^{n_0}/B\to0$.
+This is a contradiction. There is no earlier hit before $r$;
+the endpoint's first hit is exactly $h$ steps later, so $\tau_B(N)=t$
+and the landing point belongs to $E$. This proves the reverse inclusion.
+
+Finally $\operatorname{diam}J\le\log(U/z)/d+6W=o(h)$,
+so Proposition~\ref{prop:Mazur-atoms} gives uniqueness of the record.
+The construction and the affine inverse are inverse on these good events.
+All eventual bounds used only $C$ and the fixed band envelopes,
+not $E$ or the individual source.
+\end{proof}
+
+The distinction matters: without the good-prefix and endpoint bounds,
+an orbit can hit $[1,B]$, leave it, and later supply a terminal record.
+The earlier exact example with starting value $63$ illustrates precisely
+that possibility. The reverse argument excludes it here by an explicit
+upper bound on the later endpoint of any orbit that had already hit.
+
+\begin{corollary}[one exceptional-event charge for both sampling laws]
+\label{cor:Mazur-coverage-mass}
+For every probability measure $p$ on the positive odd integers and
+all sufficiently large $B$ as above,
+\begin{equation}
+ |p(\mathcal A_E)-p(\mathcal U_E)|\le p(\mathcal G^c).
+ \label{eq:Mazur-coverage-mass}
+\end{equation}
+In particular this applies separately to the harmonic and uniform
+probability laws on a nonempty band. The exceptional mass is charged
+once after taking the full union, not once per time or valuation total.
+\end{corollary}
+\begin{proof}
+The two event indicators agree on $\mathcal G$ and differ in absolute
+value by at most one on its complement. Integrate this pointwise
+inequality. For a measure supported on the band, the same proof can use
+$p(\text{band}\cap\mathcal G^c)$, which is equal to $p(\mathcal G^c)$.
+\end{proof}
+
+For the original A5 sub-bands, with the band-mass and assembled-test
+cap guards stated in Section~\ref{sec:Mazur-descent}, the genuine-band
+comparison is now connected by proved maps and event identities:
+\[
+ |p_\sigma(\mathcal A_E)-\text{common reference profile}|
+ \le p_\sigma(\mathcal G^c)
+      +\text{the original boundary error}
+      +\mathcal R_\sigma^\dagger .
+\]
+This inequality combines the actual-event identification here, the
+nominal boundary comparison, and the refined terminal descent.
+The band-measure estimates for $p_\sigma(\mathcal G^c)$ are proved
+in Section~\ref{sec:Mazur-band-fullgood} below, through an exact residue
+decoder and separate estimates for both sampling laws. Evaluation of
+the common reference profile remains a separate mathematical step.
+
+\subsection{Actual band laws and a maximal prefix bound}
+\label{sec:Mazur-band-fullgood}
+
+The good-prefix event is a property of an actual integer orbit. It is
+therefore necessary to transport the geometric valuation law to the
+integer sampling law, with a quantitative error. There is also a
+separate improvement in the geometric estimate: summing a tail over
+all times is unnecessary when the event asks whether a partial sum
+ever crosses one common threshold.
+
+The source comparison here is with Mazur~\cite{Mazur2026v2},
+\texttt{ND/Band/A5HarmonicResidue.lean},
+\texttt{A5HarmonicProp19.lean}, \texttt{A5HarmonicFullGood.lean},
+\texttt{A5BandCoverageFullGood.lean}, and
+\texttt{Tao/Probability/Geom2PrefixTypical.lean}, at the same pinned
+commit. Its strict-truncation mechanism is in
+\texttt{Tao/Syracuse/Prop19Laws.lean},
+\texttt{Prop19Truncation.lean}, and
+\texttt{TruncatedValuationTV.lean}.
+The underlying valuation approximation is Tao's
+Proposition~1.9~\cite{Tao2026v7}, source label \texttt{rach};
+the proof is in his Section~4, source lines 597--647.
+The following argument reconstructs the finite transport, then uses
+the exact geometric moment to sharpen this particular prefix estimate.
+It makes no priority claim for exponential stopping arguments.
+
+\paragraph{The two sampling laws on the same integers.}
+Let
+\[
+ I= \{N\in2\mathbb N+1:z\le N<U\},\qquad
+ D=\#I>0,\qquad H=\sum_{N\in I}\frac1N,\qquad z\ge1.
+\]
+The upper endpoint remains excluded, even when it is an odd integer.
+The uniform and harmonic laws are respectively
+\[
+ p_F(N)=D^{-1}\mathbf1_I(N),\qquad
+ p_H(N)=\frac{\mathbf1_I(N)}{NH}.
+\]
+On their common support the exact density ratio is
+$p_F(N)/p_H(N)=NH/D$, with inverse $D/(NH)$.
+These are distinct probability measures on the same carrier;
+the estimates below are proved separately for both.
+
+\begin{proposition}[exact band residue errors]
+\label{prop:Mazur-band-residues}
+Let $M\ge1$, $q=2^M$, and let $\nu_M$ be the uniform law on the
+$q/2$ odd residue classes modulo $q$. Let $\pi_M(N)=N\bmod q$.
+Then, with full $\ell^1$ distance,
+\begin{equation}
+ \|\pi_{M*}p_F-\nu_M\|_1\le\frac{q}{2D},\qquad
+ \|\pi_{M*}p_H-\nu_M\|_1\le\frac{q}{2\lceil z\rceil H}.
+ \label{eq:Mazur-band-residues}
+\end{equation}
+The estimates retain the actual $D,H$ and real band endpoints.
+\end{proposition}
+\begin{proof}
+Enumerate $I$ as $N_i=N_1+2(i-1)$, $1\le i\le D$.
+For an odd residue $b$, put $a=q/2$,
+$d_i=\mathbf1_{\{N_i\bmod q=b\}}-1/a$ and
+$F_j=\sum_{i=1}^j d_i$. The residue repeats once every $a$ indices.
+Writing $j=ka+r$, $0\le r<a$, proves $|F_j|\le1$,
+including $a=1$. In particular the flat atom error is at most $1/D$.
+Summing over the $a$ classes gives the first bound.
+
+For $w_i=1/N_i$, finite summation by parts is the exact identity
+\[
+ \sum_{i=1}^D d_iw_i
+ =F_Dw_D+\sum_{i=1}^{D-1}F_i(w_i-w_{i+1}).
+\]
+The weights decrease and are nonnegative. Hence the absolute value
+is at most $w_D+\sum_{i<D}(w_i-w_{i+1})=w_1
+\le1/\lceil z\rceil$. Divide by $H$ and sum over the same $a$
+classes. No asymptotic count or endpoint replacement has been used.
+\end{proof}
+
+\begin{proposition}[strict decoding and the single ideal overflow mass]
+\label{prop:Mazur-truncation-transport}
+Let $n,M\ge1$, let $p$ be any probability law on positive odd
+integers, and write $P_n$ for the law of its first $n$ actual valuations.
+Let $Q_n=\operatorname{Geom}(2)^n$, and set
+$\Delta_M=\|\pi_{M*}p-\nu_M\|_1$.
+Then
+\begin{equation}
+ \|P_n-Q_n\|_1\le\Delta_M+2\Theta(n,M),\qquad
+ \Theta(n,M)=2^{-(M-1)}
+       \sum_{j=0}^{n-1}\binom{M-1}{j}.
+ \label{eq:Mazur-truncation-transport}
+\end{equation}
+Consequently every set $A$ of length-$n$ positive words satisfies
+\begin{equation}
+ |P_n(A)-Q_n(A)|\le\frac{\Delta_M}{2}+\Theta(n,M).
+ \label{eq:Mazur-event-half}
+\end{equation}
+Terms outside the binomial support are zero.
+\end{proposition}
+\begin{proof}
+Let $V_n$ send an odd integer to its actual ordered valuation word.
+Let $\mathcal W_{n,M}$ be the finite set of such positive words with
+total $s<M$, and define $T_{n,M}$ on all positive length-$n$ words
+by retaining the word in $\mathcal W_{n,M}$ and sending every other
+word to one symbol $\bot$.
+
+For an accepted word $a$, Lemma~\ref{lem:Tao-Prop19-residue-fibre} gives its
+unique odd cylinder $u_a\bmod2^{s+1}$.
+As $s+1\le M$, membership is determined by a residue modulo $2^M$.
+Distinct accepted words have disjoint residue fibres: a common odd
+residue has a positive lift, which cannot have two actual valuation
+words. Define $d_{n,M}$ on the odd residues to output the accepted
+word whose cylinder contains the residue, or $\bot$ if there is none.
+This proves the commuting identity
+\[
+ d_{n,M}\circ\pi_M=T_{n,M}\circ V_n.
+\]
+The accepted fibre over $a$ has exactly $2^{M-s-1}$ residues,
+namely the lifts of $u_a$ modulo $2^M$. Its uniform probability is
+$2^{M-s-1}/2^{M-1}=2^{-s}$, exactly the geometric word probability.
+All remaining residues form the one overflow fibre. Thus
+$d_{n,M*}\nu_M=T_{n,M*}Q_n$.
+
+Pushforward contracts full $\ell^1$: group the absolutely summable
+differences in each fibre and apply the triangle inequality.
+It follows that $\|T_{n,M*}P_n-T_{n,M*}Q_n\|_1\le\Delta_M$.
+If $b_P,b_Q$ are the two overflow masses, the full untruncated
+distance is at most the accepted-atom distance plus $b_P+b_Q$.
+The truncated distance already contains $|b_P-b_Q|$, and
+\[
+ b_P+b_Q-|b_P-b_Q|=2\min(b_P,b_Q)\le2b_Q.
+\]
+This proves the first inequality with $b_Q=Q_n(s\ge M)$;
+no separate bound for the actual orbit's overflow was assumed.
+
+To evaluate $b_Q$, realize each geometric variable as the waiting
+time to the next success in independent fair Bernoulli trials.
+A run of $a_i-1$ failures followed by one success has probability
+$2^{-a_i}$; disjoint runs multiply to $2^{-s}$.
+The $n$th success occurs at time at least $M$ precisely when at most
+$n-1$ successes occur among the first $M-1$ trials. Counting those
+finite Bernoulli strings gives the displayed formula, also when
+$M\le n$ and that probability is one.
+
+Finally $P_n-Q_n$ has total mass zero. Its positive and negative
+masses are equal, each half its full $\ell^1$ norm. The mass on
+any event is between the negative of this number and this number.
+This proves \eqref{eq:Mazur-event-half} without changing the
+source's full-$\ell^1$ convention.
+\end{proof}
+
+\paragraph{One maximal estimate instead of a union over times.}
+Let $A_i$ be independent with $\mathbb P(A_i=a)=2^{-a}$,
+$a\ge1$, and write $X_k=\sum_{i=1}^k(A_i-2)$.
+Its exact one-step logarithmic moment is
+\[
+ h(t)=\log\mathbb E e^{t(A_i-2)}
+     =-t-\log(2-e^t),\qquad t<\log2.
+\]
+It has $h(0)=h'(0)=0$, $h''(t)>0$, and therefore $h(t)\ge0$.
+
+\begin{proposition}[maximal geometric tail with the exact rate]
+\label{prop:Mazur-maximal-tail}
+For $n\ge2$ and real $0<w<n$, define
+\[
+ I(v)=(1+v)\log(1+v)-(2+v)\log(1+v/2)
+       \quad(-1<v<\infty),
+\]
+\begin{equation}
+ \Psi(n,w)=e^{-nI(w/n)}+e^{-nI(-w/n)}.
+ \label{eq:Mazur-maximal-rate}
+\end{equation}
+Then
+\begin{equation}
+ \mathbb P\!\left(\max_{1\le k\le n}|X_k|\ge w\right)
+       \le\Psi(n,w).
+ \label{eq:Mazur-maximal-tail}
+\end{equation}
+There is no factor $n$ multiplying this estimate.
+Also, for every $n\ge1$,
+\begin{equation}
+ \Theta(n,3n)\le(27/32)^n.
+ \label{eq:Mazur-overflow-rate}
+\end{equation}
+\end{proposition}
+\begin{proof}
+For fixed $t<\log2$, $Z_k=\exp(tX_k-kh(t))$ has expectation
+one and satisfies
+$\mathbb E(Z_{k+1}\mid A_1,\ldots,A_k)=Z_k$.
+This follows directly from independence and the displayed moment.
+For $t>0$, stop at the first $k\le n$ with $X_k\ge w$, or at
+$n$ if no crossing occurs. Call that bounded time $\tau$.
+The identity
+\[
+ Z_{(k+1)\wedge\tau}-Z_{k\wedge\tau}
+   =\mathbf1_{\{\tau>k\}}(Z_{k+1}-Z_k)
+\]
+has zero expectation: the indicator depends only on the first $k$
+variables. Summing this finite identity proves $\mathbb E Z_\tau=1$.
+All its terms are integrable; for example
+$Z_\tau\le\sum_{k=0}^n Z_k$.
+On a crossing, $Z_\tau\ge e^{tw-nh(t)}$, since $h(t)\ge0$.
+Thus the upper maximum has probability at most $e^{nh(t)-tw}$.
+
+For the lower maximum apply the same argument at a negative
+parameter $t$, stopping when $X_k\le-w$. Its bound is
+$e^{nh(t)+tw}$. Writing $r=w/n$, choose respectively
+\[
+ t_+=\log\frac{2(1+r)}{2+r},\qquad
+ t_-=\log\frac{2(1-r)}{2-r}.
+\]
+Here $0<t_+<\log2$ and $t_-<0$, because $0<r<1$.
+Since
+\[
+ h'(t)=\frac{2(e^t-1)}{2-e^t},
+\]
+these parameters solve $h'(t_+)=r$ and $h'(t_-)=-r$.
+Substitution, with no discarded terms, gives
+$rt_+-h(t_+)=I(r)$ and $-rt_--h(t_-)=I(-r)$.
+The union of the two crossing events proves the result.
+
+For the overflow only the final total is needed.
+Exponential Markov at $t=\log(4/3)$ gives
+\[
+ Q_n(X_n\ge n)\le e^{-nt+nh(t)}
+  =\left(\frac{27}{32}\right)^n,
+ \qquad h(\log(4/3))=\log(9/8).
+\]
+The event is exactly the strict-decoder overflow $s\ge3n$.
+\end{proof}
+
+For comparison, using merely $h(\pm t)\le8t^2$ for $0\le t\le1/4$
+in the same stopped argument gives
+$2e^{-\min(w^2/(32n),w/8)}$, still without a union factor.
+The optimized rate above retains more of the exact geometric law.
+Its behavior near zero is explicit:
+\[
+ I(0)=I'(0)=0,\qquad I''(v)=\frac1{(1+v)(2+v)},\qquad
+ I(v)=v^2\int_0^1\frac{1-u}{(1+uv)(2+uv)}\,du.
+\]
+On $|v|\le1/2$ the integrand and its $v$-derivative are bounded,
+so $I(v)=v^2/4+O(|v|^3)$, with an absolute remainder constant.
+
+\begin{corollary}[full-prefix failure under both actual band laws]
+\label{cor:Mazur-band-fullgood}
+Use the unchanged schedules of
+Section~\ref{sec:Mazur-concentration-coverage}, and put $n=n_0$,
+$W=C\sqrt{n\log n}$ and $w=\lceil W\rceil$.
+For every fixed $C>0$, sufficiently large $B$ gives $1\le w<n$.
+For every nonempty band $I$ as above, let $\mathcal G$ retain the
+literal strict inequalities $|S_k-2k|<W$ for $0\le k\le n$.
+Then
+\begin{align}
+ p_H(\mathcal G^c)
+ &\le \Psi(n,w)+\frac{2^{3n-2}}{\lceil z\rceil H}
+                  +\Theta(n,3n), \label{eq:Mazur-harmonic-fullgood}\\
+ p_F(\mathcal G^c)
+ &\le \Psi(n,w)+\frac{2^{3n-2}}{D}
+                  +\Theta(n,3n). \label{eq:Mazur-flat-fullgood}
+\end{align}
+On the source's exact A5 sub-bands these imply, uniformly in the
+branch and valid band index,
+\begin{equation}
+ p_\sigma(\mathcal G^c)
+ \le\Psi(n,w)+B^{-701/1000}+(27/32)^n
+ \le(2+o_C(1))n^{-C^2/4},\qquad \sigma=H,F.
+ \label{eq:Mazur-band-fullgood-rate}
+\end{equation}
+The last expression is an asymptotic upper bound, not an asymptotic
+formula for the actual exceptional probability.
+\end{corollary}
+\begin{proof}
+Every deviation $S_k-2k$ is integral. Consequently
+$|S_k-2k|\ge W$ is exactly $|S_k-2k|\ge w$, including integral $W$.
+Equivalently it is strictly greater than the source radius
+$\lceil W\rceil-1$. The zero prefix is never bad when $W>0$.
+Thus $\mathcal G^c$ is the preimage under $V_n$ of the single
+maximal event in Proposition~\ref{prop:Mazur-maximal-tail}.
+Apply \eqref{eq:Mazur-event-half} at $M=3n$, with the two separate
+residue estimates \eqref{eq:Mazur-band-residues}. This proves both
+finite-band bounds.
+
+Here are the band constants, with their original endpoints retained.
+For an A5 branch $y=B^\alpha$ or $B^{\alpha^2}$,
+$\alpha=1001/1000$, put
+\[
+ b=(\alpha-1)\log y,\quad K=\lfloor b\rfloor,\quad
+ \beta=b/K,\quad z=y e^{j\beta},\quad U=z e^\beta,\quad 0\le j<K.
+\]
+Eventually $K\ge1$, $\beta\ge1$, $\beta\to1$, $z\ge B^\alpha$
+and $z\ge6$. In particular $U\ge ez$.
+The first odd point is less than $z+2$, and the successor of the
+last odd point is at least $U$. Comparing the decreasing function
+$1/t$ on each interval of length two gives
+\[
+ H\ge\frac12\log\frac{U}{z+2}
+ \ge\frac12\left(1-\frac2z\right)\ge\frac13\ge\frac14.
+\]
+Direct lattice counting gives
+$D>(U-z)/2-1\ge(e-1)z/2-1\ge z/2$ for $z\ge6$;
+for the last inequality $e>8/3$ follows from its first five
+Taylor terms. Since $n=\lfloor\log B/(10\log2)\rfloor$,
+\[
+ 2^{3n}\le B^{3/10},\qquad
+ \frac{2^{3n-2}}{\lceil z\rceil H}\le B^{-701/1000},\qquad
+ \frac{2^{3n-2}}D\le\frac12 B^{-701/1000}.
+\]
+Keep the exact denominators in the finite bounds even though the
+common upper bound uses the larger of these last two quantities.
+
+Finally $w=C\sqrt{n\log n}+O(1)$. The integral expression for $I$ gives
+\[
+ nI(\pm w/n)=\frac{C^2}{4}\log n
+   +O_C\!\left(\frac{(\log n)^{3/2}}{\sqrt n}\right)+o(1).
+\]
+Hence $\Psi(n,w)=(2+o_C(1))n^{-C^2/4}$.
+The remaining two terms are negligible relative to every fixed
+negative power of $n$: $n$ is comparable to $\log B$, and
+\[
+ (27/32)^n\le(32/27)B^{-\kappa},\qquad
+ \kappa=\frac{\log(32/27)}{10\log2}>0.
+\]
+All constants used the band envelopes, not its index or a target set.
+\end{proof}
+
+This replaces the source's positive-prefix union bound
+\[
+ 2n\exp\left[-\min\left(\frac{R^2}{32n},\frac R8\right)\right]
+       +4\,2^{-n/128},\qquad R=\lceil W\rceil-1,
+\]
+whose first term is $(2+o_C(1))n^{\,1-C^2/32}$.
+The improvement has three explicit causes: a maximum is controlled
+without summing over times; the exact geometric moment is retained;
+and an event costs half the full $\ell^1$ error.
+The uniform band is treated directly, so no factor $e^\beta$ from
+harmonic domination is needed. The new component estimate decays
+for every fixed $C>0$; this is not a change to the source's separate
+phase estimate or a claim of a stronger final natural-density theorem.
+
+For the original A5 bands, Corollary~\ref{cor:Mazur-coverage-mass}
+now bounds the genuine-passage/terminal-union discrepancy by the
+appropriate right-hand side of
+\eqref{eq:Mazur-harmonic-fullgood} or
+\eqref{eq:Mazur-flat-fullgood}. Combining with the earlier boundary
+comparison and $\mathcal R_\sigma^\dagger$ is therefore justified
+with this quantitative exceptional term. A convex combination of
+band laws retains their common bound because its weights sum to one;
+it does not multiply the error by the number of bands.
+The excluded upper endpoint of the full branch interval is not in
+that combination. Its own singleton mass is retained in
+Corollary~\ref{cor:Mazur-genuine-source}. The common profile is evaluated
+in Section~\ref{sec:Mazur-exterior-assembly}; the resulting actual passage
+comparison is Theorem~\ref{thm:Mazur-genuine-rate}.
+
+\begin{corollary}[an explicit prefix constant in the Allikvere window]
+\label{cor:Mazur-allikvere-prefix}
+Let $x\to\infty$, $L=\log x$, $\alpha=1001/1000$,
+$y=x^\alpha$ or $x^{\alpha^2}$, and
+$n=\lfloor L/(10\log2)\rfloor$.
+If $N$ is uniform on the positive odd integers in the
+\emph{closed} interval $[y,y^\alpha]$, then
+\begin{equation}
+ \mathbb P\left(\max_{0\le k\le n}|S_k(N)-2k|\ge L^{3/5}\right)
+ \le(2+o(1))\exp\left[-\frac{5\log2}{2}L^{1/5}\right].
+ \label{eq:Mazur-allikvere-prefix}
+\end{equation}
+The error is uniform in the two branches.
+\end{corollary}
+\begin{proof}
+Keep the closed upper endpoint by taking the equivalent half-open
+integer carrier $y\le N<\lfloor y^\alpha\rfloor+1$.
+Its odd count $D_y$ is comparable to $y^\alpha$.
+Propositions~\ref{prop:Mazur-band-residues}
+and~\ref{prop:Mazur-truncation-transport}, with $M=3n$, give event
+error at most $2^{3n-2}/D_y+\Theta(n,3n)$.
+Both terms decrease as a positive power of $x$.
+Apply Proposition~\ref{prop:Mazur-maximal-tail} at
+$w=\lceil L^{3/5}\rceil<n$. The integral rate identity gives
+\[
+ nI(\pm w/n)=\frac{w^2}{4n}+O(w^3/n^2)
+            =\frac{5\log2}{2}L^{1/5}+o(1).
+\]
+Here $w^3/n^2=O(L^{-1/5})$ and the floor/ceiling changes also
+contribute $o(1)$. Summing the two exponentials proves the result;
+the power errors in $x$ are negligible relative to this exponential.
+\end{proof}
+
+This supplies an explicit constant for the earlier uniform-input
+prefix bound. It does not replace the separate stronger power bound
+for the event that no passage occurs by $n_0$: those are different
+events, and their established estimates are both retained.
+
+\subsection{The common endpoint profile with exact band corrections}
+\label{sec:Mazur-common-profile}
+
+The common center is not obtained by identifying uniform and harmonic
+sampling. Their raw sums have different phase functions and different
+means. This section reconstructs the finite comparison before estimating
+the oscillatory sums. In particular, it keeps the shifted raw mass,
+the two band denominators and the exterior center visible.
+
+The source locators are Mazur~\cite{Mazur2026v2},
+\texttt{A5TwoProfileRawQ.lean}, \texttt{A5TwoProfilePhysicalA6.lean},
+\texttt{A5TwoProfileNormalizedA6.lean},
+\texttt{A5ReferencePhysicalSplit.lean},
+\texttt{A5ReferenceInteriorAggregate.lean}, and
+\texttt{A5ReferenceFullCenterRate.lean}, at the pinned commit already
+specified. The kernel is Tao's common term, represented in the package
+by \texttt{Tao/Section5/CommonZ.lean}. The identities below are finite,
+and do not presume the interior equidistribution or exterior tail estimates.
+
+\paragraph{Exact lattice corrections.}
+Keep the original odd band $I=[z,U)\cap(2\mathbb N+1)$,
+$z\ge1$, $U>z$, $D=\#I>0$, $H=\sum_I1/N$,
+and $\beta=\log(U/z)$. Define the signed discrepancies
+\[
+ \epsilon_D=D-\frac{U-z}{2},\qquad
+ \epsilon_H=H-\frac{\beta}{2}.
+\]
+They are not discarded by replacing the band with a continuous interval.
+
+\begin{proposition}[band discrepancies and retained denominator errors]
+\label{prop:Mazur-band-denominators}
+For the band just defined,
+\begin{equation}
+ |\epsilon_D|<1,\qquad |\epsilon_H|\le\frac1z.
+ \label{eq:Mazur-band-denominators}
+\end{equation}
+For $d=\log(4/3)>0$, put $a=2/d$.
+For any real raw values $R_H,R_F$, the following are exact:
+\begin{align}
+ \frac{R_H}{H}-a
+ &=\frac{R_H-\beta/d}{H}-\frac{2\epsilon_H}{dH},
+ \label{eq:Mazur-harmonic-denominator}\\
+ \frac zD R_F-a
+ &=\frac zD\left(R_F-\frac{e^\beta-1}{d}\right)
+       -\frac{2\epsilon_D}{dD}.
+ \label{eq:Mazur-flat-denominator}
+\end{align}
+Thus the absolute denominator charges are at most
+$2/(zdH)$ and strictly less than $2/(dD)$, respectively.
+If $z\ge6$ and $\beta\ge1$, then $H\ge1/3$ and $D>z/2$,
+so these charges are at most $6/(zd)$ and less than $4/(zd)$.
+\end{proposition}
+\begin{proof}
+For $z\le t\le U$, write
+\[
+ C(t)=\#\{N\text{ positive odd}:z\le N<t\},\qquad
+ \Delta(t)=C(t)-(t-z)/2 .
+\]
+For $b\ge a$, the exact count of integers in $[a,b)$ is
+$\lceil b\rceil-\lceil a\rceil$.
+Apply this at $a=(z-1)/2$, $b=(t-1)/2$.
+The two errors $\lceil u\rceil-u$ belong to $[0,1)$,
+so $|\Delta(t)|<1$ and the claimed bound for $\epsilon_D=\Delta(U)$
+follows, including integral odd endpoints.
+
+For each $N\in I$ the identity
+$1/N=1/U+\int_N^U t^{-2}\,dt$ gives, after a finite sum,
+\[
+ H=\frac D U+\int_z^U\frac{C(t)}{t^2}\,dt.
+\]
+The choices $N<t$ and $N\le t$ differ only at finitely many points
+and give the same ordinary integral. The continuous expression
+\[
+ \frac{U-z}{2U}+
+ \int_z^U\frac{t-z}{2t^2}\,dt=\frac12\log(U/z)
+\]
+is verified by integration. Subtracting proves the signed formula
+\[
+ \epsilon_H=\frac{\Delta(U)}U+
+                      \int_z^U\frac{\Delta(t)}{t^2}\,dt .
+\]
+Its absolute value is at most
+$1/U+\int_z^Ut^{-2}\,dt=1/z$.
+
+Equations \eqref{eq:Mazur-harmonic-denominator} and
+\eqref{eq:Mazur-flat-denominator} now follow by substitution and
+$U-z=z(e^\beta-1)$. Finally
+$H\ge\beta/2-1/z\ge1/3$ and
+$D>(e-1)z/2-1>z/2$ for $z\ge6$; for the last strict inequality
+$e>8/3$. All denominators are the original positive sums.
+\end{proof}
+
+Compared with the source estimates
+$|H-\beta/2|\le3/(2z)$, $1/H\le4$ and $z/D<3$,
+the displayed proof retains the exact signed errors and yields the
+bounds $|H-\beta/2|\le1/z$, $1/H\le3$ and $z/D<2$
+under the same $z\ge6,\beta\ge1$ conditions.
+In particular an absolute raw harmonic error $E_H$ costs
+$E_H/H+2/(zdH)\le3E_H+6/(zd)$, and an absolute raw flat
+error $E_F$ costs $(z/D)E_F+2/(dD)\le2E_F+4/(zd)$.
+The original coarse constants $4E_H+12/(zd)$ and
+$3E_F+6/(zd)$ are preserved in the source comparison, not silently
+substituted into its unreviewed consumers.
+
+\paragraph{The literal two phase functions.}
+Let $\gamma=\log_2 3$, $\delta=2-\gamma=d/\log2$, and suppose
+$\log2<\beta<2\log2$. These inequalities hold on the source A5
+bands for sufficiently large $B$.
+For $W>0$, $A=\log_2(z/M)$ and $\nu\ge1$, define
+\[
+ s_\nu=\lfloor A+\nu\gamma\rfloor+1,\quad
+ \theta_\nu=\{A+\nu\gamma\},\quad
+ b=2-\beta/\log2\in(0,1),
+\]
+and, for every integer $s$,
+\[
+ p_\nu(s)=
+ \begin{cases}\binom{s-1}{\nu-1}2^{-s},&s\ge\nu,\\0,&s<\nu.\end{cases}
+\]
+Retain the two distinct indicated atoms
+\[
+ q_0(\nu)=p_\nu(s_\nu)\mathbf1_{\{|s_\nu-2\nu|<W\}},\qquad
+ q_1(\nu)=p_\nu(s_\nu+1)\mathbf1_{\{|s_\nu+1-2\nu|<W\}}.
+\]
+The strict integer anchor is used even at integral phase.
+These formulas agree with the source's raw atoms at $A$ and $A+1$;
+for $\nu>0$, clipping a negative signed level to zero leaves its
+probability zero. The tube's finite upper cap removes no index:
+$|\lfloor A-\delta\nu\rfloor+1|<W$ implies
+$\nu\le(A+\lceil W\rceil)/\delta$.
+Let $V$ be the unchanged positive physical time carrier
+$\{\nu>0:\nu+h\in J\}$.
+
+\begin{proposition}[two distinct raw profiles and their phase means]
+\label{prop:Mazur-profile-phase}
+For $\theta\in[0,1)$, set
+\[
+ f_H(\theta)=1+\mathbf1_{\{\theta>b\}},\qquad
+ f_F(\theta)=2^{1-\theta}
+                 +\mathbf1_{\{\theta>b\}}2^{2-\theta}.
+\]
+The two raw sums on $V$ are exactly
+\begin{align}
+ R_H(M)&=\sum_{\nu\in V}
+        \big(q_0(\nu)+\mathbf1_{\{\theta_\nu>b\}}q_1(\nu)\big),\\
+ R_F(M)&=\sum_{\nu\in V}
+        \big(2^{1-\theta_\nu}q_0(\nu)
+          +\mathbf1_{\{\theta_\nu>b\}}2^{2-\theta_\nu}q_1(\nu)\big).
+ \label{eq:Mazur-literal-profiles}
+\end{align}
+Equivalently,
+\begin{align}
+ R_H(M)&=\sum_Vq_0(\nu)f_H(\theta_\nu)
+       +\sum_V\mathbf1_{\{\theta_\nu>b\}}(q_1(\nu)-q_0(\nu)),\\
+ R_F(M)&=\sum_Vq_0(\nu)f_F(\theta_\nu)
+       +\sum_V\mathbf1_{\{\theta_\nu>b\}}2^{2-\theta_\nu}
+                                      (q_1(\nu)-q_0(\nu)).
+ \label{eq:Mazur-neighbour-residual}
+\end{align}
+Their ordinary integrals are
+\begin{equation}
+ \int_0^1 f_H(t)\,dt=\frac{\beta}{\log2},\qquad
+ \int_0^1 f_F(t)\,dt=\frac{e^\beta-1}{\log2}.
+ \label{eq:Mazur-phase-means}
+\end{equation}
+The gated upper-cell weight is strictly below $e^\beta$;
+at $\theta=b$ the upper cell is absent.
+\end{proposition}
+\begin{proof}
+The base position $(1-\theta)\log2$ belongs to $(0,\beta)$
+throughout $[0,1)$. The successor position belongs to that
+interval exactly when $(2-\theta)\log2<\beta$, or $\theta>b$.
+This proves the first two formulas directly from
+Proposition~\ref{prop:Mazur-two-rows}; the flat exponential is
+attached once to its own cell. Add and subtract the gated $q_0$
+term to obtain the next pair. No equality of the two tube supports
+or their masses is asserted.
+
+The harmonic integral is $1+(1-b)=\beta/\log2$.
+The two flat integrals are
+\[
+ \int_0^1 2^{1-t}\,dt=\frac1{\log2},\qquad
+ \int_b^1 2^{2-t}\,dt=\frac{2^{2-b}-2}{\log2}.
+\]
+Since $2^{2-b}=e^\beta$, their sum is as claimed.
+The strict gate also gives $2^{2-\theta}<e^\beta$ when active.
+Its endpoint exclusion changes neither integral but remains
+essential to the finite sums.
+\end{proof}
+
+This explains the two raw centers: multiplying the respective means
+by the source's raw-mass center $1/\delta$ gives
+$\beta/d$ and $(e^\beta-1)/d$. It does not establish that an
+individual raw sum equals its center. Both the weighted rotation error
+and the signed neighbour correction in
+\eqref{eq:Mazur-neighbour-residual} must still be estimated on their
+actual supports.
+
+\paragraph{The common kernel and the landing map.}
+For a fixed depth $m$, retain
+\[
+ K_m(M)=\frac{3^m}{M}p_m(M\bmod3^m)\quad(M>0),
+\]
+where $p_m$ is the source's Syracuse offset probability law.
+Let $\mathcal E_*$ be the original positive odd endpoint window
+with $\tau_B(M)=h$, without imposing a landing target. Its lower
+and upper integer endpoints remain
+$\lceil(4/3)^hB e^{-(\log B)^{7/10}}\rceil$ and
+$\lfloor(4/3)^hB e^{(\log B)^{7/10}}\rfloor$.
+Define $\lambda(M)=T^hM\in[1,B]\cap(2\mathbb N+1)$.
+Then the original $\mathcal E(E)$ is
+$\mathcal E_*\cap\lambda^{-1}(E)$.
+
+The weighted finite endpoint measure $\mu_m=\sum_{\mathcal E_*}
+K_m(M)\delta_M$ therefore has the exact landing pushforward
+\[
+ Z(E)=\frac2d\,\lambda_*\mu_m(E)
+     =\frac2d\sum_{M\in\mathcal E(E)}K_m(M).
+\]
+This is the source common profile. It has no band or sampling-law
+parameter. It is not declared a probability measure: its total mass
+has not been set to one. The landing map can have multiple endpoints
+in a fibre, and that fibre has precisely the sum of their weights.
+The map from endpoint measures to landing measures is linear and
+positive; it loses the distribution within each landing fibre.
+
+\begin{proposition}[signed common-center identity on the actual carrier]
+\label{prop:Mazur-profile-residual}
+For $S=\mathcal E(E)$, put $Z_0(S)=\sum_SK_m(M)$ and
+\[
+ r_H(M)=R_H(M)-\beta/d,\qquad
+ r_F(M)=R_F(M)-(e^\beta-1)/d.
+\]
+The actual reference profiles
+$P_H(S)=\sum_SK_m(M)R_H(M)/H$ and
+$P_F(S)=\sum_SK_m(M)(z/D)R_F(M)$ satisfy
+\begin{align}
+ P_H(S)-aZ_0(S)
+ &=\frac1H\sum_SK_m(M)r_H(M)
+                -\frac{2\epsilon_H}{dH}Z_0(S),\\
+ P_F(S)-aZ_0(S)
+ &=\frac zD\sum_SK_m(M)r_F(M)
+                -\frac{2\epsilon_D}{dD}Z_0(S).
+ \label{eq:Mazur-common-signed}
+\end{align}
+These formulas retain signs before the absolute-value estimate.
+They hold for the empty target as well. In particular, the
+denominator charge occurs once against $Z_0(S)$, not once per
+endpoint or per time.
+\end{proposition}
+\begin{proof}
+Substitute \eqref{eq:Mazur-harmonic-denominator} or
+\eqref{eq:Mazur-flat-denominator} at every endpoint, multiply by
+$K_m(M)$, and sum. The band discrepancies are independent of $M$.
+The kernel is nonnegative because $M>0$ and $p_m$ is a probability
+mass function, but positivity is not needed for the identities.
+It gives the corresponding absolute error bounds by applying the
+triangle inequality to these finite sums.
+\end{proof}
+
+\paragraph{An explicit all-endpoint envelope.}
+For the same finite positive time set $V$, define
+\[
+ G_V=\sum_{\nu\in V}
+         \frac{\binom{2\nu-2}{\nu-1}}{2^{2\nu-2}},\qquad
+ L_H=\frac{G_V}{H},\qquad L_F=\frac{z e^\beta G_V}{D}.
+\]
+These quantities depend on the actual time carrier and band,
+but not on the endpoint $M$.
+
+\begin{proposition}[finite envelope and sharp exterior centering]
+\label{prop:Mazur-profile-envelope}
+For every positive endpoint $M$,
+\[
+ 0\le R_H(M)/H\le L_H,\qquad
+ 0\le(z/D)R_F(M)\le L_F,\qquad
+ G_V\le\sum_{\nu\in V}\nu^{-1/2}.
+\]
+Split the original endpoint set at its closed interior condition
+\[
+ S_{\rm in}=\{M\in S:
+  |\log M-\log B-hd|\le4W/25\},\qquad
+ S_{\rm out}=S\setminus S_{\rm in}.
+\]
+For either $\sigma=H,F$, write $P_{\sigma,\rm out}$ for its
+profile restricted to $S_{\rm out}$ and
+$Z_{\rm out}=\sum_{S_{\rm out}}K_m(M)$. Then
+\begin{equation}
+ |P_{\sigma,\rm out}-aZ_{\rm out}|
+ \le\max\{a,L_\sigma-a\}\,Z_{\rm out}.
+ \label{eq:Mazur-sharp-exterior}
+\end{equation}
+The constant is sharp given only $0\le P_{\sigma,\rm out}
+\le L_\sigma Z_{\rm out}$.
+For the full profile one may combine
+\eqref{eq:Mazur-common-signed} on $S_{\rm in}$ with this
+exterior term, retaining the exact denominators and
+$Z_0(S_{\rm in})$ in the interior charge.
+\end{proposition}
+\begin{proof}
+The adjacent endpoint masses obey, for $s\ge\nu$,
+\[
+ \frac{p_\nu(s+1)}{p_\nu(s)}
+      =\frac{s}{2(s+1-\nu)}.
+\]
+For $\nu\ge2$ this ratio is at least one exactly when
+$s\le2\nu-2$. The two maximal atoms are at $2\nu-2$ and
+$2\nu-1$, with common mass
+\[
+ b_\nu=\frac{\binom{2\nu-2}{\nu-1}}{2^{2\nu-1}}.
+\]
+For $\nu=1$, $p_1(s)=2^{-s}$ has maximum $1/2=b_1$
+at $s=1$. Thus each of the two indicated raw atoms is at most
+$b_\nu$. Each active flat weight is less than $e^\beta$.
+Summing gives $R_H\le2\sum_Vb_\nu=G_V$ and
+$R_F\le e^\beta G_V$, without replacing an exterior physical
+window by an intrinsic tube.
+
+For completeness, let $c_k=\binom{2k}{k}/4^k$.
+The recurrence $c_{k+1}/c_k=(2k+1)/(2k+2)$ and
+\[
+ 4(k+1)^3-(2k+1)^2(k+2)=3k+2>0
+\]
+prove by induction from $c_0=1$ that
+$c_k\le1/\sqrt{k+1}$. This proves the bound for $G_V$.
+
+Nonnegative kernel weighting gives
+$0\le P_{\sigma,\rm out}\le L_\sigma Z_{\rm out}$.
+If $Z_{\rm out}=0$ the desired statement is immediate.
+Otherwise $P_{\sigma,\rm out}/Z_{\rm out}$ lies in $[0,L_\sigma]$.
+The largest distance of this interval from $a>0$ is
+$\max\{a,|L_\sigma-a|\}=\max\{a,L_\sigma-a\}$.
+Both endpoints of the interval realize the corresponding distances,
+which proves sharpness at this information level.
+Finally $S_{\rm in}$ and $S_{\rm out}$ are a disjoint partition,
+including equality in the interior, so the two signed errors add
+exactly before applying the triangle inequality.
+\end{proof}
+
+The source full-center argument instead uses a coarser common
+envelope and the sum of that envelope with $a$. The positive
+interval argument above retains the best coefficient supplied by
+an envelope; it does not assert sharpness for actual Collatz orbits.
+The finite identities explain the common center and carry the exact
+weights into its next analytic stage. They do not yet replace the
+source's interior weighted-rotation estimate or its exterior
+coefficient-tail argument, and do not establish a new final
+natural-density exponent.
+
+\subsection{The shifted tube and the weighted phase sum}
+\label{sec:Mazur-weighted-phase}
+
+The remaining phase calculation has two distinct sources of error.
+First, moving the integer level from $s_\nu$ to $s_\nu+1$ changes
+both the mass and the set of permitted times. Second, the phases in
+the original, unequally weighted sum need not have their integral
+distribution. We give finite formulas for each effect. These formulas
+retain the original masses; no probability normalization is imposed.
+
+The source arguments are Mazur~\cite{Mazur2026v2},
+\texttt{ND/Band/A5ShiftedRawComparison.lean},
+\texttt{A5Regularity.lean}, and
+\texttt{ND/Discrepancy/A5Padding.lean},
+\texttt{A5PaddedProfile.lean}, \texttt{A5TwoProfileTail.lean}.
+Their endpoint discrepancy majorant is defined in
+\texttt{PhaseToDbar.lean}. All refer to the pinned source commit.
+The recurrences and padding mechanism below reconstruct those
+arguments, with exact finite terms retained.
+
+\paragraph{The two supports.}
+Keep $\gamma=\log_2 3$, $\delta=2-\gamma$, and $p_\nu,s_\nu,q_0,q_1$
+from Section~\ref{sec:Mazur-common-profile}. Put
+\[
+ R=\lceil W\rceil-1,\qquad
+ d_\nu=s_\nu-2\nu=\lfloor A-\delta\nu\rfloor+1 .
+\]
+Thus $R$ is a nonnegative integer. Define finite sets of positive integers
+\[
+ I_0=\{\nu:-R\le d_\nu\le R\},\qquad
+ I_1=\{\nu:-R\le d_\nu+1\le R\}.
+\]
+These are the indicator supports, even where an endpoint mass vanishes.
+
+\begin{proposition}[exact support change and signed shift]
+\label{prop:Mazur-shift-support}
+The common part, lost part and gained part are respectively
+\[
+ I_c=\{\nu:-R\le d_\nu\le R-1\},\quad
+ I_-=\{\nu:d_\nu=R\},\quad I_+=\{\nu:d_\nu=-R-1\}.
+\]
+For every integer $r$,
+\begin{equation}
+ \{\nu\ge1:d_\nu=r\}
+ =\mathbb Z_{\ge1}\cap
+       \left(\frac{A-r}{\delta},\frac{A-r+1}{\delta}\right].
+ \label{eq:Mazur-displacement-fibre}
+\end{equation}
+In particular $\#I_-,\#I_+\le3$. Suppose $I_0\cup I_1$ is nonempty
+and its least element $\ell$ satisfies $\ell>R+1$. For every real
+function $g$ on this union,
+\begin{align}
+ \sum_\nu g_\nu(q_1(\nu)-q_0(\nu))
+ &=-\sum_{\nu\in I_c}g_\nu q_0(\nu)
+       \frac{d_\nu+2}{2(\nu+d_\nu+1)}
+       -\sum_{\nu\in I_-}g_\nu q_0(\nu)
+       +\sum_{\nu\in I_+}g_\nu q_1(\nu).
+ \label{eq:Mazur-shift-signed}
+\end{align}
+Define the exact nonnegative quantity
+\[
+ \mathcal E=
+ \sum_{I_c}q_0(\nu)\frac{|d_\nu+2|}{2(\nu+d_\nu+1)}
+       +\sum_{I_-}q_0(\nu)+\sum_{I_+}q_1(\nu).
+\]
+It equals $\sum_\nu|q_1(\nu)-q_0(\nu)|$. For $R\ge1$, put
+\[
+ c_R(\ell)=\max\left\{
+ \frac{(R-2)_+}{2(\ell-R+1)},
+ \frac{R+1}{2(\ell+R)}\right\};
+ \qquad c_0(\ell)=0 .
+\]
+Writing $Z=\sum_{I_0}q_0(\nu)$, we have the finite bound
+\begin{equation}
+ \mathcal E\le c_R(\ell)Z+
+       \sum_{I_-}q_0(\nu)+\sum_{I_+}q_1(\nu)
+       \le c_R(\ell)Z+\frac3{\sqrt\ell}.
+ \label{eq:Mazur-shift-envelope}
+\end{equation}
+\end{proposition}
+\begin{proof}
+For an integer $d$, $|d|<W$ is equivalent to $-R\le d\le R$.
+Intersection and set subtraction give the three displayed supports.
+The floor inequalities $r-1\le A-\delta\nu<r$ give
+\eqref{eq:Mazur-displacement-fibre}, with its strict left endpoint.
+The inequalities $1/3<\delta<1$ follow from
+$(4/3)^3>2$ and $1<4/3<2$. Hence the interval length $1/\delta$
+is less than three and cannot contain four integers.
+
+On $I_c$, $s_\nu\ge\nu$ and the adjacent binomial ratio gives
+\[
+ \frac{q_1(\nu)}{q_0(\nu)}-1
+ =\frac{2\nu+d_\nu}{2(\nu+d_\nu+1)}-1
+ =-\frac{d_\nu+2}{2(\nu+d_\nu+1)} .
+\]
+Our hypothesis on $\ell$ makes these denominators and both masses
+positive. On the other two parts, precisely one indicator is zero.
+This proves the signed identity and the exact expression for
+$\mathcal E$. If $R=0$, the common part is empty.
+Otherwise the function $|d+2|/[2(\nu+d+1)]$, for
+$-R\le d\le R-1$, decreases up to $d=-2$ and increases thereafter:
+the derivative of $(d+2)/(\nu+d+1)$ is
+$(\nu-1)/(\nu+d+1)^2>0$. Its maximum is therefore bounded by the
+two endpoint expressions in $c_R(\nu)$, each nonincreasing in $\nu$.
+Finally Proposition~\ref{prop:Mazur-profile-envelope} proves
+$p_\nu(s)\le1/(2\sqrt\nu)$ for every integer $s$.
+There are at most six boundary indices, proving the last bound.
+The exact boundary sums, rather than this ceiling, remain available.
+\end{proof}
+
+For the harmonic gate take $g_\nu=\mathbf1_{\{\theta_\nu>b\}}$;
+for the flat gate take
+$g_\nu=\mathbf1_{\{\theta_\nu>b\}}2^{2-\theta_\nu}$.
+Their absolute corrections are at most $\mathcal E$ and
+$e^\beta\mathcal E$, respectively. The signed expression
+\eqref{eq:Mazur-shift-signed} retains cancellation, including the
+zero common-part correction at $d_\nu=-2$.
+
+\paragraph{Variation along the original time coordinate.}
+Assume $I_0$ is nonempty, write $l=\min I_0$, $h=\max I_0$,
+and suppose $l>R$. The floor $d_\nu$ decreases by zero or one at
+each step, since $0<\delta<1$. Thus $I_0=[l,h]\cap\mathbb Z$.
+Write $q_\nu=q_0(\nu)$, $Z=\sum_{l}^{h}q_\nu$ and
+\[
+ \mathcal V=q_l+q_h+\sum_{\nu=l}^{h-1}|q_{\nu+1}-q_\nu|.
+\]
+Both boundary terms occur, also when $l=h$.
+
+\begin{proposition}[raw recurrences and full variation]
+\label{prop:Mazur-raw-variation}
+For $l\le\nu<h$, $s_{\nu+1}-s_\nu$ is one or two, and
+\begin{equation}
+ \frac{q_{\nu+1}}{q_\nu}-1=
+ \begin{cases}
+  d_\nu/(2\nu),&s_{\nu+1}=s_\nu+1,\\[2mm]
+  (d_\nu^2+d_\nu-2\nu)/(4\nu(\nu+d_\nu+1)),
+       &s_{\nu+1}=s_\nu+2 .
+ \end{cases}
+ \label{eq:Mazur-time-ratios}
+\end{equation}
+In particular, with
+\[
+ \eta(l,R)=\max\left\{\frac R{2l},
+       \frac{R^2+R+2l}{4l(l-R+1)}\right\},
+\]
+one has
+\begin{equation}
+ \mathcal V\le q_l+q_h+\eta(l,R)Z
+ \le\frac1{2\sqrt l}+\frac1{2\sqrt h}+\eta(l,R)Z .
+ \label{eq:Mazur-raw-variation}
+\end{equation}
+Under the explicit additional scalar guards
+\[
+ W>1,\quad W\le l/8,\quad Z\ge1/32,\quad
+ W\ge(37/20)\sqrt l ,
+\]
+the same raw variation satisfies $\mathcal V\le20ZW/l$.
+\end{proposition}
+\begin{proof}
+Consecutive levels rise by one or two because $1<\gamma<2$.
+Cancelling factorials in the two cases gives ratios
+$s_\nu/(2\nu)$ and
+$s_\nu(s_\nu+1)/[4\nu(s_\nu+1-\nu)]$, respectively.
+Substitution of $s_\nu=2\nu+d_\nu$ proves
+\eqref{eq:Mazur-time-ratios}.
+The first absolute defect is at most $R/(2l)$.
+The second is at most
+\[
+ \frac{R^2+R}{4\nu(\nu-R+1)}
+       +\frac1{2(\nu-R+1)}\le
+ \frac{R^2+R+2l}{4l(l-R+1)}.
+\]
+Multiplication by $q_\nu$ and summation proves the first bound;
+the atom ceiling proves the second.
+
+For the last statement it is enough to retain the source's
+coarser bound $2W/\nu$ on each relative defect.
+Here is a direct check. The first defect is less than $W/(2\nu)$.
+For the second, $|d_\nu|<W\le\nu/8$, $\nu>8$, and $W>1$
+give
+\[
+ |d_\nu^2+d_\nu-2\nu|
+ \le W^2+W+2\nu\le(9/4)W\nu,\qquad
+ 4\nu(\nu+d_\nu+1)\ge(7/2)\nu^2 .
+\]
+The ratio is therefore at most $(9/14)W/\nu<2W/\nu$.
+The internal variation is at most $2WZ/l$.
+The two endpoint masses sum to at most $1/\sqrt l$,
+which is at most $32Z/\sqrt l\le(640/37)ZW/l<18ZW/l$.
+Adding proves the constant 20, without replacing $Z$ by one.
+\end{proof}
+
+\paragraph{An exact padding map and its error formula.}
+Put $s=h-l+1$ and $u_k=q_{l+k}$ for $0\le k<s$.
+For any integer $P\ge1$, pad on the left by $P$ zero entries:
+\[
+ \omega_j=0\ (0\le j<P),\qquad
+ \omega_{P+k}=u_k\ (0\le k<s),\qquad
+ \phi'=A+(l-P)\gamma\pmod1 .
+\]
+The map $\mathbb R^s\to\mathbb R^{P+s}$ so defined is linear,
+injective, and preserves the sum and the $\ell^1$ norm.
+Its inverse on its image discards the zero head.
+The circle translation is invertible as well. In particular,
+\[
+ \{\phi'+(P+k)\gamma\}=\{A+(l+k)\gamma\}.
+\]
+Negative $l-P$ causes no loss: this is an integer circle translation,
+not truncated subtraction of natural numbers.
+
+\begin{proposition}[weighted phase error with both endpoints retained]
+\label{prop:Mazur-raw-abel}
+For $\sigma=H,F$, let $\mu_\sigma=\int_0^1f_\sigma$ and define
+\[
+ S_m^\sigma=\sum_{j=0}^{m-1}
+       \big(f_\sigma(\{\phi'+j\gamma\})-\mu_\sigma\big).
+\]
+The exact weighted error is
+\begin{align}
+ \sum_{\nu=l}^h q_\nu f_\sigma(\theta_\nu)-\mu_\sigma Z
+ =u_{s-1}S_{P+s}^\sigma-u_0S_P^\sigma
+       +\sum_{k=0}^{s-2}(u_k-u_{k+1})S_{P+k+1}^\sigma .
+ \label{eq:Mazur-raw-abel}
+\end{align}
+Define the actual weak endpoint discrepancies
+\[
+ D_m=\sup_{0\le t\le1}
+ \left|\frac1m\#\{0\le j<m:\{\phi'+j\gamma\}\le t\}-t\right|,
+ \qquad D_*=\max_{P\le m\le P+s}D_m ,
+\]
+and the exact Abel coefficient
+\[
+ \mathcal B_P=P|u_0|+(P+s)|u_{s-1}|
+       +\sum_{k=0}^{s-2}(P+k+1)|u_k-u_{k+1}|.
+\]
+Then
+\begin{equation}
+ \left|\sum_{\nu=l}^h q_\nu f_\sigma(\theta_\nu)-\mu_\sigma Z\right|
+ \le C_\sigma D_*\mathcal B_P,\qquad
+ C_H=1,\quad C_F=2e^\beta-1,\qquad
+ \mathcal B_P\le(P+s)\mathcal V .
+ \label{eq:Mazur-raw-abel-bound}
+\end{equation}
+All quantities are finite and defined from the original phase orbit.
+\end{proposition}
+\begin{proof}
+Write each centered summand as $S_{j+1}^\sigma-S_j^\sigma$,
+multiply by $\omega_j$, and telescope. Only the jump at $P$,
+the internal differences and the terminal term survive, giving
+\eqref{eq:Mazur-raw-abel}. This also proves the identity for $s=1$.
+
+Let $E_m(t)=\#\{j<m:\{\phi'+j\gamma\}\le t\}-mt$.
+For $f_H$, the strict upper gate gives $S_m^H=-E_m(b)$.
+For $f_F$, the jump immediately to the right of $b$ has size $e^\beta$.
+On the two open pieces its derivative is $-\log2\,f_F(t)$.
+Integrating the identity
+$f_F(x)=f_F(1)-\int_x^1 f_F'(t)\,dt
+-e^\beta\mathbf1_{\{x\le b\}}$ for $0\le x<1$
+and then summing it at the finite sample points yields
+\[
+ S_m^F=-\int_0^1 E_m(t)f_F'(t)\,dt-e^\beta E_m(b).
+\]
+Here $f_F(1)$ denotes its left limit, namely $3$.
+The total integral of $|f_F'|$ is
+$(2-e^\beta/2)+(3e^\beta/2-3)=e^\beta-1$.
+Thus $|S_m^\sigma|\le C_\sigma mD_m$, with the weak
+endpoint convention accounting exactly for a sample at $b$.
+Inserting these bounds into the exact identity proves
+\eqref{eq:Mazur-raw-abel-bound}.
+Each length coefficient in $\mathcal B_P$ is at most $P+s$,
+which proves its bound by the full variation.
+\end{proof}
+
+This calculation explains a constant already available inside the
+source. For its equal padding $P=s$, a nonincreasing uniform
+endpoint majorant $D(m)$ gives $D_*\le D(s)$.
+Its proved constant-20 variation estimate therefore gives
+$40\,ZsW D(s)/l$ for the harmonic error, and
+$(2e^\beta-1)$ times this for the flat error.
+The later source adapter instead relaxes 20 to 32 and consequently
+uses 64. This is a direct consequence of its stronger lemma, not
+a new equidistribution theorem. The source uses
+$D(m)=\min\{1,(6+2/(\pi c))m^{-1/\kappa}\}$ under its
+specified Diophantine input. The finite proof above uses the
+actual $D_m$ and does not certify that analytic input by computation.
+
+For the full intrinsic two-cell sums $\mathcal R_H,\mathcal R_F$
+over $I_0\cup I_1$, the exact decomposition now reads
+\[
+ \mathcal R_\sigma-\mu_\sigma/\delta
+ =\left(\sum_{I_0}q_0f_\sigma-\mu_\sigma Z\right)
+       +\sum_{I_0\cup I_1}g_\nu^\sigma(q_1-q_0)
+       +\mu_\sigma(Z-1/\delta).
+\]
+Consequently the three respective absolute charges are
+$C_\sigma D_*\mathcal B_P$,
+$\mathcal E$ or $e^\beta\mathcal E$,
+and $\mu_\sigma|Z-1/\delta|$.
+The raw-mass error is still present. These intrinsic sums equal
+the original physical sums only when their two supports lie in
+the physical time window. For an arbitrary physical window, insert
+its indicator into every displayed finite sum; neither missing
+times nor their weights can be dropped. The source's interior
+containment, raw-mass asymptotic, and exterior coefficient tail
+remain separate parts of the analytic reconstruction.
+
+\subsection{Raw mass, Gaussian coordinates, and physical interior profiles}
+\label{sec:Mazur-mass-interior}
+
+The total weight in the tube is not one. Its limit is $1/\delta$,
+and this factor is essential to both raw phase centers. We now prove
+the mass estimate with explicit finite errors and then evaluate the
+original physical sums. This connects Mazur's A6 calculation to the
+Gaussian envelope in the Gaussian-envelope argument in Section~\ref{subsec:Allikvere-phase-average}; the envelope here
+is exactly half of that earlier function. The truncation scales differ,
+so their tail estimates must not be identified.
+
+The source comparison is with Mazur~\cite{Mazur2026v2},
+\texttt{ND/Band/A6PhysicalRate.lean},
+\texttt{A6PhysicalInteriorRate.lean}, \texttt{A5Physical.lean},
+and \texttt{ND/Discrepancy/A5TwoProfilePhysicalA6.lean}, at the pinned
+commit. The factorial estimate used below is Robbins's original
+formula~\cite[(1)--(2), p.~26]{Robbins1955}, not an asymptotic formula
+without its remainder.
+
+\begin{proposition}[an exact atom formula and a finite logarithmic error]
+\label{prop:Mazur-atom-gaussian}
+For integers $\nu\ge1$, $k$ with $|k|\le\nu/2$, put $t=k/\nu$ and
+\[
+ I(t)=(1+t)\log(1+t)-(2+t)\log(1+t/2).
+\]
+Let $r_n$ be defined by
+$n!=\sqrt{2\pi n}(n/e)^n e^{r_n}$. Then
+\begin{equation}
+ p_\nu(2\nu+k)=\frac{e^{-\nu I(t)+r_{2\nu+k}-r_\nu-r_{\nu+k}}}
+ {2\sqrt{\pi\nu}\sqrt{(1+t/2)(1+t)}}.
+ \label{eq:Mazur-exact-atom}
+\end{equation}
+For $G_\nu(k)=(2\sqrt{\pi\nu})^{-1}e^{-k^2/(4\nu)}$,
+\begin{equation}
+ \left|\log\frac{p_\nu(2\nu+k)}{G_\nu(k)}\right|
+ \le\frac{4|k|}{3\nu}+\frac{16|k|^3}{27\nu^2}+\frac1{4\nu}.
+ \label{eq:Mazur-atom-log-error}
+\end{equation}
+Now retain the strict tube $I_0$, $R=\lceil W\rceil-1$,
+$d_\nu=\lfloor A-\delta\nu\rfloor+1$, and $l=\min I_0$.
+Suppose $I_0$ is nonempty and $W\le l/2$. Put $\xi=A/\delta$ and
+\[
+ G_\xi(u)=\frac1{2\sqrt{\pi u}}
+    \exp\!\left(-\frac{\delta^2(u-\xi)^2}{4u}\right)\quad(u>0),
+ \qquad
+ \varepsilon=\frac{11W}{6l}+\frac{16W^3}{27l^2}+\frac1{2l}.
+\]
+For every $\nu\in I_0$, $q_0(\nu)>0$ and
+\begin{equation}
+ e^{-\varepsilon}G_\xi(\nu)\le q_0(\nu)
+                  \le e^\varepsilon G_\xi(\nu).
+ \label{eq:Mazur-rounded-gaussian}
+\end{equation}
+The exact rounding term in its logarithm is
+$-(2d_\nu e_\nu-e_\nu^2)/(4\nu)$, where
+$e_\nu=1-\{A-\delta\nu\}\in(0,1]$.
+\end{proposition}
+\begin{proof}
+Set $s=2\nu+k$ and $m=\nu+k\ge\nu/2>0$. The exact identity
+$p_\nu(s)=(\nu/s)\binom{s}{\nu}2^{-s}$, followed by Robbins's
+factorial formula at $s,\nu,m$, gives
+\eqref{eq:Mazur-exact-atom}. In particular the factor $\nu/s$
+is not removed. Robbins proves
+$1/(12n+1)<r_n<1/(12n)$.
+Since $s\ge\nu+1$,
+$r_s<1/(12s)<1/(12\nu+1)<r_\nu$. Thus
+\[
+ -\frac1{4\nu}<-(r_\nu+r_m)<r_s-r_\nu-r_m<0.
+\]
+On $[-1/2,1/2]$ the derivative of
+$-\tfrac12\log(1+t/2)-\tfrac12\log(1+t)$ has absolute value
+at most $1/3+1=4/3$.
+Also $I(0)=I'(0)=0$, $I''(0)=1/2$, and
+\[
+ I''(t)=\frac1{(1+t)(2+t)},\qquad
+ |I'''(t)|=\frac1{(1+t)^2}-\frac1{(2+t)^2}\le\frac{32}{9}.
+\]
+The last expression decreases with $t$. Taylor's integral remainder
+therefore gives $|I(t)-t^2/4|\le16|t|^3/27$.
+Taking logarithms in the exact identity proves the first bound.
+This is the same rate function $I$ used in
+Proposition~\ref{prop:Mazur-maximal-tail}, now in a local atom formula.
+
+For the tube, $|d_\nu|<W\le\nu/2$ and
+$d_\nu=A-\delta\nu+e_\nu$. Hence
+$d_\nu^2-(A-\delta\nu)^2=2d_\nu e_\nu-e_\nu^2$,
+whose absolute value is at most $2W+1$.
+Adding this divided by $4\nu$ to
+\eqref{eq:Mazur-atom-log-error}, and replacing $\nu$ by its lower
+bound $l$, gives precisely $\varepsilon$. At integral phase
+$e_\nu=1$, not zero; the same identity and estimate apply.
+\end{proof}
+
+\begin{proposition}[finite tube mass and its uniform asymptotic]
+\label{prop:Mazur-tube-mass}
+Assume $R\ge1$, $\xi>R/\delta$, and $W\le l/2$. Set
+\[
+ a=\xi-\frac R\delta,\quad b=\xi+\frac{R+1}{\delta},\quad
+ t_*=\sqrt{\xi^2+\delta^{-4}}-\delta^{-2},\quad
+ M_\xi=G_\xi(t_*),
+\]
+\[
+ u_-=\frac{R}{\delta\sqrt a},\qquad
+ u_+=\frac{R+1}{\delta\sqrt b},\qquad
+ T=\frac{2}{\delta^2\sqrt\pi}
+   \left(\frac{e^{-\delta^2u_-^2/4}}{u_-}
+              +\frac{e^{-\delta^2u_+^2/4}}{u_+}\right),\quad
+ Q=2M_\xi+T.
+\]
+The strict tube is exactly $(a,b]\cap\mathbb Z$, and its original
+mass $Z=\sum_{I_0}q_0(\nu)$ satisfies
+\begin{equation}
+ \left|Z-\frac1\delta\right|
+ \le (e^\varepsilon-1)\left(\frac1\delta+Q\right)+Q.
+ \label{eq:Mazur-finite-mass}
+\end{equation}
+In particular, fix $C\ge1/2$. As $N\to\infty$, for
+\[
+ W=C\sqrt{N\log N},\qquad \frac N{43}\le\xi\le\frac N{13},
+\]
+all the preceding guards hold eventually and, uniformly over every
+real center in this interval,
+\begin{equation}
+ Z=\frac1\delta+
+ O_C\!\left(\frac{(\log N)^{3/2}}{\sqrt N}\right).
+ \label{eq:Mazur-mass-asymptotic}
+\end{equation}
+Here $C$ is fixed before $N$ tends to infinity.
+\end{proposition}
+\begin{proof}
+The floor inequalities in
+\eqref{eq:Mazur-displacement-fibre} give the exact interval $(a,b]$.
+Its length $(2R+1)/\delta>1$ ensures nonemptiness; $a>0$ ensures
+positive indices. the Gaussian-envelope argument in Section~\ref{subsec:Allikvere-phase-average}, with $z=\xi$,
+gives $\int_0^\infty G_\xi=1/\delta$ and the unique maximum at
+$t_*$. The zero-extended function $G_\xi\mathbf1_{(a,b]}$ is
+unimodal, with total variation at most $2M_\xi$, including its two
+endpoint jumps. For each integer cell, the difference between its
+left-endpoint value and its integral is bounded by that cell's
+variation. Summing over cells gives
+\[
+ \left|\sum_{\nu\in I_0}G_\xi(\nu)-\int_a^bG_\xi(u)\,du\right|
+ \le 2M_\xi.
+\]
+This estimate respects an integral $a$ or $b$ with the displayed
+strict/weak conventions.
+
+For the continuous tails use the explicit increasing bijection
+\[
+ v=\sqrt u-\xi/\sqrt u,\qquad
+ u=\left(\frac{v+\sqrt{v^2+4\xi}}2\right)^2.
+\]
+It sends $(0,\infty)$ onto $\mathbb R$ and $a,b$ to $-u_-,u_+$.
+Its exact density transformation is
+\[
+ G_\xi(u)\,du=\frac{e^{-\delta^2v^2/4}}{2\sqrt\pi}
+       \left(1+\frac v{\sqrt{v^2+4\xi}}\right)dv.
+\]
+The parenthesis lies strictly between zero and two.
+For $u_0>0$, integration of
+$(v/u_0)e^{-\delta^2v^2/4}$ on $[u_0,\infty)$ proves
+\[
+ \int_{u_0}^\infty e^{-\delta^2v^2/4}dv
+ \le\frac{2e^{-\delta^2u_0^2/4}}{\delta^2u_0}.
+\]
+Thus the two discarded continuous tails sum to at most $T$.
+Writing $Z_G=\sum_{I_0}G_\xi(\nu)$, we have
+$|Z_G-1/\delta|\le Q$. By
+\eqref{eq:Mazur-rounded-gaussian},
+$|Z-Z_G|\le(e^\varepsilon-1)Z_G$.
+These two bounds prove \eqref{eq:Mazur-finite-mass}, including
+its product error.
+
+For the asymptotic, $W=o_C(N)$, $R=W+O(1)$ and
+$l=\xi+O_C(W+1)\asymp N$, uniformly in the stated center interval.
+In particular $a>0$, $l>2W$ and $R\ge1$ eventually.
+The explicit expression for $\varepsilon$ is
+$O_C((\log N)^{3/2}/\sqrt N)=o_C(1)$.
+Also $t_*\ge\xi/2$ eventually, so
+$M_\xi\le(2\pi\xi)^{-1/2}=O(N^{-1/2})$.
+Both tail exponents satisfy, uniformly,
+\[
+ \frac{\delta^2u_\pm^2}{4}
+ \ge\left(\frac{13C^2}{4}+o_C(1)\right)\log N
+ \ge\frac23\log N
+\]
+for sufficiently large $N$, because $13C^2/4\ge13/16>2/3$.
+Moreover $u_\pm\gg_C\sqrt{\log N}$. Consequently
+$T=O_C(N^{-2/3}/\sqrt{\log N})$ and $Q=O_C(N^{-1/2})$.
+Substitution in the finite bound proves the asserted rate.
+These tails are polynomially small; the different cutoff in
+the Gaussian-envelope argument in Section~\ref{subsec:Allikvere-phase-average} had smaller tails and was not used
+to justify this truncation.
+\end{proof}
+
+\begin{corollary}[the two intrinsic centers from the actual raw weights]
+\label{cor:Mazur-intrinsic-centers}
+Under the asymptotic schedule of
+Proposition~\ref{prop:Mazur-tube-mass}, let
+$\log2<\beta<2\log2$, $\mu=8.616$ and $d=\log(4/3)$.
+The literal two-cell sums over $I_0\cup I_1$ satisfy
+\begin{align}
+ \mathcal R_H&=\frac{\beta}{d}
+       +O_C\!\left(N^{-1/(2\mu)}
+                         (\log N)^{1/2-1/(2\mu)}\right),\\
+ \mathcal R_F&=\frac{e^\beta-1}{d}
+       +O_C\!\left(N^{-1/(2\mu)}
+                         (\log N)^{1/2-1/(2\mu)}\right).
+ \label{eq:Mazur-intrinsic-centers}
+\end{align}
+Both errors are uniform in the real center and in $\beta$.
+In particular each is $O_{C,c}(N^{-c})$ for every
+$0<c<1/17.232$.
+\end{corollary}
+\begin{proof}
+The base support has length $s=O_C(W)$ and endpoints comparable to
+$N$. Proposition~\ref{prop:Mazur-tube-mass} bounds $Z$ uniformly.
+Put $w_\nu=G_\xi(\nu)\mathbf1_{I_0}(\nu)$. Its full variation
+is at most $2M_\xi=O(N^{-1/2})$. Write the exact difference
+\[
+ \sum_{I_0}q_0(f_\sigma-\mu_\sigma)
+ =\sum_{I_0}w(f_\sigma-\mu_\sigma)
+       +\sum_{I_0}(q_0-w)(f_\sigma-\mu_\sigma).
+\]
+The second sum is bounded in absolute value by
+$\|f_\sigma-\mu_\sigma\|_\infty(e^\varepsilon-1)(1/\delta+Q)$.
+Thus every original atom is retained with an explicit error;
+no equality between it and the Gaussian is assumed.
+Use the Abel estimate in Section~\ref{subsec:Allikvere-phase-average}, whose Diophantine input is
+Rhin~\cite[p.~160, (8)]{Rhin1987} and whose discrepancy inequalities
+are those of Kuipers--Niederreiter~\cite[Ch.~2]{KN1974}.
+As periodic functions, $f_H,f_F$ have variations $2$ and
+$2e^\beta\le8$. These include the wrap-around jump at zero;
+the interval coefficient $2e^\beta-1$ in the exact weak-discrepancy
+formula is a different quantity. The finite bound on the first sum
+is $C_\gamma\operatorname{Var}(f_\sigma)s^{1-1/\mu}2M_\xi$.
+The total centered weighted error is consequently at most
+\[
+ O_C\!\left(s^{1-1/\mu}N^{-1/2}
+                     +(\log N)^{3/2}N^{-1/2}\right)
+ =O_C\!\left(N^{-1/(2\mu)}
+                   (\log N)^{1/2-1/(2\mu)}\right).
+\]
+Both centered functions have uniformly bounded sup norm.
+No division by $Z$ occurs. Using only the raw-variation ceiling
+would instead give the larger logarithmic power $1-1/(2\mu)$;
+the explicit Gaussian comparison saves a factor $\sqrt{\log N}$.
+
+For the shift correction, $\ell=\min(I_0\cup I_1)\asymp N$ and
+$R=O_C(W)$, so \eqref{eq:Mazur-shift-envelope} gives
+$\mathcal E=O_C(\sqrt{\log N/N})$. Its flat multiplier $e^\beta$
+is bounded by four. Finally both phase means are bounded, and
+\eqref{eq:Mazur-mass-asymptotic} bounds the raw-mass correction
+by $O_C((\log N)^{3/2}/\sqrt N)$.
+Insert these three estimates in the exact decomposition at the end
+of Section~\ref{sec:Mazur-weighted-phase}. The last two errors are
+smaller than the first. The means in
+\eqref{eq:Mazur-phase-means}, together with $\delta=d/\log2$,
+give precisely the two displayed centers. The stated weaker powers
+follow since a fixed power of $\log N$ is $o(N^\eta)$ for every
+$\eta>0$.
+\end{proof}
+
+\begin{proposition}[transport to the original physical window]
+\label{prop:Mazur-physical-centers}
+Let $B,z,M>0$, $m_0\in\mathbb Z_{\ge0}$,
+$\tau=\log M-\log B-m_0d$, $A=\log(z/M)/\log2$,
+$t_0=\log(z/B)/d$, and $\log2<\beta<2\log2$.
+For $W>0$, suppose
+\begin{equation}
+ \frac{|\tau|}{d}+\frac{W+1}{\delta}\le3W.
+ \label{eq:Mazur-directional-margin}
+\end{equation}
+The map $\nu\mapsto n=\nu+m_0$ embeds $I_0\cup I_1$ in
+\[
+ J=\mathbb Z_{\ge0}\cap
+       [\,t_0-3W,\ t_0+\beta/d+3W\,].
+\]
+It is bijective onto its image with inverse $n\mapsto n-m_0$;
+all image points have $n>m_0$. Zero extension gives exact equality
+between each intrinsic two-cell sum and its original physical sum
+on $\{\nu>0:\nu+m_0\in J\}$.
+
+For the original source schedule
+\[
+ \alpha=1001/1000,\quad L=\log B,\quad
+ N=\lfloor L/(10\log2)\rfloor,\quad m_0=\lfloor L/100000\rfloor,
+ \quad W=C\sqrt{N\log N},
+\]
+fix $C\ge1/2$, let $y=B^\alpha$ or $B^{\alpha^2}$, and put
+\[
+ K=\lfloor(\alpha-1)\log y\rfloor,\quad
+ \beta=(\alpha-1)\log y/K,\quad z=y e^{j\beta}\quad(0\le j<K).
+\]
+Uniformly in the branch, $j$, and every $M>0$ with
+$|\tau|\le4W/25$, for sufficiently large $B$,
+\begin{align}
+ R_H(M)&=\beta/d+
+ O_C\!\left(N^{-1/17.232}(\log N)^{1/2-1/17.232}\right),\\
+ R_F(M)&=(e^\beta-1)/d+
+ O_C\!\left(N^{-1/17.232}(\log N)^{1/2-1/17.232}\right).
+ \label{eq:Mazur-physical-centers}
+\end{align}
+These are interior estimates on the original physical carrier.
+\end{proposition}
+\begin{proof}
+The exact affine identity is
+\[
+ \xi=A/\delta=t_0-m_0-\tau/d.
+\]
+The union of the two indicator supports consists exactly of the
+positive integers in
+$((A-R)/\delta,(A+R+2)/\delta]$. Thus every image point obeys
+\[
+ n>t_0-\tau/d-R/\delta,\qquad
+ n\le t_0-\tau/d+(R+2)/\delta.
+\]
+The first inequality and the margin put $n$ above $t_0-3W$.
+For the upper endpoint, $\beta/d>1/\delta$ and $R<W$ give
+\[
+ |\tau|/d+(R+2)/\delta
+ <\beta/d+|\tau|/d+(W+1)/\delta
+ \le\beta/d+3W.
+\]
+This proves containment of both supports without asserting that they
+are equal. Translation is injective, its displayed inverse is exact
+on its image, and all summands outside the union vanish.
+This proves the equality of the finite sums, not just an estimate
+of discarded endpoints. In particular the one-unit shift is absorbed
+by the upper band width; a symmetric enlargement by that unit is
+unnecessary for this containment argument.
+
+For the source schedule, $K\to\infty$ and $\beta\to1$ uniformly in
+the two branches; thus the required interval for $\beta$ holds
+eventually. Since $z\in[y,y^\alpha)$, the exact identity for $\xi$
+gives uniformly
+\[
+ \frac{\alpha-1}{d}-\frac1{100000}+o_C(1)
+ \le\frac{\xi}{L}
+ \le\frac{\alpha^3-1}{d}+o_C(1).
+\]
+Here the floor error is at most $1/L$, and
+$|\tau|/L\le4W/(25L)=o_C(1)$. Since $N/L\to1/(10\log2)$,
+these bounds put $\xi$ in $[N/43,N/13]$ eventually. For an explicit
+check of the strict room, use
+\[
+ 0.6931<\log2<0.6932,\qquad
+ 0.2876<d<0.2877,
+\]
+which give
+\[
+ 10(0.6931)\left(\frac{0.001}{0.2877}-0.00001\right)>1/43,
+ \qquad
+ 10(0.6932)\frac{(1001/1000)^3-1}{0.2876}<1/13.
+\]
+The logarithm intervals follow from
+$\log x=2\sum_{k=0}^{J-1}u^{2k+1}/(2k+1)+E_J$,
+$u=(x-1)/(x+1)$, with
+$0<E_J<2u^{2J+1}/((2J+1)(1-u^2))$:
+take $J=12$ for $x=2$ and $J=6$ for $x=4/3$.
+This also gives
+\[
+ \frac{4}{25d}+\frac1\delta
+ =\frac{4/25+\log2}{d}
+ <\frac{0.16+0.6932}{0.2876}<3.
+\]
+Consequently the margin holds for all sufficiently large $W$,
+uniformly under $|\tau|\le4W/25$. All required guards of the mass
+and intrinsic-profile results therefore hold with $C$ fixed before
+$B\to\infty$. Exact transport proves the physical assertions.
+\end{proof}
+
+The same band denominators from
+Proposition~\ref{prop:Mazur-band-denominators} now give
+$R_H/H=2/d+O_{C,c}(N^{-c})$ and
+$(z/D)R_F=2/d+O_{C,c}(N^{-c})$ throughout the interior,
+for $0<c<1/17.232$. The signed denominator errors and the exact
+kernel residual in Proposition~\ref{prop:Mazur-profile-residual}
+are unchanged. The exterior coefficient estimate and full kernel
+summation are proved in Section~\ref{sec:Mazur-exterior-assembly} below.
+Mazur's source uses its stated $\kappa=14.3$
+phase input; the rate here uses the independently cited Rhin bound,
+already used in the Allikvere reconstruction. No improved final
+Mazur natural-density theorem or local Lean replay is asserted.
+
+\subsection{Exterior endpoint weights and the full reference profile}
+\label{sec:Mazur-exterior-assembly}
+
+The interior estimate must be summed against the endpoint kernel, not
+against a probability measure obtained by dividing that kernel by its
+mass. The remaining issue is therefore quantitative: how much of the
+original weighted endpoint set lies outside the interior? The native
+reciprocal-fibre estimate contains a linear factor in the last valuation.
+Summing that factor exactly, rather than bounding it by a multiple of
+$\log B$, gives a substantially smaller exterior error.
+
+The source route is Mazur~\cite{Mazur2026v2},
+\texttt{Tao/Section5/EndpointValuationFiber.lean},
+\texttt{EndpointRatio.lean}, \texttt{EndpointLowRoom.lean},
+\texttt{EndpointFiberEnvelope.lean}, \texttt{EndpointCoefficientBound.lean},
+and \texttt{Geom2HighWeightScalar.lean};
+then \texttt{ND/Band/A5ReferenceFilteredCoefficient.lean},
+\texttt{A5ReferenceExteriorTupleTail.lean},
+\texttt{A5ReferenceTerminalCap.lean}, and
+\texttt{ND/Probability/Geom2FiniteTwoEventTail.lean}.
+The final comparison is with
+\texttt{ND/Discrepancy/A5ReferenceFullCenterRate.lean}.
+These are the pinned v2 sources, not a replay of their formal build.
+The geometric law and first-passage mechanism originate in
+Tao~\cite{Tao2026v7}, the definition of ``Geometric random variable''
+(v7 source label \texttt{geom}) and the Section 5 coefficient argument
+(source label \texttt{loam}).
+We reconstruct the needed finite estimates before taking limits.
+
+\paragraph{Original endpoints and their exact fibres.}
+Write $h=\lfloor L/100000\rfloor$, $L=\log B$,
+$N=\lfloor L/(10\log2)\rfloor$, and $d=\log(4/3)$.
+For a finite set $S$ of positive odd integers with first passage at time
+$h$ under the odd Syracuse map $T$, define
+\[
+ c_q(S,x)=3^q\sum_{\substack{M\in S\\M\equiv x\pmod{3^q}}}\frac1M .
+\]
+In the application $S$ is the original $\mathcal E(E)$ or its
+interior/exterior subset; its rounded lost-window endpoints remain
+unchanged. For the chronological valuation word
+$b=(b_1,\ldots,b_h)$, put
+\[
+ s=\sum_{i=1}^h b_i,\quad s_-=\sum_{i=1}^{h-1}b_i,\quad a=b_h,
+ \quad w(b)=2^{-s},\quad b_0(b)=(1+a/2)2^{-s}.
+\]
+The fibre $F_{b,x}$ consists of precisely the $M\in S$ with word $b$
+and residue $x$. Only nonempty fibres enter the finite word carrier.
+Thus $c_q(S,x)=\sum_b3^q\sum_{F_{b,x}}1/M$ exactly.
+The map $M\mapsto(b(M),M)$ is a bijection from the residue-restricted
+endpoint set to the disjoint union of these fibres, with inverse
+$(b,M)\mapsto M$. Projection to the word alone is generally many-to-one;
+its pushforward retains the reciprocal sum in each fibre.
+
+\begin{proposition}[native endpoint coefficient with its decaying remainder]
+\label{prop:Mazur-native-coefficient}
+Suppose $B>1$, $h\ge1$, $2\,3^{h-1}\le B$, and $h+q\le N$.
+For every such finite $S$ and every $x\in\mathbb Z/3^q\mathbb Z$,
+\begin{equation}
+ c_q(S,x)\le\sum_{b:F_{b,x}\ne\varnothing}b_0(b)
+             +\epsilon_B,\qquad
+ \epsilon_B=3B^{-4997/600000}.
+ \label{eq:Mazur-native-coefficient}
+\end{equation}
+In particular $0\le c_q(S,x)\le2+\epsilon_B$.
+The assertion holds for filtered original endpoint sets without
+requiring the enlarged same-word fibres to obey the filter.
+\end{proposition}
+\begin{proof}
+The exact affine iteration has positive offset
+\[
+ T^jM=3^j2^{-s_j}M+F_j,\qquad
+ F_j=\sum_{i=1}^j\frac{3^{j-i}}{2^{b_i+\cdots+b_j}}
+ \le(3/2)^j-1<3^j .
+\]
+This includes $j=0$ with $F_0=0$.
+Since $T^{h-1}M>B$ and $B\ge2\,3^{h-1}$, the affine main term
+at time $h-1$ exceeds $B/2$. At time $h$, positivity and
+$T^hM\le B$ give
+\[
+ B2^{s_-}<2\,3^{h-1}M,\qquad 3^hM\le B2^s .
+\]
+Moreover $T^{h-1}M<2\,3^{h-1}2^{-s_-}M$ and
+$2^a\le3T^{h-1}M+1\le4T^{h-1}M$, so
+$2^s<8\,3^{h-1}M$. Consequently each fibre lies in the inclusive
+integer interval $[A_0,U]$, and also in $[A_1,U]$, where
+\[
+ A_0=\left\lfloor\frac{B2^{s_-}}{2\,3^{h-1}}\right\rfloor+1,\quad
+ U=\left\lfloor\frac{B2^s}{3^h}\right\rfloor,\quad
+ A_1=\max\left\{A_0,\left\lfloor\frac{2^s}{8\,3^{h-1}}\right\rfloor+1\right\}.
+\]
+For a nonempty fibre these lower endpoints are at most $U$.
+The strict quotient inequalities give $U<2^aA_0$, hence
+$\log(U/A_i)\le a\log2\le a$.
+
+The exact valuation cylinder is one odd class modulo $2^{s+1}$.
+Indeed the one-step condition is $3M+1\equiv2^{b_1}\pmod{2^{b_1+1}}$.
+Inductively the next prescribed odd residue lifts its unique previous
+class to a unique class modulo the next power of two: solving
+$3M+1=2^{b_1}M_1$ modulo $2^{s+1}$ is possible and unique since
+$3$ is invertible modulo that power. This also proves the converse
+by dividing each congruence by its prescribed power of two.
+Combining this class with $M\equiv x\pmod{3^q}$ gives one class
+modulo $Q=2^{s+1}3^q$, since the two moduli are coprime.
+No endpoints or word multiplicities are identified in this step.
+
+For any nonempty portion of a $Q$-progression in $[A,U]$, $A\ge1$,
+decreasingness of $1/t$, integrated between successive points, gives
+\[
+ \sum\frac1M\le\frac1A+\frac1Q\log(U/A)
+ \le\frac1A+\frac1Q\{1/A+\log(U/A)\}.
+\]
+To verify the first inequality, retain the first point separately;
+for each later point $M$ its contribution is at most
+$Q^{-1}\int_{M-Q}^M dt/t$. The intervals concatenate, and their
+union lies in $[A,U]$. This also bounds every subset of the progression.
+
+Call a word high when $2^s>B^{1/2}$, strictly. On the low branch,
+$4^s\le B$. Also $2^{4(h+q)}\le B$, because $h+q\le N$.
+Thus $2^s2^{2(h+q)}\le B$ by multiplying the two square bounds.
+As $a\le s$ and $h\ge1$, this implies
+$2^{a+2}3^{h+q-1}\le B$. Multiplication by $2^{s_-}$ shows
+$Q\le\lfloor B2^{s_-}/(2\,3^{h-1})\rfloor<A_0$.
+The retained progression estimate is therefore at most
+\[
+ 3^q\{Q^{-1}+Q^{-1}(1+a)\}=(1+a/2)2^{-s}.
+\]
+On the high branch, use $A_1$. Its outer term satisfies
+$3^q/A_1<(8/3)3^{h+q}2^{-s}\le3\,3^{h+q}2^{-s}$.
+The remaining term is at most $(1+a)2^{-s-1}\le b_0(b)$.
+This proves the pointwise envelope
+$b_0(b)+3\,3^{h+q}2^{-s}\mathbf1_{\{2^s>B^{1/2}\}}$.
+
+Here and below enlarging a finite word carrier to all positive words
+of length $h$ is legitimate by nonnegativity, without duplicating words.
+For independent $X_i$ with $\Pr(X_i=r)=2^{-r}$, $r\ge1$, the centered
+one-coordinate moment generating function is
+\[
+ g(t)=\mathbb E e^{t(X_i-2)}
+     =\frac{e^{-t}}{2-e^t},\qquad t<\log2.
+\]
+Since $h\le L/100000$ and $\log2<7/10$, the high event implies
+$\sum_i(X_i-2)>(7/10)L$.
+For $0\le t\le1/4$, $e^t<4/3$ and
+$(\log g)''=2e^t/(2-e^t)^2\le6$.
+Here $\log(4/3)>1/4$ follows directly by integrating $1/x$.
+As $(\log g)(0)=(\log g)'(0)=0$, $\log g(1/4)\le3/16<1/2$.
+Markov's inequality now bounds the high mass by
+$e^{-7L/40+h/2}\le B^{-34999/200000}$.
+Finally $3^{6(h+q)}\le2^{10(h+q)}\le B$, so the total high charge
+is at most $\epsilon_B$. This proves the first assertion.
+
+The elementary series $\sum_{a\ge1}2^{-a}=1$ and
+$\sum_{a\ge1}a2^{-a}=2$ show
+$\sum_{b\in\mathbb N_{>0}^h}b_0(b)=2$.
+This proves the last bound, retaining the smaller $2+\epsilon_B$
+rather than replacing the decaying remainder by $3$.
+The proof never enlarged the original endpoint filter before retaining
+its nonempty word carrier.
+\end{proof}
+
+\begin{proposition}[exact weighted two-event estimate]
+\label{prop:Mazur-weighted-chernoff}
+Let $h\ge2$, $u>0$, $0<v<h-1$, and let $\mathcal C$ be any
+finite set of positive words of length $h$ such that every $b\in\mathcal C$
+satisfies at least one of
+\[
+ s-2h>u,\qquad s_--2(h-1)<-v .
+\]
+With the rate function from Section~\ref{sec:Mazur-band-fullgood},
+\[
+ I(t)=(1+t)\log(1+t)-(2+t)\log(1+t/2)\quad(t>-1),
+\]
+one has
+\begin{equation}
+ \sum_{b\in\mathcal C}(1+b_h/2)2^{-|b|}
+ \le \left(2+\frac{u}{2h}\right)e^{-hI(u/h)}
+       +2e^{-(h-1)I(-v/(h-1))}.
+ \label{eq:Mazur-weighted-chernoff}
+\end{equation}
+\end{proposition}
+\begin{proof}
+For $t<\log2$, summing the terminal factor exactly gives
+\[
+ \mathbb E[(1+X_h/2)e^{t\sum_{i=1}^h(X_i-2)}]
+ =g(t)^h\left(1+\frac1{2-e^t}\right).
+\]
+This follows by differentiating the absolutely convergent geometric
+series: $\mathbb E[X_he^{t(X_h-2)}]=2e^{-t}/(2-e^t)^2$.
+The upper event is bounded, for $0<t<\log2$, by
+$e^{-tu}g(t)^h(1+(2-e^t)^{-1})$.
+Take
+\[
+ e^t=\frac{2(1+u/h)}{2+u/h}.
+\]
+This lies strictly between $1$ and $2$; direct substitution gives
+$e^{-tu}g(t)^h=e^{-hI(u/h)}$ and
+$1+(2-e^t)^{-1}=2+u/(2h)$.
+
+For the lower event, the terminal coordinate is independent of the
+first $h-1$ coordinates and its weighted expectation equals $2$.
+Taking $e^t=2(1-v/(h-1))/(2-v/(h-1))\in(0,1)$ in the ordinary
+lower-tail Markov estimate gives its displayed contribution.
+Apply the union inequality to these two nonnegative weighted events.
+It remains valid when they overlap; no independence of the two events
+is asserted. Absolute convergence follows from $e^t<2$ and the
+linear terminal factor. No terminal cutoff or factor $\log B+1$
+has been introduced.
+\end{proof}
+
+\begin{corollary}[exterior coefficient on the original carrier]
+\label{cor:Mazur-exterior-coefficient}
+Retain Proposition~\ref{prop:Mazur-native-coefficient}'s schedule.
+For $W>0$ put
+\[
+ u=\frac{4W}{25\log2},\qquad
+ \kappa_8=\frac{\log(8/3)}{\log2},\qquad v=u-\kappa_8.
+\]
+Suppose $h\ge2$ and $0<v<h-1$. Let
+$S_{\rm out}=\{M\in S:|\log M-L-hd|>4W/25\}$.
+Then, uniformly in $x$,
+\begin{equation}
+ c_q(S_{\rm out},x)\le
+ \left(2+\frac{u}{2h}\right)e^{-hI(u/h)}
+ +2e^{-(h-1)I(-v/(h-1))}+\epsilon_B
+ =:\mathcal T_B(W).
+ \label{eq:Mazur-exterior-finite}
+\end{equation}
+For fixed $C>0$ and $W=C\sqrt{N\log N}$, all the guards hold eventually,
+and the displayed majorant satisfies
+\begin{equation}
+ \mathcal T_B(W)=(4+o_C(1))N^{-A_C},\qquad
+ A_C=\frac{64C^2}{(\log2)^3}.
+ \label{eq:Mazur-exterior-rate}
+\end{equation}
+This is an asymptotic for the explicit majorant, not an equality for
+the actual exterior coefficient.
+\end{corollary}
+\begin{proof}
+The cleared first-passage inequalities in the preceding proof give
+the exact corridor
+\[
+ (s_--2(h-1))\log2-\log(8/3)
+ <\log M-L-hd\le(s-2h)\log2 .
+\]
+An exterior endpoint thus supplies either the strict upper event
+$s-2h>u$ or the strict predecessor event $s_--2(h-1)<-v$.
+Each retained word has such an endpoint witness, so the word satisfies
+the event even after its reciprocal fibre is enlarged.
+Apply \eqref{eq:Mazur-native-coefficient} and
+\eqref{eq:Mazur-weighted-chernoff}. The exact buffer $\kappa_8$
+has not been relaxed to the source's $3$.
+
+For the limit, $h=L/100000+O(1)$ and
+$N=L/(10\log2)+O(1)$, with $C$ fixed before $B$ grows.
+In particular $u/h\to0$, $v/(h-1)\to0$, and $v>0$ eventually.
+The proved derivative identity $I''(t)=1/((1+t)(2+t))$ gives
+$I(t)=t^2/4+O(t^3)$ near zero. Therefore
+\[
+ hI(u/h)=\frac{u^2}{4h}+O(u^3/h^2)
+        =A_C\log N+o_C(1),
+\]
+since $u^3/h^2=O_C((\log L)^{3/2}/\sqrt L)\to0$ and the floor
+errors in $N/h$ contribute $O_C(\log L/L)$.
+Replacing $u$ by $u-\kappa_8$ and $h$ by $h-1$ changes the
+exponent by $O_C(\sqrt{\log L/L}+\log L/L)=o_C(1)$.
+Both prefactors tend to $2$. Also
+$\epsilon_B=o_C(N^{-A_C})$. This proves the stated asymptotic.
+The room condition follows from
+$(h-1)\log3+\log2=L\log3/100000+O(1)<L$.
+\end{proof}
+
+\begin{proposition}[kernel assembly without changing its mass]
+\label{prop:Mazur-full-profile}
+For the original schedule of Proposition~\ref{prop:Mazur-physical-centers},
+fix $C\ge1/2$, put
+$q=\lceil hL^{-2/5}\rceil$, and retain the original offset probability
+$p_q$ and $K_q(M)=3^qp_q(M\bmod3^q)/M$.
+For the original endpoint set $S=\mathcal E(E)$, write
+$Z_q(S)=\sum_SK_q(M)$ and $a_*=2/d$.
+Then
+\[
+ 0\le Z_q(S)\le2+\epsilon_B,\qquad
+ 0\le Z_q(S_{\rm out})\le\mathcal T_B(W).
+\]
+If $e_\sigma$ is any valid uniform bound for the interior error
+$|P_\sigma(M)-a_*|$, where $P_H(M)=R_H(M)/H$ and
+$P_F(M)=(z/D)R_F(M)$, the exact finite estimate is
+\begin{equation}
+ \left|\sum_SK_q(M)P_\sigma(M)-a_*Z_q(S)\right|
+ \le e_\sigma Z_q(S_{\rm in})
+    +\max\{a_*,L_\sigma-a_*\}Z_q(S_{\rm out}).
+ \label{eq:Mazur-full-finite}
+\end{equation}
+Here $L_H,L_F$ are the proved original-carrier envelopes of
+Proposition~\ref{prop:Mazur-profile-envelope}.
+For the two source branches, all bands, and all landing targets $E$,
+uniformly as $B\to\infty$,
+\begin{equation}
+ \sum_SK_q(M)P_\sigma(M)
+ =\frac2d Z_q(S)+
+ O_C\!\left(N^{-1/17.232}(\log N)^{1/2-1/17.232}\right),
+ \qquad \sigma=H,F.
+ \label{eq:Mazur-full-profile-rate}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Grouping endpoints by residue gives the exact identity
+\[
+ Z_q(S)=\sum_{x\in\mathbb Z/3^q\mathbb Z}p_q(x)c_q(S,x).
+\]
+The summation weights are nonnegative with sum one. Thus the
+residue-uniform coefficient bounds pass to $Z_q$ without a factor
+$3^q$ and without declaring $Z_q$ to have mass one.
+The reference level obeys $q=O(L^{3/5})$, hence $h+q\le N$
+eventually. The preceding propositions apply.
+
+The closed interior and strict exterior partition $S$ exactly.
+On the former, the triangle inequality gives $e_\sigma Z_q(S_{\rm in})$.
+On the latter, the proved positive interval bound gives the second
+term in \eqref{eq:Mazur-full-finite}. This proves that estimate
+before any upper bound on the two masses is substituted.
+
+The actual positive time carrier is
+$V=\{\nu>0:\nu+h\in J\}$, of cardinality at most
+$6W+\beta/d+1=O_C(W)$.
+Uniformly over the two branches and bands, its minimum is at least
+$N/43$ for large $B$: use
+$\nu\ge t_0-h-3W$ and the same strict lower constant calculation
+in Proposition~\ref{prop:Mazur-physical-centers}, with $3W/L=o_C(1)$.
+This assertion is independent of $M$.
+Hence $G_V\le\#V/\sqrt{\min V}=O_C(\sqrt{\log N})$.
+The retained denominator estimates give $H\ge1/3$, $z/D\le2$,
+and $e^\beta<4$, so $L_H,L_F=O_C(\sqrt{\log N})$.
+For $C\ge1/2$, $A_C\ge16/(\log2)^3>48$; the last strict bound
+follows already from $\log2<0.6932$.
+The entire exterior charge is therefore
+$O_C(N^{-A_C}\sqrt{\log N})$.
+
+On the interior, Proposition~\ref{prop:Mazur-physical-centers} and
+the exact signed denominator identities give
+\[
+ e_\sigma=O_C\!\left(N^{-1/17.232}
+              (\log N)^{1/2-1/17.232}\right).
+\]
+The denominator contribution $O(1/z)$ is smaller uniformly.
+Since $Z_q(S_{\rm in})\le2+\epsilon_B$, combining these estimates
+proves \eqref{eq:Mazur-full-profile-rate}.
+\end{proof}
+
+The common center here is the same landing measure
+$(2/d)\lambda_*\mu_q$ already constructed, not a new probability law.
+This completes the reference-profile input using Rhin's cited
+Diophantine estimate. The source's terminal-coordinate cap is unnecessary
+for the reconstructed exterior estimate, and its coarse total coefficient
+$5$ can be retained more accurately as $2+\epsilon_B$.
+Section~\ref{sec:Mazur-genuine-assembly} now combines this estimate
+with actual first passage and the whole-source mixtures. The original
+clock and threshold-iteration consumers remain to be reconstructed.
+Neither a full-package formal replay nor a new final Mazur
+natural-density exponent is asserted here.
+
+\subsection{From reference profiles to genuine passage laws}
+\label{sec:Mazur-genuine-assembly}
+
+The reference profile is useful because it approximates an actual question:
+where does a Collatz orbit first enter the integers at most $B$? This section
+completes that passage from the profile to the orbit. Both ways of sampling
+the starting integer, harmonic and uniform, are kept. The finite boundary
+charges and the possible upper endpoint of the source interval are kept too.
+
+The source comparison is Mazur~\cite{Mazur2026v2},
+\texttt{ND/Band/A5ExactAffineCorrection.lean},
+\texttt{A5TerminalBoundaryShell.lean},
+\texttt{A5FixedCellTerminalDescent.lean},
+\texttt{A5SourceMixture.lean}, and
+\texttt{ND/Discrepancy/A5ReferenceGenuineBandRate.lean},
+\texttt{A5ReferenceGenuineSourceRate.lean}, at the pinned downloaded commit.
+The last two files use $C=40$, a factor-seven band estimate and a factor-eight
+whole-source estimate, with exponent restrictions $c<1/20$ and
+$c<1/(2\kappa)$. We reconstruct their four comparisons using the sharper
+estimates proved above. The analytic inputs remain Tao's cited mixing
+theorem and Rhin's cited Diophantine estimate; there is no new Fourier
+decay theorem here.
+
+Throughout this section put
+\[
+ L=\log B,\quad N=\lfloor L/(10\log2)\rfloor,\quad
+ h=\lfloor L/100000\rfloor,\quad m=\lceil hL^{-2/5}\rceil,\quad
+ W=C\sqrt{N\log N},\quad d=\log(4/3).
+\]
+Fix $C\ge1/2$. Write $\alpha=1001/1000$, and for either
+$y=B^\alpha$ or $y=B^{\alpha^2}$ set
+\[
+ b_y=(\alpha-1)\log y,\quad k_y=\lfloor b_y\rfloor,\quad
+ \beta=b_y/k_y,\quad z_j=ye^{j\beta},\quad U_j=z_{j+1},
+ \qquad 0\le j<k_y.
+\]
+All statements below concern sufficiently large integer $B$; the threshold
+may depend on $C$ but not on the branch, band index or target set.
+Write $D_j,H_j$ for the exact odd-band count and reciprocal sum.
+The original target set is $E'_B(E)$ from
+Section~\ref{sec:Mazur-concentration-coverage}. In particular its endpoints
+have actual first-passage time $h$. Its lower bound
+$(4/3)^hBe^{-L^{7/10}}$ exceeds $B$ eventually.
+
+\begin{proposition}[explicit boundary charges and their constants]
+\label{prop:Mazur-genuine-boundaries}
+For a retained band suppress $j$ and put
+\[
+ \varepsilon=B^{-9/10},\qquad \rho=B^{-19749/20000}.
+\]
+Every retained compatible terminal record satisfies
+$0<F_a/M\le\rho$ and $0<-\log(1-F_a/M)\le\varepsilon$.
+Define the following positive \emph{majorants}, using the original
+$z,U,D,H$:
+\begin{align*}
+ b_{H,-}&=\frac{\varepsilon/2+e^\varepsilon/z}{H},&
+ b_H&=\frac{\varepsilon+e^\varepsilon(1/z+1/U)}H,\\
+ b_{F,-}&=\frac{z(1-e^{-\varepsilon})/2+1}{D},&
+ b_F&=\frac{(z+U)(1-e^{-\varepsilon})/2+2}{D}.
+\end{align*}
+For the terminal union masses $U_\sigma$ and nominal sums $I_\sigma$,
+\begin{equation}
+ |U_H-I_H|\le\rho U_H+b_H,\qquad
+ |U_F-I_F|\le b_F,\qquad
+ 0\le I_\sigma\le1+b_{\sigma,-}.
+ \label{eq:Mazur-explicit-boundaries}
+\end{equation}
+Uniformly in the branches and bands,
+\[
+ \frac{b_{H,-}}{\varepsilon}\longrightarrow1,\quad
+ \frac{b_H}{\varepsilon}\longrightarrow2,\quad
+ \frac{b_{F,-}}{\varepsilon}\longrightarrow\frac1{e-1},\quad
+ \frac{b_F}{\varepsilon}\longrightarrow\frac{e+1}{e-1}.
+\]
+These are limits of the displayed bounds, not of the actual errors.
+\end{proposition}
+\begin{proof}
+The original padded time interval gives
+\[
+ \frac{L}{1000d}-3W-h\le \nu=t-h
+ \le\frac{(\alpha^3-1)L}{d}+3W .
+\]
+The directed bounds $0.2876<d<0.2877$ established above imply
+\[
+ \frac{340}{100000}<\frac1{1000d}-\frac1{100000},
+ \qquad \frac{\alpha^3-1}{d}<\frac{105}{10000}.
+\]
+Since $W=o(L)$, eventually
+$F=(340/100000)L\le\nu\le(105/10000)L$,
+uniformly over all retained times. The elementary bound $F_a\le3^\nu$
+and $\log3<11/10$ give $F_a\le B^{231/20000}$.
+The latter logarithmic inequality follows, for example, from the
+exponential series through degree five at $11/10$, whose sum exceeds $3$.
+Since $M>B\ge B^{999/1000}$, division gives $F_a/M\le\rho$.
+Here $\rho/\varepsilon=B^{-1749/20000}\to0$. Eventually $\rho\le1/2$
+and $2\rho\le\varepsilon$, so
+\[
+ 0<-\log(1-F_a/M)\le\frac{F_a/M}{1-F_a/M}\le2\rho\le\varepsilon.
+\]
+Strict positivity uses $\nu\ge1$.
+
+For either endpoint $x=z,U$, the odd shell $[xe^{-\varepsilon},x)$
+has fewer than $x(1-e^{-\varepsilon})/2+1$ points.
+Proposition~\ref{prop:Mazur-band-denominators}, applied with lower endpoint
+$xe^{-\varepsilon}\ge1$, bounds its reciprocal sum by
+$\varepsilon/2+e^\varepsilon/x$; the empty case satisfies the same
+inequality directly. Apply Proposition~\ref{prop:Mazur-boundaries}.
+Using the sum of both shell bounds overcovers their union; using just the
+lower shell gives the one-sided cap. Injectivity of the compatible
+record-to-source map is essential here and was proved in
+Proposition~\ref{prop:Mazur-atoms}. It holds on the original time interval
+because $\beta/d+6W\le h$ eventually.
+
+Finally $\beta\to1$ uniformly, $z\ge B^\alpha$, and the exact discrepancies
+give $H=\beta/2+O(1/z)$ and
+$D=z(e^\beta-1)/2+O(1)$. Thus $1/(z\varepsilon)\to0$ uniformly.
+Also $(1-e^{-\varepsilon})/\varepsilon\to1$ and
+$e^\varepsilon\to1$. Substitution proves all four limits.
+\end{proof}
+
+\begin{proposition}[assembled cell tests with the endpoint mass retained]
+\label{prop:Mazur-genuine-caps}
+Put $\epsilon_B=3B^{-4997/600000}$ as in
+Proposition~\ref{prop:Mazur-native-coefficient}. At any retained
+$(\nu,\ell)$, let
+\[
+ S_{\nu,\ell}=\{M\in E'_B(E):z<2^\ell M/3^\nu<U\}.
+\]
+On the fine residue group $G_\nu=\mathbb Z/3^\nu\mathbb Z$ define
+\begin{align*}
+ c_H(x)&=\sum_{\substack{M\in S_{\nu,\ell}\\M\equiv x\ (3^\nu)}}
+                       \frac{3^\nu}{MH},\\
+ c_F(x)&=\sum_{\substack{M\in S_{\nu,\ell}\\M\equiv x\ (3^\nu)}}
+                       \frac{3^\nu}{M}\frac{2^\ell M/3^\nu}{D}.
+\end{align*}
+Then
+\begin{equation}
+ 0\le c_\sigma\le A_\sigma,\qquad
+ A_H=\frac{2+\epsilon_B}{H},\qquad
+ A_F=(2+\epsilon_B)\frac UD .
+ \label{eq:Mazur-genuine-caps}
+\end{equation}
+The exact projection $\pi:G_\nu\to G_m$, $m\le\nu$, and its fibre average
+$Ac(x)=3^{m-\nu}\sum_{\pi v=x}c(v)$ give respectively
+\[
+ Ac_H(x)=\frac{3^m}H
+       \sum_{\substack{M\in S_{\nu,\ell}\\M\equiv x\ (3^m)}}\frac1M,\qquad
+ Ac_F(x)=\frac{3^m}D
+       \sum_{\substack{M\in S_{\nu,\ell}\\M\equiv x\ (3^m)}}
+                       \frac{2^\ell M/3^\nu}{M}.
+\]
+All endpoint collisions are retained. Uniformly,
+$A_H\to4$ and $A_F\to4e/(e-1)$.
+
+Let $K_C$ be the single fixed-total mixing constant furnished by
+Corollary~\ref{cor:fixed-total} with exponent $11$ on this schedule.
+Keep $E_B,\gamma_B$ from \eqref{eq:Mazur-exponential-terminal}, and
+the original finite time set $J$. Then the nominal sums and full physical
+reference profiles $\mathcal P_\sigma$ obey
+\begin{equation}
+ |I_\sigma-\mathcal P_\sigma|
+ \le\widehat{\mathcal R}_\sigma:=
+ \frac{\gamma_B(1+b_{\sigma,-})+
+   \#J\,A_\sigma\{K_C/(2m^{11})+2/m^3\}}{1-\gamma_B}.
+ \label{eq:Mazur-genuine-terminal}
+\end{equation}
+In particular $\widehat{\mathcal R}_\sigma=O_C(L^{-1/5}\log L)$,
+and its ratio to $L^{-1/5}\log L$ tends to the positive terminal
+constant $A_C$ of \eqref{eq:Mazur-eta-limit}.
+\end{proposition}
+\begin{proof}
+The retained times have $h+\nu\le N$ eventually, by the bounds in the
+preceding proof. The room inequality $2\,3^{h-1}\le B$ also holds.
+Every subset $S_{\nu,\ell}$ is therefore covered by
+Proposition~\ref{prop:Mazur-native-coefficient} at depth $\nu$.
+Division by $H$ proves the harmonic cap. On strict support
+$2^\ell M/3^\nu<U$; keeping this factor inside the original sum and then
+bounding it by $U$ proves the flat cap. Summing first over residue fibres
+proves the two projection identities: every labelled $M$ appears once,
+and $3^{m-\nu}3^\nu=3^m$. This is an averaging map on tests, not
+replacement of the endpoint measure by a probability measure.
+The denominator limits in the preceding proof prove the limits of $A_\sigma$.
+
+To obtain the terminal estimate, condition a positive geometric word of
+length $\nu$ on its total $\ell$. Its total probability is
+$q_{\nu,\ell}=\binom{\ell-1}{\nu-1}2^{-\ell}$. The fine conditional
+offset law paired with $c_\sigma$ gives exactly the nominal cell mass
+divided by $q_{\nu,\ell}$, by the compatibility calculation in
+Section~\ref{sec:Mazur-finite}. Its projected unconditioned pairing gives
+the corresponding coarse reference cell. Apply
+Corollary~\ref{cor:Mazur-centred-descent} with test cap $A_\sigma$,
+$\Omega\le K_C/m^{11}$ and the uniform likelihood coefficient
+$\gamma_B$. Multiplication by $q_{\nu,\ell}$ gives
+\[
+ |Y_{\nu,\ell}-Z_{\nu,\ell}|
+ \le q_{\nu,\ell} A_\sigma
+       \{K_C/(2m^{11})+2/m^3\}+\gamma_B Z_{\nu,\ell}.
+\]
+The hypotheses are supplied by the original scales:
+$F\le\nu\le N$, $m\asymp L^{3/5}\ge\sqrt{\nu}$ eventually,
+$|\ell-2\nu|<W=O_C(\sqrt{\nu\log\nu})$,
+$8m=o(F)$, $W=o(F)$ and $mW/(F\sqrt{m\log m})\to0$.
+Thus the mixing constant is chosen before $B$, uniformly in all cells;
+the two tail estimates used in descent were proved in
+Corollary~\ref{cor:Mazur-two-tails}.
+
+Now sum over totals using $\sum_\ell q_{\nu,\ell}\le1$, then over times.
+Lemma~\ref{lem:Mazur-sharp-absorption} and
+$I_\sigma\le1+b_{\sigma,-}$ give
+\eqref{eq:Mazur-genuine-terminal}. The exact two-row reindexing and
+time translation $t=\nu+h$ identify the reference sum with
+$\mathcal P_\sigma$, without changing either band weight.
+Since $\#J=O_C(W)$ and $A_\sigma=O(1)$,
+the nonproportional numerator is
+$O_C(L^{-13/10}\sqrt{\log L})=o(L^{-1/5}\log L)$.
+The limit of $\gamma_B/(L^{-1/5}\log L)$ was proved in
+Corollary~\ref{cor:Mazur-exponential-terminal}; both remaining factors
+tend to one. This proves the limit. Eventually
+$A_H\le20$, $A_F\le80$, $b_{\sigma,-}\le11\varepsilon$ and $\#J\le7W$,
+so this bound also refines $\mathcal R_\sigma^\dagger$.
+\end{proof}
+
+\begin{theorem}[the unchanged genuine passage measures]
+\label{thm:Mazur-genuine-rate}
+For each band let $p_{\sigma,j}$ be its actual harmonic or uniform
+probability law, and define the finite-passage subprobability
+\[
+ G_{\sigma,j}(E)=
+ p_{\sigma,j}\{n:\tau_B(n)<\infty,\ T^{\tau_B(n)}n\in E\}.
+\]
+No assertion that every orbit reaches $B$ is implicit in this definition.
+Keep the original, unnormalized common measure
+\[
+ \mathcal Z_B(E)=\frac2d\sum_{M\in E'_B(E)}
+                         \frac{3^m p_m(M\bmod3^m)}M.
+\]
+Let $\chi_{\sigma,j}$ denote the corresponding exact full-prefix
+majorant in \eqref{eq:Mazur-harmonic-fullgood} or
+\eqref{eq:Mazur-flat-fullgood}, and let $Q_{\sigma,j}(E)$ denote the
+right side of \eqref{eq:Mazur-full-finite}. The explicit finite conclusion is
+\begin{align}
+ |G_{H,j}(E)-\mathcal Z_B(E)|
+ &\le\chi_{H,j}+\rho U_H+b_H+
+                  \widehat{\mathcal R}_H+Q_{H,j}(E),\nonumber\\
+ |G_{F,j}(E)-\mathcal Z_B(E)|
+ &\le\chi_{F,j}+b_F+
+                  \widehat{\mathcal R}_F+Q_{F,j}(E).
+ \label{eq:Mazur-genuine-four}
+\end{align}
+In particular, with $b_*=1/17.232$,
+\begin{equation}
+ \sup_{\text{branches},\,j,\,E,\,\sigma}
+ |G_{\sigma,j}(E)-\mathcal Z_B(E)|
+ =O_C\!\left(L^{-b_*}(\log L)^{1/2-b_*}\right).
+ \label{eq:Mazur-genuine-rate}
+\end{equation}
+This holds for every fixed $C\ge1/2$, including $C=1/2$.
+\end{theorem}
+\begin{proof}
+Insert, in order, the actual terminal union mass $U_\sigma$, nominal
+sum $I_\sigma$, and physical reference profile $\mathcal P_\sigma$.
+The resulting four differences are bounded by
+Corollary~\ref{cor:Mazur-coverage-mass} with
+Corollary~\ref{cor:Mazur-band-fullgood}, the preceding two propositions,
+and Proposition~\ref{prop:Mazur-full-profile}. This proves the finite
+inequalities and explains each term; it is not a substitution of the
+reference event for actual first passage.
+
+The estimates already proved are uniform in $E$, including targets
+depending on $B$. Coverage contributes
+$O_C(N^{-C^2/4})$; the boundary and affine terms are $O(B^{-9/10})$;
+the terminal term is $O_C(L^{-1/5}\log L)$.
+The full reference error is
+$O_C(N^{-b_*}(\log N)^{1/2-b_*})$.
+Since $C^2/4\ge1/16>b_*$ and $N\sim L/(10\log2)$, the first three
+terms are of smaller order than the last. For example their quotient
+for the terminal term is
+$O_C(L^{-(1/5-b_*)}(\log L)^{1/2+b_*})\to0$.
+This proves \eqref{eq:Mazur-genuine-rate} and the stated order of
+quantifiers: one threshold and constant for all branches, bands and
+landing targets, once $C$ is fixed.
+\end{proof}
+
+\begin{corollary}[whole-source laws and exact completion at nonpassage]
+\label{cor:Mazur-genuine-source}
+On each original closed source block
+\[
+ \mathcal I_y=[y,y^\alpha]\cap(2\mathbb N+1),
+ \qquad y=B^\alpha\ \hbox{or}\ B^{\alpha^2},
+\]
+let $G_{\sigma,y}$ be its genuine finite-passage subprobability under
+the harmonic or uniform starting law. Then
+\[
+ \sup_{\sigma,y,E}|G_{\sigma,y}(E)-\mathcal Z_B(E)|
+ =O\!\left(L^{-b_*}(\log L)^{1/2-b_*}\right).
+\]
+For every $0<c<b_*$, the source's factor-seven and factor-eight
+conclusions therefore hold eventually with $L^{-c}$ in place of
+its rate, without the additional restriction $c<1/20$.
+The implicit constants above may be fixed by taking $C=1/2$.
+
+Define the actual total landing map
+\[
+ \Lambda_B:2\mathbb N+1\longrightarrow
+ \mathcal Y_B:=\{r>0:r\text{ odd},\ r\le B\}\sqcup\{\partial\},
+ \qquad
+ \Lambda_B(n)=
+ \begin{cases}T^{\tau_B(n)}n,&\tau_B(n)<\infty,\\
+ \partial,&\tau_B(n)=\infty .
+ \end{cases}
+\]
+Here $\partial$ is one extra point, not a numerical landing value.
+For any two of the four whole-source starting laws, their pushforwards
+$\widehat G_1,\widehat G_2$ satisfy
+\begin{equation}
+ \|\widehat G_1-\widehat G_2\|_{\rm TV}
+ :=\sup_{A\subseteq\mathcal Y_B}|\widehat G_1(A)-\widehat G_2(A)|
+ =\sup_{E\subseteq\mathcal Y_B\setminus\{\partial\}}
+                      |G_1(E)-G_2(E)|
+ =O\!\left(L^{-b_*}(\log L)^{1/2-b_*}\right).
+ \label{eq:Mazur-completed-tv}
+\end{equation}
+In particular it is at most $16L^{-c}$ eventually for every $0<c<b_*$.
+For every real function $f$ on $\mathcal Y_B$, the difference of its
+expectations is bounded by
+$(\max f-\min f)\|\widehat G_1-\widehat G_2\|_{\rm TV}$.
+
+The original common mass itself satisfies
+\[
+ \mathcal Z_B(\mathcal Y_B\setminus\{\partial\})
+ =1+O\!\left(L^{-b_*}(\log L)^{1/2-b_*}\right),
+\]
+or, equivalently, the unscaled original kernel mass on $E'_B([1,B])$
+is $d/2+O(L^{-b_*}(\log L)^{1/2-b_*})$. No division by that mass is used.
+\end{corollary}
+\begin{proof}
+The half-open bands partition $[y,y^\alpha)$, with exactly one additional
+point if $y^\alpha$ is an odd integer. Write $H_y,D_y$ for the reciprocal
+sum and count of the closed block. The respective band weights are
+$H_j/H_y$ and $D_j/D_y$; the possible top weights are
+$p_H=(1/y^\alpha)/H_y$ and $p_F=1/D_y$ when that point exists, and zero
+otherwise. In either case $\sum_jw_{\sigma,j}+p_\sigma=1$ exactly.
+For any event its whole-source mass is
+$\sum_jw_{\sigma,j}G_{\sigma,j}(E)+t_\sigma(E)$, where
+$0\le t_\sigma(E)\le p_\sigma$.
+
+For any nonnegative center $Z$ and valid band errors $r_j$ this gives
+the finite identity and bound
+\[
+ G_{\sigma,y}(E)-Z
+ =\sum_jw_{\sigma,j}(G_{\sigma,j}(E)-Z)+(t_\sigma(E)-p_\sigma Z),
+\]
+\[
+ |G_{\sigma,y}(E)-Z|
+ \le\sum_jw_{\sigma,j}r_j+
+       p_\sigma\max\{Z,|1-Z|\}.
+\]
+The last factor is exact for a variable $t_\sigma/p_\sigma\in[0,1]$;
+when $p_\sigma=0$ its term is zero. The first band gives
+$H_y\ge1/3$ and $D_y>y/2$, hence $p_H\le3/B$ and $p_F<2/B$.
+The endpoint coefficient bound gives
+$0\le\mathcal Z_B(E)\le(2/d)(2+\epsilon_B)$.
+Thus the top costs $O(B^{-1})$ uniformly, not the number of bands.
+This proves the whole-source rate. Because
+$L^{-(b_*-c)}(\log L)^{1/2-b_*}\to0$, each band and source error
+is $o(L^{-c})$; the particular source constants $7$ and $8$ follow.
+
+For the completion, restriction to the finite landing points gives $G_i$
+exactly, and the mass at $\partial$ is $1-G_i([1,B])$. If a set $A$
+contains $\partial$, its complementary set does not, and equality of the
+total probability masses gives
+$|\widehat G_1(A)-\widehat G_2(A)|
+ =|G_1(\mathcal Y_B\setminus A)-G_2(\mathcal Y_B\setminus A)|$.
+This proves the equality of the two suprema. The triangle inequality
+through the \emph{unchanged} common measure proves the rate and constant
+$16$; there is no separate factor for the nonpassage atom.
+For the expectation bound, subtract $\min f$ and write
+$f-\min f=\int_0^{\max f-\min f}\mathbf1_{\{f-\min f>s\}}\,ds$.
+The domain is finite, so summation and integration interchange directly.
+
+Finally the good-prefix event ensures passage by time $N$, as proved in
+Proposition~\ref{prop:Mazur-genuine-coverage}. Band failure mass is at most
+$\chi_{\sigma,j}$; whole-source failure mass is at most its mixture plus
+$p_\sigma$. At $C=1/2$ this is $O(N^{-1/16})+O(B^{-1})$.
+Therefore $G_{\sigma,y}([1,B])=1+O(N^{-1/16})$.
+Its comparison with $\mathcal Z_B([1,B])$ proves the asserted mass limit.
+\end{proof}
+
+These results strengthen the genuine passage-law stage of Mazur's
+argument and connect it to the previously reconstructed Allikvere
+passage comparison. Section~\ref{sec:Mazur-real-timed} carries them
+through real thresholds and the original scheduled iteration to a
+timed natural-density theorem. No Lean replay is inferred from the
+written proofs.
+
+\begin{figure}[ht]
+\centering
+\fbox{\begin{minipage}{0.95\linewidth}
+\[
+ \begin{array}{ccccc}
+ G_{\sigma,j}&\longleftrightarrow&U_\sigma&
+                    \longleftrightarrow&I_\sigma\\
+ &\chi_{\sigma,j}&&b_\sigma+\mathbf1_{\sigma=H}\rho U_H&\\[5pt]
+ I_\sigma&\longleftrightarrow&\mathcal P_\sigma&
+                    \longleftrightarrow&\mathcal Z_B\\
+ &\widehat{\mathcal R}_\sigma&&Q_{\sigma,j}(E)&
+ \end{array}
+\]
+The first node is actual finite first passage; the last is the original
+common measure. Each arrow is an error estimate, not equality of maps.
+The inequalities are \eqref{eq:Mazur-genuine-four}. Convex band weights
+then give the whole-source law, with its separate upper-endpoint charge.
+The total map $\Lambda_B$ adds the actual nonpassage point without
+altering any finite landing mass; \eqref{eq:Mazur-completed-tv} gives
+its exact comparison.
+\end{minipage}}
+\caption{How the four estimates reach actual Collatz passage laws.
+This retains Mazur's original comparisons with the quantitative
+refinements proved here from the cited Tao and Rhin inputs.
+The endpoints of the diagram and all intermediate quantities are defined
+in this section; the arrows do not denote deterministic orbit maps.}
+\label{fig:Mazur-genuine-chain}
+\end{figure}
+
+\subsection{Real thresholds and the timed density conclusion}
+\label{sec:Mazur-real-timed}
+
+The preceding rate concerns genuine landing probabilities. To use it in
+the scale iteration, two changes must be made explicitly: the source
+formalization sends nonpassage to the number \(1\), and its iteration
+uses real thresholds and real source windows. Neither change requires
+a loss in the logarithmic exponent. Keeping the exact geometric sum of
+the original scheduled times also improves the source's clock constants.
+
+The source route is Mazur~\cite{Mazur2026v2},
+\texttt{ND/Probability/PassTotalizer.lean},
+\texttt{ND/Discrepancy/A5ReferenceTotalizedSourceRate.lean},
+\texttt{A5ReferenceRealFloorPass.lean}, and
+\texttt{A5ReferenceRealLogBlock.lean}. Its scale definitions are in
+\texttt{Tao/Section3/AmbientPartialTrace.lean}; its clock comparison is
+in \texttt{Tao/Section3/TimeBudget.lean} and
+\texttt{ND/LogTime/Clock.lean}. All refer here to the pinned source
+commit specified in the bibliography. The underlying passage method
+is Tao's~\cite{Tao2026v7}; the quantitative input remains the written
+Tao--Rhin comparison above. The following is a written reconstruction
+and refinement, not a claim to have replayed the whole Lean package.
+
+Put
+\[
+ \alpha=\frac{1001}{1000},\qquad b=\frac1{17.232},\qquad
+ a=\frac12-b,\qquad
+ R(L)=L^{-b}(1+\log L)^a\quad(L\ge\log2).
+\]
+This positive rate is asymptotic to \(L^{-b}(\log L)^a\).
+It only extends the displayed scalar rate to small positive logarithms;
+it does not alter a measure, source window, or passage map.
+For large \(L\), \(R\) is decreasing, since its logarithmic derivative
+with respect to \(L\) is \(-b+a/(1+\log L)<0\).
+
+\begin{proposition}[the exact effect of sending nonpassage to one]
+\label{prop:Mazur-totalizer-exact}
+For integer \(B\ge1\), let \(\mathcal Y_B\) and \(\Lambda_B\) be as in
+Corollary~\ref{cor:Mazur-genuine-source}. The map
+\[
+ r_B:\mathcal Y_B\longrightarrow\{0,1,\ldots,B\},\qquad
+ r_B(s)=s\ (s\ne\partial),\quad r_B(\partial)=1
+\]
+has image precisely the positive odd points of its codomain. Every
+nonempty fibre is a singleton except \(r_B^{-1}(1)=\{1,\partial\}\).
+The source's totalized map is exactly \(F_B=r_B\circ\Lambda_B\).
+
+For probability measures \(\mu,\nu\) on \(\mathcal Y_B\), write
+\(\Delta=\mu-\nu\), \(u=\Delta(\{1\})\), \(v=\Delta(\{\partial\})\).
+With \(\|\Delta\|_1=\sum_s|\Delta(\{s\})|\),
+\begin{equation}
+ \|\Delta\|_1-\|(r_B)_*\Delta\|_1
+ =|u|+|v|-|u+v|
+ =\begin{cases}2\min(|u|,|v|),&uv<0,\\0,&uv\ge0.\end{cases}
+ \label{eq:Mazur-totalizer-loss}
+\end{equation}
+Moreover \(\|\Delta\|_1=2\sup_A|\Delta(A)|\).
+Consequently each natural-source pair in
+Corollary~\ref{cor:Mazur-genuine-source} has totalized full \(\ell^1\)
+distance \(O(R(\log B))\), and at most \(32(\log B)^{-c}\)
+eventually for every \(0<c<b\).
+\end{proposition}
+\begin{proof}
+First passage, if it exists, has one uniquely determined time and
+landing point. This proves the map formula and fibres, including the
+zero masses at even points and at zero. Pushforward adds only the two
+coordinates \(u,v\); all other coordinates are unchanged, proving
+the first equality in \eqref{eq:Mazur-totalizer-loss}. Splitting
+according to the signs of \(u,v\) proves the second.
+
+Since \(\sum_s\Delta(\{s\})=0\), the positive and negative parts each
+have mass \(\|\Delta\|_1/2\). The event consisting of the positive
+coordinates attains that value, and no event exceeds it in absolute
+value. This proves the convention comparison and the rate.
+The linear kernel of \((r_B)_*\) consists exactly of
+\(t(\delta_1-\delta_\partial)\), \(t\in\mathbb R\).
+Thus no inverse on arbitrary laws exists: \(\delta_1\) and
+\(\delta_\partial\) have the same image. If the nonpassage mass is
+provided separately, reconstruction is exact: retain every other
+coordinate, set the \(\partial\)-coordinate to that mass, and subtract
+it from the image mass at \(1\). An admissible mass lies between zero
+and that image mass. This describes precisely what was lost.
+\end{proof}
+
+\begin{proposition}[exact overlap for unchanged finite source laws]
+\label{prop:Mazur-source-overlap}
+Let \(S,T\) be nonempty finite subsets of an ambient set and let \(w>0\)
+on \(S\cup T\). Write \(W_A=\sum_{n\in A}w(n)\) and
+\(p_A(n)=w(n)\mathbf1_A(n)/W_A\).
+Then
+\begin{equation}
+ \sup_E|p_S(E)-p_T(E)|
+ =1-\frac{W_{S\cap T}}{\max(W_S,W_T)}
+ =\frac{\max(W_{S\setminus T},W_{T\setminus S})}
+             {\max(W_S,W_T)}.
+ \label{eq:Mazur-overlap}
+\end{equation}
+Their full \(\ell^1\) distance is twice this number.
+For every common map \(f:S\cup T\to Z\), the output event distance
+is at most \eqref{eq:Mazur-overlap}; its exact value is
+\[
+ \frac12\sum_{z\in f(S\cup T)}
+ \left|\sum_{n:f(n)=z}(p_S(n)-p_T(n))\right|.
+\]
+\end{proposition}
+\begin{proof}
+For any two probability vectors \(p,q\),
+\(\frac12\sum|p-q|=1-\sum\min(p,q)\), by
+\(|p-q|=p+q-2\min(p,q)\). On the intersection here,
+\(\min(p_S(n),p_T(n))=w(n)/\max(W_S,W_T)\);
+elsewhere it is zero. This proves the first equality. Writing
+\(W_S=W_{S\cap T}+W_{S\setminus T}\) and similarly for \(T\)
+proves the second. Summing differences on each fibre gives the
+displayed output formula. The triangle inequality on each fibre
+proves contraction. This applies to the existing probabilities
+without replacing either denominator. For an injective \(f\) equality
+holds; cancellation of opposite signs within fibres describes every
+strict loss.
+\end{proof}
+
+\begin{proposition}[real/floor transport with both endpoints retained]
+\label{prop:Mazur-real-overlap}
+For \(x\ge1\), set \(B=\lfloor x\rfloor\). For either
+\(\beta=\alpha\) or \(\beta=\alpha^2\), put \(q=\alpha\beta\) and
+\[
+ S=[B^\beta,B^q]\cap(2\mathbb N+1),\qquad
+ T_x=[x^\beta,x^q]\cap(2\mathbb N+1).
+\]
+Assume \(S,T_x\ne\varnothing\). Define \(\epsilon_F(x,\beta)\) and
+\(\epsilon_H(x,\beta)\) by the exact right side of
+\eqref{eq:Mazur-overlap}, using respectively \(w(n)=1\) and \(w(n)=1/n\).
+For all sufficiently large \(B\), uniformly in \(B\le x<B+1\) and
+the two branches,
+\begin{align}
+ \epsilon_F(x,\beta)
+ &\le
+ \frac{(x^q-B^q)/2+1}{(B^q-B^\beta)/2-1},
+ \label{eq:Mazur-real-flat}\\
+ \epsilon_H(x,\beta)
+ &\le
+ \frac{(q/2)\log(x/B)+B^{-\beta}}
+      {((q-\beta)/2)\log B-B^{-\beta}}.
+ \label{eq:Mazur-real-harmonic}
+\end{align}
+The displayed denominators are positive in this range.
+In particular
+\[
+ \limsup_{B\to\infty}\ \sup_{B\le x<B+1} B\epsilon_F(x,\beta)\le q,
+ \qquad
+ \limsup_{B\to\infty}\ \sup_{B\le x<B+1}
+ B\log B\,\epsilon_H(x,\beta)\le
+ \frac{q}{q-\beta}=1001.
+\]
+The exact errors vanish at \(x=B\), even though these upper envelopes
+need not vanish there.
+\end{proposition}
+\begin{proof}
+On an interval of length \(v-u\), the number of odd integers differs
+from \((v-u)/2\) by at most \(1\), for any choice of endpoint inclusion.
+For completeness, if \(A(t)\) counts those odd points between \(u\)
+and \(t\), then \(|A(t)-(t-u)/2|\le1\). Summation by parts gives
+\[
+ \sum_{n\in[u,v]\ {\rm odd}}\frac1n
+ =\frac{A(v)}v+\int_u^v\frac{A(t)}{t^2}\,dt.
+\]
+The same formula uses the appropriate \(A\) for a deleted endpoint.
+Replacing \(A(t)\) by \((t-u)/2\) gives
+\(\tfrac12\log(v/u)\); the total absolute error is at most
+\(1/v+\int_u^v t^{-2}dt=1/u\).
+This also handles an atom at \(u\).
+
+Eventually \(x^\beta\le B^q\), uniformly in \(x<B+1\), because
+\((B+1)^\beta/B^q\to0\).
+The two exclusive sets are then exactly
+\([B^\beta,x^\beta)\cap(2\mathbb N+1)\) and
+\((B^q,x^q]\cap(2\mathbb N+1)\).
+The larger of their cardinalities is at most
+\((x^q-B^q)/2+1\): indeed \(t\mapsto t^q-t^\beta\) is increasing
+for \(t\ge1\), since \(q>\beta>1\).
+The full mass of \(S\) is at least \((B^q-B^\beta)/2-1\).
+Equation~\eqref{eq:Mazur-overlap} proves \eqref{eq:Mazur-real-flat}.
+
+The exclusive reciprocal masses are at most
+\(\frac{\beta}{2}\log(x/B)+B^{-\beta}\) and
+\(\frac q2\log(x/B)+B^{-q}\).
+Their maximum is bounded by the latter logarithmic term plus
+\(B^{-\beta}\). The reciprocal mass of \(S\) is at least the
+denominator of \eqref{eq:Mazur-real-harmonic}, proving that bound.
+
+Finally \(x^q-B^q\le q(B+1)^{q-1}(x-B)\) and
+\(\log(x/B)\le(x-B)/B\).
+Divide numerator and denominator by the indicated powers.
+The additive cardinal error contributes \(O(B^{1-q})\) after
+multiplication by \(B\), and the harmonic error contributes
+\(O(B^{1-\beta})\) after multiplication by \(B\log B\).
+Both vanish. These estimates are uniform in \(x-B\in[0,1)\).
+\end{proof}
+
+\begin{theorem}[real-source passage and its actual scheduled failure]
+\label{thm:Mazur-real-passage}
+Whenever the unchanged closed odd block \([y,y^\alpha]\) is nonempty,
+let \(H_y,F_y\) be its harmonic and uniform probability laws.
+For real \(x\) let
+\[
+ n_x=\left\lfloor\frac{\log\lfloor x\rfloor}{10\log2}\right\rfloor,
+ \qquad
+ F_x(n)=
+ \begin{cases}T^{\tau_x(n)}n,&\tau_x(n)<\infty,\\1,&\tau_x(n)=\infty.
+ \end{cases}
+\]
+For either source branch \(y=x^\alpha,x^{\alpha^2}\) and either law,
+the probability of \(\tau_x>n_x\), including nonpassage, is
+\(O((\log x)^{-1/16})\). Every pair of the four totalized landing
+laws has event distance \(O(R(\log x))\) and full \(\ell^1\)
+distance \(O(R(\log x))\), uniformly as \(x\to\infty\).
+No hypothesis about the existence of passage on every orbit is made.
+\end{theorem}
+\begin{proof}
+Since every iterate is an integer,
+\[
+ T^j n\le x\ \Longleftrightarrow\ T^j n\le\lfloor x\rfloor
+ \quad\hbox{for every }j.
+\]
+Thus first-hit times, nonpassage events, and landing values agree
+exactly at \(x\) and \(B=\lfloor x\rfloor\).
+The identity map on \(\{0,\ldots,B\}\) is the carrier equivalence;
+there is no rounding error in the dynamics.
+
+Let \(\mu_{\sigma,\beta}^{x}\) denote a real source law and
+\(\mu_{\sigma,\beta}^{B}\) its floor source law.
+Propositions~\ref{prop:Mazur-source-overlap} and
+\ref{prop:Mazur-real-overlap} give event distance
+\(\epsilon_\sigma(x,\beta)\) before the common map \(F_B\), hence
+at most that distance after it. If \(D_B(i,j)\) is the exact
+event distance between the natural-source outputs, the finite
+pairwise bound is
+\begin{equation}
+ D_x(i,j)\le\epsilon_i+D_B(i,j)+\epsilon_j.
+ \label{eq:Mazur-real-pair}
+\end{equation}
+Full \(\ell^1\) is twice this entire expression, not twice just its
+middle term. In particular the natural bound \(32(\log B)^{-c}\)
+from the totalizer proposition remains the middle full-\(\ell^1\)
+term. The source's safe outer estimates were \(96x^{-99/100}\)
+for uniform events and \(96000/(B\log B)\) for harmonic events.
+Equations~\eqref{eq:Mazur-real-flat}--\eqref{eq:Mazur-real-harmonic}
+replace those outer terms using the original finite sets.
+
+The good-prefix argument in
+Proposition~\ref{prop:Mazur-genuine-coverage} proves passage by
+\(n_B=\lfloor\log B/(10\log2)\rfloor\), not just eventual passage.
+Corollary~\ref{cor:Mazur-band-fullgood}, with \(C=1/2\), bounds
+its complement by \(O((\log B)^{-1/16})\) on every band.
+The exact closed-block mixture in
+Corollary~\ref{cor:Mazur-genuine-source} adds at most the top
+endpoint mass \(O(B^{-1})\). Applying the source overlap bound
+to the single event \(\{\tau_B>n_B\}\) costs only
+\(\epsilon_\sigma\), with no full-\(\ell^1\) factor.
+This proves the scheduled failure estimate for real windows.
+Finally \(\log B/\log x\to1\);
+\(\epsilon_F=O(B^{-1})\), \(\epsilon_H=O((B\log B)^{-1})\),
+and \(1/16>b\). Thus both the source perturbation and scheduled
+failure are of smaller order than \(R(\log x)\).
+Equation~\eqref{eq:Mazur-real-pair} proves the asserted rate.
+\end{proof}
+
+\begin{proposition}[the actual time-carrying scale iteration]
+\label{prop:Mazur-critical-iteration}
+There are constants \(C_0,B_0\), independent of \(B\) and \(y\),
+such that for every integer \(B\ge B_0\) and every \(y\ge2\)
+with a nonempty odd source block, the harmonic law \(H_y\) satisfies
+\begin{equation}
+ H_y\left\{n:\tau_B(n)>
+ \frac{\log y}{10\alpha(\alpha-1)\log2}\right\}
+ \le C_0 R(\log B).
+ \label{eq:Mazur-harmonic-timed}
+\end{equation}
+In fact its integer time budget is the exact finite sum below.
+
+For a seed \(y_0>1\), define
+\(y_j=y_0^{\alpha^j}\), \(q_j=y_j^{1/\alpha}\), and
+\(K_j=\sum_{i<j}n_{q_i}\). Let \(d_j\) be the event distance
+between \((F_{q_j})_*H_{y_j}\) and
+\((F_{q_j})_*H_{y_{j+1}}\), and put
+\(s_j=H_{y_{j+1}}\{\tau_{q_j}>n_{q_j}\}\).
+Whenever \(y_0^\alpha\le B\),
+\begin{equation}
+ H_{y_J}\{\tau_B>K_J\}\le\sum_{j<J}(d_j+s_j),\qquad
+ K_J\le\frac{\log q_0(\alpha^J-1)}
+                   {10(\alpha-1)\log2}.
+ \label{eq:Mazur-timed-telescope}
+\end{equation}
+The finite sum of the critical comparison rates is bounded, uniformly
+in \(J\), by
+\begin{equation}
+ \sum_{j<J}R(\alpha^j L)
+ \le R(L)\left(\frac1{1-r}
+       +\frac{a\log\alpha}{1+\log L}\frac r{(1-r)^2}\right),
+ \qquad r=\alpha^{-b},\quad L\ge1.
+ \label{eq:Mazur-critical-geometric}
+\end{equation}
+For the infinite sum, its ratio to \(R(L)\) tends to \(1/(1-r)\)
+as \(L\to\infty\).
+\end{proposition}
+\begin{proof}
+For \(K\in\mathbb N\), let \(A_{B,K}=\{n\text{ odd}:\tau_B(n)>K\}\).
+For every \(q\ge1\) and positive odd \(n\),
+\begin{align}
+ \mathbf1_{A_{B,K}}(F_q(n))&\le\mathbf1_{A_{B,K}}(n),\nonumber\\
+ \mathbf1_{A_{B,K+N}}(n)&\le
+ \mathbf1_{A_{B,K}}(F_q(n))+\mathbf1_{\{\tau_q>N\}}(n)
+ \qquad(N\in\mathbb N).
+ \label{eq:Mazur-timed-pointwise}
+\end{align}
+For the first inequality, suppose \(\tau_B(n)\le K\). At nonpassage
+\(F_q(n)=1\), which already lies below \(B\).
+If first passage to \(q\) occurs before the hit at \(B\), the residual
+time to \(B\) is at most \(K\). If it occurs later, then the earlier
+hit at \(B\) had value above \(q\); hence \(q<B\), and the landing
+at \(q\) is itself below \(B\). This proves the first inequality
+without an assumed ordering between \(q\) and \(B\).
+For the second, when \(\tau_q\le N\) and the landing hits \(B\)
+within \(K\), concatenation supplies a hit within \(N+K\).
+Otherwise its right side is at least one whenever necessary.
+
+Integrating the second inequality under \(H_{y_{j+1}}\),
+comparing its landing event with the one under \(H_{y_j}\),
+and applying the first inequality gives
+\[
+ H_{y_{j+1}}(A_{B,K_j+n_{q_j}})
+ \le H_{y_j}(A_{B,K_j})+d_j+s_j.
+\]
+These are the literal two source branches at threshold \(q_j\):
+\(q_j^\alpha=y_j\) and \(q_j^{\alpha^2}=y_{j+1}\).
+All points in the seed block are at most \(B\), so its bad
+probability at \(K_0=0\) is zero. Induction proves the first
+part of \eqref{eq:Mazur-timed-telescope}.
+Since \(n_{q_j}\le\log q_j/(10\log2)\) and
+\(\log q_j=\alpha^j\log q_0\), summing the finite geometric
+series proves its clock bound, with no extra or unused step.
+
+For \eqref{eq:Mazur-critical-geometric}, write \(h=\log\alpha\).
+Then exactly
+\[
+ \frac{R(\alpha^jL)}{R(L)}
+ =r^j\left(1+\frac{jh}{1+\log L}\right)^a.
+\]
+Here \(0<a<1\). Concavity, or integration of
+\(a(1+t)^{a-1}\le a\), bounds the last factor by
+\(1+ajh/(1+\log L)\). Summing
+\(\sum r^j=(1-r)^{-1}\) and
+\(\sum jr^j=r/(1-r)^2\) proves the upper bound.
+The lower bound for the infinite sum is \((1-r)^{-1}\),
+because the parenthesized factor is at least one; squeezing
+proves the limit. All terms are nonnegative, so no interchange
+of conditionally convergent sums occurs.
+
+Now fix \(y\) with \(y^\alpha>B\).
+Choose the least integer \(J\ge1\) such that
+\(y_0=y^{\alpha^{-J}}\) satisfies \(y_0^\alpha\le B\).
+Existence follows from \(y^{\alpha^{-J}}\to1\).
+Minimality gives \(y_0^{\alpha^2}>B\), whence
+\[
+ B^{1/\alpha^2}<y_0\le B^{1/\alpha},\qquad
+ B^{1/\alpha^3}<q_0\le B^{1/\alpha^2}.
+\]
+Thus one sufficiently large \(B_0\), chosen before \(y,J\), puts
+all \(q_j\) in the range of Theorem~\ref{thm:Mazur-real-passage}.
+That theorem gives \(d_j+s_j\le C R(\log q_j)\) with one \(C\).
+The geometric bound is \(O(R(\log q_0))\).
+Since \(\log q_0\in(\alpha^{-3}\log B,\alpha^{-2}\log B]\),
+direct substitution gives
+\(R(\log q_0)\le\alpha^{3b}R(\log B)\) for large \(B\).
+The denominator \(1-r\) is fixed and strictly positive.
+This proves the probability estimate, uniformly in the trace length.
+Finally \(\alpha^J\log q_0=(\log y)/\alpha\), proving
+\eqref{eq:Mazur-harmonic-timed}.
+If \(y^\alpha\le B\), all starts already hit at time zero and the
+same statement holds. Both this case and an empty trace have zero cost.
+\end{proof}
+
+\begin{theorem}[timed natural density from the original Mazur schedules]
+\label{thm:Mazur-critical-density}
+There is an absolute \(C\) such that for every integer \(B\ge2\) and
+real \(X\ge2\),
+\begin{align}
+ \frac1X\#\left\{1\le n\le X:n\text{ odd},\
+       \tau_B(n)>\frac{100}{\log2}\log n\right\}
+ &\le C R(\log B),\label{eq:Mazur-odd-density}\\
+ \frac1X\#\left\{1\le n\le X:\
+       \tau_B^{\rm raw}(n)>\frac{301}{\log2}\log n\right\}
+ &\le 2C R(\log B).\label{eq:Mazur-raw-density}
+\end{align}
+Here the ordinary Collatz map is \(n/2\) for even \(n\) and
+\(3n+1\) for odd \(n\); \(\tau_B^{\rm raw}\) is its first hitting
+time of \([1,B]\). These are not accelerated raw steps.
+
+In particular every function \(f:\mathbb N_{>0}\to\mathbb R\)
+tending to infinity is exceeded downwards by an iterate within
+\((301/\log2)\log n\) ordinary steps for a set of natural density one:
+the iterate is \emph{strictly} below \(f(n)\).
+The corresponding odd-relative-density statement holds for functions
+tending to infinity on the odd integers with the Syracuse clock
+\((100/\log2)\log n\). For every \(0<c<b\), the right sides of the
+fixed-target estimates are also \(O_c((\log B)^{-c})\).
+
+These constants refine the source's
+\(501501/(5000\log2)\) and \(1509503/(5000\log2)\)
+within its own scheduled construction. They are not claimed to be
+the best clocks in this workbench: the earlier Allikvere-based
+reconstruction has a much smaller leading Syracuse coefficient.
+\end{theorem}
+\begin{proof}
+First take \(B\) large enough for the preceding results.
+When \(X\le B\) the counted sets are empty.
+For \(X>B\), put \(y=X^{1/\alpha}\) and
+\(q=X^{1/\alpha^2}\). The top odd block is exactly
+\([y,X]\cap(2\mathbb N+1)\), including both integer endpoints.
+If \(y^\alpha\le B\) there is nothing to prove; otherwise choose
+the harmonic trace ending at \(H_y\) as in the preceding proposition,
+with its integer budget \(K\). Integrating
+\eqref{eq:Mazur-timed-pointwise} under \(F_y\), comparing its
+landing law at \(q\) with that of \(H_y\), then using the first
+inequality there, gives
+\[
+ F_y\{\tau_B>K+n_q\}
+ \le H_y\{\tau_B>K\}
+    +D((F_q)_*F_y,(F_q)_*H_y)
+    +F_y\{\tau_q>n_q\}.
+\]
+Here \(D\) denotes event-supremum distance. All three terms are
+\(O(R(\log B))\), uniformly in \(X>B\): the first by the trace,
+and the last two by the real passage theorem and
+\(\log q=\alpha^{-2}\log X\).
+For the comparison to \(R(\log B)\), use eventual monotonicity at
+\(\alpha^{-2}\log B\), followed by direct substitution.
+
+Write \(k=10\log2\). The exact trace bound and the final schedule yield
+\[
+ K+n_q\le
+ \frac{\log y}{k\alpha(\alpha-1)}+\frac{\log q}{k}
+ =\frac{\log X}{k\alpha(\alpha-1)}.
+\]
+There is no use of \(\log q\le\log X\) in this equality.
+Every point in the top block satisfies \(\log X\le\alpha\log n\).
+It follows that \(K+n_q\le\log n/[k(\alpha-1)]
+=(100/\log2)\log n\).
+Thus the top-block bad fraction is \(O(R(\log B))\).
+There are at most \(y+1\) positive integers below its lower boundary,
+so the contribution of all omitted odd points divided by \(X\) is
+at most \(X^{-(1-1/\alpha)}+X^{-1}\).
+Uniformly for \(X>B\) this is \(O(R(\log B))\), since every negative
+power of \(B\) is \(o(R(\log B))\).
+The number of odd points in the top block is at most \(X\) for
+\(X\ge2\), so changing its probability to count divided by \(X\)
+does not increase its bound. This proves \eqref{eq:Mazur-odd-density}
+for large \(B\).
+For the finitely many integers \(2\le B<B_0\), the counted ratio
+is at most one and \(\min_{2\le B<B_0}R(\log B)>0\);
+increasing one \(C\) handles all of them. The same odd count bound
+also holds for \(0<X<2\), since the only possible positive odd input,
+\(1\), is good at time zero.
+
+For the raw clock, write uniquely \(n=2^v u\), \(u\) positive odd.
+Suppose \(u=u_0,\ldots,u_t\) is a Syracuse trajectory with \(u_t\le B\)
+and \(t\le(100/\log2)\log u\).
+If \(a_i=v_2(3u_i+1)\), then
+\[
+ 2^{\sum_{i<t}a_i}u_t=\prod_{i<t}(3+1/u_i)\,u
+ \le 4^t u.
+\]
+Taking base-two logarithms and using \(u_t\ge1\) gives
+\(\sum a_i\le2t+\log_2u\). The ordinary trajectory reaches
+\(u_t\) in exactly \(v+t+\sum a_i\) steps. Therefore its first
+hit is no later than
+\[
+ v+3t+\log_2u
+ \le \frac{300}{\log2}\log u+\frac{\log n}{\log2}
+ \le \frac{301}{\log2}\log n.
+\]
+This is an exact map from a Syracuse path to the ordinary path:
+each odd edge expands into one \(3u+1\) edge followed by its
+\(a_i\) halving edges, after the \(v\) initial halvings.
+There are no deleted labels or valuations.
+
+Consequently every raw-bad \(n\) has odd part \(u\) in the odd-bad
+set. The unique factorization gives, with no residual cutoff,
+\[
+ \#\{\text{raw-bad }n\le X\}
+ \le\sum_{v\ge0}\#\{\text{odd-bad }u\le X/2^v\}
+ \le C R(\log B)\sum_{v\ge0}X/2^v
+ =2CX R(\log B).
+\]
+The actual count sum is finite. The bound also covers its terms with
+\(X/2^v<2\), whose counts vanish. This proves the raw estimate.
+
+For the strict growing-threshold conclusion, fix any integer \(B\ge2\).
+Outside a finite set, \(f(n)>B\). Thus failure to have an iterate
+strictly below \(f(n)\) within the stated time is contained in the
+fixed-\(B\) bad set plus that finite set. Take the upper density in
+\(X\) first, then let \(B\to\infty\); \(R(\log B)\to0\).
+For odd relative density the denominator is
+\(\#\{n\le X:n\text{ odd}\}\sim X/2\), changing only a factor two.
+Finally \(R(L)=o(L^{-c})\) for every \(0<c<b\), which proves the
+last rate assertion. No pointwise assertion that every orbit is
+bounded follows from these density estimates.
+\end{proof}
+
+The probability recurrence, rather than a sequence of independent
+random orbits, is what permits the iteration. Its test event changes
+with the accumulated integer budget \(K_j\); uniformity over all
+landing events in Theorem~\ref{thm:Mazur-real-passage} is therefore
+essential. The construction does not presume stationarity or
+independence at successive scales. The two identities
+\(q_j^\alpha=y_j\), \(q_j^{\alpha^2}=y_{j+1}\) identify every source
+law used, and the pointwise inequalities identify exactly how an
+actual path passes between the tests.
+
+\begin{center}
+\fbox{\begin{minipage}{0.93\linewidth}
+\textbf{The measures and the two clocks.}
+The exact source overlap controls real/floor transport.
+Actual landing with \(\partial\) maps to the source's landing-with-\(1\);
+only its \(\{1,\partial\}\) fibre loses information.
+At each threshold \(q_j\), compare the two harmonic landing laws,
+charge actual failure to land by \(n_{q_j}\), and add precisely
+\(n_{q_j}\) to the clock. Their finite sum, plus the one uniform
+top-block passage, is at most
+\(\log X/[10\alpha(\alpha-1)\log2]\).
+The inequality \(\log X\le\alpha\log n\) gives \(100\log_2 n\)
+Syracuse steps. Expanding the valuation-labelled odd edges gives
+\(301\log_2 n\) ordinary steps.
+Proofs: Propositions~\ref{prop:Mazur-totalizer-exact}--%
+\ref{prop:Mazur-critical-iteration} and
+Theorem~\ref{thm:Mazur-critical-density}.
+\end{minipage}}
+\end{center}

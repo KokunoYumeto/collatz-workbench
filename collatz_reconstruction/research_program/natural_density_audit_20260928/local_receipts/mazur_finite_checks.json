@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "counts": {
+    "affine_inverse_and_actual_word": 426,
+    "injective_time_windows": 22,
+    "injective_terminal_records": 572,
+    "paired_shell_and_mass_caps": 176,
+    "actual_only": 29,
+    "strict_nominal_endpoint_fixtures": 44,
+    "nominal_only": 4,
+    "two_row_sum_identities": 17280,
+    "sharp_absorption_cells": 240,
+    "sharp_equality_witnesses": 60,
+    "variable_coefficient_aggregates": 60,
+    "terminal_quotient_identities": 60
+  },
+  "source_commit": "ca3dd0d63920411213403092aecc6946619eb082",
+  "source_hashes": {
+    "ND/Band/A5TerminalAtoms.lean": "a053b2a6ff2528e0d758d71067da37fadad2fbe0e1afde1825136dd51ace0593",
+    "ND/Band/A5TerminalAtomDenominatorComparison.lean": "d839695144308acb0bcc5fe4c39b48c07e865a2e08eeb15661368a767e4e887c",
+    "ND/Band/A5TerminalAtomNominalization.lean": "0dd0ca8403013aedd5e382cd4f35a0aad6bbbc1450266b85e3127052331f44df",
+    "ND/Band/A5TerminalBoundaryShell.lean": "564f62ede69b7afa8d709940a728e98567714be27dbad36d0fbeb09988028238",
+    "ND/Band/A5NominalTotalCap.lean": "c463284e8755de37703af7320be2810e8ffb35747e06226944740340765a3aed",
+    "ND/Band/A5TerminalAtomReconstruction.lean": "35b9adfab5790e43923c5c87241233f341adc65388e369551d666057eb515f84",
+    "ND/Band/A5ReferenceFixedTimeAbsorption.lean": "fe7b54fe450a3e6dbf58c67d2f9984b6b1f9250da5291e0a003c74a8a53eaceb",
+    "ND/Band/A5ReferenceTerminalAggregate.lean": "d02ff94f6f56f60904f701489770d344df3bc6e01a38015c8d049e57dfe07980",
+    "ND/Band/A5ReferenceTerminalPacket.lean": "4909e213a76080a3f62c9bef862aef5e8c34405e673b870799e05d90cae99db0",
+    "ND/Probability/TrueAbsorption.lean": "75374d4096b3993316c1440211b48c342d53427dc8898e9dcb6fbf3ec76e5748"
+  },
+  "wide_window_example": {
+    "start": 63,
+    "B": 50,
+    "first_hit": 35,
+    "times_34_through_38": [
+      61,
+      23,
+      35,
+      53,
+      5
+    ]
+  },
+  "scope": "Finite exact rational regressions, not analytic mixing, coverage, source-package certification or Lean replay.",
+  "lean_started": false,
+  "public_mutations": false,
+  "local_artifact_hashes": {
+    "check_mazur_finite.py": "05783e5fd8214150ee0d0c9ec40f1ed296555849a203fc5420032ccdcf6823e0",
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "counts": {
+    "literal_source_definition_identity": 1,
+    "rational_stage_samples": 1872,
+    "actual_source_samples": 645,
+    "extra_timeout_successes": 173,
+    "identical_successful_traces": 226,
+    "actual_clock_transfers": 226,
+    "low_timeout_cases": 2,
+    "first_missing_certificate_maps": 2,
+    "dyadic_upper_endpoint_checks": 8,
+    "written_propagation": 1
+  },
+  "new_formal_theorems": 0,
+  "lean_started": false,
+  "whole_natural_density_package_verified": false,
+  "exact_sample_scope": "Actual shortcut paths, integer-power W_(1/8), HI=31/32, LO=127/128, L=64, S=72, M=80..84. Generic valid-stage comparison, not asymptotic moving-low parameter samples.",
+  "scope": "General inclusion has a written induction; finite samples do not prove that induction or the analytic/source package.",
+  "source_definition_hashes": {
+    "TimeoutEndpointNaturalDensity.lean": "11737197c612e258d12720a096c34850f3f59b6cd421f0de5a494cd33a2f4fec",
+    "Alternates/AllPrefix/NaturalDensity.lean": "6d01cad7b7a14261d993ceed8e08632dba54a671d36e7ac257d167d1ecc77027"
+  },
+  "local_artifact_hashes": {
+    "check_shaik_route_comparison.py": "177f1a38e3083bdca4bd2c7d902bba16a1f53915b75c1a9e7386c3be1092907b",
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

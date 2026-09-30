@@ -1,0 +1,299 @@
+{
+  "status": "passed",
+  "counts": {
+    "rational_full_stage_samples": 69132,
+    "explicit_counterparents": 30,
+    "rational_common_startups": 2250,
+    "exact_minimum_and_finite_threshold": 160,
+    "least_startup_suffix_fields": 24000,
+    "finite_annulus_set_identities": 240,
+    "integer_horizon_bounds": 1996,
+    "complete_written_propagation": 1
+  },
+  "counterexamples": [
+    {
+      "g": "1/10",
+      "K0": "1/2",
+      "L": 7,
+      "M": 7,
+      "case": "K<=2",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/10",
+      "K0": "2",
+      "L": 22,
+      "M": 22,
+      "case": "K<=2",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/10",
+      "K0": "3",
+      "L": 62,
+      "M": 83,
+      "case": "2<K<=4",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/10",
+      "K0": "4",
+      "L": 82,
+      "M": 83,
+      "case": "2<K<=4",
+      "initial_parent_passes": true,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/10",
+      "K0": "81/20",
+      "L": 83,
+      "M": 83,
+      "case": "4<K<4+g",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/10",
+      "K0": "4099/1000",
+      "L": 4101,
+      "M": 4101,
+      "case": "4<K<4+g",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/5",
+      "K0": "1/2",
+      "L": 4,
+      "M": 4,
+      "case": "K<=2",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/5",
+      "K0": "2",
+      "L": 12,
+      "M": 12,
+      "case": "K<=2",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/5",
+      "K0": "3",
+      "L": 32,
+      "M": 43,
+      "case": "2<K<=4",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/5",
+      "K0": "4",
+      "L": 42,
+      "M": 43,
+      "case": "2<K<=4",
+      "initial_parent_passes": true,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/5",
+      "K0": "41/10",
+      "L": 43,
+      "M": 43,
+      "case": "4<K<4+g",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/5",
+      "K0": "4199/1000",
+      "L": 4201,
+      "M": 4201,
+      "case": "4<K<4+g",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/4",
+      "K0": "1/2",
+      "L": 4,
+      "M": 4,
+      "case": "K<=2",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/4",
+      "K0": "2",
+      "L": 10,
+      "M": 10,
+      "case": "K<=2",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/4",
+      "K0": "3",
+      "L": 26,
+      "M": 35,
+      "case": "2<K<=4",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/4",
+      "K0": "4",
+      "L": 34,
+      "M": 35,
+      "case": "2<K<=4",
+      "initial_parent_passes": true,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/4",
+      "K0": "33/8",
+      "L": 35,
+      "M": 35,
+      "case": "4<K<4+g",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/4",
+      "K0": "4249/1000",
+      "L": 4251,
+      "M": 4251,
+      "case": "4<K<4+g",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/2",
+      "K0": "1/2",
+      "L": 3,
+      "M": 3,
+      "case": "K<=2",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/2",
+      "K0": "2",
+      "L": 6,
+      "M": 6,
+      "case": "K<=2",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/2",
+      "K0": "3",
+      "L": 14,
+      "M": 19,
+      "case": "2<K<=4",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/2",
+      "K0": "4",
+      "L": 18,
+      "M": 19,
+      "case": "2<K<=4",
+      "initial_parent_passes": true,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/2",
+      "K0": "17/4",
+      "L": 19,
+      "M": 19,
+      "case": "4<K<4+g",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "1/2",
+      "K0": "4499/1000",
+      "L": 4501,
+      "M": 4501,
+      "case": "4<K<4+g",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "9/10",
+      "K0": "1/2",
+      "L": 2,
+      "M": 2,
+      "case": "K<=2",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "9/10",
+      "K0": "2",
+      "L": 4,
+      "M": 4,
+      "case": "K<=2",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "9/10",
+      "K0": "3",
+      "L": 8,
+      "M": 11,
+      "case": "2<K<=4",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "9/10",
+      "K0": "4",
+      "L": 10,
+      "M": 11,
+      "case": "2<K<=4",
+      "initial_parent_passes": true,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "9/10",
+      "K0": "89/20",
+      "L": 11,
+      "M": 11,
+      "case": "4<K<4+g",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    },
+    {
+      "g": "9/10",
+      "K0": "4899/1000",
+      "L": 4901,
+      "M": 4901,
+      "case": "4<K<4+g",
+      "initial_parent_passes": false,
+      "witness_parent_fails": true
+    }
+  ],
+  "scope": "Exact Fraction/integer samples check all original scalar fields, floor defects, counterparent constructions, common finite startup, the exact least startup and finite threshold. The universal results are established by their written proofs, not these samples.",
+  "new_formal_theorems": 0,
+  "lean_started": false,
+  "whole_natural_density_package_verified": false,
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_startup.py": "7e1b5842ba88326321b5b76fca7d015d95b1ec771cd8fe2a8e7f4fd8146dd975",
+    "draw_shaik_startup_floor.py": "5d931821814ad0082bbcbda41ac8fa976ba8fa32644319a87cb0a1a0c296de88",
+    "shaik_startup_floor.png": "2233543a47cb47412cccff55a22b9f23b0e169e85d195e40104aa1ce84a5626e",
+    "draw_shaik_least_startup.py": "7af7a1ee63ddd0610a5e15dbe7dcd63f2fd3e90cc596ad0c90fb309fb1ed4943",
+    "shaik_least_startup.png": "637783670986da8d16d84c9b1c01b9f9f0cfb5b574ec5cecac0f0efc2a903e1d"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

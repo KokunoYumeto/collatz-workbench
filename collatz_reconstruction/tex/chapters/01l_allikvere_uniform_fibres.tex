@@ -1,0 +1,799 @@
+\subsection{Uniform first-passage fibres and separated endpoint intervals}
+\label{subsec:Allikvere-uniform-fibres}
+
+Allikvere's Section~6 \cite{Allikvere2026v2} replaces the logarithmic
+initial distribution by the uniform distribution on odd integers in
+$[y,y^\alpha]$. The upper end of this interval carries almost all the
+uniform mass. The time interval must consequently retain that end:
+\[
+ L=\log x,\quad d=\log(4/3),\quad \alpha=1.001,\quad
+ m_0=\lfloor L/100000\rfloor,\qquad
+ \widetilde I_y=
+ [\log(y/x)/d+L^{4/5},\ \log(y^\alpha/x)/d+L^{4/5}].
+\]
+Here $y=x^\alpha$ or $x^{\alpha^2}$. Let $E'$ be the full set of
+positive odd $M$ which first enter $[1,x]$ after exactly $m_0$ Syracuse
+steps and satisfy
+$M_-=xe^{dm_0-L^{7/10}}\le M\le M_+=xe^{dm_0+L^{7/10}}$.
+The word ``full'' matters: an arbitrary restriction on the final value
+can remove the interval structure within a valuation cylinder. Absolute
+errors will be bounded on the full set before taking any such subset.
+
+Set $\mathcal I_y=(\widetilde I_y-m_0)\cap\mathbb Z$ and
+$R=\max\mathcal I_y$. Then $r\asymp_\alpha L$ on $\mathcal I_y$,
+$3^R\le x^{0.0116}$, and $M_->4\,3^{2R}$ for sufficiently large $x$.
+Indeed $(\alpha^3-1)\log3/d<0.0116$, whereas
+$\log M_-=L+dm_0-L^{7/10}$.
+
+\begin{lemma}[integer separation of endpoint incidences]
+\label{lem:Allikvere-integer-endpoint}
+For $R\ge1$, $M>4\,3^{2R}$ and $v>0$, at most one pair
+$(r,s)\in\{1,\ldots,R\}\times\mathbb Z$ satisfies
+$M-3^r\le v3^r2^{-s}\le M$.
+\end{lemma}
+\begin{proof}
+Put $Q=3^R$. All candidate values lie in $[M-Q,M]$, an interval of
+endpoint ratio less than $2$, so two different $s$ cannot occur at the
+same $r$. If $r_2>r_1$, write $z_i=v3^{r_i}2^{-s_i}$,
+$q=r_2-r_1\ge1$, $p=s_2-s_1$. From $z_2/z_1=3^q/2^p<2$ we have
+$p\ge1$. The unequal positive integers $3^q$ and $2^p$ would satisfy
+\[
+ 1\le|3^q-2^p|=2^p|z_2-z_1|/z_1
+ \le Q^2M/(M-Q)^2\le4Q^2/M<1.
+\]
+Here $2^p=3^qz_1/z_2\le QM/(M-Q)$, $|z_2-z_1|\le Q$ and
+$M-Q>M/2$. This contradiction proves the lemma.
+\end{proof}
+
+The complete finite interval geometry is the map
+\[
+ (r,s)\longmapsto[(M-3^r)2^s/3^r,\ M2^s/3^r]
+\]
+in the endpoint variable $v$: these closed intervals are pairwise
+disjoint. Both endpoints and the full allowed offset $3^r$ are retained.
+
+For a positive word $\mathbf a$ of length $r$, total $s$, and forward
+offset $F_r(\mathbf a)$, the input ending at $M$ is exactly
+$N=2^s(M-F_r(\mathbf a))/3^r$ when the integrality congruence holds.
+The comparison point is $N^0=2^sM/3^r$, with
+$0<F_r(\mathbf a)\le3^r$. If the closed true window
+$y\le N\le y^\alpha$ and half-open replacement $y<N^0\le y^\alpha$
+disagree, at least one of $v=y,y^\alpha$ lies between them. Such a pair
+therefore satisfies the endpoint lemma. This bounds the number of
+possible $(r,s)$ per endpoint and per $M$ over the entire time interval;
+no linear-form-in-logarithms estimate is needed here.
+
+\begin{proposition}[absolute window-replacement bound]
+\label{prop:Allikvere-window-replacement}
+After multiplication by $2/y^\alpha$, the number of all
+$(r,\mathbf a,M)$ with $r\in\mathcal I_y$, $M\in E'$,
+$F_r(\mathbf a)\equiv M\pmod{3^r}$ and differing true/replaced indicators
+is $O_\alpha(L^{-1/2})$.
+\end{proposition}
+\begin{proof}
+The full return band is a union of $P_x\ll x^{10^{-4}}$ interval pieces
+in distinct dyadic valuation cylinders. To count the pieces, the
+pre-crossing inequality and $F_{m_0-1}<x/2$ give
+$b_1+\cdots+b_{m_0-1}\le2m_0+O(L^{7/10})$, so there are at most
+$4^{m_0}e^{O(L^{7/10})}$ initial words. The final valuation is $O(L)$
+by $2^{b_{m_0}}\le3^{m_0+1}(M+1)$. This gives the stated $P_x$.
+The exact odd cylinder modulus for a word of total $B$ is $2^{B+1}$.
+Consequently its count in any interval and any residue modulo $3^r$
+differs from $3^{-r}$ times its total count by at most $1$, by coprimality.
+The full band's discrepancy is therefore at most $P_x$.
+
+For fixed $(r,s)$ the differing pairs lie in the union of the two
+intervals $[v3^r2^{-s},v3^r2^{-s}+3^r]$ in $M$.
+Applying the preceding discrepancy to its at most two components gives
+the uniform part of the incidence count and an error $O(P_x)$ per residue.
+The conditioned residue histogram of all words has total mass $1$.
+Use the identity
+$\binom{s-1}{r-1}=3^r2^{s-r\log_2 3}p_r(s)$, where
+$p_r(s)=\binom{s-1}{r-1}2^{-s}$.
+For a contributing pair $2^{s-r\log_2 3}\le2y^\alpha/M_-$;
+thus the discrepancy part is at most
+$CP_x3^R|\mathcal I_y|/M_-\ll x^{-0.98}$ after summing $p_r(s)$ first.
+
+For the uniform part interchange the nonnegative sums and fix $M,v$.
+There is at most one $(r,s)$ by the endpoint lemma, with
+$2^{s-r\log_2 3}\le2v/M$ and $p_r(s)\ll r^{-1/2}\ll_\alpha L^{-1/2}$.
+The latter bound follows by the ratio
+$p_r(s+1)/p_r(s)=s/[2(s-r+1)]$ and Stirling at the central mode.
+Summing the two endpoints gives
+$CL^{-1/2}(1+y^{1-\alpha})\sum_{M\in E'}1/M\ll L^{-1/2}$,
+by the previously proved uniform harmonic coefficient bound.
+\end{proof}
+
+The source's \texttt{lem:winrep} uses Rhin's estimate and obtains
+$L^{-1/2+o(1)}$. The proved improvement removes that dependency from
+endpoint replacement, not from the separate averaged kernel asymptotic.
+
+For precision, the remaining error transfer has also been written out in
+\path{research_program/natural_density_audit_20260928/audit.tex},
+Propositions \texttt{prop:kernel-upper} and \texttt{prop:fibre-master}.
+For $u=\log_2(y^\alpha/M)$, $u_0=\log_2(y/M)$, define
+\[
+ D_y(M)=\sum_{r\in\mathcal I_y}3^{-r}
+       \sum_{r\log_2 3+u_0<s\le r\log_2 3+u}\binom{s-1}{r-1}.
+\]
+The exact hockey-stick identity and the uniform Stirling bound
+$p_r(s)\le Cr^{-1/2}e^{-c(s-2r)^2/r}$ for $s/r$ in the relevant compact
+interval prove $D_y(M)\ll y^\alpha/M$ independently of equidistribution.
+Specifically, the upper-truncated sum is at most
+$2^u(s_r/r)p_r(s_r)$, $s_r=\lfloor r\log_2 3+u\rfloor$;
+the Gaussian sum in $r$ has width $O(\sqrt L)$ and height $O(L^{-1/2})$.
+
+Let $\mathcal A_r$ retain all prefix inequalities
+$|a_1+\cdots+a_j-2j|<L^{3/5}$. With uniform odd input $\widetilde N_y$,
+$m_1=\lfloor L^{2/5}\rfloor$ and $\rho_{m_1}=\operatorname{Law}(X_{m_1})$,
+the proved fibre formula is
+\[
+ \sum_{r\in\mathcal I_y}\sum_{\mathbf a\in\mathcal A_r}
+ \mathbb P(\operatorname{Aff}_{\mathbf a}(\widetilde N_y)=M)
+ =\frac{2}{y^\alpha}3^{m_1}\rho_{m_1}(M\bmod3^{m_1})D_y(M)+R_y(M),
+ \qquad\sum_{M\in E'}|R_y(M)|\ll L^{-1/4}.
+\]
+The proof pairs the conditioned mixing error with actual band populations,
+using residue discrepancy and the kernel upper bound. Exceptional words
+and noncentral totals are controlled with the same population weights;
+the restriction $\mathcal A_r$ is not asserted invariant under reversal.
+The leading constant is evaluated next. The actual-input reduction and
+natural-density/time assembly remain separate from these component estimates.
+
+\subsubsection{The phase average without freezing the weight}
+\label{subsec:Allikvere-phase-average}
+
+Put $\lambda=\log_2 3$, $a=2-\lambda$, $\mu=8.616$ and
+$\beta=1-1/\mu$. Rhin's original proposition (8), p.~160
+\cite{Rhin1987}, implies $\|q\lambda\|\ge c_\lambda q^{-(\mu-1)}$:
+take the nearest integer $p$ to $q\lambda$, use $p\le2q$, and absorb
+the finitely many small denominators. The form cannot vanish since
+$3^q\ne2^p$. The original auxiliary-polynomial computation is used
+as a published input, not claimed as independently replayed.
+
+Erd\H{o}s--Tur\'an and Koksma, in the precise forms of
+\cite[Ch.~2, Theorems~2.5 and 5.1]{KN1974}, give the centered sum of
+a real BV circle function $f$ on any $k$ consecutive rotation points
+the bound $C_\lambda\operatorname{Var}(f)k^\beta$.
+Indeed the geometric sum at frequency $h$ is at most
+$(2\|h\lambda\|)^{-1}$, so unnormalized discrepancy is at most
+$C_\lambda(k/H+H^{\mu-1})$; choose $H=\max(1,\lfloor k^{1/\mu}\rfloor)$.
+For a weight on $[A,B]\cap\mathbb Z$, set
+$S_j=\sum_{n=A}^j(f(\{n\lambda+u\})-\int f)$.
+The exact identity
+\[
+ \sum_{n=A}^B w(n)(S_n-S_{n-1})
+ =w(B)S_B+\sum_{n=A}^{B-1}(w(n)-w(n+1))S_n
+\]
+therefore bounds the weighted error by
+$C_\lambda\operatorname{Var}(f)(B-A+1)^\beta
+\sum_{n\in\mathbb Z}|w(n+1)-w(n)|$,
+where $w$ is extended by zero. Both endpoint jumps are retained.
+This removes the block-freezing error from the source's \texttt{lem:E}.
+There is no deterministic phase-weight independence requirement.
+
+For $z=u/a\asymp_\alpha L$ introduce
+\[
+ g_z(t)=(\pi t)^{-1/2}
+       e^{-a^2(t-z)^2/(4t)}\quad(t>0),\qquad g_z(0)=0.
+\]
+Its integral is exactly $2/a$. In fact $t=s^2$, followed by the
+bijection $v=s-z/s$, has inverse
+$s=(v+\sqrt{v^2+4z})/2$ and derivative
+$(1+v/\sqrt{v^2+4z})/2$. Consequently
+\[
+ \int_0^\infty g_z(t)dt
+ =\pi^{-1/2}\int_{\mathbb R}e^{-a^2v^2/4}
+           (1+v/\sqrt{v^2+4z})dv=2/a.
+\]
+The second term is odd and absolutely integrable.
+Also $4t^2(\log g_z)'=a^2z^2-2t-a^2t^2$ has one positive zero,
+$\sqrt{z^2+a^{-4}}-a^{-2}\ge z/2$ for large $z$.
+Thus $g_z$ is unimodal with maximum at most $\sqrt{2/(\pi z)}$.
+The zero-extended samples on
+$J_z=\{r:|r-z|\le\sqrt z\log L\}$ have variation twice their
+maximum, hence $O_\alpha(L^{-1/2})$. Comparing each unit interval
+with its left endpoint bounds the full sum-integral error by
+$\int|g'_z|=2\max g_z$. The omitted tails are $O_A(L^{-A})$:
+use a Gaussian bound when $z/2\le r\le2z$, and exponents
+$-cz^2/r$ and $-cr$ on the two outer regions. It follows that
+$\sum_{J_z}g_z(r)=2/a+O_\alpha(L^{-1/2})$.
+
+\begin{proposition}[leading kernel with a stronger component rate]
+\label{prop:Allikvere-leading-kernel}
+Uniformly for every real $M\in[M_-,M_+]$ and both specified $y$,
+\[
+ D_y(M)=\frac{y^\alpha}{M\log(4/3)}
+          (1+O_{\alpha,c}(L^{-c}))
+ \qquad(0<c<1/17.232).
+\]
+In particular $c=1/18$ is admissible.
+\end{proposition}
+\begin{proof}
+The exact two endpoints of the inner sum are
+$s_r=\lfloor r\lambda+u\rfloor$ and
+$k_r=\lfloor r\lambda+u_0\rfloor$.
+Hockey-stick summation gives
+$3^{-r}(\binom{s_r}{r}-\binom{k_r}{r})$.
+The bottom sum divided by $2^u$ is
+$O_\alpha(L2^{-(u-u_0)})$, exponentially small in $L$.
+The top term divided by $2^u$ is
+$2^{-\theta_r}(s_r/r)p_r(s_r)$, $\theta_r=\{r\lambda+u\}$.
+
+Write $M=xe^{dm_0+\sigma}$, $|\sigma|\le L^{7/10}$. Then
+$z=\log(y^\alpha/x)/d-m_0-\sigma/d$.
+The top margin in $\widetilde I_y-m_0$ is
+$L^{4/5}+\sigma/d\ge L^{4/5}/2$; the bottom margin is
+$(\alpha-1)\log y/d-L^{4/5}-\sigma/d\gg_\alpha L$.
+Hence $J_z\subset\mathcal I_y$. The Gaussian bound already proved
+discards its complement with error $O_A(L^{-A})$ after division by $2^u$.
+
+On $J_z$, Stirling and Taylor expansion of
+$H(b)=b\log b-(b-1)\log(b-1)-b\log2$ at $b=2$ give
+\[
+ p_r(2r+\delta)=\frac{e^{-\delta^2/(4r)}}{\sqrt{4\pi r}}
+ (1+O(r^{-1}+|\delta|/r+|\delta|^3/r^2)).
+\]
+Here $H''(2)=-1/2$ and the factorial prefactor is
+$(2\pi r b(b-1))^{-1/2}$.
+Since $\delta=-a(r-z)-\theta_r$ and $0\le\theta_r<1$,
+$(s_r/r)p_r(s_r)=g_z(r)(1+O_\alpha(L^{-1/2}(\log L)^3))$.
+The bounded mass of $g_z$ makes this an absolute summed error.
+Apply the preceding Abel estimate to $f(t)=2^{-t}$ on the circle:
+its variation is $1$ with the endpoint jump, and its integral is
+$1/(2\log2)$. The support has $O_\alpha(\sqrt L\log L)$ points.
+Thus
+\[
+ 2^{-u}D_y(M)=\frac1{a\log2}
+ +O_\alpha(L^{-1/(2\mu)}(\log L)^{1-1/\mu}
+                   +L^{-1/2}(\log L)^3).
+\]
+Use $a\log2=d$ and $2\mu=17.232$ to conclude.
+\end{proof}
+
+Substitution into the actual fibre formula gives
+\[
+ \sum_{M\in E'}\left|W_y(M)
+  -\frac{2\,3^{m_1}}{d}\frac{\rho_{m_1}(M)}M\right|
+  \ll_{\alpha,c}L^{-c}\quad(0<c<1/17.232).
+\]
+The proof uses the already established weighted harmonic bound to sum
+the pointwise kernel errors. The same bound survives any pushforward
+of these finite measures, by the triangle inequality on each fibre.
+The following argument identifies these measures with the first-passage
+probability and carries the rate to that law. The global natural-density
+iteration and timed endpoint are separate subsequent arguments.
+
+\paragraph{Actual uniform input and the probability law.}
+\label{par:Allikvere-actual-input}
+Let $n_0=\lfloor L/(10\log2)\rfloor$ and let $\widetilde N_y$
+be uniform among the positive odd integers in $[y,y^\alpha]$.
+Write $\operatorname{Pass}_x(N)=\operatorname{Syr}^{T_x(N)}(N)$
+when $T_x(N)<\infty$, and set its value to $1$ otherwise.
+
+\begin{proposition}[uniform first-passage stabilisation with the stronger rate]
+\label{prop:Allikvere-uniform-stabilisation}
+Let
+\[
+ \Pi_x(M)=\frac{2\,3^{m_1}}d\frac{\rho_{m_1}(M\bmod3^{m_1})}{M},
+ \qquad q_x:E'\longrightarrow(2\mathbb N+1)\cap[1,x],
+ \quad q_x(M)=\operatorname{Syr}^{m_0}(M).
+\]
+For every $0<c<1/17.232$ and sufficiently large $x$,
+$\Pi_x(E')=1+O_{\alpha,c}(L^{-c})>0$. The probability
+$Q_x=(q_x)_*\Pi_x/\Pi_x(E')$ is independent of $y$, and
+\[
+ \|\operatorname{Law}(\operatorname{Pass}_x(\widetilde N_y))-Q_x\|_1
+ \ll_{\alpha,c}L^{-c}
+ \quad(y=x^\alpha,\ x^{\alpha^2}).
+\]
+Thus the two laws differ by $O_{\alpha,c}(L^{-c})$ in $\ell^1$.
+Also $\mathbb P(T_x(\widetilde N_y)=\infty)\ll x^{-\eta}$ for some
+$\eta>0$. The norm is the sum of absolute atom masses.
+\end{proposition}
+\begin{proof}
+Put $q=3n_0$ and $K_y=\#((2\mathbb N+1)\cap[y,y^\alpha])$.
+Counting each odd residue modulo $2^q$ gives total discrepancy
+$O(2^q/K_y)\ll2^{-q}$, since $4^{3n_0}\le x^{3/5}\le y$.
+Tao's Proposition~1.9 \cite{Tao2026v7} applies with $c_0=1$:
+the length-$n_0$ valuation vector is $O(x^{-\eta})$ close in
+$\ell^1$ to independent geometric variables of masses $2^{-k}$.
+One can also see the bound directly. A word of total $s<q$ is
+one odd class modulo $2^{s+1}$ and has probability
+$2^{-s}+O(2^{-q})$; there are $\binom{q-1}{n_0}$ such words.
+Stop a higher-total word just before its total reaches $q$.
+A length-$k<n_0$ prefix of total less than $q$ has
+$\binom{q-1}{k}$ possibilities, and divisibility of the next affine
+numerator fixes one class modulo $2^q$. Its probability is
+$O(2^{-q})$. The binomial lower tail therefore bounds both the
+accumulated low-word error and the high-total mass by $e^{-cn_0}$.
+
+For a centered geometric variable the moment-generating function is
+$e^{-t}/(2-e^t)$; exponential Markov gives
+$\mathbb P(|S_j-2j|\ge h)\le2e^{-c\min(h^2/j,h)}$.
+Let $G$ be the actual event that every prefix through $n_0$ has
+$|S_j-2j|<L^{3/5}$. The preceding law comparison and union bound
+give $\mathbb P(G^c)\ll e^{-\kappa L^{1/5}}$.
+The exact maximal-moment calculation in
+Corollary~\ref{cor:Mazur-allikvere-prefix} strengthens this to
+$(2+o(1))\exp[-(5\log2/2)L^{1/5}]$, with both closed input
+endpoints retained.
+On $G$ the exact affine expression yields
+\[
+ \log\operatorname{Syr}^j(N)
+ =\log N-dj-(\log2)(S_j-2j)+O(x^{-3/4}).
+\]
+Indeed its linear part exceeds $x^{0.95}$ and its offset is at most
+$3^{n_0}<x^{0.16}$ for large $x$; the inequalities
+$3^2>2^3$ and $3^5<2^8$ supply the strict exponent margins.
+The orbit crosses by $n_0$ because
+$\alpha^3-d/(10\log2)<\alpha^3-1/25<1$.
+Applying the drift formula on the two sides of the crossing gives
+$T_x(N)=\log(N/x)/d+O_\alpha(L^{3/5})$.
+The upper endpoint of $\widetilde I_y$ is respected on $G$.
+Failure of the lower endpoint forces
+$N\le y e^{2dL^{4/5}}$, whose uniform probability is
+$O(y^{1-\alpha}e^{2dL^{4/5}}+1/K_y)=O(x^{-\eta})$.
+Hence $\mathbb P(T_x\notin\widetilde I_y)\ll e^{-\kappa L^{1/5}}$.
+
+For each actual input define the counting-weight measure
+\[
+ H_N=\sum_{n\in\widetilde I_y\cap\mathbb Z}
+ {\bf1}_{\vec a^{(n-m_0)}(N)\in\mathcal A_{n-m_0}}\,
+ {\bf1}_{\operatorname{Syr}^{n-m_0}(N)\in E'}\,
+ \delta_{q_x(\operatorname{Syr}^{n-m_0}(N))}.
+\]
+The exact inverse fibres, retaining the true input interval, give
+$\mathbb EH_N=(q_x)_*W_y$.
+For $N\in G$ and $n\in\widetilde I_y$, put $r=n-m_0$.
+If $T_x(N)=n$, drift puts $M=\operatorname{Syr}^r(N)$ inside
+$[M_-,M_+]$ and $T_x(M)=m_0$. Conversely, if $M\in E'$, then
+for every $j<r$,
+\[
+ \log\operatorname{Syr}^j(N)
+ \ge\log M+d(r-j)-C_\alpha L^{3/5}
+ \ge\log x+dm_0-L^{7/10}-C_\alpha L^{3/5}>\log x.
+\]
+The definition of $E'$ controls indices $r,\ldots,n$, so the first
+crossing is precisely $n$. Consequently $H_N$ equals the passage
+atom on $G\cap\{T_x\in\widetilde I_y\}$ and is zero on the rest of $G$.
+It always has at most $J=\#(\widetilde I_y\cap\mathbb Z)=O_\alpha(L)$
+atoms counted with multiplicity. Thus
+\[
+ \|\operatorname{Law}(\operatorname{Pass}_x(\widetilde N_y))
+              -(q_x)_*W_y\|_1
+ \le\mathbb P(T_x\notin\widetilde I_y,G)+(J+1)\mathbb P(G^c)
+ \ll L e^{-\kappa L^{1/5}}\ll_B L^{-B}
+\]
+for every fixed $B>0$.
+The proved fibre-profile estimate and contraction of pushforward
+now show that the law is $O(L^{-c})$ from $(q_x)_*\Pi_x$.
+Taking total masses proves $\Pi_x(E')=1+O(L^{-c})>0$.
+Dividing by this proved positive mass changes the measure in
+$\ell^1$ by exactly $|\Pi_x(E')-1|$, proving the asserted comparisons.
+
+Finally $\mathbb P(S_{n_0}\le1.9n_0)\ll x^{-\eta}$ by the same
+geometric exponential bound and actual-law comparison.
+Outside this event the affine bound gives
+$\operatorname{Syr}^{n_0}(N)\le
+C x^{\alpha^3+(\log_2 3)/10-0.19}+x^{(\log_2 3)/10}<x$,
+since $\alpha^3-0.03<1$ and $\log_2 3<1.6$.
+Thus $T_x=\infty$ has the stated power bound.
+\end{proof}
+
+This proves the uniform first-passage statement in Allikvere's
+source label \texttt{thm:D}, using his extended window and measure
+change, Tao's valuation and deterministic passage mechanisms, and
+the stronger kernel estimate above. The subsequent sections carry
+the rate to timed fixed-target counts and natural density.
+Full source locators are in the standalone audit, claims ND-020--ND-027.
+
+\subsection{The scale iteration and the fixed-target estimate}
+
+Retain $O_z=(2\mathbb N+1)\cap[1,z]$. Write $U_y$ for the uniform probability on the positive odd integers
+in $[y,y^\alpha]$, whenever this set is nonempty. All probabilistic
+applications below have $y$ larger than a fixed constant. The final
+counting statements hold for every real cutoff $X\ge2$; no uniform
+probability on an empty short interval is needed. Fix
+$0<c<1/17.232$, and retain $\alpha=1001/1000$ and $d=\log(4/3)$.
+
+\begin{lemma}[Nested passage, with failure kept separate]
+\label{lem:Allikvere-nested-passage}
+For $1\le z\le w$ and a positive odd integer $N$ with $T_z(N)<\infty$,
+put $M=\operatorname{Pass}_w(N)$. Then
+\[
+ T_w(N)\le T_z(N),\qquad
+ T_z(N)=T_w(N)+T_z(M),\qquad
+ \operatorname{Pass}_z(N)=\operatorname{Pass}_z(M).
+\]
+For any subset $E$ of the positive odd integers,
+\[
+ \mathbb P(\operatorname{Pass}_z(N)\in E)
+ -\mathbb P(T_z(N)<\infty,\operatorname{Pass}_z(N)\in E)
+ =\mathbf1_{1\in E}\mathbb P(T_z(N)=\infty).
+\]
+The second identity holds for any random positive odd input.
+\end{lemma}
+\begin{proof}
+Before the first entry below $w$, every iterate exceeds $w\ge z$.
+Starting at that entry, the first entry below $z$ is exactly the
+remaining part of the same orbit. This proves the three deterministic
+identities, including the case $M\le z$, when the remaining time is zero.
+On failed passage the defined value of $\operatorname{Pass}_z$ is $1$;
+splitting the probability according to finite or infinite passage proves
+the last equality.
+\end{proof}
+
+\begin{proposition}[The error survives the scale ladder]
+\label{prop:Allikvere-untimed-ladder}
+For every integer $N_0\ge2$ and every sufficiently large $y$,
+\[
+ U_y\{N:\operatorname{Syr}^k(N)>N_0\text{ for all }k\ge0\}
+ \ll_c(\log N_0)^{-c}.
+\]
+\end{proposition}
+\begin{proof}
+Put $E=\{M:\exists k\ge0,\ \operatorname{Syr}^k(M)\le N_0\}$ and
+\[
+ b(z)=U_{z^\alpha}
+ \{N:T_z(N)<\infty,\ \operatorname{Pass}_z(N)\in E\}.
+\]
+An orbit whose finite passage below $z$ belongs to $E$ has its
+earlier passage below $z^\alpha$ in $E$ as well. Apply this inclusion
+to $U_{z^{\alpha^2}}$, then use
+Corollary~\ref{prop:Allikvere-uniform-stabilisation} to compare the two laws
+at the same target $z$. Lemma~\ref{lem:Allikvere-nested-passage} gives
+\[
+ b(z^\alpha)\ge b(z)-C_c(\log z)^{-c}-Cz^{-\eta}
+              \ge b(z)-C'_c(\log z)^{-c}                 \tag{*}
+\]
+for sufficiently large $z$. In particular the failure convention is
+not being used to count an orbit as successful. Allikvere's final
+equality with $b(z)$ in the display following \texttt{sec:assembly}
+absorbs this failure mass into its $O$-term, which is legitimate.
+The inequality here makes that bookkeeping explicit; it is not a
+counterexample to the source argument. Tao's corresponding display in
+\cite[\S3]{Tao2026v7} already uses that inequality.
+
+Bounded $N_0$ are covered by increasing the constant. Assume henceforth
+that $N_0$ is large enough that $N_0^{1/\alpha^3}$ exceeds every scale
+threshold used above. If $y^\alpha\le N_0$, the assertion has witness
+$k=0$ for every input. Otherwise let $J\ge1$ be least such that
+\[
+ v=y^{\alpha^{-J}}<N_0^{1/\alpha}.
+\]
+Then $N_0^{1/\alpha^2}\le v<N_0^{1/\alpha}$ and
+$y=v^{\alpha^J}$. Set $z_j=v^{\alpha^{j-1}}$ for $0\le j\le J$.
+Thus $z_0=v^{1/\alpha}\ge N_0^{1/\alpha^3}$,
+$z_J=y^{1/\alpha}$ and $z_{j+1}=z_j^\alpha$.
+At $z_0$ a finite passage lands at most $z_0<N_0$, so
+$b(z_0)\ge1-Cz_0^{-\eta}$. Applying (*) successively gives
+\[
+ 1-b(z_J)\le Cz_0^{-\eta}
+   +C'_c\sum_{j=0}^{J-1}(\log z_j)^{-c}
+ \le Cz_0^{-\eta}
+   +\frac{C'_c(\log z_0)^{-c}}{1-\alpha^{-c}}
+ \ll_c(\log N_0)^{-c}.
+\]
+The source of $b(z_J)$ is exactly $U_y$. Every input counted by $b(z_J)$
+has an actual iterate at most $N_0$, proving the assertion.
+The factor $(1-\alpha^{-c})^{-1}$ is retained in the constant; no
+uniformity as $c\downarrow0$ or $\alpha\downarrow1$ is asserted.
+\end{proof}
+
+\subsection{Keeping the time budget through the same iteration}
+
+The distribution comparison concerns passage \emph{values}, not the
+joint distribution of values and passage times. To carry time, the target
+set itself must contain a subsequent time-bounded orbit statement.
+This is Allikvere's timed-target construction
+\cite[source labels \texttt{sec:time}, \texttt{prop:timed}]{Allikvere2026v2}; the deterministic
+inclusion below explains why value-distribution comparison suffices.
+
+Put $p=4/5$ and
+\[
+ \Delta_0=(1-\alpha^{-3})\frac{\log N_0}{d},\qquad
+ E_z^\bullet=\left\{M\in O_z:\exists k\in\mathbb N,\ 
+ k\le\frac{(\log(M/N_0))_+}{d}+\Delta_0+C_1(\log z)^p,\
+ \operatorname{Syr}^k(M)\le N_0\right\}.
+\]
+Here $(t)_+=\max(t,0)$; the nonnegative integer $k$ includes zero.
+Let $B_z^\bullet$ be the event, on input $N\sim U_{z^\alpha}$, that
+\[
+ T_z(N)\le\frac{\log(N/z)}d+C_1(\log z)^p,\qquad
+ \operatorname{Pass}_z(N)\in E_z^\bullet .
+\]
+Its first inequality requires finite passage.
+
+\begin{lemma}[The timed inclusion]
+\label{lem:Allikvere-timed-step}
+There are constants $C_1,z_*>0$, independent of $N_0$ and $c$, for which
+\[
+ \mathbb P(B_z^\bullet)\ge1-O((\log z)^{-10})
+       \quad (z_*\le z\le N_0),
+\]
+and, for $z\ge\max(z_*,N_0^{1/\alpha^3})$,
+\[
+ \mathbb P(B_{z^\alpha}^\bullet)
+       \ge\mathbb P(B_z^\bullet)-O_c((\log z)^{-c}).
+\]
+\end{lemma}
+\begin{proof}
+The first estimate follows from Lemma~\ref{prop:Allikvere-uniform-stabilisation}: on its
+concentration event the time inequality holds, and every passage
+value is at most $z\le N_0$, with subsequent witness zero.
+
+For the second estimate take the common input $N\sim U_{z^{\alpha^2}}$.
+Intersect its concentration events at targets $z$ and $z^\alpha$,
+and call the intersection $G$. Both are instances of
+Lemma~\ref{prop:Allikvere-uniform-stabilisation}, so
+$\mathbb P(G^c)\ll e^{-\kappa(\log z)^{1/5}}\ll(\log z)^{-10}$.
+On $G$ both passages exist, and, with
+$M=\operatorname{Pass}_{z^\alpha}(N)$ and
+$M'=\operatorname{Pass}_z(N)$, the nested-passage lemma gives
+\[
+ t:=T_z(M)=T_z(N)-T_{z^\alpha}(N).
+\]
+Subtracting the two passage-time estimates and applying the drift
+estimate at $T_{z^\alpha}(N)$ gives respectively
+\[
+ t\le\frac{\log(z^\alpha/z)}d+C(\log z)^{3/5},
+ \qquad
+ \log M\ge\log z^\alpha-C(\log z)^{3/5}.
+\]
+The drift estimate is applicable at that iterate because each passage
+lies within its corresponding length-$n_0$ valuation window on $G$.
+It follows that
+\[
+ t\le\frac{\log(M/z)}d+C'(\log z)^{3/5}.                 \tag{**}
+\]
+In particular this estimate concerns the same orbit, not a new
+uniform sample at $M$.
+
+Suppose now that $G$ holds and $M'\in E_z^\bullet$. If $M\le N_0$,
+then $M\in E_{z^\alpha}^\bullet$ with witness zero.
+If $M>N_0$ and $z\ge N_0$, concatenate the leg of length $t$ with
+a witness $k_2$ for $M'$. Since $M'\le z$,
+\[
+ t+k_2\le\frac{\log(M/N_0)}d+\Delta_0
+                      +C_1(\log z)^p+C'(\log z)^{3/5}.
+\]
+If $M>N_0$ and $z<N_0$, use $k_2=0$; in this case
+$\log(N_0/z)/d\le\Delta_0$ by $z\ge N_0^{1/\alpha^3}$,
+so (**) gives the same bound. Choose $C_1$ and $z_*$ so that, for
+$z\ge z_*$,
+\[
+ C'(\log z)^{3/5}
+       \le C_1(\alpha^p-1)(\log z)^p.
+\]
+Thus in both cases $M\in E_{z^\alpha}^\bullet$.
+The upper estimate for $T_{z^\alpha}(N)$ also supplies the time clause
+of $B_{z^\alpha}^\bullet$, after increasing $C_1$ if necessary.
+We have proved the actual inclusion
+\[
+ G\cap\{\operatorname{Pass}_z(N)\in E_z^\bullet\}
+                  \subseteq B_{z^\alpha}^\bullet.
+\]
+Apply the first-passage law comparison to the \emph{fixed} subset
+$E_z^\bullet\subset O_z$, subtract $\mathbb P(G^c)$, and use
+$B_z^\bullet\subseteq
+\{\operatorname{Pass}_z(U_{z^\alpha})\in E_z^\bullet\}$.
+This proves the probability inequality. No independence between
+passage location and time was assumed.
+\end{proof}
+
+\begin{proposition}[A timed estimate on every power interval]
+\label{prop:Allikvere-timed-block}
+There is an absolute constant $C_K$ such that, with
+\[
+ K(N)=\frac{\log N}{d}+C_K(\log(N+2))^{4/5},
+\]
+for every integer $N_0\ge2$ and every sufficiently large $y$,
+\[
+ U_y\{N:\nexists k\in\mathbb N,\ k\le K(N),\ \operatorname{Syr}^k(N)\le N_0\}
+                   \ll_c(\log N_0)^{-c}.
+\]
+The clock $K$ is independent of $N_0$ and $c$.
+\end{proposition}
+\begin{proof}
+Bounded targets are absorbed into the constant as before, and
+$y^\alpha\le N_0$ is trivial. Otherwise use exactly the ladder
+$z_0,\ldots,z_J$ in Proposition~\ref{prop:Allikvere-untimed-ladder}.
+All scales exceed $N_0^{1/\alpha^3}$, and $z_0<N_0$.
+The first part of Lemma~\ref{lem:Allikvere-timed-step} starts the induction;
+its second part and the same geometric error sum show
+$\mathbb P(B_{z_J}^\bullet)\ge1-O_c((\log N_0)^{-c})$.
+Here $z=z_J=y^{1/\alpha}$ and the input law is $U_y$.
+
+For an input in that event, choose $k=0$ if $N\le N_0$.
+Otherwise, if $z\ge N_0$, concatenate the first passage with the
+$E_z^\bullet$ witness and bound
+$(\log(\operatorname{Pass}_z(N)/N_0))_+\le\log(z/N_0)$.
+If $z<N_0$, the passage itself is a witness, and
+$\log(N_0/z)/d\le\Delta_0$. In either case an actual witness satisfies
+\[
+ k\le\frac{\log(N/N_0)}d+\Delta_0+2C_1(\log z)^p
+   =\frac{\log N}d-\frac{\alpha^{-3}\log N_0}d
+                              +2C_1(\log z)^p
+   \le K(N).
+\]
+We used $N\ge y=z^\alpha>z$ and may take $C_K=2C_1$.
+This also handles the band $N_0^{1/\alpha}\le y<N_0$ without
+silently assuming that every input is already above $N_0$.
+\end{proof}
+
+\subsection{Exact coverage and the raw Collatz clock}
+
+A single top interval would leave a proportion
+$O(X^{1/\alpha-1})=O(X^{-1/1001})$ untreated. That term is not
+necessary: the timed estimate holds on \emph{every} power interval,
+and the intervals below the top one can be included too.
+
+\begin{lemma}[Disjoint coverage with closed-interval estimates]
+\label{lem:Allikvere-power-cover}
+Let $\alpha>1$, $H\ge1$, and suppose
+$t^\alpha-t>2$ for every $t\ge H^{1/\alpha}$.
+Let $A$ be a set of odd integers, disjoint from $[1,H]$, such that
+\[
+ \#(A\cap[t,t^\alpha])
+       \le\varepsilon\,\#((2\mathbb N+1)\cap[t,t^\alpha])
+       \quad(t\ge H^{1/\alpha}).
+\]
+Then for every real $X\ge1$,
+\[
+ \#(A\cap[1,X])\le
+           2\varepsilon\,\#((2\mathbb N+1)\cap[1,X]).
+\]
+\end{lemma}
+\begin{proof}
+For $X\le H$ the left side vanishes. Otherwise put
+$t_j=X^{\alpha^{-j}}$ and let $J$ be least such that $t_J\le H$.
+For $0\le j<J$, $t_{j+1}>H^{1/\alpha}$ and
+$t_j=t_{j+1}^\alpha$.
+The intervals $(t_{j+1},t_j]$ are pairwise disjoint and cover
+$(t_J,X]$. Each has length greater than two, hence contains at
+least one odd integer. Passing from this half-open interval to
+$[t_{j+1},t_j]$ adds at most its lower endpoint, hence at most
+one integer. Its closed-interval odd count is therefore at most
+twice its half-open odd count. Sum the given estimate over the
+closed intervals and then the disjoint half-open counts.
+The remaining segment $[1,t_J]$ is contained in $[1,H]$ and
+contains no element of $A$. This proves the assertion, with
+all real or integer endpoint coincidences included.
+\end{proof}
+
+\begin{corollary}[Timed fixed-target count, without a cutoff error]
+\label{cor:Allikvere-timed-count}
+For every $0<c<1/17.232$ there is $C_c$ such that for every real
+$X\ge2$ and every integer $N_0\ge2$,
+\[
+ \frac1X\#\{N\le X:N\ {\rm odd},\
+       \nexists k\in\mathbb N,\ k\le K(N),\ \operatorname{Syr}^k(N)\le N_0\}
+          \le C_c(\log N_0)^{-c}.                      \tag{***}
+\]
+In particular $c=1/18$ is admissible. Dropping the time restriction
+gives the same estimate for orbits that never attain $N_0$.
+\end{corollary}
+\begin{proof}
+For sufficiently large $N_0$, apply Lemma~\ref{lem:Allikvere-power-cover}
+with $H=N_0$ to the failure set in Proposition~\ref{prop:Allikvere-timed-block}.
+It is disjoint from $[1,N_0]$ because time zero is allowed.
+The elementary function $t^\alpha-t$ is increasing for $t\ge1$
+and tends to infinity, so the width hypothesis holds after one
+fixed lower bound on $N_0$. All source intervals are then within
+the range of the proposition. Finally
+$2\#((2\mathbb N+1)\cap[1,X])\le X+1\le3X/2$ for $X\ge2$.
+For targets below that fixed lower bound, enlarge $C_c$ so that
+$C_c(\log N_0)^{-c}\ge1$. This covers every target and cutoff.
+\end{proof}
+
+This is a consequence of Allikvere's timed iteration with the stronger
+kernel estimate proved above, and of the scale-covering mechanism already
+used by Tao in \cite[\S3]{Tao2026v7}. Relative to Allikvere's stated
+Theorem~\texttt{thm:quant}, it replaces the displayed exponent $1/29$
+by every $c<1/17.232$ and removes the extra $X^{-1/2000}$ term.
+The removal is a counting consequence, not a new mixing theorem.
+
+Define the unaccelerated map $C$ by $C(n)=3n+1$ for odd $n$
+and $C(n)=n/2$ for even $n$. These are the individual steps counted
+in the following statement.
+
+\begin{corollary}[One threshold-independent clock]
+\label{cor:Allikvere-universal-clock}
+There is a constant $C_R$ for which the clock
+\[
+ R(N)=\left(\frac3d+\frac1{\log2}\right)\log N
+                         +C_R(\log(N+2))^{4/5}
+\]
+satisfies, for every $X\ge2$, $N_0\ge2$ and $0<c<1/17.232$,
+\[
+ \frac1X\#\{N\le X:\nexists m\in\mathbb N,\ m\le R(N),\
+                       C^m(N)\le N_0\}
+              \ll_c(\log N_0)^{-c}.
+\]
+Consequently, for each function $f:\mathbb N_{\ge1}\to\mathbb R$
+with $f(N)\to+\infty$,
+\[
+ \#\{N\le X:\nexists m\le R(N),\ C^m(N)<f(N)\}=o(X).
+\]
+For positive odd inputs the same conclusion holds with $\operatorname{Syr}$ and
+$K$ in place of $C$ and $R$. The clocks are independent of $f$;
+the exceptional set is permitted to depend on $f$.
+\end{corollary}
+\begin{proof}
+For odd $M$ write $M_i=\operatorname{Syr}^i(M)$ and
+$s_k=\sum_{i=0}^{k-1}v_2(3M_i+1)$. Concatenating the actual
+odd step and its subsequent halvings proves
+$C^{k+s_k}(M)=M_k$. Moreover
+\[
+ 2^{s_k}M_k=\prod_{i=0}^{k-1}(3+1/M_i)\,M
+              \le4^kM,
+ \qquad s_k\le2k+\log_2 M.
+\]
+The empty product covers $k=0$. For an arbitrary positive integer
+$N=2^aM$ with $M$ odd, an odd-map witness $k\le K(M)$ therefore gives
+a raw-map witness at
+\[
+ m=a+k+s_k\le3k+a+\log_2 M=3k+\log_2 N
+       \le R(N)
+\]
+with $C_R=3C_K$. The exact coordinate map
+$M\mapsto2^aM$ identifies odd integers $M\le X/2^a$ with inputs
+$N\le X$ of valuation exactly $a$. Hence the raw failure count is
+at most the sum of the odd failure counts at cutoffs $X/2^a$.
+By (***) that sum is at most
+\[
+ C_cX(\log N_0)^{-c}\sum_{a\ge0}2^{-a}
+          =2C_cX(\log N_0)^{-c}.
+\]
+Cutoffs below two contribute nothing, since their only possible
+positive odd input is $1\le N_0$. This proves the uniform fixed-target
+estimate without a separate tail-limit argument.
+
+For a diverging $f$, put
+$b(X)=\inf_{n\ge\sqrt X}f(n)$. For large $X$ this is finite and
+exceeds three, and $b(X)\to\infty$. Choose the integer
+$N_0(X)=\lceil b(X)\rceil-1$, so that
+$2\le N_0(X)<b(X)$ and $N_0(X)\to\infty$.
+Every input $N\ge\sqrt X$ that reaches $N_0(X)$ reaches a value
+strictly less than $f(N)$. The failure proportion is therefore at
+most
+\[
+ X^{-1/2}+O_c((\log N_0(X))^{-c})=o(1).
+\]
+The identical argument uses (***) for odd inputs. In particular,
+discarding the time bound recovers Allikvere's natural-density
+conclusion. This is a written reconstruction from the cited analytic
+inputs, not an inference from the finite trajectory tests.
+\end{proof}
+
+The exact Gaussian coordinate calculation above also evaluates Mazur's
+original raw tube mass. Section~\ref{sec:Mazur-mass-interior} uses precisely
+half this envelope, retains its different strict cutoff and both tails,
+and proves the physical interior profile rate
+$O_C(N^{-1/17.232}(\log N)^{1/2-1/17.232})$.
+The comparison retains the exact Robbins remainder and floor correction;
+it is not an identification of the two source kernels or sampling laws.
+
+Section~\ref{sec:Mazur-genuine-assembly} now completes the comparison
+with actual first-passage laws on Mazur's two original closed source
+blocks. Both harmonic and uniform sampling have common-center error
+$O((\log B)^{-1/17.232}(\log\log B)^{1/2-1/17.232})$.
+The full-prefix bound makes the original tube family usable at $C=1/2$;
+the source's final assembly takes $C=40$. The endpoint kernels have not
+been identified across the two authors: the comparison is between
+their actual passage-law statements, and the maps and exceptional
+masses are retained. Section~\ref{sec:Mazur-real-timed} now reconstructs
+the subsequent real-source and timed iteration, preserving the critical
+rate and yielding Syracuse and ordinary clocks $100\log_2 n$ and
+$301\log_2 n$ within Mazur's schedules. These refine that source's
+constants, not the much smaller leading Syracuse clock proved above.
+
+\paragraph{Comparison with the reconstructed timeout argument.}
+Section~\ref{sec:Shaik-timeout} gives a different, polylogarithmic target
+with same-witness height control. It has shortcut, ordinary and
+odd-return leading clocks \(2,3,1\) divided by \(\log(4/3)\), with
+additive error \(O(\sqrt{\log n\,\log\log n})\).
+The fixed-target/unrestricted diverging-target statement above is
+retained with its own exceptional estimate and clock; the two
+conclusions have not been identified.

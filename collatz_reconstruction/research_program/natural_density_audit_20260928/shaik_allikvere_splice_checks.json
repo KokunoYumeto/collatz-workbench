@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "counts": {
+    "high_passage_records": 34880,
+    "continued_prefixes": 129413,
+    "zero_return_tails": 52673,
+    "truncated_prefixes": 119639,
+    "valuation_fibre_counts": 1764,
+    "proof_locators": 6
+  },
+  "example": {
+    "n": 27,
+    "Y": 16,
+    "B": 2,
+    "H": 65,
+    "y": 10,
+    "z": 5,
+    "terminal_halvings": 1,
+    "s": 40,
+    "sigma": 41,
+    "r": 1,
+    "odd_tail": [
+      5,
+      1
+    ]
+  },
+  "scope": "Exact finite arithmetic and actual path regressions; no verification of infinite density, analytic inputs or asymptotic constants.",
+  "new_formal_theorems": 0,
+  "lean_started": false,
+  "whole_natural_density_package_verified": false,
+  "artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "c180aecc1dac0c066e99344641f19d34f359ca10dfcef23d8cc0eb675d5834bb",
+    "check_shaik_allikvere_splice.py": "096583e71a7cfead1df23ec470fab734fc239172f473a898d346ad02b136c290"
+  }
+}

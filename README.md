@@ -1,10 +1,10 @@
 # Collatz research workbench
 
-## First-passage comparison and quantitative refinements
+## Natural-density arguments: clocks, height and source comparison
 
-The [29 September proof note](collatz_reconstruction/research_program/natural_density_audit_20260928/audit.tex) reconstructs the change from logarithmic to uniform input in the first-passage argument. It proves joint offset–valuation mixing, an elementary endpoint-separation estimate, and a uniform first-passage comparison with error O((log x)^(-c)) for every 0<c<1/17.232, including c=1/18. The proof improves the corresponding component rate in Allikvere's v2 manuscript using the same published Diophantine input. It does not certify that manuscript's subsequent full natural-density or time-bound conclusions.
+The [30 September reconstruction](collatz_reconstruction/research_program/natural_density_audit_20260928/README.md) connects the timed almost-boundedness argument to a height-controlled prefix of the same Collatz orbit. For every diverging target f(n), the written synthesis reaches a value below f(n) on a natural-density-one set with odd, shortcut and ordinary clock bounds j log(n)/log(4/3)+O(log(n)^(4/5)), j=1,2,3, and ordinary height at most n^(1+beta), for every fixed beta>0. It includes the quantitative fixed-target exception count, complete proofs, source attribution and exact path checks.
 
-[Statements, proof guide, source citations and reproducible checks](collatz_reconstruction/research_program/natural_density_audit_20260928/README.md). The code tests exact finite identities; the analytical argument is written out in the note, not claimed as Lean-certified.
+The source comparison covers Tao v7, Allikvere v2, Mazur v2 and selected Shaik arguments, and credits Inselmann's earlier drift envelopes. The package separates written analytic proofs, finite regressions and five narrowly scoped Lean certificates. It is not a full formal validation of the source packages or a claim to solve Collatz. Current [LaTeX](collatz_reconstruction/research_program/natural_density_audit_20260928/audit.tex) is available; older PDFs elsewhere in this repository do not contain this update.
 
 
 A PolyClank home for sustained human–LLM mathematics on Collatz dynamics: literature, exact constructions, proofs, reproducible calculations, and the history needed to continue them.

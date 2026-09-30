@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "counts": {
+    "exact_floor_power_pairs": 1203,
+    "rational_absorption_cutoffs": 27,
+    "actual_first_passages": 670,
+    "actual_clock_height_witnesses": 2500,
+    "exhaustive_predicate_prefixes": 131072,
+    "actual_predicate_prefixes": 600,
+    "decimal_schedule_diagnostics": 72,
+    "decimal_landing_cutoffs": 18,
+    "complete_written_propagation": 1
+  },
+  "reading": [
+    {
+      "name": "VaryingDensity.lean",
+      "sha256": "ae8d3a9e0fdff12eda29c3432d7c96413edcabeafd479a858aa425b5a987592e",
+      "lines": 253,
+      "read": "complete"
+    },
+    {
+      "name": "BootstrapSchedule.lean",
+      "sha256": "8fab257e232685a20eccaede3d1cc8d1410bb835e81712b3338fe46ce0b5c96f",
+      "lines": 449,
+      "read": "complete"
+    },
+    {
+      "name": "GlobalAssembly.lean",
+      "sha256": "55940ab34ca84d73aa71e1a33a0ac10da6b8c2e4ed5fa700fd442493421c8e2b",
+      "lines": 64,
+      "read": "complete"
+    },
+    {
+      "name": "StretchedLogLanding.lean",
+      "sha256": "62004f9000d220f5a531a8b66c3ad0ac7ff8f0e4c3528dea3e62e9ca6be9417f",
+      "lines": 256,
+      "read": "complete"
+    },
+    {
+      "name": "Constants.lean",
+      "sha256": "a5deaef0da643aa1438c67f387cec37486e936971e9ecdff0cb211d653372b05",
+      "lines": 83,
+      "read": "complete"
+    },
+    {
+      "name": "Scalar.lean",
+      "sha256": "9fef79ed91569fa1c250fb1e25d80d3f0a556e706860967904bb9aa32bba1502",
+      "lines": 89,
+      "read": "complete"
+    },
+    {
+      "name": "HeadlineParameters.lean",
+      "sha256": "96c32365e2ec0ccfa9126c9b5dc1b007efbb6c662567905c52dccc2d1e678514",
+      "lines": 256,
+      "read": [
+        [
+          1,
+          175
+        ]
+      ]
+    }
+  ],
+  "new_formal_theorems": 9,
+  "formal_verification_receipt": "formal_shaik_joint/verification.json",
+  "analytic_claim_formalized": false,
+  "whole_natural_density_package_verified": false,
+  "scope": "Finite rational/actual-orbit regressions, exhaustive finite prefixes, noncertifying decimal diagnostics. Nine general integer statements are kernel checked separately; ND096 remains written analytic proof.",
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_shaik_joint.py": "52d51a20a555e9345fe7ad93523644580f6a5cedc05e47d1ecfe526c46d38871",
+    "draw_shaik_joint.py": "f9af0ef61c1f3d97a566935d79230882b0b12db559122c7aa66aed2ac006f657",
+    "shaik_joint_schedule.png": "6af23ae1390d2080fc5131d0052eb9c55d19af12631ca6432dd648fcd2b539fd",
+    "formal_shaik_joint/verification.json": "cdf1552a1684545a5d593ada6e23c5bd0d5df830193e1c9239d557c276ea2b29"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}

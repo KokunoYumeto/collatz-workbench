@@ -290,8 +290,12 @@ def check_local_state(folder, root, local_state=False):
     assert cited <= bibliography
     result = {"audit_labels": len(labels), "claim_locators": len(claims["claims"]),
               "bibliography_keys": len(bibliography),
-              "full_natural_density_verified": False}
-    assert claims["full_natural_density_theorem_independently_verified"] is False
+              "written_endpoint_reconstruction": claims["natural_density_written_reconstruction_complete"],
+              "formal_certificate": claims["formal_verification_complete"]}
+    assert claims["natural_density_written_reconstruction_complete"] is True
+    assert claims["formal_verification_complete"] is False
+    assert {"ND-023", "ND-024", "ND-025", "ND-026", "ND-027"} <= {c["id"] for c in claims["claims"]}
+    assert {"prop:untimed-ladder", "lem:timed-step", "prop:timed-block", "lem:power-cover", "cor:timed-count", "cor:universal-clock"} <= set(labels)
     if not local_state:
         result["private_workbench_checks"] = "not requested; use --local-state inside the original corpus"
         return result
@@ -304,9 +308,12 @@ def check_local_state(folder, root, local_state=False):
     records = [json.loads(line) for line in (root / "state/source_registry.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
     source = [r for r in records if r.get("source_id") == "SRC-COL-000053"]
     assert len(source) == 1
-    assert source[0]["manifestations"][0]["sha256"] == claims["sources"][0]["sha256"]
-    assert claims["publication_authorized"] is True
-    assert claims["full_natural_density_theorem_independently_verified"] is False
+    local_source = [s for s in claims["sources"] if s.get("canonical_source_id") == "SRC-COL-000053"]
+    assert len(local_source) == 1
+    assert source[0]["manifestations"][0]["sha256"] == local_source[0]["sha256"]
+    execution = json.loads((root / "state/polyclank_execution_20260928.json").read_text(encoding="utf-8"))
+    assert claims["publication_authorized"] is (not execution["no_public_mutations"])
+    assert claims["formal_verification_complete"] is False
     return {"audit_labels": len(labels), "claim_locators": len(claims["claims"]),
             "bibliography_keys": len(bibliography), "preprint_manifest_files": len(manifest["files"]),
             "new_canonical_source_records": len(source),
@@ -456,6 +463,125 @@ def check_actual_input_and_measure_mass():
 
 
 
+def check_scale_iteration_and_clocks():
+    """Finite identities supporting the written iteration; no asymptotic test."""
+    maps_checked = passage_checks = failure_checks = 0
+    vertices = (1, 3, 5, 7)
+
+    def graph_passage(mapping, start, threshold):
+        seen = set()
+        time = 0
+        current = start
+        while current > threshold:
+            if current in seen:
+                return None, 1
+            seen.add(current)
+            current = mapping[current]
+            time += 1
+        return time, current
+
+    for images in product(vertices, repeat=len(vertices)):
+        mapping = dict(zip(vertices, images))
+        maps_checked += 1
+        for start in vertices:
+            for low in vertices:
+                t_low, v_low = graph_passage(mapping, start, low)
+                for subset_bits in range(16):
+                    subset = {v for i, v in enumerate(vertices) if subset_bits & (1 << i)}
+                    assert (int(v_low in subset) -
+                            int(t_low is not None and v_low in subset)) == (
+                                int(1 in subset) * int(t_low is None))
+                    failure_checks += 1
+                for high in vertices:
+                    if high < low or t_low is None:
+                        continue
+                    t_high, middle = graph_passage(mapping, start, high)
+                    remainder, endpoint = graph_passage(mapping, middle, low)
+                    assert t_high is not None and remainder is not None
+                    assert t_low == t_high + remainder and endpoint == v_low
+                    passage_checks += 1
+
+    cover_cases = endpoint_cases = 0
+    for bottom in (Fraction(5, 2), Fraction(3), Fraction(7, 2)):
+        for length in range(1, 4):
+            boundaries = [bottom ** (2 ** j) for j in range(length + 1)]
+            cutoff = boundaries[-1]
+            target = bottom + Fraction(1, 7)
+            assert bottom <= target < boundaries[1]
+            odds = list(range(1, cutoff.numerator // cutoff.denominator + 1, 2))
+            parts = []
+            for lo, hi in zip(boundaries, boundaries[1:]):
+                assert hi - lo > 2
+                halfopen = {n for n in odds if lo < n <= hi}
+                closed = {n for n in odds if lo <= n <= hi}
+                assert len(halfopen) > 0
+                assert len(closed - halfopen) <= 1
+                assert len(closed) <= 2 * len(halfopen)
+                parts.append((closed, halfopen))
+                endpoint_cases += 1
+            assert sum(len(h) for _, h in parts) == len(set().union(*(h for _, h in parts)))
+            for modulus in (3, 5, 7):
+                for residue in range(modulus):
+                    bad = {n for n in odds if n > target and n % modulus == residue}
+                    epsilon = max(Fraction(len(bad & closed), len(closed)) for closed, _ in parts)
+                    assert len(bad) <= 2 * epsilon * len(odds)
+                    cover_cases += 1
+
+    geometric_cases = 0
+    for ratio in (Fraction(1, 2), Fraction(9, 10), Fraction(999, 1000)):
+        for length in range(1, 33):
+            total = sum(ratio ** j for j in range(length))
+            assert total == (1 - ratio ** length) / (1 - ratio)
+            assert total <= 1 / (1 - ratio)
+            geometric_cases += 1
+
+    raw_clocks = telescope_cases = 0
+    def raw_step(n):
+        return 3 * n + 1 if n % 2 else n // 2
+    for initial in range(1, 502, 2):
+        value, total = initial, 0
+        for k in range(13):
+            assert (1 << total) * value <= (4 ** k) * initial
+            assert (1 << total) <= (4 ** k) * initial
+            telescope_cases += 1
+            for a in range(5):
+                original = (1 << a) * initial
+                m = a + k + total
+                final = original
+                for _ in range(m):
+                    final = raw_step(final)
+                assert final == value
+                assert (1 << m) <= (1 << (3 * k)) * original
+                raw_clocks += 1
+            value, valuation = syr(value)
+            total += valuation
+    partition_cases = 0
+    for cutoff in range(2, 151):
+        for target in (2, 5, 11):
+            # An arbitrary odd failure set, not a claim about Collatz failure.
+            bad_odds = {m for m in range(1, cutoff + 1, 2) if m > target and m % 7 == 3}
+            actual = {n for n in range(1, cutoff + 1)
+                      if (n >> ((n & -n).bit_length() - 1)) in bad_odds}
+            by_valuation = []
+            for a in range(cutoff.bit_length()):
+                by_valuation += [(1 << a) * m for m in bad_odds if (1 << a) * m <= cutoff]
+            assert len(by_valuation) == len(set(by_valuation))
+            assert actual == set(by_valuation)
+            partition_cases += 1
+    return {
+        "finite_functional_graphs": maps_checked,
+        "nested_first_passage_identities": passage_checks,
+        "failure_convention_indicator_identities": failure_checks,
+        "exact_rational_cover_tests": cover_cases,
+        "halfopen_closed_endpoint_tests": endpoint_cases,
+        "finite_geometric_sum_identities": geometric_cases,
+        "valuation_telescopes": telescope_cases,
+        "actual_raw_clock_identities": raw_clocks,
+        "odd_valuation_partition_identities": partition_cases,
+        "scope": "Exact finite identities only. No check of the analytic mixing input or an infinite density theorem."
+    }
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path)
@@ -490,6 +616,7 @@ def main():
             "separated_endpoint_intervals": check_endpoint_intervals(),
             "Abel_envelope_and_cutoffs": check_abel_and_envelope_coordinates(),
             "actual_input_and_measure_mass": check_actual_input_and_measure_mass(),
+            "scale_iteration_and_clocks": check_scale_iteration_and_clocks(),
             "local_state_and_source_manifest": check_local_state(folder, root, args.local_state),
         },
         "artifact_hashes": {

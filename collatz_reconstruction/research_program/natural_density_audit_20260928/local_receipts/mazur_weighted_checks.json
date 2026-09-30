@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "counts": {
+    "complete_written_proof_propagation": 1,
+    "certified_floor_levels": 12822,
+    "strict_support_partitions": 36,
+    "signed_shift_test_identities": 58,
+    "exact_shift_envelopes": 29,
+    "cross_time_recurrences": 1449,
+    "full_raw_variation_checks": 29,
+    "signed_successor_ratios": 1403,
+    "constant20_guarded_examples": 2,
+    "exact_padded_abel_and_discrepancy": 240,
+    "exact_gate_endpoint_hits": 76,
+    "flat_variation_coefficient_identities": 3
+  },
+  "scope": "Bounded exact rational tests, with directed rational log enclosures for sampled actual Collatz levels. Rational phase orbits test the algebra, not Diophantine rates. All-size statements and the flat integration formula are written proofs, not certified by the samples.",
+  "source_hashes": {
+    "ND/Band/A5ShiftedRawComparison.lean": "32083cc2e44b715db6c43467e64d4fc509544e172dbf37dfd17ed14249179385",
+    "ND/Band/A5Regularity.lean": "9b8025ef93fadf48c09e1d774667c2f75629a7a2520099214e6d53801747d5ca",
+    "ND/Discrepancy/A5Padding.lean": "21ee457d0f234df1808075c304786ab1403f92df87d7b2a1863e875a8ed23aa2",
+    "ND/Discrepancy/A5PaddedProfile.lean": "ddba15aa6a6424b4e823bc4f42f060870aa6f3e5a2dff31aa2849715b4389f3f",
+    "ND/Discrepancy/A5TwoProfileTail.lean": "de23560a3f7a453d1e42c75c3603ecf97f032c11bc902f094c5ef8346ed0ba30",
+    "ND/Discrepancy/PhaseToDbar.lean": "3b501ed457492046460fcba4a18a66ccdcafbdac79c181aef8a92055058ff4c5"
+  },
+  "source_package_commit": "ca3dd0d63920411213403092aecc6946619eb082",
+  "lean_started": false,
+  "public_mutations": false,
+  "local_artifact_hashes": {
+    "audit.tex": "9824856415f5a652d05a46cb99ca618b30f1f2307858fd9e49303a09ad98651a",
+    "CLAIMS.json": "76bc756983770e73e77b2ac5c6090b2e5796aa249be1c59e876ad06541a78865",
+    "check_mazur_weighted.py": "61339f171ecbfa336e91f37f37beaee48859ea6be8c8302e51152630d5174e1d"
+  },
+  "distribution_note": "Recorded local run. local_artifact_hashes refer to the original local files; public CLAIMS omits machine paths. This is not a rerun of the public package."
+}
